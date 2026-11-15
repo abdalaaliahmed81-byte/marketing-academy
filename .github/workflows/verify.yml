@@ -26,6 +26,7 @@ jobs:
           ELECTRON_SKIP_BINARY_DOWNLOAD: '1'
       - run: node scripts/check-source.mjs
       - run: node scripts/audit-dependencies.mjs
+      - run: npm run audit:project
       - run: npm run check
       - run: npx playwright install --with-deps chromium
       - run: npm run test:e2e
@@ -54,10 +55,13 @@ jobs:
       - run: npm run typecheck
       - run: npm test
       - run: npm run package:win
-      - name: Test built portable EXE and restart persistence
-        run: node scripts/desktop-smoke.mjs
-        env:
-          DESKTOP_EXE: release/Marketing-Academy-2.0.0-win-x64.exe
+      - name: Test built portable EXE, SQLite migration and restart persistence
+        shell: pwsh
+        run: |
+          $version = (Get-Content package.json | ConvertFrom-Json).version
+          $env:DESKTOP_EXE = "release/Marketing-Academy-$version-win-x64.exe"
+          node scripts/desktop-smoke.mjs
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
       - name: SHA256, architecture verification and source archive
         run: node scripts/release-files.mjs
       - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02

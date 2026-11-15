@@ -1,0 +1,44 @@
+{
+  "repository": {
+    "accessible": true,
+    "result": {
+      "full_name": "abdalaaliahmed81-byte/marketing-academy",
+      "visibility": "public",
+      "default_branch": "main",
+      "archived": false,
+      "allow_auto_merge": false,
+      "delete_branch_on_merge": false,
+      "security_and_analysis": null
+    },
+    "limitation": null
+  },
+  "actionsPermissions": {
+    "accessible": false,
+    "result": {
+      "message": "Resource not accessible by integration",
+      "status": "403"
+    },
+    "limitation": "Not verified; a permission/concealment response is not proof that the setting is absent."
+  },
+  "mainProtection": {
+    "accessible": false,
+    "result": {
+      "message": "Resource not accessible by integration",
+      "status": "403"
+    },
+    "limitation": "Not verified; a permission/concealment response is not proof that the setting is absent."
+  },
+  "rulesets": {
+    "accessible": true,
+    "result": [],
+    "limitation": null
+  },
+  "signingSecretNames": {
+    "accessible": false,
+    "result": {
+      "message": "Resource not accessible by integration",
+      "status": "403"
+    },
+    "limitation": "Not verified; a permission/concealment response is not proof that the setting is absent."
+  }
+}

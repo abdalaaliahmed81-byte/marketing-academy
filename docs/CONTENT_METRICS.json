@@ -1,0 +1,2711 @@
+{
+  "generatedAt": "2026-11-15T18:42:28.218Z",
+  "modules": 12,
+  "lessons": 60,
+  "questions": 300,
+  "workedProjects": 12,
+  "shortMicroLessons": 50,
+  "generatedCases": 50,
+  "repeatedSummaries": 50,
+  "questionsWithWeakDistractorHeuristic": 37,
+  "questionsWithUniqueLongestCorrectAnswer": 118,
+  "limitation": "Heuristics flag editorial review, not automatic proof of incorrectness. Structural presence is not professional approval.",
+  "records": [
+    {
+      "id": "m01-l01",
+      "module": 1,
+      "title": "التسويق يبدأ بمشكلة العميل",
+      "readingWords": 344,
+      "readingParagraphs": 5,
+      "questions": 5,
+      "practicalActivity": true,
+      "dailyMission": true,
+      "rubricItems": 3,
+      "generatedCase": false,
+      "repeatedSummary": false,
+      "weakDistractors": [
+        "m01-l01-q1",
+        "m01-l01-q2",
+        "m01-l01-q3"
+      ],
+      "answerLengthCue": [
+        "m01-l01-q3",
+        "m01-l01-q5"
+      ],
+      "bookReferences": [
+        {
+          "title": "سيث جودين، هذا هو التسويق",
+          "section": "الفصلان 1–2، الخدمة وتعلّم رؤية العميل"
+        },
+        {
+          "title": "آلان ديب، خطة تسويقية في صفحة واحدة",
+          "section": "الفصل 2، صياغة الرسالة"
+        }
+      ],
+      "officialReferences": [
+        {
+          "title": "Google · Digital Marketing & E-commerce — Foundations",
+          "url": "https://grow.google/certificates/digital-marketing-ecommerce/"
+        },
+        {
+          "title": "HubSpot Academy · Digital Marketing",
+          "url": "https://academy.hubspot.com/courses/digital-marketing"
+        }
+      ],
+      "status": "present; advanced instructional approval open",
+      "independentHumanReview": false,
+      "actions": [
+        "معايرة بشرية للأسئلة ومواءمة الهدف والتقييم",
+        "إثبات مرجعي أدق من مجرد رابط بوابة",
+        "استبدال مشتتات غير مرتبطة بالمجال"
+      ]
+    },
+    {
+      "id": "m01-l02",
+      "module": 1,
+      "title": "هدف واضح ومقياس مناسب",
+      "readingWords": 305,
+      "readingParagraphs": 5,
+      "questions": 5,
+      "practicalActivity": true,
+      "dailyMission": true,
+      "rubricItems": 3,
+      "generatedCase": false,
+      "repeatedSummary": false,
+      "weakDistractors": [
+        "m01-l02-q3"
+      ],
+      "answerLengthCue": [
+        "m01-l02-q1",
+        "m01-l02-q2",
+        "m01-l02-q5"
+      ],
+      "bookReferences": [
+        {
+          "title": "آلان ديب، خطة تسويقية في صفحة واحدة",
+          "section": "الفصلان 3 و6، قياس الاستجابة وتحويل المبيعات"
+        }
+      ],
+      "officialReferences": [
+        {
+          "title": "Google · Digital Marketing & E-commerce — Foundations",
+          "url": "https://grow.google/certificates/digital-marketing-ecommerce/"
+        },
+        {
+          "title": "Google Skillshop · التدريب على القياس والإعلانات",
+          "url": "https://skillshop.withgoogle.com/"
+        }
+      ],
+      "status": "present; advanced instructional approval open",
+      "independentHumanReview": false,
+      "actions": [
+        "معايرة بشرية للأسئلة ومواءمة الهدف والتقييم",
+        "إثبات مرجعي أدق من مجرد رابط بوابة",
+        "استبدال مشتتات غير مرتبطة بالمجال"
+      ]
+    },
+    {
+      "id": "m01-l03",
+      "module": 1,
+      "title": "اختيار قناة رقمية بميزانية صفر",
+      "readingWords": 310,
+      "readingParagraphs": 5,
+      "questions": 5,
+      "practicalActivity": true,
+      "dailyMission": true,
+      "rubricItems": 3,
+      "generatedCase": false,
+      "repeatedSummary": false,
+      "weakDistractors": [
+        "m01-l03-q5"
+      ],
+      "answerLengthCue": [
+        "m01-l03-q2",
+        "m01-l03-q4"
+      ],
+      "bookReferences": [
+        {
+          "title": "آلان ديب، خطة تسويقية في صفحة واحدة",
+          "section": "الفصل 3، وسائل الوصول وقياس الاستجابة"
+        }
+      ],
+      "officialReferences": [
+        {
+          "title": "Google · Digital Marketing & E-commerce — Foundations",
+          "url": "https://grow.google/certificates/digital-marketing-ecommerce/"
+        },
+        {
+          "title": "Meta Blueprint · دليل الجمهور",
+          "url": "https://www.facebookblueprint.com/student/catalog/"
+        },
+        {
+          "title": "Google Search Central · دليل بدء تحسين البحث",
+          "url": "https://developers.google.com/search/docs/fundamentals/seo-starter-guide"
+        }
+      ],
+      "status": "present; advanced instructional approval open",
+      "independentHumanReview": false,
+      "actions": [
+        "معايرة بشرية للأسئلة ومواءمة الهدف والتقييم",
+        "إثبات مرجعي أدق من مجرد رابط بوابة",
+        "استبدال مشتتات غير مرتبطة بالمجال"
+      ]
+    },
+    {
+      "id": "m01-l04",
+      "module": 1,
+      "title": "رحلة العميل من الاكتشاف إلى العودة",
+      "readingWords": 287,
+      "readingParagraphs": 5,
+      "questions": 5,
+      "practicalActivity": true,
+      "dailyMission": true,
+      "rubricItems": 3,
+      "generatedCase": false,
+      "repeatedSummary": false,
+      "weakDistractors": [
+        "m01-l04-q3",
+        "m01-l04-q5"
+      ],
+      "answerLengthCue": [
+        "m01-l04-q3",
+        "m01-l04-q5"
+      ],
+      "bookReferences": [
+        {
+          "title": "آلان ديب، خطة تسويقية في صفحة واحدة",
+          "section": "الأجزاء الثلاثة، الفصول 1–9"
+        },
+        {
+          "title": "سيث جودين، هذا هو التسويق",
+          "section": "الفصل 17، الإذن ولفت الانتباه"
+        }
+      ],
+      "officialReferences": [
+        {
+          "title": "Google · Digital Marketing & E-commerce — Foundations",
+          "url": "https://grow.google/certificates/digital-marketing-ecommerce/"
+        },
+        {
+          "title": "HubSpot Academy · Digital Marketing",
+          "url": "https://academy.hubspot.com/courses/digital-marketing"
+        }
+      ],
+      "status": "present; advanced instructional approval open",
+      "independentHumanReview": false,
+      "actions": [
+        "معايرة بشرية للأسئلة ومواءمة الهدف والتقييم",
+        "إثبات مرجعي أدق من مجرد رابط بوابة",
+        "استبدال مشتتات غير مرتبطة بالمجال"
+      ]
+    },
+    {
+      "id": "m01-l05",
+      "module": 1,
+      "title": "من الفكرة إلى تجربة تسويقية",
+      "readingWords": 273,
+      "readingParagraphs": 5,
+      "questions": 5,
+      "practicalActivity": true,
+      "dailyMission": true,
+      "rubricItems": 3,
+      "generatedCase": false,
+      "repeatedSummary": false,
+      "weakDistractors": [
+        "m01-l05-q5"
+      ],
+      "answerLengthCue": [
+        "m01-l05-q1",
+        "m01-l05-q3"
+      ],
+      "bookReferences": [
+        {
+          "title": "آلان ديب، خطة تسويقية في صفحة واحدة",
+          "section": "الفصلان 3 و6، الاستجابة والتحويل"
+        }
+      ],
+      "officialReferences": [
+        {
+          "title": "Google · Digital Marketing & E-commerce — Foundations",
+          "url": "https://grow.google/certificates/digital-marketing-ecommerce/"
+        },
+        {
+          "title": "Google Skillshop · التدريب على القياس والإعلانات",
+          "url": "https://skillshop.withgoogle.com/"
+        }
+      ],
+      "status": "present; advanced instructional approval open",
+      "independentHumanReview": false,
+      "actions": [
+        "معايرة بشرية للأسئلة ومواءمة الهدف والتقييم",
+        "إثبات مرجعي أدق من مجرد رابط بوابة",
+        "استبدال مشتتات غير مرتبطة بالمجال"
+      ]
+    },
+    {
+      "id": "m02-l01",
+      "module": 2,
+      "title": "حوّل التخمين إلى سؤال بحث",
+      "readingWords": 300,
+      "readingParagraphs": 5,
+      "questions": 5,
+      "practicalActivity": true,
+      "dailyMission": true,
+      "rubricItems": 3,
+      "generatedCase": false,
+      "repeatedSummary": false,
+      "weakDistractors": [],
+      "answerLengthCue": [
+        "m02-l01-q1",
+        "m02-l01-q2",
+        "m02-l01-q3",
+        "m02-l01-q4",
+        "m02-l01-q5"
+      ],
+      "bookReferences": [
+        {
+          "title": "سيث جودين، هذا هو التسويق",
+          "section": "الفصلان 2 و7، رؤية العميل ورغباته"
+        },
+        {
+          "title": "سيث جودين، كل المسوقون يسردون قصصًا",
+          "section": "الخطوة الأولى، وجهات نظر الجمهور"
+        }
+      ],
+      "officialReferences": [
+        {
+          "title": "HubSpot Academy · Digital Marketing",
+          "url": "https://academy.hubspot.com/courses/digital-marketing"
+        },
+        {
+          "title": "Semrush Academy · البحث وتحليل المنافسين",
+          "url": "https://www.semrush.com/academy/"
+        }
+      ],
+      "status": "present; advanced instructional approval open",
+      "independentHumanReview": false,
+      "actions": [
+        "معايرة بشرية للأسئلة ومواءمة الهدف والتقييم",
+        "إثبات مرجعي أدق من مجرد رابط بوابة"
+      ]
+    },
+    {
+      "id": "m02-l02",
+      "module": 2,
+      "title": "مقابلة عميل قصيرة ومحايدة",
+      "readingWords": 268,
+      "readingParagraphs": 5,
+      "questions": 5,
+      "practicalActivity": true,
+      "dailyMission": true,
+      "rubricItems": 3,
+      "generatedCase": false,
+      "repeatedSummary": false,
+      "weakDistractors": [],
+      "answerLengthCue": [
+        "m02-l02-q1",
+        "m02-l02-q2",
+        "m02-l02-q3",
+        "m02-l02-q4"
+      ],
+      "bookReferences": [
+        {
+          "title": "سيث جودين، هذا هو التسويق",
+          "section": "الفصلان 2–3، التعاطف وفهم التجربة"
+        },
+        {
+          "title": "سيث جودين، كل المسوقون يسردون قصصًا",
+          "section": "الخطوة الأولى، معتقدات الجمهور"
+        }
+      ],
+      "officialReferences": [
+        {
+          "title": "HubSpot Academy · Digital Marketing",
+          "url": "https://academy.hubspot.com/courses/digital-marketing"
+        },
+        {
+          "title": "Google · Digital Marketing & E-commerce — Foundations",
+          "url": "https://grow.google/certificates/digital-marketing-ecommerce/"
+        }
+      ],
+      "status": "present; advanced instructional approval open",
+      "independentHumanReview": false,
+      "actions": [
+        "معايرة بشرية للأسئلة ومواءمة الهدف والتقييم",
+        "إثبات مرجعي أدق من مجرد رابط بوابة"
+      ]
+    },
+    {
+      "id": "m02-l03",
+      "module": 2,
+      "title": "تحليل المنافس والبديل الحقيقي",
+      "readingWords": 288,
+      "readingParagraphs": 5,
+      "questions": 5,
+      "practicalActivity": true,
+      "dailyMission": true,
+      "rubricItems": 3,
+      "generatedCase": false,
+      "repeatedSummary": false,
+      "weakDistractors": [
+        "m02-l03-q3",
+        "m02-l03-q5"
+      ],
+      "answerLengthCue": [
+        "m02-l03-q2",
+        "m02-l03-q4"
+      ],
+      "bookReferences": [
+        {
+          "title": "آلان ديب، خطة تسويقية في صفحة واحدة",
+          "section": "الفصلان 1–2، اختيار السوق والتميّز بالرسالة"
+        },
+        {
+          "title": "سيث جودين، هذا هو التسويق",
+          "section": "الفصل 5، البحث عن الأفضل بالنسبة للجمهور"
+        }
+      ],
+      "officialReferences": [
+        {
+          "title": "Semrush Academy · البحث وتحليل المنافسين",
+          "url": "https://www.semrush.com/academy/"
+        },
+        {
+          "title": "HubSpot Academy · Digital Marketing",
+          "url": "https://academy.hubspot.com/courses/digital-marketing"
+        }
+      ],
+      "status": "present; advanced instructional approval open",
+      "independentHumanReview": false,
+      "actions": [
+        "معايرة بشرية للأسئلة ومواءمة الهدف والتقييم",
+        "إثبات مرجعي أدق من مجرد رابط بوابة",
+        "استبدال مشتتات غير مرتبطة بالمجال"
+      ]
+    },
+    {
+      "id": "m02-l04",
+      "module": 2,
+      "title": "قسّم السوق واختر أول جمهور",
+      "readingWords": 271,
+      "readingParagraphs": 5,
+      "questions": 5,
+      "practicalActivity": true,
+      "dailyMission": true,
+      "rubricItems": 3,
+      "generatedCase": false,
+      "repeatedSummary": false,
+      "weakDistractors": [
+        "m02-l04-q1",
+        "m02-l04-q4"
+      ],
+      "answerLengthCue": [
+        "m02-l04-q1",
+        "m02-l04-q5"
+      ],
+      "bookReferences": [
+        {
+          "title": "سيث جودين، هذا هو التسويق",
+          "section": "الفصلان 4 و8، أصغر سوق قابل للنمو"
+        },
+        {
+          "title": "آلان ديب، خطة تسويقية في صفحة واحدة",
+          "section": "الفصل 1، اختيار السوق المستهدف"
+        }
+      ],
+      "officialReferences": [
+        {
+          "title": "Meta Blueprint · دليل الجمهور",
+          "url": "https://www.facebookblueprint.com/student/catalog/"
+        },
+        {
+          "title": "HubSpot Academy · Digital Marketing",
+          "url": "https://academy.hubspot.com/courses/digital-marketing"
+        }
+      ],
+      "status": "present; advanced instructional approval open",
+      "independentHumanReview": false,
+      "actions": [
+        "معايرة بشرية للأسئلة ومواءمة الهدف والتقييم",
+        "إثبات مرجعي أدق من مجرد رابط بوابة",
+        "استبدال مشتتات غير مرتبطة بالمجال"
+      ]
+    },
+    {
+      "id": "m02-l05",
+      "module": 2,
+      "title": "شخصية عميل مرتبطة بقرار",
+      "readingWords": 290,
+      "readingParagraphs": 5,
+      "questions": 5,
+      "practicalActivity": true,
+      "dailyMission": true,
+      "rubricItems": 3,
+      "generatedCase": false,
+      "repeatedSummary": false,
+      "weakDistractors": [
+        "m02-l05-q1",
+        "m02-l05-q4"
+      ],
+      "answerLengthCue": [
+        "m02-l05-q2",
+        "m02-l05-q4",
+        "m02-l05-q5"
+      ],
+      "bookReferences": [
+        {
+          "title": "سيث جودين، كل المسوقون يسردون قصصًا",
+          "section": "الخطوتان 1 و5، وجهات النظر واتساق القصة مع التجربة"
+        },
+        {
+          "title": "سيث جودين، هذا هو التسويق",
+          "section": "الفصلان 4 و14، السوق الأصغر واختلاف وجهات النظر"
+        },
+        {
+          "title": "آلان ديب، خطة تسويقية في صفحة واحدة",
+          "section": "الفصل 1، اختيار السوق"
+        }
+      ],
+      "officialReferences": [
+        {
+          "title": "HubSpot Academy · Digital Marketing",
+          "url": "https://academy.hubspot.com/courses/digital-marketing"
+        },
+        {
+          "title": "Google · Digital Marketing & E-commerce — Foundations",
+          "url": "https://grow.google/certificates/digital-marketing-ecommerce/"
+        }
+      ],
+      "status": "present; advanced instructional approval open",
+      "independentHumanReview": false,
+      "actions": [
+        "معايرة بشرية للأسئلة ومواءمة الهدف والتقييم",
+        "إثبات مرجعي أدق من مجرد رابط بوابة",
+        "استبدال مشتتات غير مرتبطة بالمجال"
+      ]
+    },
+    {
+      "id": "m03-l01",
+      "module": 3,
+      "title": "من مقابلة العميل إلى خريطة التعاطف",
+      "readingWords": 191,
+      "readingParagraphs": 3,
+      "questions": 5,
+      "practicalActivity": true,
+      "dailyMission": true,
+      "rubricItems": 3,
+      "generatedCase": true,
+      "repeatedSummary": true,
+      "weakDistractors": [],
+      "answerLengthCue": [
+        "m03-l01-q1",
+        "m03-l01-q2",
+        "m03-l01-q4",
+        "m03-l01-q5"
+      ],
+      "bookReferences": [
+        {
+          "title": "سيث جودين، هذا هو التسويق",
+          "section": "الفصل 4: أصغر سوق قابلة للنمو؛ الفصل 5: البحث عن الأفضل"
+        }
+      ],
+      "officialReferences": [
+        {
+          "title": "Google · Digital Marketing & E-commerce — Foundations",
+          "url": "https://grow.google/certificates/digital-marketing-ecommerce/"
+        },
+        {
+          "title": "HubSpot Academy · Digital Marketing",
+          "url": "https://academy.hubspot.com/courses/digital-marketing"
+        }
+      ],
+      "status": "present; advanced instructional approval open",
+      "independentHumanReview": false,
+      "actions": [
+        "معايرة بشرية للأسئلة ومواءمة الهدف والتقييم",
+        "إثبات مرجعي أدق من مجرد رابط بوابة",
+        "توسيع التطبيق المتقدم والأمثلة؛ الشرح الحالي درس مصغر",
+        "تأليف حالة نقل مستقلة بدل إعادة سؤال الاختبار",
+        "كتابة خلاصة معرفة وقرار بدل تكرار الهدف"
+      ]
+    },
+    {
+      "id": "m03-l02",
+      "module": 3,
+      "title": "عرض القيمة الذي يمكن إثباته",
+      "readingWords": 172,
+      "readingParagraphs": 3,
+      "questions": 5,
+      "practicalActivity": true,
+      "dailyMission": true,
+      "rubricItems": 3,
+      "generatedCase": true,
+      "repeatedSummary": true,
+      "weakDistractors": [
+        "m03-l02-q4"
+      ],
+      "answerLengthCue": [
+        "m03-l02-q1",
+        "m03-l02-q2",
+        "m03-l02-q4"
+      ],
+      "bookReferences": [
+        {
+          "title": "سيث جودين، هذا هو التسويق",
+          "section": "الفصل 4: أصغر سوق قابلة للنمو؛ الفصل 5: البحث عن الأفضل"
+        }
+      ],
+      "officialReferences": [
+        {
+          "title": "Google · Digital Marketing & E-commerce — Foundations",
+          "url": "https://grow.google/certificates/digital-marketing-ecommerce/"
+        },
+        {
+          "title": "HubSpot Academy · Digital Marketing",
+          "url": "https://academy.hubspot.com/courses/digital-marketing"
+        }
+      ],
+      "status": "present; advanced instructional approval open",
+      "independentHumanReview": false,
+      "actions": [
+        "معايرة بشرية للأسئلة ومواءمة الهدف والتقييم",
+        "إثبات مرجعي أدق من مجرد رابط بوابة",
+        "توسيع التطبيق المتقدم والأمثلة؛ الشرح الحالي درس مصغر",
+        "تأليف حالة نقل مستقلة بدل إعادة سؤال الاختبار",
+        "كتابة خلاصة معرفة وقرار بدل تكرار الهدف",
+        "استبدال مشتتات غير مرتبطة بالمجال"
+      ]
+    },
+    {
+      "id": "m03-l03",
+      "module": 3,
+      "title": "خريطة التموضع والمفاضلات",
+      "readingWords": 161,
+      "readingParagraphs": 3,
+      "questions": 5,
+      "practicalActivity": true,
+      "dailyMission": true,
+      "rubricItems": 3,
+      "generatedCase": true,
+      "repeatedSummary": true,
+      "weakDistractors": [
+        "m03-l03-q4"
+      ],
+      "answerLengthCue": [
+        "m03-l03-q1",
+        "m03-l03-q3",
+        "m03-l03-q5"
+      ],
+      "bookReferences": [
+        {
+          "title": "سيث جودين، هذا هو التسويق",
+          "section": "الفصل 4: أصغر سوق قابلة للنمو؛ الفصل 5: البحث عن الأفضل"
+        }
+      ],
+      "officialReferences": [
+        {
+          "title": "Google · Digital Marketing & E-commerce — Foundations",
+          "url": "https://grow.google/certificates/digital-marketing-ecommerce/"
+        },
+        {
+          "title": "HubSpot Academy · Digital Marketing",
+          "url": "https://academy.hubspot.com/courses/digital-marketing"
+        }
+      ],
+      "status": "present; advanced instructional approval open",
+      "independentHumanReview": false,
+      "actions": [
+        "معايرة بشرية للأسئلة ومواءمة الهدف والتقييم",
+        "إثبات مرجعي أدق من مجرد رابط بوابة",
+        "توسيع التطبيق المتقدم والأمثلة؛ الشرح الحالي درس مصغر",
+        "تأليف حالة نقل مستقلة بدل إعادة سؤال الاختبار",
+        "كتابة خلاصة معرفة وقرار بدل تكرار الهدف",
+        "استبدال مشتتات غير مرتبطة بالمجال"
+      ]
+    },
+    {
+      "id": "m03-l04",
+      "module": 3,
+      "title": "هوية لفظية متسقة ومتاحة",
+      "readingWords": 150,
+      "readingParagraphs": 3,
+      "questions": 5,
+      "practicalActivity": true,
+      "dailyMission": true,
+      "rubricItems": 3,
+      "generatedCase": true,
+      "repeatedSummary": true,
+      "weakDistractors": [
+        "m03-l04-q5"
+      ],
+      "answerLengthCue": [
+        "m03-l04-q2",
+        "m03-l04-q5"
+      ],
+      "bookReferences": [
+        {
+          "title": "سيث جودين، هذا هو التسويق",
+          "section": "الفصل 4: أصغر سوق قابلة للنمو؛ الفصل 5: البحث عن الأفضل"
+        }
+      ],
+      "officialReferences": [
+        {
+          "title": "W3C · كتابة محتوى متاح للجميع",
+          "url": "https://www.w3.org/WAI/tips/writing/"
+        },
+        {
+          "title": "HubSpot Academy · Digital Marketing",
+          "url": "https://academy.hubspot.com/courses/digital-marketing"
+        }
+      ],
+      "status": "present; advanced instructional approval open",
+      "independentHumanReview": false,
+      "actions": [
+        "معايرة بشرية للأسئلة ومواءمة الهدف والتقييم",
+        "إثبات مرجعي أدق من مجرد رابط بوابة",
+        "توسيع التطبيق المتقدم والأمثلة؛ الشرح الحالي درس مصغر",
+        "تأليف حالة نقل مستقلة بدل إعادة سؤال الاختبار",
+        "كتابة خلاصة معرفة وقرار بدل تكرار الهدف",
+        "استبدال مشتتات غير مرتبطة بالمجال"
+      ]
+    },
+    {
+      "id": "m03-l05",
+      "module": 3,
+      "title": "السعر والعرض وهامش المساهمة",
+      "readingWords": 158,
+      "readingParagraphs": 3,
+      "questions": 5,
+      "practicalActivity": true,
+      "dailyMission": true,
+      "rubricItems": 3,
+      "generatedCase": true,
+      "repeatedSummary": true,
+      "weakDistractors": [],
+      "answerLengthCue": [
+        "m03-l05-q4"
+      ],
+      "bookReferences": [
+        {
+          "title": "سيث جودين، هذا هو التسويق",
+          "section": "الفصل 4: أصغر سوق قابلة للنمو؛ الفصل 5: البحث عن الأفضل"
+        }
+      ],
+      "officialReferences": [
+        {
+          "title": "Google · Digital Marketing & E-commerce — Foundations",
+          "url": "https://grow.google/certificates/digital-marketing-ecommerce/"
+        },
+        {
+          "title": "HubSpot Academy · Digital Marketing",
+          "url": "https://academy.hubspot.com/courses/digital-marketing"
+        }
+      ],
+      "status": "present; advanced instructional approval open",
+      "independentHumanReview": false,
+      "actions": [
+        "معايرة بشرية للأسئلة ومواءمة الهدف والتقييم",
+        "إثبات مرجعي أدق من مجرد رابط بوابة",
+        "توسيع التطبيق المتقدم والأمثلة؛ الشرح الحالي درس مصغر",
+        "تأليف حالة نقل مستقلة بدل إعادة سؤال الاختبار",
+        "كتابة خلاصة معرفة وقرار بدل تكرار الهدف"
+      ]
+    },
+    {
+      "id": "m04-l01",
+      "module": 4,
+      "title": "قصة العميل والوعد الصادق",
+      "readingWords": 164,
+      "readingParagraphs": 3,
+      "questions": 5,
+      "practicalActivity": true,
+      "dailyMission": true,
+      "rubricItems": 3,
+      "generatedCase": true,
+      "repeatedSummary": true,
+      "weakDistractors": [
+        "m04-l01-q1"
+      ],
+      "answerLengthCue": [
+        "m04-l01-q3",
+        "m04-l01-q4",
+        "m04-l01-q5"
+      ],
+      "bookReferences": [
+        {
+          "title": "سيث جودين، كل المسوقون يسردون قصصًا",
+          "section": "وجهات النظر وصدق القصة واتساق التجربة؛ مراجعة انتقائية للنسخة المرفقة"
+        }
+      ],
+      "officialReferences": [
+        {
+          "title": "Google · Digital Marketing & E-commerce — Foundations",
+          "url": "https://grow.google/certificates/digital-marketing-ecommerce/"
+        },
+        {
+          "title": "HubSpot Academy · Digital Marketing",
+          "url": "https://academy.hubspot.com/courses/digital-marketing"
+        }
+      ],
+      "status": "present; advanced instructional approval open",
+      "independentHumanReview": false,
+      "actions": [
+        "معايرة بشرية للأسئلة ومواءمة الهدف والتقييم",
+        "إثبات مرجعي أدق من مجرد رابط بوابة",
+        "توسيع التطبيق المتقدم والأمثلة؛ الشرح الحالي درس مصغر",
+        "تأليف حالة نقل مستقلة بدل إعادة سؤال الاختبار",
+        "كتابة خلاصة معرفة وقرار بدل تكرار الهدف",
+        "استبدال مشتتات غير مرتبطة بالمجال"
+      ]
+    },
+    {
+      "id": "m04-l02",
+      "module": 4,
+      "title": "العنوان والخطاف دون تضليل",
+      "readingWords": 153,
+      "readingParagraphs": 3,
+      "questions": 5,
+      "practicalActivity": true,
+      "dailyMission": true,
+      "rubricItems": 3,
+      "generatedCase": true,
+      "repeatedSummary": true,
+      "weakDistractors": [],
+      "answerLengthCue": [
+        "m04-l02-q1",
+        "m04-l02-q2",
+        "m04-l02-q4"
+      ],
+      "bookReferences": [
+        {
+          "title": "سيث جودين، كل المسوقون يسردون قصصًا",
+          "section": "وجهات النظر وصدق القصة واتساق التجربة؛ مراجعة انتقائية للنسخة المرفقة"
+        }
+      ],
+      "officialReferences": [
+        {
+          "title": "Google · Digital Marketing & E-commerce — Foundations",
+          "url": "https://grow.google/certificates/digital-marketing-ecommerce/"
+        },
+        {
+          "title": "HubSpot Academy · Digital Marketing",
+          "url": "https://academy.hubspot.com/courses/digital-marketing"
+        }
+      ],
+      "status": "present; advanced instructional approval open",
+      "independentHumanReview": false,
+      "actions": [
+        "معايرة بشرية للأسئلة ومواءمة الهدف والتقييم",
+        "إثبات مرجعي أدق من مجرد رابط بوابة",
+        "توسيع التطبيق المتقدم والأمثلة؛ الشرح الحالي درس مصغر",
+        "تأليف حالة نقل مستقلة بدل إعادة سؤال الاختبار",
+        "كتابة خلاصة معرفة وقرار بدل تكرار الهدف"
+      ]
+    },
+    {
+      "id": "m04-l03",
+      "module": 4,
+      "title": "كتابة الإقناع: حاجة ودليل وإجراء",
+      "readingWords": 154,
+      "readingParagraphs": 3,
+      "questions": 5,
+      "practicalActivity": true,
+      "dailyMission": true,
+      "rubricItems": 3,
+      "generatedCase": true,
+      "repeatedSummary": true,
+      "weakDistractors": [],
+      "answerLengthCue": [
+        "m04-l03-q2",
+        "m04-l03-q4",
+        "m04-l03-q5"
+      ],
+      "bookReferences": [
+        {
+          "title": "سيث جودين، كل المسوقون يسردون قصصًا",
+          "section": "وجهات النظر وصدق القصة واتساق التجربة؛ مراجعة انتقائية للنسخة المرفقة"
+        }
+      ],
+      "officialReferences": [
+        {
+          "title": "Google · Digital Marketing & E-commerce — Foundations",
+          "url": "https://grow.google/certificates/digital-marketing-ecommerce/"
+        },
+        {
+          "title": "HubSpot Academy · Digital Marketing",
+          "url": "https://academy.hubspot.com/courses/digital-marketing"
+        }
+      ],
+      "status": "present; advanced instructional approval open",
+      "independentHumanReview": false,
+      "actions": [
+        "معايرة بشرية للأسئلة ومواءمة الهدف والتقييم",
+        "إثبات مرجعي أدق من مجرد رابط بوابة",
+        "توسيع التطبيق المتقدم والأمثلة؛ الشرح الحالي درس مصغر",
+        "تأليف حالة نقل مستقلة بدل إعادة سؤال الاختبار",
+        "كتابة خلاصة معرفة وقرار بدل تكرار الهدف"
+      ]
+    },
+    {
+      "id": "m04-l04",
+      "module": 4,
+      "title": "صفحة هبوط تفي بوعد الإعلان",
+      "readingWords": 161,
+      "readingParagraphs": 3,
+      "questions": 5,
+      "practicalActivity": true,
+      "dailyMission": true,
+      "rubricItems": 3,
+      "generatedCase": true,
+      "repeatedSummary": true,
+      "weakDistractors": [
+        "m04-l04-q2"
+      ],
+      "answerLengthCue": [],
+      "bookReferences": [
+        {
+          "title": "سيث جودين، كل المسوقون يسردون قصصًا",
+          "section": "وجهات النظر وصدق القصة واتساق التجربة؛ مراجعة انتقائية للنسخة المرفقة"
+        }
+      ],
+      "officialReferences": [
+        {
+          "title": "W3C · كتابة محتوى متاح للجميع",
+          "url": "https://www.w3.org/WAI/tips/writing/"
+        },
+        {
+          "title": "Google Analytics · إعداد القياس",
+          "url": "https://support.google.com/analytics/answer/9304153"
+        }
+      ],
+      "status": "present; advanced instructional approval open",
+      "independentHumanReview": false,
+      "actions": [
+        "معايرة بشرية للأسئلة ومواءمة الهدف والتقييم",
+        "إثبات مرجعي أدق من مجرد رابط بوابة",
+        "توسيع التطبيق المتقدم والأمثلة؛ الشرح الحالي درس مصغر",
+        "تأليف حالة نقل مستقلة بدل إعادة سؤال الاختبار",
+        "كتابة خلاصة معرفة وقرار بدل تكرار الهدف",
+        "استبدال مشتتات غير مرتبطة بالمجال"
+      ]
+    },
+    {
+      "id": "m04-l05",
+      "module": 4,
+      "title": "اختبار الرسائل ومراجعة الادعاءات",
+      "readingWords": 148,
+      "readingParagraphs": 3,
+      "questions": 5,
+      "practicalActivity": true,
+      "dailyMission": true,
+      "rubricItems": 3,
+      "generatedCase": true,
+      "repeatedSummary": true,
+      "weakDistractors": [
+        "m04-l05-q5"
+      ],
+      "answerLengthCue": [
+        "m04-l05-q5"
+      ],
+      "bookReferences": [
+        {
+          "title": "سيث جودين، كل المسوقون يسردون قصصًا",
+          "section": "وجهات النظر وصدق القصة واتساق التجربة؛ مراجعة انتقائية للنسخة المرفقة"
+        }
+      ],
+      "officialReferences": [
+        {
+          "title": "Google · Digital Marketing & E-commerce — Foundations",
+          "url": "https://grow.google/certificates/digital-marketing-ecommerce/"
+        },
+        {
+          "title": "HubSpot Academy · Digital Marketing",
+          "url": "https://academy.hubspot.com/courses/digital-marketing"
+        }
+      ],
+      "status": "present; advanced instructional approval open",
+      "independentHumanReview": false,
+      "actions": [
+        "معايرة بشرية للأسئلة ومواءمة الهدف والتقييم",
+        "إثبات مرجعي أدق من مجرد رابط بوابة",
+        "توسيع التطبيق المتقدم والأمثلة؛ الشرح الحالي درس مصغر",
+        "تأليف حالة نقل مستقلة بدل إعادة سؤال الاختبار",
+        "كتابة خلاصة معرفة وقرار بدل تكرار الهدف",
+        "استبدال مشتتات غير مرتبطة بالمجال"
+      ]
+    },
+    {
+      "id": "m05-l01",
+      "module": 5,
+      "title": "اختيار المنصة ودور كل قناة",
+      "readingWords": 162,
+      "readingParagraphs": 3,
+      "questions": 5,
+      "practicalActivity": true,
+      "dailyMission": true,
+      "rubricItems": 3,
+      "generatedCase": true,
+      "repeatedSummary": true,
+      "weakDistractors": [
+        "m05-l01-q2"
+      ],
+      "answerLengthCue": [
+        "m05-l01-q4"
+      ],
+      "bookReferences": [
+        {
+          "title": "سيث جودين، هذا هو التسويق",
+          "section": "الفصل 9: أشخاص يشبهوننا؛ الفصل 17: الإذن والانتباه"
+        }
+      ],
+      "officialReferences": [
+        {
+          "title": "Meta Blueprint · دليل الجمهور",
+          "url": "https://www.facebookblueprint.com/student/catalog/"
+        },
+        {
+          "title": "HubSpot Academy · Digital Marketing",
+          "url": "https://academy.hubspot.com/courses/digital-marketing"
+        }
+      ],
+      "status": "present; advanced instructional approval open",
+      "independentHumanReview": false,
+      "actions": [
+        "معايرة بشرية للأسئلة ومواءمة الهدف والتقييم",
+        "إثبات مرجعي أدق من مجرد رابط بوابة",
+        "توسيع التطبيق المتقدم والأمثلة؛ الشرح الحالي درس مصغر",
+        "تأليف حالة نقل مستقلة بدل إعادة سؤال الاختبار",
+        "كتابة خلاصة معرفة وقرار بدل تكرار الهدف",
+        "استبدال مشتتات غير مرتبطة بالمجال"
+      ]
+    },
+    {
+      "id": "m05-l02",
+      "module": 5,
+      "title": "أعمدة المحتوى وتقويم النشر",
+      "readingWords": 148,
+      "readingParagraphs": 3,
+      "questions": 5,
+      "practicalActivity": true,
+      "dailyMission": true,
+      "rubricItems": 3,
+      "generatedCase": true,
+      "repeatedSummary": true,
+      "weakDistractors": [
+        "m05-l02-q1",
+        "m05-l02-q2"
+      ],
+      "answerLengthCue": [
+        "m05-l02-q2",
+        "m05-l02-q5"
+      ],
+      "bookReferences": [
+        {
+          "title": "سيث جودين، هذا هو التسويق",
+          "section": "الفصل 9: أشخاص يشبهوننا؛ الفصل 17: الإذن والانتباه"
+        }
+      ],
+      "officialReferences": [
+        {
+          "title": "Meta Blueprint · دليل الجمهور",
+          "url": "https://www.facebookblueprint.com/student/catalog/"
+        },
+        {
+          "title": "HubSpot Academy · Digital Marketing",
+          "url": "https://academy.hubspot.com/courses/digital-marketing"
+        }
+      ],
+      "status": "present; advanced instructional approval open",
+      "independentHumanReview": false,
+      "actions": [
+        "معايرة بشرية للأسئلة ومواءمة الهدف والتقييم",
+        "إثبات مرجعي أدق من مجرد رابط بوابة",
+        "توسيع التطبيق المتقدم والأمثلة؛ الشرح الحالي درس مصغر",
+        "تأليف حالة نقل مستقلة بدل إعادة سؤال الاختبار",
+        "كتابة خلاصة معرفة وقرار بدل تكرار الهدف",
+        "استبدال مشتتات غير مرتبطة بالمجال"
+      ]
+    },
+    {
+      "id": "m05-l03",
+      "module": 5,
+      "title": "إدارة المجتمع وخدمة التعليقات",
+      "readingWords": 152,
+      "readingParagraphs": 3,
+      "questions": 5,
+      "practicalActivity": true,
+      "dailyMission": true,
+      "rubricItems": 3,
+      "generatedCase": true,
+      "repeatedSummary": true,
+      "weakDistractors": [],
+      "answerLengthCue": [
+        "m05-l03-q1",
+        "m05-l03-q2",
+        "m05-l03-q5"
+      ],
+      "bookReferences": [
+        {
+          "title": "سيث جودين، هذا هو التسويق",
+          "section": "الفصل 9: أشخاص يشبهوننا؛ الفصل 17: الإذن والانتباه"
+        }
+      ],
+      "officialReferences": [
+        {
+          "title": "Meta Blueprint · دليل الجمهور",
+          "url": "https://www.facebookblueprint.com/student/catalog/"
+        },
+        {
+          "title": "W3C · كتابة محتوى متاح للجميع",
+          "url": "https://www.w3.org/WAI/tips/writing/"
+        }
+      ],
+      "status": "present; advanced instructional approval open",
+      "independentHumanReview": false,
+      "actions": [
+        "معايرة بشرية للأسئلة ومواءمة الهدف والتقييم",
+        "إثبات مرجعي أدق من مجرد رابط بوابة",
+        "توسيع التطبيق المتقدم والأمثلة؛ الشرح الحالي درس مصغر",
+        "تأليف حالة نقل مستقلة بدل إعادة سؤال الاختبار",
+        "كتابة خلاصة معرفة وقرار بدل تكرار الهدف"
+      ]
+    },
+    {
+      "id": "m05-l04",
+      "module": 5,
+      "title": "الفيديو القصير من الفكرة إلى القياس",
+      "readingWords": 148,
+      "readingParagraphs": 3,
+      "questions": 5,
+      "practicalActivity": true,
+      "dailyMission": true,
+      "rubricItems": 3,
+      "generatedCase": true,
+      "repeatedSummary": true,
+      "weakDistractors": [
+        "m05-l04-q4",
+        "m05-l04-q5"
+      ],
+      "answerLengthCue": [
+        "m05-l04-q2",
+        "m05-l04-q4",
+        "m05-l04-q5"
+      ],
+      "bookReferences": [
+        {
+          "title": "سيث جودين، هذا هو التسويق",
+          "section": "الفصل 9: أشخاص يشبهوننا؛ الفصل 17: الإذن والانتباه"
+        }
+      ],
+      "officialReferences": [
+        {
+          "title": "Meta Blueprint · دليل الجمهور",
+          "url": "https://www.facebookblueprint.com/student/catalog/"
+        },
+        {
+          "title": "W3C · كتابة محتوى متاح للجميع",
+          "url": "https://www.w3.org/WAI/tips/writing/"
+        }
+      ],
+      "status": "present; advanced instructional approval open",
+      "independentHumanReview": false,
+      "actions": [
+        "معايرة بشرية للأسئلة ومواءمة الهدف والتقييم",
+        "إثبات مرجعي أدق من مجرد رابط بوابة",
+        "توسيع التطبيق المتقدم والأمثلة؛ الشرح الحالي درس مصغر",
+        "تأليف حالة نقل مستقلة بدل إعادة سؤال الاختبار",
+        "كتابة خلاصة معرفة وقرار بدل تكرار الهدف",
+        "استبدال مشتتات غير مرتبطة بالمجال"
+      ]
+    },
+    {
+      "id": "m05-l05",
+      "module": 5,
+      "title": "شراكات المؤثرين والإفصاح",
+      "readingWords": 148,
+      "readingParagraphs": 3,
+      "questions": 5,
+      "practicalActivity": true,
+      "dailyMission": true,
+      "rubricItems": 3,
+      "generatedCase": true,
+      "repeatedSummary": true,
+      "weakDistractors": [
+        "m05-l05-q1"
+      ],
+      "answerLengthCue": [
+        "m05-l05-q1",
+        "m05-l05-q3",
+        "m05-l05-q4"
+      ],
+      "bookReferences": [
+        {
+          "title": "سيث جودين، هذا هو التسويق",
+          "section": "الفصل 9: أشخاص يشبهوننا؛ الفصل 17: الإذن والانتباه"
+        }
+      ],
+      "officialReferences": [
+        {
+          "title": "FTC · الإفصاح عن العلاقة الإعلانية",
+          "url": "https://www.ftc.gov/business-guidance/resources/disclosures-101-social-media-influencers"
+        },
+        {
+          "title": "Meta Blueprint · دليل الجمهور",
+          "url": "https://www.facebookblueprint.com/student/catalog/"
+        }
+      ],
+      "status": "present; advanced instructional approval open",
+      "independentHumanReview": false,
+      "actions": [
+        "معايرة بشرية للأسئلة ومواءمة الهدف والتقييم",
+        "إثبات مرجعي أدق من مجرد رابط بوابة",
+        "توسيع التطبيق المتقدم والأمثلة؛ الشرح الحالي درس مصغر",
+        "تأليف حالة نقل مستقلة بدل إعادة سؤال الاختبار",
+        "كتابة خلاصة معرفة وقرار بدل تكرار الهدف",
+        "استبدال مشتتات غير مرتبطة بالمجال"
+      ]
+    },
+    {
+      "id": "m06-l01",
+      "module": 6,
+      "title": "استراتيجية محتوى من أسئلة العملاء",
+      "readingWords": 157,
+      "readingParagraphs": 3,
+      "questions": 5,
+      "practicalActivity": true,
+      "dailyMission": true,
+      "rubricItems": 3,
+      "generatedCase": true,
+      "repeatedSummary": true,
+      "weakDistractors": [],
+      "answerLengthCue": [
+        "m06-l01-q1",
+        "m06-l01-q4"
+      ],
+      "bookReferences": [
+        {
+          "title": "سيث جودين، كل المسوقون يسردون قصصًا",
+          "section": "القصة الموثوقة ووجهة نظر الجمهور"
+        },
+        {
+          "title": "آلان ديب، خطة تسويقية في صفحة واحدة",
+          "section": "الفصل 5: تنمية العملاء المحتملين"
+        }
+      ],
+      "officialReferences": [
+        {
+          "title": "HubSpot Academy · Digital Marketing",
+          "url": "https://academy.hubspot.com/courses/digital-marketing"
+        },
+        {
+          "title": "Google Search Central · دليل بدء تحسين البحث",
+          "url": "https://developers.google.com/search/docs/fundamentals/seo-starter-guide"
+        }
+      ],
+      "status": "present; advanced instructional approval open",
+      "independentHumanReview": false,
+      "actions": [
+        "معايرة بشرية للأسئلة ومواءمة الهدف والتقييم",
+        "إثبات مرجعي أدق من مجرد رابط بوابة",
+        "توسيع التطبيق المتقدم والأمثلة؛ الشرح الحالي درس مصغر",
+        "تأليف حالة نقل مستقلة بدل إعادة سؤال الاختبار",
+        "كتابة خلاصة معرفة وقرار بدل تكرار الهدف"
+      ]
+    },
+    {
+      "id": "m06-l02",
+      "module": 6,
+      "title": "الموجز التحريري والمقال المفيد",
+      "readingWords": 148,
+      "readingParagraphs": 3,
+      "questions": 5,
+      "practicalActivity": true,
+      "dailyMission": true,
+      "rubricItems": 3,
+      "generatedCase": true,
+      "repeatedSummary": true,
+      "weakDistractors": [],
+      "answerLengthCue": [
+        "m06-l02-q1",
+        "m06-l02-q4",
+        "m06-l02-q5"
+      ],
+      "bookReferences": [
+        {
+          "title": "سيث جودين، كل المسوقون يسردون قصصًا",
+          "section": "القصة الموثوقة ووجهة نظر الجمهور"
+        },
+        {
+          "title": "آلان ديب، خطة تسويقية في صفحة واحدة",
+          "section": "الفصل 5: تنمية العملاء المحتملين"
+        }
+      ],
+      "officialReferences": [
+        {
+          "title": "Google Search Central · دليل بدء تحسين البحث",
+          "url": "https://developers.google.com/search/docs/fundamentals/seo-starter-guide"
+        },
+        {
+          "title": "W3C · كتابة محتوى متاح للجميع",
+          "url": "https://www.w3.org/WAI/tips/writing/"
+        }
+      ],
+      "status": "present; advanced instructional approval open",
+      "independentHumanReview": false,
+      "actions": [
+        "معايرة بشرية للأسئلة ومواءمة الهدف والتقييم",
+        "إثبات مرجعي أدق من مجرد رابط بوابة",
+        "توسيع التطبيق المتقدم والأمثلة؛ الشرح الحالي درس مصغر",
+        "تأليف حالة نقل مستقلة بدل إعادة سؤال الاختبار",
+        "كتابة خلاصة معرفة وقرار بدل تكرار الهدف"
+      ]
+    },
+    {
+      "id": "m06-l03",
+      "module": 6,
+      "title": "إعادة توظيف المحتوى وحقوق الأصول",
+      "readingWords": 154,
+      "readingParagraphs": 3,
+      "questions": 5,
+      "practicalActivity": true,
+      "dailyMission": true,
+      "rubricItems": 3,
+      "generatedCase": true,
+      "repeatedSummary": true,
+      "weakDistractors": [],
+      "answerLengthCue": [
+        "m06-l03-q1",
+        "m06-l03-q4"
+      ],
+      "bookReferences": [
+        {
+          "title": "سيث جودين، كل المسوقون يسردون قصصًا",
+          "section": "القصة الموثوقة ووجهة نظر الجمهور"
+        },
+        {
+          "title": "آلان ديب، خطة تسويقية في صفحة واحدة",
+          "section": "الفصل 5: تنمية العملاء المحتملين"
+        }
+      ],
+      "officialReferences": [
+        {
+          "title": "W3C · كتابة محتوى متاح للجميع",
+          "url": "https://www.w3.org/WAI/tips/writing/"
+        },
+        {
+          "title": "HubSpot Academy · Digital Marketing",
+          "url": "https://academy.hubspot.com/courses/digital-marketing"
+        }
+      ],
+      "status": "present; advanced instructional approval open",
+      "independentHumanReview": false,
+      "actions": [
+        "معايرة بشرية للأسئلة ومواءمة الهدف والتقييم",
+        "إثبات مرجعي أدق من مجرد رابط بوابة",
+        "توسيع التطبيق المتقدم والأمثلة؛ الشرح الحالي درس مصغر",
+        "تأليف حالة نقل مستقلة بدل إعادة سؤال الاختبار",
+        "كتابة خلاصة معرفة وقرار بدل تكرار الهدف"
+      ]
+    },
+    {
+      "id": "m06-l04",
+      "module": 6,
+      "title": "العرض المجاني ونموذج الإذن",
+      "readingWords": 153,
+      "readingParagraphs": 3,
+      "questions": 5,
+      "practicalActivity": true,
+      "dailyMission": true,
+      "rubricItems": 3,
+      "generatedCase": true,
+      "repeatedSummary": true,
+      "weakDistractors": [],
+      "answerLengthCue": [
+        "m06-l04-q2"
+      ],
+      "bookReferences": [
+        {
+          "title": "سيث جودين، كل المسوقون يسردون قصصًا",
+          "section": "القصة الموثوقة ووجهة نظر الجمهور"
+        },
+        {
+          "title": "آلان ديب، خطة تسويقية في صفحة واحدة",
+          "section": "الفصل 5: تنمية العملاء المحتملين"
+        }
+      ],
+      "officialReferences": [
+        {
+          "title": "Google · سياسة موافقة المستخدم الأوروبي",
+          "url": "https://www.google.com/about/company/user-consent-policy/"
+        },
+        {
+          "title": "Google · إرشادات مرسلي البريد",
+          "url": "https://support.google.com/a/answer/81126"
+        }
+      ],
+      "status": "present; advanced instructional approval open",
+      "independentHumanReview": false,
+      "actions": [
+        "معايرة بشرية للأسئلة ومواءمة الهدف والتقييم",
+        "إثبات مرجعي أدق من مجرد رابط بوابة",
+        "توسيع التطبيق المتقدم والأمثلة؛ الشرح الحالي درس مصغر",
+        "تأليف حالة نقل مستقلة بدل إعادة سؤال الاختبار",
+        "كتابة خلاصة معرفة وقرار بدل تكرار الهدف"
+      ]
+    },
+    {
+      "id": "m06-l05",
+      "module": 6,
+      "title": "تدقيق المحتوى ودورة تحديثه",
+      "readingWords": 166,
+      "readingParagraphs": 3,
+      "questions": 5,
+      "practicalActivity": true,
+      "dailyMission": true,
+      "rubricItems": 3,
+      "generatedCase": true,
+      "repeatedSummary": true,
+      "weakDistractors": [
+        "m06-l05-q1"
+      ],
+      "answerLengthCue": [
+        "m06-l05-q1",
+        "m06-l05-q2"
+      ],
+      "bookReferences": [
+        {
+          "title": "سيث جودين، كل المسوقون يسردون قصصًا",
+          "section": "القصة الموثوقة ووجهة نظر الجمهور"
+        },
+        {
+          "title": "آلان ديب، خطة تسويقية في صفحة واحدة",
+          "section": "الفصل 5: تنمية العملاء المحتملين"
+        }
+      ],
+      "officialReferences": [
+        {
+          "title": "Google Search Central · دليل بدء تحسين البحث",
+          "url": "https://developers.google.com/search/docs/fundamentals/seo-starter-guide"
+        },
+        {
+          "title": "W3C · كتابة محتوى متاح للجميع",
+          "url": "https://www.w3.org/WAI/tips/writing/"
+        }
+      ],
+      "status": "present; advanced instructional approval open",
+      "independentHumanReview": false,
+      "actions": [
+        "معايرة بشرية للأسئلة ومواءمة الهدف والتقييم",
+        "إثبات مرجعي أدق من مجرد رابط بوابة",
+        "توسيع التطبيق المتقدم والأمثلة؛ الشرح الحالي درس مصغر",
+        "تأليف حالة نقل مستقلة بدل إعادة سؤال الاختبار",
+        "كتابة خلاصة معرفة وقرار بدل تكرار الهدف",
+        "استبدال مشتتات غير مرتبطة بالمجال"
+      ]
+    },
+    {
+      "id": "m07-l01",
+      "module": 7,
+      "title": "نية البحث وخريطة الكلمات",
+      "readingWords": 159,
+      "readingParagraphs": 3,
+      "questions": 5,
+      "practicalActivity": true,
+      "dailyMission": true,
+      "rubricItems": 3,
+      "generatedCase": true,
+      "repeatedSummary": true,
+      "weakDistractors": [],
+      "answerLengthCue": [],
+      "bookReferences": [
+        {
+          "title": "آلان ديب، خطة تسويقية في صفحة واحدة",
+          "section": "الفصل 3: الوصول إلى العملاء؛ مبادئ اختيار الوسيلة"
+        }
+      ],
+      "officialReferences": [
+        {
+          "title": "Google Search Central · دليل بدء تحسين البحث",
+          "url": "https://developers.google.com/search/docs/fundamentals/seo-starter-guide"
+        }
+      ],
+      "status": "present; advanced instructional approval open",
+      "independentHumanReview": false,
+      "actions": [
+        "معايرة بشرية للأسئلة ومواءمة الهدف والتقييم",
+        "إثبات مرجعي أدق من مجرد رابط بوابة",
+        "توسيع التطبيق المتقدم والأمثلة؛ الشرح الحالي درس مصغر",
+        "تأليف حالة نقل مستقلة بدل إعادة سؤال الاختبار",
+        "كتابة خلاصة معرفة وقرار بدل تكرار الهدف"
+      ]
+    },
+    {
+      "id": "m07-l02",
+      "module": 7,
+      "title": "تحسين الصفحة دون حشو",
+      "readingWords": 156,
+      "readingParagraphs": 3,
+      "questions": 5,
+      "practicalActivity": true,
+      "dailyMission": true,
+      "rubricItems": 3,
+      "generatedCase": true,
+      "repeatedSummary": true,
+      "weakDistractors": [],
+      "answerLengthCue": [
+        "m07-l02-q2",
+        "m07-l02-q3",
+        "m07-l02-q5"
+      ],
+      "bookReferences": [
+        {
+          "title": "آلان ديب، خطة تسويقية في صفحة واحدة",
+          "section": "الفصل 3: الوصول إلى العملاء؛ مبادئ اختيار الوسيلة"
+        }
+      ],
+      "officialReferences": [
+        {
+          "title": "Google Search Central · دليل بدء تحسين البحث",
+          "url": "https://developers.google.com/search/docs/fundamentals/seo-starter-guide"
+        },
+        {
+          "title": "W3C · كتابة محتوى متاح للجميع",
+          "url": "https://www.w3.org/WAI/tips/writing/"
+        }
+      ],
+      "status": "present; advanced instructional approval open",
+      "independentHumanReview": false,
+      "actions": [
+        "معايرة بشرية للأسئلة ومواءمة الهدف والتقييم",
+        "إثبات مرجعي أدق من مجرد رابط بوابة",
+        "توسيع التطبيق المتقدم والأمثلة؛ الشرح الحالي درس مصغر",
+        "تأليف حالة نقل مستقلة بدل إعادة سؤال الاختبار",
+        "كتابة خلاصة معرفة وقرار بدل تكرار الهدف"
+      ]
+    },
+    {
+      "id": "m07-l03",
+      "module": 7,
+      "title": "الزحف والفهرسة وصحة الموقع",
+      "readingWords": 160,
+      "readingParagraphs": 3,
+      "questions": 5,
+      "practicalActivity": true,
+      "dailyMission": true,
+      "rubricItems": 3,
+      "generatedCase": true,
+      "repeatedSummary": true,
+      "weakDistractors": [
+        "m07-l03-q2"
+      ],
+      "answerLengthCue": [
+        "m07-l03-q4"
+      ],
+      "bookReferences": [
+        {
+          "title": "آلان ديب، خطة تسويقية في صفحة واحدة",
+          "section": "الفصل 3: الوصول إلى العملاء؛ مبادئ اختيار الوسيلة"
+        }
+      ],
+      "officialReferences": [
+        {
+          "title": "Google Search Central · دليل بدء تحسين البحث",
+          "url": "https://developers.google.com/search/docs/fundamentals/seo-starter-guide"
+        }
+      ],
+      "status": "present; advanced instructional approval open",
+      "independentHumanReview": false,
+      "actions": [
+        "معايرة بشرية للأسئلة ومواءمة الهدف والتقييم",
+        "إثبات مرجعي أدق من مجرد رابط بوابة",
+        "توسيع التطبيق المتقدم والأمثلة؛ الشرح الحالي درس مصغر",
+        "تأليف حالة نقل مستقلة بدل إعادة سؤال الاختبار",
+        "كتابة خلاصة معرفة وقرار بدل تكرار الهدف",
+        "استبدال مشتتات غير مرتبطة بالمجال"
+      ]
+    },
+    {
+      "id": "m07-l04",
+      "module": 7,
+      "title": "البحث المحلي وملف النشاط",
+      "readingWords": 155,
+      "readingParagraphs": 3,
+      "questions": 5,
+      "practicalActivity": true,
+      "dailyMission": true,
+      "rubricItems": 3,
+      "generatedCase": true,
+      "repeatedSummary": true,
+      "weakDistractors": [
+        "m07-l04-q5"
+      ],
+      "answerLengthCue": [],
+      "bookReferences": [
+        {
+          "title": "آلان ديب، خطة تسويقية في صفحة واحدة",
+          "section": "الفصل 3: الوصول إلى العملاء؛ مبادئ اختيار الوسيلة"
+        }
+      ],
+      "officialReferences": [
+        {
+          "title": "Google Search Central · دليل بدء تحسين البحث",
+          "url": "https://developers.google.com/search/docs/fundamentals/seo-starter-guide"
+        },
+        {
+          "title": "Google · Digital Marketing & E-commerce — Foundations",
+          "url": "https://grow.google/certificates/digital-marketing-ecommerce/"
+        }
+      ],
+      "status": "present; advanced instructional approval open",
+      "independentHumanReview": false,
+      "actions": [
+        "معايرة بشرية للأسئلة ومواءمة الهدف والتقييم",
+        "إثبات مرجعي أدق من مجرد رابط بوابة",
+        "توسيع التطبيق المتقدم والأمثلة؛ الشرح الحالي درس مصغر",
+        "تأليف حالة نقل مستقلة بدل إعادة سؤال الاختبار",
+        "كتابة خلاصة معرفة وقرار بدل تكرار الهدف",
+        "استبدال مشتتات غير مرتبطة بالمجال"
+      ]
+    },
+    {
+      "id": "m07-l05",
+      "module": 7,
+      "title": "قياس SEO وتقرير الأولويات",
+      "readingWords": 149,
+      "readingParagraphs": 3,
+      "questions": 5,
+      "practicalActivity": true,
+      "dailyMission": true,
+      "rubricItems": 3,
+      "generatedCase": true,
+      "repeatedSummary": true,
+      "weakDistractors": [],
+      "answerLengthCue": [
+        "m07-l05-q1"
+      ],
+      "bookReferences": [
+        {
+          "title": "آلان ديب، خطة تسويقية في صفحة واحدة",
+          "section": "الفصل 3: الوصول إلى العملاء؛ مبادئ اختيار الوسيلة"
+        }
+      ],
+      "officialReferences": [
+        {
+          "title": "Google Search Central · دليل بدء تحسين البحث",
+          "url": "https://developers.google.com/search/docs/fundamentals/seo-starter-guide"
+        },
+        {
+          "title": "Google Analytics · إعداد القياس",
+          "url": "https://support.google.com/analytics/answer/9304153"
+        }
+      ],
+      "status": "present; advanced instructional approval open",
+      "independentHumanReview": false,
+      "actions": [
+        "معايرة بشرية للأسئلة ومواءمة الهدف والتقييم",
+        "إثبات مرجعي أدق من مجرد رابط بوابة",
+        "توسيع التطبيق المتقدم والأمثلة؛ الشرح الحالي درس مصغر",
+        "تأليف حالة نقل مستقلة بدل إعادة سؤال الاختبار",
+        "كتابة خلاصة معرفة وقرار بدل تكرار الهدف"
+      ]
+    },
+    {
+      "id": "m08-l01",
+      "module": 8,
+      "title": "القائمة البريدية المبنية على الإذن",
+      "readingWords": 150,
+      "readingParagraphs": 3,
+      "questions": 5,
+      "practicalActivity": true,
+      "dailyMission": true,
+      "rubricItems": 3,
+      "generatedCase": true,
+      "repeatedSummary": true,
+      "weakDistractors": [
+        "m08-l01-q2"
+      ],
+      "answerLengthCue": [
+        "m08-l01-q2",
+        "m08-l01-q5"
+      ],
+      "bookReferences": [
+        {
+          "title": "آلان ديب، خطة تسويقية في صفحة واحدة",
+          "section": "الفصول 4 و5 و7 و8: التقاط الاهتمام والرعاية والتجربة والقيمة"
+        }
+      ],
+      "officialReferences": [
+        {
+          "title": "Google · سياسة موافقة المستخدم الأوروبي",
+          "url": "https://www.google.com/about/company/user-consent-policy/"
+        },
+        {
+          "title": "Google · إرشادات مرسلي البريد",
+          "url": "https://support.google.com/a/answer/81126"
+        }
+      ],
+      "status": "present; advanced instructional approval open",
+      "independentHumanReview": false,
+      "actions": [
+        "معايرة بشرية للأسئلة ومواءمة الهدف والتقييم",
+        "إثبات مرجعي أدق من مجرد رابط بوابة",
+        "توسيع التطبيق المتقدم والأمثلة؛ الشرح الحالي درس مصغر",
+        "تأليف حالة نقل مستقلة بدل إعادة سؤال الاختبار",
+        "كتابة خلاصة معرفة وقرار بدل تكرار الهدف",
+        "استبدال مشتتات غير مرتبطة بالمجال"
+      ]
+    },
+    {
+      "id": "m08-l02",
+      "module": 8,
+      "title": "التقسيم وسلسلة الترحيب",
+      "readingWords": 149,
+      "readingParagraphs": 3,
+      "questions": 5,
+      "practicalActivity": true,
+      "dailyMission": true,
+      "rubricItems": 3,
+      "generatedCase": true,
+      "repeatedSummary": true,
+      "weakDistractors": [],
+      "answerLengthCue": [
+        "m08-l02-q2",
+        "m08-l02-q4"
+      ],
+      "bookReferences": [
+        {
+          "title": "آلان ديب، خطة تسويقية في صفحة واحدة",
+          "section": "الفصول 4 و5 و7 و8: التقاط الاهتمام والرعاية والتجربة والقيمة"
+        }
+      ],
+      "officialReferences": [
+        {
+          "title": "Google · إرشادات مرسلي البريد",
+          "url": "https://support.google.com/a/answer/81126"
+        },
+        {
+          "title": "HubSpot Academy · Digital Marketing",
+          "url": "https://academy.hubspot.com/courses/digital-marketing"
+        }
+      ],
+      "status": "present; advanced instructional approval open",
+      "independentHumanReview": false,
+      "actions": [
+        "معايرة بشرية للأسئلة ومواءمة الهدف والتقييم",
+        "إثبات مرجعي أدق من مجرد رابط بوابة",
+        "توسيع التطبيق المتقدم والأمثلة؛ الشرح الحالي درس مصغر",
+        "تأليف حالة نقل مستقلة بدل إعادة سؤال الاختبار",
+        "كتابة خلاصة معرفة وقرار بدل تكرار الهدف"
+      ]
+    },
+    {
+      "id": "m08-l03",
+      "module": 8,
+      "title": "قابلية التسليم ومصادقة المرسل",
+      "readingWords": 150,
+      "readingParagraphs": 3,
+      "questions": 5,
+      "practicalActivity": true,
+      "dailyMission": true,
+      "rubricItems": 3,
+      "generatedCase": true,
+      "repeatedSummary": true,
+      "weakDistractors": [],
+      "answerLengthCue": [
+        "m08-l03-q1",
+        "m08-l03-q4",
+        "m08-l03-q5"
+      ],
+      "bookReferences": [
+        {
+          "title": "آلان ديب، خطة تسويقية في صفحة واحدة",
+          "section": "الفصول 4 و5 و7 و8: التقاط الاهتمام والرعاية والتجربة والقيمة"
+        }
+      ],
+      "officialReferences": [
+        {
+          "title": "Google · إرشادات مرسلي البريد",
+          "url": "https://support.google.com/a/answer/81126"
+        }
+      ],
+      "status": "present; advanced instructional approval open",
+      "independentHumanReview": false,
+      "actions": [
+        "معايرة بشرية للأسئلة ومواءمة الهدف والتقييم",
+        "إثبات مرجعي أدق من مجرد رابط بوابة",
+        "توسيع التطبيق المتقدم والأمثلة؛ الشرح الحالي درس مصغر",
+        "تأليف حالة نقل مستقلة بدل إعادة سؤال الاختبار",
+        "كتابة خلاصة معرفة وقرار بدل تكرار الهدف"
+      ]
+    },
+    {
+      "id": "m08-l04",
+      "module": 8,
+      "title": "الاحتفاظ والقيمة على مدى العلاقة",
+      "readingWords": 149,
+      "readingParagraphs": 3,
+      "questions": 5,
+      "practicalActivity": true,
+      "dailyMission": true,
+      "rubricItems": 3,
+      "generatedCase": true,
+      "repeatedSummary": true,
+      "weakDistractors": [],
+      "answerLengthCue": [
+        "m08-l04-q2"
+      ],
+      "bookReferences": [
+        {
+          "title": "آلان ديب، خطة تسويقية في صفحة واحدة",
+          "section": "الفصول 4 و5 و7 و8: التقاط الاهتمام والرعاية والتجربة والقيمة"
+        }
+      ],
+      "officialReferences": [
+        {
+          "title": "Google Analytics · إعداد القياس",
+          "url": "https://support.google.com/analytics/answer/9304153"
+        },
+        {
+          "title": "HubSpot Academy · Digital Marketing",
+          "url": "https://academy.hubspot.com/courses/digital-marketing"
+        }
+      ],
+      "status": "present; advanced instructional approval open",
+      "independentHumanReview": false,
+      "actions": [
+        "معايرة بشرية للأسئلة ومواءمة الهدف والتقييم",
+        "إثبات مرجعي أدق من مجرد رابط بوابة",
+        "توسيع التطبيق المتقدم والأمثلة؛ الشرح الحالي درس مصغر",
+        "تأليف حالة نقل مستقلة بدل إعادة سؤال الاختبار",
+        "كتابة خلاصة معرفة وقرار بدل تكرار الهدف"
+      ]
+    },
+    {
+      "id": "m08-l05",
+      "module": 8,
+      "title": "الإحالات وبرامج الولاء العادلة",
+      "readingWords": 161,
+      "readingParagraphs": 3,
+      "questions": 5,
+      "practicalActivity": true,
+      "dailyMission": true,
+      "rubricItems": 3,
+      "generatedCase": true,
+      "repeatedSummary": true,
+      "weakDistractors": [],
+      "answerLengthCue": [
+        "m08-l05-q5"
+      ],
+      "bookReferences": [
+        {
+          "title": "آلان ديب، خطة تسويقية في صفحة واحدة",
+          "section": "الفصول 4 و5 و7 و8: التقاط الاهتمام والرعاية والتجربة والقيمة"
+        }
+      ],
+      "officialReferences": [
+        {
+          "title": "FTC · الإفصاح عن العلاقة الإعلانية",
+          "url": "https://www.ftc.gov/business-guidance/resources/disclosures-101-social-media-influencers"
+        },
+        {
+          "title": "HubSpot Academy · Digital Marketing",
+          "url": "https://academy.hubspot.com/courses/digital-marketing"
+        }
+      ],
+      "status": "present; advanced instructional approval open",
+      "independentHumanReview": false,
+      "actions": [
+        "معايرة بشرية للأسئلة ومواءمة الهدف والتقييم",
+        "إثبات مرجعي أدق من مجرد رابط بوابة",
+        "توسيع التطبيق المتقدم والأمثلة؛ الشرح الحالي درس مصغر",
+        "تأليف حالة نقل مستقلة بدل إعادة سؤال الاختبار",
+        "كتابة خلاصة معرفة وقرار بدل تكرار الهدف"
+      ]
+    },
+    {
+      "id": "m09-l01",
+      "module": 9,
+      "title": "هدف الحملة وهيكلها قبل الإنفاق",
+      "readingWords": 148,
+      "readingParagraphs": 3,
+      "questions": 5,
+      "practicalActivity": true,
+      "dailyMission": true,
+      "rubricItems": 3,
+      "generatedCase": true,
+      "repeatedSummary": true,
+      "weakDistractors": [],
+      "answerLengthCue": [
+        "m09-l01-q2"
+      ],
+      "bookReferences": [
+        {
+          "title": "آلان ديب، خطة تسويقية في صفحة واحدة",
+          "section": "الفصلان 3 و6: قياس الاستجابة وتحويل المبيعات"
+        }
+      ],
+      "officialReferences": [
+        {
+          "title": "Google Ads · تعريف معدل النقر",
+          "url": "https://support.google.com/google-ads/answer/2615875"
+        },
+        {
+          "title": "Meta Blueprint · دليل الجمهور",
+          "url": "https://www.facebookblueprint.com/student/catalog/"
+        },
+        {
+          "title": "Google Skillshop · التدريب على القياس والإعلانات",
+          "url": "https://skillshop.withgoogle.com/"
+        }
+      ],
+      "status": "present; advanced instructional approval open",
+      "independentHumanReview": false,
+      "actions": [
+        "معايرة بشرية للأسئلة ومواءمة الهدف والتقييم",
+        "إثبات مرجعي أدق من مجرد رابط بوابة",
+        "توسيع التطبيق المتقدم والأمثلة؛ الشرح الحالي درس مصغر",
+        "تأليف حالة نقل مستقلة بدل إعادة سؤال الاختبار",
+        "كتابة خلاصة معرفة وقرار بدل تكرار الهدف"
+      ]
+    },
+    {
+      "id": "m09-l02",
+      "module": 9,
+      "title": "جمهور الإعلان وسياسة البيانات",
+      "readingWords": 149,
+      "readingParagraphs": 3,
+      "questions": 5,
+      "practicalActivity": true,
+      "dailyMission": true,
+      "rubricItems": 3,
+      "generatedCase": true,
+      "repeatedSummary": true,
+      "weakDistractors": [],
+      "answerLengthCue": [
+        "m09-l02-q4",
+        "m09-l02-q5"
+      ],
+      "bookReferences": [
+        {
+          "title": "آلان ديب، خطة تسويقية في صفحة واحدة",
+          "section": "الفصلان 3 و6: قياس الاستجابة وتحويل المبيعات"
+        }
+      ],
+      "officialReferences": [
+        {
+          "title": "Meta Blueprint · دليل الجمهور",
+          "url": "https://www.facebookblueprint.com/student/catalog/"
+        },
+        {
+          "title": "Google · سياسة موافقة المستخدم الأوروبي",
+          "url": "https://www.google.com/about/company/user-consent-policy/"
+        }
+      ],
+      "status": "present; advanced instructional approval open",
+      "independentHumanReview": false,
+      "actions": [
+        "معايرة بشرية للأسئلة ومواءمة الهدف والتقييم",
+        "إثبات مرجعي أدق من مجرد رابط بوابة",
+        "توسيع التطبيق المتقدم والأمثلة؛ الشرح الحالي درس مصغر",
+        "تأليف حالة نقل مستقلة بدل إعادة سؤال الاختبار",
+        "كتابة خلاصة معرفة وقرار بدل تكرار الهدف"
+      ]
+    },
+    {
+      "id": "m09-l03",
+      "module": 9,
+      "title": "مزاد الإعلان ومقاييس التكلفة",
+      "readingWords": 153,
+      "readingParagraphs": 3,
+      "questions": 5,
+      "practicalActivity": true,
+      "dailyMission": true,
+      "rubricItems": 3,
+      "generatedCase": true,
+      "repeatedSummary": true,
+      "weakDistractors": [],
+      "answerLengthCue": [
+        "m09-l03-q1",
+        "m09-l03-q2",
+        "m09-l03-q5"
+      ],
+      "bookReferences": [
+        {
+          "title": "آلان ديب، خطة تسويقية في صفحة واحدة",
+          "section": "الفصلان 3 و6: قياس الاستجابة وتحويل المبيعات"
+        }
+      ],
+      "officialReferences": [
+        {
+          "title": "Google Ads · تعريف معدل النقر",
+          "url": "https://support.google.com/google-ads/answer/2615875"
+        },
+        {
+          "title": "Google Skillshop · التدريب على القياس والإعلانات",
+          "url": "https://skillshop.withgoogle.com/"
+        }
+      ],
+      "status": "present; advanced instructional approval open",
+      "independentHumanReview": false,
+      "actions": [
+        "معايرة بشرية للأسئلة ومواءمة الهدف والتقييم",
+        "إثبات مرجعي أدق من مجرد رابط بوابة",
+        "توسيع التطبيق المتقدم والأمثلة؛ الشرح الحالي درس مصغر",
+        "تأليف حالة نقل مستقلة بدل إعادة سؤال الاختبار",
+        "كتابة خلاصة معرفة وقرار بدل تكرار الهدف"
+      ]
+    },
+    {
+      "id": "m09-l04",
+      "module": 9,
+      "title": "ROAS ونقطة التعادل والميزانية",
+      "readingWords": 146,
+      "readingParagraphs": 3,
+      "questions": 5,
+      "practicalActivity": true,
+      "dailyMission": true,
+      "rubricItems": 3,
+      "generatedCase": true,
+      "repeatedSummary": true,
+      "weakDistractors": [],
+      "answerLengthCue": [
+        "m09-l04-q2",
+        "m09-l04-q5"
+      ],
+      "bookReferences": [
+        {
+          "title": "آلان ديب، خطة تسويقية في صفحة واحدة",
+          "section": "الفصلان 3 و6: قياس الاستجابة وتحويل المبيعات"
+        }
+      ],
+      "officialReferences": [
+        {
+          "title": "Google Ads · تعريف معدل النقر",
+          "url": "https://support.google.com/google-ads/answer/2615875"
+        },
+        {
+          "title": "Google Analytics · إعداد القياس",
+          "url": "https://support.google.com/analytics/answer/9304153"
+        }
+      ],
+      "status": "present; advanced instructional approval open",
+      "independentHumanReview": false,
+      "actions": [
+        "معايرة بشرية للأسئلة ومواءمة الهدف والتقييم",
+        "إثبات مرجعي أدق من مجرد رابط بوابة",
+        "توسيع التطبيق المتقدم والأمثلة؛ الشرح الحالي درس مصغر",
+        "تأليف حالة نقل مستقلة بدل إعادة سؤال الاختبار",
+        "كتابة خلاصة معرفة وقرار بدل تكرار الهدف"
+      ]
+    },
+    {
+      "id": "m09-l05",
+      "module": 9,
+      "title": "تشخيص الحملة وإرهاق الإعلان",
+      "readingWords": 149,
+      "readingParagraphs": 3,
+      "questions": 5,
+      "practicalActivity": true,
+      "dailyMission": true,
+      "rubricItems": 3,
+      "generatedCase": true,
+      "repeatedSummary": true,
+      "weakDistractors": [
+        "m09-l05-q1"
+      ],
+      "answerLengthCue": [],
+      "bookReferences": [
+        {
+          "title": "آلان ديب، خطة تسويقية في صفحة واحدة",
+          "section": "الفصلان 3 و6: قياس الاستجابة وتحويل المبيعات"
+        }
+      ],
+      "officialReferences": [
+        {
+          "title": "Google Ads · تعريف معدل النقر",
+          "url": "https://support.google.com/google-ads/answer/2615875"
+        },
+        {
+          "title": "Meta Blueprint · دليل الجمهور",
+          "url": "https://www.facebookblueprint.com/student/catalog/"
+        }
+      ],
+      "status": "present; advanced instructional approval open",
+      "independentHumanReview": false,
+      "actions": [
+        "معايرة بشرية للأسئلة ومواءمة الهدف والتقييم",
+        "إثبات مرجعي أدق من مجرد رابط بوابة",
+        "توسيع التطبيق المتقدم والأمثلة؛ الشرح الحالي درس مصغر",
+        "تأليف حالة نقل مستقلة بدل إعادة سؤال الاختبار",
+        "كتابة خلاصة معرفة وقرار بدل تكرار الهدف",
+        "استبدال مشتتات غير مرتبطة بالمجال"
+      ]
+    },
+    {
+      "id": "m10-l01",
+      "module": 10,
+      "title": "خطة القياس والأحداث",
+      "readingWords": 151,
+      "readingParagraphs": 3,
+      "questions": 5,
+      "practicalActivity": true,
+      "dailyMission": true,
+      "rubricItems": 3,
+      "generatedCase": true,
+      "repeatedSummary": true,
+      "weakDistractors": [
+        "m10-l01-q4"
+      ],
+      "answerLengthCue": [
+        "m10-l01-q2",
+        "m10-l01-q4"
+      ],
+      "bookReferences": [
+        {
+          "title": "آلان ديب، خطة تسويقية في صفحة واحدة",
+          "section": "الفصل 3: قياس الوسائل؛ الفصل 8: قيمة العلاقة"
+        }
+      ],
+      "officialReferences": [
+        {
+          "title": "Google Analytics · إعداد القياس",
+          "url": "https://support.google.com/analytics/answer/9304153"
+        },
+        {
+          "title": "Google · سياسة موافقة المستخدم الأوروبي",
+          "url": "https://www.google.com/about/company/user-consent-policy/"
+        }
+      ],
+      "status": "present; advanced instructional approval open",
+      "independentHumanReview": false,
+      "actions": [
+        "معايرة بشرية للأسئلة ومواءمة الهدف والتقييم",
+        "إثبات مرجعي أدق من مجرد رابط بوابة",
+        "توسيع التطبيق المتقدم والأمثلة؛ الشرح الحالي درس مصغر",
+        "تأليف حالة نقل مستقلة بدل إعادة سؤال الاختبار",
+        "كتابة خلاصة معرفة وقرار بدل تكرار الهدف",
+        "استبدال مشتتات غير مرتبطة بالمجال"
+      ]
+    },
+    {
+      "id": "m10-l02",
+      "module": 10,
+      "title": "وسوم UTM وإسناد القنوات",
+      "readingWords": 150,
+      "readingParagraphs": 3,
+      "questions": 5,
+      "practicalActivity": true,
+      "dailyMission": true,
+      "rubricItems": 3,
+      "generatedCase": true,
+      "repeatedSummary": true,
+      "weakDistractors": [],
+      "answerLengthCue": [
+        "m10-l02-q1",
+        "m10-l02-q3",
+        "m10-l02-q5"
+      ],
+      "bookReferences": [
+        {
+          "title": "آلان ديب، خطة تسويقية في صفحة واحدة",
+          "section": "الفصل 3: قياس الوسائل؛ الفصل 8: قيمة العلاقة"
+        }
+      ],
+      "officialReferences": [
+        {
+          "title": "Google Analytics · إعداد القياس",
+          "url": "https://support.google.com/analytics/answer/9304153"
+        }
+      ],
+      "status": "present; advanced instructional approval open",
+      "independentHumanReview": false,
+      "actions": [
+        "معايرة بشرية للأسئلة ومواءمة الهدف والتقييم",
+        "إثبات مرجعي أدق من مجرد رابط بوابة",
+        "توسيع التطبيق المتقدم والأمثلة؛ الشرح الحالي درس مصغر",
+        "تأليف حالة نقل مستقلة بدل إعادة سؤال الاختبار",
+        "كتابة خلاصة معرفة وقرار بدل تكرار الهدف"
+      ]
+    },
+    {
+      "id": "m10-l03",
+      "module": 10,
+      "title": "لوحة مؤشرات تعطي قرارًا",
+      "readingWords": 147,
+      "readingParagraphs": 3,
+      "questions": 5,
+      "practicalActivity": true,
+      "dailyMission": true,
+      "rubricItems": 3,
+      "generatedCase": true,
+      "repeatedSummary": true,
+      "weakDistractors": [
+        "m10-l03-q2",
+        "m10-l03-q4"
+      ],
+      "answerLengthCue": [
+        "m10-l03-q4"
+      ],
+      "bookReferences": [
+        {
+          "title": "آلان ديب، خطة تسويقية في صفحة واحدة",
+          "section": "الفصل 3: قياس الوسائل؛ الفصل 8: قيمة العلاقة"
+        }
+      ],
+      "officialReferences": [
+        {
+          "title": "Google Analytics · إعداد القياس",
+          "url": "https://support.google.com/analytics/answer/9304153"
+        },
+        {
+          "title": "W3C · كتابة محتوى متاح للجميع",
+          "url": "https://www.w3.org/WAI/tips/writing/"
+        }
+      ],
+      "status": "present; advanced instructional approval open",
+      "independentHumanReview": false,
+      "actions": [
+        "معايرة بشرية للأسئلة ومواءمة الهدف والتقييم",
+        "إثبات مرجعي أدق من مجرد رابط بوابة",
+        "توسيع التطبيق المتقدم والأمثلة؛ الشرح الحالي درس مصغر",
+        "تأليف حالة نقل مستقلة بدل إعادة سؤال الاختبار",
+        "كتابة خلاصة معرفة وقرار بدل تكرار الهدف",
+        "استبدال مشتتات غير مرتبطة بالمجال"
+      ]
+    },
+    {
+      "id": "m10-l04",
+      "module": 10,
+      "title": "تحليل القمع وتجزئة النتائج",
+      "readingWords": 149,
+      "readingParagraphs": 3,
+      "questions": 5,
+      "practicalActivity": true,
+      "dailyMission": true,
+      "rubricItems": 3,
+      "generatedCase": true,
+      "repeatedSummary": true,
+      "weakDistractors": [],
+      "answerLengthCue": [
+        "m10-l04-q2"
+      ],
+      "bookReferences": [
+        {
+          "title": "آلان ديب، خطة تسويقية في صفحة واحدة",
+          "section": "الفصل 3: قياس الوسائل؛ الفصل 8: قيمة العلاقة"
+        }
+      ],
+      "officialReferences": [
+        {
+          "title": "Google Analytics · إعداد القياس",
+          "url": "https://support.google.com/analytics/answer/9304153"
+        }
+      ],
+      "status": "present; advanced instructional approval open",
+      "independentHumanReview": false,
+      "actions": [
+        "معايرة بشرية للأسئلة ومواءمة الهدف والتقييم",
+        "إثبات مرجعي أدق من مجرد رابط بوابة",
+        "توسيع التطبيق المتقدم والأمثلة؛ الشرح الحالي درس مصغر",
+        "تأليف حالة نقل مستقلة بدل إعادة سؤال الاختبار",
+        "كتابة خلاصة معرفة وقرار بدل تكرار الهدف"
+      ]
+    },
+    {
+      "id": "m10-l05",
+      "module": 10,
+      "title": "تقرير العميل وحدود البيانات",
+      "readingWords": 144,
+      "readingParagraphs": 3,
+      "questions": 5,
+      "practicalActivity": true,
+      "dailyMission": true,
+      "rubricItems": 3,
+      "generatedCase": true,
+      "repeatedSummary": true,
+      "weakDistractors": [],
+      "answerLengthCue": [
+        "m10-l05-q2",
+        "m10-l05-q5"
+      ],
+      "bookReferences": [
+        {
+          "title": "آلان ديب، خطة تسويقية في صفحة واحدة",
+          "section": "الفصل 3: قياس الوسائل؛ الفصل 8: قيمة العلاقة"
+        }
+      ],
+      "officialReferences": [
+        {
+          "title": "Google Analytics · إعداد القياس",
+          "url": "https://support.google.com/analytics/answer/9304153"
+        },
+        {
+          "title": "HubSpot Academy · Digital Marketing",
+          "url": "https://academy.hubspot.com/courses/digital-marketing"
+        }
+      ],
+      "status": "present; advanced instructional approval open",
+      "independentHumanReview": false,
+      "actions": [
+        "معايرة بشرية للأسئلة ومواءمة الهدف والتقييم",
+        "إثبات مرجعي أدق من مجرد رابط بوابة",
+        "توسيع التطبيق المتقدم والأمثلة؛ الشرح الحالي درس مصغر",
+        "تأليف حالة نقل مستقلة بدل إعادة سؤال الاختبار",
+        "كتابة خلاصة معرفة وقرار بدل تكرار الهدف"
+      ]
+    },
+    {
+      "id": "m11-l01",
+      "module": 11,
+      "title": "فرضية التجربة وترتيب الاختبارات",
+      "readingWords": 156,
+      "readingParagraphs": 3,
+      "questions": 5,
+      "practicalActivity": true,
+      "dailyMission": true,
+      "rubricItems": 3,
+      "generatedCase": true,
+      "repeatedSummary": true,
+      "weakDistractors": [
+        "m11-l01-q5"
+      ],
+      "answerLengthCue": [
+        "m11-l01-q1",
+        "m11-l01-q5"
+      ],
+      "bookReferences": [
+        {
+          "title": "سيث جودين، هذا هو التسويق",
+          "section": "الفصل 17: الإذن والانتباه"
+        },
+        {
+          "title": "سيث جودين، كل المسوقون يسردون قصصًا",
+          "section": "الأصالة وعواقب القصة المضللة"
+        }
+      ],
+      "officialReferences": [
+        {
+          "title": "Google Analytics · إعداد القياس",
+          "url": "https://support.google.com/analytics/answer/9304153"
+        },
+        {
+          "title": "HubSpot Academy · Digital Marketing",
+          "url": "https://academy.hubspot.com/courses/digital-marketing"
+        }
+      ],
+      "status": "present; advanced instructional approval open",
+      "independentHumanReview": false,
+      "actions": [
+        "معايرة بشرية للأسئلة ومواءمة الهدف والتقييم",
+        "إثبات مرجعي أدق من مجرد رابط بوابة",
+        "توسيع التطبيق المتقدم والأمثلة؛ الشرح الحالي درس مصغر",
+        "تأليف حالة نقل مستقلة بدل إعادة سؤال الاختبار",
+        "كتابة خلاصة معرفة وقرار بدل تكرار الهدف",
+        "استبدال مشتتات غير مرتبطة بالمجال"
+      ]
+    },
+    {
+      "id": "m11-l02",
+      "module": 11,
+      "title": "اختبار A/B وعدم اليقين",
+      "readingWords": 155,
+      "readingParagraphs": 3,
+      "questions": 5,
+      "practicalActivity": true,
+      "dailyMission": true,
+      "rubricItems": 3,
+      "generatedCase": true,
+      "repeatedSummary": true,
+      "weakDistractors": [],
+      "answerLengthCue": [
+        "m11-l02-q5"
+      ],
+      "bookReferences": [
+        {
+          "title": "سيث جودين، هذا هو التسويق",
+          "section": "الفصل 17: الإذن والانتباه"
+        },
+        {
+          "title": "سيث جودين، كل المسوقون يسردون قصصًا",
+          "section": "الأصالة وعواقب القصة المضللة"
+        }
+      ],
+      "officialReferences": [
+        {
+          "title": "Google Analytics · إعداد القياس",
+          "url": "https://support.google.com/analytics/answer/9304153"
+        }
+      ],
+      "status": "present; advanced instructional approval open",
+      "independentHumanReview": false,
+      "actions": [
+        "معايرة بشرية للأسئلة ومواءمة الهدف والتقييم",
+        "إثبات مرجعي أدق من مجرد رابط بوابة",
+        "توسيع التطبيق المتقدم والأمثلة؛ الشرح الحالي درس مصغر",
+        "تأليف حالة نقل مستقلة بدل إعادة سؤال الاختبار",
+        "كتابة خلاصة معرفة وقرار بدل تكرار الهدف"
+      ]
+    },
+    {
+      "id": "m11-l03",
+      "module": 11,
+      "title": "تحسين التحويل واختبار الاستخدام",
+      "readingWords": 149,
+      "readingParagraphs": 3,
+      "questions": 5,
+      "practicalActivity": true,
+      "dailyMission": true,
+      "rubricItems": 3,
+      "generatedCase": true,
+      "repeatedSummary": true,
+      "weakDistractors": [
+        "m11-l03-q1"
+      ],
+      "answerLengthCue": [
+        "m11-l03-q1",
+        "m11-l03-q4"
+      ],
+      "bookReferences": [
+        {
+          "title": "سيث جودين، هذا هو التسويق",
+          "section": "الفصل 17: الإذن والانتباه"
+        },
+        {
+          "title": "سيث جودين، كل المسوقون يسردون قصصًا",
+          "section": "الأصالة وعواقب القصة المضللة"
+        }
+      ],
+      "officialReferences": [
+        {
+          "title": "W3C · كتابة محتوى متاح للجميع",
+          "url": "https://www.w3.org/WAI/tips/writing/"
+        },
+        {
+          "title": "Google Analytics · إعداد القياس",
+          "url": "https://support.google.com/analytics/answer/9304153"
+        }
+      ],
+      "status": "present; advanced instructional approval open",
+      "independentHumanReview": false,
+      "actions": [
+        "معايرة بشرية للأسئلة ومواءمة الهدف والتقييم",
+        "إثبات مرجعي أدق من مجرد رابط بوابة",
+        "توسيع التطبيق المتقدم والأمثلة؛ الشرح الحالي درس مصغر",
+        "تأليف حالة نقل مستقلة بدل إعادة سؤال الاختبار",
+        "كتابة خلاصة معرفة وقرار بدل تكرار الهدف",
+        "استبدال مشتتات غير مرتبطة بالمجال"
+      ]
+    },
+    {
+      "id": "m11-l04",
+      "module": 11,
+      "title": "الخصوصية والأخلاقيات في التسويق",
+      "readingWords": 149,
+      "readingParagraphs": 3,
+      "questions": 5,
+      "practicalActivity": true,
+      "dailyMission": true,
+      "rubricItems": 3,
+      "generatedCase": true,
+      "repeatedSummary": true,
+      "weakDistractors": [],
+      "answerLengthCue": [
+        "m11-l04-q4"
+      ],
+      "bookReferences": [
+        {
+          "title": "سيث جودين، هذا هو التسويق",
+          "section": "الفصل 17: الإذن والانتباه"
+        },
+        {
+          "title": "سيث جودين، كل المسوقون يسردون قصصًا",
+          "section": "الأصالة وعواقب القصة المضللة"
+        }
+      ],
+      "officialReferences": [
+        {
+          "title": "Google · سياسة موافقة المستخدم الأوروبي",
+          "url": "https://www.google.com/about/company/user-consent-policy/"
+        },
+        {
+          "title": "FTC · الإفصاح عن العلاقة الإعلانية",
+          "url": "https://www.ftc.gov/business-guidance/resources/disclosures-101-social-media-influencers"
+        },
+        {
+          "title": "W3C · كتابة محتوى متاح للجميع",
+          "url": "https://www.w3.org/WAI/tips/writing/"
+        }
+      ],
+      "status": "present; advanced instructional approval open",
+      "independentHumanReview": false,
+      "actions": [
+        "معايرة بشرية للأسئلة ومواءمة الهدف والتقييم",
+        "إثبات مرجعي أدق من مجرد رابط بوابة",
+        "توسيع التطبيق المتقدم والأمثلة؛ الشرح الحالي درس مصغر",
+        "تأليف حالة نقل مستقلة بدل إعادة سؤال الاختبار",
+        "كتابة خلاصة معرفة وقرار بدل تكرار الهدف"
+      ]
+    },
+    {
+      "id": "m11-l05",
+      "module": 11,
+      "title": "الأمن التشغيلي وأدوات الذكاء الاصطناعي",
+      "readingWords": 156,
+      "readingParagraphs": 3,
+      "questions": 5,
+      "practicalActivity": true,
+      "dailyMission": true,
+      "rubricItems": 3,
+      "generatedCase": true,
+      "repeatedSummary": true,
+      "weakDistractors": [],
+      "answerLengthCue": [
+        "m11-l05-q1",
+        "m11-l05-q3",
+        "m11-l05-q4"
+      ],
+      "bookReferences": [
+        {
+          "title": "سيث جودين، هذا هو التسويق",
+          "section": "الفصل 17: الإذن والانتباه"
+        },
+        {
+          "title": "سيث جودين، كل المسوقون يسردون قصصًا",
+          "section": "الأصالة وعواقب القصة المضللة"
+        }
+      ],
+      "officialReferences": [
+        {
+          "title": "Google · سياسة موافقة المستخدم الأوروبي",
+          "url": "https://www.google.com/about/company/user-consent-policy/"
+        },
+        {
+          "title": "HubSpot Academy · Digital Marketing",
+          "url": "https://academy.hubspot.com/courses/digital-marketing"
+        }
+      ],
+      "status": "present; advanced instructional approval open",
+      "independentHumanReview": false,
+      "actions": [
+        "معايرة بشرية للأسئلة ومواءمة الهدف والتقييم",
+        "إثبات مرجعي أدق من مجرد رابط بوابة",
+        "توسيع التطبيق المتقدم والأمثلة؛ الشرح الحالي درس مصغر",
+        "تأليف حالة نقل مستقلة بدل إعادة سؤال الاختبار",
+        "كتابة خلاصة معرفة وقرار بدل تكرار الهدف"
+      ]
+    },
+    {
+      "id": "m12-l01",
+      "module": 12,
+      "title": "موجز مشروع التخرج ونطاقه",
+      "readingWords": 148,
+      "readingParagraphs": 3,
+      "questions": 5,
+      "practicalActivity": true,
+      "dailyMission": true,
+      "rubricItems": 3,
+      "generatedCase": true,
+      "repeatedSummary": true,
+      "weakDistractors": [],
+      "answerLengthCue": [
+        "m12-l01-q3"
+      ],
+      "bookReferences": [
+        {
+          "title": "آلان ديب، خطة تسويقية في صفحة واحدة",
+          "section": "مراحل قبل وأثناء وبعد الشراء، الفصول 1–9"
+        }
+      ],
+      "officialReferences": [
+        {
+          "title": "HubSpot Academy · Digital Marketing",
+          "url": "https://academy.hubspot.com/courses/digital-marketing"
+        },
+        {
+          "title": "Google · Digital Marketing & E-commerce — Foundations",
+          "url": "https://grow.google/certificates/digital-marketing-ecommerce/"
+        }
+      ],
+      "status": "present; advanced instructional approval open",
+      "independentHumanReview": false,
+      "actions": [
+        "معايرة بشرية للأسئلة ومواءمة الهدف والتقييم",
+        "إثبات مرجعي أدق من مجرد رابط بوابة",
+        "توسيع التطبيق المتقدم والأمثلة؛ الشرح الحالي درس مصغر",
+        "تأليف حالة نقل مستقلة بدل إعادة سؤال الاختبار",
+        "كتابة خلاصة معرفة وقرار بدل تكرار الهدف"
+      ]
+    },
+    {
+      "id": "m12-l02",
+      "module": 12,
+      "title": "دمج البحث والخطة في قرار واحد",
+      "readingWords": 143,
+      "readingParagraphs": 3,
+      "questions": 5,
+      "practicalActivity": true,
+      "dailyMission": true,
+      "rubricItems": 3,
+      "generatedCase": true,
+      "repeatedSummary": true,
+      "weakDistractors": [],
+      "answerLengthCue": [],
+      "bookReferences": [
+        {
+          "title": "آلان ديب، خطة تسويقية في صفحة واحدة",
+          "section": "مراحل قبل وأثناء وبعد الشراء، الفصول 1–9"
+        }
+      ],
+      "officialReferences": [
+        {
+          "title": "HubSpot Academy · Digital Marketing",
+          "url": "https://academy.hubspot.com/courses/digital-marketing"
+        },
+        {
+          "title": "Google · Digital Marketing & E-commerce — Foundations",
+          "url": "https://grow.google/certificates/digital-marketing-ecommerce/"
+        }
+      ],
+      "status": "present; advanced instructional approval open",
+      "independentHumanReview": false,
+      "actions": [
+        "معايرة بشرية للأسئلة ومواءمة الهدف والتقييم",
+        "إثبات مرجعي أدق من مجرد رابط بوابة",
+        "توسيع التطبيق المتقدم والأمثلة؛ الشرح الحالي درس مصغر",
+        "تأليف حالة نقل مستقلة بدل إعادة سؤال الاختبار",
+        "كتابة خلاصة معرفة وقرار بدل تكرار الهدف"
+      ]
+    },
+    {
+      "id": "m12-l03",
+      "module": 12,
+      "title": "حزمة الحملة وضمان جودتها",
+      "readingWords": 145,
+      "readingParagraphs": 3,
+      "questions": 5,
+      "practicalActivity": true,
+      "dailyMission": true,
+      "rubricItems": 3,
+      "generatedCase": true,
+      "repeatedSummary": true,
+      "weakDistractors": [
+        "m12-l03-q2"
+      ],
+      "answerLengthCue": [
+        "m12-l03-q4",
+        "m12-l03-q5"
+      ],
+      "bookReferences": [
+        {
+          "title": "آلان ديب، خطة تسويقية في صفحة واحدة",
+          "section": "مراحل قبل وأثناء وبعد الشراء، الفصول 1–9"
+        }
+      ],
+      "officialReferences": [
+        {
+          "title": "W3C · كتابة محتوى متاح للجميع",
+          "url": "https://www.w3.org/WAI/tips/writing/"
+        },
+        {
+          "title": "Google Analytics · إعداد القياس",
+          "url": "https://support.google.com/analytics/answer/9304153"
+        }
+      ],
+      "status": "present; advanced instructional approval open",
+      "independentHumanReview": false,
+      "actions": [
+        "معايرة بشرية للأسئلة ومواءمة الهدف والتقييم",
+        "إثبات مرجعي أدق من مجرد رابط بوابة",
+        "توسيع التطبيق المتقدم والأمثلة؛ الشرح الحالي درس مصغر",
+        "تأليف حالة نقل مستقلة بدل إعادة سؤال الاختبار",
+        "كتابة خلاصة معرفة وقرار بدل تكرار الهدف",
+        "استبدال مشتتات غير مرتبطة بالمجال"
+      ]
+    },
+    {
+      "id": "m12-l04",
+      "module": 12,
+      "title": "محاكاة النتائج والقرار الاقتصادي",
+      "readingWords": 162,
+      "readingParagraphs": 3,
+      "questions": 5,
+      "practicalActivity": true,
+      "dailyMission": true,
+      "rubricItems": 3,
+      "generatedCase": true,
+      "repeatedSummary": true,
+      "weakDistractors": [],
+      "answerLengthCue": [
+        "m12-l04-q4"
+      ],
+      "bookReferences": [
+        {
+          "title": "آلان ديب، خطة تسويقية في صفحة واحدة",
+          "section": "مراحل قبل وأثناء وبعد الشراء، الفصول 1–9"
+        }
+      ],
+      "officialReferences": [
+        {
+          "title": "Google Ads · تعريف معدل النقر",
+          "url": "https://support.google.com/google-ads/answer/2615875"
+        },
+        {
+          "title": "Google Analytics · إعداد القياس",
+          "url": "https://support.google.com/analytics/answer/9304153"
+        }
+      ],
+      "status": "present; advanced instructional approval open",
+      "independentHumanReview": false,
+      "actions": [
+        "معايرة بشرية للأسئلة ومواءمة الهدف والتقييم",
+        "إثبات مرجعي أدق من مجرد رابط بوابة",
+        "توسيع التطبيق المتقدم والأمثلة؛ الشرح الحالي درس مصغر",
+        "تأليف حالة نقل مستقلة بدل إعادة سؤال الاختبار",
+        "كتابة خلاصة معرفة وقرار بدل تكرار الهدف"
+      ]
+    },
+    {
+      "id": "m12-l05",
+      "module": 12,
+      "title": "نشر ملف الأعمال ومراجعة التخرج",
+      "readingWords": 145,
+      "readingParagraphs": 3,
+      "questions": 5,
+      "practicalActivity": true,
+      "dailyMission": true,
+      "rubricItems": 3,
+      "generatedCase": true,
+      "repeatedSummary": true,
+      "weakDistractors": [],
+      "answerLengthCue": [
+        "m12-l05-q2",
+        "m12-l05-q5"
+      ],
+      "bookReferences": [
+        {
+          "title": "آلان ديب، خطة تسويقية في صفحة واحدة",
+          "section": "مراحل قبل وأثناء وبعد الشراء، الفصول 1–9"
+        }
+      ],
+      "officialReferences": [
+        {
+          "title": "W3C · كتابة محتوى متاح للجميع",
+          "url": "https://www.w3.org/WAI/tips/writing/"
+        },
+        {
+          "title": "HubSpot Academy · Digital Marketing",
+          "url": "https://academy.hubspot.com/courses/digital-marketing"
+        }
+      ],
+      "status": "present; advanced instructional approval open",
+      "independentHumanReview": false,
+      "actions": [
+        "معايرة بشرية للأسئلة ومواءمة الهدف والتقييم",
+        "إثبات مرجعي أدق من مجرد رابط بوابة",
+        "توسيع التطبيق المتقدم والأمثلة؛ الشرح الحالي درس مصغر",
+        "تأليف حالة نقل مستقلة بدل إعادة سؤال الاختبار",
+        "كتابة خلاصة معرفة وقرار بدل تكرار الهدف"
+      ]
+    }
+  ]
+}

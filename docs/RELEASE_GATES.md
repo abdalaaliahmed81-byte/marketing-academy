@@ -1,19 +1,22 @@
 # Release gates
 
-| Gate | Required evidence | Initial state |
-|---|---|---|
-|G01 Source preservation|Stable app origin/IDs, source inventory, no user-data deletion|In progress|
-|G02 SQLite runtime|Actual Electron and Node SQLite capability; transactional schema/reopen test|In progress|
-|G03 Migration|Real legacy-IDB account → SQLite; readback equality, source preserved, collision/retry tests|Not run|
-|G04 Account isolation|Wrong password, per-user encrypted rows, no cross-owner commits, stale revision rejection|Not run for new engine|
-|G05 Atomicity|Failure/invalid restore leaves old progress intact; acknowledged write before success|Not run for new engine|
-|G06 IPC/API|Sender allowlist, no raw SQL/path interface, origin/CSRF/session/rate/body-limit tests|Not run|
-|G07 Learning regressions|All lessons and existing flows, notes, missions, projects, backup/restore|Baseline running|
-|G08 Accessibility|Keyboard/dialog/reduced motion, mobile/dark views, automated axe; manual limits disclosed|Baseline exists; rerun changes|
-|G09 Packaging|Version-aware x64 EXE runs with SQLite and restart persistence; unsigned status disclosed|Pending|
-|G10 Supply chain|Production audit and full tooling findings; no proprietary books/data/secrets; action pinning|Running|
-|G11 Educational completeness|60-row source/depth/assessment review; corrections preserve historical scoring|Pending audit|
-|G12 Professional educational approval|Named competent independent Arabic instructional review and learner feedback if claimed|Not performed; blocks that claim|
-|G13 Publish|Exact-commit checks, asset digests, source archive and readback|No new release requested by this audit|
+Applies to2.1.0 audit source. Published v2.0.0 is unchanged. AI_PROGRESS records final executed evidence and CI links; a workflow definition alone is never a pass.
 
-Audit documentation may be completed with open educational approval gates if they are explicitly recorded. Do not present an architecture design as implemented, or an implementation as tested, without evidence. Existing v2.0.0 assets remain unchanged.
+|Gate|Evidence / condition|Status|
+|---|---|---|
+|G01 Preserve source and progress|Stable app origin/IDs, inventory, retained IDB sources, no runtime data in Git|Passed code/fixture checks; unseen real learner profile not supplied|
+|G02 Real SQLite|Node and Electron actual engine, schema/open/reopen/integrity|Passed local unit and Electron smoke; Windows evidence recorded separately|
+|G03 Migration|Actual legacy-IDB→SQLite login, readback, completed state/note/quiz/project/source fingerprint|Passed Linux Electron; built Windows must also pass|
+|G04 Account isolation|Wrong password, per-owner encrypted records, owner mismatch, revision conflicts, concurrent password changes|Passed automated engine/repository/API checks|
+|G05 Atomicity|Invalid restore and actual SQL trigger abort preserve old snapshot; no unacknowledged UI success|Passed engine and repository tests|
+|G06 IPC/API|Narrow sender/command boundary, CSRF/origin/cookies/body limits/rate/session tests|Passed checks within documented threat model; no external penetration test|
+|G07 Learning regressions|Original domain + full60-lesson browser path, notes/missions/projects/backups|Executed checks recorded in AI_PROGRESS|
+|G08 Accessibility|Keyboard/dialog, RTL320/390/1280 widths, reduced motion, light/dark axe|Executed browser checks; manual screen reader/assistive-user review remains unverified|
+|G09 Packaging|Actual built x64 portable EXE + SQLite and legacy migration smoke, restart, PE header/digests|Requires successful Windows job for exact release commit; unsigned status disclosed|
+|G10 Supply chain|No production advisories, no high/critical tooling findings, source guard, pinned actions|Dependency report records exact counts; low/moderate tooling residual accepted/disclosed|
+|G11 Educational audit coverage|60-row matrix +3-PDF metadata/source inspection +question/case/depth metrics|Completed bounded audit; evidence depth clearly labeled|
+|G12 Advanced educational readiness|Expand flagged micro-lessons, independent cases/summaries, item moderation, claim-level current sources, qualified independent Arabic review|OPEN; blocks advanced/professionally-reviewed completion claims|
+|G13 Publication|Exact-commit web/Windows verification, asset digests/source archive/readback, correct release notes|Not executed for2.1.0; this audit does not publish a new release|
+|G14 GitHub configuration assurance|Admin-setting readback, branch/rules protections, signing configuration if claimed|PARTIAL: read endpoints403. Do not infer missing controls from denial|
+
+Automated technical gates may pass while educational readiness remains open. Structural60/300/12 counts do not override G12. No release or deployment may be described as verified solely because scripts or workflow files exist. Keep unverified claims explicit and retain the prior release until any replacement's gates pass.

@@ -1,6 +1,6 @@
 import {NotesButton} from './Notes'
 import {Link} from 'react-router-dom'
-import {useLiveQuery} from 'dexie-react-hooks'
+import {useLiveQuery} from './storage/query'
 import {lessons} from './lessons'
 import {modules} from './curriculum'
 import {db,isUnlocked} from './db'

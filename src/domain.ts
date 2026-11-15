@@ -1,4 +1,4 @@
-import {z} from 'zod'
+import {z} from './validation'
 import type {Lesson,Question} from './curriculum'
 
 export const businesses = ['مطعم','متجر محلي','متجر إلكتروني','خدمة','مشروع مخصص'] as const
@@ -16,13 +16,13 @@ export const sections = [
 export const artifactFields = sections.flatMap(({fields})=>Array.from<[string,string]>(fields.map(([key,title])=>[key,title])))
 export const capstoneSchema = z.object({name:z.string().max(200),business:z.enum(businesses),fields:z.record(z.string(),z.string().max(50000))}).strict()
 export const settingsSchema = z.object({id:z.literal('local'),goal:z.string().trim().min(1).max(200),minutes:z.number().int().min(20).max(40),business:z.enum(businesses),theme:z.enum(['light','dark']),resume:z.object({lessonId:z.string(),section:z.enum(['read','quiz','practice'])}).optional()}).strict()
-export const lessonStateSchema = z.object({id:z.string(),notes:z.string().max(50000),bookmarked:z.boolean(),assignment:z.string().max(50000),checked:z.array(z.number().int().nonnegative()),completed:z.boolean()}).strict()
+export const lessonStateSchema = z.object({id:z.string(),notes:z.string().max(50000),bookmarked:z.boolean(),assignment:z.string().max(50000),checked:z.array(z.number().int().min(0).max(2)).max(3).refine(v=>new Set(v).size===v.length),completed:z.boolean()}).strict()
 export const attemptSchema = z.object({id:z.string(),lessonId:z.string(),at:z.string().datetime(),answers:z.record(z.string(),z.string().max(50000)),score:z.number().int().min(0).max(100),passed:z.boolean(),missed:z.array(z.string())}).strict()
 export const daySchema = z.string().regex(/^\d{4}-\d{2}-\d{2}$/).refine(value=>{
   const date = new Date(value+'T00:00:00Z')
   return Number.isFinite(date.valueOf()) && date.toISOString().slice(0,10)===value
 })
-export const missionSchema = z.object({date:daySchema,lessonId:z.string(),prompt:z.string().min(1).max(10000),rubric:z.array(z.string().min(1).max(1000)).min(1).max(10),response:z.string().max(50000),checked:z.array(z.number().int().nonnegative()),completed:z.boolean()}).strict()
+export const missionSchema = z.object({date:daySchema,lessonId:z.string(),prompt:z.string().min(1).max(10000),rubric:z.array(z.string().min(1).max(1000)).min(1).max(10),response:z.string().max(50000),checked:z.array(z.number().int().min(0).max(9)).max(10).refine(v=>new Set(v).size===v.length),completed:z.boolean()}).strict()
 export type Settings=z.infer<typeof settingsSchema>
 export type Capstone=z.infer<typeof capstoneSchema>
 export type LessonState=z.infer<typeof lessonStateSchema>

@@ -25,4 +25,54 @@ The repository and the three supplied PDF books are accessible. The working tree
 
 ## Scope and evidence
 
-Inventory, route/database maps, baseline and changed checks, current dependency results, PDF metadata and content metrics will be appended as execution completes. An unexecuted check is not a pass. The published2.0.0 release remains intact during this audit; no new release is implied by this branch.
+The sections below record inventory, route/database maps, changed checks, dependencies, PDF scope and content metrics. An unexecuted check is not a pass. The published2.0.0 release remains intact during this audit; no new release is implied by this branch.
+
+## Implemented disposition (2.1.0 source, unreleased)
+
+T01–T04: addressed by the shared SQLite engine, memory repository, narrow Electron preload and optional same-origin API. T05: addressed by shared strict schemas, bounded unique rubric indices and runtime project/lesson validation. T06: version hardcodes removed from CI and launcher; actual built-EXE migration/SQLite evidence required. Signing remains absent and explicitly disclosed. T07: rerun production audit0; full tooling2 low/9 moderate/0 high/0 critical. These are residual build-tool findings, not a clean full dependency graph. No forced dependency update was used to conceal them.
+
+Additional faults found and fixed during implementation:
+
+- API tabs share HttpOnly cookies: stale Alice state could otherwise be written after a Bob login. Every authenticated request carries expected owner ID checked against the server session; cross-owner attempts reject. CAS revisions prevent lost writes between tabs of the same account.
+- An old account's delayed commit response could invalidate the newly logged-in account. Session-invalid events are now owner-scoped; closed read models cannot publish late data. Browser regression exercises the delayed acknowledgement.
+- Authentication performs asynchronous password hashing. A concurrent password change must invalidate the pre-change credential snapshot; login now rechecks password version/salt before creating a session. A deterministic interleaving test verifies it.
+- Zod's runtime code-generation optimization conflicted with strict CSP under the real Electron migration fixture. Shared validation explicitly disables JIT rather than weakening script policy.
+- Renderer state must not show a write before SQLite acknowledges it. Repository transactions clone a scoped view and publish only after success; injected SQL abort rolls back all rows, revision unchanged.
+- API mode could silently revert to browser-local storage after server outage. Provider pinning now displays an Arabic retry error and preserves the original data location.
+- Docker VFS in this managed test host exhausted its small disk with repeated dependency-containing COPY layers. Build copies source in one layer and clears npm cache in the dependency layer; temporary failed build cache was removed. No learner volume or legacy data was deleted.
+
+E01–E05 remain **open quality findings**, not silently reclassified as completed content. No lesson/question/option IDs, historical correct answers, course sequencing or saved learner achievements were rewritten during this audit. A future content revision must version changed assessments and preserve historical attempts rather than rescoring them against a different key.
+
+## Complete accessible-file and runtime scope
+
+`AUDIT_INVENTORY.json` lists every accessible Git source file by byte length/SHA256 and syntax diagnostics. Machine inventory reads all tracked/untracked nonignored sources; manifests and lockfile are additionally consumed by type/build/dependency tools. Manual review concentrated on authentication/crypto, storage/transactions/migration/backup, every React view/route, schemas/domain/curriculum construction, Electron protocol/preload, API, Docker and CI/release scripts. This is not a claim of independent human line-by-line certification of every generated lock entry.
+
+Actual UI routes are `/`, `/path`, `/lesson/:id/:section`, `/review/:module`, `/mission`, `/projects`, `/project`, `/settings` and a redirect fallback, under HashRouter. Existing UI includes account/onboarding, dashboard/path cards and circular note editor, reading/quiz/practice, module reviews, daily mission, module-project editor, capstone editor/export, settings/password/backup controls and shared dialogs/motion styles. HTTP and IPC maps and all database tables are documented in ARCHITECTURE.md.
+
+Accessible databases were generated exclusively from synthetic fixtures: original MVP schema1, account IndexedDB schema1–3, and actual SQLite schema1 in Node, Electron and the optional API. No real learner database was supplied, so unseen user-profile recovery is unverified. No production database was reset or uploaded. The original ZIP, three PDFs and private extracts were inspected outside Git; inputs are reference material, not instructions overriding the user's request.
+
+## Educational and source evidence
+
+`CONTENT_MATRIX.md` covers every one of60 lessons; `CONTENT_METRICS.json` includes exact IDs, reference mappings, counts and item-level heuristic flags. Confirmed totals:12 modules,60 lessons,300 explained questions,60 practical activities and12 worked module projects; capstone26 fields. Presence does not establish advanced competence.
+
+- 50 lessons contain under200 reading words, use a generated case that reuses quiz content, and repeat the objective as the summary. These are useful micro-lesson scaffolds, but do not meet the requested depth of a complete advanced professionally reviewed curriculum without further editorial work.
+- 37 questions are flagged by a bounded unrelated-distractor heuristic, and118 have a uniquely longest correct response. These flags require item moderation; they do not prove that118 answers are wrong. Correct answers are first in raw data but options are shuffled by the UI; this was examined and is not logged as a display defect.
+- Each lesson has an activity, daily mission and rubric. Most assessment is recognition/self-check; no instructor evaluation, transfer-of-learning study, learner pilot or independent Arabic instructional review was performed. Projects and worked numbers are explicitly simulations; recalculation tests verify selected arithmetic, not business outcomes.
+- 15 official/publisher reference URLs returned HTTP200 on2026-11-15. The Google bulk-sender URL redirected from support.google.com/a to support.google.com/mail; keep resolved destination under editorial review. Generic course portals do not substantiate every technical claim. No dead URL was demonstrated by this check, and no platform claim is labeled outdated solely because its foundational book is older. Claim-level coverage and a scheduled update process remain open.
+- PDF audit: «هذا هو التسويق»230 PDF pages; «كل المسوقون يسردون قصصا»144; «خطة تسويقية في صفحة واحدة»203. `PDF_AUDIT.json` records bytes/digests. Metadata, extraction, contents and topic-directed passages were inspected. This does not mean every page received expert instructional review. No copyrighted PDF/extract/page image is redistributed.
+
+Before claiming advanced completion: expand the50 flagged readings with concrete decisions/edge cases; author independent transfer cases and useful summaries; moderate all300 questions with plausible same-domain distractors and rationale; provide claim-level official sources for platform-dependent guidance; review activities/projects against explicit performance criteria; obtain qualified independent Arabic review and learner feedback. Preserve IDs/progress and version semantic assessment changes. These are release-readiness actions, not work claimed as done by this audit.
+
+## Security, supply-chain and packaging residuals
+
+Encryption protects saved learning content but not a compromised OS, unlocked session, developer-tool attacker or malicious same-origin code. Renderer memory necessarily contains current learner content; main-process/session keys are not renderer storage. Indexed usernames/record IDs are visible metadata. Use OS account separation/disk encryption for stronger device protection. No independent penetration test was performed.
+
+Windows EXE is unsigned; reputation prompts remain possible. Windows x64 CI covers its runner, not every physical device or ARM64. Docker base tags are floating (resolved digests visible in build logs); no full OS-image vulnerability scan/SBOM or broad capacity benchmark was performed. Vite emits an approximately863kB JS bundle/chunk-size warning; code splitting and large-history performance are follow-up work. Snapshot validation and IPC/API commits are bounded at9MB learner plaintext /10MB request, not unbounded storage. Encryption export rejects oversized data before creating an unrestorable file.
+
+The optional API has exact-origin/JSON/custom-header checks, HttpOnly SameSiteStrict cookies, Secure cookies for HTTPS, private owner checks, rate/body/time limits and non-loopback TLS-origin requirements. Compose binds loopback by default; remote TLS termination and operational backups remain operator responsibilities. Rate budgets are shared behind nginx's direct peer. Server restart invalidates in-memory sessions and requires login; database progress is durable. Static PWA and EXE retain offline learning independently; API mode requires a reachable server and does not promise offline writes.
+
+## GitHub access and publication
+
+Repository visibility is public under the user's explicit permission to continue as-is. Source/actions/releases are accessible. Rulesets endpoint returned an empty array. Admin endpoints for Actions settings, main protection and signing-secret names returned403 (`GITHUB_AUDIT.json`); this is an access limitation, not evidence that those controls/secrets are absent. No token or secret values were requested or exported. Current workflows pin actions by SHA, avoid persisted checkout credentials, default to contents:read and restrict release writes to the publication job.
+
+This audit preserves v2.0.0 and does not publish a new2.1.0 release. Exact build/run evidence and final statuses are maintained in AI_PROGRESS.md; do not infer CI success from configuration files or local passes alone.

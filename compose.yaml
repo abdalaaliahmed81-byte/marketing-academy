@@ -1,8 +1,14 @@
 services:
   academy:
-    build: .
+    build:
+      context: .
+      target: web
     ports:
-      - "127.0.0.1:8080:8080"
+      - "127.0.0.1:${ACADEMY_WEB_PORT:-8080}:8080"
+    depends_on:
+      api:
+        condition: service_healthy
+        restart: true
     read_only: true
     tmpfs:
       - /tmp
@@ -11,3 +17,21 @@ services:
     cap_drop:
       - ALL
     restart: unless-stopped
+  api:
+    build:
+      context: .
+      target: api
+    environment:
+      APP_ORIGIN: ${APP_ORIGIN:-http://127.0.0.1:8080}
+    volumes:
+      - academy_data:/data
+    read_only: true
+    tmpfs:
+      - /tmp
+    security_opt:
+      - no-new-privileges:true
+    cap_drop:
+      - ALL
+    restart: unless-stopped
+volumes:
+  academy_data:

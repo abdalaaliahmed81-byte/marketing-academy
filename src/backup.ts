@@ -1,4 +1,4 @@
-import {z} from 'zod'
+import {z} from './validation'
 import {derive,KDF_ITERATIONS} from './auth'
 import {hex,random,seal,unhex,unseal} from './vault'
 const envelope=z.object({format:z.literal('marketing-academy-encrypted'),version:z.literal(1),iterations:z.literal(KDF_ITERATIONS),salt:z.string().regex(/^[0-9a-f]{32}$/),payload:z.string().max(30_000_000)}).strict()

@@ -1,21 +1,47 @@
-# Architecture — shared learning application, SQLite authority
+# Architecture — SQLite authority with shared learning code
 
-Status: implementing and validating. Baseline uses IndexedDB; target behavior must not be claimed until its checks pass.
+Audit branch implementation for **2.1.0 (unreleased)**. Published v2.0.0 remains the historical IndexedDB build. See AUDIT.md and RELEASE_GATES.md for executed checks and open gates.
 
-## Layers
+## Runtime map
 
-1. Shared React/TypeScript curriculum, educational domain, backup schemas and assessment IDs remain independent of transport.
-2. A learner repository presents typed records and transactions. The native/API client keeps a memory read model; state becomes visible only after an acknowledged durable commit. No native account keys or credentials are stored in renderer persistence.
-3. Electron main owns SQLite, cryptography, authentication and authorization. A sandboxed preload exposes an allowlisted request API, never SQL, filesystem paths, Node or arbitrary IPC channels. Sender origin and main-frame ownership are checked in main.
-4. Optional same-origin HTTP API reuses the same engine. It uses HttpOnly sessions, strict origin/JSON checks, rate limits, bounded bodies and TLS requirements for non-loopback deployment. Desktop never needs that HTTP server.
-5. Static PWA remains a supported legacy/offline adapter. API outage must not silently create a second local account store.
+| Layer | Files | Responsibility |
+|---|---|---|
+|Curriculum and learning rules|`src/lessons/`, `curriculum.ts`, `projects.ts`, `domain.ts`|Stable lesson/question/option IDs, scoring, unlocking, missions and portfolio; shared by all deployments|
+|Shared state schemas|`src/data-schema.ts`, `validation.ts`|Canonical v3 state, legacy v1/v2 import, completion/score/ID/size validation; Zod JIT explicitly disabled for strict CSP|
+|UI and business operations|React views, `src/db.ts`, `backup.ts`|Accessible Arabic RTL UI, educational transactions and encrypted portable backups; independent of native/API transport|
+|Repository|`src/storage/repository.ts`, `query.ts`|Memory-only committed read model for native/API; explicit transaction-scoped views and serialized writes; retains legacy Dexie observation|
+|Transport|`protocol.ts`, `transport.ts`|Seven typed commands; no SQL or file paths. Detect desktop first, then same-origin API, else legacy PWA; pinned API never silently falls back during outage|
+|Trusted persistence|`backend/engine.ts`|Actual Node/Electron built-in SQLite, authentication, session/owner authorization, crypto, schema migration and atomic revision commits|
+|Desktop host|`electron/main.cjs`, `preload.cjs`|Bundled Electron runtime, sandboxed renderer, origin/main-frame validation, private token in main, frozen narrow context bridge|
+|Optional HTTP host|`backend/server.ts`|Same engine, same-origin JSON API, HttpOnly cookies, bounded requests, rate limits and origin/CSRF checks|
+|Legacy adapter|`src/legacy-auth.ts`, AcademyDB in `src/db.ts`|Original encrypted per-account IndexedDB and once-only anonymous MVP claim; retained for migration and static PWA|
 
-## Persistence and migration
+React routes: `/`, `/path`, `/lesson/:id/:section`, `/review/:module`, `/projects`, `/project`, `/mission`, `/settings`, plus fallback. They use HashRouter, so packaged paths need no remote routing service. HTTP routes: GET `/api/health` and POST `/api/command`; unknown API paths reject. Commands: `register`, `login`, `logout`, `changePassword`, `read`, `commit`, `migrateLegacy`.
 
-SQLite schema migrations use user_version, foreign keys, WAL, busy timeout and FULL durability. Accounts use slow salted password hashing and a wrapped random data key. Learner record bodies are independently authenticated/encrypted per user; query metadata and usernames are not full-disk encrypted. Every query is scoped by authenticated user ID. Revisions prevent stale concurrent writes; an owner-ID check also prevents a cookie change in another tab from writing one user's read model into another user's account.
+## SQLite model and durability
 
-Migration authenticates the old account, validates its decrypted state, commits and reads back the SQLite copy, then switches the UI. Keep the source IndexedDB unchanged. Existing native username collisions cannot be overwritten by a forged/old credential record. Anonymous MVP data is claimed once explicitly. Backups remain portable and do not contain account credentials.
+The desktop database is `academy.sqlite` inside the **unchanged** Electron userData directory; the app ID remains `com.marketingacademy.desktop`, origin `academy://app`. Do not move these on update. The app does not open an HTTP listener. Node >=24.13 and Electron45.3.2 supply built-in `node:sqlite`; there is no separately rebuilt SQLite addon.
 
-## Deployment boundaries
+SQLite application_id is 0x4d414332 and user_version is1. `schema_migrations` records applied versions; `accounts` holds normalized usernames, salts, verifiers and wrapped random data keys; `account_state` holds owner revision; `learner_records` holds `(user_id, collection, record_id, authenticated_ciphertext)`. Collections: settings, lessonStates, attempts, missions, projects, activity, moduleProjects. Foreign keys, WAL, FULL synchronous durability, busy timeout, trusted_schema OFF, disabled extensions and startup integrity checks are enabled. Future, foreign or corrupt databases fail closed and are never reset. Subsequent schema changes require numbered transactional migrations, not table replacement.
 
-Electron packages its runtime and local assets and loads academy://app without an HTTP listener. Docker API deployment is optional and has its own persistent volume and operational backup needs. Static web progress remains browser/origin scoped. No proprietary PDFs, runtime databases, session tokens or backup files are repository assets.
+PBKDF2-HMAC-SHA256 uses600,000 iterations, random128-bit salts and64 derived bytes. One half supplies the password verifier; the other wraps a random256-bit data key with AES256-GCM. Each learner record uses a fresh96-bit nonce and owner/collection/record-ID associated data. Keys stay in the trusted engine; renderer state contains only the current authenticated learning data. Usernames and record IDs remain visible metadata; this is not full-disk encryption. Password changes rewrap the key and revoke other sessions. Authentication rechecks password version after asynchronous hashing to reject a login racing a password change.
+
+A write clones the committed view, runs shared domain operations and validates the whole state. The engine authenticates the requested owner, compares expectedRevision inside BEGIN IMMEDIATE, updates changed rows and revision, and commits atomically. UI success follows the acknowledged durable result. A stale revision refreshes the view and rejects the attempted overwrite for explicit retry. Another tab changing a shared API cookie cannot write the old account's view into the new account. Late responses from closed repositories cannot invalidate a different account's session.
+
+## Migration and recovery
+
+On native/API login, authenticate the native account first. If absent/incorrect and matching legacy credentials exist locally, authenticate/decrypt the legacy account, validate/export its state, verify credentials again in the trusted engine, and create/read back the SQLite copy within a single transaction. The source IDB and ciphertext remain unchanged. Native name collisions reject; migration never overwrites an existing native account. The source legacy ID is unique in SQLite. Anonymous original MVP data requires the preserved explicit once-only claim. No destructive background conversion runs at startup.
+
+Backups retain the v1 encrypted envelope with independent passphrase; contents use progress v3, accepting validated v1/v2 imports. Credentials/session tokens are excluded. Restore replaces only the authenticated owner's state in one transaction. Keep original backups and database copies when diagnosing corruption; do not reset storage to make an error disappear. A real learner's Windows profile was not supplied: compatibility is proven against synthetic fixtures, not that unseen profile.
+
+## Deployments
+
+- Desktop: local packaged assets + main-process SQLite; no Node installation, Docker, API service or normal-use setup required.
+- Default `compose.yaml`: nginx101:101 proxies `/api` to a separate Node24 API running as node, backed by named `academy_data` volume. Read-only roots, tmpfs, dropped capabilities and no-new-privileges. Bind defaults to loopback8080. Set exact APP_ORIGIN to the externally served HTTPS origin for remote deployment; terminate TLS at a trusted reverse proxy. API cookies are Secure on HTTPS. Login sessions expire after30 minutes idle/12 hours absolute and are intentionally invalidated by API restart; progress survives in SQLite.
+- `compose.static.yaml` / `Dockerfile.static`: original browser-local/offline IndexedDB model, no API or central account database. Keep old browser origin/profile for migration. API mode requires its server for reads/writes; the EXE and static PWA remain independent.
+
+The simple API rate limiter sees the direct peer (nginx in Compose), so rate budgets are shared behind that proxy. It does not trust arbitrary X-Forwarded-For. Large public multi-tenant operation needs a trusted-edge rate policy, operational backup/restore drills and capacity testing. There is no telemetry, email reset, synchronization between desktop and web, instructor grading, or accreditation service.
+
+## Build and release boundary
+
+Vite builds the same UI/curriculum. esbuild bundles engine.cjs for Electron and server.mjs for Node. electron-builder packages dist/build/electron; PDF books, test fixtures and runtime databases are excluded. Windows verification drives the **built portable EXE**, tests SQLite persistence and authenticated legacy migration, verifies x64 PE and produces digests/source archive. A release requires successful exact-commit web+Windows evidence; no new release is created by this audit. Windows signing is absent and disclosed, not simulated.

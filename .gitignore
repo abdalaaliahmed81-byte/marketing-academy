@@ -12,3 +12,8 @@ playwright-report/
 .env*
 *backup*.json
 *.log
+
+build/
+work/
+*.sqlite-wal
+*.sqlite-shm

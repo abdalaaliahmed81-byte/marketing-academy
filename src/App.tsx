@@ -1,9 +1,9 @@
 import {ModuleProjects} from './ModuleProjects'
 import {AuthGate,LegacyImport} from './Account'
 import {useEffect,useState} from 'react'
-import {useLiveQuery} from 'dexie-react-hooks'
+import {useLiveQuery} from './storage/query'
 import {Navigate,Route,Routes,useLocation} from 'react-router-dom'
-import {db,isUnlocked,seed} from './db'
+import {db,isUnlocked,seed,initializeSettings} from './db'
 import {lessons} from './lessons'
 import {artifactFields,emptyCapstone,type Settings} from './domain'
 import {Dashboard,Path} from './Overview'
@@ -25,10 +25,7 @@ export function AcademyApp(){
 function Onboarding(){
   const [error,setError]=useState('')
   return <main className="onboard"><div className="welcome card"><img src="/icon-192.png" alt="" width="58" height="58"/><Heading title="أكاديمية التسويق" description="تعلّم التسويق الرقمي بالعربية وطبّقه على مشروع تختاره."/><LegacyImport/><SettingsForm save={async settings=>{
-    try{await db.transaction('rw',db.settings,db.projects,async()=>{
-      if(!(await db.projects.get('portfolio')))await db.projects.add({id:'portfolio',...emptyCapstone(settings.business)})
-      await db.settings.put(settings)
-    })}catch{setError('تعذّر حفظ الإعدادات. حاول مرة أخرى.')}
+    try{await initializeSettings(settings)}catch{setError('تعذّر حفظ الإعدادات. حاول مرة أخرى.')}
   }}/><p role="alert">{error}</p></div></main>
 }
 function LearningApp({settings}:{settings:Settings}){

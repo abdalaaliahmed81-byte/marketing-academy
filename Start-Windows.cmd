@@ -1,11 +1,9 @@
 @echo off
 setlocal
-if exist "%~dp0Marketing-Academy-2.0.0-win-x64.exe" (
-  start "" "%~dp0Marketing-Academy-2.0.0-win-x64.exe"
-  exit /b
-)
-if exist "%~dp0release\Marketing-Academy-2.0.0-win-x64.exe" (
-  start "" "%~dp0release\Marketing-Academy-2.0.0-win-x64.exe"
-  exit /b
+for %%D in ("%~dp0" "%~dp0release\") do (
+  for /f "delims=" %%F in ('dir /b /a-d /o-d "%%~DMarketing-Academy-*-win-x64.exe" 2^>nul') do (
+    start "" "%%~D%%F"
+    exit /b
+  )
 )
 start "" "https://github.com/abdalaaliahmed81-byte/marketing-academy/releases/latest"

@@ -1,3 +1,5 @@
+import {build} from 'esbuild'
+import {DatabaseSync} from 'node:sqlite'
 import {_electron as electron,chromium,expect} from '@playwright/test'
 import path from 'node:path'
 import os from 'node:os'
@@ -11,6 +13,7 @@ const args=executablePath?[]:['.']
 if(process.platform==='linux')args.push('--no-sandbox','--ozone-platform=headless')
 await fs.mkdir('artifacts',{recursive:true})
 await fs.rm(dataDir,{recursive:true,force:true})
+await build({entryPoints:['tests/fixtures/legacy-seed.ts'],outfile:path.join(dataDir,'legacy-fixture.js'),bundle:true,platform:'browser',target:'es2022',format:'iife',globalName:'AcademyLegacyFixture',legalComments:'none'})
 const evidence={platform:process.platform,architecture:process.arch,executable:executablePath??'development electron',checks:[],networkRequests:[]}
 let running
 async function launch(){
@@ -59,7 +62,8 @@ try{
  evidence.checks.push('application rendered Arabic registration using local academy protocol')
  expect(await page.evaluate(()=>typeof window.require)).toBe('undefined')
  expect(await page.evaluate(()=>typeof window.process)).toBe('undefined')
- evidence.checks.push('renderer has no Node require or process')
+ expect(await page.evaluate(()=>window.academy?.kind)).toBe('desktop-sqlite')
+ evidence.checks.push('renderer has no Node require or process; SQLite transport exposed only through the narrow preload')
  await page.getByRole('button',{name:'إنشاء حساب',exact:true}).click()
  await page.getByLabel('اسم المستخدم',{exact:true}).fill('اختبار سطح المكتب')
  await page.getByLabel('كلمة المرور',{exact:true}).fill('desktop-test-long-password')
@@ -89,6 +93,35 @@ try{
  expect(outside).toBe('blocked')
  evidence.checks.push('external network fetch blocked; curriculum and notes work without external server')
  await page.screenshot({path:'artifacts/desktop.png'})
+ // Exercise an actual legacy IndexedDB account in the same preserved academy://app origin.
+ await page.getByRole('button',{name:'خروج',exact:true}).click()
+ await page.reload()
+ const fixtureCode=await fs.readFile(path.join(dataDir,'legacy-fixture.js'),'utf8')
+ const inspector=await page.context().newCDPSession(page)
+ const injected=await inspector.send('Runtime.evaluate',{expression:fixtureCode+'\n;globalThis.AcademyLegacyFixture=AcademyLegacyFixture;',awaitPromise:true})
+ if(injected.exceptionDetails)throw new Error('Legacy fixture injection failed: '+JSON.stringify(injected.exceptionDetails))
+ const fixture=await page.evaluate(async()=>window.AcademyLegacyFixture.seed('متعلم النسخة السابقة','legacy-test-long-password'))
+ await page.getByLabel('اسم المستخدم',{exact:true}).fill('متعلم النسخة السابقة')
+ await page.getByLabel('كلمة المرور',{exact:true}).fill('legacy-test-long-password')
+ await page.getByRole('button',{name:'ادخل إلى الأكاديمية'}).click()
+ await page.getByRole('link',{name:'مسار التعلّم',exact:true}).click()
+ await page.getByRole('button',{name:/^ملاحظات:/}).first().click()
+ await expect(page.getByRole('dialog').getByRole('textbox')).toHaveValue('legacy-note-must-survive')
+ await page.getByRole('button',{name:'احفظ وأغلق'}).click()
+ await expect(page.getByRole('dialog')).not.toBeVisible()
+ expect(await page.evaluate(name=>window.AcademyLegacyFixture.verifySource(name),fixture.sourceName)).toBe(fixture.sourceFingerprint)
+ await page.getByRole('link',{name:'مشروعات الوحدات',exact:true}).click()
+ await expect(page.getByRole('textbox',{name:'تسليم مشروع الوحدة'})).toHaveValue('legacy-project-must-survive')
+ evidence.checks.push('migrated an authenticated legacy IndexedDB account; completed lesson, note, quiz and project survived; original ciphertext unchanged')
+ await running.close();running=undefined
+ const sql=new DatabaseSync(path.join(dataDir,'academy.sqlite'))
+ const accounts=Number(sql.prepare('SELECT count(*) AS count FROM accounts').get().count)
+ const records=Number(sql.prepare('SELECT count(*) AS count FROM learner_records').get().count)
+ const legacy=Number(sql.prepare('SELECT count(*) AS count FROM accounts WHERE legacy_source=?').get(fixture.legacyId).count)
+ expect(accounts).toBe(2);expect(records).toBeGreaterThan(5);expect(legacy).toBe(1)
+ expect(JSON.stringify(sql.prepare('SELECT payload FROM learner_records').all())).not.toContain('legacy-note-must-survive')
+ evidence.sqlite={schemaVersion:Number(sql.prepare('PRAGMA user_version').get().user_version),accounts,records,legacySourcesPreserved:true,encryptedRecords:true}
+ sql.close()
  evidence.status='passed'
 } catch(error){evidence.status='failed';evidence.error=String(error);throw error}
 finally{if(running)await running.close().catch(()=>{});await fs.writeFile('artifacts/desktop-smoke.json',JSON.stringify(evidence,null,2));await fs.rm(dataDir,{recursive:true,force:true})}

@@ -10,3 +10,7 @@ playwright-report
 *.sqlite*
 .env*
 work
+
+build
+*.sqlite-wal
+*.sqlite-shm

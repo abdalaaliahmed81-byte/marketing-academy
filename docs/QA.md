@@ -1,3 +1,5 @@
+> Historical2.0.0 execution below is retained. Current2.1.0 audit adds real SQLite/API/migration checks; see [AI_PROGRESS.md](AI_PROGRESS.md) and [AUDIT.md](AUDIT.md) for current counts and CI evidence. Existing release assets were not replaced.
+
 # QA execution record
 
 Release policy: publish only after the exact source commit passes both web and Windows verification jobs. The release includes verification.json with the actual commit, run URL, checksums, Windows executable smoke results, browser counts, Docker evidence and dependency audit. That machine-generated record is the authority for the published build; this document defines scope and limits.

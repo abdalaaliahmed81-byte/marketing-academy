@@ -1,5 +1,5 @@
 import {useState} from 'react'
-import {useLiveQuery} from 'dexie-react-hooks'
+import {useLiveQuery} from './storage/query'
 import {db,saveModuleProject,type ModuleProject} from './db'
 import {projectBriefs} from './projects'
 import {modules} from './curriculum'

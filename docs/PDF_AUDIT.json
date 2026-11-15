@@ -1,0 +1,32 @@
+{
+  "books": [
+    {
+      "title": "كل المسوقون يسردون قصصا",
+      "bytes": 1271762,
+      "sha256": "4611b771bfa6682d8f822c43d637e3d6402024c887ef6898e53a31dfae9b5097",
+      "pdfPages": 144,
+      "textExtractAvailable": true,
+      "inspection": "metadata, text extraction, contents and topic-directed passages; not line-by-line expert certification",
+      "distribution": "private source outside repository"
+    },
+    {
+      "title": "خطة تسويقية في صفحة واحدة",
+      "bytes": 4161509,
+      "sha256": "10ad07e9a875f985e75f99facd7dff1b96e3eda2cf35f78895a7896a229e74f9",
+      "pdfPages": 203,
+      "textExtractAvailable": true,
+      "inspection": "metadata, text extraction, contents and topic-directed passages; not line-by-line expert certification",
+      "distribution": "private source outside repository"
+    },
+    {
+      "title": "هذا هو التسويق",
+      "bytes": 5373308,
+      "sha256": "7521259005674c9d4b2e36a81adb76a57b91d38f4ce0a420c836e0c279d1202b",
+      "pdfPages": 230,
+      "textExtractAvailable": true,
+      "inspection": "metadata, text extraction, contents and topic-directed passages; not line-by-line expert certification",
+      "distribution": "private source outside repository"
+    }
+  ],
+  "copyright": "No PDF bytes, extracted passages or page images are included."
+}

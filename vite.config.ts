@@ -13,5 +13,5 @@ export default defineConfig({
     workbox:{globPatterns:['**/*.{html,js,css,png,woff2}'],navigateFallback:'/index.html',cleanupOutdatedCaches:true}
   })],
 
-  test:{include:['src/**/*.test.{ts,tsx}'],environment:'jsdom',setupFiles:['./src/test-setup.ts']}
+  test:{include:['src/**/*.test.{ts,tsx}','backend/**/*.test.ts'],environment:'jsdom',setupFiles:['./src/test-setup.ts']}
 })

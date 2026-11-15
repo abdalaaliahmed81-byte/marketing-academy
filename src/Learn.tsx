@@ -1,4 +1,4 @@
-import {useLiveQuery} from 'dexie-react-hooks'
+import {useLiveQuery} from './storage/query'
 import {NotesButton} from './Notes'
 import {useEffect,useState} from 'react'
 import {Link,Navigate,useNavigate,useParams} from 'react-router-dom'

@@ -1,0 +1,81 @@
+{
+  "checkedAt": "2026-11-15T18:25:56.130Z",
+  "scope": "HTTP accessibility plus selective official-source review; no exhaustive claim-level certification",
+  "links": [
+    {
+      "url": "https://support.google.com/analytics/answer/9304153",
+      "status": 200,
+      "effectiveUrl": "https://support.google.com/analytics/answer/9304153"
+    },
+    {
+      "url": "https://www.google.com/about/company/user-consent-policy/",
+      "status": 200,
+      "effectiveUrl": "https://www.google.com/about/company/user-consent-policy/"
+    },
+    {
+      "url": "https://support.google.com/google-ads/answer/2615875",
+      "status": 200,
+      "effectiveUrl": "https://support.google.com/google-ads/answer/2615875"
+    },
+    {
+      "url": "https://support.google.com/a/answer/81126",
+      "status": 200,
+      "effectiveUrl": "https://support.google.com/mail/answer/81126?visit_id=639303639483720960-2703365351&rd=1"
+    },
+    {
+      "url": "https://www.ftc.gov/business-guidance/resources/disclosures-101-social-media-influencers",
+      "status": 200,
+      "effectiveUrl": "https://www.ftc.gov/business-guidance/resources/disclosures-101-social-media-influencers"
+    },
+    {
+      "url": "https://www.w3.org/WAI/tips/writing/",
+      "status": 200,
+      "effectiveUrl": "https://www.w3.org/WAI/tips/writing/"
+    },
+    {
+      "url": "https://grow.google/certificates/digital-marketing-ecommerce/",
+      "status": 200,
+      "effectiveUrl": "https://grow.google/certificates/digital-marketing-ecommerce/"
+    },
+    {
+      "url": "https://academy.hubspot.com/courses/digital-marketing",
+      "status": 200,
+      "effectiveUrl": "https://academy.hubspot.com/courses/digital-marketing"
+    },
+    {
+      "url": "https://www.facebookblueprint.com/student/catalog/",
+      "status": 200,
+      "effectiveUrl": "https://www.facebookblueprint.com/student/catalog/"
+    },
+    {
+      "url": "https://skillshop.withgoogle.com/",
+      "status": 200,
+      "effectiveUrl": "https://skillshop.withgoogle.com/"
+    },
+    {
+      "url": "https://developers.google.com/search/docs/fundamentals/seo-starter-guide",
+      "status": 200,
+      "effectiveUrl": "https://developers.google.com/search/docs/fundamentals/seo-starter-guide"
+    },
+    {
+      "url": "https://www.semrush.com/academy/",
+      "status": 200,
+      "effectiveUrl": "https://www.semrush.com/academy/"
+    },
+    {
+      "url": "https://allandib.com/",
+      "status": 200,
+      "effectiveUrl": "https://allandib.com/"
+    },
+    {
+      "url": "https://www.penguinrandomhouse.com/books/600458/this-is-marketing-by-seth-godin/",
+      "status": 200,
+      "effectiveUrl": "https://www.penguinrandomhouse.com/books/600458/this-is-marketing-by-seth-godin/"
+    },
+    {
+      "url": "https://seths.blog/2013/09/qa-all-marketers-and-the-challenge-of-telling-the-right-story/",
+      "status": 200,
+      "effectiveUrl": "https://seths.blog/2013/09/qa-all-marketers-and-the-challenge-of-telling-the-right-story/"
+    }
+  ]
+}

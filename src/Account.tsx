@@ -1,11 +1,16 @@
+import {discoverTransport,activeTransport} from './storage/transport'
 import {createContext,useContext,useEffect,useState,type ReactNode} from 'react'
-import {currentSession,importLegacy,legacyAvailable,login,logout,register,type Session} from './auth'
+import {currentSession,forgetSession,importLegacy,legacyAvailable,login,logout,register,type Session} from './auth'
 import {Heading} from './ui'
 
 const AccountContext=createContext<{session:Session;signOut:()=>void}|undefined>(undefined)
 export const useAccount=()=>useContext(AccountContext)
 export function AuthGate({children}:{children:ReactNode}){
   const [session,setSession]=useState(currentSession)
+  const [boot,setBoot]=useState<'loading'|'ready'|'error'>('loading'),[failure,setFailure]=useState('')
+  useEffect(()=>{let active=true;discoverTransport().then(()=>{if(active)setBoot('ready')},error=>{if(active){setFailure(error instanceof Error?error.message:'تعذّر فتح الحسابات.');setBoot('error')}});const invalid=(event:Event)=>{const owner=(event as CustomEvent<string|undefined>).detail;if(owner&&currentSession()?.id!==owner)return;forgetSession();setSession(undefined)};window.addEventListener('academy-session-invalid',invalid);return()=>{active=false;window.removeEventListener('academy-session-invalid',invalid)}},[])
+  if(boot==='loading')return <main className="welcome" role="status">جارٍ فتح الأكاديمية…</main>
+  if(boot==='error')return <main className="welcome card stack"><p role="alert">{failure}</p><button className="primary" onClick={()=>window.location.reload()}>أعد المحاولة</button></main>
   if(!session)return <Login onEnter={setSession}/>
   return <AccountContext.Provider value={{session,signOut:()=>{logout();setSession(undefined)}}}><div key={session.id}>{children}</div></AccountContext.Provider>
 }
@@ -24,7 +29,7 @@ function Login({onEnter}:{onEnter:(session:Session)=>void}){
       {mode==='register'&&<><label>تأكيد كلمة المرور<input required type="password" minLength={12} maxLength={128} autoComplete="new-password" value={confirm} onChange={e=>setConfirm(e.target.value)}/></label><p className="muted">استخدم عبارة طويلة من ١٢ حرفًا على الأقل. احتفظ بكلمة المرور؛ لا توجد استعادة عبر البريد للحساب المحلي.</p></>}
       <button className="primary" disabled={busy}>{busy?'جارٍ فتح الحساب…':mode==='register'?'أنشئ حسابي':'ادخل إلى الأكاديمية'}</button>
       <p role="alert">{error}</p>
-    </form><p className="muted">حساب محلي على هذا الجهاز. بيانات كل حساب مشفّرة ومحفوظة منفصلة. لا تحتاج اتصالًا بالإنترنت للتعلّم.</p>
+    </form><p className="muted">{activeTransport()?.kind==='web-api'?'حساب على خادم هذا النشر؛ بياناته محفوظة منفصلة. يلزم اتصال بالخادم للحفظ.':'حساب محلي على هذا الجهاز. بيانات كل حساب مشفّرة ومحفوظة منفصلة. لا تحتاج اتصالًا بالإنترنت للتعلّم.'}</p>
   </section></main>
 }
 export function LegacyImport(){

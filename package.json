@@ -1,27 +1,28 @@
 {
   "name": "marketing-academy",
-  "version": "2.0.0",
+  "version": "2.1.0",
   "private": true,
   "type": "module",
   "engines": {
-    "node": ">=22.12"
+    "node": ">=24.13.0"
   },
   "scripts": {
     "dev": "vite",
     "typecheck": "tsc --noEmit",
     "test": "vitest run",
-    "build": "npm run typecheck && vite build",
+    "build": "npm run typecheck && vite build && node scripts/build-backend.mjs",
     "preview": "vite preview",
     "test:e2e": "playwright test",
     "desktop": "electron .",
     "package:win": "npm run build && electron-builder --win portable --x64 --publish never",
     "package:linux": "npm run build && electron-builder --linux dir --publish never",
-    "check": "npm run typecheck && npm test && npm run build"
+    "check": "npm run typecheck && npm test && npm run build",
+    "api": "node build/server.mjs",
+    "audit:project": "node scripts/audit-project.mjs"
   },
   "dependencies": {
     "@noble/ciphers": "2.4.0",
     "dexie": "4.4.7",
-    "dexie-react-hooks": "4.4.0",
     "react": "19.3.1",
     "react-dom": "19.3.1",
     "react-router-dom": "7.18.5",
@@ -38,6 +39,7 @@
     "@vitejs/plugin-react": "6.3.0",
     "electron": "45.3.2",
     "electron-builder": "26.18.0",
+    "esbuild": "0.28.2",
     "fake-indexeddb": "^6.0.1",
     "jsdom": "^26.1.0",
     "tailwindcss": "^4.1.8",
@@ -57,6 +59,7 @@
     },
     "files": [
       "dist/**/*",
+      "build/**/*",
       "electron/**/*",
       "package.json"
     ],

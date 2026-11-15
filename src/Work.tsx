@@ -3,7 +3,7 @@ import {encryptBackup,decryptBackup} from './backup'
 import {changePassword} from './auth'
 import {useEffect,useRef,useState} from 'react'
 import {Link} from 'react-router-dom'
-import {useLiveQuery} from 'dexie-react-hooks'
+import {useLiveQuery} from './storage/query'
 import {db,exportBackup,getMission,restoreBackup,saveMission,saveProject} from './db'
 import {artifactFields,businesses,emptyCapstone,markdown,ready,sections,stages,type Capstone,type Mission,type Settings} from './domain'
 import {ar,Checklist,download,Heading,Icon,SettingsForm,useBaghdadDay,type Notice} from './ui'
@@ -34,7 +34,7 @@ function MissionForm({mission,notice}:{mission:Mission;notice:Notice}){
   }
   return <section className="card stack">
     <div className="section-title"><h2><bdi>{mission.date}</bdi></h2><span>{mission.completed?'✓ مكتملة':'تطبيق · ١٠–٢٠ دقيقة'}</span></div>
-    <p>{mission.prompt}</p><label>إجابتك<textarea rows={7} value={response} onChange={e=>setResponse(e.target.value)}/></label>
+    <p>{mission.prompt}</p><label>إجابتك<textarea maxLength={50000} rows={7} value={response} onChange={e=>setResponse(e.target.value)}/></label>
     <Checklist rubric={mission.rubric} checked={checked} onChange={setChecked}/>
     <div className="actions"><button className="secondary" disabled={busy} onClick={()=>void persist(false)}>احفظ المسودة</button><button className="primary" disabled={busy||!ready(response,checked,mission.rubric)} onClick={()=>void persist(true)}>احفظ كمكتملة <Icon name="check"/></button></div>
   </section>
@@ -73,11 +73,11 @@ function ProjectEditor({project,notice}:{project:Capstone;notice:Notice}){
     <div className="no-print">
       <Heading title="مشروعي" description="طوّر خطة تسويقية وملف أعمال لمشروع حقيقي أو افتراضي. احفظ مسودتك قبل مغادرة الصفحة."/>
       <div className="stack">
-        <section className="card stack"><div className="form-row"><label>اسم المشروع<input value={name} onChange={e=>setName(e.target.value)} placeholder="مثال: كرسبي الجامعة"/></label><label>نوع المشروع<select value={business} onChange={e=>setBusiness(e.target.value as Capstone['business'])}>{businesses.map(b=><option key={b}>{b}</option>)}</select></label></div>
+        <section className="card stack"><div className="form-row"><label>اسم المشروع<input maxLength={200} value={name} onChange={e=>setName(e.target.value)} placeholder="مثال: كرسبي الجامعة"/></label><label>نوع المشروع<select value={business} onChange={e=>setBusiness(e.target.value as Capstone['business'])}>{businesses.map(b=><option key={b}>{b}</option>)}</select></label></div>
           <div className="progress-label"><span>بنود مكتوبة</span><strong>{ar.format(count)} / {ar.format(artifactFields.length)}</strong></div><progress max={artifactFields.length} value={count} aria-label="بنود المشروع المكتوبة"/>
         </section>
         <nav aria-label="أقسام المشروع" className="tabs">{sections.map((s,i)=><button type="button" key={s.name} aria-pressed={selected===i} className={selected===i?'selected':''} onClick={()=>setSelected(i)}>{s.name}</button>)}</nav>
-        <section className="card stack"><h2>{sections[selected].name}</h2>{selected===sections.length-1&&<details><summary>بيانات تدريب افتراضية</summary><div className="sample"><table><caption>نتائج إعلانين خلال أسبوع · المبالغ بالدينار العراقي</caption><thead><tr><th scope="col">النسخة</th><th scope="col">ظهور</th><th scope="col">نقرات</th><th scope="col">طلبات</th><th scope="col">إنفاق</th><th scope="col">إيراد</th></tr></thead><tbody><tr><th scope="row">أ</th><td>١٠٠٠</td><td>٤٠</td><td>٤</td><td>٨٠٠٠</td><td>٢٤٠٠٠</td></tr><tr><th scope="row">ب</th><td>١٠٠٠</td><td>٢٥</td><td>٥</td><td>٧٥٠٠</td><td>٣٠٠٠٠</td></tr></tbody></table></div><p>احسب نسبة النقرات من الظهور وتكلفة الطلب، ثم فسّر لماذا قد تختار نسخة بأقل نقرات. الإيراد هنا لا يشمل تكاليف الإنتاج.</p></details>}{sections[selected].fields.map(([id,title])=><label key={id}>{title}<textarea rows={4} value={draft[id]??''} placeholder={prompts[id]} onChange={e=>setDraft({...draft,[id]:e.target.value})}/></label>)}
+        <section className="card stack"><h2>{sections[selected].name}</h2>{selected===sections.length-1&&<details><summary>بيانات تدريب افتراضية</summary><div className="sample"><table><caption>نتائج إعلانين خلال أسبوع · المبالغ بالدينار العراقي</caption><thead><tr><th scope="col">النسخة</th><th scope="col">ظهور</th><th scope="col">نقرات</th><th scope="col">طلبات</th><th scope="col">إنفاق</th><th scope="col">إيراد</th></tr></thead><tbody><tr><th scope="row">أ</th><td>١٠٠٠</td><td>٤٠</td><td>٤</td><td>٨٠٠٠</td><td>٢٤٠٠٠</td></tr><tr><th scope="row">ب</th><td>١٠٠٠</td><td>٢٥</td><td>٥</td><td>٧٥٠٠</td><td>٣٠٠٠٠</td></tr></tbody></table></div><p>احسب نسبة النقرات من الظهور وتكلفة الطلب، ثم فسّر لماذا قد تختار نسخة بأقل نقرات. الإيراد هنا لا يشمل تكاليف الإنتاج.</p></details>}{sections[selected].fields.map(([id,title])=><label key={id}>{title}<textarea maxLength={50000} rows={4} value={draft[id]??''} placeholder={prompts[id]} onChange={e=>setDraft({...draft,[id]:e.target.value})}/></label>)}
           <button className="primary" disabled={busy} onClick={()=>void save()}>احفظ المشروع <Icon name="check"/></button>
         </section>
         <section className="card stack"><h2>نموذج التخرج المحلول</h2><p>نموذج كامل موسوم كمحاكاة يغطي الخطة والأصول والحسابات والتقرير. يمكنك قراءته أو استخدامه كنقطة بداية ثم تعديل قراراتك.</p><details><summary>اقرأ النموذج المحلول</summary>{artifactFields.map(([id,title])=><div key={id}><h3>{title}</h3><p>{capstoneExample.fields[id]}</p></div>)}</details><button className="secondary" onClick={()=>{if(window.confirm('سيستبدل النموذج النصوص المعروضة. لن تُحفظ التغييرات حتى تضغط احفظ المشروع. هل تريد المتابعة؟')){setName(capstoneExample.name);setBusiness(capstoneExample.business);setDraft({...capstoneExample.fields})}}}>استخدم نموذج المحاكاة في المحرر</button></section><section className="card stack"><h2>تصدير ملف الأعمال</h2><p>لإنشاء PDF اختر «حفظ بتنسيق PDF» من نافذة الطباعة. استخدم نصوصًا قصيرة لطباعة الخطة في صفحة واحدة.</p><div className="actions">
