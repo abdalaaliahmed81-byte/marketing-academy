@@ -1,3 +1,4 @@
+import {NotesButton} from './Notes'
 import {useEffect,useState} from 'react'
 import {Link,Navigate,useNavigate,useParams} from 'react-router-dom'
 import {bookLinks,books,reviewDate,sources,type Lesson,type Question} from './curriculum'
@@ -23,10 +24,9 @@ function LessonPage({lesson,tab,state,attempts,notice}:{lesson:Lesson;tab:Sectio
   const index=lessons.indexOf(lesson)
   const previous=lessons[index-1]
   const next=lessons[index+1]
-  const [notes,setNotes]=useState(state.notes)
   return <div className="lesson-wrap stack">
     <div className="section-title"><Link className="text-link" to="/path">مسار التعلّم</Link><button className="secondary" aria-pressed={state.bookmarked} onClick={()=>saveLesson(lesson.id,{bookmarked:!state.bookmarked}).catch(()=>notice('تعذّر حفظ الدرس.'))}><Icon name="bookmark" size={17}/>{state.bookmarked?'أزل العلامة':'احفظ علامة'}</button></div>
-    <Heading title={lesson.title} description={lesson.goal}/>
+    <div className="lesson-title"><Heading title={lesson.title} description={lesson.goal}/><NotesButton id={lesson.id} title={lesson.title}/></div>
     <div className="lesson-meta"><span><Icon name="clock" size={17}/> قراءة وتفكير · ٥–٨ دقائق</span><span>{state.completed?'✓ مكتمل':'الدرس '+ar.format(index+1)}</span></div>
     <nav aria-label="أقسام الدرس" className="tabs">{tabs.map(([key,label])=><Link key={key} className={key===tab?'selected':''} aria-current={key===tab?'page':undefined} to={href(lesson.id,key)}>{label}</Link>)}</nav>
     {tab==='read'&&<>
@@ -36,10 +36,10 @@ function LessonPage({lesson,tab,state,attempts,notice}:{lesson:Lesson;tab:Sectio
         <h2>مصطلحات الدرس</h2><dl>{lesson.glossary.map(([term,value])=><div key={term}><dt lang="en" dir="ltr">{term}</dt><dd>{value}</dd></div>)}</dl>
         <h2>حالة قصيرة</h2><p>{lesson.miniCase}</p><p className="muted">خذ دقيقتين لتكتب قرارك وتشرح ما اعتمدت عليه قبل قراءة الخلاصة.</p>
         <h2>الخلاصة</h2><p>{lesson.summary}</p>
-        <details><summary>المراجع</summary><ul>{lesson.refs.map(ref=><li key={ref.book}><a href={bookLinks[ref.book]} target="_blank" rel="noreferrer">{books[ref.book]}</a> · {ref.section} · النسخة المرفقة (تمت المراجعة {reviewDate})</li>)}{lesson.online.map(key=><li key={key}><a href={sources[key].url} target="_blank" rel="noreferrer">{sources[key].title}</a> · {reviewDate}</li>)}</ul></details>
+        <details><summary>المراجع</summary><p>إحالات موضوعية مختارة؛ الأمثلة والنتائج التدريبية محاكاة، وليست نقلًا للكتب أو تغطية كاملة لها.</p><ul>{lesson.refs.map(ref=><li key={ref.book}><a href={bookLinks[ref.book]} target="_blank" rel="noreferrer">{books[ref.book]}</a> · {ref.section} · النسخة المرفقة (تمت المراجعة {reviewDate})</li>)}{lesson.online.map(key=><li key={key}><a href={sources[key].url} target="_blank" rel="noreferrer">{sources[key].title}</a> · {reviewDate}</li>)}</ul></details>
         <Link className="primary" to={href(lesson.id,'quiz')}>اذهب إلى الاختبار <Icon name="arrow"/></Link>
       </article>
-      <form className="card stack" onSubmit={async e=>{e.preventDefault();try{await saveLesson(lesson.id,{notes});notice('حُفظت ملاحظاتك.')}catch{notice('تعذّر حفظ الملاحظات.')}}}><label>ملاحظاتك<textarea value={notes} onChange={e=>setNotes(e.target.value)} rows={3}/></label><button className="secondary">احفظ الملاحظات</button></form>
+
     </>}
     {tab==='quiz'&&<Quiz lesson={lesson} attempts={attempts} notice={notice}/>}
     {tab==='practice'&&<Practice lesson={lesson} state={state} passed={attempts.some(a=>a.passed)} notice={notice}/>}
@@ -90,7 +90,7 @@ function Practice({lesson,state,passed,notice}:{lesson:Lesson;state:LessonState;
   }
   return <section className="card stack">
     <h2>التطبيق العملي</h2><p>{lesson.assignment}</p>
-    <label>تطبيقك<textarea rows={7} value={text} onChange={e=>setText(e.target.value)}/></label>
+    <label>تطبيقك<textarea maxLength={50000} rows={7} value={text} onChange={e=>setText(e.target.value)}/></label>
     <Checklist rubric={lesson.rubric} checked={checked} onChange={setChecked}/>
     {!passed&&<p className="muted">اجتز اختبار الدرس لتتمكن من إكماله.</p>}
     <div className="actions"><button className="secondary" disabled={busy} onClick={()=>void save(false)}>احفظ التطبيق</button>{!state.completed&&<button className="primary" disabled={busy||!passed||!ready(text,checked,lesson.rubric)} onClick={()=>void save(true)}>أكمل الدرس <Icon name="check"/></button>}</div>

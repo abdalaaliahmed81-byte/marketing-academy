@@ -6,8 +6,14 @@ export interface Question {
   why:string
 }
 
-export const reviewDate = '2026-11-14'
+export const reviewDate = '2026-11-15'
 export const sources = {
+  analytics:{title:'Google Analytics · إعداد القياس',url:'https://support.google.com/analytics/answer/9304153'},
+  consent:{title:'Google · سياسة موافقة المستخدم الأوروبي',url:'https://www.google.com/about/company/user-consent-policy/'},
+  ads:{title:'Google Ads · تعريف معدل النقر',url:'https://support.google.com/google-ads/answer/2615875'},
+  email:{title:'Google · إرشادات مرسلي البريد',url:'https://support.google.com/a/answer/81126'},
+  ftc:{title:'FTC · الإفصاح عن العلاقة الإعلانية',url:'https://www.ftc.gov/business-guidance/resources/disclosures-101-social-media-influencers'},
+  accessible:{title:'W3C · كتابة محتوى متاح للجميع',url:'https://www.w3.org/WAI/tips/writing/'},
   google:{title:'Google · Digital Marketing & E-commerce — Foundations',url:'https://grow.google/certificates/digital-marketing-ecommerce/'},
   hub:{title:'HubSpot Academy · Digital Marketing',url:'https://academy.hubspot.com/courses/digital-marketing'},
   meta:{title:'Meta Blueprint · دليل الجمهور',url:'https://www.facebookblueprint.com/student/catalog/'},
@@ -30,7 +36,7 @@ export const bookLinks = {
 type Book = keyof typeof books
 export interface Lesson {
   id:string
-  module:1|2
+  module:1|2|3|4|5|6|7|8|9|10|11|12
   title:string
   goal:string
   reading:string[]

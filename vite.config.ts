@@ -12,6 +12,6 @@ export default defineConfig({
     ]},
     workbox:{globPatterns:['**/*.{html,js,css,png,woff2}'],navigateFallback:'/index.html',cleanupOutdatedCaches:true}
   })],
-  build:{rollupOptions:{output:{manualChunks:{curriculum:['./src/lessons/index.ts']}}}},
-  test:{environment:'jsdom',setupFiles:['./src/test-setup.ts']}
+
+  test:{include:['src/**/*.test.{ts,tsx}'],environment:'jsdom',setupFiles:['./src/test-setup.ts']}
 })

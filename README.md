@@ -1,41 +1,45 @@
-# Marketing Academy · أكاديمية التسويق
+# أكاديمية التسويق ٢.٠ · Marketing Academy
 
-Arabic RTL, local-first PWA. Phase 1 includes ten original lessons, 50 questions, ten daily-mission variants, reviews for both units, and the editable Before/During/After canvas and portfolio editor.
+تطبيق تعلّم عربي RTL بُني باستكمال مشروع MVP المرفق، مع ٦٠ درسًا في ١٢ وحدة و٣٠٠ سؤال، ومهام ومراجعات وملاحظات مستقلة لكل درس. يشمل ١٢ مشروع وحدة محلولًا وملف أعمال متكاملًا بنموذج محاكاة قابل للتحرير.
 
-## Run the included build on Windows
+## استخدام Windows
 
-Install Node.js 22.12+ (Node 24 LTS recommended), extract the ZIP, and open PowerShell in the extracted project folder:
+نزّل EXE من قسم **Releases** وافتحه مباشرة. لا تحتاج تثبيت Node.js أو Docker أو خادم أو أدوات تطوير أو إعداد يدوي. أنشئ حسابًا محليًا بكلمة مرور طويلة، وحدد هدف الدراسة، ثم ابدأ المسار. تقدمك وملاحظاتك ومشروعاتك محفوظة مشفّرة على الجهاز ومفصولة عن الحسابات الأخرى. إغلاق التطبيق أو تسجيل الخروج يتطلب دخولًا جديدًا.
 
-```powershell
-node .\scripts\serve.mjs
-Start-Process http://127.0.0.1:4173/
-```
+زر القلم الدائري بجوار كل درس يفتح ملاحظاته؛ تحفظ تلقائيًا ويمكن حفظها وإغلاقها بزر واضح. بعد اجتياز الاختبار وحفظ النشاط والمراجعة الذاتية يتاح الدرس التالي. يظهر مشروع كل وحدة مع التكليف والخطوات والنموذج المحلول. «مشروعي» يجمع ملف الأعمال؛ يمكنك قراءة نموذج التخرج أو تحميله في المحرر ثم تعديله وحفظه وتصديره.
 
-Run the second line in a separate window while the server is active, or double-click `Start-Windows.cmd` and refresh the browser if it opens before the server. The included `dist` needs no package installation. Keep using the same URL and browser profile. IndexedDB and the installed app are specific to the origin, so changing the host or port opens a separate copy of progress.
+من الإعدادات صدّر نسخة مشفّرة بعبارة حماية مستقلة واحتفظ بها خارج الجهاز. الاستعادة تستبدل بيانات الحساب الحالي بعد التحقق. لا توجد استعادة كلمة مرور عبر البريد؛ لا تخزن العبارة أو النسخة في المستودع. يمكن ربط بيانات النسخة القديمة مرة واحدة من شاشة الإعداد الأولي أو استيراد JSON قديم صالح.
 
-## Develop or rebuild
+التطبيق مستقل عن الإنترنت للتعلم العادي. روابط المراجع تفتح خارجيًا عند اختيارها. ملف Windows غير موقّع رقميًا؛ لم يُدّع وجود شهادة توقيع. تفاصيل ما اختُبر فعلًا في [سجل QA](docs/QA.md).
 
-```powershell
-npm install
+## نسخة الويب الاختيارية
+
+`docker compose up --build -d` يبني ويخدم نفس المحتوى على http://127.0.0.1:8080 . هذا مسار للمشغّل التقني، وليس متطلبًا لنسخة Windows. الحسابات وبياناتها تبقى في متصفح الجهاز؛ لا توجد قاعدة مستخدمين مركزية أو مزامنة بين الأجهزة. حافظ على عنوان النشر وملف المتصفح للوصول إلى البيانات نفسها. النشر البعيد يحتاج HTTPS لتخزين PWA الآمن والعمل دون اتصال. الحاوية تعمل دون root وبجذر ملفات للقراءة فقط.
+
+## تطوير واختبارات
+
+Node.js 24 وnpm للتطوير فقط:
+
+```sh
+npm ci
 npm run dev
-npm run typecheck
-npm test
-npm run build
-npm run preview -- --host 127.0.0.1 --strictPort
+npm run check
+npm run test:e2e
+npm run package:win
 ```
 
-Use the production URL above for offline and installation testing. Open it once and wait for the service worker to cache the app. External references require a connection. On Android or iPad, use a trusted **HTTPS** static origin serving `dist/` at its root. Localhost on the Windows PC works there, while a plain LAN HTTP address will not provide secure-context PWA features on the mobile device. In iPad Safari use Share → Add to Home Screen. Use Settings → JSON backup to move progress between devices or origins.
+اختبارات المتصفح على Linux تستخدم Chromium المثبت أو `CHROMIUM_PATH`. يغطي CI بناء Windows الحقيقي واختبار الملف الناتج، والمتصفح وDocker. النشر عبر workflow الإصدار مشروط بنجاح التحقق لنفس commit. لا يكفي وجود ملف workflow لإثبات نجاح بناء أو إصدار؛ راجع نتائج التنفيذ.
 
-## Learning flow
+## المصدر والمنهج والحدود
 
-Set a goal, time and project type. Read a lesson, pass its quiz (70% threshold; four of five questions), save the assignment and check its rubric. A passed quiz and self-check unlock the next lesson. The dashboard resumes at the last section of an unfinished lesson. Quiz attempts are retained. Module review repeats missed questions from the latest attempts or gives a sample from each lesson. Daily missions start after the first completed lesson. The first mission assigned on a Baghdad calendar date stays fixed for that day, even when more lessons are completed.
+الدروس تلخص أفكارًا وتطبيقات أصلية مستفيدة من الكتب الثلاثة المرفقة والمصادر الرسمية. لا تُرفق الكتب أو النصوص المستخرجة منها. كل بيانات الأمثلة والمشروعات النموذجية محاكاة موسومة، ولا تمثل نتائج عميل حقيقي. المراجعة التعليمية في هذه النسخة تحريرية وآلية بواسطة الوكيل؛ لا ندّعي مراجعة بشرية مستقلة أو اعتماد جهة تدريب.
 
-The portfolio editor accepts real project notes or explicitly labelled simulations, including a sample ad-results table in the measurement section. Save edits explicitly. Export a full Markdown portfolio or the nine-field Markdown plan. Print either view and select Save as PDF in the browser. Short entries fit the compact three-column plan layout more reliably.
+المعمارية React/TypeScript/Dexie، وتشفير AES-GCM لكل حساب، وPBKDF2 بكلفة600,000 دورة، وتغليف Electron بأصل محلي دون HTTP listener. [نموذج الأمان](docs/SECURITY.md) يشرح الحدود، بما فيها عدم حماية جهاز مخترق أو تحكم مسؤول نظام.
 
-## Source and data handling
+- [عقد التنفيذ](docs/IMPLEMENTATION-CONTRACT.md)
+- [القرارات وحالة الاستئناف](docs/DECISIONS.md)
+- [المصادر والمراجعة التعليمية](docs/CONTENT-REVIEW.md)
+- [نتائج التحقق](docs/QA.md)
+- [ملاحظات الإصدار](docs/RELEASE-NOTES.md)
 
-Lesson references name the books and relevant chapters or sections from the supplied Arabic PDFs, link to author or publisher pages and official online training, and show the review date. The app includes original summaries and local training scenarios. The original PDFs are excluded. Platform instructions in Phase 1 are introductory and use public Google, Meta, HubSpot and Semrush resources, with no dependency on third-party accounts at runtime.
-
-Dexie v2 keeps lesson content separate from user state, stores quiz attempts and study activity transactionally, and migrates completed missions into activity. Seed updates use stable lesson IDs. JSON backup restoration validates with Zod and atomically replaces local user records. Backups include written responses and are intended for the learner to keep or transfer.
-
-`src/lessons/` contains the curriculum, `src/domain.ts` holds schemas and pure domain logic, `src/db.ts` owns persistence, and `src/*test*` contains the test suite. The remaining 50 lessons belong to Phase 2. Test real-device installation before a wider release.
+`src/lessons/` للمنهج، و`src/projects.ts` للنماذج، و`src/domain.ts` للمنطق، و`src/db.ts` للتخزين والترحيل، و`src/auth.ts` و`src/vault.ts` و`src/backup.ts` للأمان، و`electron/` للتغليف، و`tests/` لمسارات المتصفح. المصدر الأصلي محفوظ في أول commit. لم تُمنح رخصة إعادة توزيع للكتب؛ روابطها ومراجعها لا تنقل حقوقها.

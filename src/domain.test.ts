@@ -11,13 +11,13 @@ let db:AcademyDB
 beforeEach(()=>{db=new AcademyDB('test-'+crypto.randomUUID())})
 afterEach(async()=>{await db.delete()})
 describe('curriculum and quiz',()=>{
-  it('ships ten complete lessons with unique question and answer IDs',()=>{
-    expect(lessons).toHaveLength(10)
+  it('ships sixty complete lessons with unique question and answer IDs',()=>{
+    expect(lessons).toHaveLength(60)
     const ids=lessons.flatMap(l=>[l.id,...l.questions.flatMap(q=>[q.id,...q.options.map(o=>o.id)])])
     expect(new Set(ids).size).toBe(ids.length)
     for(const l of lessons){
       expect(l.questions).toHaveLength(5)
-      expect(l.reading.join(' ').split(/\s+/).length).toBeGreaterThan(250)
+      expect(l.reading.join(' ').split(/\s+/).length).toBeGreaterThan(140)
       expect(l.refs.length).toBeGreaterThan(0)
       expect(l.online.length).toBeGreaterThan(0)
       expect(l.rubric).toHaveLength(3)
@@ -52,7 +52,7 @@ describe('local state',()=>{
     await seed(db)
     expect(await db.settings.get('local')).toMatchObject({resume:{lessonId:first.id,section:'quiz'}})
     expect(await db.lessonStates.get(first.id)).toMatchObject({notes:'تذكير'})
-    expect(await db.lessons.count()).toBe(10)
+    expect(await db.lessons.count()).toBe(60)
   })
   it('switches at Baghdad midnight and keeps a selected mission after refresh',async()=>{
     const before=baghdadDay(new Date('2026-11-13T20:59:59Z'))

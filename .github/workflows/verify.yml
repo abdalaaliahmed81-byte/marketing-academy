@@ -1,0 +1,81 @@
+name: Verify desktop and web
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: verify-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  web:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
+        with:
+          node-version: '24'
+          cache: npm
+      - run: npm ci
+        env:
+          ELECTRON_SKIP_BINARY_DOWNLOAD: '1'
+      - run: node scripts/check-source.mjs
+      - run: npm audit --omit=dev --audit-level=high
+      - run: npm run check
+      - run: npx playwright install --with-deps chromium
+      - run: npm run test:e2e
+        env:
+          CHROMIUM_PATH: /usr/bin/google-chrome
+      - run: docker compose up -d --build
+      - run: curl --fail --retry 10 --retry-delay 3 --retry-connrefused http://127.0.0.1:8080/
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: web-evidence
+          path: |
+            artifacts
+            playwright-report
+          retention-days: 14
+  windows:
+    runs-on: windows-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
+        with:
+          node-version: '24'
+          cache: npm
+      - run: npm ci
+      - run: npm run typecheck
+      - run: npm test
+      - run: npm run package:win
+      - name: Test built portable EXE and restart persistence
+        run: node scripts/desktop-smoke.mjs
+        env:
+          DESKTOP_EXE: release/Marketing-Academy-2.0.0-win-x64.exe
+      - name: SHA256 and source archive
+        shell: pwsh
+        run: |
+          $exe = 'release/Marketing-Academy-2.0.0-win-x64.exe'
+          $digest = (Get-FileHash $exe -Algorithm SHA256).Hash.ToLower()
+          "$digest  Marketing-Academy-2.0.0-win-x64.exe" | Set-Content -Encoding ascii release/SHA256SUMS.txt
+          git archive --format=zip -o release/Marketing-Academy-2.0.0-source.zip HEAD
+          $sourceDigest = (Get-FileHash release/Marketing-Academy-2.0.0-source.zip -Algorithm SHA256).Hash.ToLower()
+          "$sourceDigest  Marketing-Academy-2.0.0-source.zip" | Add-Content -Encoding ascii release/SHA256SUMS.txt
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: windows-build-and-evidence
+          path: |
+            release/*.exe
+            release/*.zip
+            release/SHA256SUMS.txt
+            artifacts
+          retention-days: 14

@@ -1,3 +1,4 @@
+import {NotesButton} from './Notes'
 import {Link} from 'react-router-dom'
 import {useLiveQuery} from 'dexie-react-hooks'
 import {lessons} from './lessons'
@@ -30,7 +31,7 @@ export function Dashboard({settings,states,completed,attempts,next,projectDone,a
     <div className="dash-grid">
       <section className="card stack"><div className="section-title"><h2>مسار التعلّم</h2><Link to="/path">كل الوحدات <Icon name="arrow" size={16}/></Link></div>
         <div className="progress-label"><span>التقدم في الدروس المتاحة</span><strong>{ar.format(percent)}٪</strong></div><progress max={100} value={percent} aria-label="التقدم في الدروس"/>
-        <div className="track">{modules.slice(0,2).map((name,i)=>{
+        <div className="track">{modules.map((name,i)=>{
           const count=lessons.filter(l=>l.module===i+1&&states.some(s=>s.completed&&s.id===l.id)).length
           return <Link key={name} to={'/path#module-'+(i+1)} className="track-row"><span className="tile"><Icon name={count===5?'check':'book'} size={18}/></span><span><strong>{name}</strong><small>{ar.format(count)} من ٥ دروس مكتملة</small></span><Icon name="arrow" size={16}/></Link>
         })}</div>
@@ -45,8 +46,8 @@ export function Dashboard({settings,states,completed,attempts,next,projectDone,a
   </div>
 }
 export function Path({states}:{states:LessonState[]}){
-  return <><Heading title="مسار التعلّم" description="ابدأ بالأساسيات ثم انتقل إلى بحث الجمهور والسوق."/>
-  <div className="stack">{modules.slice(0,2).map((title,i)=>{
+  return <><Heading title="مسار التعلّم" description="١٢ وحدة متدرجة · ٦٠ درسًا · ١٢ مشروعًا تطبيقيًا."/>
+  <div className="stack">{modules.map((title,i)=>{
     const group=lessons.filter(l=>l.module===i+1)
     const done=group.every(l=>states.some(s=>s.id===l.id&&s.completed))
     return <section id={'module-'+(i+1)} key={title} className="card stack"><div className="section-title"><h2>{title}</h2>{done&&<Link to={'/review/'+(i+1)}>مراجعة الوحدة <Icon name="arrow" size={16}/></Link>}</div>
@@ -54,8 +55,8 @@ export function Path({states}:{states:LessonState[]}){
         const open=isUnlocked(l.id,states)
         const complete=states.some(s=>s.id===l.id&&s.completed)
         const row=<><span className="tile"><Icon name={complete?'check':open?'book':'lock'} size={18}/></span><span><strong>{l.title}</strong><small>{complete?'مكتمل':open?'متاح':'يتاح بعد إكمال الدرس السابق'}</small></span>{open&&<Icon name="arrow" size={16}/>}</>
-        return open?<Link key={l.id} to={lessonHref(l.id)} className="track-row">{row}</Link>:<div className="track-row locked" key={l.id}>{row}</div>
+        return <div className="lesson-row" key={l.id}>{open?<Link to={lessonHref(l.id)} className="track-row">{row}</Link>:<div className="track-row locked">{row}</div>}<NotesButton id={l.id} title={l.title}/></div>
       })}
     </section>
-  })}<details className="card"><summary>الوحدات القادمة ({ar.format(modules.length-2)})</summary><ol start={3}>{modules.slice(2).map(title=><li key={title}>{title}</li>)}</ol></details></div></>
+  })}</div></>
 }

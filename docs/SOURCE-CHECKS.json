@@ -1,0 +1,98 @@
+{
+  "checkedDate": "2026-11-15",
+  "books": [
+    {
+      "title": "كل المسوقون يسردون قصصا",
+      "sha256": "4611b771bfa6682d8f822c43d637e3d6402024c887ef6898e53a31dfae9b5097",
+      "bytes": 1271762,
+      "distribution": "excluded; supplied source used privately"
+    },
+    {
+      "title": "خطة تسويقية في صفحة واحدة",
+      "sha256": "10ad07e9a875f985e75f99facd7dff1b96e3eda2cf35f78895a7896a229e74f9",
+      "bytes": 4161509,
+      "distribution": "excluded; supplied source used privately"
+    },
+    {
+      "title": "هذا هو التسويق",
+      "sha256": "7521259005674c9d4b2e36a81adb76a57b91d38f4ce0a420c836e0c279d1202b",
+      "bytes": 5373308,
+      "distribution": "excluded; supplied source used privately"
+    }
+  ],
+  "links": [
+    {
+      "url": "https://support.google.com/analytics/answer/9304153",
+      "status": "200",
+      "effectiveUrl": "https://support.google.com/analytics/answer/9304153",
+      "transportExit": 0
+    },
+    {
+      "url": "https://www.google.com/about/company/user-consent-policy/",
+      "status": "200",
+      "effectiveUrl": "https://www.google.com/about/company/user-consent-policy/",
+      "transportExit": 0
+    },
+    {
+      "url": "https://support.google.com/google-ads/answer/2615875",
+      "status": "200",
+      "effectiveUrl": "https://support.google.com/google-ads/answer/2615875",
+      "transportExit": 0
+    },
+    {
+      "url": "https://support.google.com/a/answer/81126",
+      "status": "200",
+      "effectiveUrl": "https://support.google.com/mail/answer/81126?visit_id=639303593754043841-1754671733&rd=1",
+      "transportExit": 0
+    },
+    {
+      "url": "https://www.ftc.gov/business-guidance/resources/disclosures-101-social-media-influencers",
+      "status": "200",
+      "effectiveUrl": "https://www.ftc.gov/business-guidance/resources/disclosures-101-social-media-influencers",
+      "transportExit": 0
+    },
+    {
+      "url": "https://www.w3.org/WAI/tips/writing/",
+      "status": "200",
+      "effectiveUrl": "https://www.w3.org/WAI/tips/writing/",
+      "transportExit": 0
+    },
+    {
+      "url": "https://grow.google/certificates/digital-marketing-ecommerce/",
+      "status": "200",
+      "effectiveUrl": "https://grow.google/certificates/digital-marketing-ecommerce/",
+      "transportExit": 0
+    },
+    {
+      "url": "https://academy.hubspot.com/courses/digital-marketing",
+      "status": "200",
+      "effectiveUrl": "https://academy.hubspot.com/courses/digital-marketing",
+      "transportExit": 0
+    },
+    {
+      "url": "https://www.facebookblueprint.com/student/catalog/",
+      "status": "200",
+      "effectiveUrl": "https://www.facebookblueprint.com/student/catalog/",
+      "transportExit": 0
+    },
+    {
+      "url": "https://skillshop.withgoogle.com/",
+      "status": "200",
+      "effectiveUrl": "https://skillshop.withgoogle.com/",
+      "transportExit": 0
+    },
+    {
+      "url": "https://developers.google.com/search/docs/fundamentals/seo-starter-guide",
+      "status": "200",
+      "effectiveUrl": "https://developers.google.com/search/docs/fundamentals/seo-starter-guide",
+      "transportExit": 0
+    },
+    {
+      "url": "https://www.semrush.com/academy/",
+      "status": "200",
+      "effectiveUrl": "https://www.semrush.com/academy/",
+      "transportExit": 0
+    }
+  ],
+  "limitation": "HTTP access and selective document review do not establish universal coverage or correctness of every claim."
+}

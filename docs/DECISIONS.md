@@ -7,3 +7,5 @@
 2026-11-15: private GitHub creation authorized but current integration returns HTTP 403 for createRepository and POST /user/repos. User asked to provide an empty private repository accessible to the connection. Do not modify the unrelated repositories on this account to work around permissions.
 
 Resume from this directory; inspect git status and docs/QA.md before further changes. Never infer release success from a workflow file alone. Record actual builds, artifact hashes, and run links.
+
+2026-11-15: repository abdalaaliahmed81-byte/marketing-academy became accessible, empty and PUBLIC. Attempt to change visibility to private returned HTTP 403. User then explicitly replied «اكمل عليه كما هو» to the public/private clarification. Public source publication is therefore authorized for this repository. Proprietary PDFs, extracted text, secrets, and runtime databases remain excluded. Initial baseline and contract are pushed before ongoing changes.

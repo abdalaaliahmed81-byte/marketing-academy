@@ -15,13 +15,14 @@ try{
 }
 createServer(async(req,res)=>{
   try{
+    if(!['GET','HEAD'].includes(req.method)){res.writeHead(405).end();return}
     const pathname=decodeURIComponent(new URL(req.url,'http://localhost').pathname)
     const file=resolve(root,'.'+(pathname==='/'?'/index.html':pathname))
     if(!file.startsWith(root+sep)||!(await stat(file)).isFile()){
       res.writeHead(404).end()
       return
     }
-    res.writeHead(200,{'Content-Type':types[extname(file)]??'application/octet-stream','X-Content-Type-Options':'nosniff'})
+    res.writeHead(200,{'Content-Type':types[extname(file)]??'application/octet-stream','X-Content-Type-Options':'nosniff','Referrer-Policy':'no-referrer','Content-Security-Policy':"default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; font-src 'self'; connect-src 'self'; worker-src 'self'; object-src 'none'; base-uri 'none'; frame-ancestors 'none'; form-action 'self'"})
     if(req.method==='HEAD')res.end()
     else createReadStream(file).on('error',()=>res.destroy()).pipe(res)
   }catch{

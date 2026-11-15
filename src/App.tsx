@@ -1,3 +1,5 @@
+import {ModuleProjects} from './ModuleProjects'
+import {AuthGate,LegacyImport} from './Account'
 import {useEffect,useState} from 'react'
 import {useLiveQuery} from 'dexie-react-hooks'
 import {Navigate,Route,Routes,useLocation} from 'react-router-dom'
@@ -9,7 +11,8 @@ import {LessonRoute,ReviewRoute} from './Learn'
 import {MissionPage,ProjectPage,SettingsPage} from './Work'
 import {Heading,Icon,SettingsForm,Shell} from './ui'
 
-export function App(){
+export function App(){return <AuthGate><AcademyApp/></AuthGate>}
+export function AcademyApp(){
   const [boot,setBoot]=useState<'loading'|'ready'|'error'>('loading')
   useEffect(()=>{seed().then(()=>setBoot('ready'),()=>setBoot('error'))},[])
   const settings=useLiveQuery(async()=>({value:await db.settings.get('local')}),[boot])
@@ -21,7 +24,7 @@ export function App(){
 }
 function Onboarding(){
   const [error,setError]=useState('')
-  return <main className="onboard"><div className="welcome card"><img src="/icon-192.png" alt="" width="58" height="58"/><Heading title="أكاديمية التسويق" description="تعلّم التسويق الرقمي بالعربية وطبّقه على مشروع تختاره."/><SettingsForm save={async settings=>{
+  return <main className="onboard"><div className="welcome card"><img src="/icon-192.png" alt="" width="58" height="58"/><Heading title="أكاديمية التسويق" description="تعلّم التسويق الرقمي بالعربية وطبّقه على مشروع تختاره."/><LegacyImport/><SettingsForm save={async settings=>{
     try{await db.transaction('rw',db.settings,db.projects,async()=>{
       if(!(await db.projects.get('portfolio')))await db.projects.add({id:'portfolio',...emptyCapstone(settings.business)})
       await db.settings.put(settings)
@@ -57,6 +60,7 @@ function LearningApp({settings}:{settings:Settings}){
       <Route path="/lesson/:id/:section" element={<LessonRoute states={states} attempts={records.attempts} notice={setMessage}/>}/>
       <Route path="/review/:module" element={<ReviewRoute states={states} attempts={records.attempts}/>}/>
       <Route path="/mission" element={<MissionPage completed={completed.length} notice={setMessage}/>}/>
+      <Route path="/projects" element={<ModuleProjects notice={setMessage}/>}/>
       <Route path="/project" element={<ProjectPage settings={settings} project={records.project} notice={setMessage}/>}/>
       <Route path="/settings" element={<SettingsPage settings={settings} notice={setMessage}/>}/>
       <Route path="*" element={<Navigate to="/" replace/>}/>

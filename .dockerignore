@@ -1,0 +1,12 @@
+.git
+node_modules
+dist
+release
+artifacts
+test-results
+playwright-report
+*.pdf
+*.db
+*.sqlite*
+.env*
+work

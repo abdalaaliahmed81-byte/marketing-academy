@@ -1,14 +1,14 @@
 import {cleanup,fireEvent,render,screen,within} from '@testing-library/react'
 import {MemoryRouter} from 'react-router-dom'
 import {afterEach,beforeEach,expect,it,vi} from 'vitest'
-import {App} from './App'
+import {AcademyApp} from './App'
 import {db} from './db'
 import {lessons} from './lessons'
 
 beforeEach(async()=>{await db.delete();await db.open();vi.spyOn(window,'scrollTo').mockImplementation(()=>{})})
 afterEach(async()=>{cleanup();await db.delete();vi.restoreAllMocks()})
 it('onboards, submits a quiz, saves practice, and opens a learned mission',async()=>{
-  render(<MemoryRouter><App/></MemoryRouter>)
+  render(<MemoryRouter><AcademyApp/></MemoryRouter>)
   fireEvent.click(await screen.findByRole('button',{name:'ابدأ التعلّم'}))
   fireEvent.click(await screen.findByRole('link',{name:'ابدأ الدرس الأول'}))
   fireEvent.click(await screen.findByRole('link',{name:'اذهب إلى الاختبار'}))

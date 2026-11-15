@@ -4,5 +4,5 @@ import {registerSW} from 'virtual:pwa-register'
 import {App} from './App'
 import './style.css'
 
-if(import.meta.env.PROD) registerSW({immediate:true})
+if(import.meta.env.PROD&&location.protocol!=='academy:') registerSW({immediate:true})
 createRoot(document.getElementById('root')!).render(<HashRouter><App/></HashRouter>)

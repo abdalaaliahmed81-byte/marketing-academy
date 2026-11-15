@@ -1,3 +1,6 @@
+import {capstoneExample} from './projects'
+import {encryptBackup,decryptBackup} from './backup'
+import {changePassword} from './auth'
 import {useEffect,useRef,useState} from 'react'
 import {Link} from 'react-router-dom'
 import {useLiveQuery} from 'dexie-react-hooks'
@@ -77,7 +80,7 @@ function ProjectEditor({project,notice}:{project:Capstone;notice:Notice}){
         <section className="card stack"><h2>{sections[selected].name}</h2>{selected===sections.length-1&&<details><summary>بيانات تدريب افتراضية</summary><div className="sample"><table><caption>نتائج إعلانين خلال أسبوع · المبالغ بالدينار العراقي</caption><thead><tr><th scope="col">النسخة</th><th scope="col">ظهور</th><th scope="col">نقرات</th><th scope="col">طلبات</th><th scope="col">إنفاق</th><th scope="col">إيراد</th></tr></thead><tbody><tr><th scope="row">أ</th><td>١٠٠٠</td><td>٤٠</td><td>٤</td><td>٨٠٠٠</td><td>٢٤٠٠٠</td></tr><tr><th scope="row">ب</th><td>١٠٠٠</td><td>٢٥</td><td>٥</td><td>٧٥٠٠</td><td>٣٠٠٠٠</td></tr></tbody></table></div><p>احسب نسبة النقرات من الظهور وتكلفة الطلب، ثم فسّر لماذا قد تختار نسخة بأقل نقرات. الإيراد هنا لا يشمل تكاليف الإنتاج.</p></details>}{sections[selected].fields.map(([id,title])=><label key={id}>{title}<textarea rows={4} value={draft[id]??''} placeholder={prompts[id]} onChange={e=>setDraft({...draft,[id]:e.target.value})}/></label>)}
           <button className="primary" disabled={busy} onClick={()=>void save()}>احفظ المشروع <Icon name="check"/></button>
         </section>
-        <section className="card stack"><h2>تصدير ملف الأعمال</h2><p>لإنشاء PDF اختر «حفظ بتنسيق PDF» من نافذة الطباعة. استخدم نصوصًا قصيرة لطباعة الخطة في صفحة واحدة.</p><div className="actions">
+        <section className="card stack"><h2>نموذج التخرج المحلول</h2><p>نموذج كامل موسوم كمحاكاة يغطي الخطة والأصول والحسابات والتقرير. يمكنك قراءته أو استخدامه كنقطة بداية ثم تعديل قراراتك.</p><details><summary>اقرأ النموذج المحلول</summary>{artifactFields.map(([id,title])=><div key={id}><h3>{title}</h3><p>{capstoneExample.fields[id]}</p></div>)}</details><button className="secondary" onClick={()=>{if(window.confirm('سيستبدل النموذج النصوص المعروضة. لن تُحفظ التغييرات حتى تضغط احفظ المشروع. هل تريد المتابعة؟')){setName(capstoneExample.name);setBusiness(capstoneExample.business);setDraft({...capstoneExample.fields})}}}>استخدم نموذج المحاكاة في المحرر</button></section><section className="card stack"><h2>تصدير ملف الأعمال</h2><p>لإنشاء PDF اختر «حفظ بتنسيق PDF» من نافذة الطباعة. استخدم نصوصًا قصيرة لطباعة الخطة في صفحة واحدة.</p><div className="actions">
           <button className="secondary" onClick={()=>download('marketing-portfolio.md',markdown(value),'text/markdown;charset=utf-8')}>ملف الأعمال Markdown</button>
           <button className="secondary" onClick={()=>download('marketing-one-page-plan.md',markdown(value,true),'text/markdown;charset=utf-8')}>الخطة Markdown</button>
           <button className="secondary" onClick={()=>print('full')}>اطبع ملف الأعمال</button>
@@ -90,17 +93,21 @@ function ProjectEditor({project,notice}:{project:Capstone;notice:Notice}){
 }
 export function SettingsPage({settings,notice}:{settings:Settings;notice:Notice}){
   const [pending,setPending]=useState<File>()
+  const [phrase,setPhrase]=useState('')
+  const [oldPassword,setOldPassword]=useState(''),[newPassword,setNewPassword]=useState('')
   const [busy,setBusy]=useState(false)
   const [failure,setFailure]=useState('')
   return <><Heading title="الإعدادات" description="عدّل خطة الدراسة أو انقل تقدمك إلى جهاز آخر."/>
     <div className="stack">
       <section className="card"><SettingsForm key={settings.goal+settings.minutes+settings.business} settings={settings} save={async next=>{try{await db.settings.update('local',{goal:next.goal,minutes:next.minutes,business:next.business});notice('حُفظت الإعدادات.')}catch{notice('تعذّر حفظ الإعدادات.')}}}/></section>
-      <section className="card stack"><h2>نسخ احتياطي واستعادة</h2><p>صدّر نسخة قبل الاستعادة. الاستعادة تستبدل السجلات على هذا المتصفح بعد التحقق من الملف.</p>
-        <button className="secondary" onClick={async()=>{try{download('marketing-academy-backup.json',JSON.stringify(await exportBackup(),null,2),'application/json')}catch{notice('تعذّر تصدير النسخة.')}}}>نزّل نسخة JSON</button>
-        <label>اختر نسخة احتياطية<input type="file" accept=".json,application/json" onChange={e=>{setPending(e.target.files?.[0]);setFailure('')}}/></label>
-        <button className="primary" disabled={!pending||busy} onClick={async()=>{if(!pending)return;setBusy(true);setFailure('');try{await restoreBackup(JSON.parse(await pending.text()));setPending(undefined);notice('استُعيدت النسخة بنجاح.')}catch{setFailure('الملف غير صالح أو تعذّر استيراده. بقي تقدمك الحالي محفوظًا.')}finally{setBusy(false)}}}>استعد النسخة واستبدل البيانات</button>
+      <section className="card stack"><h2>نسخ احتياطي واستعادة</h2><p>النسخة الجديدة مشفّرة بعبارة تختارها. احفظها خارج الجهاز. الاستعادة تستبدل بيانات الحساب الحالي فقط بعد التحقق؛ صدّر نسخة قبله. يمكن استيراد JSON من الإصدار السابق أيضًا.</p>
+        <label>عبارة حماية النسخة<input type="password" autoComplete="off" minLength={12} maxLength={128} value={phrase} onChange={e=>setPhrase(e.target.value)}/></label>
+        <button className="secondary" disabled={busy||phrase.length<12} onClick={async()=>{setBusy(true);try{download('marketing-academy.academy',JSON.stringify(await encryptBackup(await exportBackup(),phrase)),'application/json');notice('صُدّرت النسخة المشفّرة.')}catch{notice('تعذّر تصدير النسخة.')}finally{setBusy(false)}}}>نزّل نسخة مشفّرة</button>
+        <label>اختر نسخة احتياطية<input type="file" accept=".academy,.json,application/json" onChange={e=>{setPending(e.target.files?.[0]);setFailure('')}}/></label>
+        <button className="primary" disabled={!pending||busy} onClick={async()=>{if(!pending)return;setBusy(true);setFailure('');try{if(pending.size>20_000_000)throw new Error('ملف كبير جدًا.');const raw=JSON.parse(await pending.text());await restoreBackup(raw.format==='marketing-academy-encrypted'?await decryptBackup(raw,phrase):raw);setPending(undefined);notice('استُعيدت النسخة بنجاح.')}catch{setFailure('الملف غير صالح أو تعذّر استيراده. بقي تقدمك الحالي محفوظًا.')}finally{setBusy(false)}}}>استعد النسخة واستبدل البيانات</button>
         {failure&&<p role="alert">{failure}</p>}
       </section>
-      <section className="card stack"><h2>التثبيت والاستخدام دون اتصال</h2><p>افتح نسخة الإنتاج مرة واحدة وانتظر اكتمال تحميلها. استخدم خيار تثبيت التطبيق في قائمة متصفحك. على iPad، افتح Safari واختر «مشاركة»، ثم «إضافة إلى الشاشة الرئيسية».</p></section>
+      <section className="card stack"><h2>تغيير كلمة المرور</h2><form className="stack" onSubmit={async e=>{e.preventDefault();setBusy(true);try{await changePassword(oldPassword,newPassword);setOldPassword('');setNewPassword('');notice('تغيّرت كلمة المرور.')}catch(e){notice(e instanceof Error?e.message:'تعذّر تغيير كلمة المرور.')}finally{setBusy(false)}}}><label>كلمة المرور الحالية<input type="password" autoComplete="current-password" required value={oldPassword} onChange={e=>setOldPassword(e.target.value)}/></label><label>كلمة المرور الجديدة<input type="password" autoComplete="new-password" minLength={12} maxLength={128} required value={newPassword} onChange={e=>setNewPassword(e.target.value)}/></label><button className="secondary" disabled={busy}>غيّر كلمة المرور</button></form></section>
+      <section className="card stack"><h2>التثبيت والاستخدام دون اتصال</h2><p>نسخة Windows المحمولة تعمل مباشرة دون تثبيت أدوات أو خادم. في نسخة الويب افتح التطبيق مرة واحدة وانتظر اكتمال تحميله. استخدم خيار تثبيت التطبيق في قائمة متصفحك. على iPad، افتح Safari واختر «مشاركة»، ثم «إضافة إلى الشاشة الرئيسية».</p></section>
     </div></>
 }

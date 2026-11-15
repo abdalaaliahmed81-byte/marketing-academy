@@ -1,0 +1,38 @@
+name: Publish verified release
+on:
+  workflow_dispatch:
+    inputs:
+      version:
+        description: Version matching package.json, for example 2.0.0
+        required: true
+        default: 2.0.0
+permissions:
+  contents: read
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      actions: read
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - name: Find successful verification of this exact commit
+        env:
+          GH_TOKEN: ${{ github.token }}
+          VERSION: ${{ inputs.version }}
+        run: |
+          test "$VERSION" = "$(node -p "require('./package.json').version")"
+          RUN_ID=$(gh run list --workflow verify.yml --commit "$GITHUB_SHA" --status success --json databaseId --jq '.[0].databaseId')
+          test -n "$RUN_ID" && test "$RUN_ID" != null
+          gh run download "$RUN_ID" --name windows-build-and-evidence --dir verified
+          test -f verified/release/Marketing-Academy-${VERSION}-win-x64.exe
+          cd verified/release
+          sha256sum --check SHA256SUMS.txt
+      - name: Publish verified artifacts
+        env:
+          GH_TOKEN: ${{ github.token }}
+          VERSION: ${{ inputs.version }}
+        run: |
+          gh release create "v${VERSION}" verified/release/*.exe verified/release/*.zip verified/release/SHA256SUMS.txt --target "$GITHUB_SHA" --title "Marketing Academy ${VERSION}" --notes-file docs/RELEASE-NOTES.md
