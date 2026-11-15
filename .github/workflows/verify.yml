@@ -25,12 +25,12 @@ jobs:
         env:
           ELECTRON_SKIP_BINARY_DOWNLOAD: '1'
       - run: node scripts/check-source.mjs
-      - run: npm audit --omit=dev --audit-level=high
+      - run: node scripts/audit-dependencies.mjs
       - run: npm run check
       - run: npx playwright install --with-deps chromium
       - run: npm run test:e2e
       - run: docker compose up -d --build
-      - run: curl --fail --retry 10 --retry-delay 3 --retry-connrefused http://127.0.0.1:8080/
+      - run: node scripts/docker-smoke.mjs
       - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
         if: always()
         with:
@@ -58,15 +58,8 @@ jobs:
         run: node scripts/desktop-smoke.mjs
         env:
           DESKTOP_EXE: release/Marketing-Academy-2.0.0-win-x64.exe
-      - name: SHA256 and source archive
-        shell: pwsh
-        run: |
-          $exe = 'release/Marketing-Academy-2.0.0-win-x64.exe'
-          $digest = (Get-FileHash $exe -Algorithm SHA256).Hash.ToLower()
-          "$digest  Marketing-Academy-2.0.0-win-x64.exe" | Set-Content -Encoding ascii release/SHA256SUMS.txt
-          git archive --format=zip -o release/Marketing-Academy-2.0.0-source.zip HEAD
-          $sourceDigest = (Get-FileHash release/Marketing-Academy-2.0.0-source.zip -Algorithm SHA256).Hash.ToLower()
-          "$sourceDigest  Marketing-Academy-2.0.0-source.zip" | Add-Content -Encoding ascii release/SHA256SUMS.txt
+      - name: SHA256, architecture verification and source archive
+        run: node scripts/release-files.mjs
       - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
         if: always()
         with:

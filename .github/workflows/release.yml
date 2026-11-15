@@ -27,7 +27,14 @@ jobs:
           RUN_ID=$(gh run list --workflow verify.yml --commit "$GITHUB_SHA" --status success --json databaseId --jq '.[0].databaseId')
           test -n "$RUN_ID" && test "$RUN_ID" != null
           gh run download "$RUN_ID" --name windows-build-and-evidence --dir verified
+          gh run download "$RUN_ID" --name web-evidence --dir verified-web
+          echo "VERIFY_RUN_URL=https://github.com/${GITHUB_REPOSITORY}/actions/runs/${RUN_ID}" >> "$GITHUB_ENV"
           test -f verified/release/Marketing-Academy-${VERSION}-win-x64.exe
+          cd verified/release
+          sha256sum --check SHA256SUMS.txt
+      - name: Validate and assemble release evidence
+        run: |
+          node scripts/release-proof.mjs
           cd verified/release
           sha256sum --check SHA256SUMS.txt
       - name: Publish verified artifacts
@@ -35,4 +42,4 @@ jobs:
           GH_TOKEN: ${{ github.token }}
           VERSION: ${{ inputs.version }}
         run: |
-          gh release create "v${VERSION}" verified/release/*.exe verified/release/*.zip verified/release/SHA256SUMS.txt --target "$GITHUB_SHA" --title "Marketing Academy ${VERSION}" --notes-file docs/RELEASE-NOTES.md
+          gh release create "v${VERSION}" verified/release/*.exe verified/release/*.zip verified/release/SHA256SUMS.txt verified/release/verification.json --target "$GITHUB_SHA" --title "Marketing Academy ${VERSION}" --notes-file docs/RELEASE-NOTES.md

@@ -1,15 +1,15 @@
 import {afterEach,beforeEach,describe,expect,it} from 'vitest'
 import {webcrypto} from 'node:crypto'
 import Dexie from 'dexie'
-import {accountsDB,register,login,logout,changePassword,normalizeUsername} from './auth'
+import {accountsDB,register,login,logout,changePassword,normalizeUsername,importLegacy,legacyAvailable} from './auth'
 import {AcademyDB,db,exportBackup,restoreBackup,saveLesson,saveModuleProject} from './db'
 import {decryptBackup,encryptBackup} from './backup'
 import {random} from './vault'
 
 // Real PBKDF2/AES-GCM rather than a fast crypto stub.
 Object.defineProperty(globalThis,'crypto',{value:webcrypto,configurable:true})
-beforeEach(async()=>{await accountsDB.delete();await accountsDB.open()})
-afterEach(async()=>{logout();for(const name of await Dexie.getDatabaseNames())if(name.startsWith('marketing-academy-user-')||name.startsWith('vault-test-'))await Dexie.delete(name);await accountsDB.delete()})
+beforeEach(async()=>{await Dexie.delete('marketing-academy');await accountsDB.delete();await accountsDB.open()})
+afterEach(async()=>{logout();for(const name of await Dexie.getDatabaseNames())if(name.startsWith('marketing-academy-user-')||name.startsWith('vault-test-'))await Dexie.delete(name);await accountsDB.delete();await Dexie.delete('marketing-academy')})
 describe('account security and isolation',()=>{
  it('hashes passwords, encrypts records and isolates two accounts through logout/relogin',async()=>{
   const alice=await register('متعلم أ','long-test-password-1')
@@ -57,6 +57,21 @@ describe('account security and isolation',()=>{
   const same=new AcademyDB(name,key)
   expect((await same.lessonStates.get('m01-l01'))?.notes).toBe('سر');same.close()
  })
+})
+describe('legacy account migration',()=>{
+ it('claims anonymous legacy data once without copying it into other accounts',async()=>{
+  const legacy=new AcademyDB('marketing-academy')
+  await legacy.settings.put({id:'local',goal:'هدف قديم',minutes:30,business:'مطعم',theme:'light'})
+  await saveLesson('m01-l01',{notes:'ملاحظة قديمة'},legacy);legacy.close()
+  await register('Legacy one','long-legacy-password')
+  expect(await legacyAvailable()).toBe(true)
+  await importLegacy()
+  expect((await db.lessonStates.get('m01-l01'))?.notes).toBe('ملاحظة قديمة')
+  logout();await register('Legacy two','long-legacy-password')
+  expect(await legacyAvailable()).toBe(false)
+  await expect(importLegacy()).rejects.toThrow()
+  expect(await db.lessonStates.count()).toBe(0)
+ },20000)
 })
 describe('backup and project validation',()=>{
  it('round trips encrypted backups; wrong phrases and modified payloads fail',async()=>{

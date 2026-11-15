@@ -1,6 +1,6 @@
 # QA execution record
 
-Status: verification in progress. Do not treat this document as a completion certificate. Final results, commit SHAs and CI links will be appended after checks finish.
+Release policy: publish only after the exact source commit passes both web and Windows verification jobs. The release includes verification.json with the actual commit, run URL, checksums, Windows executable smoke results, browser counts, Docker evidence and dependency audit. That machine-generated record is the authority for the published build; this document defines scope and limits.
 
 ## Baseline
 
@@ -19,3 +19,19 @@ Uploaded MVP preserved in commit 34f03dc. Its nine original tests passed before 
 No independent human Arabic instructor, assistive-technology user or external penetration tester has reviewed this application. Automated axe checks cannot establish complete WCAG conformance. Browser checks cover Chromium; Windows CI tests its runner OS, not every supported physical device. Source links were selectively checked, not universally exhaustively reviewed. No promise of business returns or professional accreditation is made.
 
 The production dependency audit initially reported zero known vulnerabilities after upgrading the uploaded dependency set. Build/test tooling still has low/moderate advisories; the exact final audit is recorded separately. Do not describe all dependencies as vulnerability-free. PDFs and extracted copyrighted text are outside the repository.
+
+## Executed local pre-release evidence (2026-11-15)
+
+- 18 unit/integration/content tests passed with TypeScript checking and production build. The added legacy migration test confirms a once-only explicit account claim and prevents copying old anonymous data into a second account.
+- Eight Chromium end-to-end tests passed, including completing all 60 lessons using all 300 correct answers, saving each practical activity and entering every module review. The suite also covers failed answers, persistence, backup integrity, project exports, offline reload, 320/390/1280 widths and keyboard dialogs.
+- Automated accessibility scans passed the path at those widths and the login, dashboard, lesson reading, quiz, module projects, capstone and settings views in light and dark themes, where applicable. This is bounded automated evidence, not a screen-reader certification.
+- A built Linux Electron directory passed registration, 60-lesson display, encrypted note persistence across process restart and re-login, lack of renderer Node APIs and a blocked external fetch. Linux headless tests require a test-only no-sandbox flag because this managed machine lacks the desktop SUID helper setup; production Windows configuration retains renderer sandboxing.
+- Docker image built and served HTTP200, Arabic RTL HTML and the script asset. Inspection and actual write rejection confirmed user101:101, a read-only root, dropped capabilities and no-new-privileges. Health probes passed. Root HTML retained CSP, nosniff and frame protections after fixing nginx header inheritance. A session-only BuildKit CA secret was needed for this managed proxy; no CA or TLS bypass was added to source/image layers.
+- All12 curriculum web reference URLs returned HTTP200 on selective checks. A bounded normalized20-word exact-window comparison found no matches against the private book extracts; that is not legal clearance or an exhaustive originality proof.
+- Production npm dependencies:0 known vulnerabilities. Complete toolchain:2 low and9 moderate,0 high/critical in the recorded audit. Remaining findings concern deepmerge/glob/minimatch and their build-tool consumers. Build inputs and glob patterns are controlled repository inputs; macOS universal/DMG and Squirrel targets are not shipped. These are disclosed residual build-tool risks, not an assertion of zero risk. CI blocks high/critical findings and any production finding.
+
+## Defects found and corrected
+
+Committed-state review navigation race; desktop protocol requests blocked by its own file-fetch interception; premature test actions before async saves acknowledged; hidden print heading selected by a test; root-owned restrictive Docker config permissions; nginx location headers masking inherited security headers; proxy-sensitive local health probes; and portable-wrapper inspector stdout unsuitable for Electron's direct launch helper. The portable EXE is now launched as the shipped file and tested via a loopback CDP endpoint supplied only by the test harness. This endpoint is not enabled for normal application use.
+
+The Windows runner builds the portable EXE, drives its UI, closes and relaunches it, verifies login and saved notes, and checks the unpacked payload's x64 PE architecture before generating release assets. Actual success must be read from verification.json and the linked run; a successful packaging step alone is insufficient.

@@ -91,6 +91,7 @@ test('worked module project and capstone are editable and persistent',async({pag
  page.once('dialog',dialog=>dialog.accept())
  await page.getByRole('button',{name:'استخدم نموذج المحاكاة في المحرر'}).click()
  await page.getByRole('button',{name:'احفظ المشروع',exact:true}).click()
+ await expect(page.getByRole('status')).toHaveText('حُفظ المشروع على جهازك.')
  await page.reload();await login(page)
  await page.getByRole('link',{name:'مشروعي',exact:true}).click()
  await expect(page.getByRole('textbox',{name:'اسم المشروع'})).toHaveValue('محاكاة · هدية المساء')
@@ -161,7 +162,7 @@ test('primary learning views meet automated accessibility checks in both themes'
   if(dark)await page.getByRole('button',{name:'المظهر الداكن',exact:true}).click()
   for(const route of ['/#/','/#/lesson/m01-l01/read','/#/lesson/m01-l01/quiz','/#/projects','/#/project','/#/settings']){
    await page.goto(route)
-   await expect(page.locator('h1')).toBeVisible()
+   await expect(page.getByRole('heading',{level:1})).toBeVisible()
    audit=await new AxeBuilder({page}).withTags(['wcag2a','wcag2aa','wcag21aa','wcag22aa']).analyze()
    expect(audit.violations,route+' theme='+dark).toEqual([])
   }

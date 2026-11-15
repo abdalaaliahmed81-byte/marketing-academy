@@ -1,0 +1,17 @@
+{
+  "method": "Bounded exact matching of normalized 20-Arabic-word windows; no book text is included in this report. This does not establish legal clearance or detect all paraphrase.",
+  "results": [
+    {
+      "sourceExtract": "1",
+      "exactNormalized20WordWindowMatches": 0
+    },
+    {
+      "sourceExtract": "3",
+      "exactNormalized20WordWindowMatches": 0
+    },
+    {
+      "sourceExtract": "2",
+      "exactNormalized20WordWindowMatches": 0
+    }
+  ]
+}

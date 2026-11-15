@@ -1,7 +1,7 @@
 import Dexie,{type Table} from 'dexie'
 import {z} from 'zod'
 import {lessons} from './lessons'
-import {attemptSchema,baghdadDay,capstoneSchema,chooseMission,daySchema,emptyLesson,lessonStateSchema,missionSchema,ready,scoreQuestions,settingsSchema,type Attempt,type Capstone,type LessonState,type Mission,type Settings} from './domain'
+import {artifactFields,attemptSchema,baghdadDay,capstoneSchema,chooseMission,daySchema,emptyLesson,lessonStateSchema,missionSchema,ready,scoreQuestions,settingsSchema,type Attempt,type Capstone,type LessonState,type Mission,type Settings} from './domain'
 import type {Lesson} from './curriculum'
 import {encryptedStorage} from './vault'
 
@@ -114,6 +114,8 @@ const backupSchema=z.object({
 }).strict().superRefine((data,ctx)=>{
   const check=(ids:string[])=>new Set(ids).size===ids.length
   const reject=(message:string)=>ctx.addIssue({code:'custom',message})
+  if(data.version===3&&!data.moduleProjects)reject('سجل مشروعات الوحدات مفقود.')
+  if(data.projects.some(p=>Object.keys(p.fields).some(key=>!artifactFields.some(([id])=>id===key))))reject('حقل مشروع غير معروف.')
   if(data.version>=2&&!data.activity)reject('سجل النشاط مفقود.')
   if(!check(data.lessonStates.map(s=>s.id))||!check(data.attempts.map(a=>a.id))||!check(data.missions.map(m=>m.date))||!check((data.activity??[]).map(a=>a.date)))reject('يحتوي الملف على سجلات مكررة.')
   if(!check((data.moduleProjects??[]).map(p=>p.id)))reject('مشروعات مكررة.')
@@ -124,6 +126,7 @@ const backupSchema=z.object({
   for(const a of data.attempts){
     const l=lessons.find(l=>l.id===a.lessonId)
     if(!l){reject('محاولة لدرس مجهول.');continue}
+    if(Object.keys(a.answers).some(id=>!l.questions.some(q=>q.id===id)))reject('معرّف سؤال غير معروف.')
     try{const actual=scoreQuestions(l.questions,a.answers);if(actual.score!==a.score||JSON.stringify(actual.missed)!==JSON.stringify(a.missed))reject('درجة الاختبار لا تطابق الإجابات.')}catch{reject('إجابات غير صالحة.')}
   }
   for(const state of data.lessonStates.filter(s=>s.completed)){
