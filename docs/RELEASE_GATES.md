@@ -32,3 +32,5 @@ Interface revision extends G07/G08 with17 browser paths, library/stats and notes
 Interface source d086d20 passed run43770162463: G07/G08 checks17/17 browser paths, and G09 native noteTimestampPersistence=true after actual EXE restart. UI_VERIFICATION.json records the evidence. Any future release still requires exact-final-commit proof and honest remaining educational gates.
 
 Interactive revision extends G07 to20 browser paths and G09 to actual built-EXE interactiveActivityPersistence after restart. Grade/state validity, saved attempts/retries, due dates and Baghdad day stability require real tests. New interactive source needs exact-commit CI; earlier UI-only artifacts are historical. G12 human/advanced content readiness remains open.
+
+Interactive source a0bf129 passed run43773926758: G07 includes44 unit/integration +20 browser paths, and G09 interactiveActivityPersistence=true on the actual built EXE. Existing progress/source retained. INTERACTIVE_VERIFICATION.json records provenance and grading limits; G12 remains open. Any future release still needs exact-final-commit verification.

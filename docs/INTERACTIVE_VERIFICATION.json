@@ -1,0 +1,80 @@
+{
+  "testedSourceCommit": "a0bf1297ce5d59501bfc519688edeb6c411100f8",
+  "verificationRun": "https://github.com/abdalaaliahmed81-byte/marketing-academy/actions/runs/43773926758",
+  "result": "both jobs passed",
+  "unitIntegrationTestsPerOS": 44,
+  "browserPaths": 20,
+  "lessons": 60,
+  "scoredQuestions": 300,
+  "activityDefinitions": 360,
+  "activityFamilies": 12,
+  "scenarioTemplates": 12,
+  "windows": {
+    "status": "passed",
+    "commit": "a0bf1297ce5d59501bfc519688edeb6c411100f8",
+    "version": "2.1.0",
+    "platform": "windows",
+    "payloadArchitecture": "x64",
+    "portableExecutableSmoke": {
+      "platform": "win32",
+      "architecture": "x64",
+      "executable": "release/Marketing-Academy-2.1.0-win-x64.exe",
+      "checks": [
+        "application rendered Arabic registration using local academy protocol",
+        "renderer has no Node require or process; SQLite transport exposed only through the narrow preload",
+        "native profile edit acknowledged through preload without changing login username",
+        "registered account, onboarded, showed 60 lessons and saved a lesson note",
+        "required login after process restart and recovered persistent note",
+        "external network fetch blocked; curriculum and notes work without external server",
+        "migrated an authenticated legacy IndexedDB account; completed lesson, note, quiz and project survived; original ciphertext unchanged"
+      ],
+      "networkRequests": [],
+      "profilePersistence": true,
+      "interactiveActivityPersistence": true,
+      "noteTimestampPersistence": true,
+      "sqlite": {
+        "schemaVersion": 1,
+        "accounts": 2,
+        "records": 10,
+        "legacySourcesPreserved": true,
+        "encryptedRecords": true
+      },
+      "status": "passed"
+    },
+    "assets": [
+      {
+        "name": "Marketing-Academy-2.1.0-win-x64.exe",
+        "sha256": "014104ee58e794aa0d1b1205c260a6b88d5e4c8bd7b96b774985484c19a0bd63"
+      },
+      {
+        "name": "Marketing-Academy-2.1.0-source.zip",
+        "sha256": "563732a4e7d4d805bcdde5967de6b0aef6605e08435ec60188534bd1ddae5a62"
+      }
+    ]
+  },
+  "docker": {
+    "status": "passed",
+    "http": 200,
+    "healthy": true,
+    "user": "101:101",
+    "readOnlyRoot": true,
+    "capabilitiesDropped": [
+      "ALL"
+    ],
+    "securityHeaders": true,
+    "rtl": true,
+    "scriptAsset": true,
+    "sqliteApi": true,
+    "apiUser": "node",
+    "apiReadOnlyRoot": true,
+    "progressSurvivesApiRestart": true,
+    "profileSurvivesApiRestart": true
+  },
+  "limits": [
+    "Module scenario/order templates are reused across lessons in that module; guided/glossary content and studio prompt are lesson-contextual.",
+    "Closed tasks are automatically graded; open studio completion is structural/self-review, not independent human or semantic AI grading.",
+    "Quiz IDs, options and correct keys are preserved; existing item-moderation/content-depth findings remain open.",
+    "Draft text uses650ms debounce; wait for saved acknowledgement before leaving. No promise of persistence before acknowledgement/power loss.",
+    "Checksums are CI generated; no separate local download/readback claimed for these new assets. Unsigned x64 EXE; no new GitHub Release published."
+  ]
+}
