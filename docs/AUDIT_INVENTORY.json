@@ -1,27 +1,13 @@
 {
   "baseline": "1eecadbf3e1811e31dc2eafe274487ecb8a15e57",
-  "generatedAt": "2026-11-15T22:09:18.246Z",
+  "generatedAt": "2026-11-15T22:14:53.414Z",
   "files": [
     {
-      "path": "compose.env.example",
-      "bytes": 310,
-      "sha256": "50a5a63ecfaaa6ff2e669ec9144f060b561573481b7ed4edfbd4cc3998b38ebf",
-      "inspection": "read; review scope documented"
-    },
-    {
-      "path": "docs/ACCOUNTS.md",
-      "bytes": 3186,
-      "sha256": "50db9fd234bd27a8ff405b128e6c9b4f27a35aeb0bf8ef83a34d912afc2e135a",
-      "lines": 14,
-      "inspection": "read; review scope documented"
-    },
-    {
-      "path": "tests/profile.spec.ts",
-      "bytes": 4246,
-      "sha256": "74825f46478b381c4677cf3d40b4d07aa4d5a0d29352e75382c087b69d11db74",
-      "lines": 47,
-      "inspection": "read and syntax-parsed; security/runtime review scoped in AUDIT.md",
-      "syntaxErrors": 0
+      "path": "docs/ACCOUNTS_VERIFICATION.json",
+      "bytes": 2753,
+      "sha256": "51d9fba8386d12a845084f90a08e4c7fea68858d3e4e9a563d82197633ce7bbf",
+      "lines": 73,
+      "inspection": "read; manifests/locks additionally consumed by build and dependency audit"
     },
     {
       "path": ".dockerignore",
@@ -115,6 +101,12 @@
       "syntaxErrors": 0
     },
     {
+      "path": "compose.env.example",
+      "bytes": 310,
+      "sha256": "50a5a63ecfaaa6ff2e669ec9144f060b561573481b7ed4edfbd4cc3998b38ebf",
+      "inspection": "read; review scope documented"
+    },
+    {
       "path": "compose.static.yaml",
       "bytes": 273,
       "sha256": "39aa3e1609312bd0e7542eb7dab4885b174fc29addb59076c5b5ca3c4d735edc",
@@ -129,10 +121,17 @@
       "inspection": "read; review scope documented"
     },
     {
+      "path": "docs/ACCOUNTS.md",
+      "bytes": 3186,
+      "sha256": "50db9fd234bd27a8ff405b128e6c9b4f27a35aeb0bf8ef83a34d912afc2e135a",
+      "lines": 14,
+      "inspection": "read; review scope documented"
+    },
+    {
       "path": "docs/AI_PROGRESS.md",
-      "bytes": 10857,
-      "sha256": "ce5e5e45d116a3aa0b832746efe32a03c544cafec4ca918deeca2d06ef24d20c",
-      "lines": 64,
+      "bytes": 11917,
+      "sha256": "596e80f83826343682a75e9c69c587ea5844357262687c484b26a1e68b907750",
+      "lines": 69,
       "inspection": "read; review scope documented"
     },
     {
@@ -207,9 +206,9 @@
     },
     {
       "path": "docs/QA.md",
-      "bytes": 9525,
-      "sha256": "cf9d38e512cc888f5a3afc5a25d21f6e36669021bbf856f7621451506b9b37ff",
-      "lines": 58,
+      "bytes": 10583,
+      "sha256": "0e92f0b01559441a19f819ac13ca02c9ad2896f9ed9e7c0cfe478825fcd801aa",
+      "lines": 63,
       "inspection": "read; review scope documented"
     },
     {
@@ -221,9 +220,9 @@
     },
     {
       "path": "docs/RELEASE_GATES.md",
-      "bytes": 3570,
-      "sha256": "a44439c5631aad8fefbcaf5b501c976852d69d750489f7afd1d222dd50d69d2b",
-      "lines": 26,
+      "bytes": 3852,
+      "sha256": "e550f216c87575eadf77a2873e3416787cd41d3708b1acd9b97bf4f509afd1b6",
+      "lines": 28,
       "inspection": "read; review scope documented"
     },
     {
@@ -712,6 +711,14 @@
       "bytes": 1730,
       "sha256": "72afe4571cf678ec8b31bbbd8331eaea726e8e17f7ec2f812043acac4c93c8e2",
       "lines": 21,
+      "inspection": "read and syntax-parsed; security/runtime review scoped in AUDIT.md",
+      "syntaxErrors": 0
+    },
+    {
+      "path": "tests/profile.spec.ts",
+      "bytes": 4246,
+      "sha256": "74825f46478b381c4677cf3d40b4d07aa4d5a0d29352e75382c087b69d11db74",
+      "lines": 47,
       "inspection": "read and syntax-parsed; security/runtime review scoped in AUDIT.md",
       "syntaxErrors": 0
     },
