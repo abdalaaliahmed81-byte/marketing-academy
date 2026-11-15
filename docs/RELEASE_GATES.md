@@ -28,3 +28,5 @@ Final account implementation verified at17d2597 by run43767675728 (both jobs pas
 
 
 Interface revision extends G07/G08 with17 browser paths, library/stats and notes search/timestamps/mobile interactions. G09 now also requires actual portable-EXE noteTimestampPersistence after process restart. New proof must correspond to the exact source; prior account-only success remains historical. No new release is implied by passing these technical UI gates.
+
+Interface source d086d20 passed run43770162463: G07/G08 checks17/17 browser paths, and G09 native noteTimestampPersistence=true after actual EXE restart. UI_VERIFICATION.json records the evidence. Any future release still requires exact-final-commit proof and honest remaining educational gates.

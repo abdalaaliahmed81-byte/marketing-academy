@@ -1,0 +1,99 @@
+{
+  "testedSourceCommit": "d086d2028c5a05c619b803d2b3c86f1654be7aa7",
+  "verificationRun": "https://github.com/abdalaaliahmed81-byte/marketing-academy/actions/runs/43770162463",
+  "result": "both jobs passed",
+  "unitIntegrationTestsPerOS": 36,
+  "browserPaths": 17,
+  "layoutWidths": [
+    320,
+    390,
+    1280
+  ],
+  "screenshots": [
+    "ui-dashboard-desktop.png",
+    "ui-lesson-desktop.png",
+    "ui-notes-desktop.png",
+    "ui-library-1280.png",
+    "ui-library-390.png",
+    "ui-library-320.png"
+  ],
+  "windows": {
+    "status": "passed",
+    "commit": "d086d2028c5a05c619b803d2b3c86f1654be7aa7",
+    "version": "2.1.0",
+    "platform": "windows",
+    "payloadArchitecture": "x64",
+    "portableExecutableSmoke": {
+      "platform": "win32",
+      "architecture": "x64",
+      "executable": "release/Marketing-Academy-2.1.0-win-x64.exe",
+      "checks": [
+        "application rendered Arabic registration using local academy protocol",
+        "renderer has no Node require or process; SQLite transport exposed only through the narrow preload",
+        "native profile edit acknowledged through preload without changing login username",
+        "registered account, onboarded, showed 60 lessons and saved a lesson note",
+        "required login after process restart and recovered persistent note",
+        "external network fetch blocked; curriculum and notes work without external server",
+        "migrated an authenticated legacy IndexedDB account; completed lesson, note, quiz and project survived; original ciphertext unchanged"
+      ],
+      "networkRequests": [],
+      "profilePersistence": true,
+      "noteTimestampPersistence": true,
+      "sqlite": {
+        "schemaVersion": 1,
+        "accounts": 2,
+        "records": 9,
+        "legacySourcesPreserved": true,
+        "encryptedRecords": true
+      },
+      "status": "passed"
+    },
+    "assets": [
+      {
+        "name": "Marketing-Academy-2.1.0-win-x64.exe",
+        "sha256": "5663453bc66fe2ec0ee5fff3100fc9007ab424b143811ee56db285a740ee3845"
+      },
+      {
+        "name": "Marketing-Academy-2.1.0-source.zip",
+        "sha256": "9c841992b4220ab5d6d8b698bd659c98693b3787b8d0ba99a4beb567fcae72db"
+      }
+    ]
+  },
+  "docker": {
+    "status": "passed",
+    "http": 200,
+    "healthy": true,
+    "user": "101:101",
+    "readOnlyRoot": true,
+    "capabilitiesDropped": [
+      "ALL"
+    ],
+    "securityHeaders": true,
+    "rtl": true,
+    "scriptAsset": true,
+    "sqliteApi": true,
+    "apiUser": "node",
+    "apiReadOnlyRoot": true,
+    "progressSurvivesApiRestart": true,
+    "profileSurvivesApiRestart": true
+  },
+  "limits": [
+    "Mobile checks use real Chromium rendering/viewport and separate touch emulation, not physical devices/Safari.",
+    "Automated axe and keyboard checks do not establish universal accessibility certification.",
+    "CI-generated checksums; no separate local download/readback of these new assets is claimed.",
+    "EXE unsigned. No new release published by this UI revision."
+  ],
+  "localTouchSmoke": {
+    "status": "passed",
+    "engine": "Chromium mobile/touch emulation; not physical hardware or Safari",
+    "viewport": {
+      "width": 390,
+      "height": 844
+    },
+    "touchPoints": 1,
+    "navigationUnchanged": true,
+    "autosaveTimestamp": true,
+    "saveCloseTap": true,
+    "closedEditorsMounted": 0
+  }
+}
