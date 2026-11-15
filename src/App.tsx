@@ -1,3 +1,5 @@
+import {Library} from './Library'
+import {Statistics} from './Statistics'
 import {ModuleProjects} from './ModuleProjects'
 import {AuthGate,LegacyImport} from './Account'
 import {useEffect,useState} from 'react'
@@ -41,7 +43,7 @@ function LearningApp({settings}:{settings:Settings}){
     const anchor=location.hash.slice(1)
     const id=window.requestAnimationFrame(()=>{
       if(anchor&&document.getElementById(anchor))document.getElementById(anchor)?.scrollIntoView()
-      else window.scrollTo(0,0)
+      else {window.scrollTo(0,0);document.getElementById('main-content')?.focus({preventScroll:true})}
     })
     return ()=>window.cancelAnimationFrame(id)
   },[location.pathname,location.hash,!!records])
@@ -51,8 +53,10 @@ function LearningApp({settings}:{settings:Settings}){
   const next=lessons.find(l=>!completed.some(s=>s.id===l.id))??lessons.at(-1)!
   const resume=settings.resume&&(completed.length===lessons.length||!completed.some(s=>s.id===settings.resume?.lessonId))&&isUnlocked(settings.resume.lessonId,states)?settings.resume:{lessonId:next.id,section:'read'}
   return <Shell settings={settings} onTheme={()=>{db.settings.update('local',{theme:settings.theme==='light'?'dark':'light'}).catch(()=>setMessage('تعذّر تغيير المظهر.'))}}>
-    {!records?<p role="status">جارٍ تحميل تقدمك…</p>:<Routes>
+    {!records?<p className="loading-state" role="status">جارٍ تحميل تقدمك…</p>:<div className="route-content" key={location.pathname}><Routes>
       <Route path="/" element={<Dashboard settings={settings} states={states} completed={completed.length} attempts={records.attempts} next={resume} projectDone={artifactFields.filter(([id])=>records.project?.fields[id]?.trim()).length} activity={records.activity}/>}/>
+      <Route path="/library" element={<Library/>}/>
+      <Route path="/stats" element={<Statistics/>}/>
       <Route path="/path" element={<Path states={states}/>}/>
       <Route path="/lesson/:id/:section" element={<LessonRoute states={states} attempts={records.attempts} notice={setMessage}/>}/>
       <Route path="/review/:module" element={<ReviewRoute states={states} attempts={records.attempts}/>}/>
@@ -61,7 +65,7 @@ function LearningApp({settings}:{settings:Settings}){
       <Route path="/project" element={<ProjectPage settings={settings} project={records.project} notice={setMessage}/>}/>
       <Route path="/settings" element={<SettingsPage settings={settings} notice={setMessage}/>}/>
       <Route path="*" element={<Navigate to="/" replace/>}/>
-    </Routes>}
-    {message&&<div className="toast" role="status"><Icon name="check"/>{message}</div>}
+    </Routes></div>}
+    {message&&<div className="toast" role="status" data-tone={message.includes('تعذّر')?'error':'success'}><Icon name={message.includes('تعذّر')?'lock':'check'}/>{message}</div>}
   </Shell>
 }

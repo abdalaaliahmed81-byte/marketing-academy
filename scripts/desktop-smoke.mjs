@@ -74,6 +74,9 @@ try{
  await expect(page.getByRole('button',{name:/^ملاحظات:/})).toHaveCount(60)
  await page.getByRole('button',{name:/^ملاحظات:/}).first().click()
  await page.getByRole('dialog').getByRole('textbox').fill('حفظ دائم بعد إغلاق البرنامج')
+ await expect(page.getByRole('dialog').getByRole('status')).toHaveText('حُفظت الملاحظات')
+ const noteTimestamp=await page.getByRole('dialog').locator('time').getAttribute('datetime')
+ expect(Number.isFinite(Date.parse(noteTimestamp))).toBe(true)
  await page.getByRole('button',{name:'احفظ وأغلق'}).click()
  await expect(page.getByRole('dialog')).not.toBeVisible()
  await page.getByRole('link',{name:'الإعدادات',exact:true}).click()
@@ -91,8 +94,10 @@ try{
  await page.getByRole('link',{name:'مسار التعلّم',exact:true}).click()
  await page.getByRole('button',{name:/^ملاحظات:/}).first().click()
  await expect(page.getByRole('dialog').getByRole('textbox')).toHaveValue('حفظ دائم بعد إغلاق البرنامج')
+ await expect(page.getByRole('dialog').locator('time')).toHaveAttribute('datetime',noteTimestamp)
  await expect(page.locator('.account-name')).toHaveText('متعلم سطح المكتب')
  evidence.profilePersistence=true
+ evidence.noteTimestampPersistence=true
  evidence.checks.push('required login after process restart and recovered persistent note')
  await page.getByRole('button',{name:'احفظ وأغلق'}).click()
  await expect(page.getByRole('dialog')).not.toBeVisible()

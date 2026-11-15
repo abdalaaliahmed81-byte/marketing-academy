@@ -27,7 +27,7 @@ function LessonPage({lesson,tab,state,attempts,notice}:{lesson:Lesson;tab:Sectio
   const next=lessons[index+1]
   return <div className="lesson-wrap stack">
     <div className="section-title"><Link className="text-link" to="/path">مسار التعلّم</Link><button className="secondary" aria-pressed={state.bookmarked} onClick={()=>saveLesson(lesson.id,{bookmarked:!state.bookmarked}).catch(()=>notice('تعذّر حفظ الدرس.'))}><Icon name="bookmark" size={17}/>{state.bookmarked?'أزل العلامة':'احفظ علامة'}</button></div>
-    <div className="lesson-title"><Heading title={lesson.title} description={lesson.goal}/><NotesButton id={lesson.id} title={lesson.title}/></div>
+    <div className="lesson-title"><Heading title={<span className="lesson-name">{lesson.title}<NotesButton id={lesson.id} title={lesson.title}/></span>} description={lesson.goal}/></div>
     <div className="lesson-meta"><span><Icon name="clock" size={17}/> قراءة وتفكير · ٥–٨ دقائق</span><span>{state.completed?'✓ مكتمل':'الدرس '+ar.format(index+1)}</span></div>
     <nav aria-label="أقسام الدرس" className="tabs">{tabs.map(([key,label])=><Link key={key} className={key===tab?'selected':''} aria-current={key===tab?'page':undefined} to={href(lesson.id,key)}>{label}</Link>)}</nav>
     {tab==='read'&&<>
@@ -119,7 +119,7 @@ function ModuleReview({group,attempts,prompt}:{group:Lesson[];attempts:Attempt[]
       <p>{selected.length?'أعد التدريب على الأسئلة التي أخطأت فيها في أحدث محاولة لكل درس.':'راجع سؤالًا من كل درس لتثبيت المفاهيم.'}</p>
       {questions.map(({question:q,lesson:l})=><fieldset className="card question" key={q.id}><legend>{q.prompt}</legend>
         {submitted?<Rationale question={q} answer={answers[q.id]}/>:shuffleOptions(q.options,q.id).map(o=><label className="choice" key={o.id}><input required type="radio" name={q.id} checked={answers[q.id]===o.id} onChange={()=>setAnswers({...answers,[q.id]:o.id})}/>{o.label}</label>)}
-        <Link className="text-link" to={href(l.id)}>{l.title}</Link>
+        <div className="lesson-name"><Link className="text-link" to={href(l.id)}>{l.title}</Link><NotesButton id={l.id} title={l.title}/></div>
       </fieldset>)}
       <div className="actions">{submitted?<button className="secondary" type="button" onClick={()=>{setAnswers({});setSubmitted(false)}}>أعد المراجعة</button>:<button className="primary">راجع الإجابات</button>}<Link className="secondary" to="/path">مسار التعلّم</Link></div>
     </form></>

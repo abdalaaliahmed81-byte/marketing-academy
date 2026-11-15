@@ -46,7 +46,7 @@ export function isUnlocked(id:string,states:LessonState[]){
 export async function saveLesson(id:string,patch:Partial<Omit<LessonState,'id'|'completed'>>,database=db){
   return transaction(database,'rw',async store=>{
     const saved=await store.lessonStates.get(id)??emptyLesson(id)
-    const next=lessonStateSchema.parse({...saved,...patch})
+    const next=lessonStateSchema.parse({...saved,...patch,...(patch.notes!==undefined&&patch.notes!==saved.notes?{notesUpdatedAt:new Date().toISOString()}:{})})
     const lesson=lessons.find(l=>l.id===id)
     if(!lesson)throw new Error('الدرس غير معروف.')
     if(saved.completed&&!ready(next.assignment,next.checked,lesson.rubric))throw new Error('الدرس مكتمل. أبقِ التطبيق وبنود مراجعته مكتملة لحفظ تعديله؛ بقيت النسخة السابقة محفوظة.')

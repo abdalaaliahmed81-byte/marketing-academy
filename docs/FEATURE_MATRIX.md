@@ -6,7 +6,7 @@ Baseline `1eecadb` / published v2.0.0. Branch implements2.1.0; this matrix does 
 |---|---|---|
 |60 lessons,12 modules,300 questions|Present structurally|Preserved; module3 five readings/cases/summaries deepened.45 later lessons still flagged; CONTENT_MATRIX regenerated. Professional review open|
 |60 lesson activities and daily missions|Present|Preserved; bounds/shared validation added; completion remains self-reviewed|
-|Lesson circular notes editor|Present; encrypted IndexedDB|Preserved; native/API encrypted SQLite with process/server restart evidence|
+|Lesson circular notes editor|Present; encrypted IndexedDB|Title-adjacent44px target; lazy modal, autosave/search/timestamps/status; account-isolated native/API SQLite with restart tests|
 |Quizzes, sequential unlocking, mistake review|Present|Stable IDs/scoring retained; domain regressions pass. Assessment editorial flags remain|
 |12 worked module projects and capstone|Present|Preserved;26 portfolio fields and saved/exported submissions. No instructor grading|
 |Accounts/login/logout/password change|Renderer/Dexie|Main/API authority; encrypted per-user SQLite; idle/absolute expiry and password-version revocation|
@@ -22,3 +22,6 @@ Baseline `1eecadb` / published v2.0.0. Branch implements2.1.0; this matrix does 
 |CI/CD and release proofs|Present|Extended SQLite/API/restart gates; pinned actions, source guard, checksums, exact-commit publication|
 |Independent Arabic instructional approval|Not performed|Open. No claim of advanced certification or professional human review|
 |Full GitHub admin-settings audit|Partial access|Public visibility authorized; rulesets empty. Actions permission settings/main protection/secret-name endpoints returned403; unverified|
+
+
+Interface revision adds `/library` (60 lessons/15 references with type/module/query and private-note search) and `/stats` (real attempt/activity/project/note/completion records). Shared responsive light/dark RTL design and restrained CSS motion apply across existing learning/work/account screens. See UI_DESIGN.md and final CI evidence in AI_PROGRESS.md.

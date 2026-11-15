@@ -112,3 +112,22 @@ describe('local state',()=>{
     expect(markdown(project,true)).not.toContain('تقرير محاكاة')
   })
 })
+
+describe('lesson-note timestamp compatibility',()=>{
+ it('preserves a real edit timestamp through backup and reopen, without changing it on unrelated saves',async()=>{
+  await saveLesson(first.id,{notes:'فكرة محفوظة'},db)
+  const original=await db.lessonStates.get(first.id),stamp=original?.notesUpdatedAt
+  expect(Number.isFinite(Date.parse(stamp!))).toBe(true)
+  await saveLesson(first.id,{bookmarked:true},db);await saveLesson(first.id,{notes:'فكرة محفوظة'},db)
+  expect((await db.lessonStates.get(first.id))?.notesUpdatedAt).toBe(stamp)
+  const backup=await exportBackup(db)
+  await restoreBackup(backup,db);db.close();await db.open()
+  expect((await db.lessonStates.get(first.id))?.notesUpdatedAt).toBe(stamp)
+  const legacy={...backup,lessonStates:backup.lessonStates.map(({notesUpdatedAt,...row})=>row)}
+  await restoreBackup(legacy,db)
+  expect((await db.lessonStates.get(first.id))?.notes).toBe('فكرة محفوظة')
+  expect((await db.lessonStates.get(first.id))?.notesUpdatedAt).toBeUndefined()
+  await expect(restoreBackup({...backup,lessonStates:[{...original,notesUpdatedAt:'not-a-date'}]},db)).rejects.toThrow()
+  expect((await db.lessonStates.get(first.id))?.notes).toBe('فكرة محفوظة')
+ })
+})

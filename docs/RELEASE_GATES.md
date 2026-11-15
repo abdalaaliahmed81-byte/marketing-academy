@@ -25,3 +25,6 @@ Automated technical gates may pass while educational readiness remains open. Str
 Account completion revision: G04/G05 now also cover profile ownership and seven-collection target-account restore; G06 has nine commands and final UI lock/heartbeat tests; G09 now requires native profile persistence and G13 requires14 browser paths and Docker profile restart evidence. Earlier passing source remains historical; exact new source must pass CI before publication. Accounts do not provide cloud synchronization.
 
 Final account implementation verified at17d2597 by run43767675728 (both jobs passed). G04–G09 extended account checks passed, including actual EXE profile persistence. See ACCOUNTS_VERIFICATION.json. No new publication; any subsequent release commit needs exact-commit evidence.
+
+
+Interface revision extends G07/G08 with17 browser paths, library/stats and notes search/timestamps/mobile interactions. G09 now also requires actual portable-EXE noteTimestampPersistence after process restart. New proof must correspond to the exact source; prior account-only success remains historical. No new release is implied by passing these technical UI gates.
