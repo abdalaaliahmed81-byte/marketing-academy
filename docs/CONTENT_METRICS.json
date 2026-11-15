@@ -1,12 +1,12 @@
 {
-  "generatedAt": "2026-11-15T18:58:30.977Z",
+  "generatedAt": "2026-11-15T21:57:09.374Z",
   "modules": 12,
   "lessons": 60,
   "questions": 300,
   "workedProjects": 12,
-  "shortMicroLessons": 50,
-  "generatedCases": 50,
-  "repeatedSummaries": 50,
+  "shortMicroLessons": 45,
+  "generatedCases": 45,
+  "repeatedSummaries": 45,
   "questionsWithWeakDistractorHeuristic": 37,
   "questionsWithUniqueLongestCorrectAnswer": 118,
   "limitation": "Heuristics flag editorial review, not automatic proof of incorrectness. Structural presence is not professional approval.",
@@ -488,14 +488,14 @@
       "id": "m03-l01",
       "module": 3,
       "title": "من مقابلة العميل إلى خريطة التعاطف",
-      "readingWords": 191,
-      "readingParagraphs": 3,
+      "readingWords": 348,
+      "readingParagraphs": 5,
       "questions": 5,
       "practicalActivity": true,
       "dailyMission": true,
       "rubricItems": 3,
-      "generatedCase": true,
-      "repeatedSummary": true,
+      "generatedCase": false,
+      "repeatedSummary": false,
       "weakDistractors": [],
       "answerLengthCue": [
         "m03-l01-q1",
@@ -523,24 +523,21 @@
       "independentHumanReview": false,
       "actions": [
         "معايرة بشرية للأسئلة ومواءمة الهدف والتقييم",
-        "إثبات مرجعي أدق من مجرد رابط بوابة",
-        "توسيع التطبيق المتقدم والأمثلة؛ الشرح الحالي درس مصغر",
-        "تأليف حالة نقل مستقلة بدل إعادة سؤال الاختبار",
-        "كتابة خلاصة معرفة وقرار بدل تكرار الهدف"
+        "إثبات مرجعي أدق من مجرد رابط بوابة"
       ]
     },
     {
       "id": "m03-l02",
       "module": 3,
       "title": "عرض القيمة الذي يمكن إثباته",
-      "readingWords": 172,
-      "readingParagraphs": 3,
+      "readingWords": 326,
+      "readingParagraphs": 5,
       "questions": 5,
       "practicalActivity": true,
       "dailyMission": true,
       "rubricItems": 3,
-      "generatedCase": true,
-      "repeatedSummary": true,
+      "generatedCase": false,
+      "repeatedSummary": false,
       "weakDistractors": [
         "m03-l02-q4"
       ],
@@ -570,9 +567,6 @@
       "actions": [
         "معايرة بشرية للأسئلة ومواءمة الهدف والتقييم",
         "إثبات مرجعي أدق من مجرد رابط بوابة",
-        "توسيع التطبيق المتقدم والأمثلة؛ الشرح الحالي درس مصغر",
-        "تأليف حالة نقل مستقلة بدل إعادة سؤال الاختبار",
-        "كتابة خلاصة معرفة وقرار بدل تكرار الهدف",
         "استبدال مشتتات غير مرتبطة بالمجال"
       ]
     },
@@ -580,14 +574,14 @@
       "id": "m03-l03",
       "module": 3,
       "title": "خريطة التموضع والمفاضلات",
-      "readingWords": 161,
-      "readingParagraphs": 3,
+      "readingWords": 318,
+      "readingParagraphs": 5,
       "questions": 5,
       "practicalActivity": true,
       "dailyMission": true,
       "rubricItems": 3,
-      "generatedCase": true,
-      "repeatedSummary": true,
+      "generatedCase": false,
+      "repeatedSummary": false,
       "weakDistractors": [
         "m03-l03-q4"
       ],
@@ -617,9 +611,6 @@
       "actions": [
         "معايرة بشرية للأسئلة ومواءمة الهدف والتقييم",
         "إثبات مرجعي أدق من مجرد رابط بوابة",
-        "توسيع التطبيق المتقدم والأمثلة؛ الشرح الحالي درس مصغر",
-        "تأليف حالة نقل مستقلة بدل إعادة سؤال الاختبار",
-        "كتابة خلاصة معرفة وقرار بدل تكرار الهدف",
         "استبدال مشتتات غير مرتبطة بالمجال"
       ]
     },
@@ -627,14 +618,14 @@
       "id": "m03-l04",
       "module": 3,
       "title": "هوية لفظية متسقة ومتاحة",
-      "readingWords": 150,
-      "readingParagraphs": 3,
+      "readingWords": 295,
+      "readingParagraphs": 5,
       "questions": 5,
       "practicalActivity": true,
       "dailyMission": true,
       "rubricItems": 3,
-      "generatedCase": true,
-      "repeatedSummary": true,
+      "generatedCase": false,
+      "repeatedSummary": false,
       "weakDistractors": [
         "m03-l04-q5"
       ],
@@ -663,9 +654,6 @@
       "actions": [
         "معايرة بشرية للأسئلة ومواءمة الهدف والتقييم",
         "إثبات مرجعي أدق من مجرد رابط بوابة",
-        "توسيع التطبيق المتقدم والأمثلة؛ الشرح الحالي درس مصغر",
-        "تأليف حالة نقل مستقلة بدل إعادة سؤال الاختبار",
-        "كتابة خلاصة معرفة وقرار بدل تكرار الهدف",
         "استبدال مشتتات غير مرتبطة بالمجال"
       ]
     },
@@ -673,14 +661,14 @@
       "id": "m03-l05",
       "module": 3,
       "title": "السعر والعرض وهامش المساهمة",
-      "readingWords": 158,
-      "readingParagraphs": 3,
+      "readingWords": 306,
+      "readingParagraphs": 5,
       "questions": 5,
       "practicalActivity": true,
       "dailyMission": true,
       "rubricItems": 3,
-      "generatedCase": true,
-      "repeatedSummary": true,
+      "generatedCase": false,
+      "repeatedSummary": false,
       "weakDistractors": [],
       "answerLengthCue": [
         "m03-l05-q4"
@@ -705,10 +693,7 @@
       "independentHumanReview": false,
       "actions": [
         "معايرة بشرية للأسئلة ومواءمة الهدف والتقييم",
-        "إثبات مرجعي أدق من مجرد رابط بوابة",
-        "توسيع التطبيق المتقدم والأمثلة؛ الشرح الحالي درس مصغر",
-        "تأليف حالة نقل مستقلة بدل إعادة سؤال الاختبار",
-        "كتابة خلاصة معرفة وقرار بدل تكرار الهدف"
+        "إثبات مرجعي أدق من مجرد رابط بوابة"
       ]
     },
     {

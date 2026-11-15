@@ -4,7 +4,7 @@ Baseline `1eecadb` / published v2.0.0. Branch implements2.1.0; this matrix does 
 
 |Capability|Baseline|Audited source / evidence / remaining limit|
 |---|---|---|
-|60 lessons,12 modules,300 questions|Present structurally|Preserved;60-row CONTENT_MATRIX and machine metrics. Advanced depth/professional review open|
+|60 lessons,12 modules,300 questions|Present structurally|Preserved; module3 five readings/cases/summaries deepened.45 later lessons still flagged; CONTENT_MATRIX regenerated. Professional review open|
 |60 lesson activities and daily missions|Present|Preserved; bounds/shared validation added; completion remains self-reviewed|
 |Lesson circular notes editor|Present; encrypted IndexedDB|Preserved; native/API encrypted SQLite with process/server restart evidence|
 |Quizzes, sequential unlocking, mistake review|Present|Stable IDs/scoring retained; domain regressions pass. Assessment editorial flags remain|

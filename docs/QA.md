@@ -44,3 +44,9 @@ The Windows runner builds the portable EXE, drives its UI, closes and relaunches
 ## 2.1.0 audit verification (unreleased)
 
 Final source484c80a passed both jobs in [run43749095271](https://github.com/abdalaaliahmed81-byte/marketing-academy/actions/runs/43749095271):32 unit/integration tests per OS,12 browser paths, real Docker SQLite/restart checks, and actual built Windows-EXE isolation/persistence/legacy migration. Local download/readback verified EXE/source digests. See AUDIT_VERIFICATION.json and AI_PROGRESS.md. The educational audit identified50 short micro-lessons with repeated cases/summaries and item-quality flags; previous structural checks are not professional content approval. These findings remain open.
+
+## Educational revision, module3 —2026-11-16 Baghdad
+
+Inspected prior CI evidence and confirmed run43749753438 succeeded before resuming. Added explanatory material, independent worked simulation cases and summaries for m03-l01–m03-l05. Current32 unit/integration tests, TypeScript and production build passed. Actual old/new esbuild exports were compared: all50 advanced IDs and250 questions/options/answer keys, assignments, missions and rubrics match; no historical attempt rescoring is introduced. Reading counts for the revised lessons are348/326/318/295/306 words. Counts are descriptive; human instructional approval remains open. Pricing case independently recalculated: (10000−6000−1500)=2500; after20% discount (8000−6000−1500)=500;10×2500/500=50 orders. This is a simulation with fixed acquisition cost, not a forecast.
+
+Module3 revision browser run:12/12 passed locally (2.3 minutes), including full60-lesson progression and API safeguards. New Windows packaging is not inferred from the previous checkpoint.

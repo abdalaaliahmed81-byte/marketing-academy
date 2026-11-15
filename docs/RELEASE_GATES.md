@@ -15,7 +15,7 @@ Applies to2.1.0 audit source. Published v2.0.0 is unchanged. AI_PROGRESS records
 |G09 Packaging|Actual built x64 portable EXE + SQLite and legacy migration smoke, restart, PE header/digests|Passed for484c80a in run43749095271; later release commit still requires exact verification. Unsigned|
 |G10 Supply chain|No production advisories, no high/critical tooling findings, source guard, pinned actions|Dependency report records exact counts; low/moderate tooling residual accepted/disclosed|
 |G11 Educational audit coverage|60-row matrix +3-PDF metadata/source inspection +question/case/depth metrics|Completed bounded audit; evidence depth clearly labeled|
-|G12 Advanced educational readiness|Expand flagged micro-lessons, independent cases/summaries, item moderation, claim-level current sources, qualified independent Arabic review|OPEN; blocks advanced/professionally-reviewed completion claims|
+|G12 Advanced educational readiness|Expand remaining45 flagged micro-lessons (module3 batch implemented), independent cases/summaries, item moderation, claim-level current sources, qualified independent Arabic review|OPEN; blocks advanced/professionally-reviewed completion claims|
 |G13 Publication|Exact-commit web/Windows verification, asset digests/source archive/readback, correct release notes|Not executed for2.1.0; this audit does not publish a new release|
 |G14 GitHub configuration assurance|Admin-setting readback, branch/rules protections, signing configuration if claimed|PARTIAL: read endpoints403. Do not infer missing controls from denial|
 

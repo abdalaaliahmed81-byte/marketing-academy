@@ -43,3 +43,12 @@ Educational E01–E05 remain open: advanced lesson depth, independent cases/summ
 ## Resume rules
 
 Read git status, this file and AUDIT.md before edits. Continue this branch, do not restart/replace the app. Keep `academy://app`, app ID, lesson/question/option IDs and userData location. Never delete learner IDB/SQLite to fix an error. Use temporary synthetic fixture databases and never upload them/PDFs/extracts/secrets. Keep migrations transactional and sources recoverable. A semantic quiz correction needs content versioning/history preservation. Record actual checks and exact CI/source commits; only publish with RELEASE_GATES evidence. Do not require the user to run routine developer commands.
+
+
+## Resumed educational implementation —2026-11-16 (Asia/Baghdad)
+
+Inspected repository/main, original implementation contract, feature/content matrices, gates and actual evidence. Confirmed main integration run43749753438 succeeded via GitHub, rather than assuming the earlier source proof applied. `PROJECT_CONTRACT.md` was absent; added an entry point linking the original contract and amendments, without replacing them.
+
+Earliest unfinished phase is E02 instructional depth, followed by assessment moderation/provenance and independent review. Authored module03-depth.ts for all five module3 lessons: additional lesson-specific decision procedures, counterexamples/limits, independent simulated cases with worked reasoning, and actual takeaways instead of copied objectives. Added existing W3C writing reference for the verbal-accessibility lesson. No new research or source-coverage claim; no books/extracts redistributed. Explanations only: all50 advanced lesson IDs,250 questions/options/correct-answer keys, activities, missions and rubrics compared against prior HEAD unchanged (actual bundle comparison). Existing attempts/completions remain compatible.
+
+`npm run check` passed32 tests/typecheck/build. Content audit now flags45 short lessons/generated cases/repeated summaries instead of50; remaining assessment flags37/118 are unchanged and open. This batch is agent editorial work, not independent instructor approval. Current browser suite passed12/12, including the full60-lesson path, backup/restore, offline use, accessibility and API account isolation. New exact-commit Windows/Docker CI is triggered on push; do not substitute the earlier successful binary for this content revision. Continue with module4 next; do not redo module3 or reset learner data. Release G12 remains OPEN, and no replacement release is justified yet.
