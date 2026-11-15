@@ -1,0 +1,30 @@
+import {createServer} from 'node:http'
+import {createReadStream} from 'node:fs'
+import {stat} from 'node:fs/promises'
+import {extname,resolve,sep} from 'node:path'
+import {fileURLToPath} from 'node:url'
+
+const root=fileURLToPath(new URL('../dist',import.meta.url))
+const port=4173
+const types={'.html':'text/html; charset=utf-8','.js':'text/javascript; charset=utf-8','.css':'text/css; charset=utf-8','.png':'image/png','.webmanifest':'application/manifest+json','.woff2':'font/woff2'}
+try{
+  await stat(resolve(root,'index.html'))
+}catch{
+  console.error('Missing dist/index.html. Run npm install and npm run build first.')
+  process.exit(1)
+}
+createServer(async(req,res)=>{
+  try{
+    const pathname=decodeURIComponent(new URL(req.url,'http://localhost').pathname)
+    const file=resolve(root,'.'+(pathname==='/'?'/index.html':pathname))
+    if(!file.startsWith(root+sep)||!(await stat(file)).isFile()){
+      res.writeHead(404).end()
+      return
+    }
+    res.writeHead(200,{'Content-Type':types[extname(file)]??'application/octet-stream','X-Content-Type-Options':'nosniff'})
+    if(req.method==='HEAD')res.end()
+    else createReadStream(file).on('error',()=>res.destroy()).pipe(res)
+  }catch{
+    res.writeHead(404).end()
+  }
+}).on('error',error=>{console.error(error.message);process.exitCode=1}).listen(port,'127.0.0.1',()=>console.log('Marketing Academy: http://127.0.0.1:'+port))
