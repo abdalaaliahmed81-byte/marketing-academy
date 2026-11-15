@@ -55,3 +55,23 @@ it('rejects a stale tab revision and refreshes without overwriting a newer saved
  expect(actual.state.lessonStates[0]).toMatchObject({notes:'first committed',bookmarked:true})
  other.close()
 })
+it('isolates every saved learning collection and restores a backup into only its authenticated target account',async()=>{
+ await initializeSettings({id:'local',goal:'سجل خاص',minutes:30,business:'مطعم',theme:'light'},repo)
+ const lesson=lessons[0];await submitQuiz(lesson,Object.fromEntries(lesson.questions.map(q=>[q.id,q.answer])),repo)
+ await saveLesson(lesson.id,{notes:'private',assignment:'نشاط خاص',checked:[0,1,2]},repo);await completeLesson(lesson,repo)
+ await getMission('2026-11-16',repo);await saveMission('2026-11-16','مهمة خاصة',[0,1,2],true,repo)
+ const blank=emptyCapstone('مطعم');await saveProject({...blank,name:'ملف خاص',fields:{market:'بحث خاص'}},blank,repo)
+ await saveModuleProject({id:'module-1',response:'مشروع خاص',checked:[0,1,2,3],completed:true},repo)
+ const exported=await exportBackup(repo),alice=auth
+ const bob=await engine.request('register',{name:'Backup Bob',password:'repository-long-password'}) as AuthResponse
+ const bobRepo=new SQLiteRepository(bob.snapshot,{kind:'desktop-sqlite',request:(command,payload)=>engine.request(command,payload,bob.token)})
+ try{
+  const before=await exportBackup(bobRepo)
+  for(const key of ['settings','lessonStates','attempts','missions','projects','activity','moduleProjects'] as const){expect(before[key]).toHaveLength(0);expect(exported[key]!.length).toBeGreaterThan(0)}
+  await restoreBackup(exported,bobRepo);expect(await exportBackup(bobRepo)).toEqual(exported)
+  await expect(restoreBackup({...exported,lessonStates:[{...exported.lessonStates[0],id:'unknown'}]},bobRepo)).rejects.toThrow()
+  expect(await exportBackup(bobRepo)).toEqual(exported)
+  const source=await engine.request('read',{ownerId:alice.session.id},alice.token) as {state:unknown}
+  expect(source.state).toEqual(exported)
+ }finally{bobRepo.close()}
+})

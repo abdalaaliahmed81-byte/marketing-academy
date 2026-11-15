@@ -1,6 +1,6 @@
 import {z} from '../validation'
 import {normalizeState,type LearnerState} from '../data-schema'
-export const commands=['register','login','logout','changePassword','read','commit','migrateLegacy'] as const
+export const commands=['register','login','logout','changePassword','read','commit','migrateLegacy','profile','updateProfile'] as const
 export type Command=typeof commands[number]
 export interface UserSession {id:string;name:string}
 export interface Snapshot {ownerId:string;revision:number;state:LearnerState}
@@ -17,3 +17,7 @@ export function parseAuthResult(raw:unknown):AuthResult{
  if(value.session.id!==snapshot.ownerId)throw new Error('مالك البيانات لا يطابق الحساب.')
  return {session:value.session,snapshot}
 }
+
+export const profileSchema=z.object({id:z.string().uuid(),username:z.string().min(3).max(40),name:z.string().trim().min(1).max(80),createdAt:z.string().datetime()}).strict()
+export type Profile=z.infer<typeof profileSchema>
+export const displayNameSchema=z.string().trim().min(1).max(80).refine(value=>!/[\u0000-\u001f\u007f]/.test(value))

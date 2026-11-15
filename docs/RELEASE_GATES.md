@@ -20,3 +20,6 @@ Applies to2.1.0 audit source. Published v2.0.0 is unchanged. AI_PROGRESS records
 |G14 GitHub configuration assurance|Admin-setting readback, branch/rules protections, signing configuration if claimed|PARTIAL: read endpoints403. Do not infer missing controls from denial|
 
 Automated technical gates may pass while educational readiness remains open. Structural60/300/12 counts do not override G12. No release or deployment may be described as verified solely because scripts or workflow files exist. Keep unverified claims explicit and retain the prior release until any replacement's gates pass.
+
+
+Account completion revision: G04/G05 now also cover profile ownership and seven-collection target-account restore; G06 has nine commands and final UI lock/heartbeat tests; G09 now requires native profile persistence and G13 requires14 browser paths and Docker profile restart evidence. Earlier passing source remains historical; exact new source must pass CI before publication. Accounts do not provide cloud synchronization.

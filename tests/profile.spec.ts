@@ -1,0 +1,46 @@
+import {test,expect} from '@playwright/test'
+for(const [edition,baseURL] of [['static','http://127.0.0.1:4173'],['api','http://127.0.0.1:4174']] as const){
+ test.describe(edition+' account profile and user switching',()=>{
+  test.use({baseURL})
+  test('updates display identity without changing login, locks before switching and preserves private notes',async({page})=>{
+   const username='Profile '+crypto.randomUUID().slice(0,8),password='profile-test-long-password'
+   await page.clock.install()
+   await page.goto('/');await page.getByRole('button',{name:'إنشاء حساب',exact:true}).click()
+   await page.getByLabel('اسم المستخدم',{exact:true}).fill(username)
+   await page.getByLabel('كلمة المرور',{exact:true}).fill(password)
+   await page.getByLabel('تأكيد كلمة المرور',{exact:true}).fill(password)
+   await page.getByRole('button',{name:'أنشئ حسابي'}).click();await page.getByRole('button',{name:'ابدأ التعلّم',exact:true}).click()
+   await page.getByRole('link',{name:'مسار التعلّم',exact:true}).click()
+   await page.getByRole('button',{name:/^ملاحظات:/}).first().click()
+   await page.getByRole('dialog').getByRole('textbox').fill('ملاحظة الحساب الأصلي')
+   await page.getByRole('button',{name:'احفظ وأغلق'}).click();await expect(page.getByRole('dialog')).not.toBeVisible()
+   await page.getByRole('link',{name:'الإعدادات',exact:true}).click()
+   await page.getByLabel('اسم العرض',{exact:true}).fill('اسمي المعروض الجديد')
+   await page.getByRole('button',{name:'احفظ الملف الشخصي'}).click()
+   await expect(page.locator('.account-name')).toHaveText('اسمي المعروض الجديد')
+   await expect(page.getByText('اسم الدخول الثابت:',{exact:false})).toContainText(username.toLowerCase())
+   await page.getByRole('button',{name:'تبديل المستخدم',exact:true}).click()
+   await expect(page.getByRole('button',{name:'ادخل إلى الأكاديمية'})).toBeVisible()
+   await page.getByRole('button',{name:'إنشاء حساب',exact:true}).click()
+   await page.getByLabel('اسم المستخدم',{exact:true}).fill('Other '+crypto.randomUUID().slice(0,8))
+   await page.getByLabel('كلمة المرور',{exact:true}).fill(password);await page.getByLabel('تأكيد كلمة المرور',{exact:true}).fill(password)
+   await page.getByRole('button',{name:'أنشئ حسابي'}).click();await page.getByRole('button',{name:'ابدأ التعلّم',exact:true}).click()
+   await page.getByRole('link',{name:'مسار التعلّم',exact:true}).click();await page.getByRole('button',{name:/^ملاحظات:/}).first().click()
+   await expect(page.getByRole('dialog').getByRole('textbox')).toHaveValue('')
+   await page.getByRole('button',{name:'احفظ وأغلق'}).click();await expect(page.getByRole('dialog')).not.toBeVisible()
+   await page.getByRole('button',{name:'خروج',exact:true}).click()
+   await page.getByLabel('اسم المستخدم',{exact:true}).fill(username);await page.getByLabel('كلمة المرور',{exact:true}).fill(password)
+   await page.getByRole('button',{name:'ادخل إلى الأكاديمية'}).click()
+   await expect(page.locator('.account-name')).toHaveText('اسمي المعروض الجديد')
+   await page.getByRole('button',{name:/^ملاحظات:/}).first().click()
+   await expect(page.getByRole('dialog').getByRole('textbox')).toHaveValue('ملاحظة الحساب الأصلي')
+   await page.getByRole('button',{name:'احفظ وأغلق'}).click();await expect(page.getByRole('dialog')).not.toBeVisible()
+   const heartbeat=edition==='api'?page.waitForRequest(req=>req.url().endsWith('/api/command')&&req.method()==='POST'&&req.postDataJSON().command==='profile'):undefined
+   await page.clock.fastForward(4*60_000);await page.locator('.account-name').click()
+   await page.clock.fastForward(2*60_000);if(heartbeat)await heartbeat
+   await expect(page.getByRole('button',{name:'خروج',exact:true})).toBeVisible()
+   await page.clock.fastForward(31*60_000)
+   await expect(page.getByRole('button',{name:'ادخل إلى الأكاديمية'})).toBeVisible()
+  })
+ })
+}

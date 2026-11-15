@@ -31,6 +31,7 @@ const name='Docker audit '+crypto.randomUUID().slice(0,8),password='docker-audit
 const registered=await call('register',{name,password})
 assert.equal(registered.response.status,200)
 const cookie=registered.response.headers.get('set-cookie').split(';')[0],ownerId=registered.body.value.session.id
+const updated=await call('updateProfile',{ownerId,name:'ملف Docker محفوظ'},cookie);assert.equal(updated.response.status,200);assert.equal(updated.body.value.username,name.toLowerCase())
 const saved=registered.body.value.snapshot.state
 saved.lessonStates=[{id:'m01-l01',notes:'docker-sqlite-persistence',bookmarked:false,assignment:'',checked:[],completed:false}]
 assert.equal((await call('commit',{ownerId,expectedRevision:0,state:saved},cookie)).response.status,200)
@@ -39,9 +40,10 @@ let ready=false
 for(let i=0;i<45;i++){try{if((await fetch(origin+'/api/health')).ok){ready=true;break}}catch{}await delay(1000)}
 assert(ready,'API did not recover after restart')
 const relogin=await call('login',{name,password});assert.equal(relogin.response.status,200)
+assert.equal(relogin.body.value.session.name,'ملف Docker محفوظ')
 assert.equal(relogin.body.value.snapshot.state.lessonStates[0].notes,'docker-sqlite-persistence')
 const apiId=execFileSync('docker',['compose','ps','-q','api'],{encoding:'utf8'}).trim()
 const api=JSON.parse(execFileSync('docker',['inspect',apiId],{encoding:'utf8'}))[0]
 assert.equal(api.HostConfig.ReadonlyRootfs,true);assert.equal(api.Config.User,'node');assert(api.HostConfig.CapDrop.includes('ALL'))
-const report={status:'passed',http:200,healthy:true,user:state.Config.User,readOnlyRoot:state.HostConfig.ReadonlyRootfs,capabilitiesDropped:state.HostConfig.CapDrop,securityHeaders:true,rtl:true,scriptAsset:true,sqliteApi:true,apiUser:api.Config.User,apiReadOnlyRoot:true,progressSurvivesApiRestart:true}
+const report={status:'passed',http:200,healthy:true,user:state.Config.User,readOnlyRoot:state.HostConfig.ReadonlyRootfs,capabilitiesDropped:state.HostConfig.CapDrop,securityHeaders:true,rtl:true,scriptAsset:true,sqliteApi:true,apiUser:api.Config.User,apiReadOnlyRoot:true,progressSurvivesApiRestart:true,profileSurvivesApiRestart:true}
 await mkdir('artifacts',{recursive:true});await writeFile('artifacts/docker-smoke.json',JSON.stringify(report,null,2));console.log(JSON.stringify(report))

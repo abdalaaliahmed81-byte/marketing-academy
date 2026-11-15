@@ -1,3 +1,4 @@
+import {displayNameSchema,type Profile} from './storage/protocol'
 import Dexie,{type Table} from 'dexie'
 import {AcademyDB,activateDatabase,db,exportBackup,restoreBackup} from './db'
 import {hex,random,seal,unhex,unseal} from './vault'
@@ -81,4 +82,23 @@ export async function importLegacy(){
   try{await accountsDB.metadata.add({id:'legacy-owner',userId:session.id})}catch{throw new Error('تم ربط البيانات القديمة بحساب آخر.')}
   const old=new AcademyDB('marketing-academy')
   try{await restoreBackup(await exportBackup(old))}catch(error){await accountsDB.metadata.delete('legacy-owner');throw error}finally{old.close()}
+}
+
+export async function profile():Promise<Profile>{
+ const owner=session?.id
+ if(!owner)throw new Error('سجّل الدخول أولًا.')
+ const account=await accountsDB.accounts.get(owner)
+ if(!account||session?.id!==owner)throw new Error('تغير الحساب؛ أعد المحاولة.')
+ return {id:account.id,username:account.username,name:account.displayName,createdAt:account.createdAt}
+}
+export async function updateProfile(name:string):Promise<Profile>{
+ const next=displayNameSchema.parse(name),owner=session?.id
+ if(!owner)throw new Error('سجّل الدخول أولًا.')
+ await accountsDB.transaction('rw',accountsDB.accounts,async()=>{
+  const account=await accountsDB.accounts.get(owner)
+  if(!account||session?.id!==owner)throw new Error('تغير الحساب؛ أعد المحاولة.')
+  await accountsDB.accounts.update(owner,{displayName:next})
+ })
+ if(session?.id===owner)session={...session,name:next}
+ return profile()
 }

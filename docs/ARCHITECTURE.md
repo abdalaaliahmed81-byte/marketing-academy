@@ -10,13 +10,13 @@ Audit branch implementation for **2.1.0 (unreleased)**. Published v2.0.0 remains
 |Shared state schemas|`src/data-schema.ts`, `validation.ts`|Canonical v3 state, legacy v1/v2 import, completion/score/ID/size validation; Zod JIT explicitly disabled for strict CSP|
 |UI and business operations|React views, `src/db.ts`, `backup.ts`|Accessible Arabic RTL UI, educational transactions and encrypted portable backups; independent of native/API transport|
 |Repository|`src/storage/repository.ts`, `query.ts`|Memory-only committed read model for native/API; explicit transaction-scoped views and serialized writes; retains legacy Dexie observation|
-|Transport|`protocol.ts`, `transport.ts`|Seven typed commands; no SQL or file paths. Detect desktop first, then same-origin API, else legacy PWA; pinned API never silently falls back during outage|
+|Transport|`protocol.ts`, `transport.ts`|Nine typed commands; no SQL or file paths. Detect desktop first, then same-origin API, else legacy PWA; pinned API never silently falls back during outage|
 |Trusted persistence|`backend/engine.ts`|Actual Node/Electron built-in SQLite, authentication, session/owner authorization, crypto, schema migration and atomic revision commits|
 |Desktop host|`electron/main.cjs`, `preload.cjs`|Bundled Electron runtime, sandboxed renderer, origin/main-frame validation, private token in main, frozen narrow context bridge|
 |Optional HTTP host|`backend/server.ts`|Same engine, same-origin JSON API, HttpOnly cookies, bounded requests, rate limits and origin/CSRF checks|
 |Legacy adapter|`src/legacy-auth.ts`, AcademyDB in `src/db.ts`|Original encrypted per-account IndexedDB and once-only anonymous MVP claim; retained for migration and static PWA|
 
-React routes: `/`, `/path`, `/lesson/:id/:section`, `/review/:module`, `/projects`, `/project`, `/mission`, `/settings`, plus fallback. They use HashRouter, so packaged paths need no remote routing service. HTTP routes: GET `/api/health` and POST `/api/command`; unknown API paths reject. Commands: `register`, `login`, `logout`, `changePassword`, `read`, `commit`, `migrateLegacy`.
+React routes: `/`, `/path`, `/lesson/:id/:section`, `/review/:module`, `/projects`, `/project`, `/mission`, `/settings`, plus fallback. They use HashRouter, so packaged paths need no remote routing service. HTTP routes: GET `/api/health` and POST `/api/command`; unknown API paths reject. Commands: `register`, `login`, `logout`, `changePassword`, `read`, `commit`, `migrateLegacy`, `profile`, `updateProfile`.
 
 ## SQLite model and durability
 
@@ -45,3 +45,12 @@ The simple API rate limiter sees the direct peer (nginx in Compose), so rate bud
 ## Build and release boundary
 
 Vite builds the same UI/curriculum. esbuild bundles engine.cjs for Electron and server.mjs for Node. electron-builder packages dist/build/electron; PDF books, test fixtures and runtime databases are excluded. Windows verification drives the **built portable EXE**, tests SQLite persistence and authenticated legacy migration, verifies x64 PE and produces digests/source archive. A release requires successful exact-commit web+Windows evidence; no new release is created by this audit. Windows signing is absent and disclosed, not simulated.
+
+
+## Account/profile completion —2026-11-16 Baghdad
+
+`profile` returns only owner ID, immutable normalized login name, display name and creation timestamp. `updateProfile` validates1–80 trimmed display characters (no control characters), checks authenticated owner and atomically updates only display_name. No schema replacement is needed: existing SQLite schema1 already contains this field. It never changes password keys, IDs, progress or username. Legacy static PWA supports the same UI; authenticated migration retains an edited legacy display name while preserving its original login identity.
+
+Settings now offers profile editing, existing password/study-plan controls and explicit user switching. Switching closes the current read model immediately, waits for remote logout acknowledgement (bounded request timeout), then exposes login for the next user. Expired/mismatched sessions are already invalid and safely close locally. A genuine server-contact failure is disclosed rather than claimed as revoked. UI locks after30 minutes without input/scroll and at12 hours; trusted engine independently expires sessions by protected-request idle/absolute time. A five-minute owner-scoped profile heartbeat renews the trusted idle lease only while interaction is recent; it does not extend the absolute lifetime. Focus checks an overdue lock before activity can refresh it. Browser timer throttling and OS clock tampering are outside a hard real-time guarantee. Save drafts before leaving a shared device. Profiles are account metadata; progress backups exclude credentials and do not rename the target account.
+
+`compose.env.example` documents the loopback defaults and exact HTTPS-origin override. Both services have real health checks; API receives only its private volume, and the EXE starts no API/HTTP listener. Backup transfer is manual, passphrase-encrypted and target-account-scoped; no automatic cloud sync is provided.

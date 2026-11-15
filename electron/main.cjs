@@ -9,7 +9,7 @@ const origin='academy://app'
 const {AcademyEngine,AcademyError,publicError}=require('../build/engine.cjs')
 let engine
 const tokens=new Map()
-const commands=new Set(['register','login','logout','changePassword','read','commit','migrateLegacy'])
+const commands=new Set(['register','login','logout','changePassword','read','commit','migrateLegacy','profile','updateProfile'])
 const externalHosts=new Set(['grow.google','academy.hubspot.com','www.facebookblueprint.com','skillshop.withgoogle.com','developers.google.com','www.semrush.com','allandib.com','www.penguinrandomhouse.com','seths.blog','support.google.com','www.google.com','www.ftc.gov','www.w3.org'])
 function safeExternal(url){try{const u=new URL(url);return u.protocol==='https:'&&!u.username&&!u.password&&externalHosts.has(u.hostname)}catch{return false}}
 function appUrl(url){try{const u=new URL(url);return u.protocol==='academy:'&&u.host==='app'}catch{return false}}

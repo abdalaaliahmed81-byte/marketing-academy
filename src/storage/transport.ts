@@ -20,7 +20,7 @@ export async function discoverTransport():Promise<Transport|undefined>{
    transport={kind:'web-api',request:async(command,payload)=>{
     if(!commands.includes(command))throw new TransportError('VALIDATION','عملية غير مدعومة.')
     let response:Response
-    try{response=await fetch('/api/command',{method:'POST',credentials:'same-origin',headers:{'Content-Type':'application/json','X-Academy-Request':'1'},body:JSON.stringify({command,payload})})}catch{throw new TransportError('OFFLINE','خادم الحسابات غير متاح. بقي تقدمك محفوظًا؛ حاول عند عودة الاتصال.')}
+    try{response=await fetch('/api/command',{method:'POST',signal:AbortSignal.timeout(15000),credentials:'same-origin',headers:{'Content-Type':'application/json','X-Academy-Request':'1'},body:JSON.stringify({command,payload})})}catch{throw new TransportError('OFFLINE','خادم الحسابات غير متاح. بقي تقدمك محفوظًا؛ حاول عند عودة الاتصال.')}
     return unwrap(await response.json(),(payload as {ownerId?:string})?.ownerId)
    }}
    return transport

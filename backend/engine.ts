@@ -5,6 +5,7 @@ import {mkdirSync,chmodSync} from 'node:fs'
 import {dirname} from 'node:path'
 import {z} from '../src/validation'
 import {collections,emptyState,normalizeState,MAX_STATE_BYTES,type Collection,type LearnerState} from '../src/data-schema'
+import {displayNameSchema} from '../src/storage/protocol'
 import type {Command,Snapshot,UserSession} from '../src/storage/protocol'
 
 const pbkdf2=promisify(pbkdf2Callback)
@@ -126,8 +127,8 @@ export class AcademyEngine{
   }catch(error){this.sql.exec('ROLLBACK');throw error}
   return this.snapshot(session)
  }
- private async create(name:string,password:string,initial=emptyState(),legacySource?:string):Promise<AuthResponse>{
-  const username=validName(name)
+ private async create(name:string,password:string,initial=emptyState(),legacySource?:string,displayName=name.trim()):Promise<AuthResponse>{
+  const username=validName(name),safeDisplayName=displayNameSchema.parse(displayName)
   if(password.length<12)throw new AcademyError('VALIDATION','استخدم كلمة مرور من١٢–١٢٨ حرفًا.')
   if(this.account(username))throw new AcademyError('DUPLICATE','اسم المستخدم مستخدم؛ سجّل الدخول إلى حسابه الحالي.')
   const id=randomUUID(),salt=randomBytes(16),derived=await this.stretch(password,salt),key=randomBytes(32)
@@ -135,7 +136,7 @@ export class AcademyEngine{
    this.sql.exec('BEGIN IMMEDIATE')
    try{
     if(this.account(username))throw new AcademyError('DUPLICATE','اسم المستخدم مستخدم بالفعل.')
-    this.sql.prepare('INSERT INTO accounts(id,username,display_name,salt,iterations,verifier,wrapped_key,created_at,legacy_source) VALUES(?,?,?,?,?,?,?,?,?)').run(id,username,name.trim(),salt.toString('hex'),ITERATIONS,this.verifier(derived.subarray(0,32)).toString('hex'),seal(derived.subarray(32),key.toString('hex'),'account:'+id),new Date().toISOString(),legacySource??null)
+    this.sql.prepare('INSERT INTO accounts(id,username,display_name,salt,iterations,verifier,wrapped_key,created_at,legacy_source) VALUES(?,?,?,?,?,?,?,?,?)').run(id,username,safeDisplayName,salt.toString('hex'),ITERATIONS,this.verifier(derived.subarray(0,32)).toString('hex'),seal(derived.subarray(32),key.toString('hex'),'account:'+id),new Date().toISOString(),legacySource??null)
     this.sql.prepare('INSERT INTO account_state(user_id,revision,updated_at) VALUES(?,0,?)').run(id,new Date().toISOString())
     // Import initial records inside the same account-creation transaction.
     const put=this.sql.prepare('INSERT INTO learner_records(user_id,collection,record_id,payload) VALUES(?,?,?,?)')
@@ -179,7 +180,7 @@ export class AcademyEngine{
     if(!timingSafeEqual(actual,expected))throw new AcademyError('AUTH_FAILED','تعذّر التحقق من الحساب القديم.')
     const oldKey=Buffer.from(unseal<string>(derived.subarray(32),value.account.wrappedKey,'account:'+value.account.id),'hex')
     if(oldKey.length!==32)throw new AcademyError('INTEGRITY','مفتاح الحساب القديم غير صالح.');oldKey.fill(0)
-    return this.create(normalizeName(value.account.displayName)===username?value.account.displayName:username,value.password,boundedState(value.state),value.account.id)
+    return this.create(username,value.password,boundedState(value.state),value.account.id,value.account.displayName)
    }finally{derived.fill(0)}
   }
   if(command==='changePassword'){
@@ -197,12 +198,19 @@ export class AcademyEngine{
     return {ok:true}
    }finally{next.fill(0)}
   }
+  if(command==='updateProfile'){
+   const value=owner.extend({name:displayNameSchema}).strict().parse(payload),session=this.authenticated(token,value.ownerId)
+   this.sql.prepare('UPDATE accounts SET display_name=? WHERE id=?').run(value.name,session.userId)
+   return this.profile(session.userId)
+  }
   if(command==='commit'){const value=commitSchema.parse(payload),session=this.authenticated(token,value.ownerId);return this.writeState(session,boundedState(value.state),value.expectedRevision)}
   const value=owner.parse(payload),session=this.authenticated(token,value.ownerId)
+  if(command==='profile')return this.profile(session.userId)
   if(command==='read')return this.snapshot(session)
   if(command==='logout'){this.endSession(token!);return {ok:true}}
   throw new AcademyError('VALIDATION','عملية غير مدعومة.')
  }
+ private profile(id:string){const row=this.sql.prepare('SELECT id,username,display_name,created_at FROM accounts WHERE id=?').get(id)!;return {id:String(row.id),username:String(row.username),name:String(row.display_name),createdAt:String(row.created_at)}}
  health(){return {provider:'sqlite',protocolVersion:1,schemaVersion:Number(this.sql.prepare('PRAGMA user_version').get()!.user_version),sqliteVersion:this.sql.prepare('SELECT sqlite_version() AS version').get()!.version}}
  close(){if(this.closed)return;for(const token of this.sessions.keys())this.endSession(token);this.sql.close();this.closed=true}
 }

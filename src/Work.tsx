@@ -1,3 +1,4 @@
+import {ProfilePanel} from './Account'
 import {activeTransport} from './storage/transport'
 import {capstoneExample} from './projects'
 import {encryptBackup,decryptBackup} from './backup'
@@ -100,6 +101,7 @@ export function SettingsPage({settings,notice}:{settings:Settings;notice:Notice}
   const [failure,setFailure]=useState('')
   return <><Heading title="الإعدادات" description="عدّل خطة الدراسة أو انقل تقدمك إلى جهاز آخر."/>
     <div className="stack">
+      <ProfilePanel/>
       <section className="card"><SettingsForm key={settings.goal+settings.minutes+settings.business} settings={settings} save={async next=>{try{await db.settings.update('local',{goal:next.goal,minutes:next.minutes,business:next.business});notice('حُفظت الإعدادات.')}catch{notice('تعذّر حفظ الإعدادات.')}}}/></section>
       <section className="card stack"><h2>نسخ احتياطي واستعادة</h2><p>النسخة الجديدة مشفّرة بعبارة تختارها. احفظها خارج الجهاز. الاستعادة تستبدل بيانات الحساب الحالي فقط بعد التحقق؛ صدّر نسخة قبله. يمكن استيراد JSON من الإصدار السابق أيضًا.</p>
         <label>عبارة حماية النسخة<input type="password" autoComplete="off" minLength={12} maxLength={128} value={phrase} onChange={e=>setPhrase(e.target.value)}/></label>

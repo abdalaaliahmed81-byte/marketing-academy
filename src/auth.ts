@@ -3,7 +3,7 @@ import * as legacy from './legacy-auth'
 import {AcademyDB,activateDatabase,db,exportBackup,restoreBackup} from './db'
 import {SQLiteRepository} from './storage/repository'
 import {activeTransport} from './storage/transport'
-import {parseAuthResult,TransportError,type AuthResult,type UserSession} from './storage/protocol'
+import {profileSchema,displayNameSchema,parseAuthResult,TransportError,type AuthResult,type UserSession} from './storage/protocol'
 export {derive,KDF_ITERATIONS,accountsDB,normalizeUsername} from './legacy-auth'
 export type Session=UserSession
 let nativeSession:Session|undefined
@@ -31,11 +31,11 @@ export async function login(name:string,password:string){
   }catch(migrationError){legacy.logout();throw migrationError}
  }
 }
-export function logout(){
+export async function logout(){
  const transport=activeTransport(),session=nativeSession
  if(!transport){legacy.logout();return}
  db.close();nativeSession=undefined
- if(session)void transport.request('logout',{ownerId:session.id}).catch(()=>{})
+ if(session)try{await transport.request('logout',{ownerId:session.id})}catch(error){if(!(error instanceof TransportError)||!['SESSION_EXPIRED','OWNER_MISMATCH'].includes(error.code))throw error}
 }
 export function forgetSession(){if(activeTransport()){db.close();nativeSession=undefined}else legacy.logout()}
 export async function changePassword(oldPassword:string,newPassword:string){
@@ -61,4 +61,22 @@ export async function importLegacy(){
   if((await legacy.accountsDB.metadata.get('legacy-owner'))?.userId===ownerId)await legacy.accountsDB.metadata.delete('legacy-owner')
   throw error
  }finally{source.close()}
+}
+
+export async function profile(){
+ const transport=activeTransport(),ownerId=nativeSession?.id
+ if(!transport)return legacy.profile()
+ if(!ownerId)throw new Error('سجّل الدخول أولًا.')
+ const result=profileSchema.parse(await transport.request('profile',{ownerId}))
+ if(result.id!==ownerId||nativeSession?.id!==ownerId)throw new Error('تغير الحساب؛ أعد المحاولة.')
+ return result
+}
+export async function updateProfile(name:string){
+ const transport=activeTransport(),ownerId=nativeSession?.id,next=displayNameSchema.parse(name)
+ if(!transport)return legacy.updateProfile(next)
+ if(!ownerId)throw new Error('سجّل الدخول أولًا.')
+ const result=profileSchema.parse(await transport.request('updateProfile',{ownerId,name:next}))
+ if(result.id!==ownerId||nativeSession?.id!==ownerId)throw new Error('تغير الحساب؛ أعد المحاولة.')
+ nativeSession={id:ownerId,name:result.name}
+ return result
 }

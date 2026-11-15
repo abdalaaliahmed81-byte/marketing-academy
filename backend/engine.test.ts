@@ -1,5 +1,5 @@
 /** @vitest-environment node */
-import {beforeEach,afterEach,describe,it,expect} from 'vitest'
+import {beforeEach,afterEach,describe,it,expect,vi} from 'vitest'
 import {mkdtemp,rm,readFile} from 'node:fs/promises'
 import {join} from 'node:path'
 import {tmpdir} from 'node:os'
@@ -94,11 +94,11 @@ describe('real SQLite accounts and progress',()=>{
 describe('legacy compatibility and trust boundaries',()=>{
  it('authenticates v2 credentials, verifies and rekeys a complete migration, and never overwrites an existing account',async()=>{
   const id=randomUUID(),salt=randomBytes(16),derived=pbkdf2Sync(password,salt,600000,64,'sha256'),key=randomBytes(32)
-  const legacy={id,username:'legacy student',displayName:'Legacy Student',salt:salt.toString('hex'),iterations:600000,verifier:createHash('sha256').update(derived.subarray(0,32)).digest('hex'),wrappedKey:seal(derived.subarray(32),key.toString('hex'),'account:'+id),createdAt:new Date().toISOString(),failures:0,retryAt:0}
+  const legacy={id,username:'legacy student',displayName:'طالب متقدم',salt:salt.toString('hex'),iterations:600000,verifier:createHash('sha256').update(derived.subarray(0,32)).digest('hex'),wrappedKey:seal(derived.subarray(32),key.toString('hex'),'account:'+id),createdAt:new Date().toISOString(),failures:0,retryAt:0}
   const state=emptyState();state.lessonStates=[{...emptyLesson('m01-l01'),notes:'legacy preserved'}];state.moduleProjects=[{id:'module-1',response:'legacy project',checked:[0,1,2,3],completed:true}]
   await expect(engine.request('migrateLegacy',{password:'wrong',account:legacy,state})).rejects.toMatchObject({code:'AUTH_FAILED'})
   const migrated=await engine.request('migrateLegacy',{password,account:legacy,state}) as AuthResponse
-  expect(migrated.snapshot.state).toEqual(state)
+  expect(migrated.snapshot.state).toEqual(state);expect(migrated.session.name).toBe('طالب متقدم')
   await expect(engine.request('migrateLegacy',{password,account:legacy,state})).rejects.toMatchObject({code:'DUPLICATE'})
   expect((await read(migrated)).state.lessonStates[0].notes).toBe('legacy preserved')
   derived.fill(0);key.fill(0)
@@ -108,4 +108,29 @@ describe('legacy compatibility and trust boundaries',()=>{
   await expect(engine.request('sql' as never,{query:'DROP TABLE accounts'})).rejects.toThrow()
   expect((await account()).snapshot.state).toEqual(emptyState())
  })
+})
+
+describe('profile management without account or learner-state replacement',()=>{
+ it('persists a display-name edit, keeps login identity/progress, rejects cross-owner edits and exposes no credentials',async()=>{
+  const alice=await account(),bob=await account('Profile Bob'),state=emptyState()
+  state.lessonStates=[{...emptyLesson('m01-l01'),notes:'retained by profile edit'}];await commit(alice,state)
+  await expect(engine.request('updateProfile',{ownerId:alice.session.id,name:'intruder'},bob.token)).rejects.toMatchObject({code:'OWNER_MISMATCH'})
+  await expect(engine.request('updateProfile',{ownerId:alice.session.id,name:'   '},alice.token)).rejects.toThrow()
+  const result=await engine.request('updateProfile',{ownerId:alice.session.id,name:'  متعلم التسويق  '},alice.token) as {name:string;username:string}
+  expect(result.name).toBe('متعلم التسويق');expect(result.username).toBe('audit alice')
+  expect(Object.keys(result).sort()).toEqual(['createdAt','id','name','username'])
+  expect((await read(alice)).state).toEqual(state);expect((await read(bob)).state).toEqual(emptyState())
+  engine.close();engine=new AcademyEngine(filename)
+  const next=await engine.request('login',{name:'Audit Alice',password}) as AuthResponse
+  expect(next.session.name).toBe('متعلم التسويق');expect(next.snapshot.state).toEqual(state)
+  expect(await engine.request('profile',{ownerId:bob.session.id},(await engine.request('login',{name:'Profile Bob',password}) as AuthResponse).token)).toMatchObject({name:'Profile Bob'})
+ })
+})
+
+it('expires an idle native/API session and requires fresh authentication without deleting saved state',async()=>{
+ const auth=await account(),state=emptyState();state.lessonStates=[{...emptyLesson('m01-l01'),notes:'survives expiry'}];await commit(auth,state)
+ const clock=vi.spyOn(Date,'now').mockReturnValue(Date.now()+31*60_000)
+ try{await expect(read(auth)).rejects.toMatchObject({code:'SESSION_EXPIRED'})}finally{clock.mockRestore()}
+ const next=await engine.request('login',{name:'Audit Alice',password}) as AuthResponse
+ expect(next.snapshot.state).toEqual(state)
 })

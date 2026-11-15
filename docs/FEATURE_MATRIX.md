@@ -10,9 +10,10 @@ Baseline `1eecadb` / published v2.0.0. Branch implements2.1.0; this matrix does 
 |Quizzes, sequential unlocking, mistake review|Present|Stable IDs/scoring retained; domain regressions pass. Assessment editorial flags remain|
 |12 worked module projects and capstone|Present|Preserved;26 portfolio fields and saved/exported submissions. No instructor grading|
 |Accounts/login/logout/password change|Renderer/Dexie|Main/API authority; encrypted per-user SQLite; idle/absolute expiry and password-version revocation|
+|Profile and explicit user switching|Display name not editable|Arabic profile controls; stable login identity; authenticated update; lock/logout before next login; backend and both browser editions tested|
 |SQLite persistence/migrations|Missing|Schema1, app identity, WAL/FULL, integrity checks, actual rollback/reopen/corruption tests|
 |Legacy progress preservation|IDB schema1–3 and MVP claim|Authenticated IDB→SQLite transfer, readback inside transaction, collision rejection, source retained; synthetic fixture verified in Electron|
-|Renderer-safe IPC|No native data API|Seven allowlisted commands, sandbox/context isolation, main-frame/origin checks, no key/SQL/path exposure|
+|Renderer-safe IPC|No native data API|Nine allowlisted commands, sandbox/context isolation, main-frame/origin checks, no key/SQL/path exposure|
 |Docker web/API|Static nginx only|Optional same-engine API with HttpOnly sessions and durable volume; original static profile retained|
 |Concurrent save safety|IDB transactions|Explicit scoped repository transactions, owner checks, revision compare-and-swap, stale/late response tests|
 |Validated encrypted backup/restore|Present|Shared frontend/backend schemas; owner-scoped atomic restore, legacy input compatibility, bounded size|
