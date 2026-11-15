@@ -1,9 +1,10 @@
 {
-  "generatedAt": "2026-11-15T22:41:55.289Z",
+  "generatedAt": "2026-11-15T23:16:04.039Z",
   "modules": 12,
   "lessons": 60,
   "questions": 300,
   "workedProjects": 12,
+  "interactiveActivities": 360,
   "shortMicroLessons": 45,
   "generatedCases": 45,
   "repeatedSummaries": 45,
@@ -18,6 +19,39 @@
       "readingWords": 344,
       "readingParagraphs": 5,
       "questions": 5,
+      "interactions": [
+        {
+          "id": "guide-v1",
+          "kind": "guide",
+          "title": "شرح موجّه خطوة بخطوة"
+        },
+        {
+          "id": "match-v1",
+          "kind": "match",
+          "title": "صل المفهوم بمعناه"
+        },
+        {
+          "id": "sequence-v1",
+          "kind": "sequence",
+          "title": "رتّب مسار القرار"
+        },
+        {
+          "id": "blank-v1",
+          "kind": "blank",
+          "title": "أكمل المصطلح"
+        },
+        {
+          "id": "scenario-v1",
+          "kind": "scenario",
+          "title": "قرار عميل له عواقب"
+        },
+        {
+          "id": "studio-v1",
+          "kind": "plan",
+          "title": "الخطة التسويقية في صفحة واحدة",
+          "target": "market"
+        }
+      ],
       "practicalActivity": true,
       "dailyMission": true,
       "rubricItems": 3,
@@ -67,6 +101,39 @@
       "readingWords": 305,
       "readingParagraphs": 5,
       "questions": 5,
+      "interactions": [
+        {
+          "id": "guide-v1",
+          "kind": "guide",
+          "title": "شرح موجّه خطوة بخطوة"
+        },
+        {
+          "id": "match-v1",
+          "kind": "match",
+          "title": "صل المفهوم بمعناه"
+        },
+        {
+          "id": "sequence-v1",
+          "kind": "sequence",
+          "title": "رتّب مسار القرار"
+        },
+        {
+          "id": "blank-v1",
+          "kind": "blank",
+          "title": "أكمل المصطلح"
+        },
+        {
+          "id": "scenario-v1",
+          "kind": "scenario",
+          "title": "قرار عميل له عواقب"
+        },
+        {
+          "id": "studio-v1",
+          "kind": "campaign",
+          "title": "تمرين تصميم الحملة",
+          "target": "goals"
+        }
+      ],
       "practicalActivity": true,
       "dailyMission": true,
       "rubricItems": 3,
@@ -111,6 +178,39 @@
       "readingWords": 310,
       "readingParagraphs": 5,
       "questions": 5,
+      "interactions": [
+        {
+          "id": "guide-v1",
+          "kind": "guide",
+          "title": "شرح موجّه خطوة بخطوة"
+        },
+        {
+          "id": "match-v1",
+          "kind": "match",
+          "title": "صل المفهوم بمعناه"
+        },
+        {
+          "id": "sequence-v1",
+          "kind": "sequence",
+          "title": "رتّب مسار القرار"
+        },
+        {
+          "id": "blank-v1",
+          "kind": "blank",
+          "title": "أكمل المصطلح"
+        },
+        {
+          "id": "scenario-v1",
+          "kind": "scenario",
+          "title": "قرار عميل له عواقب"
+        },
+        {
+          "id": "studio-v1",
+          "kind": "budget",
+          "title": "محاكي الميزانية ومحاسبة المؤشرات",
+          "target": "budget"
+        }
+      ],
       "practicalActivity": true,
       "dailyMission": true,
       "rubricItems": 3,
@@ -158,6 +258,39 @@
       "readingWords": 287,
       "readingParagraphs": 5,
       "questions": 5,
+      "interactions": [
+        {
+          "id": "guide-v1",
+          "kind": "guide",
+          "title": "شرح موجّه خطوة بخطوة"
+        },
+        {
+          "id": "match-v1",
+          "kind": "match",
+          "title": "صل المفهوم بمعناه"
+        },
+        {
+          "id": "sequence-v1",
+          "kind": "sequence",
+          "title": "رتّب مسار القرار"
+        },
+        {
+          "id": "blank-v1",
+          "kind": "blank",
+          "title": "أكمل المصطلح"
+        },
+        {
+          "id": "scenario-v1",
+          "kind": "scenario",
+          "title": "قرار عميل له عواقب"
+        },
+        {
+          "id": "studio-v1",
+          "kind": "persona",
+          "title": "بناء شخصية المشتري",
+          "target": "persona"
+        }
+      ],
       "practicalActivity": true,
       "dailyMission": true,
       "rubricItems": 3,
@@ -206,6 +339,39 @@
       "readingWords": 273,
       "readingParagraphs": 5,
       "questions": 5,
+      "interactions": [
+        {
+          "id": "guide-v1",
+          "kind": "guide",
+          "title": "شرح موجّه خطوة بخطوة"
+        },
+        {
+          "id": "match-v1",
+          "kind": "match",
+          "title": "صل المفهوم بمعناه"
+        },
+        {
+          "id": "sequence-v1",
+          "kind": "sequence",
+          "title": "رتّب مسار القرار"
+        },
+        {
+          "id": "blank-v1",
+          "kind": "blank",
+          "title": "أكمل المصطلح"
+        },
+        {
+          "id": "scenario-v1",
+          "kind": "scenario",
+          "title": "قرار عميل له عواقب"
+        },
+        {
+          "id": "studio-v1",
+          "kind": "budget",
+          "title": "محاكي الميزانية ومحاسبة المؤشرات",
+          "target": "budget"
+        }
+      ],
       "practicalActivity": true,
       "dailyMission": true,
       "rubricItems": 3,
@@ -249,6 +415,39 @@
       "readingWords": 300,
       "readingParagraphs": 5,
       "questions": 5,
+      "interactions": [
+        {
+          "id": "guide-v1",
+          "kind": "guide",
+          "title": "شرح موجّه خطوة بخطوة"
+        },
+        {
+          "id": "match-v1",
+          "kind": "match",
+          "title": "صل المفهوم بمعناه"
+        },
+        {
+          "id": "sequence-v1",
+          "kind": "sequence",
+          "title": "رتّب مسار القرار"
+        },
+        {
+          "id": "blank-v1",
+          "kind": "blank",
+          "title": "أكمل المصطلح"
+        },
+        {
+          "id": "scenario-v1",
+          "kind": "scenario",
+          "title": "قرار عميل له عواقب"
+        },
+        {
+          "id": "studio-v1",
+          "kind": "persona",
+          "title": "بناء شخصية المشتري",
+          "target": "persona"
+        }
+      ],
       "practicalActivity": true,
       "dailyMission": true,
       "rubricItems": 3,
@@ -296,6 +495,39 @@
       "readingWords": 268,
       "readingParagraphs": 5,
       "questions": 5,
+      "interactions": [
+        {
+          "id": "guide-v1",
+          "kind": "guide",
+          "title": "شرح موجّه خطوة بخطوة"
+        },
+        {
+          "id": "match-v1",
+          "kind": "match",
+          "title": "صل المفهوم بمعناه"
+        },
+        {
+          "id": "sequence-v1",
+          "kind": "sequence",
+          "title": "رتّب مسار القرار"
+        },
+        {
+          "id": "blank-v1",
+          "kind": "blank",
+          "title": "أكمل المصطلح"
+        },
+        {
+          "id": "scenario-v1",
+          "kind": "scenario",
+          "title": "قرار عميل له عواقب"
+        },
+        {
+          "id": "studio-v1",
+          "kind": "persona",
+          "title": "بناء شخصية المشتري",
+          "target": "persona"
+        }
+      ],
       "practicalActivity": true,
       "dailyMission": true,
       "rubricItems": 3,
@@ -342,6 +574,39 @@
       "readingWords": 288,
       "readingParagraphs": 5,
       "questions": 5,
+      "interactions": [
+        {
+          "id": "guide-v1",
+          "kind": "guide",
+          "title": "شرح موجّه خطوة بخطوة"
+        },
+        {
+          "id": "match-v1",
+          "kind": "match",
+          "title": "صل المفهوم بمعناه"
+        },
+        {
+          "id": "sequence-v1",
+          "kind": "sequence",
+          "title": "رتّب مسار القرار"
+        },
+        {
+          "id": "blank-v1",
+          "kind": "blank",
+          "title": "أكمل المصطلح"
+        },
+        {
+          "id": "scenario-v1",
+          "kind": "scenario",
+          "title": "قرار عميل له عواقب"
+        },
+        {
+          "id": "studio-v1",
+          "kind": "campaign",
+          "title": "تمرين تصميم الحملة",
+          "target": "goals"
+        }
+      ],
       "practicalActivity": true,
       "dailyMission": true,
       "rubricItems": 3,
@@ -390,6 +655,39 @@
       "readingWords": 271,
       "readingParagraphs": 5,
       "questions": 5,
+      "interactions": [
+        {
+          "id": "guide-v1",
+          "kind": "guide",
+          "title": "شرح موجّه خطوة بخطوة"
+        },
+        {
+          "id": "match-v1",
+          "kind": "match",
+          "title": "صل المفهوم بمعناه"
+        },
+        {
+          "id": "sequence-v1",
+          "kind": "sequence",
+          "title": "رتّب مسار القرار"
+        },
+        {
+          "id": "blank-v1",
+          "kind": "blank",
+          "title": "أكمل المصطلح"
+        },
+        {
+          "id": "scenario-v1",
+          "kind": "scenario",
+          "title": "قرار عميل له عواقب"
+        },
+        {
+          "id": "studio-v1",
+          "kind": "persona",
+          "title": "بناء شخصية المشتري",
+          "target": "persona"
+        }
+      ],
       "practicalActivity": true,
       "dailyMission": true,
       "rubricItems": 3,
@@ -438,6 +736,39 @@
       "readingWords": 290,
       "readingParagraphs": 5,
       "questions": 5,
+      "interactions": [
+        {
+          "id": "guide-v1",
+          "kind": "guide",
+          "title": "شرح موجّه خطوة بخطوة"
+        },
+        {
+          "id": "match-v1",
+          "kind": "match",
+          "title": "صل المفهوم بمعناه"
+        },
+        {
+          "id": "sequence-v1",
+          "kind": "sequence",
+          "title": "رتّب مسار القرار"
+        },
+        {
+          "id": "blank-v1",
+          "kind": "blank",
+          "title": "أكمل المصطلح"
+        },
+        {
+          "id": "scenario-v1",
+          "kind": "scenario",
+          "title": "قرار عميل له عواقب"
+        },
+        {
+          "id": "studio-v1",
+          "kind": "value",
+          "title": "ورشة عرض القيمة",
+          "target": "position"
+        }
+      ],
       "practicalActivity": true,
       "dailyMission": true,
       "rubricItems": 3,
@@ -491,6 +822,39 @@
       "readingWords": 348,
       "readingParagraphs": 5,
       "questions": 5,
+      "interactions": [
+        {
+          "id": "guide-v1",
+          "kind": "guide",
+          "title": "شرح موجّه خطوة بخطوة"
+        },
+        {
+          "id": "match-v1",
+          "kind": "match",
+          "title": "صل المفهوم بمعناه"
+        },
+        {
+          "id": "sequence-v1",
+          "kind": "sequence",
+          "title": "رتّب مسار القرار"
+        },
+        {
+          "id": "blank-v1",
+          "kind": "blank",
+          "title": "أكمل المصطلح"
+        },
+        {
+          "id": "scenario-v1",
+          "kind": "scenario",
+          "title": "قرار عميل له عواقب"
+        },
+        {
+          "id": "studio-v1",
+          "kind": "persona",
+          "title": "بناء شخصية المشتري",
+          "target": "persona"
+        }
+      ],
       "practicalActivity": true,
       "dailyMission": true,
       "rubricItems": 3,
@@ -533,6 +897,39 @@
       "readingWords": 326,
       "readingParagraphs": 5,
       "questions": 5,
+      "interactions": [
+        {
+          "id": "guide-v1",
+          "kind": "guide",
+          "title": "شرح موجّه خطوة بخطوة"
+        },
+        {
+          "id": "match-v1",
+          "kind": "match",
+          "title": "صل المفهوم بمعناه"
+        },
+        {
+          "id": "sequence-v1",
+          "kind": "sequence",
+          "title": "رتّب مسار القرار"
+        },
+        {
+          "id": "blank-v1",
+          "kind": "blank",
+          "title": "أكمل المصطلح"
+        },
+        {
+          "id": "scenario-v1",
+          "kind": "scenario",
+          "title": "قرار عميل له عواقب"
+        },
+        {
+          "id": "studio-v1",
+          "kind": "value",
+          "title": "ورشة عرض القيمة",
+          "target": "position"
+        }
+      ],
       "practicalActivity": true,
       "dailyMission": true,
       "rubricItems": 3,
@@ -577,6 +974,39 @@
       "readingWords": 318,
       "readingParagraphs": 5,
       "questions": 5,
+      "interactions": [
+        {
+          "id": "guide-v1",
+          "kind": "guide",
+          "title": "شرح موجّه خطوة بخطوة"
+        },
+        {
+          "id": "match-v1",
+          "kind": "match",
+          "title": "صل المفهوم بمعناه"
+        },
+        {
+          "id": "sequence-v1",
+          "kind": "sequence",
+          "title": "رتّب مسار القرار"
+        },
+        {
+          "id": "blank-v1",
+          "kind": "blank",
+          "title": "أكمل المصطلح"
+        },
+        {
+          "id": "scenario-v1",
+          "kind": "scenario",
+          "title": "قرار عميل له عواقب"
+        },
+        {
+          "id": "studio-v1",
+          "kind": "value",
+          "title": "ورشة عرض القيمة",
+          "target": "position"
+        }
+      ],
       "practicalActivity": true,
       "dailyMission": true,
       "rubricItems": 3,
@@ -621,6 +1051,39 @@
       "readingWords": 295,
       "readingParagraphs": 5,
       "questions": 5,
+      "interactions": [
+        {
+          "id": "guide-v1",
+          "kind": "guide",
+          "title": "شرح موجّه خطوة بخطوة"
+        },
+        {
+          "id": "match-v1",
+          "kind": "match",
+          "title": "صل المفهوم بمعناه"
+        },
+        {
+          "id": "sequence-v1",
+          "kind": "sequence",
+          "title": "رتّب مسار القرار"
+        },
+        {
+          "id": "blank-v1",
+          "kind": "blank",
+          "title": "أكمل المصطلح"
+        },
+        {
+          "id": "scenario-v1",
+          "kind": "scenario",
+          "title": "قرار عميل له عواقب"
+        },
+        {
+          "id": "studio-v1",
+          "kind": "copy",
+          "title": "مختبر القصة والإعلان الأخلاقي",
+          "target": "story"
+        }
+      ],
       "practicalActivity": true,
       "dailyMission": true,
       "rubricItems": 3,
@@ -664,6 +1127,39 @@
       "readingWords": 306,
       "readingParagraphs": 5,
       "questions": 5,
+      "interactions": [
+        {
+          "id": "guide-v1",
+          "kind": "guide",
+          "title": "شرح موجّه خطوة بخطوة"
+        },
+        {
+          "id": "match-v1",
+          "kind": "match",
+          "title": "صل المفهوم بمعناه"
+        },
+        {
+          "id": "sequence-v1",
+          "kind": "sequence",
+          "title": "رتّب مسار القرار"
+        },
+        {
+          "id": "blank-v1",
+          "kind": "blank",
+          "title": "أكمل المصطلح"
+        },
+        {
+          "id": "scenario-v1",
+          "kind": "scenario",
+          "title": "قرار عميل له عواقب"
+        },
+        {
+          "id": "studio-v1",
+          "kind": "budget",
+          "title": "محاكي الميزانية ومحاسبة المؤشرات",
+          "target": "budget"
+        }
+      ],
       "practicalActivity": true,
       "dailyMission": true,
       "rubricItems": 3,
@@ -703,6 +1199,39 @@
       "readingWords": 164,
       "readingParagraphs": 3,
       "questions": 5,
+      "interactions": [
+        {
+          "id": "guide-v1",
+          "kind": "guide",
+          "title": "شرح موجّه خطوة بخطوة"
+        },
+        {
+          "id": "match-v1",
+          "kind": "match",
+          "title": "صل المفهوم بمعناه"
+        },
+        {
+          "id": "sequence-v1",
+          "kind": "sequence",
+          "title": "رتّب مسار القرار"
+        },
+        {
+          "id": "blank-v1",
+          "kind": "blank",
+          "title": "أكمل المصطلح"
+        },
+        {
+          "id": "scenario-v1",
+          "kind": "scenario",
+          "title": "قرار عميل له عواقب"
+        },
+        {
+          "id": "studio-v1",
+          "kind": "copy",
+          "title": "مختبر القصة والإعلان الأخلاقي",
+          "target": "story"
+        }
+      ],
       "practicalActivity": true,
       "dailyMission": true,
       "rubricItems": 3,
@@ -750,6 +1279,39 @@
       "readingWords": 153,
       "readingParagraphs": 3,
       "questions": 5,
+      "interactions": [
+        {
+          "id": "guide-v1",
+          "kind": "guide",
+          "title": "شرح موجّه خطوة بخطوة"
+        },
+        {
+          "id": "match-v1",
+          "kind": "match",
+          "title": "صل المفهوم بمعناه"
+        },
+        {
+          "id": "sequence-v1",
+          "kind": "sequence",
+          "title": "رتّب مسار القرار"
+        },
+        {
+          "id": "blank-v1",
+          "kind": "blank",
+          "title": "أكمل المصطلح"
+        },
+        {
+          "id": "scenario-v1",
+          "kind": "scenario",
+          "title": "قرار عميل له عواقب"
+        },
+        {
+          "id": "studio-v1",
+          "kind": "copy",
+          "title": "مختبر القصة والإعلان الأخلاقي",
+          "target": "ad1"
+        }
+      ],
       "practicalActivity": true,
       "dailyMission": true,
       "rubricItems": 3,
@@ -794,6 +1356,39 @@
       "readingWords": 154,
       "readingParagraphs": 3,
       "questions": 5,
+      "interactions": [
+        {
+          "id": "guide-v1",
+          "kind": "guide",
+          "title": "شرح موجّه خطوة بخطوة"
+        },
+        {
+          "id": "match-v1",
+          "kind": "match",
+          "title": "صل المفهوم بمعناه"
+        },
+        {
+          "id": "sequence-v1",
+          "kind": "sequence",
+          "title": "رتّب مسار القرار"
+        },
+        {
+          "id": "blank-v1",
+          "kind": "blank",
+          "title": "أكمل المصطلح"
+        },
+        {
+          "id": "scenario-v1",
+          "kind": "scenario",
+          "title": "قرار عميل له عواقب"
+        },
+        {
+          "id": "studio-v1",
+          "kind": "copy",
+          "title": "مختبر القصة والإعلان الأخلاقي",
+          "target": "ad1"
+        }
+      ],
       "practicalActivity": true,
       "dailyMission": true,
       "rubricItems": 3,
@@ -838,6 +1433,39 @@
       "readingWords": 161,
       "readingParagraphs": 3,
       "questions": 5,
+      "interactions": [
+        {
+          "id": "guide-v1",
+          "kind": "guide",
+          "title": "شرح موجّه خطوة بخطوة"
+        },
+        {
+          "id": "match-v1",
+          "kind": "match",
+          "title": "صل المفهوم بمعناه"
+        },
+        {
+          "id": "sequence-v1",
+          "kind": "sequence",
+          "title": "رتّب مسار القرار"
+        },
+        {
+          "id": "blank-v1",
+          "kind": "blank",
+          "title": "أكمل المصطلح"
+        },
+        {
+          "id": "scenario-v1",
+          "kind": "scenario",
+          "title": "قرار عميل له عواقب"
+        },
+        {
+          "id": "studio-v1",
+          "kind": "campaign",
+          "title": "تمرين تصميم الحملة",
+          "target": "goals"
+        }
+      ],
       "practicalActivity": true,
       "dailyMission": true,
       "rubricItems": 3,
@@ -881,6 +1509,39 @@
       "readingWords": 148,
       "readingParagraphs": 3,
       "questions": 5,
+      "interactions": [
+        {
+          "id": "guide-v1",
+          "kind": "guide",
+          "title": "شرح موجّه خطوة بخطوة"
+        },
+        {
+          "id": "match-v1",
+          "kind": "match",
+          "title": "صل المفهوم بمعناه"
+        },
+        {
+          "id": "sequence-v1",
+          "kind": "sequence",
+          "title": "رتّب مسار القرار"
+        },
+        {
+          "id": "blank-v1",
+          "kind": "blank",
+          "title": "أكمل المصطلح"
+        },
+        {
+          "id": "scenario-v1",
+          "kind": "scenario",
+          "title": "قرار عميل له عواقب"
+        },
+        {
+          "id": "studio-v1",
+          "kind": "copy",
+          "title": "مختبر القصة والإعلان الأخلاقي",
+          "target": "story"
+        }
+      ],
       "practicalActivity": true,
       "dailyMission": true,
       "rubricItems": 3,
@@ -926,6 +1587,39 @@
       "readingWords": 162,
       "readingParagraphs": 3,
       "questions": 5,
+      "interactions": [
+        {
+          "id": "guide-v1",
+          "kind": "guide",
+          "title": "شرح موجّه خطوة بخطوة"
+        },
+        {
+          "id": "match-v1",
+          "kind": "match",
+          "title": "صل المفهوم بمعناه"
+        },
+        {
+          "id": "sequence-v1",
+          "kind": "sequence",
+          "title": "رتّب مسار القرار"
+        },
+        {
+          "id": "blank-v1",
+          "kind": "blank",
+          "title": "أكمل المصطلح"
+        },
+        {
+          "id": "scenario-v1",
+          "kind": "scenario",
+          "title": "قرار عميل له عواقب"
+        },
+        {
+          "id": "studio-v1",
+          "kind": "calendar",
+          "title": "تقويم محتوى قابل للتحرير",
+          "target": "calendar"
+        }
+      ],
       "practicalActivity": true,
       "dailyMission": true,
       "rubricItems": 3,
@@ -971,6 +1665,39 @@
       "readingWords": 148,
       "readingParagraphs": 3,
       "questions": 5,
+      "interactions": [
+        {
+          "id": "guide-v1",
+          "kind": "guide",
+          "title": "شرح موجّه خطوة بخطوة"
+        },
+        {
+          "id": "match-v1",
+          "kind": "match",
+          "title": "صل المفهوم بمعناه"
+        },
+        {
+          "id": "sequence-v1",
+          "kind": "sequence",
+          "title": "رتّب مسار القرار"
+        },
+        {
+          "id": "blank-v1",
+          "kind": "blank",
+          "title": "أكمل المصطلح"
+        },
+        {
+          "id": "scenario-v1",
+          "kind": "scenario",
+          "title": "قرار عميل له عواقب"
+        },
+        {
+          "id": "studio-v1",
+          "kind": "calendar",
+          "title": "تقويم محتوى قابل للتحرير",
+          "target": "calendar"
+        }
+      ],
       "practicalActivity": true,
       "dailyMission": true,
       "rubricItems": 3,
@@ -1018,6 +1745,39 @@
       "readingWords": 152,
       "readingParagraphs": 3,
       "questions": 5,
+      "interactions": [
+        {
+          "id": "guide-v1",
+          "kind": "guide",
+          "title": "شرح موجّه خطوة بخطوة"
+        },
+        {
+          "id": "match-v1",
+          "kind": "match",
+          "title": "صل المفهوم بمعناه"
+        },
+        {
+          "id": "sequence-v1",
+          "kind": "sequence",
+          "title": "رتّب مسار القرار"
+        },
+        {
+          "id": "blank-v1",
+          "kind": "blank",
+          "title": "أكمل المصطلح"
+        },
+        {
+          "id": "scenario-v1",
+          "kind": "scenario",
+          "title": "قرار عميل له عواقب"
+        },
+        {
+          "id": "studio-v1",
+          "kind": "campaign",
+          "title": "تمرين تصميم الحملة",
+          "target": "goals"
+        }
+      ],
       "practicalActivity": true,
       "dailyMission": true,
       "rubricItems": 3,
@@ -1062,6 +1822,39 @@
       "readingWords": 148,
       "readingParagraphs": 3,
       "questions": 5,
+      "interactions": [
+        {
+          "id": "guide-v1",
+          "kind": "guide",
+          "title": "شرح موجّه خطوة بخطوة"
+        },
+        {
+          "id": "match-v1",
+          "kind": "match",
+          "title": "صل المفهوم بمعناه"
+        },
+        {
+          "id": "sequence-v1",
+          "kind": "sequence",
+          "title": "رتّب مسار القرار"
+        },
+        {
+          "id": "blank-v1",
+          "kind": "blank",
+          "title": "أكمل المصطلح"
+        },
+        {
+          "id": "scenario-v1",
+          "kind": "scenario",
+          "title": "قرار عميل له عواقب"
+        },
+        {
+          "id": "studio-v1",
+          "kind": "copy",
+          "title": "مختبر القصة والإعلان الأخلاقي",
+          "target": "story"
+        }
+      ],
       "practicalActivity": true,
       "dailyMission": true,
       "rubricItems": 3,
@@ -1110,6 +1903,39 @@
       "readingWords": 148,
       "readingParagraphs": 3,
       "questions": 5,
+      "interactions": [
+        {
+          "id": "guide-v1",
+          "kind": "guide",
+          "title": "شرح موجّه خطوة بخطوة"
+        },
+        {
+          "id": "match-v1",
+          "kind": "match",
+          "title": "صل المفهوم بمعناه"
+        },
+        {
+          "id": "sequence-v1",
+          "kind": "sequence",
+          "title": "رتّب مسار القرار"
+        },
+        {
+          "id": "blank-v1",
+          "kind": "blank",
+          "title": "أكمل المصطلح"
+        },
+        {
+          "id": "scenario-v1",
+          "kind": "scenario",
+          "title": "قرار عميل له عواقب"
+        },
+        {
+          "id": "studio-v1",
+          "kind": "calendar",
+          "title": "تقويم محتوى قابل للتحرير",
+          "target": "calendar"
+        }
+      ],
       "practicalActivity": true,
       "dailyMission": true,
       "rubricItems": 3,
@@ -1157,6 +1983,39 @@
       "readingWords": 157,
       "readingParagraphs": 3,
       "questions": 5,
+      "interactions": [
+        {
+          "id": "guide-v1",
+          "kind": "guide",
+          "title": "شرح موجّه خطوة بخطوة"
+        },
+        {
+          "id": "match-v1",
+          "kind": "match",
+          "title": "صل المفهوم بمعناه"
+        },
+        {
+          "id": "sequence-v1",
+          "kind": "sequence",
+          "title": "رتّب مسار القرار"
+        },
+        {
+          "id": "blank-v1",
+          "kind": "blank",
+          "title": "أكمل المصطلح"
+        },
+        {
+          "id": "scenario-v1",
+          "kind": "scenario",
+          "title": "قرار عميل له عواقب"
+        },
+        {
+          "id": "studio-v1",
+          "kind": "campaign",
+          "title": "تمرين تصميم الحملة",
+          "target": "goals"
+        }
+      ],
       "practicalActivity": true,
       "dailyMission": true,
       "rubricItems": 3,
@@ -1204,6 +2063,39 @@
       "readingWords": 148,
       "readingParagraphs": 3,
       "questions": 5,
+      "interactions": [
+        {
+          "id": "guide-v1",
+          "kind": "guide",
+          "title": "شرح موجّه خطوة بخطوة"
+        },
+        {
+          "id": "match-v1",
+          "kind": "match",
+          "title": "صل المفهوم بمعناه"
+        },
+        {
+          "id": "sequence-v1",
+          "kind": "sequence",
+          "title": "رتّب مسار القرار"
+        },
+        {
+          "id": "blank-v1",
+          "kind": "blank",
+          "title": "أكمل المصطلح"
+        },
+        {
+          "id": "scenario-v1",
+          "kind": "scenario",
+          "title": "قرار عميل له عواقب"
+        },
+        {
+          "id": "studio-v1",
+          "kind": "calendar",
+          "title": "تقويم محتوى قابل للتحرير",
+          "target": "calendar"
+        }
+      ],
       "practicalActivity": true,
       "dailyMission": true,
       "rubricItems": 3,
@@ -1252,6 +2144,39 @@
       "readingWords": 154,
       "readingParagraphs": 3,
       "questions": 5,
+      "interactions": [
+        {
+          "id": "guide-v1",
+          "kind": "guide",
+          "title": "شرح موجّه خطوة بخطوة"
+        },
+        {
+          "id": "match-v1",
+          "kind": "match",
+          "title": "صل المفهوم بمعناه"
+        },
+        {
+          "id": "sequence-v1",
+          "kind": "sequence",
+          "title": "رتّب مسار القرار"
+        },
+        {
+          "id": "blank-v1",
+          "kind": "blank",
+          "title": "أكمل المصطلح"
+        },
+        {
+          "id": "scenario-v1",
+          "kind": "scenario",
+          "title": "قرار عميل له عواقب"
+        },
+        {
+          "id": "studio-v1",
+          "kind": "copy",
+          "title": "مختبر القصة والإعلان الأخلاقي",
+          "target": "story"
+        }
+      ],
       "practicalActivity": true,
       "dailyMission": true,
       "rubricItems": 3,
@@ -1299,6 +2224,39 @@
       "readingWords": 153,
       "readingParagraphs": 3,
       "questions": 5,
+      "interactions": [
+        {
+          "id": "guide-v1",
+          "kind": "guide",
+          "title": "شرح موجّه خطوة بخطوة"
+        },
+        {
+          "id": "match-v1",
+          "kind": "match",
+          "title": "صل المفهوم بمعناه"
+        },
+        {
+          "id": "sequence-v1",
+          "kind": "sequence",
+          "title": "رتّب مسار القرار"
+        },
+        {
+          "id": "blank-v1",
+          "kind": "blank",
+          "title": "أكمل المصطلح"
+        },
+        {
+          "id": "scenario-v1",
+          "kind": "scenario",
+          "title": "قرار عميل له عواقب"
+        },
+        {
+          "id": "studio-v1",
+          "kind": "copy",
+          "title": "مختبر القصة والإعلان الأخلاقي",
+          "target": "story"
+        }
+      ],
       "practicalActivity": true,
       "dailyMission": true,
       "rubricItems": 3,
@@ -1345,6 +2303,39 @@
       "readingWords": 166,
       "readingParagraphs": 3,
       "questions": 5,
+      "interactions": [
+        {
+          "id": "guide-v1",
+          "kind": "guide",
+          "title": "شرح موجّه خطوة بخطوة"
+        },
+        {
+          "id": "match-v1",
+          "kind": "match",
+          "title": "صل المفهوم بمعناه"
+        },
+        {
+          "id": "sequence-v1",
+          "kind": "sequence",
+          "title": "رتّب مسار القرار"
+        },
+        {
+          "id": "blank-v1",
+          "kind": "blank",
+          "title": "أكمل المصطلح"
+        },
+        {
+          "id": "scenario-v1",
+          "kind": "scenario",
+          "title": "قرار عميل له عواقب"
+        },
+        {
+          "id": "studio-v1",
+          "kind": "calendar",
+          "title": "تقويم محتوى قابل للتحرير",
+          "target": "calendar"
+        }
+      ],
       "practicalActivity": true,
       "dailyMission": true,
       "rubricItems": 3,
@@ -1395,6 +2386,39 @@
       "readingWords": 159,
       "readingParagraphs": 3,
       "questions": 5,
+      "interactions": [
+        {
+          "id": "guide-v1",
+          "kind": "guide",
+          "title": "شرح موجّه خطوة بخطوة"
+        },
+        {
+          "id": "match-v1",
+          "kind": "match",
+          "title": "صل المفهوم بمعناه"
+        },
+        {
+          "id": "sequence-v1",
+          "kind": "sequence",
+          "title": "رتّب مسار القرار"
+        },
+        {
+          "id": "blank-v1",
+          "kind": "blank",
+          "title": "أكمل المصطلح"
+        },
+        {
+          "id": "scenario-v1",
+          "kind": "scenario",
+          "title": "قرار عميل له عواقب"
+        },
+        {
+          "id": "studio-v1",
+          "kind": "campaign",
+          "title": "تمرين تصميم الحملة",
+          "target": "goals"
+        }
+      ],
       "practicalActivity": true,
       "dailyMission": true,
       "rubricItems": 3,
@@ -1431,6 +2455,39 @@
       "readingWords": 156,
       "readingParagraphs": 3,
       "questions": 5,
+      "interactions": [
+        {
+          "id": "guide-v1",
+          "kind": "guide",
+          "title": "شرح موجّه خطوة بخطوة"
+        },
+        {
+          "id": "match-v1",
+          "kind": "match",
+          "title": "صل المفهوم بمعناه"
+        },
+        {
+          "id": "sequence-v1",
+          "kind": "sequence",
+          "title": "رتّب مسار القرار"
+        },
+        {
+          "id": "blank-v1",
+          "kind": "blank",
+          "title": "أكمل المصطلح"
+        },
+        {
+          "id": "scenario-v1",
+          "kind": "scenario",
+          "title": "قرار عميل له عواقب"
+        },
+        {
+          "id": "studio-v1",
+          "kind": "campaign",
+          "title": "تمرين تصميم الحملة",
+          "target": "goals"
+        }
+      ],
       "practicalActivity": true,
       "dailyMission": true,
       "rubricItems": 3,
@@ -1475,6 +2532,39 @@
       "readingWords": 160,
       "readingParagraphs": 3,
       "questions": 5,
+      "interactions": [
+        {
+          "id": "guide-v1",
+          "kind": "guide",
+          "title": "شرح موجّه خطوة بخطوة"
+        },
+        {
+          "id": "match-v1",
+          "kind": "match",
+          "title": "صل المفهوم بمعناه"
+        },
+        {
+          "id": "sequence-v1",
+          "kind": "sequence",
+          "title": "رتّب مسار القرار"
+        },
+        {
+          "id": "blank-v1",
+          "kind": "blank",
+          "title": "أكمل المصطلح"
+        },
+        {
+          "id": "scenario-v1",
+          "kind": "scenario",
+          "title": "قرار عميل له عواقب"
+        },
+        {
+          "id": "studio-v1",
+          "kind": "copy",
+          "title": "مختبر القصة والإعلان الأخلاقي",
+          "target": "story"
+        }
+      ],
       "practicalActivity": true,
       "dailyMission": true,
       "rubricItems": 3,
@@ -1516,6 +2606,39 @@
       "readingWords": 155,
       "readingParagraphs": 3,
       "questions": 5,
+      "interactions": [
+        {
+          "id": "guide-v1",
+          "kind": "guide",
+          "title": "شرح موجّه خطوة بخطوة"
+        },
+        {
+          "id": "match-v1",
+          "kind": "match",
+          "title": "صل المفهوم بمعناه"
+        },
+        {
+          "id": "sequence-v1",
+          "kind": "sequence",
+          "title": "رتّب مسار القرار"
+        },
+        {
+          "id": "blank-v1",
+          "kind": "blank",
+          "title": "أكمل المصطلح"
+        },
+        {
+          "id": "scenario-v1",
+          "kind": "scenario",
+          "title": "قرار عميل له عواقب"
+        },
+        {
+          "id": "studio-v1",
+          "kind": "campaign",
+          "title": "تمرين تصميم الحملة",
+          "target": "goals"
+        }
+      ],
       "practicalActivity": true,
       "dailyMission": true,
       "rubricItems": 3,
@@ -1559,6 +2682,39 @@
       "readingWords": 149,
       "readingParagraphs": 3,
       "questions": 5,
+      "interactions": [
+        {
+          "id": "guide-v1",
+          "kind": "guide",
+          "title": "شرح موجّه خطوة بخطوة"
+        },
+        {
+          "id": "match-v1",
+          "kind": "match",
+          "title": "صل المفهوم بمعناه"
+        },
+        {
+          "id": "sequence-v1",
+          "kind": "sequence",
+          "title": "رتّب مسار القرار"
+        },
+        {
+          "id": "blank-v1",
+          "kind": "blank",
+          "title": "أكمل المصطلح"
+        },
+        {
+          "id": "scenario-v1",
+          "kind": "scenario",
+          "title": "قرار عميل له عواقب"
+        },
+        {
+          "id": "studio-v1",
+          "kind": "budget",
+          "title": "محاكي الميزانية ومحاسبة المؤشرات",
+          "target": "budget"
+        }
+      ],
       "practicalActivity": true,
       "dailyMission": true,
       "rubricItems": 3,
@@ -1601,6 +2757,39 @@
       "readingWords": 150,
       "readingParagraphs": 3,
       "questions": 5,
+      "interactions": [
+        {
+          "id": "guide-v1",
+          "kind": "guide",
+          "title": "شرح موجّه خطوة بخطوة"
+        },
+        {
+          "id": "match-v1",
+          "kind": "match",
+          "title": "صل المفهوم بمعناه"
+        },
+        {
+          "id": "sequence-v1",
+          "kind": "sequence",
+          "title": "رتّب مسار القرار"
+        },
+        {
+          "id": "blank-v1",
+          "kind": "blank",
+          "title": "أكمل المصطلح"
+        },
+        {
+          "id": "scenario-v1",
+          "kind": "scenario",
+          "title": "قرار عميل له عواقب"
+        },
+        {
+          "id": "studio-v1",
+          "kind": "persona",
+          "title": "بناء شخصية المشتري",
+          "target": "persona"
+        }
+      ],
       "practicalActivity": true,
       "dailyMission": true,
       "rubricItems": 3,
@@ -1647,6 +2836,39 @@
       "readingWords": 149,
       "readingParagraphs": 3,
       "questions": 5,
+      "interactions": [
+        {
+          "id": "guide-v1",
+          "kind": "guide",
+          "title": "شرح موجّه خطوة بخطوة"
+        },
+        {
+          "id": "match-v1",
+          "kind": "match",
+          "title": "صل المفهوم بمعناه"
+        },
+        {
+          "id": "sequence-v1",
+          "kind": "sequence",
+          "title": "رتّب مسار القرار"
+        },
+        {
+          "id": "blank-v1",
+          "kind": "blank",
+          "title": "أكمل المصطلح"
+        },
+        {
+          "id": "scenario-v1",
+          "kind": "scenario",
+          "title": "قرار عميل له عواقب"
+        },
+        {
+          "id": "studio-v1",
+          "kind": "copy",
+          "title": "مختبر القصة والإعلان الأخلاقي",
+          "target": "story"
+        }
+      ],
       "practicalActivity": true,
       "dailyMission": true,
       "rubricItems": 3,
@@ -1690,6 +2912,39 @@
       "readingWords": 150,
       "readingParagraphs": 3,
       "questions": 5,
+      "interactions": [
+        {
+          "id": "guide-v1",
+          "kind": "guide",
+          "title": "شرح موجّه خطوة بخطوة"
+        },
+        {
+          "id": "match-v1",
+          "kind": "match",
+          "title": "صل المفهوم بمعناه"
+        },
+        {
+          "id": "sequence-v1",
+          "kind": "sequence",
+          "title": "رتّب مسار القرار"
+        },
+        {
+          "id": "blank-v1",
+          "kind": "blank",
+          "title": "أكمل المصطلح"
+        },
+        {
+          "id": "scenario-v1",
+          "kind": "scenario",
+          "title": "قرار عميل له عواقب"
+        },
+        {
+          "id": "studio-v1",
+          "kind": "copy",
+          "title": "مختبر القصة والإعلان الأخلاقي",
+          "target": "story"
+        }
+      ],
       "practicalActivity": true,
       "dailyMission": true,
       "rubricItems": 3,
@@ -1730,6 +2985,39 @@
       "readingWords": 149,
       "readingParagraphs": 3,
       "questions": 5,
+      "interactions": [
+        {
+          "id": "guide-v1",
+          "kind": "guide",
+          "title": "شرح موجّه خطوة بخطوة"
+        },
+        {
+          "id": "match-v1",
+          "kind": "match",
+          "title": "صل المفهوم بمعناه"
+        },
+        {
+          "id": "sequence-v1",
+          "kind": "sequence",
+          "title": "رتّب مسار القرار"
+        },
+        {
+          "id": "blank-v1",
+          "kind": "blank",
+          "title": "أكمل المصطلح"
+        },
+        {
+          "id": "scenario-v1",
+          "kind": "scenario",
+          "title": "قرار عميل له عواقب"
+        },
+        {
+          "id": "studio-v1",
+          "kind": "calendar",
+          "title": "تقويم محتوى قابل للتحرير",
+          "target": "calendar"
+        }
+      ],
       "practicalActivity": true,
       "dailyMission": true,
       "rubricItems": 3,
@@ -1772,6 +3060,39 @@
       "readingWords": 161,
       "readingParagraphs": 3,
       "questions": 5,
+      "interactions": [
+        {
+          "id": "guide-v1",
+          "kind": "guide",
+          "title": "شرح موجّه خطوة بخطوة"
+        },
+        {
+          "id": "match-v1",
+          "kind": "match",
+          "title": "صل المفهوم بمعناه"
+        },
+        {
+          "id": "sequence-v1",
+          "kind": "sequence",
+          "title": "رتّب مسار القرار"
+        },
+        {
+          "id": "blank-v1",
+          "kind": "blank",
+          "title": "أكمل المصطلح"
+        },
+        {
+          "id": "scenario-v1",
+          "kind": "scenario",
+          "title": "قرار عميل له عواقب"
+        },
+        {
+          "id": "studio-v1",
+          "kind": "campaign",
+          "title": "تمرين تصميم الحملة",
+          "target": "goals"
+        }
+      ],
       "practicalActivity": true,
       "dailyMission": true,
       "rubricItems": 3,
@@ -1814,6 +3135,39 @@
       "readingWords": 148,
       "readingParagraphs": 3,
       "questions": 5,
+      "interactions": [
+        {
+          "id": "guide-v1",
+          "kind": "guide",
+          "title": "شرح موجّه خطوة بخطوة"
+        },
+        {
+          "id": "match-v1",
+          "kind": "match",
+          "title": "صل المفهوم بمعناه"
+        },
+        {
+          "id": "sequence-v1",
+          "kind": "sequence",
+          "title": "رتّب مسار القرار"
+        },
+        {
+          "id": "blank-v1",
+          "kind": "blank",
+          "title": "أكمل المصطلح"
+        },
+        {
+          "id": "scenario-v1",
+          "kind": "scenario",
+          "title": "قرار عميل له عواقب"
+        },
+        {
+          "id": "studio-v1",
+          "kind": "budget",
+          "title": "محاكي الميزانية ومحاسبة المؤشرات",
+          "target": "budget"
+        }
+      ],
       "practicalActivity": true,
       "dailyMission": true,
       "rubricItems": 3,
@@ -1860,6 +3214,39 @@
       "readingWords": 149,
       "readingParagraphs": 3,
       "questions": 5,
+      "interactions": [
+        {
+          "id": "guide-v1",
+          "kind": "guide",
+          "title": "شرح موجّه خطوة بخطوة"
+        },
+        {
+          "id": "match-v1",
+          "kind": "match",
+          "title": "صل المفهوم بمعناه"
+        },
+        {
+          "id": "sequence-v1",
+          "kind": "sequence",
+          "title": "رتّب مسار القرار"
+        },
+        {
+          "id": "blank-v1",
+          "kind": "blank",
+          "title": "أكمل المصطلح"
+        },
+        {
+          "id": "scenario-v1",
+          "kind": "scenario",
+          "title": "قرار عميل له عواقب"
+        },
+        {
+          "id": "studio-v1",
+          "kind": "campaign",
+          "title": "تمرين تصميم الحملة",
+          "target": "goals"
+        }
+      ],
       "practicalActivity": true,
       "dailyMission": true,
       "rubricItems": 3,
@@ -1903,6 +3290,39 @@
       "readingWords": 153,
       "readingParagraphs": 3,
       "questions": 5,
+      "interactions": [
+        {
+          "id": "guide-v1",
+          "kind": "guide",
+          "title": "شرح موجّه خطوة بخطوة"
+        },
+        {
+          "id": "match-v1",
+          "kind": "match",
+          "title": "صل المفهوم بمعناه"
+        },
+        {
+          "id": "sequence-v1",
+          "kind": "sequence",
+          "title": "رتّب مسار القرار"
+        },
+        {
+          "id": "blank-v1",
+          "kind": "blank",
+          "title": "أكمل المصطلح"
+        },
+        {
+          "id": "scenario-v1",
+          "kind": "scenario",
+          "title": "قرار عميل له عواقب"
+        },
+        {
+          "id": "studio-v1",
+          "kind": "budget",
+          "title": "محاكي الميزانية ومحاسبة المؤشرات",
+          "target": "budget"
+        }
+      ],
       "practicalActivity": true,
       "dailyMission": true,
       "rubricItems": 3,
@@ -1947,6 +3367,39 @@
       "readingWords": 146,
       "readingParagraphs": 3,
       "questions": 5,
+      "interactions": [
+        {
+          "id": "guide-v1",
+          "kind": "guide",
+          "title": "شرح موجّه خطوة بخطوة"
+        },
+        {
+          "id": "match-v1",
+          "kind": "match",
+          "title": "صل المفهوم بمعناه"
+        },
+        {
+          "id": "sequence-v1",
+          "kind": "sequence",
+          "title": "رتّب مسار القرار"
+        },
+        {
+          "id": "blank-v1",
+          "kind": "blank",
+          "title": "أكمل المصطلح"
+        },
+        {
+          "id": "scenario-v1",
+          "kind": "scenario",
+          "title": "قرار عميل له عواقب"
+        },
+        {
+          "id": "studio-v1",
+          "kind": "copy",
+          "title": "مختبر القصة والإعلان الأخلاقي",
+          "target": "story"
+        }
+      ],
       "practicalActivity": true,
       "dailyMission": true,
       "rubricItems": 3,
@@ -1990,6 +3443,39 @@
       "readingWords": 149,
       "readingParagraphs": 3,
       "questions": 5,
+      "interactions": [
+        {
+          "id": "guide-v1",
+          "kind": "guide",
+          "title": "شرح موجّه خطوة بخطوة"
+        },
+        {
+          "id": "match-v1",
+          "kind": "match",
+          "title": "صل المفهوم بمعناه"
+        },
+        {
+          "id": "sequence-v1",
+          "kind": "sequence",
+          "title": "رتّب مسار القرار"
+        },
+        {
+          "id": "blank-v1",
+          "kind": "blank",
+          "title": "أكمل المصطلح"
+        },
+        {
+          "id": "scenario-v1",
+          "kind": "scenario",
+          "title": "قرار عميل له عواقب"
+        },
+        {
+          "id": "studio-v1",
+          "kind": "budget",
+          "title": "محاكي الميزانية ومحاسبة المؤشرات",
+          "target": "budget"
+        }
+      ],
       "practicalActivity": true,
       "dailyMission": true,
       "rubricItems": 3,
@@ -2033,6 +3519,39 @@
       "readingWords": 151,
       "readingParagraphs": 3,
       "questions": 5,
+      "interactions": [
+        {
+          "id": "guide-v1",
+          "kind": "guide",
+          "title": "شرح موجّه خطوة بخطوة"
+        },
+        {
+          "id": "match-v1",
+          "kind": "match",
+          "title": "صل المفهوم بمعناه"
+        },
+        {
+          "id": "sequence-v1",
+          "kind": "sequence",
+          "title": "رتّب مسار القرار"
+        },
+        {
+          "id": "blank-v1",
+          "kind": "blank",
+          "title": "أكمل المصطلح"
+        },
+        {
+          "id": "scenario-v1",
+          "kind": "scenario",
+          "title": "قرار عميل له عواقب"
+        },
+        {
+          "id": "studio-v1",
+          "kind": "budget",
+          "title": "محاكي الميزانية ومحاسبة المؤشرات",
+          "target": "kpis"
+        }
+      ],
       "practicalActivity": true,
       "dailyMission": true,
       "rubricItems": 3,
@@ -2079,6 +3598,39 @@
       "readingWords": 150,
       "readingParagraphs": 3,
       "questions": 5,
+      "interactions": [
+        {
+          "id": "guide-v1",
+          "kind": "guide",
+          "title": "شرح موجّه خطوة بخطوة"
+        },
+        {
+          "id": "match-v1",
+          "kind": "match",
+          "title": "صل المفهوم بمعناه"
+        },
+        {
+          "id": "sequence-v1",
+          "kind": "sequence",
+          "title": "رتّب مسار القرار"
+        },
+        {
+          "id": "blank-v1",
+          "kind": "blank",
+          "title": "أكمل المصطلح"
+        },
+        {
+          "id": "scenario-v1",
+          "kind": "scenario",
+          "title": "قرار عميل له عواقب"
+        },
+        {
+          "id": "studio-v1",
+          "kind": "budget",
+          "title": "محاكي الميزانية ومحاسبة المؤشرات",
+          "target": "kpis"
+        }
+      ],
       "practicalActivity": true,
       "dailyMission": true,
       "rubricItems": 3,
@@ -2119,6 +3671,39 @@
       "readingWords": 147,
       "readingParagraphs": 3,
       "questions": 5,
+      "interactions": [
+        {
+          "id": "guide-v1",
+          "kind": "guide",
+          "title": "شرح موجّه خطوة بخطوة"
+        },
+        {
+          "id": "match-v1",
+          "kind": "match",
+          "title": "صل المفهوم بمعناه"
+        },
+        {
+          "id": "sequence-v1",
+          "kind": "sequence",
+          "title": "رتّب مسار القرار"
+        },
+        {
+          "id": "blank-v1",
+          "kind": "blank",
+          "title": "أكمل المصطلح"
+        },
+        {
+          "id": "scenario-v1",
+          "kind": "scenario",
+          "title": "قرار عميل له عواقب"
+        },
+        {
+          "id": "studio-v1",
+          "kind": "campaign",
+          "title": "تمرين تصميم الحملة",
+          "target": "goals"
+        }
+      ],
       "practicalActivity": true,
       "dailyMission": true,
       "rubricItems": 3,
@@ -2165,6 +3750,39 @@
       "readingWords": 149,
       "readingParagraphs": 3,
       "questions": 5,
+      "interactions": [
+        {
+          "id": "guide-v1",
+          "kind": "guide",
+          "title": "شرح موجّه خطوة بخطوة"
+        },
+        {
+          "id": "match-v1",
+          "kind": "match",
+          "title": "صل المفهوم بمعناه"
+        },
+        {
+          "id": "sequence-v1",
+          "kind": "sequence",
+          "title": "رتّب مسار القرار"
+        },
+        {
+          "id": "blank-v1",
+          "kind": "blank",
+          "title": "أكمل المصطلح"
+        },
+        {
+          "id": "scenario-v1",
+          "kind": "scenario",
+          "title": "قرار عميل له عواقب"
+        },
+        {
+          "id": "studio-v1",
+          "kind": "budget",
+          "title": "محاكي الميزانية ومحاسبة المؤشرات",
+          "target": "kpis"
+        }
+      ],
       "practicalActivity": true,
       "dailyMission": true,
       "rubricItems": 3,
@@ -2203,6 +3821,39 @@
       "readingWords": 144,
       "readingParagraphs": 3,
       "questions": 5,
+      "interactions": [
+        {
+          "id": "guide-v1",
+          "kind": "guide",
+          "title": "شرح موجّه خطوة بخطوة"
+        },
+        {
+          "id": "match-v1",
+          "kind": "match",
+          "title": "صل المفهوم بمعناه"
+        },
+        {
+          "id": "sequence-v1",
+          "kind": "sequence",
+          "title": "رتّب مسار القرار"
+        },
+        {
+          "id": "blank-v1",
+          "kind": "blank",
+          "title": "أكمل المصطلح"
+        },
+        {
+          "id": "scenario-v1",
+          "kind": "scenario",
+          "title": "قرار عميل له عواقب"
+        },
+        {
+          "id": "studio-v1",
+          "kind": "budget",
+          "title": "محاكي الميزانية ومحاسبة المؤشرات",
+          "target": "kpis"
+        }
+      ],
       "practicalActivity": true,
       "dailyMission": true,
       "rubricItems": 3,
@@ -2246,6 +3897,39 @@
       "readingWords": 156,
       "readingParagraphs": 3,
       "questions": 5,
+      "interactions": [
+        {
+          "id": "guide-v1",
+          "kind": "guide",
+          "title": "شرح موجّه خطوة بخطوة"
+        },
+        {
+          "id": "match-v1",
+          "kind": "match",
+          "title": "صل المفهوم بمعناه"
+        },
+        {
+          "id": "sequence-v1",
+          "kind": "sequence",
+          "title": "رتّب مسار القرار"
+        },
+        {
+          "id": "blank-v1",
+          "kind": "blank",
+          "title": "أكمل المصطلح"
+        },
+        {
+          "id": "scenario-v1",
+          "kind": "scenario",
+          "title": "قرار عميل له عواقب"
+        },
+        {
+          "id": "studio-v1",
+          "kind": "campaign",
+          "title": "تمرين تصميم الحملة",
+          "target": "goals"
+        }
+      ],
       "practicalActivity": true,
       "dailyMission": true,
       "rubricItems": 3,
@@ -2296,6 +3980,39 @@
       "readingWords": 155,
       "readingParagraphs": 3,
       "questions": 5,
+      "interactions": [
+        {
+          "id": "guide-v1",
+          "kind": "guide",
+          "title": "شرح موجّه خطوة بخطوة"
+        },
+        {
+          "id": "match-v1",
+          "kind": "match",
+          "title": "صل المفهوم بمعناه"
+        },
+        {
+          "id": "sequence-v1",
+          "kind": "sequence",
+          "title": "رتّب مسار القرار"
+        },
+        {
+          "id": "blank-v1",
+          "kind": "blank",
+          "title": "أكمل المصطلح"
+        },
+        {
+          "id": "scenario-v1",
+          "kind": "scenario",
+          "title": "قرار عميل له عواقب"
+        },
+        {
+          "id": "studio-v1",
+          "kind": "budget",
+          "title": "محاكي الميزانية ومحاسبة المؤشرات",
+          "target": "budget"
+        }
+      ],
       "practicalActivity": true,
       "dailyMission": true,
       "rubricItems": 3,
@@ -2338,6 +4055,39 @@
       "readingWords": 149,
       "readingParagraphs": 3,
       "questions": 5,
+      "interactions": [
+        {
+          "id": "guide-v1",
+          "kind": "guide",
+          "title": "شرح موجّه خطوة بخطوة"
+        },
+        {
+          "id": "match-v1",
+          "kind": "match",
+          "title": "صل المفهوم بمعناه"
+        },
+        {
+          "id": "sequence-v1",
+          "kind": "sequence",
+          "title": "رتّب مسار القرار"
+        },
+        {
+          "id": "blank-v1",
+          "kind": "blank",
+          "title": "أكمل المصطلح"
+        },
+        {
+          "id": "scenario-v1",
+          "kind": "scenario",
+          "title": "قرار عميل له عواقب"
+        },
+        {
+          "id": "studio-v1",
+          "kind": "copy",
+          "title": "مختبر القصة والإعلان الأخلاقي",
+          "target": "story"
+        }
+      ],
       "practicalActivity": true,
       "dailyMission": true,
       "rubricItems": 3,
@@ -2388,6 +4138,39 @@
       "readingWords": 149,
       "readingParagraphs": 3,
       "questions": 5,
+      "interactions": [
+        {
+          "id": "guide-v1",
+          "kind": "guide",
+          "title": "شرح موجّه خطوة بخطوة"
+        },
+        {
+          "id": "match-v1",
+          "kind": "match",
+          "title": "صل المفهوم بمعناه"
+        },
+        {
+          "id": "sequence-v1",
+          "kind": "sequence",
+          "title": "رتّب مسار القرار"
+        },
+        {
+          "id": "blank-v1",
+          "kind": "blank",
+          "title": "أكمل المصطلح"
+        },
+        {
+          "id": "scenario-v1",
+          "kind": "scenario",
+          "title": "قرار عميل له عواقب"
+        },
+        {
+          "id": "studio-v1",
+          "kind": "copy",
+          "title": "مختبر القصة والإعلان الأخلاقي",
+          "target": "story"
+        }
+      ],
       "practicalActivity": true,
       "dailyMission": true,
       "rubricItems": 3,
@@ -2438,6 +4221,39 @@
       "readingWords": 156,
       "readingParagraphs": 3,
       "questions": 5,
+      "interactions": [
+        {
+          "id": "guide-v1",
+          "kind": "guide",
+          "title": "شرح موجّه خطوة بخطوة"
+        },
+        {
+          "id": "match-v1",
+          "kind": "match",
+          "title": "صل المفهوم بمعناه"
+        },
+        {
+          "id": "sequence-v1",
+          "kind": "sequence",
+          "title": "رتّب مسار القرار"
+        },
+        {
+          "id": "blank-v1",
+          "kind": "blank",
+          "title": "أكمل المصطلح"
+        },
+        {
+          "id": "scenario-v1",
+          "kind": "scenario",
+          "title": "قرار عميل له عواقب"
+        },
+        {
+          "id": "studio-v1",
+          "kind": "campaign",
+          "title": "تمرين تصميم الحملة",
+          "target": "goals"
+        }
+      ],
       "practicalActivity": true,
       "dailyMission": true,
       "rubricItems": 3,
@@ -2486,6 +4302,39 @@
       "readingWords": 148,
       "readingParagraphs": 3,
       "questions": 5,
+      "interactions": [
+        {
+          "id": "guide-v1",
+          "kind": "guide",
+          "title": "شرح موجّه خطوة بخطوة"
+        },
+        {
+          "id": "match-v1",
+          "kind": "match",
+          "title": "صل المفهوم بمعناه"
+        },
+        {
+          "id": "sequence-v1",
+          "kind": "sequence",
+          "title": "رتّب مسار القرار"
+        },
+        {
+          "id": "blank-v1",
+          "kind": "blank",
+          "title": "أكمل المصطلح"
+        },
+        {
+          "id": "scenario-v1",
+          "kind": "scenario",
+          "title": "قرار عميل له عواقب"
+        },
+        {
+          "id": "studio-v1",
+          "kind": "plan",
+          "title": "الخطة التسويقية في صفحة واحدة",
+          "target": "market"
+        }
+      ],
       "practicalActivity": true,
       "dailyMission": true,
       "rubricItems": 3,
@@ -2528,6 +4377,39 @@
       "readingWords": 143,
       "readingParagraphs": 3,
       "questions": 5,
+      "interactions": [
+        {
+          "id": "guide-v1",
+          "kind": "guide",
+          "title": "شرح موجّه خطوة بخطوة"
+        },
+        {
+          "id": "match-v1",
+          "kind": "match",
+          "title": "صل المفهوم بمعناه"
+        },
+        {
+          "id": "sequence-v1",
+          "kind": "sequence",
+          "title": "رتّب مسار القرار"
+        },
+        {
+          "id": "blank-v1",
+          "kind": "blank",
+          "title": "أكمل المصطلح"
+        },
+        {
+          "id": "scenario-v1",
+          "kind": "scenario",
+          "title": "قرار عميل له عواقب"
+        },
+        {
+          "id": "studio-v1",
+          "kind": "calendar",
+          "title": "تقويم محتوى قابل للتحرير",
+          "target": "calendar"
+        }
+      ],
       "practicalActivity": true,
       "dailyMission": true,
       "rubricItems": 3,
@@ -2568,6 +4450,39 @@
       "readingWords": 145,
       "readingParagraphs": 3,
       "questions": 5,
+      "interactions": [
+        {
+          "id": "guide-v1",
+          "kind": "guide",
+          "title": "شرح موجّه خطوة بخطوة"
+        },
+        {
+          "id": "match-v1",
+          "kind": "match",
+          "title": "صل المفهوم بمعناه"
+        },
+        {
+          "id": "sequence-v1",
+          "kind": "sequence",
+          "title": "رتّب مسار القرار"
+        },
+        {
+          "id": "blank-v1",
+          "kind": "blank",
+          "title": "أكمل المصطلح"
+        },
+        {
+          "id": "scenario-v1",
+          "kind": "scenario",
+          "title": "قرار عميل له عواقب"
+        },
+        {
+          "id": "studio-v1",
+          "kind": "budget",
+          "title": "محاكي الميزانية ومحاسبة المؤشرات",
+          "target": "budget"
+        }
+      ],
       "practicalActivity": true,
       "dailyMission": true,
       "rubricItems": 3,
@@ -2614,6 +4529,39 @@
       "readingWords": 162,
       "readingParagraphs": 3,
       "questions": 5,
+      "interactions": [
+        {
+          "id": "guide-v1",
+          "kind": "guide",
+          "title": "شرح موجّه خطوة بخطوة"
+        },
+        {
+          "id": "match-v1",
+          "kind": "match",
+          "title": "صل المفهوم بمعناه"
+        },
+        {
+          "id": "sequence-v1",
+          "kind": "sequence",
+          "title": "رتّب مسار القرار"
+        },
+        {
+          "id": "blank-v1",
+          "kind": "blank",
+          "title": "أكمل المصطلح"
+        },
+        {
+          "id": "scenario-v1",
+          "kind": "scenario",
+          "title": "قرار عميل له عواقب"
+        },
+        {
+          "id": "studio-v1",
+          "kind": "campaign",
+          "title": "تمرين تصميم الحملة",
+          "target": "goals"
+        }
+      ],
       "practicalActivity": true,
       "dailyMission": true,
       "rubricItems": 3,
@@ -2656,6 +4604,39 @@
       "readingWords": 145,
       "readingParagraphs": 3,
       "questions": 5,
+      "interactions": [
+        {
+          "id": "guide-v1",
+          "kind": "guide",
+          "title": "شرح موجّه خطوة بخطوة"
+        },
+        {
+          "id": "match-v1",
+          "kind": "match",
+          "title": "صل المفهوم بمعناه"
+        },
+        {
+          "id": "sequence-v1",
+          "kind": "sequence",
+          "title": "رتّب مسار القرار"
+        },
+        {
+          "id": "blank-v1",
+          "kind": "blank",
+          "title": "أكمل المصطلح"
+        },
+        {
+          "id": "scenario-v1",
+          "kind": "scenario",
+          "title": "قرار عميل له عواقب"
+        },
+        {
+          "id": "studio-v1",
+          "kind": "plan",
+          "title": "الخطة التسويقية في صفحة واحدة",
+          "target": "market"
+        }
+      ],
       "practicalActivity": true,
       "dailyMission": true,
       "rubricItems": 3,

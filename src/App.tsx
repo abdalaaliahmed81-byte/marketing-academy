@@ -1,3 +1,4 @@
+import {SpacedReview} from './interactive/SpacedReview'
 import {Library} from './Library'
 import {Statistics} from './Statistics'
 import {ModuleProjects} from './ModuleProjects'
@@ -55,6 +56,7 @@ function LearningApp({settings}:{settings:Settings}){
   return <Shell settings={settings} onTheme={()=>{db.settings.update('local',{theme:settings.theme==='light'?'dark':'light'}).catch(()=>setMessage('تعذّر تغيير المظهر.'))}}>
     {!records?<p className="loading-state" role="status">جارٍ تحميل تقدمك…</p>:<div className="route-content" key={location.pathname}><Routes>
       <Route path="/" element={<Dashboard settings={settings} states={states} completed={completed.length} attempts={records.attempts} next={resume} projectDone={artifactFields.filter(([id])=>records.project?.fields[id]?.trim()).length} activity={records.activity}/>}/>
+      <Route path="/review-due" element={<SpacedReview/>}/>
       <Route path="/library" element={<Library/>}/>
       <Route path="/stats" element={<Statistics/>}/>
       <Route path="/path" element={<Path states={states}/>}/>

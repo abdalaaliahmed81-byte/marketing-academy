@@ -25,3 +25,6 @@ Baseline `1eecadb` / published v2.0.0. Branch implements2.1.0; this matrix does 
 
 
 Interface revision adds `/library` (60 lessons/15 references with type/module/query and private-note search) and `/stats` (real attempt/activity/project/note/completion records). Shared responsive light/dark RTL design and restrained CSS motion apply across existing learning/work/account screens. See UI_DESIGN.md and final CI evidence in AI_PROGRESS.md.
+
+
+Interactive revision: every lesson now has6 saved activities (360), with12 reusable families including guide/match/order/blank/branches and studios. Quiz drafts/retry rounds preserve all300 question IDs/keys and attempts; due-date review derives from real errors. Baghdad missions remain stable after refresh/progress updates and now autosave drafts. Confirmed studio transfers write actual portfolio fields without changing unrelated fields. See INTERACTION_MATRIX.md and INTERACTIVE_LEARNING.md; completion of open-ended workshops is explicitly self-reviewed, not independent certification.

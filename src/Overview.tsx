@@ -23,6 +23,7 @@ export function Dashboard({settings,states,completed,attempts,next,projectDone,a
       <div className="hero-art" aria-hidden="true"><span/><span/><span/><svg width="238" height="150" viewBox="0 0 238 150" fill="none"><path d="M14 124h210M14 94h210M14 64h210M14 34h210M43 20v111M87 20v111M131 20v111M175 20v111M219 20v111" stroke="#a797f7" strokeOpacity=".26"/><path d="M19 118 59 95 95 104 136 60 163 72 211 25" stroke="#c8b6ff" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round"/><circle cx="211" cy="25" r="7" fill="#e4d7ff"/></svg></div>
       <div className="hero-copy"><p className="hero-tag"><Icon name="trend" size={16}/> التعلّم بالتطبيق</p><h1>معرفة تصنع فرقًا.<br/>ومهارة تبني مستقبلك.</h1><p>{settings.goal}</p><Link className="hero-button" to={lessonHref(next.lessonId,next.section)}>{completed||settings.resume?'تابع التعلّم':'ابدأ الدرس الأول'}<Icon name="arrow" size={19}/></Link></div>
     </section>
+    <Link className="text-link" to="/review-due"><Icon name="target" size={18}/> مراجعات الأخطاء المستحقة</Link>
     <div className="metrics">
       <Metric icon="book" label="الدروس المكتملة" value={ar.format(completed)+' / '+ar.format(lessons.length)} detail="من الدروس المتاحة"/>
       <Metric icon="clock" label="هدف الدراسة اليومي" value={ar.format(settings.minutes)+' دقيقة'} detail={ar.format(studyStreak(date,activity))+' أيام تعلّم متتالية'}/>

@@ -1,3 +1,6 @@
+import {activitiesFor,validInteraction} from './interactive/content'
+import {activityResult,activityOutput,interactionSchema,type Interaction} from './interactive/model'
+import {reviewQueue,reviewSchedule} from './interactive/review'
 import {SQLiteRepository,type StoreView} from './storage/repository'
 import {notifyStore} from './storage/events'
 import {backupSchema,moduleProjectSchema,type ModuleProject} from './data-schema'
@@ -53,12 +56,14 @@ export async function saveLesson(id:string,patch:Partial<Omit<LessonState,'id'|'
     await store.lessonStates.put(next)
   })
 }
-export async function submitQuiz(lesson:Lesson,answers:Record<string,string>,database=db){
-  const attempt:Attempt={id:crypto.randomUUID(),lessonId:lesson.id,at:new Date().toISOString(),answers,...scoreQuestions(lesson.questions,answers)}
+export async function submitQuiz(lesson:Lesson,answers:Record<string,string>,database=db,now=new Date()){
+  const attempt:Attempt={id:crypto.randomUUID(),lessonId:lesson.id,at:now.toISOString(),answers,...scoreQuestions(lesson.questions,answers)}
   await transaction(database,'rw',async store=>{
     if(!isUnlocked(lesson.id,await store.lessonStates.toArray()))throw new Error('أكمل الدروس السابقة أولًا.')
     await store.attempts.add(attempt)
-    await store.activity.put({date:baghdadDay()})
+    const state=await store.lessonStates.get(lesson.id)??emptyLesson(lesson.id)
+    await store.lessonStates.put({...state,quizDraft:{answers,active:false,round:state.quizDraft?.round??0,updatedAt:attempt.at}})
+    await store.activity.put({date:baghdadDay(now)})
   })
   return attempt
 }
@@ -73,6 +78,7 @@ export async function completeLesson(lesson:Lesson,database=db){
   })
 }
 export async function getMission(date:string,database=db){
+  daySchema.parse(date)
   return transaction(database,'rw',async store=>{
     const existing=await store.missions.get(date)
     if(existing)return existing
@@ -148,5 +154,68 @@ export async function initializeSettings(settings:Settings,database=db){
  await transaction(database,'rw',async store=>{
   if(!(await store.projects.get('portfolio')))await store.projects.add({id:'portfolio',name:'',business:valid.business,fields:{}})
   await store.settings.put(valid)
+ })
+}
+
+export async function saveInteraction(lessonId:string,activityId:string,value:Interaction,database=db){
+ const lesson=lessons.find(l=>l.id===lessonId),activity=lesson&&activitiesFor(lesson).find(a=>a.id===activityId)
+ const checked=interactionSchema.parse(value)
+ if(!lesson||!activity||!validInteraction(activity,checked))throw new Error('نشاط غير صالح.')
+ await transaction(database,'rw',async store=>{
+  const all=await store.lessonStates.toArray();if(!isUnlocked(lessonId,all))throw new Error('أكمل الدروس السابقة أولًا.')
+  const current=all.find(s=>s.id===lessonId)??emptyLesson(lessonId)
+  await store.lessonStates.put({...current,interactions:{...current.interactions,[activityId]:checked}})
+  await store.activity.put({date:baghdadDay()})
+ })
+}
+export async function saveQuizAnswer(lessonId:string,questionId:string,answer:string,database=db){
+ const lesson=lessons.find(l=>l.id===lessonId)
+ if(!lesson?.questions.some(q=>q.id===questionId&&q.options.some(o=>o.id===answer)))throw new Error('إجابة غير معروفة.')
+ await transaction(database,'rw',async store=>{
+  const states=await store.lessonStates.toArray();if(!isUnlocked(lessonId,states))throw new Error('الدرس مقفل.')
+  const current=states.find(s=>s.id===lessonId)??emptyLesson(lessonId),draft=current.quizDraft
+  await store.lessonStates.put({...current,quizDraft:{answers:{...(draft?.active?draft.answers:{}),[questionId]:answer},active:true,round:draft?.round??0,updatedAt:new Date().toISOString()}})
+ })
+}
+export async function saveQuizDraftAnswers(lessonId:string,answers:Record<string,string>,database=db){
+ const lesson=lessons.find(l=>l.id===lessonId)
+ if(!lesson||Object.entries(answers).some(([id,answer])=>!lesson.questions.some(q=>q.id===id&&q.options.some(o=>o.id===answer))))throw new Error('إجابات مسودة غير صالحة.')
+ await transaction(database,'rw',async store=>{
+  const states=await store.lessonStates.toArray();if(!isUnlocked(lessonId,states))throw new Error('الدرس مقفل.')
+  const current=states.find(s=>s.id===lessonId)??emptyLesson(lessonId)
+  await store.lessonStates.put({...current,quizDraft:{answers,active:true,round:current.quizDraft?.round??0,updatedAt:new Date().toISOString()}})
+ })
+}
+export async function retryQuiz(lessonId:string,database=db){
+ return transaction(database,'rw',async store=>{
+  const states=await store.lessonStates.toArray();if(!isUnlocked(lessonId,states))throw new Error('الدرس مقفل.')
+  const current=states.find(s=>s.id===lessonId)??emptyLesson(lessonId)
+  const draft={answers:{},active:true,round:(current.quizDraft?.round??0)+1,updatedAt:new Date().toISOString()}
+  await store.lessonStates.put({...current,quizDraft:draft});return draft
+ })
+}
+export async function saveReview(questionId:string,answer:string,database=db,now=new Date()){
+ const lesson=lessons.find(l=>l.questions.some(q=>q.id===questionId)),question=lesson?.questions.find(q=>q.id===questionId)
+ if(!lesson||!question?.options.some(o=>o.id===answer))throw new Error('مراجعة غير صالحة.')
+ return transaction(database,'rw',async store=>{
+  const states=await store.lessonStates.toArray(),attempts=await store.attempts.toArray()
+  if(!reviewQueue(lessons,attempts,states,now).some(item=>item.question.id===questionId))throw new Error('هذا السؤال غير مستحق الآن.')
+  const current=states.find(s=>s.id===lesson.id)??emptyLesson(lesson.id)
+  const next={...current,reviews:[...(current.reviews??[]),{questionId,answer,at:now.toISOString()}]}
+  await store.lessonStates.put(next)
+  await store.activity.put({date:baghdadDay(now)});return {correct:answer===question.answer,why:question.why,nextDue:reviewSchedule(lessons,attempts,[...states.filter(s=>s.id!==lesson.id),next],now).find(item=>item.question.id===questionId)!.due}
+ })
+}
+export async function exportActivity(lessonId:string,activityId:string,database=db){
+ const lesson=lessons.find(l=>l.id===lessonId),activity=lesson&&activitiesFor(lesson).find(a=>a.id===activityId)
+ if(!lesson||!activity?.target||!artifactFields.some(([id])=>id===activity.target))throw new Error('لا يوجد حقل مشروع لهذا النشاط.')
+ await transaction(database,'rw',async store=>{
+  const state=await store.lessonStates.get(lessonId),work=state?.interactions?.[activityId]
+  if(!work||!activityResult(activity,work).complete)throw new Error('أكمل النشاط وراجعه قبل نقله.')
+  const settings=await store.settings.get('local'),project=await store.projects.get('portfolio')??{id:'portfolio' as const,name:'',business:settings?.business??'مشروع مخصص' as const,fields:{}}
+  const output=activityOutput(activity,work);if(output.length>50000)throw new Error('الناتج يتجاوز سعة حقل المشروع؛ اختصره.')
+  const additions=activity.kind==='plan'?Object.fromEntries(activity.fields!.map(f=>[f.id,work.values[f.id]])):{[activity.target!]:output}
+  await store.projects.put({...project,fields:{...project.fields,...additions}})
+  await store.activity.put({date:baghdadDay()})
  })
 }

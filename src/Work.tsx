@@ -1,3 +1,4 @@
+import {useAutosave} from './interactive/useAutosave'
 import {ProfilePanel} from './Account'
 import {activeTransport} from './storage/transport'
 import {capstoneExample} from './projects'
@@ -25,19 +26,21 @@ export function MissionPage({completed,notice}:{completed:number;notice:Notice})
     </div></>
 }
 function MissionForm({mission,notice}:{mission:Mission;notice:Notice}){
+  const target=useRef(db)
   const [response,setResponse]=useState(mission.response)
   const [checked,setChecked]=useState(mission.checked)
+  const autosave=useAutosave({response,checked},draft=>saveMission(mission.date,draft.response,draft.checked,false,target.current))
   const [busy,setBusy]=useState(false)
   async function persist(complete:boolean){
     setBusy(true)
-    try{await saveMission(mission.date,response,checked,complete);notice(complete?'أكملت المهمة.':'حُفظت مسودة المهمة.')}
+    try{await saveMission(mission.date,response,checked,complete,target.current);notice(complete?'أكملت المهمة.':'حُفظت مسودة المهمة.')}
     catch(error){notice(error instanceof Error?error.message:'تعذّر حفظ المهمة.')}
     finally{setBusy(false)}
   }
   return <section className="card stack">
     <div className="section-title"><h2><bdi>{mission.date}</bdi></h2><span>{mission.completed?'✓ مكتملة':'تطبيق · ١٠–٢٠ دقيقة'}</span></div>
     <p>{mission.prompt}</p><label>إجابتك<textarea maxLength={50000} rows={7} value={response} onChange={e=>setResponse(e.target.value)}/></label>
-    <Checklist rubric={mission.rubric} checked={checked} onChange={setChecked}/>
+    <Checklist rubric={mission.rubric} checked={checked} onChange={setChecked}/><small aria-live="polite">{autosave}</small>
     <div className="actions"><button className="secondary" disabled={busy} onClick={()=>void persist(false)}>احفظ المسودة</button><button className="primary" disabled={busy||!ready(response,checked,mission.rubric)} onClick={()=>void persist(true)}>احفظ كمكتملة <Icon name="check"/></button></div>
   </section>
 }

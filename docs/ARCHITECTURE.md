@@ -57,3 +57,6 @@ Settings now offers profile editing, existing password/study-plan controls and e
 
 
 UI revision: authenticated `/library` and `/stats` share the same repositories. Optional notesUpdatedAt is a validated ISO timestamp inside encrypted lesson state, set only for text edits; legacy missing fields remain valid without schema/index resets. Modal editors mount only when opened and portal to document.body; account store captured at open avoids global-store switching races. No new runtime dependency or remote font service is introduced. See UI_DESIGN.md for behavior and compatibility limits.
+
+
+Interactive revision: pure `src/interactive/model.ts`, `content.ts` and `review.ts` are shared by renderer/trusted validation. Optional lesson-record fields hold versioned activity state, active quiz drafts and retrieval events; they remain encrypted and backup-compatible. Canonical state validation checks known activity IDs/paths/permutations and question/option identities. No physical schema/index reset or new server dependency. Atomic domain functions handle quiz draft/attempt closure, activity save, due retrieval and confirmed portfolio transfer. UI components use captured account repositories; due schedules use a question lookup and memoized view. See INTERACTIVE_LEARNING.md for compatibility, semantics and storage bounds.

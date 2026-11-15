@@ -1,3 +1,4 @@
+import {interactionsSchema,quizDraftSchema,reviewEventSchema} from './interactive/model'
 import {z} from './validation'
 import type {Lesson,Question} from './curriculum'
 
@@ -16,7 +17,7 @@ export const sections = [
 export const artifactFields = sections.flatMap(({fields})=>Array.from<[string,string]>(fields.map(([key,title])=>[key,title])))
 export const capstoneSchema = z.object({name:z.string().max(200),business:z.enum(businesses),fields:z.record(z.string(),z.string().max(50000))}).strict()
 export const settingsSchema = z.object({id:z.literal('local'),goal:z.string().trim().min(1).max(200),minutes:z.number().int().min(20).max(40),business:z.enum(businesses),theme:z.enum(['light','dark']),resume:z.object({lessonId:z.string(),section:z.enum(['read','quiz','practice'])}).optional()}).strict()
-export const lessonStateSchema = z.object({id:z.string(),notes:z.string().max(50000),notesUpdatedAt:z.string().datetime().optional(),bookmarked:z.boolean(),assignment:z.string().max(50000),checked:z.array(z.number().int().min(0).max(2)).max(3).refine(v=>new Set(v).size===v.length),completed:z.boolean()}).strict()
+export const lessonStateSchema = z.object({id:z.string(),notes:z.string().max(50000),notesUpdatedAt:z.string().datetime().optional(),bookmarked:z.boolean(),assignment:z.string().max(50000),checked:z.array(z.number().int().min(0).max(2)).max(3).refine(v=>new Set(v).size===v.length),completed:z.boolean(),interactions:interactionsSchema.optional(),quizDraft:quizDraftSchema.optional(),reviews:z.array(reviewEventSchema).max(2000).optional()}).strict()
 export const attemptSchema = z.object({id:z.string(),lessonId:z.string(),at:z.string().datetime(),answers:z.record(z.string(),z.string().max(50000)),score:z.number().int().min(0).max(100),passed:z.boolean(),missed:z.array(z.string())}).strict()
 export const daySchema = z.string().regex(/^\d{4}-\d{2}-\d{2}$/).refine(value=>{
   const date = new Date(value+'T00:00:00Z')
@@ -31,7 +32,7 @@ export type Mission=z.infer<typeof missionSchema>
 export const emptyLesson = (id:string):LessonState=>({id,notes:'',bookmarked:false,assignment:'',checked:[],completed:false})
 export const emptyCapstone = (business:Capstone['business']):Capstone=>({name:'',business,fields:{}})
 export function scoreQuestions(questions:Question[],answers:Record<string,string>) {
-  if (!questions.length || questions.some(q=>!q.options.some(o=>o.id===answers[q.id]))) throw new Error('أجب عن كل الأسئلة قبل التسليم.')
+  if (!questions.length || Object.keys(answers).some(id=>!questions.some(q=>q.id===id)) || questions.some(q=>!q.options.some(o=>o.id===answers[q.id]))) throw new Error('أجب عن كل الأسئلة قبل التسليم.')
   const missed=questions.filter(q=>q.answer!==answers[q.id]).map(q=>q.id)
   const score=Math.round(100*(questions.length-missed.length)/questions.length)
   return {score,passed:score>=70,missed}

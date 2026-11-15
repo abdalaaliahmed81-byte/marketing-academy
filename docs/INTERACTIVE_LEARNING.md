@@ -1,0 +1,33 @@
+# Interactive learning — implementation and grading contract
+
+All60 lessons now open with six real saved activities (360 definitions). Full reading/examples/references remain in an accessible expandable transcript. Existing lesson/question/option IDs and correct-answer keys are unchanged; earlier learner achievements and encrypted records are retained.
+
+## Reusable families
+
+Each lesson has a paragraph stepper with saved acknowledgement/reflection, glossary matching, sequence ordering, a fill-blank retrieval item and branching scenario. Reading/glossary data are lesson-specific; ordering/scenario templates are shared within each of12 modules and contextualized with the current lesson goal. Do not describe these as60 independently authored scenario trees. Branches include consequences, remediation and a second decision; invalid paths are rejected at the shared trust boundary.
+
+A sixth studio is mapped per lesson: buyer persona, value proposition, ethical story/copy, budget/KPI simulation, editable3-entry date/channel/content/metric calendar, nine-field one-page plan or campaign brief. INTERACTION_MATRIX.md lists every lesson's concrete mapping, versioned activity IDs and portfolio destination. Studios use the lesson's own practical prompt. They produce editable work, not fictitious client outcomes.
+
+Ordering supports actual HTML dragging and44px up/down buttons with full item labels for keyboard/touch; changes announce the current order. Matching uses labeled native selects. No pointer-only task is required. Incorrect closed activities show the expected mapping/order/term and rationale; branching supplies outcome-specific explanation. Open workshops clearly use structural/self-review criteria, not semantic AI or independent human grading. Budget math has independent test vectors, Arabic numeral parsing, invalid-input rejection, null zero denominators, CTR/CPC/CPA/ROAS/revenue/contribution and an explicitly assumption-based alternative-budget model. ROAS is not profit; fixed costs are excluded from contribution.
+
+## Persisted state and progress
+
+Optional `interactions`, `quizDraft` and `reviews` live inside each encrypted lesson record. No new unencrypted store, new external service, destructive DB reset or new SQL column is introduced. Old records/backups without these fields remain accepted; invalid new activity IDs, paths, permutations or quiz/review option IDs reject atomically. State remains per authenticated owner under existing revision/transaction controls, backup/restore and size limits. A future semantic activity revision needs a new ID and retained decoder for existing versions, not reinterpretation of saved answers.
+
+Discrete actions save immediately; text drafts debounce650ms with dirty/saving/saved/error feedback. Persisted progress counts acknowledged records only; a local provisional result is labeled until the commit succeeds. Do not close the app while a save is pending; no software can promise persistence through power loss before acknowledgement. Practice/daily-response drafts also autosave, while explicit save/completion controls remain available. New activity completion supplements quiz+practice lesson completion; it does not retroactively revoke existing completions or force legacy learners to redo activities.
+
+Portfolio transfer requires a completed/self-reviewed studio and a preview of both old/new content with explicit replacement confirmation. The plan writes its nine matching fields in one transaction; other studios write their named destination. Unrelated portfolio fields remain untouched. Draft autosave alone never silently overwrites a portfolio. This transfer is manual within the current account, not cloud synchronization.
+
+## Quiz and spaced review
+
+All60 lessons retain five scored questions each with correct-answer explanations,70% threshold and unlimited retries within storage bounds. Every radio choice saves the complete active draft, with revision-aware acknowledgement so a late earlier response cannot falsely announce the latest draft saved. Retry creates a new active draft/round without deleting any previous attempt. Submission validates all option IDs, rejects missing/unknown questions, computes score and atomically stores answers, result and closed draft. Changing a question's meaning/key later still requires assessment versioning/history preservation; this feature does not certify the earlier open item-moderation findings as professionally reviewed.
+
+Spaced review is accessible from dashboard, quiz and statistics at `/review-due`. Only genuinely missed saved questions enter it. Mistakes become due on their Baghdad date; successful due retrieval schedules1,3,7,14,30 days. Wrong retrieval resets to today. Correct quiz retries before an item's due day do not artificially advance the spacing streak. Review events preserve answer/time; correctness and schedule derive from the shared question bank. They contribute real study activity without forging a lesson quiz pass. All event histories are included in account backups.
+
+Daily missions retain the existing transactionally persisted date key: first selection comes only from completed lessons, then its exact prompt/lesson remains unchanged across refresh or additional completions that day. Day identity uses Asia/Baghdad, including21:00 UTC midnight/year transitions. A new day can select from the updated completed set. History and drafts remain account-specific.
+
+## Verification and limits
+
+Automated checks cover all360 definitions, closed grading/invalid state, 70% boundary, unknown answers, Arabic/zero/budget arithmetic, safe reorder operations, spaced due dates and rapid-retry behavior, actual SQLite close/reopen, per-account isolation, retry history, backup compatibility, nine-field atomic portfolio transfer and Baghdad mission stability. Real browser cases drive mouse dragging, keyboard ordering, all workshop families, saved quiz drafts/reviews, restore through the public UI, mobile layout and axe checks. The synthetic all-completed fixture is imported through normal validated backup restore solely to test later studios; it is not shipped user progress or a runtime bypass. Original full60-lesson UI completion remains tested separately. Desktop smoke drives an actual saved matching activity across process restart; Windows must pass the same built-EXE gate.
+
+Open instructional-depth/source/item-moderation/qualified-review findings in AUDIT.md remain disclosed. This implementation provides real interactions and grading/persistence, not a claim of independent instructor certification or guaranteed marketing performance. Exact executed evidence is recorded in AI_PROGRESS.md/QA.md.

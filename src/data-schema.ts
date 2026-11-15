@@ -1,3 +1,4 @@
+import {activitiesFor,validInteraction} from './interactive/content'
 import {z} from './validation'
 import {lessons} from './lessons'
 import {artifactFields,attemptSchema,capstoneSchema,daySchema,lessonStateSchema,missionSchema,ready,scoreQuestions,settingsSchema} from './domain'
@@ -25,6 +26,12 @@ export const backupSchema=z.object({
   const ids=new Set(lessons.map(l=>l.id))
   if(data.lessonStates.some(s=>!ids.has(s.id)||s.checked.some(n=>n>2))||data.missions.some(m=>!ids.has(m.lessonId)))reject('معرّف درس غير معروف.')
   if(data.settings[0]?.resume&&!ids.has(data.settings[0].resume.lessonId))reject('درس المتابعة غير معروف.')
+  for(const state of data.lessonStates){
+    const lesson=lessons.find(l=>l.id===state.id);if(!lesson)continue
+    for(const [key,value] of Object.entries(state.interactions??{})){const activity=activitiesFor(lesson).find(a=>a.id===key);if(!activity||!validInteraction(activity,value))reject('نشاط تفاعلي أو ترتيب أو مسار غير صالح.')}
+    for(const [qid,answer] of Object.entries(state.quizDraft?.answers??{}))if(!lesson.questions.some(q=>q.id===qid&&q.options.some(o=>o.id===answer)))reject('إجابة مسودة اختبار غير صالحة.')
+    for(const event of state.reviews??[])if(!lesson.questions.some(q=>q.id===event.questionId&&q.options.some(o=>o.id===event.answer)))reject('مراجعة لسؤال أو إجابة غير معروفين.')
+  }
   for(const a of data.attempts){
     const l=lessons.find(l=>l.id===a.lessonId)
     if(!l){reject('محاولة لدرس مجهول.');continue}
