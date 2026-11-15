@@ -1,3 +1,4 @@
+import {readFile} from 'node:fs/promises'
 import {test,expect,type Page} from '@playwright/test'
 import AxeBuilder from '@axe-core/playwright'
 import {lessons} from '../src/lessons'
@@ -95,7 +96,10 @@ test('worked module project and capstone are editable and persistent',async({pag
  await expect(page.getByRole('textbox',{name:'اسم المشروع'})).toHaveValue('محاكاة · هدية المساء')
  const download=page.waitForEvent('download')
  await page.getByRole('button',{name:'ملف الأعمال Markdown',exact:true}).click()
- expect((await download).suggestedFilename()).toBe('marketing-portfolio.md')
+ const exported=await download
+ expect(exported.suggestedFilename()).toBe('marketing-portfolio.md')
+ const content=await readFile((await exported.path())!,'utf8')
+ expect(content).toContain('محاكاة · هدية المساء');expect(content).toContain('2860');expect(content).toContain('التقرير النهائي للعميل')
 })
 test('encrypted backup export and restore validates without losing current data',async({page})=>{
  await register(page)
@@ -105,6 +109,7 @@ test('encrypted backup export and restore validates without losing current data'
  await page.getByRole('button',{name:'نزّل نسخة مشفّرة'}).click()
  const download=await pending,path=await download.path()
  expect(path).toBeTruthy()
+ const contents=await readFile(path!,'utf8');expect(contents).toContain('marketing-academy-encrypted');expect(contents).not.toContain('أنجز أول مشروع')
  await page.getByRole('textbox',{name:'هدفك من التعلّم'}).fill('هدف مؤقت')
  await page.getByRole('button',{name:'احفظ الإعدادات'}).click()
  await page.getByLabel('اختر نسخة احتياطية').setInputFiles(path!)
@@ -144,4 +149,21 @@ test('web build works offline after cache is ready and logout requires login aga
  await page.getByRole('link',{name:'مسار التعلّم',exact:true}).click()
  await expect(page.getByRole('button',{name:/^ملاحظات:/})).toHaveCount(60)
  await context.setOffline(false)
+})
+
+test('primary learning views meet automated accessibility checks in both themes',async({page})=>{
+ await page.emulateMedia({reducedMotion:'reduce'})
+ await page.goto('/')
+ let audit=await new AxeBuilder({page}).withTags(['wcag2a','wcag2aa','wcag21aa','wcag22aa']).analyze()
+ expect(audit.violations).toEqual([])
+ await register(page)
+ for(const dark of [false,true]){
+  if(dark)await page.getByRole('button',{name:'المظهر الداكن',exact:true}).click()
+  for(const route of ['/#/','/#/lesson/m01-l01/read','/#/lesson/m01-l01/quiz','/#/projects','/#/project','/#/settings']){
+   await page.goto(route)
+   await expect(page.locator('h1')).toBeVisible()
+   audit=await new AxeBuilder({page}).withTags(['wcag2a','wcag2aa','wcag21aa','wcag22aa']).analyze()
+   expect(audit.violations,route+' theme='+dark).toEqual([])
+  }
+ }
 })
