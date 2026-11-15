@@ -1,6 +1,6 @@
 {
   "baseline": "1eecadbf3e1811e31dc2eafe274487ecb8a15e57",
-  "generatedAt": "2026-11-15T18:47:01.315Z",
+  "generatedAt": "2026-11-15T18:51:21.758Z",
   "files": [
     {
       "path": ".dockerignore",
@@ -109,8 +109,8 @@
     },
     {
       "path": "docs/AI_PROGRESS.md",
-      "bytes": 4945,
-      "sha256": "cfff022c6b2f57d8c9c5b04fc2037d28ab0e0cab8c4a94ab3e3e876d6bca7018",
+      "bytes": 5222,
+      "sha256": "a5d93fa6cc6541747036ac2616a1ecfdf378793336b846e9f2e442317b09f2fb",
       "lines": 38,
       "inspection": "read; review scope documented"
     },
@@ -650,8 +650,8 @@
     },
     {
       "path": "tests/academy.spec.ts",
-      "bytes": 13182,
-      "sha256": "cfa130f9a1fdd6f972c0d03a44c0db2343d56df88461a556d3aca5fb1e2965b0",
+      "bytes": 13163,
+      "sha256": "38a71b4f3575279bee1c06b3cc0914ad5b39bbdeeae8c21dc44b0056495afc24",
       "lines": 192,
       "inspection": "read and syntax-parsed; security/runtime review scoped in AUDIT.md",
       "syntaxErrors": 0

@@ -26,7 +26,7 @@ The managed Docker host's VFS storage initially filled its disk; failed task bui
 
 ## CI history
 
-[Run43748263443](https://github.com/abdalaaliahmed81-byte/marketing-academy/actions/runs/43748263443), commit7bfcb93: Windows passed32 tests, actual EXE and SQLite/migration smoke. Web passed32 tests and12 browser paths but Docker failed startup due a newly created non-traversable bundle directory. Corrected bundle copy into existing `/app`, then local Docker restart smoke passed. This failed aggregate run is not a release-verification pass. Current corrections also clarify API save/offline text and explicitly assert migrated completion/quiz state in the desktop smoke. Final verification is recorded in the follow-up evidence entry.
+[Run43748263443](https://github.com/abdalaaliahmed81-byte/marketing-academy/actions/runs/43748263443), commit7bfcb93: Windows passed32 tests, actual EXE and SQLite/migration smoke. Web passed32 tests and12 browser paths but Docker failed startup due a newly created non-traversable bundle directory. Corrected bundle copy into existing `/app`, then local Docker restart smoke passed. This failed aggregate run is not a release-verification pass. Current corrections also clarify API save/offline text and explicitly assert migrated completion/quiz state in the desktop smoke. Run43748688789 for d44dfae retained32 passing unit tests; web exposed two stale exact-text assertions after the save-copy correction (10/12 browser checks passed). Updated those expectations to the new location-neutral copy; this is not recorded as a successful aggregate run. Final verification is recorded in the follow-up evidence entry.
 
 ## Open findings and limits
 
