@@ -1,8 +1,9 @@
+import {useLiveQuery} from 'dexie-react-hooks'
 import {NotesButton} from './Notes'
 import {useEffect,useState} from 'react'
 import {Link,Navigate,useNavigate,useParams} from 'react-router-dom'
 import {bookLinks,books,reviewDate,sources,type Lesson,type Question} from './curriculum'
-import {completeLesson,isUnlocked,openLesson,saveLesson,submitQuiz} from './db'
+import {db,completeLesson,isUnlocked,openLesson,saveLesson,submitQuiz} from './db'
 import {emptyLesson,ready,shuffleOptions,type Attempt,type LessonState,type Settings} from './domain'
 import {lessons,moduleReview} from './lessons'
 import {ar,Checklist,Heading,Icon,type Notice} from './ui'
@@ -98,9 +99,11 @@ function Practice({lesson,state,passed,notice}:{lesson:Lesson;state:LessonState;
 }
 export function ReviewRoute({states,attempts}:{states:LessonState[];attempts:Attempt[]}){
   const {module}=useParams()
+  const persisted=useLiveQuery(()=>db.lessonStates.toArray())
   const n=Number(module)
   const group=lessons.filter(l=>l.module===n)
-  if(!group.length||!group.every(l=>states.some(s=>s.id===l.id&&s.completed)))return <Navigate to="/path" replace/>
+  if(!persisted)return <p role="status">جارٍ تحميل مراجعة الوحدة…</p>
+  if(!group.length||!group.every(l=>persisted.some(s=>s.id===l.id&&s.completed)))return <Navigate to="/path" replace/>
   return <ModuleReview key={module} group={group} attempts={attempts} prompt={moduleReview[n-1]}/>
 }
 function ModuleReview({group,attempts,prompt}:{group:Lesson[];attempts:Attempt[];prompt:string}){

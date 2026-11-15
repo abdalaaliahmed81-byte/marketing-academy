@@ -1,4 +1,4 @@
-import {cleanup,fireEvent,render,screen,within} from '@testing-library/react'
+import {cleanup,fireEvent,render,screen,within,waitFor} from '@testing-library/react'
 import {MemoryRouter} from 'react-router-dom'
 import {afterEach,beforeEach,expect,it,vi} from 'vitest'
 import {AcademyApp} from './App'
@@ -17,6 +17,7 @@ it('onboards, submits a quiz, saves practice, and opens a learned mission',async
   fireEvent.click(await screen.findByRole('link',{name:'اذهب إلى التطبيق'}))
   fireEvent.change(screen.getByRole('textbox',{name:'تطبيقك'}),{target:{value:'حجز للطلبة خلال الاستراحة'}})
   for(const check of within(screen.getByRole('group',{name:'المراجعة الذاتية'})).getAllByRole('checkbox'))fireEvent.click(check)
+  await waitFor(()=>expect((screen.getByRole('button',{name:'أكمل الدرس'}) as HTMLButtonElement).disabled).toBe(false))
   fireEvent.click(screen.getByRole('button',{name:'أكمل الدرس'}))
   await screen.findByRole('link',{name:'الدرس التالي'})
   fireEvent.click(screen.getByRole('link',{name:'المهمة اليومية'}))

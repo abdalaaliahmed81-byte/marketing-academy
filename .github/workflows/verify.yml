@@ -29,8 +29,6 @@ jobs:
       - run: npm run check
       - run: npx playwright install --with-deps chromium
       - run: npm run test:e2e
-        env:
-          CHROMIUM_PATH: /usr/bin/google-chrome
       - run: docker compose up -d --build
       - run: curl --fail --retry 10 --retry-delay 3 --retry-connrefused http://127.0.0.1:8080/
       - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
