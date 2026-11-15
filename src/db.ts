@@ -40,7 +40,11 @@ export function isUnlocked(id:string,states:LessonState[]){
 export async function saveLesson(id:string,patch:Partial<Omit<LessonState,'id'|'completed'>>,database=db){
   return database.transaction('rw',database.lessonStates,async()=>{
     const saved=await database.lessonStates.get(id)??emptyLesson(id)
-    await database.lessonStates.put({...saved,...patch})
+    const next={...saved,...patch}
+    const lesson=lessons.find(l=>l.id===id)
+    if(!lesson)throw new Error('الدرس غير معروف.')
+    if(saved.completed&&!ready(next.assignment,next.checked,lesson.rubric))throw new Error('الدرس مكتمل. أبقِ التطبيق وبنود مراجعته مكتملة لحفظ تعديله؛ بقيت النسخة السابقة محفوظة.')
+    await database.lessonStates.put(next)
   })
 }
 export async function submitQuiz(lesson:Lesson,answers:Record<string,string>,database=db){
@@ -138,10 +142,11 @@ const backupSchema=z.object({
   if(data.attempts.some(a=>a.passed!==(a.score>=70)))reject('بيانات درجات الاختبار غير صالحة.')
 })
 export async function exportBackup(database=db){
-  return database.transaction('r',[database.settings,database.lessonStates,database.attempts,database.missions,database.projects,database.activity,database.moduleProjects],async()=>({
+  const data=await database.transaction('r',[database.settings,database.lessonStates,database.attempts,database.missions,database.projects,database.activity,database.moduleProjects],async()=>({
     version:3,moduleProjects:await database.moduleProjects.toArray(),settings:await database.settings.toArray(),lessonStates:await database.lessonStates.toArray(),attempts:await database.attempts.toArray(),
     missions:await database.missions.toArray(),projects:await database.projects.toArray(),activity:await database.activity.toArray()
   }))
+  return backupSchema.parse(data)
 }
 export async function restoreBackup(raw:unknown,database=db){
   if(JSON.stringify(raw).length>10_000_000)throw new Error('النسخة أكبر من الحد المسموح.')

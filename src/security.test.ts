@@ -77,6 +77,7 @@ describe('backup and project validation',()=>{
  it('round trips encrypted backups; wrong phrases and modified payloads fail',async()=>{
   await register('Backup','test-backup-password')
   await saveLesson('m01-l01',{notes:'نسخة'})
+  await expect(encryptBackup({text:'x'.repeat(9_000_001)},'backup-passphrase')).rejects.toThrow()
   const before=await exportBackup(),sealed=await encryptBackup(before,'backup-passphrase')
   expect(JSON.stringify(sealed)).not.toContain('نسخة')
   await expect(decryptBackup(sealed,'wrong')).rejects.toThrow()
