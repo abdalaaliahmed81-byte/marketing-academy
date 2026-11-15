@@ -112,6 +112,11 @@ try{
  expect(await page.evaluate(name=>window.AcademyLegacyFixture.verifySource(name),fixture.sourceName)).toBe(fixture.sourceFingerprint)
  await page.getByRole('link',{name:'مشروعات الوحدات',exact:true}).click()
  await expect(page.getByRole('textbox',{name:'تسليم مشروع الوحدة'})).toHaveValue('legacy-project-must-survive')
+ const migrated=await page.evaluate(async()=>window.academy.request('login',{name:'متعلم النسخة السابقة',password:'legacy-test-long-password'}))
+ expect(migrated.ok).toBe(true)
+ expect(migrated.value.snapshot.state.lessonStates.find(row=>row.id==='m01-l01').completed).toBe(true)
+ expect(migrated.value.snapshot.state.attempts.some(row=>row.lessonId==='m01-l01'&&row.passed&&row.score===100)).toBe(true)
+ expect(migrated.value.snapshot.state.moduleProjects[0].completed).toBe(true)
  evidence.checks.push('migrated an authenticated legacy IndexedDB account; completed lesson, note, quiz and project survived; original ciphertext unchanged')
  await running.close();running=undefined
  const sql=new DatabaseSync(path.join(dataDir,'academy.sqlite'))

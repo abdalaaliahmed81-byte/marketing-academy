@@ -19,10 +19,14 @@ Completed: created six requested documents; read/file-hashed and syntax-inventor
 |`node scripts/check-source.mjs`|Passed bounded books/databases/private-key/token filename/pattern guard|
 |`npm run audit:project`|60 lessons/300 questions;50 short/generated-case/repeated-summary lessons,37 distractor flags and118 longest-correct cues. Not professional approval|
 |`node scripts/audit-project.mjs --check-links`|15 reference/publisher URLs HTTP200, with actual redirect destinations recorded; claim-level completeness not verified|
-|Docker new API profile|Build/run/restart smoke being finalized; do not infer pass until evidence below is updated|
-|Built Windows portable EXE for2.1.0|CI execution pending; previous v2.0.0 success is not evidence for SQLite changes|
+|Docker new API profile|Passed actual non-root startup, health/headers, authenticated note save and API process restart with saved note recovered; evidence `artifacts/docker-smoke.json`|
+|Built Windows portable EXE for2.1.0|Windows job passed for7bfcb93 (run43748263443): actual shipped EXE, SQLite/migration/restart, x64 PE/checksums/source archive. Final corrective commit requires re-verification|
 
 The managed Docker host's VFS storage initially filled its disk; failed task build caches and disposable dependency/download caches were removed, without deleting learner data/volumes. Dockerfile layers were reduced and npm cache cleared in its build layer. Local proxy CA is supplied only as a BuildKit secret for this environment; no TLS bypass or CA is committed.
+
+## CI history
+
+[Run43748263443](https://github.com/abdalaaliahmed81-byte/marketing-academy/actions/runs/43748263443), commit7bfcb93: Windows passed32 tests, actual EXE and SQLite/migration smoke. Web passed32 tests and12 browser paths but Docker failed startup due a newly created non-traversable bundle directory. Corrected bundle copy into existing `/app`, then local Docker restart smoke passed. This failed aggregate run is not a release-verification pass. Current corrections also clarify API save/offline text and explicitly assert migrated completion/quiz state in the desktop smoke. Final verification is recorded in the follow-up evidence entry.
 
 ## Open findings and limits
 

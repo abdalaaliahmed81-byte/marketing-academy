@@ -1,3 +1,4 @@
+import {activeTransport} from './storage/transport'
 import {capstoneExample} from './projects'
 import {encryptBackup,decryptBackup} from './backup'
 import {changePassword} from './auth'
@@ -61,7 +62,7 @@ function ProjectEditor({project,notice}:{project:Capstone;notice:Notice}){
     try{
       await saveProject(value,baseline.current)
       baseline.current=value
-      notice('حُفظ المشروع على جهازك.')
+      notice('حُفظ المشروع.')
     }catch{notice('تعذّر حفظ المشروع. حاول مرة أخرى.')}
     finally{setBusy(false)}
   }
@@ -108,6 +109,6 @@ export function SettingsPage({settings,notice}:{settings:Settings;notice:Notice}
         {failure&&<p role="alert">{failure}</p>}
       </section>
       <section className="card stack"><h2>تغيير كلمة المرور</h2><form className="stack" onSubmit={async e=>{e.preventDefault();setBusy(true);try{await changePassword(oldPassword,newPassword);setOldPassword('');setNewPassword('');notice('تغيّرت كلمة المرور.')}catch(e){notice(e instanceof Error?e.message:'تعذّر تغيير كلمة المرور.')}finally{setBusy(false)}}}><label>كلمة المرور الحالية<input type="password" autoComplete="current-password" required value={oldPassword} onChange={e=>setOldPassword(e.target.value)}/></label><label>كلمة المرور الجديدة<input type="password" autoComplete="new-password" minLength={12} maxLength={128} required value={newPassword} onChange={e=>setNewPassword(e.target.value)}/></label><button className="secondary" disabled={busy}>غيّر كلمة المرور</button></form></section>
-      <section className="card stack"><h2>التثبيت والاستخدام دون اتصال</h2><p>نسخة Windows المحمولة تعمل مباشرة دون تثبيت أدوات أو خادم. في نسخة الويب افتح التطبيق مرة واحدة وانتظر اكتمال تحميله. استخدم خيار تثبيت التطبيق في قائمة متصفحك. على iPad، افتح Safari واختر «مشاركة»، ثم «إضافة إلى الشاشة الرئيسية».</p></section>
+      <section className="card stack"><h2>التثبيت والاستخدام دون اتصال</h2><p>نسخة Windows المحمولة تعمل مباشرة دون تثبيت أدوات أو خادم. {activeTransport()?.kind==='web-api'?'حسابات نسخة الويب هذه تحتاج اتصالًا بالخادم للدخول والحفظ.':'نسخة الويب المحلية تعمل دون اتصال بعد تحميل التطبيق وحفظ ملفاته.'} استخدم خيار تثبيت التطبيق في قائمة متصفحك. على iPad، افتح Safari واختر «مشاركة»، ثم «إضافة إلى الشاشة الرئيسية».</p></section>
     </div></>
 }

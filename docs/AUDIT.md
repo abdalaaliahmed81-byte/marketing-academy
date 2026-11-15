@@ -39,6 +39,8 @@ Additional faults found and fixed during implementation:
 - Zod's runtime code-generation optimization conflicted with strict CSP under the real Electron migration fixture. Shared validation explicitly disables JIT rather than weakening script policy.
 - Renderer state must not show a write before SQLite acknowledges it. Repository transactions clone a scoped view and publish only after success; injected SQL abort rolls back all rows, revision unchanged.
 - API mode could silently revert to browser-local storage after server outage. Provider pinning now displays an Arabic retry error and preserves the original data location.
+- Docker COPY file permissions also applied to a newly created parent directory, leaving the non-root API unable to traverse its bundle path. The bundle now copies into the existing application directory; the container smoke checks actual non-root startup and durable writes.
+- New API deployment initially inherited UI text saying data was saved on the device. Save indicators now avoid that location claim and settings distinguish API connectivity from offline static/desktop use.
 - Docker VFS in this managed test host exhausted its small disk with repeated dependency-containing COPY layers. Build copies source in one layer and clears npm cache in the dependency layer; temporary failed build cache was removed. No learner volume or legacy data was deleted.
 
 E01–E05 remain **open quality findings**, not silently reclassified as completed content. No lesson/question/option IDs, historical correct answers, course sequencing or saved learner achievements were rewritten during this audit. A future content revision must version changed assessments and preserve historical attempts rather than rescoring them against a different key.

@@ -1,11 +1,56 @@
 {
   "baseline": "1eecadbf3e1811e31dc2eafe274487ecb8a15e57",
-  "generatedAt": "2026-11-15T18:42:28.130Z",
+  "generatedAt": "2026-11-15T18:47:01.315Z",
   "files": [
+    {
+      "path": ".dockerignore",
+      "bytes": 137,
+      "sha256": "5816ddc4939901c6e35a908517d9bd677e32f31765c7ab09e1eb1231bb07c936",
+      "inspection": "read; review scope documented"
+    },
+    {
+      "path": ".github/workflows/release.yml",
+      "bytes": 1910,
+      "sha256": "1b7b2d3e89fc3131a59958beb6f30c520ccdca871a925e65d43b62f91b77dcc0",
+      "lines": 46,
+      "inspection": "read; review scope documented"
+    },
+    {
+      "path": ".github/workflows/verify.yml",
+      "bytes": 2417,
+      "sha256": "56c93127c9b93a3844d32cbd4a0b6fcb62a61da82f5e83393773a7ae4e1183f3",
+      "lines": 77,
+      "inspection": "read; review scope documented"
+    },
+    {
+      "path": ".gitignore",
+      "bytes": 176,
+      "sha256": "1a82d77b3e037f658101e7722271c08d086d053647a72360372f0cbba46d0076",
+      "inspection": "read; review scope documented"
+    },
+    {
+      "path": "Dockerfile",
+      "bytes": 1050,
+      "sha256": "e6098140f7c52dd41ee3575ca0e5e995b27c7dc5770b1d167bdc21beb51e02fa",
+      "inspection": "read; review scope documented"
+    },
     {
       "path": "Dockerfile.static",
       "bytes": 563,
       "sha256": "dcff742b3be0506e93f2b8e17c74a9782fd58750c37dbd87e158737d8630e23a",
+      "inspection": "read; review scope documented"
+    },
+    {
+      "path": "README.md",
+      "bytes": 6955,
+      "sha256": "52456100377b518905fb62d07e16cb0f0057eb593f668dd0e1f0e1c5ea84fa7f",
+      "lines": 54,
+      "inspection": "read; review scope documented"
+    },
+    {
+      "path": "Start-Windows.cmd",
+      "bytes": 285,
+      "sha256": "388acf44ea22c14883fb2eca51ed75115e22fe5ca9acaf0a5eea8926363bf7ab",
       "inspection": "read; review scope documented"
     },
     {
@@ -56,184 +101,6 @@
       "inspection": "read; review scope documented"
     },
     {
-      "path": "docs/GITHUB_AUDIT.json",
-      "bytes": 1242,
-      "sha256": "34c7ef66e009ffac4e02b372bf6c418044017aefad561136668aed2573c9c5dd",
-      "lines": 45,
-      "inspection": "read; manifests/locks additionally consumed by build and dependency audit"
-    },
-    {
-      "path": "docs/PDF_AUDIT.json",
-      "bytes": 1364,
-      "sha256": "eb75a82542e00f0d34ea19e2adc273b3b04351980be75161d4e345d167ba5aaa",
-      "lines": 33,
-      "inspection": "read; manifests/locks additionally consumed by build and dependency audit"
-    },
-    {
-      "path": "electron/preload.cjs",
-      "bytes": 472,
-      "sha256": "e7bc699deee4dff789694e665f84008339f86dbb2fa060b94356dbdc5b0cd041",
-      "lines": 8,
-      "inspection": "read and syntax-parsed; security/runtime review scoped in AUDIT.md",
-      "syntaxErrors": 0
-    },
-    {
-      "path": "infrastructure/nginx-api.conf",
-      "bytes": 971,
-      "sha256": "b293651a296a7dae685d247a56f611f2cd70083f83a53375140d6a2a7da003b3",
-      "lines": 24,
-      "inspection": "read; review scope documented"
-    },
-    {
-      "path": "scripts/audit-project.mjs",
-      "bytes": 9367,
-      "sha256": "2e96ec3608c2c316c472f55f76649d9a0f00463dcb838a017b42a84449118d11",
-      "lines": 50,
-      "inspection": "read and syntax-parsed; security/runtime review scoped in AUDIT.md",
-      "syntaxErrors": 0
-    },
-    {
-      "path": "scripts/build-backend.mjs",
-      "bytes": 410,
-      "sha256": "6d8298c69641c0f60a3c155f0356080e2ad0455b44be9285acc6609797c8dc8d",
-      "lines": 4,
-      "inspection": "read and syntax-parsed; security/runtime review scoped in AUDIT.md",
-      "syntaxErrors": 0
-    },
-    {
-      "path": "scripts/start-api-test.mjs",
-      "bytes": 588,
-      "sha256": "58c2fc58a17704875eb44de5e9fcaeace639ba1af90171e0af1c7657398b529a",
-      "lines": 10,
-      "inspection": "read and syntax-parsed; security/runtime review scoped in AUDIT.md",
-      "syntaxErrors": 0
-    },
-    {
-      "path": "src/data-schema.ts",
-      "bytes": 4528,
-      "sha256": "17a657e1645c3361c1325bc86e4a97d7f9493e51a7b390c62582e611fc0087a6",
-      "lines": 53,
-      "inspection": "read and syntax-parsed; security/runtime review scoped in AUDIT.md",
-      "syntaxErrors": 0
-    },
-    {
-      "path": "src/legacy-auth.ts",
-      "bytes": 6166,
-      "sha256": "eb225324f01297db005f025d7c75192277b398dc4909871b5252926cecbd5cc2",
-      "lines": 85,
-      "inspection": "read and syntax-parsed; security/runtime review scoped in AUDIT.md",
-      "syntaxErrors": 0
-    },
-    {
-      "path": "src/storage/events.ts",
-      "bytes": 387,
-      "sha256": "1b0cd68cfd3aa146e0d83a9af85cf199e948a32f7efb3c47254942dd9ece8dba",
-      "lines": 5,
-      "inspection": "read and syntax-parsed; security/runtime review scoped in AUDIT.md",
-      "syntaxErrors": 0
-    },
-    {
-      "path": "src/storage/protocol.ts",
-      "bytes": 1319,
-      "sha256": "84b10f5a670bd6284c61603f9fb364dfd5a794506cf3152af7cdc3156afcbc5f",
-      "lines": 20,
-      "inspection": "read and syntax-parsed; security/runtime review scoped in AUDIT.md",
-      "syntaxErrors": 0
-    },
-    {
-      "path": "src/storage/query.ts",
-      "bytes": 864,
-      "sha256": "d68794e2759260386fbb21ff44c4011acb0121618ac84cda9333f7fe928cec94",
-      "lines": 18,
-      "inspection": "read and syntax-parsed; security/runtime review scoped in AUDIT.md",
-      "syntaxErrors": 0
-    },
-    {
-      "path": "src/storage/repository.ts",
-      "bytes": 6938,
-      "sha256": "d161ca66ce1cf3e377dfe2f77d7513047560716cc489407f9ef1d96b57b91db3",
-      "lines": 104,
-      "inspection": "read and syntax-parsed; security/runtime review scoped in AUDIT.md",
-      "syntaxErrors": 0
-    },
-    {
-      "path": "src/storage/transport.ts",
-      "bytes": 2414,
-      "sha256": "dced2f2a03050c1fe1c01182f39181a3674d54aef3f75327c3b7c1fadce13012",
-      "lines": 32,
-      "inspection": "read and syntax-parsed; security/runtime review scoped in AUDIT.md",
-      "syntaxErrors": 0
-    },
-    {
-      "path": "src/validation.ts",
-      "bytes": 223,
-      "sha256": "44656b3a4349c7a1c7e90ae5f70360adf375ca924f155417fbe56f141be6b080",
-      "lines": 6,
-      "inspection": "read and syntax-parsed; security/runtime review scoped in AUDIT.md",
-      "syntaxErrors": 0
-    },
-    {
-      "path": "tests/api.spec.ts",
-      "bytes": 4946,
-      "sha256": "60706dfa72340f24ad602ef72b89c98c658aac39708254498ae02681e1b6f35b",
-      "lines": 75,
-      "inspection": "read and syntax-parsed; security/runtime review scoped in AUDIT.md",
-      "syntaxErrors": 0
-    },
-    {
-      "path": "tests/fixtures/legacy-seed.ts",
-      "bytes": 1730,
-      "sha256": "72afe4571cf678ec8b31bbbd8331eaea726e8e17f7ec2f812043acac4c93c8e2",
-      "lines": 21,
-      "inspection": "read and syntax-parsed; security/runtime review scoped in AUDIT.md",
-      "syntaxErrors": 0
-    },
-    {
-      "path": ".dockerignore",
-      "bytes": 137,
-      "sha256": "5816ddc4939901c6e35a908517d9bd677e32f31765c7ab09e1eb1231bb07c936",
-      "inspection": "read; review scope documented"
-    },
-    {
-      "path": ".github/workflows/release.yml",
-      "bytes": 1910,
-      "sha256": "1b7b2d3e89fc3131a59958beb6f30c520ccdca871a925e65d43b62f91b77dcc0",
-      "lines": 46,
-      "inspection": "read; review scope documented"
-    },
-    {
-      "path": ".github/workflows/verify.yml",
-      "bytes": 2417,
-      "sha256": "56c93127c9b93a3844d32cbd4a0b6fcb62a61da82f5e83393773a7ae4e1183f3",
-      "lines": 77,
-      "inspection": "read; review scope documented"
-    },
-    {
-      "path": ".gitignore",
-      "bytes": 176,
-      "sha256": "1a82d77b3e037f658101e7722271c08d086d053647a72360372f0cbba46d0076",
-      "inspection": "read; review scope documented"
-    },
-    {
-      "path": "Dockerfile",
-      "bytes": 1062,
-      "sha256": "9c6bd54bab51eace3bc2ac38c0797f6fe35edb225496ecb048cfda3886f0b1b7",
-      "inspection": "read; review scope documented"
-    },
-    {
-      "path": "README.md",
-      "bytes": 6955,
-      "sha256": "52456100377b518905fb62d07e16cb0f0057eb593f668dd0e1f0e1c5ea84fa7f",
-      "lines": 54,
-      "inspection": "read; review scope documented"
-    },
-    {
-      "path": "Start-Windows.cmd",
-      "bytes": 285,
-      "sha256": "388acf44ea22c14883fb2eca51ed75115e22fe5ca9acaf0a5eea8926363bf7ab",
-      "inspection": "read; review scope documented"
-    },
-    {
       "path": "compose.yaml",
       "bytes": 697,
       "sha256": "305da89f947c7f48781dbfb76585e2cd91112756dbbe61d40b1ef152a741b695",
@@ -242,9 +109,9 @@
     },
     {
       "path": "docs/AI_PROGRESS.md",
-      "bytes": 4123,
-      "sha256": "55cb849cd9c62f6fb4e9ac46be1de4e2060354170478bc7609203b27dfbb3719",
-      "lines": 34,
+      "bytes": 4945,
+      "sha256": "cfff022c6b2f57d8c9c5b04fc2037d28ab0e0cab8c4a94ab3e3e876d6bca7018",
+      "lines": 38,
       "inspection": "read; review scope documented"
     },
     {
@@ -256,9 +123,9 @@
     },
     {
       "path": "docs/AUDIT.md",
-      "bytes": 13661,
-      "sha256": "b7d9e5cebac59196cd81354de5dc2a5912cc64d20ed67eebbbc4f14520783c75",
-      "lines": 79,
+      "bytes": 14144,
+      "sha256": "e1d9ab1a22e3176f3c04e7553aa81301b80aa972c305b5746457bfa2c23533da",
+      "lines": 81,
       "inspection": "read; review scope documented"
     },
     {
@@ -283,11 +150,25 @@
       "inspection": "read; review scope documented"
     },
     {
+      "path": "docs/GITHUB_AUDIT.json",
+      "bytes": 1242,
+      "sha256": "34c7ef66e009ffac4e02b372bf6c418044017aefad561136668aed2573c9c5dd",
+      "lines": 45,
+      "inspection": "read; manifests/locks additionally consumed by build and dependency audit"
+    },
+    {
       "path": "docs/IMPLEMENTATION-CONTRACT.md",
       "bytes": 6823,
       "sha256": "96801fd6d16d97abf54e1d1a8d8a1f0388f26933e7522a4e9b7ca0cbe35ae901",
       "lines": 48,
       "inspection": "read; review scope documented"
+    },
+    {
+      "path": "docs/PDF_AUDIT.json",
+      "bytes": 1364,
+      "sha256": "eb75a82542e00f0d34ea19e2adc273b3b04351980be75161d4e345d167ba5aaa",
+      "lines": 33,
+      "inspection": "read; manifests/locks additionally consumed by build and dependency audit"
     },
     {
       "path": "docs/QA.md",
@@ -340,10 +221,25 @@
       "syntaxErrors": 0
     },
     {
+      "path": "electron/preload.cjs",
+      "bytes": 472,
+      "sha256": "e7bc699deee4dff789694e665f84008339f86dbb2fa060b94356dbdc5b0cd041",
+      "lines": 8,
+      "inspection": "read and syntax-parsed; security/runtime review scoped in AUDIT.md",
+      "syntaxErrors": 0
+    },
+    {
       "path": "index.html",
       "bytes": 575,
       "sha256": "37b02c967d793fca5fc611de6e825de5945d7bc1a410a9fd4310196c11d58a32",
       "lines": 7,
+      "inspection": "read; review scope documented"
+    },
+    {
+      "path": "infrastructure/nginx-api.conf",
+      "bytes": 971,
+      "sha256": "b293651a296a7dae685d247a56f611f2cd70083f83a53375140d6a2a7da003b3",
+      "lines": 24,
       "inspection": "read; review scope documented"
     },
     {
@@ -402,6 +298,22 @@
       "syntaxErrors": 0
     },
     {
+      "path": "scripts/audit-project.mjs",
+      "bytes": 9367,
+      "sha256": "2e96ec3608c2c316c472f55f76649d9a0f00463dcb838a017b42a84449118d11",
+      "lines": 50,
+      "inspection": "read and syntax-parsed; security/runtime review scoped in AUDIT.md",
+      "syntaxErrors": 0
+    },
+    {
+      "path": "scripts/build-backend.mjs",
+      "bytes": 410,
+      "sha256": "6d8298c69641c0f60a3c155f0356080e2ad0455b44be9285acc6609797c8dc8d",
+      "lines": 4,
+      "inspection": "read and syntax-parsed; security/runtime review scoped in AUDIT.md",
+      "syntaxErrors": 0
+    },
+    {
       "path": "scripts/check-source.mjs",
       "bytes": 1042,
       "sha256": "9b0154fb47035e0ade24f9a6a1881cd50db7c4597949894fd6aa250c2b54e26b",
@@ -411,9 +323,9 @@
     },
     {
       "path": "scripts/desktop-smoke.mjs",
-      "bytes": 9571,
-      "sha256": "0c02d35998b444bb6563dc82057a3891b97d5b0bc693156fc7d9b24b6e7af77f",
-      "lines": 128,
+      "bytes": 10071,
+      "sha256": "9f0023fa9a2146867fef0a064965db68ddd3370408c03af520bdc395180eb8df",
+      "lines": 133,
       "inspection": "read and syntax-parsed; security/runtime review scoped in AUDIT.md",
       "syntaxErrors": 0
     },
@@ -446,6 +358,14 @@
       "bytes": 1764,
       "sha256": "894327d5bc324ffd990a53350582c4f6710454b57e9e1c1c2704b2cc015677f2",
       "lines": 32,
+      "inspection": "read and syntax-parsed; security/runtime review scoped in AUDIT.md",
+      "syntaxErrors": 0
+    },
+    {
+      "path": "scripts/start-api-test.mjs",
+      "bytes": 588,
+      "sha256": "58c2fc58a17704875eb44de5e9fcaeace639ba1af90171e0af1c7657398b529a",
+      "lines": 10,
       "inspection": "read and syntax-parsed; security/runtime review scoped in AUDIT.md",
       "syntaxErrors": 0
     },
@@ -483,8 +403,8 @@
     },
     {
       "path": "src/Notes.tsx",
-      "bytes": 2382,
-      "sha256": "2bdf76623b52c2ba22fc37a0147ce82d655ceb5630031dc1a2a631bfcdbf74ca",
+      "bytes": 2381,
+      "sha256": "395b423158da7e4054397281e8d88c229bcf041e98fa9ecc10c483bbbf252c1f",
       "lines": 31,
       "inspection": "read and syntax-parsed; security/runtime review scoped in AUDIT.md",
       "syntaxErrors": 0
@@ -499,9 +419,9 @@
     },
     {
       "path": "src/Work.tsx",
-      "bytes": 15039,
-      "sha256": "b3a28a67d147233b9d47023f7c78006051350c42b4508fa6351e78f2d6e6ffe5",
-      "lines": 114,
+      "bytes": 15234,
+      "sha256": "dec0ecbc997fc978d6d683053aed339b009d0b4b21dcef4d4dd7958016f17dc5",
+      "lines": 115,
       "inspection": "read and syntax-parsed; security/runtime review scoped in AUDIT.md",
       "syntaxErrors": 0
     },
@@ -546,6 +466,14 @@
       "syntaxErrors": 0
     },
     {
+      "path": "src/data-schema.ts",
+      "bytes": 4528,
+      "sha256": "17a657e1645c3361c1325bc86e4a97d7f9493e51a7b390c62582e611fc0087a6",
+      "lines": 53,
+      "inspection": "read and syntax-parsed; security/runtime review scoped in AUDIT.md",
+      "syntaxErrors": 0
+    },
+    {
       "path": "src/db.ts",
       "bytes": 8647,
       "sha256": "7ee9616a725d10cfdbeb8011b027ac8d86a0a14ab2bb97d457aae72b645b7a97",
@@ -566,6 +494,14 @@
       "bytes": 6309,
       "sha256": "ca678f1d680f0bc468f0f4a0eeba9516802eb4daa5e2e396aa60af5002a1631b",
       "lines": 78,
+      "inspection": "read and syntax-parsed; security/runtime review scoped in AUDIT.md",
+      "syntaxErrors": 0
+    },
+    {
+      "path": "src/legacy-auth.ts",
+      "bytes": 6166,
+      "sha256": "eb225324f01297db005f025d7c75192277b398dc4909871b5252926cecbd5cc2",
+      "lines": 85,
       "inspection": "read and syntax-parsed; security/runtime review scoped in AUDIT.md",
       "syntaxErrors": 0
     },
@@ -634,6 +570,46 @@
       "syntaxErrors": 0
     },
     {
+      "path": "src/storage/events.ts",
+      "bytes": 387,
+      "sha256": "1b0cd68cfd3aa146e0d83a9af85cf199e948a32f7efb3c47254942dd9ece8dba",
+      "lines": 5,
+      "inspection": "read and syntax-parsed; security/runtime review scoped in AUDIT.md",
+      "syntaxErrors": 0
+    },
+    {
+      "path": "src/storage/protocol.ts",
+      "bytes": 1319,
+      "sha256": "84b10f5a670bd6284c61603f9fb364dfd5a794506cf3152af7cdc3156afcbc5f",
+      "lines": 20,
+      "inspection": "read and syntax-parsed; security/runtime review scoped in AUDIT.md",
+      "syntaxErrors": 0
+    },
+    {
+      "path": "src/storage/query.ts",
+      "bytes": 864,
+      "sha256": "d68794e2759260386fbb21ff44c4011acb0121618ac84cda9333f7fe928cec94",
+      "lines": 18,
+      "inspection": "read and syntax-parsed; security/runtime review scoped in AUDIT.md",
+      "syntaxErrors": 0
+    },
+    {
+      "path": "src/storage/repository.ts",
+      "bytes": 6938,
+      "sha256": "d161ca66ce1cf3e377dfe2f77d7513047560716cc489407f9ef1d96b57b91db3",
+      "lines": 104,
+      "inspection": "read and syntax-parsed; security/runtime review scoped in AUDIT.md",
+      "syntaxErrors": 0
+    },
+    {
+      "path": "src/storage/transport.ts",
+      "bytes": 2414,
+      "sha256": "dced2f2a03050c1fe1c01182f39181a3674d54aef3f75327c3b7c1fadce13012",
+      "lines": 32,
+      "inspection": "read and syntax-parsed; security/runtime review scoped in AUDIT.md",
+      "syntaxErrors": 0
+    },
+    {
       "path": "src/style.css",
       "bytes": 12969,
       "sha256": "945b89bef42a6d19954cd0041285c07636086fd1f2c8cf01ddb160d731cc5b0c",
@@ -650,9 +626,17 @@
     },
     {
       "path": "src/ui.tsx",
-      "bytes": 5758,
-      "sha256": "ffaa86b9575b1d5df0f4b1d9c83b2ab477f5e927be83c627fe4402e41862e3b5",
+      "bytes": 5756,
+      "sha256": "82e76f36a9d71a2079616a188cff94c544c221603548dd258f421b1cc30812c7",
       "lines": 61,
+      "inspection": "read and syntax-parsed; security/runtime review scoped in AUDIT.md",
+      "syntaxErrors": 0
+    },
+    {
+      "path": "src/validation.ts",
+      "bytes": 223,
+      "sha256": "44656b3a4349c7a1c7e90ae5f70360adf375ca924f155417fbe56f141be6b080",
+      "lines": 6,
       "inspection": "read and syntax-parsed; security/runtime review scoped in AUDIT.md",
       "syntaxErrors": 0
     },
@@ -669,6 +653,22 @@
       "bytes": 13182,
       "sha256": "cfa130f9a1fdd6f972c0d03a44c0db2343d56df88461a556d3aca5fb1e2965b0",
       "lines": 192,
+      "inspection": "read and syntax-parsed; security/runtime review scoped in AUDIT.md",
+      "syntaxErrors": 0
+    },
+    {
+      "path": "tests/api.spec.ts",
+      "bytes": 4946,
+      "sha256": "60706dfa72340f24ad602ef72b89c98c658aac39708254498ae02681e1b6f35b",
+      "lines": 75,
+      "inspection": "read and syntax-parsed; security/runtime review scoped in AUDIT.md",
+      "syntaxErrors": 0
+    },
+    {
+      "path": "tests/fixtures/legacy-seed.ts",
+      "bytes": 1730,
+      "sha256": "72afe4571cf678ec8b31bbbd8331eaea726e8e17f7ec2f812043acac4c93c8e2",
+      "lines": 21,
       "inspection": "read and syntax-parsed; security/runtime review scoped in AUDIT.md",
       "syntaxErrors": 0
     },

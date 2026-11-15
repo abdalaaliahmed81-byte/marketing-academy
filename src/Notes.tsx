@@ -10,7 +10,7 @@ export function NotesButton({id,title}:{id:string;title:string}){
   useEffect(()=>{
     if(!open)return
     const current=++revision.current
-    const timer=window.setTimeout(()=>{setStatus('جارٍ الحفظ…');persist(text).then(()=>{if(current===revision.current)setStatus('محفوظة على جهازك')},()=>{if(current===revision.current)setStatus('تعذّر الحفظ. حاول مجددًا قبل الإغلاق.')})},650)
+    const timer=window.setTimeout(()=>{setStatus('جارٍ الحفظ…');persist(text).then(()=>{if(current===revision.current)setStatus('حُفظت الملاحظات')},()=>{if(current===revision.current)setStatus('تعذّر الحفظ. حاول مجددًا قبل الإغلاق.')})},650)
     return ()=>window.clearTimeout(timer)
   },[text,open,id])
   async function show(){

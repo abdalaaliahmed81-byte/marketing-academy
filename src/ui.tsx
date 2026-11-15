@@ -18,7 +18,7 @@ export function Shell({settings,onTheme,children}:{settings:Settings;onTheme:()=
     <aside className="sidebar">
       <div className="brand"><img src="/icon-192.png" alt="" width="42" height="42"/><div><strong>أكاديمية التسويق</strong><small>Marketing Academy</small></div></div>
       <nav aria-label="التنقل الرئيسي">{links.map(([to,label,icon])=><NavLink key={to} end={to==='/'} to={to} className={({isActive})=>isActive?'active':''}><Icon name={icon}/><span>{label}</span></NavLink>)}</nav>
-      <div className="sidebar-foot"><span className="status-dot"/> تقدمك محفوظ على جهازك</div>
+      <div className="sidebar-foot"><span className="status-dot"/> تقدمك محفوظ لكل حساب</div>
     </aside>
     <div className="frame">
       <header className="top"><span>أكاديمية التسويق <span className="crumb"> / لوحة التعلّم</span></span><div className="actions">{account&&<><span className="account-name">{account.session.name}</span><button className="secondary" onClick={account.signOut}>خروج</button></>}<button className="icon-btn" onClick={onTheme} aria-label={settings.theme==='dark'?'المظهر الفاتح':'المظهر الداكن'}><Icon name={settings.theme==='dark'?'sun':'moon'}/></button></div></header>
