@@ -1,7 +1,14 @@
 {
   "baseline": "1eecadbf3e1811e31dc2eafe274487ecb8a15e57",
-  "generatedAt": "2026-11-15T18:51:21.758Z",
+  "generatedAt": "2026-11-15T18:58:30.871Z",
   "files": [
+    {
+      "path": "docs/AUDIT_VERIFICATION.json",
+      "bytes": 3676,
+      "sha256": "0fa3b3561ed1d7283b8025d1a13d5b2e8fb5b8d61551d8cdaba52a66ab0ad837",
+      "lines": 112,
+      "inspection": "read; manifests/locks additionally consumed by build and dependency audit"
+    },
     {
       "path": ".dockerignore",
       "bytes": 137,
@@ -109,9 +116,9 @@
     },
     {
       "path": "docs/AI_PROGRESS.md",
-      "bytes": 5222,
-      "sha256": "a5d93fa6cc6541747036ac2616a1ecfdf378793336b846e9f2e442317b09f2fb",
-      "lines": 38,
+      "bytes": 6767,
+      "sha256": "203b9cc6742cf72f68bc006edb91ba17e3893f05a694749c80bbbcbc964b5277",
+      "lines": 46,
       "inspection": "read; review scope documented"
     },
     {
@@ -123,9 +130,9 @@
     },
     {
       "path": "docs/AUDIT.md",
-      "bytes": 14144,
-      "sha256": "e1d9ab1a22e3176f3c04e7553aa81301b80aa972c305b5746457bfa2c23533da",
-      "lines": 81,
+      "bytes": 15612,
+      "sha256": "4c74bd720950ade58df21c66f715d7d4f531d2e64551f339e36874ea5734e9ec",
+      "lines": 88,
       "inspection": "read; review scope documented"
     },
     {
@@ -137,15 +144,15 @@
     },
     {
       "path": "docs/DECISIONS.md",
-      "bytes": 3753,
-      "sha256": "d5a482b89665ba5e12ba70ea17e3185764f90c00999a5a949052a6dcdaefc583",
-      "lines": 20,
+      "bytes": 4922,
+      "sha256": "34d13cb595aa97eb6ce1e8087d4cf45715bcaeb119aafb73a2ce2c070c12e655",
+      "lines": 25,
       "inspection": "read; review scope documented"
     },
     {
       "path": "docs/FEATURE_MATRIX.md",
-      "bytes": 2788,
-      "sha256": "f404a1e414d26f2bf0b6adfd168a24024dc963c0eb4596337e8d28413a2d7827",
+      "bytes": 2818,
+      "sha256": "0fe2721ed4244df0aeeb8f093b0087a99ea84ab6a13dc4f5f18750593ab63b57",
       "lines": 24,
       "inspection": "read; review scope documented"
     },
@@ -158,9 +165,9 @@
     },
     {
       "path": "docs/IMPLEMENTATION-CONTRACT.md",
-      "bytes": 6823,
-      "sha256": "96801fd6d16d97abf54e1d1a8d8a1f0388f26933e7522a4e9b7ca0cbe35ae901",
-      "lines": 48,
+      "bytes": 7764,
+      "sha256": "f7484af45ef367a495050787c3723d37ca0a07bceba4d53c05fa3b0b9cf5c489",
+      "lines": 53,
       "inspection": "read; review scope documented"
     },
     {
@@ -172,9 +179,9 @@
     },
     {
       "path": "docs/QA.md",
-      "bytes": 6837,
-      "sha256": "88a4f93c547dbddc435c48bb4340979cf06394a8329fb9540e065bfc267f0b9d",
-      "lines": 42,
+      "bytes": 7482,
+      "sha256": "64f974866d88f7b0e97c50e2606ec0f30e1dcc886f9c0a1dda1b730c5bf351ae",
+      "lines": 47,
       "inspection": "read; review scope documented"
     },
     {
@@ -186,8 +193,8 @@
     },
     {
       "path": "docs/RELEASE_GATES.md",
-      "bytes": 3055,
-      "sha256": "4706c43cf4621d07fb5e3fe496679339b69efc0a8d0c17859c1aa6cffb81074d",
+      "bytes": 3102,
+      "sha256": "da1439661db6b08f7d3305fd7128f87ca313b1ea96e26e3cd4636e34b78cd256",
       "lines": 23,
       "inspection": "read; review scope documented"
     },

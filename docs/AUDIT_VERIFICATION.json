@@ -1,0 +1,111 @@
+{
+  "verifiedAt": "2026-11-15T18:58:30.080628+00:00",
+  "testedSourceCommit": "484c80a136b5544ae11d777e6bec5abf08f3bd83",
+  "verificationRun": "https://github.com/abdalaaliahmed81-byte/marketing-academy/actions/runs/43749095271",
+  "ciStatus": "success",
+  "jobs": [
+    {
+      "name": "web",
+      "status": "completed",
+      "conclusion": "success",
+      "databaseId": 132918833008,
+      "url": "https://github.com/abdalaaliahmed81-byte/marketing-academy/actions/runs/43749095271/job/132918833008"
+    },
+    {
+      "name": "windows",
+      "status": "completed",
+      "conclusion": "success",
+      "databaseId": 132918833318,
+      "url": "https://github.com/abdalaaliahmed81-byte/marketing-academy/actions/runs/43749095271/job/132918833318"
+    }
+  ],
+  "windows": {
+    "status": "passed",
+    "commit": "484c80a136b5544ae11d777e6bec5abf08f3bd83",
+    "version": "2.1.0",
+    "platform": "windows",
+    "payloadArchitecture": "x64",
+    "portableExecutableSmoke": {
+      "platform": "win32",
+      "architecture": "x64",
+      "executable": "release/Marketing-Academy-2.1.0-win-x64.exe",
+      "checks": [
+        "application rendered Arabic registration using local academy protocol",
+        "renderer has no Node require or process; SQLite transport exposed only through the narrow preload",
+        "registered account, onboarded, showed 60 lessons and saved a lesson note",
+        "required login after process restart and recovered persistent note",
+        "external network fetch blocked; curriculum and notes work without external server",
+        "migrated an authenticated legacy IndexedDB account; completed lesson, note, quiz and project survived; original ciphertext unchanged"
+      ],
+      "networkRequests": [],
+      "sqlite": {
+        "schemaVersion": 1,
+        "accounts": 2,
+        "records": 9,
+        "legacySourcesPreserved": true,
+        "encryptedRecords": true
+      },
+      "status": "passed"
+    },
+    "assets": [
+      {
+        "name": "Marketing-Academy-2.1.0-win-x64.exe",
+        "sha256": "9eb54d6316452ed243a18488534817547251b7922b05dcfd8ebd7a863687a6b5"
+      },
+      {
+        "name": "Marketing-Academy-2.1.0-source.zip",
+        "sha256": "9c2dee3c6c3a64307bc6611f3597d89f0eabd209be72bc25b2b3214f47b6cc54"
+      }
+    ]
+  },
+  "downloadedExeAndSourceChecksumsVerified": true,
+  "localDocker": {
+    "status": "passed",
+    "http": 200,
+    "healthy": true,
+    "user": "101:101",
+    "readOnlyRoot": true,
+    "capabilitiesDropped": [
+      "ALL"
+    ],
+    "securityHeaders": true,
+    "rtl": true,
+    "scriptAsset": true,
+    "sqliteApi": true,
+    "apiUser": "node",
+    "apiReadOnlyRoot": true,
+    "progressSurvivesApiRestart": true
+  },
+  "localBrowser": {
+    "startTime": "2026-11-15T18:51:04.840Z",
+    "duration": 140041.228,
+    "expected": 12,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  },
+  "productionVulnerabilities": {
+    "info": 0,
+    "low": 0,
+    "moderate": 0,
+    "high": 0,
+    "critical": 0,
+    "total": 0
+  },
+  "toolingVulnerabilities": {
+    "info": 0,
+    "low": 2,
+    "moderate": 9,
+    "high": 0,
+    "critical": 0,
+    "total": 11
+  },
+  "releasePublished": false,
+  "limits": [
+    "Real user profile not supplied; synthetic migration fixtures only.",
+    "50 short lessons, generated cases/summaries and assessment/provenance quality findings remain open.",
+    "No independent human Arabic instructor, penetration tester or assistive-technology user review.",
+    "Unsigned Windows x64; physical devices, ARM64, container OS scan and large-scale capacity not covered.",
+    "GitHub admin settings endpoints403; inaccessible controls not inferred absent."
+  ]
+}

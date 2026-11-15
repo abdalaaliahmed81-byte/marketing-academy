@@ -39,3 +39,8 @@ A ninth browser check additionally saved all12 module projects independently, re
 Committed-state review navigation race; desktop protocol requests blocked by its own file-fetch interception; premature test actions before async saves acknowledged; hidden print heading selected by a test; root-owned restrictive Docker config permissions; nginx location headers masking inherited security headers; proxy-sensitive local health probes; and portable-wrapper inspector stdout unsuitable for Electron's direct launch helper. The portable EXE is now launched as the shipped file and tested via a loopback CDP endpoint supplied only by the test harness. This endpoint is not enabled for normal application use.
 
 The Windows runner builds the portable EXE, drives its UI, closes and relaunches it, verifies login and saved notes, and checks the unpacked payload's x64 PE architecture before generating release assets. Actual success must be read from verification.json and the linked run; a successful packaging step alone is insufficient.
+
+
+## 2.1.0 audit verification (unreleased)
+
+Final source484c80a passed both jobs in [run43749095271](https://github.com/abdalaaliahmed81-byte/marketing-academy/actions/runs/43749095271):32 unit/integration tests per OS,12 browser paths, real Docker SQLite/restart checks, and actual built Windows-EXE isolation/persistence/legacy migration. Local download/readback verified EXE/source digests. See AUDIT_VERIFICATION.json and AI_PROGRESS.md. The educational audit identified50 short micro-lessons with repeated cases/summaries and item-quality flags; previous structural checks are not professional content approval. These findings remain open.

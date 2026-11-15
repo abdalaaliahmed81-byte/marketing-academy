@@ -5,14 +5,14 @@ Applies to2.1.0 audit source. Published v2.0.0 is unchanged. AI_PROGRESS records
 |Gate|Evidence / condition|Status|
 |---|---|---|
 |G01 Preserve source and progress|Stable app origin/IDs, inventory, retained IDB sources, no runtime data in Git|Passed code/fixture checks; unseen real learner profile not supplied|
-|G02 Real SQLite|Node and Electron actual engine, schema/open/reopen/integrity|Passed local unit and Electron smoke; Windows evidence recorded separately|
-|G03 Migration|Actual legacy-IDB→SQLite login, readback, completed state/note/quiz/project/source fingerprint|Passed Linux Electron; built Windows must also pass|
+|G02 Real SQLite|Node and Electron actual engine, schema/open/reopen/integrity|Passed local unit/Electron and actual Windows EXE; run43749095271|
+|G03 Migration|Actual legacy-IDB→SQLite login, readback, completed state/note/quiz/project/source fingerprint|Passed Linux Electron and built Windows EXE; unchanged source fingerprint|
 |G04 Account isolation|Wrong password, per-owner encrypted records, owner mismatch, revision conflicts, concurrent password changes|Passed automated engine/repository/API checks|
 |G05 Atomicity|Invalid restore and actual SQL trigger abort preserve old snapshot; no unacknowledged UI success|Passed engine and repository tests|
 |G06 IPC/API|Narrow sender/command boundary, CSRF/origin/cookies/body limits/rate/session tests|Passed checks within documented threat model; no external penetration test|
-|G07 Learning regressions|Original domain + full60-lesson browser path, notes/missions/projects/backups|Executed checks recorded in AI_PROGRESS|
-|G08 Accessibility|Keyboard/dialog, RTL320/390/1280 widths, reduced motion, light/dark axe|Executed browser checks; manual screen reader/assistive-user review remains unverified|
-|G09 Packaging|Actual built x64 portable EXE + SQLite and legacy migration smoke, restart, PE header/digests|Requires successful Windows job for exact release commit; unsigned status disclosed|
+|G07 Learning regressions|Original domain + full60-lesson browser path, notes/missions/projects/backups|32 unit/integration +12 browser checks passed; run43749095271|
+|G08 Accessibility|Keyboard/dialog, RTL320/390/1280 widths, reduced motion, light/dark axe|12 browser checks passed, including axe; manual assistive-user review unverified|
+|G09 Packaging|Actual built x64 portable EXE + SQLite and legacy migration smoke, restart, PE header/digests|Passed for484c80a in run43749095271; later release commit still requires exact verification. Unsigned|
 |G10 Supply chain|No production advisories, no high/critical tooling findings, source guard, pinned actions|Dependency report records exact counts; low/moderate tooling residual accepted/disclosed|
 |G11 Educational audit coverage|60-row matrix +3-PDF metadata/source inspection +question/case/depth metrics|Completed bounded audit; evidence depth clearly labeled|
 |G12 Advanced educational readiness|Expand flagged micro-lessons, independent cases/summaries, item moderation, claim-level current sources, qualified independent Arabic review|OPEN; blocks advanced/professionally-reviewed completion claims|
