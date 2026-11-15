@@ -168,3 +168,24 @@ test('primary learning views meet automated accessibility checks in both themes'
   }
  }
 })
+
+test('all twelve module projects save independently and export their full worked solution',async({page})=>{
+ test.setTimeout(180000)
+ await register(page)
+ await page.getByRole('link',{name:'مشروعات الوحدات',exact:true}).click()
+ for(let i=0;i<12;i++){
+  await page.getByRole('navigation',{name:'اختيار مشروع الوحدة'}).getByRole('button').nth(i).click()
+  await page.getByRole('textbox',{name:'تسليم مشروع الوحدة'}).fill('تسليم مستقل للوحدة '+(i+1)+' مع دليل افتراضي وحدود وقرار واضح ومراجعة ذاتية.')
+  for(const box of await page.getByRole('checkbox').all())await box.check()
+  await page.getByRole('button',{name:'احفظ المشروع مكتملًا'}).click()
+  await expect(page.getByText('آخر حالة محفوظة: مكتمل')).toBeVisible()
+ }
+ await page.reload();await login(page)
+ await expect(page.getByRole('textbox',{name:'تسليم مشروع الوحدة'})).toHaveValue('تسليم مستقل للوحدة 1 مع دليل افتراضي وحدود وقرار واضح ومراجعة ذاتية.')
+ const waiting=page.waitForEvent('download')
+ await page.getByRole('button',{name:'نزّل المشروع المحلول Markdown'}).click()
+ const file=await waiting
+ const text=await readFile((await file.path())!,'utf8')
+ expect(text).toContain('الخطة المكتملة للمحاكاة')
+ expect(text).toContain('الإجمالي30 استفسارًا و12 تأكيدًا')
+})

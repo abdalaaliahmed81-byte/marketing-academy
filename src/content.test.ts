@@ -1,3 +1,4 @@
+import {workedArtifacts} from './projectArtifacts'
 import {describe,expect,it} from 'vitest'
 import {mkdirSync,writeFileSync} from 'node:fs'
 import {lessons,moduleReview} from './lessons'
@@ -30,6 +31,8 @@ describe('curriculum publication integrity',()=>{
  })
  it('provides twelve worked projects and every capstone deliverable',()=>{
   expect(projectBriefs).toHaveLength(12)
+  expect(workedArtifacts).toHaveLength(12)
+  expect(count(workedArtifacts[5][0])).toBeGreaterThanOrEqual(300)
   for(const p of projectBriefs){expect(p.steps).toHaveLength(4);expect(p.deliverables).toHaveLength(4);expect(p.rubric).toHaveLength(4);expect(count(p.worked.join(' '))).toBeGreaterThan(100)}
   expect(Object.keys(capstoneExample.fields).sort()).toEqual(artifactFields.map(([id])=>id).sort())
   for(const [id] of artifactFields)expect(capstoneExample.fields[id].length,id).toBeGreaterThan(60)
