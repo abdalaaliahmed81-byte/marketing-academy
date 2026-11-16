@@ -1,5 +1,5 @@
 import {readFileSync} from 'node:fs'
-import {assertEducationalReadiness} from '../scripts/educational-gate.mjs'
+import {assertEducationalReadiness,assertPublicationReadiness} from '../scripts/educational-gate.mjs'
 import {afterEach,describe,expect,it} from 'vitest'
 import {lessons} from './lessons'
 import {assessmentQuestions} from './lessons/assessment-history'
@@ -12,8 +12,8 @@ import {blankInteraction} from './interactive/model'
 let database:AcademyDB|undefined
 afterEach(async()=>{await database?.delete();database=undefined})
 describe('editorial revision and learner-history compatibility',()=>{
- it('keeps public release blocked while G12 lacks independent review evidence',()=>{
-  const readiness=JSON.parse(readFileSync('docs/EDUCATIONAL_READINESS.json','utf8'));expect(()=>assertEducationalReadiness(readiness)).toThrow(/G12/)
+ it('blocks stable professional completion while permitting an explicitly limited preview',()=>{
+  const readiness={...JSON.parse(readFileSync('docs/EDUCATIONAL_READINESS.json','utf8')),independentArabicReview:'open',learnerValidation:'open',professionalApproval:false,independentReviewEvidence:null};expect(()=>assertEducationalReadiness(readiness)).toThrow(/G12/);expect(()=>assertPublicationReadiness(readiness,'stable')).toThrow(/G12/);expect(()=>assertPublicationReadiness(readiness,'preview')).not.toThrow();expect(()=>assertPublicationReadiness(readiness,'unknown')).toThrow();expect(()=>assertPublicationReadiness({...readiness,reviewedLessons:59},'preview')).toThrow()
  })
  it('maps all sixty lessons to bounded sources without claiming human approval',()=>{
   expect(sourceRegistry.lessons.map(l=>l.id)).toEqual(lessons.map(l=>l.id))
