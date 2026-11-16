@@ -11,6 +11,7 @@ async function verify(channel,name,smokeFile,normalFile,payloadFile){
  assert.equal(normalStart.status,'passed');assert.equal(normalStart.visibleWindow,true);assert.equal(normalStart.executable,name)
  assert.equal(smoke.platform,'win32');assert.equal(smoke.channel,channel);assert.equal(smoke.status,'passed');assert(smoke.executable.endsWith(name))
  for(const key of ['projectAutosavePersistence','profilePersistence','noteTimestampPersistence','interactiveActivityPersistence','offlineLessonCompletion','quizAndCompletionSurviveRestart','actualNewAccountIsolation','restrictedChildPath'])assert.equal(smoke[key],true)
+ for(const key of ['confirmation','invalidName','unknownAccount','wrongPassword','duplicate'])assert.equal(smoke.expectedAuthRejections[key],true)
  assert.equal(smoke.sqlite.schemaVersion,1);assert.equal(smoke.sqlite.encryptedRecords,true);assert.equal(smoke.sqlite.legacySourcesPreserved,true);assert(smoke.sqlite.accounts>=3)
  const wrapper=await open('release/'+name,'r'),wrapperDos=Buffer.alloc(64),wrapperPe=Buffer.alloc(6)
  await wrapper.read(wrapperDos,0,64,0);assert.equal(wrapperDos.toString('ascii',0,2),'MZ');await wrapper.read(wrapperPe,0,6,wrapperDos.readUInt32LE(60));await wrapper.close();assert.equal(wrapperPe.toString('ascii',0,4),'PE\0\0')
@@ -20,6 +21,8 @@ async function verify(channel,name,smokeFile,normalFile,payloadFile){
  const bytes=(await stat('release/'+name)).size;assert(bytes>50_000_000)
  return {channel,normalStart,portableBytes:bytes,wrapperMachine:wrapperPe.readUInt16LE(4),payloadArchitecture:'x64',portableExecutableSmoke:smoke}
 }
+const baseline={production:await read('artifacts/auth-baseline-production.json'),qa:await read('artifacts/auth-baseline-qa.json')}
+for(const report of Object.values(baseline)){assert.equal(report.status,'passed');assert.equal(report.baselineVersion,'2.3.0');for(const key of ['confirmation','invalidName','unknownAccount','wrongPassword','duplicate'])assert.equal(report.expectedAuthRejections[key],true)}
 const production=await verify('production',exe,'artifacts/desktop-smoke.json','artifacts/windows-normal-start.json','release/win-unpacked/Marketing Academy.exe')
 const qa=await verify('qa',qaExe,'artifacts/desktop-smoke-qa.json','artifacts/windows-normal-start-qa.json','release/qa-build/win-unpacked/Marketing Academy QA.exe')
 const isolation=await read('artifacts/dual-isolation.json');assert.equal(isolation.status,'passed');for(const key of ['productionAndQaConcurrent','identicalUsernamesIndependent','productionDatabaseUnchangedByQA','restartIsolation'])assert.equal(isolation[key],true)
@@ -28,5 +31,5 @@ async function digest(file){const hash=createHash('sha256');for await(const part
 await copyFile('docs/START_AR.md','release/START_AR.md')
 const assets=[];for(const name of [exe,qaExe,source,'START_AR.md'])assets.push({name,sha256:await digest('release/'+name)})
 await writeFile('release/SHA256SUMS.txt',assets.map(a=>a.sha256+'  '+a.name).join('\n')+'\n','utf8')
-const report={status:'passed',commit:execFileSync('git',['rev-parse','HEAD'],{encoding:'utf8'}).trim(),version,platform:'windows',...production,qa,isolation,assets}
+const report={status:'passed',commit:execFileSync('git',['rev-parse','HEAD'],{encoding:'utf8'}).trim(),version,platform:'windows',...production,qa,isolation,authAuditBaseline:baseline,assets}
 await writeFile('artifacts/windows-build.json',JSON.stringify(report,null,2));console.log(JSON.stringify(report,null,2))

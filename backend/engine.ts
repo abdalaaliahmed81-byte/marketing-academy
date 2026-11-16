@@ -85,10 +85,14 @@ export class AcademyEngine{
   session.lastSeen=now;return session
  }
  endSession(token:string){const session=this.sessions.get(token);session?.key.fill(0);this.sessions.delete(token)}
+ private ensureSessionCapacity(){
+  const now=Date.now()
+  for(const [token,session] of this.sessions)if(now-session.lastSeen>30*60_000||now-session.createdAt>12*60*60_000)this.endSession(token)
+  if(this.sessions.size>=1000)throw new AcademyError('RATE_LIMIT','عدد الجلسات مرتفع؛ حاول لاحقًا.')
+ }
  private start(account:AccountRow,key:Buffer):AuthResponse{
   const now=Date.now()
-  for(const [token,session] of this.sessions)if(now-session.lastSeen>30*60_000)this.endSession(token)
-  if(this.sessions.size>=1000){key.fill(0);throw new AcademyError('RATE_LIMIT','عدد الجلسات مرتفع؛ حاول لاحقًا.')}
+  try{this.ensureSessionCapacity()}catch(error){key.fill(0);throw error}
   const token=randomBytes(32).toString('hex'),session={userId:account.id,key,passwordVersion:account.password_version,lastSeen:now,createdAt:now}
   // Do not expose a session until its encrypted state has passed integrity/schema checks.
   let snapshot:Snapshot
@@ -133,6 +137,8 @@ export class AcademyEngine{
   if(this.account(username))throw new AcademyError('DUPLICATE','اسم المستخدم مستخدم؛ سجّل الدخول إلى حسابه الحالي.')
   const id=randomUUID(),salt=randomBytes(16),derived=await this.stretch(password,salt),key=randomBytes(32)
   try{
+   // Recheck after asynchronous KDF, before any durable account creation. No await until start().
+   this.ensureSessionCapacity()
    this.sql.exec('BEGIN IMMEDIATE')
    try{
     if(this.account(username))throw new AcademyError('DUPLICATE','اسم المستخدم مستخدم بالفعل.')
@@ -157,7 +163,7 @@ export class AcademyEngine{
   try{
    const candidate=this.verifier(derived.subarray(0,32)),expected=account?Buffer.from(account.verifier,'hex'):Buffer.alloc(32)
    if(!account||expected.length!==candidate.length||!timingSafeEqual(candidate,expected)){
-    if(account)this.sql.prepare('UPDATE accounts SET failed=failed+1,retry_at=? WHERE id=?').run(Date.now()+(account.failed>=4?Math.min(60000,1000*2**Math.min(account.failed-4,6)):0),account.id)
+    if(account){const current=this.account(account.username);if(current)this.sql.prepare('UPDATE accounts SET failed=failed+1,retry_at=? WHERE id=?').run(Date.now()+(current.failed>=4?Math.min(60000,1000*2**Math.min(current.failed-4,6)):0),current.id)}
     throw new AcademyError('AUTH_FAILED','اسم المستخدم أو كلمة المرور غير صحيح.')
    }
    const latest=this.account(account.username)

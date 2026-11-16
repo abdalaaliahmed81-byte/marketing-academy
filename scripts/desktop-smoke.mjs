@@ -20,7 +20,7 @@ await build({entryPoints:['tests/fixtures/legacy-seed.ts'],outfile:path.join(dat
 await build({stdin:{contents:"export {lessons} from './src/lessons'",resolveDir:process.cwd()},outfile:path.join(dataDir,'curriculum.mjs'),bundle:true,platform:'node',format:'esm'})
 const {lessons}=await import(pathToFileURL(path.join(dataDir,'curriculum.mjs')).href)
 const firstLesson=lessons[0]
-const evidence={platform:process.platform,architecture:process.arch,channel,executable:executablePath??'development electron',checks:[],networkRequests:[]}
+const evidence={platform:process.platform,architecture:process.arch,channel,baselineVersion:process.env.AUTH_BASELINE_VERSION,executable:executablePath??'development electron',checks:[],networkRequests:[],expectedAuthRejections:{confirmation:false,invalidName:false,unknownAccount:false,wrongPassword:false,duplicate:false}}
 let running
 async function launch(){
  running=executablePath?await launchPortable():await electron.launch({args,env:{...process.env,ACADEMY_TEST_DATA_DIR:dataDir},timeout:90000})
@@ -77,6 +77,16 @@ try{
  await page.getByLabel('اسم المستخدم',{exact:true}).fill('اختبار سطح المكتب')
  await page.getByLabel('كلمة المرور',{exact:true}).fill('desktop-test-long-password')
  await page.getByLabel('تأكيد كلمة المرور',{exact:true}).fill('desktop-test-long-password')
+ await page.getByLabel('تأكيد كلمة المرور',{exact:true}).fill('different-long-password')
+ await page.getByRole('button',{name:'أنشئ حسابي'}).click()
+ await expect(page.getByRole('alert')).toContainText('كلمتا المرور غير متطابقتين')
+ evidence.expectedAuthRejections.confirmation=true
+ await page.getByLabel('تأكيد كلمة المرور',{exact:true}).fill('desktop-test-long-password')
+ await page.getByLabel('اسم المستخدم',{exact:true}).fill('اسم/غيرصالح')
+ await page.getByRole('button',{name:'أنشئ حسابي'}).click()
+ await expect(page.getByRole('alert')).toContainText('اسم المستخدم يجب')
+ evidence.expectedAuthRejections.invalidName=true
+ await page.getByLabel('اسم المستخدم',{exact:true}).fill('اختبار سطح المكتب')
  await page.getByRole('button',{name:'أنشئ حسابي'}).click()
  await page.getByRole('button',{name:'ابدأ التعلّم',exact:true}).click()
  await page.getByRole('navigation',{name:'التنقل الرئيسي',exact:true}).getByRole('link',{name:'مسار التعلّم',exact:true}).click()
@@ -122,7 +132,16 @@ try{
  await running.close()
  page=await launch()
  await expect(page.getByRole('button',{name:'ادخل إلى الأكاديمية'})).toBeVisible()
+ await page.getByLabel('اسم المستخدم',{exact:true}).fill('حساب غير موجود للاختبار')
+ await page.getByLabel('كلمة المرور',{exact:true}).fill('desktop-test-long-password')
+ await page.getByRole('button',{name:'ادخل إلى الأكاديمية'}).click()
+ await expect(page.getByRole('alert')).toContainText('اسم المستخدم أو كلمة المرور غير صحيح')
+ evidence.expectedAuthRejections.unknownAccount=true
  await page.getByLabel('اسم المستخدم',{exact:true}).fill('اختبار سطح المكتب')
+ await page.getByLabel('كلمة المرور',{exact:true}).fill('wrong-desktop-password')
+ await page.getByRole('button',{name:'ادخل إلى الأكاديمية'}).click()
+ await expect(page.getByRole('alert')).toContainText('اسم المستخدم أو كلمة المرور غير صحيح')
+ evidence.expectedAuthRejections.wrongPassword=true
  await page.getByLabel('كلمة المرور',{exact:true}).fill('desktop-test-long-password')
  await page.getByRole('button',{name:'ادخل إلى الأكاديمية'}).click()
  await page.getByRole('navigation',{name:'التنقل الرئيسي',exact:true}).getByRole('link',{name:'مسار التعلّم',exact:true}).click()
@@ -159,6 +178,12 @@ try{
  // A newly registered local account must not receive the first account's saved data.
  await page.getByRole('button',{name:'خروج',exact:true}).click()
  await page.getByRole('button',{name:'إنشاء حساب',exact:true}).click()
+ await page.getByLabel('اسم المستخدم',{exact:true}).fill('اختبار سطح المكتب')
+ await page.getByLabel('كلمة المرور',{exact:true}).fill('isolated-desktop-password')
+ await page.getByLabel('تأكيد كلمة المرور',{exact:true}).fill('isolated-desktop-password')
+ await page.getByRole('button',{name:'أنشئ حسابي'}).click()
+ await expect(page.getByRole('alert')).toContainText('اسم المستخدم مستخدم')
+ evidence.expectedAuthRejections.duplicate=true
  await page.getByLabel('اسم المستخدم',{exact:true}).fill('حساب معزول جديد')
  await page.getByLabel('كلمة المرور',{exact:true}).fill('isolated-desktop-password')
  await page.getByLabel('تأكيد كلمة المرور',{exact:true}).fill('isolated-desktop-password')

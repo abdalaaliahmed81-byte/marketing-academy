@@ -134,3 +134,33 @@ it('expires an idle native/API session and requires fresh authentication without
  const next=await engine.request('login',{name:'Audit Alice',password}) as AuthResponse
  expect(next.snapshot.state).toEqual(state)
 })
+
+it('does not commit an account if the session table is already at capacity',async()=>{
+ const sessions=(engine as unknown as {sessions:Map<string,unknown>}).sessions
+ const now=Date.now();for(let i=0;i<1000;i++)sessions.set('capacity-'+i,{userId:'fixture',key:Buffer.alloc(32),lastSeen:now,createdAt:now,passwordVersion:1})
+ await expect(account('Capacity New')).rejects.toMatchObject({code:'RATE_LIMIT'})
+ const sql=new DatabaseSync(filename);try{expect(sql.prepare('SELECT count(*) AS n FROM accounts WHERE username=?').get('capacity new')!.n).toBe(0)}finally{sql.close()}
+ sessions.clear();expect((await account('Capacity New')).session.name).toBe('Capacity New')
+})
+it('retains backoff when several incorrect logins overlap key derivation',async()=>{
+ await account('Concurrent Failures')
+ const sql=new DatabaseSync(filename)
+ try{
+  sql.prepare('UPDATE accounts SET failed=3,retry_at=0 WHERE username=?').run('concurrent failures')
+  const attempts=await Promise.allSettled(Array.from({length:4},()=>engine.request('login',{name:'Concurrent Failures',password:'incorrect-password'})))
+  expect(attempts.every(r=>r.status==='rejected')).toBe(true)
+  const row=sql.prepare('SELECT failed,retry_at FROM accounts WHERE username=?').get('concurrent failures')!
+  expect(row.failed).toBe(7);expect(Number(row.retry_at)).toBeGreaterThan(Date.now())
+ }finally{sql.close()}
+})
+it('frees absolute-expired sessions before evaluating the new-login capacity',async()=>{
+ const sessions=(engine as unknown as {sessions:Map<string,unknown>}).sessions,keys:Buffer[]=[]
+ const existing=await account('Existing Expired');engine.endSession(existing.token)
+ function fillExpired(){const now=Date.now();for(let i=0;i<1000;i++){const key=Buffer.alloc(32,1);keys.push(key);sessions.set('expired-'+i,{userId:'fixture',key,lastSeen:now,createdAt:now-13*60*60_000,passwordVersion:1})}}
+ fillExpired()
+ const logged=await engine.request('login',{name:'Existing Expired',password}) as AuthResponse
+ expect(logged.session.id).toBe(existing.session.id);expect(sessions.size).toBe(1);expect(keys.every(k=>k.every(b=>b===0))).toBe(true)
+ engine.endSession(logged.token);fillExpired()
+ expect((await account('Expired Capacity')).session.name).toBe('Expired Capacity')
+ expect(sessions.size).toBe(1);expect(keys.every(k=>k.every(b=>b===0))).toBe(true)
+})

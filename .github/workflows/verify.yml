@@ -56,6 +56,31 @@ jobs:
       - run: npm run typecheck
       - run: npm test
       - run: npm run package:windows:dual
+      - name: Audit previously released 2.3.0 EXEs with negative authentication probes
+        shell: pwsh
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh release download v2.3.0 --pattern "*Windows-x64.exe" --dir work/auth-baseline
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+          $baseline = Get-Content docs/DUAL_WINDOWS_VERIFICATION.json -Raw | ConvertFrom-Json
+          foreach ($asset in $baseline.assets | Where-Object { $_.name.EndsWith('.exe') }) {
+            $actual = (Get-FileHash (Join-Path work/auth-baseline $asset.name) -Algorithm SHA256).Hash.ToLower()
+            if ($actual -ne $asset.sha256) { throw "Baseline EXE checksum mismatch" }
+          }
+          $env:AUTH_BASELINE_VERSION = "2.3.0"
+          $env:DESKTOP_EXE = "work/auth-baseline/Marketing-Academy-Portable-Windows-x64.exe"
+          $env:EXPECTED_CHANNEL = "production"
+          $env:DESKTOP_EVIDENCE = "artifacts/auth-baseline-production.json"
+          $env:DESKTOP_SCREENSHOT = "artifacts/auth-baseline-production.png"
+          node scripts/desktop-smoke.mjs
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+          $env:DESKTOP_EXE = "work/auth-baseline/Marketing-Academy-QA-Windows-x64.exe"
+          $env:EXPECTED_CHANNEL = "qa"
+          $env:DESKTOP_EVIDENCE = "artifacts/auth-baseline-qa.json"
+          $env:DESKTOP_SCREENSHOT = "artifacts/auth-baseline-qa.png"
+          node scripts/desktop-smoke.mjs
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
       - name: Test normal Windows startup without application arguments
         shell: pwsh
         run: ./scripts/windows-normal-start.ps1
