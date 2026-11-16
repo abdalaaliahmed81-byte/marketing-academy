@@ -1,5 +1,17 @@
 # AI progress and resume record
 
+
+## Verified portable delivery2.2.2
+
+[Marketing-Academy-Portable-Windows-x64.exe](https://github.com/abdalaaliahmed81-byte/marketing-academy/releases/download/v2.2.2/Marketing-Academy-Portable-Windows-x64.exe) is published in [v2.2.2 Preview](https://github.com/abdalaaliahmed81-byte/marketing-academy/releases/tag/v2.2.2), exact source80b8af4dffdcea56ad8bbc20fe4620e12fe96c48/[run43905101635](https://github.com/abdalaaliahmed81-byte/marketing-academy/actions/runs/43905101635). All3 jobs passed:59 tests per OS/25 browser paths, actual normal Windows ShellExecute with no application arguments/visible responding Arabic window and a system-only PATH; actual shipped EXE registration/note/offline quiz+lesson completion/restart/new-account isolation/legacy migration. SQLite schema1, three synthetic accounts/14 encrypted records. Renderer remains sandboxed and external fetch blocked; Docker remains optional and its tests passed independently.
+
+EXE112414596 bytes, SHA256c0f78f378061c3e3f682f25326d0688f3ccc5d6689780299ea53ef59ad4e5a46. Outer MZ/PE and inner x64 PE verified. Independently downloaded all5 public assets anonymously, matched GitHub digests and all4 checksum entries; source ZIP commit comment and bounded forbidden-file check passed. START_AR.md in release matches both source/bundled guide copies. See WINDOWS_PORTABLE_VERIFICATION.json and START_AR.md. Existing releases, app identity/userData/schema/IDs remain unchanged.
+
+This is actual Windows execution, not just source compilation. The Actions runner contains developer tools for automation; the app child PATH deliberately excludes them. It is still not a pristine consumer PC or a manual Explorer double-click/hardware/all-policy/antivirus/physical-update test. EXE unsigned; SmartScreen/unknown-publisher warning possible. No claim of independent instructional/learner validation or professional approval; working preview retained separately from stable2.0.0.
+
+Resume from2.2.2 portable delivery; inspect WINDOWS_PORTABLE_VERIFICATION.json. Subsequent evidence documentation does not change the tested runtime. Do not rename app identity/userData, rewrite learner data or repeat research. Remaining human/physical-machine gates are explicitly open.
+
+
 ## Latest final QA checkpoint
 
 
@@ -205,6 +217,6 @@ Continue SECURITY_HARDENING.md. Canonical static path/symlink boundary, JSON res
 
 See FINAL_QA.md. Fresh59 tests/typecheck/build and narrow safety lint passed; added npm lint/CI enforcement without dependencies or application/data changes. Browser/Electron and exact-source Windows/Docker reruns pending. Keep all professional review flags open and report PASS/FAIL/NOT RUN per check.109 question length cues are moderation candidates, not automatically rewritten or falsely declared calibrated.
 
-## Active portable-delivery phase2.2.2
+## Portable delivery implementation history2.2.2
 
 User requires literal Marketing-Academy-Portable-Windows-x64.exe. Updated Electron portable artifact name and release/checksum pipelines, retaining app ID/origin/userData/schema/IDs. START_AR.md is both bundled public content and a separate checksummed asset. Added normal Windows ShellExecute startup without arguments and restricted child PATH; expanded actual EXE smoke to offline quiz+lesson completion, restart persistence and a newly registered isolated account. Local59 tests/build/lint and expanded Linux Electron smoke passed (three synthetic accounts/14 encrypted records). Two initial smoke assertions used incorrect UI selectors and were corrected; no application runtime change was needed. Windows startup/portable execution and final release verification still pending on exact-source CI; never substitute the local Linux result for Windows or claim a pristine consumer PC was tested. Existing2.2.1 release remains untouched.
