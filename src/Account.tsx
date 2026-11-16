@@ -1,6 +1,8 @@
+import {validNewPassword} from './identity'
+import {decryptBackup} from './backup'
 import {discoverTransport,activeTransport} from './storage/transport'
 import {createContext,useContext,useEffect,useState,useCallback,type ReactNode} from 'react'
-import {currentSession,forgetSession,importLegacy,legacyAvailable,login,logout,register,profile,updateProfile,type Session} from './auth'
+import {currentSession,recoverBackupAccount,forgetSession,importLegacy,legacyAvailable,login,logout,register,profile,updateProfile,type Session} from './auth'
 import {Heading} from './ui'
 
 const AccountContext=createContext<{session:Session;signOut:()=>void;refreshIdentity:()=>void}|undefined>(undefined)
@@ -29,21 +31,23 @@ export function AuthGate({children}:{children:ReactNode}){
   return <AccountContext.Provider value={{session,refreshIdentity:()=>setSession(currentSession()),signOut}}><div key={session.id}>{children}</div></AccountContext.Provider>
 }
 function Login({onEnter,notice}:{onEnter:(session:Session)=>void;notice?:string}){
-  const [mode,setMode]=useState<'login'|'register'>('login')
+  const [mode,setMode]=useState<'login'|'register'|'recovery'>('login')
   const [name,setName]=useState(''),[password,setPassword]=useState(''),[confirm,setConfirm]=useState('')
   const [busy,setBusy]=useState(false),[error,setError]=useState('')
+  if(mode==='recovery')return <Recovery onEnter={onEnter} onCancel={()=>setMode('login')}/>
   return <main className="onboard"><section className="welcome card stack"><img src="/icon-192.png" alt="" width="58" height="58"/><Heading title="أكاديمية التسويق ٢.٠" description="تعلّم، جرّب، وابنِ ملف أعمالك · ٦٠ درسًا بالعربية"/>
     {notice&&<p role="alert">{notice}</p>}<div className="tabs"><button aria-pressed={mode==='login'} onClick={()=>{setMode('login');setError('')}}>تسجيل الدخول</button><button aria-pressed={mode==='register'} onClick={()=>{setMode('register');setError('')}}>إنشاء حساب</button></div>
     <form className="stack" onSubmit={async e=>{e.preventDefault();setError('');setBusy(true);try{
+      if(mode==='register'&&!validNewPassword(password))throw new Error('استخدم كلمة مرور من١٢ إلى١٢٨ حرف Unicode.');
       if(mode==='register'&&password!==confirm)throw new Error('كلمتا المرور غير متطابقتين.')
       const next=await (mode==='login'?login(name,password):register(name,password));setPassword('');setConfirm('');onEnter(next)
     }catch(err){setError(err instanceof Error?err.message:'تعذّر فتح الحساب.')}finally{setBusy(false)}}}>
-      <label>اسم المستخدم<input required minLength={3} maxLength={40} autoComplete="username" value={name} onChange={e=>setName(e.target.value)}/></label>
-      <label>كلمة المرور<input required type="password" minLength={mode==='register'?12:1} maxLength={128} autoComplete={mode==='register'?'new-password':'current-password'} value={password} onChange={e=>setPassword(e.target.value)}/></label>
-      {mode==='register'&&<><label>تأكيد كلمة المرور<input required type="password" minLength={12} maxLength={128} autoComplete="new-password" value={confirm} onChange={e=>setConfirm(e.target.value)}/></label><p className="muted">استخدم عبارة طويلة من ١٢ حرفًا على الأقل. احتفظ بكلمة المرور؛ لا توجد استعادة عبر البريد للحساب المحلي.</p></>}
+      <label>اسم المستخدم<input required minLength={1} maxLength={80} autoComplete="username" value={name} onChange={e=>setName(e.target.value)}/></label>
+      <label>كلمة المرور<input required type="password" minLength={mode==='register'?12:1} maxLength={256} autoComplete={mode==='register'?'new-password':'current-password'} value={password} onChange={e=>setPassword(e.target.value)}/></label>
+      {mode==='register'&&<><label>تأكيد كلمة المرور<input required type="password" minLength={12} maxLength={256} autoComplete="new-password" value={confirm} onChange={e=>setConfirm(e.target.value)}/></label><p className="muted">استخدم عبارة طويلة من ١٢ حرفًا على الأقل. احتفظ بكلمة المرور؛ لا توجد استعادة عبر البريد للحساب المحلي.</p></>}
       <button className="primary" disabled={busy}>{busy?'جارٍ فتح الحساب…':mode==='register'?'أنشئ حسابي':'ادخل إلى الأكاديمية'}</button>
       <p role="alert">{error}</p>
-    </form><p className="muted">{activeTransport()?.kind==='web-api'?'حساب على خادم هذا النشر؛ بياناته محفوظة منفصلة. يلزم اتصال بالخادم للحفظ.':'حساب محلي على هذا الجهاز. بيانات كل حساب مشفّرة ومحفوظة منفصلة. لا تحتاج اتصالًا بالإنترنت للتعلّم.'}</p>
+    </form><button className="text-link" onClick={()=>setMode('recovery')}>نسيت كلمة المرور؟ استعادة من نسخة مشفرة</button><p className="muted">{activeTransport()?.kind==='web-api'?'حساب على خادم هذا النشر؛ بياناته محفوظة منفصلة. يلزم اتصال بالخادم للحفظ.':'حساب محلي على هذا الجهاز. بيانات كل حساب مشفّرة ومحفوظة منفصلة. لا تحتاج اتصالًا بالإنترنت للتعلّم.'}</p>
   </section></main>
 }
 export function LegacyImport(){
@@ -63,4 +67,25 @@ export function ProfilePanel(){
  </form>:<button className="secondary" onClick={()=>setRetry(n=>n+1)}>أعد تحميل الملف الشخصي</button>}
  <p role="status">{message}</p><p>تغيير اسم العرض لا يغيّر اسم الدخول أو تقدمك. تُقفل النافذة بعد٣٠ دقيقة دون تفاعل وبحد أقصى١٢ ساعة؛ احفظ المسودات قبل ترك الجهاز. لتبديل المستخدم، يُقفل الحساب الحالي ثم تسجّل دخول الحساب الآخر بكلمة مروره.</p><button className="secondary" onClick={account?.signOut}>تبديل المستخدم</button>
  <p>لا توجد مزامنة سحابية تلقائية بين حساب الجهاز ونسخة الويب أو الأجهزة الأخرى. انقل تقدمك يدويًا بنسخة مشفّرة وعبارة حمايتها؛ الاستعادة تستبدل بيانات الحساب المفتوح فقط ولا تنقل كلمة مروره.</p></section>
+}
+
+function Recovery({onEnter,onCancel}:{onEnter:(s:Session)=>void;onCancel:()=>void}){
+ const [file,setFile]=useState<File>(),[phrase,setPhrase]=useState(''),[name,setName]=useState(''),[password,setPassword]=useState(''),[confirm,setConfirm]=useState(''),[busy,setBusy]=useState(false),[error,setError]=useState('')
+ const native=!!activeTransport()
+ return <main className="onboard"><section className="welcome card stack"><Heading title="استعادة آمنة من نسخة مشفرة" description="تنقل نسخة بياناتك إلى حساب جديد. لا تغيّر كلمة مرور الحساب القديم ولا تمس بياناته."/>
+ <p>تحتاج ملف .academy وعبارة حمايته. دون كلمة المرور القديمة أو نسخة مشفرة وعبارتها، لا يمكننا فك بيانات الحساب أو استعادتها بالبريد.</p>
+ {!native?<p>في نسخة المتصفح المحلية: أنشئ حسابًا جديدًا ثم استعد النسخة المشفرة من الإعدادات. يبقى الحساب القديم دون تغيير.</p>:<form className="stack" onSubmit={async e=>{e.preventDefault();setBusy(true);setError('');try{
+  if(!file||file.size>20_000_000)throw new Error('اختر نسخة مشفرة صالحة بحجم لا يتجاوز20 ميغابايت.')
+  if(!validNewPassword(password))throw new Error('استخدم كلمة مرور من١٢ إلى١٢٨ حرف Unicode.');
+  if(password!==confirm)throw new Error('كلمتا المرور غير متطابقتين.')
+  const raw=JSON.parse(await file.text());const state=await decryptBackup(raw,phrase)
+  const session=await recoverBackupAccount(name,password,state);setPhrase('');setPassword('');setConfirm('');onEnter(session)
+ }catch(e){setError(e instanceof Error?e.message:'تعذّرت الاستعادة. لم تتغير بيانات الحساب القديم.')}finally{setBusy(false)}}}>
+ <label>النسخة المشفرة<input required type="file" accept=".academy,application/json" onChange={e=>setFile(e.target.files?.[0])}/></label>
+ <label>عبارة حماية النسخة<input required type="password" minLength={12} maxLength={128} autoComplete="off" value={phrase} onChange={e=>setPhrase(e.target.value)}/></label>
+ <label>اسم الحساب الجديد<input required maxLength={80} autoComplete="username" value={name} onChange={e=>setName(e.target.value)}/></label>
+ <label>كلمة مرور الحساب الجديد<input required type="password" minLength={12} maxLength={256} autoComplete="new-password" value={password} onChange={e=>setPassword(e.target.value)}/></label>
+ <label>تأكيد كلمة مرور الحساب الجديد<input required type="password" minLength={12} maxLength={256} autoComplete="new-password" value={confirm} onChange={e=>setConfirm(e.target.value)}/></label>
+ <button className="primary" disabled={busy}>استعد إلى حساب جديد</button><p role="alert">{error}</p></form>}
+ <button className="secondary" disabled={busy} onClick={onCancel}>العودة لتسجيل الدخول</button></section></main>
 }

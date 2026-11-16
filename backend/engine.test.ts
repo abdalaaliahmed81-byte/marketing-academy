@@ -164,3 +164,38 @@ it('frees absolute-expired sessions before evaluating the new-login capacity',as
  expect((await account('Expired Capacity')).session.name).toBe('Expired Capacity')
  expect(sessions.size).toBe(1);expect(keys.every(k=>k.every(b=>b===0))).toBe(true)
 })
+it('accepts Arabic combining marks without changing canonical login identity',async()=>{
+ const auth=await account('مُحَمَّد_١')
+ const logged=await engine.request('login',{name:'  مُحَمَّد_١  ',password}) as AuthResponse
+ expect(logged.session.id).toBe(auth.session.id)
+})
+it('parses profiles for Unicode usernames already permitted by the engine',async()=>{
+ const {profileSchema}=await import('../src/storage/protocol')
+ const auth=await account('𐐀'.repeat(21))
+ const result=await engine.request('profile',{ownerId:auth.session.id},auth.token)
+ expect(profileSchema.parse(result).id).toBe(auth.session.id)
+})
+it('recovers a validated backup into a new isolated identity without resetting the original',async()=>{
+ const old=await account('Recovery Original'),state=emptyState();state.lessonStates=[{...emptyLesson('m01-l01'),notes:'preserve recovery original'}]
+ const snapshot=await commit(old,state)
+ const restored=await engine.request('recoverBackup',{name:'مُستعاد_١',password:'recovered-long-password',state:snapshot.state}) as AuthResponse
+ expect(restored.session.id).not.toBe(old.session.id);expect(restored.snapshot.state).toEqual(snapshot.state)
+ expect((await read(old)).state).toEqual(snapshot.state)
+ await expect(engine.request('login',{name:'Recovery Original',password:'recovered-long-password'})).rejects.toMatchObject({code:'AUTH_FAILED'})
+ expect((await engine.request('login',{name:'Recovery Original',password}) as AuthResponse).session.id).toBe(old.session.id)
+ await expect(engine.request('recoverBackup',{name:'Recovery Original',password:'other-long-password',state})).rejects.toMatchObject({code:'DUPLICATE'})
+ await expect(engine.request('recoverBackup',{name:'Invalid Recovery',password,state:{...state,lessonStates:[{...state.lessonStates[0],id:'unknown'}]}})).rejects.toThrow()
+ const sql=new DatabaseSync(filename);try{
+  expect(sql.prepare('SELECT count(*) AS n FROM accounts WHERE username=?').get('invalid recovery')!.n).toBe(0)
+  sql.exec("CREATE TRIGGER recovery_abort BEFORE INSERT ON learner_records WHEN NEW.user_id <> '"+old.session.id+"' BEGIN SELECT RAISE(ABORT,'fixture recovery failure'); END;")
+  await expect(engine.request('recoverBackup',{name:'Rollback Recovery',password,state})).rejects.toThrow()
+  expect(sql.prepare('SELECT count(*) AS n FROM accounts WHERE username=?').get('rollback recovery')!.n).toBe(0)
+ }finally{sql.close()}
+ expect((await read(old)).state).toEqual(snapshot.state)
+})
+it('keeps long Unicode secret bytes exact and enforces the new-password code-point policy',async()=>{
+ const password='🔐'.repeat(70),a=await engine.request('register',{name:'Unicode Secret',password}) as AuthResponse
+ expect((await engine.request('login',{name:'Unicode Secret',password}) as AuthResponse).session.id).toBe(a.session.id)
+ await expect(engine.request('login',{name:'Unicode Secret',password:password.slice(0,128)})).rejects.toMatchObject({code:'AUTH_FAILED'})
+ await expect(engine.request('register',{name:'Too Short Unicode',password:'🔐'.repeat(6)})).rejects.toThrow()
+})

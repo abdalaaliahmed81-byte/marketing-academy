@@ -1,3 +1,4 @@
+import {normalizeIdentity,validIdentity,validNewPassword} from '../src/identity'
 import {DatabaseSync} from 'node:sqlite'
 import {createCipheriv,createDecipheriv,createHash,randomBytes,randomUUID,pbkdf2 as pbkdf2Callback,timingSafeEqual} from 'node:crypto'
 import {promisify} from 'node:util'
@@ -23,8 +24,8 @@ export function publicError(error:unknown){
  if(error instanceof z.ZodError)return {code:'VALIDATION',message:'بيانات غير صالحة؛ بقيت البيانات المحفوظة دون تغيير.'}
  return {code:'STORAGE',message:'تعذّر إتمام العملية بأمان. لم يُعتمد أي حفظ جزئي.'}
 }
-export const normalizeName=(value:string)=>value.normalize('NFKC').trim().toLocaleLowerCase('en-US')
-function validName(value:string){const result=normalizeName(value);if(!/^[\p{L}\p{N}_. -]{3,40}$/u.test(result))throw new AcademyError('VALIDATION','اسم المستخدم يجب أن يتكون من٣–٤٠ حرفًا أو رقمًا.');return result}
+export const normalizeName=normalizeIdentity
+function validName(value:string){const result=normalizeName(value);if(!validIdentity(result))throw new AcademyError('VALIDATION','اسم المستخدم يجب أن يتكون من٣–٤٠ حرفًا أو رقمًا.');return result}
 function boundedState(value:unknown){const serialized=JSON.stringify(value);if(typeof serialized!=='string')throw new AcademyError('VALIDATION','بيانات التقدم مفقودة.');if(Buffer.byteLength(serialized,'utf8')>MAX_STATE_BYTES)throw new AcademyError('TOO_LARGE','تجاوز حجم التقدم الحد الآمن للحفظ.');const state=normalizeState(value);for(const collection of collections)for(const row of state[collection])if(recordId(row).length>200)throw new AcademyError('VALIDATION','معرّف سجل غير صالح.');return state}
 function seal(key:Uint8Array,value:unknown,aad:string){const nonce=randomBytes(12),cipher=createCipheriv('aes-256-gcm',key,nonce);cipher.setAAD(Buffer.from(aad));return nonce.toString('hex')+':'+Buffer.concat([cipher.update(JSON.stringify(value),'utf8'),cipher.final(),cipher.getAuthTag()]).toString('hex')}
 function unseal<T>(key:Uint8Array,value:string,aad:string):T{
@@ -133,7 +134,7 @@ export class AcademyEngine{
  }
  private async create(name:string,password:string,initial=emptyState(),legacySource?:string,displayName=name.trim()):Promise<AuthResponse>{
   const username=validName(name),safeDisplayName=displayNameSchema.parse(displayName)
-  if(password.length<12)throw new AcademyError('VALIDATION','استخدم كلمة مرور من١٢–١٢٨ حرفًا.')
+  if(!validNewPassword(password))throw new AcademyError('VALIDATION','استخدم كلمة مرور من١٢–١٢٨ حرفًا.')
   if(this.account(username))throw new AcademyError('DUPLICATE','اسم المستخدم مستخدم؛ سجّل الدخول إلى حسابه الحالي.')
   const id=randomUUID(),salt=randomBytes(16),derived=await this.stretch(password,salt),key=randomBytes(32)
   try{
@@ -176,6 +177,7 @@ export class AcademyEngine{
  async request(command:Command,payload:unknown,token?:string):Promise<unknown>{
   if(this.closed)throw new AcademyError('STORAGE','التخزين مغلق.')
   if(command==='register'){const value=credentials.parse(payload);return this.create(value.name,value.password)}
+  if(command==='recoverBackup'){const value=credentials.extend({state:z.unknown()}).strict().parse(payload);return this.create(value.name,value.password,boundedState(value.state))}
   if(command==='login'){const value=credentials.parse(payload);return this.login(value.name,value.password)}
   if(command==='migrateLegacy'){
    const value=migrationSchema.parse(payload),username=validName(value.account.username)

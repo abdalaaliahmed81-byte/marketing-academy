@@ -18,11 +18,12 @@ async function verify(channel,name,smokeFile,normalFile,payloadFile){
  const payload=await open(payloadFile,'r'),dos=Buffer.alloc(64),pe=Buffer.alloc(6)
  await payload.read(dos,0,64,0);assert.equal(dos.toString('ascii',0,2),'MZ');await payload.read(pe,0,6,dos.readUInt32LE(60));await payload.close()
  assert.equal(pe.toString('ascii',0,4),'PE\0\0');assert.equal(pe.readUInt16LE(4),0x8664)
+ for(const key of ['unicodeRecovery','wrongPhraseRejected','duplicateRecoveryRejected','recoveredLoginAfterRestart','originalAccountPreserved','wrongCurrentPasswordRejected','passwordChangeAfterRestart','unicodePasswordUntruncated'])assert.equal(smoke.authExtensions[key],true)
  const bytes=(await stat('release/'+name)).size;assert(bytes>50_000_000)
  return {channel,normalStart,portableBytes:bytes,wrapperMachine:wrapperPe.readUInt16LE(4),payloadArchitecture:'x64',portableExecutableSmoke:smoke}
 }
 const baseline={production:await read('artifacts/auth-baseline-production.json'),qa:await read('artifacts/auth-baseline-qa.json')}
-for(const report of Object.values(baseline)){assert.equal(report.status,'passed');assert.equal(report.baselineVersion,'2.3.0');for(const key of ['confirmation','invalidName','unknownAccount','wrongPassword','duplicate'])assert.equal(report.expectedAuthRejections[key],true)}
+for(const report of Object.values(baseline)){assert.equal(report.status,'passed');assert.equal(report.baselineVersion,'2.3.1');assert.equal(report.unicodeBaselineRejection,true);assert.equal(report.unicodePasswordBaselineTruncation,true);for(const key of ['confirmation','invalidName','unknownAccount','wrongPassword','duplicate'])assert.equal(report.expectedAuthRejections[key],true)}
 const production=await verify('production',exe,'artifacts/desktop-smoke.json','artifacts/windows-normal-start.json','release/win-unpacked/Marketing Academy.exe')
 const qa=await verify('qa',qaExe,'artifacts/desktop-smoke-qa.json','artifacts/windows-normal-start-qa.json','release/qa-build/win-unpacked/Marketing Academy QA.exe')
 const isolation=await read('artifacts/dual-isolation.json');assert.equal(isolation.status,'passed');for(const key of ['productionAndQaConcurrent','identicalUsernamesIndependent','productionDatabaseUnchangedByQA','restartIsolation'])assert.equal(isolation[key],true)

@@ -37,9 +37,9 @@ export function createApiServer(options:{engine:AcademyEngine;origin:string;stat
     try{raw=JSON.parse(Buffer.concat(chunks).toString('utf8'))}catch{throw new AcademyError('VALIDATION','JSON غير صالح.')}
     const request=envelope.parse(raw)
     if(['login','migrateLegacy','changePassword'].includes(request.command))limit(req,'auth')
-    if(request.command==='register')limit(req,'register')
+    if(['register','recoverBackup'].includes(request.command))limit(req,'register')
     const previous=token(req),result=await options.engine.request(request.command,request.payload,previous)
-    if(['register','login','migrateLegacy'].includes(request.command)){
+    if(['register','recoverBackup','login','migrateLegacy'].includes(request.command)){
      const auth=result as AuthResponse
      if(previous)options.engine.endSession(previous)
      res.setHeader('Set-Cookie',`ma_session=${auth.token}; HttpOnly; SameSite=Strict; Path=/api; Max-Age=43200${secure?'; Secure':''}`)

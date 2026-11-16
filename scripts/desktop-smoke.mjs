@@ -1,4 +1,5 @@
 import {build} from 'esbuild'
+import {pbkdf2Sync,randomBytes,createCipheriv} from 'node:crypto'
 import {DatabaseSync} from 'node:sqlite'
 import {_electron as electron,chromium,expect} from '@playwright/test'
 import path from 'node:path'
@@ -73,6 +74,14 @@ try{
  expect(await page.evaluate(()=>window.academy.profileInfo())).toEqual({channel})
  if(channel==='qa')await expect(page.getByRole('complementary',{name:'بيئة الاختبار المعزولة'})).toBeVisible()
  evidence.checks.push('renderer has no Node require or process; SQLite transport exposed only through the narrow preload')
+ if(process.env.AUTH_UNICODE_BASELINE==='1'){
+  const secret='🔐'.repeat(70)
+  const created=await page.evaluate(async password=>window.academy.request('register',{name:'Unicode Secret Fixture',password}),secret);expect(created.ok).toBe(true)
+  await page.getByLabel('اسم المستخدم',{exact:true}).fill('Unicode Secret Fixture');await page.getByLabel('كلمة المرور',{exact:true}).fill(secret)
+  expect((await page.getByLabel('كلمة المرور',{exact:true}).inputValue()).length).toBe(128)
+  await page.getByRole('button',{name:'ادخل إلى الأكاديمية'}).click();await expect(page.getByRole('alert')).toContainText('اسم المستخدم أو كلمة المرور غير صحيح')
+  evidence.unicodePasswordBaselineTruncation=true
+ }
  await page.getByRole('button',{name:'إنشاء حساب',exact:true}).click()
  await page.getByLabel('اسم المستخدم',{exact:true}).fill('اختبار سطح المكتب')
  await page.getByLabel('كلمة المرور',{exact:true}).fill('desktop-test-long-password')
@@ -82,6 +91,10 @@ try{
  await expect(page.getByRole('alert')).toContainText('كلمتا المرور غير متطابقتين')
  evidence.expectedAuthRejections.confirmation=true
  await page.getByLabel('تأكيد كلمة المرور',{exact:true}).fill('desktop-test-long-password')
+ if(process.env.AUTH_UNICODE_BASELINE==='1'){
+  await page.getByLabel('اسم المستخدم',{exact:true}).fill('مُحَمَّد_١');await page.getByRole('button',{name:'أنشئ حسابي'}).click()
+  await expect(page.getByRole('alert')).toContainText('اسم المستخدم يجب');evidence.unicodeBaselineRejection=true
+ }
  await page.getByLabel('اسم المستخدم',{exact:true}).fill('اسم/غيرصالح')
  await page.getByRole('button',{name:'أنشئ حسابي'}).click()
  await expect(page.getByRole('alert')).toContainText('اسم المستخدم يجب')
@@ -175,6 +188,51 @@ try{
  expect(outside).toBe('blocked')
  evidence.checks.push('external network fetch blocked; curriculum and notes work without external server')
  await page.screenshot({path:process.env.DESKTOP_SCREENSHOT??'artifacts/desktop.png'})
+ if(process.env.AUTH_EXTENDED==='1'){
+  const phrase='recovery-fixture-passphrase',newPassword='🔑'.repeat(70),recoveredPassword='🔐'.repeat(70)
+  const source=await page.evaluate(async()=>window.academy.request('login',{name:'اختبار سطح المكتب',password:'desktop-test-long-password'}))
+  expect(source.ok).toBe(true)
+  const salt=randomBytes(16),derived=pbkdf2Sync(phrase,salt,600000,64,'sha256'),nonce=randomBytes(12),cipher=createCipheriv('aes-256-gcm',derived.subarray(32),nonce)
+  cipher.setAAD(Buffer.from('academy-backup-v1'));const body=Buffer.concat([cipher.update(JSON.stringify(source.value.snapshot.state)),cipher.final(),cipher.getAuthTag()]);derived.fill(0)
+  const backupFile=path.join(dataDir,'recovery.academy');await fs.writeFile(backupFile,JSON.stringify({format:'marketing-academy-encrypted',version:1,iterations:600000,salt:salt.toString('hex'),payload:nonce.toString('hex')+':'+body.toString('hex')}))
+  await page.getByRole('button',{name:'خروج',exact:true}).click()
+  await page.getByRole('button',{name:'نسيت كلمة المرور؟ استعادة من نسخة مشفرة',exact:true}).click()
+  await page.getByLabel('النسخة المشفرة',{exact:true}).setInputFiles(backupFile)
+  await page.getByLabel('عبارة حماية النسخة',{exact:true}).fill('wrong-recovery-passphrase')
+  await page.getByLabel('اسم الحساب الجديد',{exact:true}).fill('مُستعاد_١')
+  await page.getByLabel('كلمة مرور الحساب الجديد',{exact:true}).fill(recoveredPassword)
+  await page.getByLabel('تأكيد كلمة مرور الحساب الجديد',{exact:true}).fill(recoveredPassword)
+  await expect(page.getByLabel('كلمة مرور الحساب الجديد',{exact:true})).toHaveValue(recoveredPassword)
+  await page.getByRole('button',{name:'استعد إلى حساب جديد',exact:true}).click()
+  await expect(page.getByRole('alert')).toContainText('عبارة الحماية غير صحيحة')
+  await page.getByLabel('عبارة حماية النسخة',{exact:true}).fill(phrase)
+  await page.getByLabel('اسم الحساب الجديد',{exact:true}).fill('اختبار سطح المكتب')
+  await page.getByRole('button',{name:'استعد إلى حساب جديد',exact:true}).click()
+  await expect(page.getByRole('alert')).toContainText('اسم المستخدم مستخدم')
+  await page.getByLabel('اسم الحساب الجديد',{exact:true}).fill('مُستعاد_١')
+  await page.getByRole('button',{name:'استعد إلى حساب جديد',exact:true}).click()
+  await page.getByRole('navigation',{name:'التنقل الرئيسي'}).getByRole('link',{name:'مسار التعلّم',exact:true}).click()
+  await page.getByRole('button',{name:/^ملاحظات:/}).first().click();await expect(page.getByRole('dialog').getByRole('textbox')).toHaveValue('حفظ دائم بعد إغلاق البرنامج');await page.getByRole('button',{name:'احفظ وأغلق'}).click()
+  await running.close();page=await launch()
+  await page.getByLabel('اسم المستخدم',{exact:true}).fill('مُستعاد_١');await page.getByLabel('كلمة المرور',{exact:true}).fill(recoveredPassword);await page.getByRole('button',{name:'ادخل إلى الأكاديمية'}).click()
+  await page.getByRole('button',{name:'خروج',exact:true}).click()
+  await page.getByLabel('اسم المستخدم',{exact:true}).fill('اختبار سطح المكتب');await page.getByLabel('كلمة المرور',{exact:true}).fill('desktop-test-long-password');await page.getByRole('button',{name:'ادخل إلى الأكاديمية'}).click()
+  await page.getByRole('link',{name:'الإعدادات',exact:true}).click()
+  await page.getByLabel('كلمة المرور الحالية',{exact:true}).fill('incorrect-current-password')
+  await page.getByLabel('كلمة المرور الجديدة',{exact:true}).fill(newPassword)
+  await expect(page.getByLabel('كلمة المرور الجديدة',{exact:true})).toHaveValue(newPassword)
+  await page.getByRole('button',{name:'غيّر كلمة المرور',exact:true}).click()
+  await expect(page.getByText('كلمة المرور الحالية غير صحيحة.',{exact:true})).toBeVisible()
+  await page.getByLabel('كلمة المرور الحالية',{exact:true}).fill('desktop-test-long-password')
+  await page.getByRole('button',{name:'غيّر كلمة المرور',exact:true}).click()
+  await expect(page.getByText('تغيّرت كلمة المرور.',{exact:true})).toBeVisible()
+  await running.close();page=await launch()
+  await page.getByLabel('اسم المستخدم',{exact:true}).fill('اختبار سطح المكتب');await page.getByLabel('كلمة المرور',{exact:true}).fill('desktop-test-long-password');await page.getByRole('button',{name:'ادخل إلى الأكاديمية'}).click()
+  await expect(page.getByRole('alert')).toContainText('اسم المستخدم أو كلمة المرور غير صحيح')
+  await page.getByLabel('كلمة المرور',{exact:true}).fill(newPassword);await page.getByRole('button',{name:'ادخل إلى الأكاديمية'}).click()
+  await page.getByRole('navigation',{name:'التنقل الرئيسي'}).getByRole('link',{name:'مسار التعلّم',exact:true}).click();await page.getByRole('button',{name:/^ملاحظات:/}).first().click();await expect(page.getByRole('dialog').getByRole('textbox')).toHaveValue('حفظ دائم بعد إغلاق البرنامج');await page.getByRole('button',{name:'احفظ وأغلق'}).click()
+  evidence.authExtensions={unicodeRecovery:true,wrongPhraseRejected:true,duplicateRecoveryRejected:true,recoveredLoginAfterRestart:true,originalAccountPreserved:true,wrongCurrentPasswordRejected:true,passwordChangeAfterRestart:true,unicodePasswordUntruncated:true}
+ }
  // A newly registered local account must not receive the first account's saved data.
  await page.getByRole('button',{name:'خروج',exact:true}).click()
  await page.getByRole('button',{name:'إنشاء حساب',exact:true}).click()
@@ -228,7 +286,7 @@ try{
  const accounts=Number(sql.prepare('SELECT count(*) AS count FROM accounts').get().count)
  const records=Number(sql.prepare('SELECT count(*) AS count FROM learner_records').get().count)
  const legacy=Number(sql.prepare('SELECT count(*) AS count FROM accounts WHERE legacy_source=?').get(fixture.legacyId).count)
- expect(accounts).toBe(3);expect(records).toBeGreaterThan(5);expect(legacy).toBe(1)
+ expect(accounts).toBe((process.env.AUTH_EXTENDED==='1'?4:3)+(process.env.AUTH_UNICODE_BASELINE==='1'?1:0));expect(records).toBeGreaterThan(5);expect(legacy).toBe(1)
  expect(JSON.stringify(sql.prepare('SELECT payload FROM learner_records').all())).not.toContain('legacy-note-must-survive')
  evidence.sqlite={schemaVersion:Number(sql.prepare('PRAGMA user_version').get().user_version),accounts,records,legacySourcesPreserved:true,encryptedRecords:true}
  sql.close()

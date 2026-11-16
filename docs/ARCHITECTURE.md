@@ -82,3 +82,7 @@ Portable2.2.2 changes only packaging filename and verification/delivery assets: 
 ## Dual Windows runtime2.3.0
 
 `electron/profile.cjs` resolves the immutable packaged flavor before storage/session initialization and single-instance locking. Production keeps its existing userData/session defaults; QA pins appData/marketing-academy-qa and its chromium subfolder. QA stages are created under ignored work/qa-package from the same dist/build/Electron code, with a separate manifest/app ID/output. A trusted-main-frame read-only profile-info IPC exposes only the channel; nine storage commands remain unchanged. Packaged QA has the same sandbox, disabled packaged devtools, CSP, origin controls, encrypted SQLite/authentication and offline business logic. No filename/command-line channel selector changes data profiles. Verified lifecycle and simultaneous actual Windows isolation: DUAL_WINDOWS_VERIFICATION.json.
+
+##2.4.0 authentication recovery boundary
+
+Shared identity.ts handles canonical names and new-password codepoint validation. Recovery decrypts an encrypted export in the renderer with its independent phrase, then recoverBackup creates a new owner/state in one SQLite transaction. It never reads/resets another account; duplicates fail. Electron allowlist and API register-rate/session rotation controls apply. Schema1/hash/key/path formats unchanged. Sessions are intentionally not persisted across app restart; learning state is. Legacy static browser edition uses new registration then Settings restore.

@@ -1,3 +1,5 @@
+import {validNewPassword} from './identity'
+import {normalizeState} from './data-schema'
 import Dexie from 'dexie'
 import * as legacy from './legacy-auth'
 import {AcademyDB,activateDatabase,db,exportBackup,restoreBackup} from './db'
@@ -39,6 +41,7 @@ export async function logout(){
 }
 export function forgetSession(){if(activeTransport()){db.close();nativeSession=undefined}else legacy.logout()}
 export async function changePassword(oldPassword:string,newPassword:string){
+ if(!validNewPassword(newPassword))throw new Error('استخدم كلمة مرور من١٢ إلى١٢٨ حرف Unicode.')
  const transport=activeTransport()
  if(!transport)return legacy.changePassword(oldPassword,newPassword)
  if(!nativeSession)throw new Error('سجّل الدخول أولًا.')
@@ -79,4 +82,13 @@ export async function updateProfile(name:string){
  if(result.id!==ownerId||nativeSession?.id!==ownerId)throw new Error('تغير الحساب؛ أعد المحاولة.')
  nativeSession={id:ownerId,name:result.name}
  return result
+}
+
+/** Backup-assisted recovery creates a NEW identity. It never resets an old password or overwrites an old account. */
+export async function recoverBackupAccount(name:string,password:string,state:unknown){
+ const transport=activeTransport()
+ if(!transport)throw new Error('في نسخة المتصفح المحلية: أنشئ حسابًا جديدًا ثم استعد النسخة من الإعدادات.')
+ const validated=normalizeState(state)
+ if(await legacy.accountsDB.accounts.where('username').equals(legacy.normalizeUsername(name)).first())throw new Error('اختر اسمًا جديدًا؛ الحساب السابق وتقدمه لم يتغيرا.')
+ return enter(parseAuthResult(await transport.request('recoverBackup',{name,password,state:validated})))
 }

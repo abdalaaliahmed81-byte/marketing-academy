@@ -55,3 +55,12 @@ it('does not serve a symlink escaping the static distribution',async()=>{
   expect((await fetch('http://127.0.0.1:'+(files.address() as {port:number}).port+'/leak.txt')).status).toBe(403)
  }finally{if(files){files.closeAllConnections();await new Promise<void>(resolve=>files!.close(()=>resolve()))}await rm(folder,{recursive:true,force:true})}
 })
+it('issues owner-scoped sessions for atomic recovery and never resets an existing account',async()=>{
+ const a=await command('register',{name:'Recovery API',password}),old=(await a.json()).value,oldCookie=a.headers.get('set-cookie')!.split(';')[0]
+ const recovered=await command('recoverBackup',{name:'Recovery API New',password,state:emptyState()},oldCookie)
+ expect(recovered.status).toBe(200);expect(recovered.headers.get('set-cookie')).toContain('HttpOnly')
+ const next=(await recovered.json()).value;expect(next.session.id).not.toBe(old.session.id)
+ expect((await command('read',{ownerId:old.session.id},oldCookie)).status).toBe(401)
+ expect((await command('login',{name:'Recovery API',password})).status).toBe(200)
+ expect((await command('recoverBackup',{name:'Recovery API',password,state:emptyState()})).status).toBe(409)
+})

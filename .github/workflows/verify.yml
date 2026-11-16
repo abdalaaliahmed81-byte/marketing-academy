@@ -56,19 +56,20 @@ jobs:
       - run: npm run typecheck
       - run: npm test
       - run: npm run package:windows:dual
-      - name: Audit previously released 2.3.0 EXEs with negative authentication probes
+      - name: Audit previously released 2.3.1 EXEs with negative authentication probes
         shell: pwsh
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
-          gh release download v2.3.0 --pattern "*Windows-x64.exe" --dir work/auth-baseline
+          gh release download v2.3.1 --pattern "*Windows-x64.exe" --dir work/auth-baseline
           if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
-          $baseline = Get-Content docs/DUAL_WINDOWS_VERIFICATION.json -Raw | ConvertFrom-Json
+          $baseline = Get-Content docs/AUTH_AUDIT_VERIFICATION.json -Raw | ConvertFrom-Json
           foreach ($asset in $baseline.assets | Where-Object { $_.name.EndsWith('.exe') }) {
             $actual = (Get-FileHash (Join-Path work/auth-baseline $asset.name) -Algorithm SHA256).Hash.ToLower()
             if ($actual -ne $asset.sha256) { throw "Baseline EXE checksum mismatch" }
           }
-          $env:AUTH_BASELINE_VERSION = "2.3.0"
+          $env:AUTH_BASELINE_VERSION = "2.3.1"
+          $env:AUTH_UNICODE_BASELINE = "1"
           $env:DESKTOP_EXE = "work/auth-baseline/Marketing-Academy-Portable-Windows-x64.exe"
           $env:EXPECTED_CHANNEL = "production"
           $env:DESKTOP_EVIDENCE = "artifacts/auth-baseline-production.json"
@@ -89,6 +90,7 @@ jobs:
         run: |
           $version = (Get-Content package.json | ConvertFrom-Json).version
           $env:DESKTOP_EXE = "release/Marketing-Academy-Portable-Windows-x64.exe"
+          $env:AUTH_EXTENDED = "1"
           node scripts/desktop-smoke.mjs
           if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
       - name: Test QA normal startup with its own identity
@@ -98,6 +100,7 @@ jobs:
         shell: pwsh
         run: |
           $env:DESKTOP_EXE = "release/Marketing-Academy-QA-Windows-x64.exe"
+          $env:AUTH_EXTENDED = "1"
           $env:EXPECTED_CHANNEL = "qa"
           $env:DESKTOP_EVIDENCE = "artifacts/desktop-smoke-qa.json"
           $env:DESKTOP_SCREENSHOT = "artifacts/desktop-qa.png"

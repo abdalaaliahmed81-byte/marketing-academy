@@ -1,6 +1,6 @@
 import {z} from '../validation'
 import {normalizeState,type LearnerState} from '../data-schema'
-export const commands=['register','login','logout','changePassword','read','commit','migrateLegacy','profile','updateProfile'] as const
+export const commands=['register','recoverBackup','login','logout','changePassword','read','commit','migrateLegacy','profile','updateProfile'] as const
 export type Command=typeof commands[number]
 export interface UserSession {id:string;name:string}
 export interface Snapshot {ownerId:string;revision:number;state:LearnerState}

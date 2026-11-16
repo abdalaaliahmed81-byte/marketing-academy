@@ -98,3 +98,13 @@ describe('backup and project validation',()=>{
   expect(await exportBackup()).toEqual(before)
  },20000)
 })
+it('preserves Unicode canonical identities with Arabic marks and rejects bidi/control names',async()=>{
+ const a=await register('مُحَمَّد_١','unicode-long-password')
+ logout();expect((await login('  مُحَمَّد_١  ','unicode-long-password')).id).toBe(a.id)
+ await expect(register('مُحَمَّد_١','unicode-long-password')).rejects.toThrow()
+ await expect(register('user\u202Ename','unicode-long-password')).rejects.toThrow()
+})
+it('supports long Unicode secrets in the preserved legacy adapter without trimming',async()=>{
+ const password='🔐'.repeat(70),a=await register('Unicode Legacy',password);logout()
+ expect((await login('Unicode Legacy',password)).id).toBe(a.id)
+})

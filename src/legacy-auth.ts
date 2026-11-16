@@ -1,3 +1,4 @@
+import {normalizeIdentity,validIdentity,validNewPassword} from './identity'
 import {displayNameSchema,type Profile} from './storage/protocol'
 import Dexie,{type Table} from 'dexie'
 import {AcademyDB,activateDatabase,db,exportBackup,restoreBackup} from './db'
@@ -15,7 +16,7 @@ export interface Session {id:string;name:string}
 let session:Session|undefined
 let masterKey:Uint8Array|undefined
 export const currentSession=()=>session
-export function normalizeUsername(name:string){return name.normalize('NFKC').trim().toLocaleLowerCase('en-US')}
+export const normalizeUsername=normalizeIdentity
 export async function derive(password:string,salt:Uint8Array,iterations=KDF_ITERATIONS){
   const material=await crypto.subtle.importKey('raw',new TextEncoder().encode(password),'PBKDF2',false,['deriveBits'])
   return new Uint8Array(await crypto.subtle.deriveBits({name:'PBKDF2',salt:new Uint8Array(salt),iterations,hash:'SHA-256'},material,512))
@@ -32,8 +33,8 @@ async function enter(account:Account,key:Uint8Array){
 }
 export async function register(name:string,password:string){
   const username=normalizeUsername(name)
-  if(!/^[\p{L}\p{N}_. -]{3,40}$/u.test(username))throw new Error('اسم المستخدم: ٣–٤٠ حرفًا أو رقمًا، ويمكن استخدام مسافة أو نقطة أو شرطة.')
-  if(password.length<12||password.length>128)throw new Error('استخدم كلمة مرور من ١٢ إلى ١٢٨ حرفًا.')
+  if(!validIdentity(username))throw new Error('اسم المستخدم: ٣–٤٠ حرفًا أو رقمًا، ويمكن استخدام مسافة أو نقطة أو شرطة.')
+  if(!validNewPassword(password))throw new Error('استخدم كلمة مرور من ١٢ إلى ١٢٨ حرفًا.')
   if(await accountsDB.accounts.where('username').equals(username).first())throw new Error('اسم المستخدم مستخدم بالفعل.')
   const id=crypto.randomUUID(),salt=random(16),derived=await derive(password,salt),key=random(32)
   const account:Account={id,username,displayName:name.trim(),salt:hex(salt),iterations:KDF_ITERATIONS,verifier:await verifier(derived.subarray(0,32)),wrappedKey:seal(derived.subarray(32),hex(key),'account:'+id),createdAt:new Date().toISOString(),failures:0,retryAt:0}
@@ -42,7 +43,7 @@ export async function register(name:string,password:string){
   return enter(account,key)
 }
 export async function login(name:string,password:string){
-  if(password.length>128)throw new Error('اسم المستخدم أو كلمة المرور غير صحيح.')
+  if(Array.from(password).length>128)throw new Error('اسم المستخدم أو كلمة المرور غير صحيح.')
   const account=await accountsDB.accounts.where('username').equals(normalizeUsername(name)).first()
   if(account&&account.retryAt>Date.now())throw new Error('انتظر قليلًا قبل المحاولة التالية.')
   // Derive even for unknown accounts to reduce username timing disclosure.
@@ -59,7 +60,7 @@ export async function login(name:string,password:string){
 }
 export function logout(){db.close();masterKey?.fill(0);masterKey=undefined;session=undefined}
 export async function changePassword(oldPassword:string,newPassword:string){
-  if(!session||newPassword.length<12||newPassword.length>128)throw new Error('استخدم كلمة مرور من ١٢ إلى ١٢٨ حرفًا.')
+  if(!session||!validNewPassword(newPassword))throw new Error('استخدم كلمة مرور من ١٢ إلى ١٢٨ حرفًا.')
   const account=await accountsDB.accounts.get(session.id)
   if(!account||!masterKey)throw new Error('سجّل الدخول أولًا.')
   const previous=await derive(oldPassword,unhex(account.salt))
