@@ -1,0 +1,1546 @@
+{
+  "version": 1,
+  "checkedAt": "2026-11-16",
+  "policy": "مصادر محددة للمبادئ فقط، دون ادعاء تغطية كل جملة أو إذن شامل. الشروح والحالات والاختبارات أصلية؛ الروابط لا تعني تأييد الجهات.",
+  "sources": [
+    {
+      "id": "dib-plan",
+      "title": "The 1-Page Marketing Plan",
+      "author": "Allan Dib",
+      "url": "https://allandib.com/",
+      "checkedAt": "2026-11-16",
+      "scope": "السوق والرسالة ومراحل العلاقة؛ مواضع مختارة من النسخة المرفقة، لا نتائج منصات أو نسب نجاح",
+      "rights": "كتاب محمي؛ إذن المستخدم للمراجعة المفاهيمية لا ترخيص توزيع",
+      "rightsURL": "https://allandib.com/",
+      "access": "PDF خاص خارج المستودع؛ صفحات PDF10،40،49،68،111،155،179 فُحصت انتقائيًا",
+      "use": "إحالة مفاهيمية دون اقتباسات أو PDF أو نقل بنية صفحات الكتاب"
+    },
+    {
+      "id": "godin-marketing",
+      "title": "This Is Marketing",
+      "author": "Seth Godin",
+      "url": "https://www.penguinrandomhouse.com/books/600458/this-is-marketing-by-seth-godin/",
+      "checkedAt": "2026-11-16",
+      "scope": "الخدمة وأصغر سوق قابلة للنمو والإذن؛ لا وصفة مضمونة للأداء",
+      "rights": "كتاب محمي؛ مراجعة مفاهيمية مأذونة بالمرفق، لا إعادة توزيع",
+      "rightsURL": "https://www.penguinrandomhouse.com/books/600458/this-is-marketing-by-seth-godin/",
+      "access": "PDF خاص؛ فحص انتقائي، منها PDF9–10 و33 و174؛ ليست مراجعة كل صفحة",
+      "use": "إحالة إلى أفكار عامة وصياغة تعليمية مستقلة"
+    },
+    {
+      "id": "godin-stories",
+      "title": "All Marketers Are Liars / Tell Stories",
+      "author": "Seth Godin",
+      "url": "https://seths.blog/2013/09/qa-all-marketers-and-the-challenge-of-telling-the-right-story/",
+      "checkedAt": "2026-11-16",
+      "scope": "منظور الجمهور واتساق القصة والتجربة؛ لا تبرير للخداع",
+      "rights": "كتاب محمي؛ مراجعة مفاهيمية مأذونة بالمرفق، لا ترخيص نقل",
+      "rightsURL": "https://seths.blog/2013/09/qa-all-marketers-and-the-challenge-of-telling-the-right-story/",
+      "access": "PDF خاص؛ فحص مواضع مختارة PDF17،29،45،78،95،100",
+      "use": "إحالة مفاهيمية فقط؛ جميع القصص العراقية مؤلفة ومحاكاة"
+    },
+    {
+      "id": "search-start",
+      "title": "SEO Starter Guide",
+      "author": "Google",
+      "url": "https://developers.google.com/search/docs/fundamentals/seo-starter-guide",
+      "checkedAt": "2026-11-16",
+      "scope": "مساعدة القارئ والمحرك؛ لا ضمان للفهرسة أو الترتيب",
+      "rights": "CC BY 4.0 للنص حيث يظهر إشعار الصفحة؛ العلامات والمواد الخارجية مستثناة. لا ننقل الشفرة أو الصور.",
+      "rightsURL": "https://developers.google.com/terms/site-policies",
+      "access": "مفتوح؛ فحص موضع محدد",
+      "use": "تحقق من مبدأ؛ صياغة وأمثلة أصلية"
+    },
+    {
+      "id": "helpful",
+      "title": "Creating helpful, reliable, people-first content",
+      "author": "Google",
+      "url": "https://developers.google.com/search/docs/fundamentals/creating-helpful-content",
+      "checkedAt": "2026-11-16",
+      "scope": "أسئلة تقويم الفائدة؛ فقرة عدم وجود عدد كلمات مفضل",
+      "rights": "CC BY 4.0 للنص حيث يظهر إشعار الصفحة؛ العلامات والمواد الخارجية مستثناة. لا ننقل الشفرة أو الصور.",
+      "rightsURL": "https://developers.google.com/terms/site-policies",
+      "access": "مفتوح؛ فحص موضع محدد",
+      "use": "تحقق من مبدأ؛ صياغة وأمثلة أصلية"
+    },
+    {
+      "id": "robots",
+      "title": "Introduction to robots.txt",
+      "author": "Google",
+      "url": "https://developers.google.com/search/docs/crawling-indexing/robots/intro",
+      "checkedAt": "2026-11-16",
+      "scope": "التمييز بين تنظيم الزحف ومنع الفهرسة والحماية",
+      "rights": "CC BY 4.0 للنص حيث يظهر إشعار الصفحة؛ العلامات والمواد الخارجية مستثناة. لا ننقل الشفرة أو الصور.",
+      "rightsURL": "https://developers.google.com/terms/site-policies",
+      "access": "مفتوح؛ فحص موضع محدد",
+      "use": "تحقق من مبدأ؛ صياغة وأمثلة أصلية"
+    },
+    {
+      "id": "local-data",
+      "title": "LocalBusiness structured data",
+      "author": "Google",
+      "url": "https://developers.google.com/search/docs/appearance/structured-data/local-business",
+      "checkedAt": "2026-11-16",
+      "scope": "معلومات النشاط المنظمة لا تضمن نتيجة غنية؛ لا يثبت أهلية ملف نشاط عراقي",
+      "rights": "CC BY 4.0 للنص حيث يظهر إشعار الصفحة؛ العلامات والمواد الخارجية مستثناة. لا ننقل الشفرة أو الصور.",
+      "rightsURL": "https://developers.google.com/terms/site-policies",
+      "access": "مفتوح؛ فحص موضع محدد",
+      "use": "تحقق من مبدأ؛ صياغة وأمثلة أصلية"
+    },
+    {
+      "id": "console",
+      "title": "Get started with Search Console",
+      "author": "Google",
+      "url": "https://developers.google.com/search/docs/monitor-debug/search-console-start",
+      "checkedAt": "2026-11-16",
+      "scope": "نطاق متابعة الزحف والفهرسة وأداء البحث؛ لا مساواة بمبيعات",
+      "rights": "CC BY 4.0 للنص حيث يظهر إشعار الصفحة؛ العلامات والمواد الخارجية مستثناة. لا ننقل الشفرة أو الصور.",
+      "rightsURL": "https://developers.google.com/terms/site-policies",
+      "access": "مفتوح؛ فحص موضع محدد",
+      "use": "تحقق من مبدأ؛ صياغة وأمثلة أصلية"
+    },
+    {
+      "id": "ga-events",
+      "title": "Set up events",
+      "author": "Google",
+      "url": "https://developers.google.com/analytics/devguides/collection/ga4/events",
+      "checkedAt": "2026-11-16",
+      "scope": "فئات الأحداث والفرق بين التلقائي والمحتاج إعدادًا؛ لا تتبع فعلي في الأكاديمية",
+      "rights": "CC BY 4.0 للنص حيث يظهر إشعار الصفحة؛ العلامات والمواد الخارجية مستثناة. لا ننقل الشفرة أو الصور.",
+      "rightsURL": "https://developers.google.com/terms/site-policies",
+      "access": "مفتوح؛ فحص موضع محدد",
+      "use": "تحقق من مبدأ؛ صياغة وأمثلة أصلية"
+    },
+    {
+      "id": "ga-config",
+      "title": "Google Analytics configuration",
+      "author": "Google",
+      "url": "https://developers.google.com/analytics/devguides/collection/ga4/reference/config",
+      "checkedAt": "2026-11-16",
+      "scope": "campaign_source/medium/name/content وعلاقتها بوسوم UTM؛ ليست دليل سببية",
+      "rights": "CC BY 4.0 للنص حيث يظهر إشعار الصفحة؛ العلامات والمواد الخارجية مستثناة. لا ننقل الشفرة أو الصور.",
+      "rightsURL": "https://developers.google.com/terms/site-policies",
+      "access": "مفتوح؛ فحص موضع محدد",
+      "use": "تحقق من مبدأ؛ صياغة وأمثلة أصلية"
+    },
+    {
+      "id": "ads-metrics",
+      "title": "Google Ads API v26 metrics",
+      "author": "Google",
+      "url": "https://developers.google.com/google-ads/api/fields/v26/metrics",
+      "checkedAt": "2026-11-16",
+      "scope": "حقلا metrics.ctr وmetrics.average_cpc؛ الحسابات الأخرى اشتقاق حسابي معلن",
+      "rights": "CC BY 4.0 للنص حيث يظهر إشعار الصفحة؛ العلامات والمواد الخارجية مستثناة. لا ننقل الشفرة أو الصور.",
+      "rightsURL": "https://developers.google.com/terms/site-policies",
+      "access": "مفتوح؛ فحص موضع محدد",
+      "use": "تحقق من مبدأ؛ صياغة وأمثلة أصلية"
+    },
+    {
+      "id": "ads-conversion",
+      "title": "Conversion management",
+      "author": "Google",
+      "url": "https://developers.google.com/google-ads/api/docs/conversions/overview",
+      "checkedAt": "2026-11-16",
+      "scope": "تعريف إجراء تحويل؛ لا تعميم أسماء مستويات أو واجهات كل منصة",
+      "rights": "CC BY 4.0 للنص حيث يظهر إشعار الصفحة؛ العلامات والمواد الخارجية مستثناة. لا ننقل الشفرة أو الصور.",
+      "rightsURL": "https://developers.google.com/terms/site-policies",
+      "access": "مفتوح؛ فحص موضع محدد",
+      "use": "تحقق من مبدأ؛ صياغة وأمثلة أصلية"
+    },
+    {
+      "id": "tag-consent",
+      "title": "Set up consent mode on websites",
+      "author": "Google",
+      "url": "https://developers.google.com/tag-platform/security/guides/consent",
+      "checkedAt": "2026-11-16",
+      "scope": "إرسال/تحديث حالة الموافقة لا يخزن الاختيارات أو ينشئ أساسًا قانونيًا",
+      "rights": "CC BY 4.0 للنص حيث يظهر إشعار الصفحة؛ العلامات والمواد الخارجية مستثناة. لا ننقل الشفرة أو الصور.",
+      "rightsURL": "https://developers.google.com/terms/site-policies",
+      "access": "مفتوح؛ فحص موضع محدد",
+      "use": "تحقق من مبدأ؛ صياغة وأمثلة أصلية"
+    },
+    {
+      "id": "iam",
+      "title": "Use IAM securely",
+      "author": "Google Cloud",
+      "url": "https://docs.cloud.google.com/iam/docs/using-iam-securely",
+      "checkedAt": "2026-11-16",
+      "scope": "Least privilege وService account keys؛ أصل مبدأ الصلاحيات وحماية المفاتيح، لا خطوات إعداد حساب Meta",
+      "rights": "CC BY 4.0 للنص حيث يظهر إشعار الصفحة؛ العلامات والمواد الخارجية مستثناة. لا ننقل الشفرة أو الصور.",
+      "rightsURL": "https://developers.google.com/terms/site-policies",
+      "access": "مفتوح؛ فحص موضع محدد",
+      "use": "تحقق من مبدأ؛ صياغة وأمثلة أصلية"
+    },
+    {
+      "id": "wai-writing",
+      "title": "Writing for Web Accessibility",
+      "author": "W3C WAI؛ Kevin White وShadi Abou-Zahra وShawn Lawton Henry",
+      "url": "https://www.w3.org/WAI/tips/writing/",
+      "checkedAt": "2026-11-16",
+      "scope": "وضوح العناوين والروابط واللغة والبدائل؛ إرشادات كتابة لا شهادة امتثال",
+      "rights": "ترخيص W3C موضح بالصفحة؛ لم ننسخ وثيقة أو أمثلة أو ندّع ترجمة معتمدة؛ لا نفترض CC عامًا لكل WAI",
+      "rightsURL": "https://www.w3.org/WAI/about/using-wai-material/",
+      "access": "صفحة مفتوحة؛ تاريخها المعروض16 يوليو2024",
+      "use": "مرجع فحص مبادئ؛ النص العربي والاختبارات أمثلة مستقلة، لا تعديل لمعيار W3C"
+    },
+    {
+      "id": "ftc-disclosure",
+      "title": "Disclosures 101 for Social Media Influencers",
+      "author": "United States Federal Trade Commission",
+      "url": "https://www.ftc.gov/business-guidance/resources/disclosures-101-social-media-influencers",
+      "checkedAt": "2026-11-16",
+      "scope": "وجود علاقة مادية ووضوح الإفصاح قرب التوصية؛ توجيه أمريكي لا قانون عراقي",
+      "rights": "مادة FTC الحكومية عامة وفق سياسة الموقع؛ لا صور أو أختام أو إيحاء تأييد",
+      "rightsURL": "https://www.ftc.gov/policy-notices/website-policy",
+      "access": "مفتوح؛ فحص موضع محدد",
+      "use": "تحقق من مبدأ؛ صياغة وأمثلة أصلية"
+    },
+    {
+      "id": "spf",
+      "title": "RFC 7208 — Sender Policy Framework",
+      "author": "IETF؛ مؤلفو RFC",
+      "url": "https://www.rfc-editor.org/rfc/rfc7208",
+      "checkedAt": "2026-11-16",
+      "scope": "ملخص و§2 تفويض استخدام النطاق",
+      "rights": "IETF Trust؛ يسمح بتوزيع RFC مع قيود تعديل؛ لم ننسخ أو نعدل RFC",
+      "rightsURL": "https://www.rfc-editor.org/series/rfc-use/",
+      "access": "مرجع مفتوح؛ تحققت المفاهيم المحددة، لا ادعاء أحدث مواصفات المزود",
+      "use": "شرح أصلي لمفاهيم البروتوكول، لا ترجمة معيار أو تعليمات DNS جاهزة"
+    },
+    {
+      "id": "dkim",
+      "title": "RFC 6376 — DomainKeys Identified Mail",
+      "author": "IETF؛ مؤلفو RFC",
+      "url": "https://www.rfc-editor.org/rfc/rfc6376",
+      "checkedAt": "2026-11-16",
+      "scope": "ملخص توقيع يمكن التحقق منه؛ ليس ضمان محتوى",
+      "rights": "IETF Trust؛ يسمح بتوزيع RFC مع قيود تعديل؛ لم ننسخ أو نعدل RFC",
+      "rightsURL": "https://www.rfc-editor.org/series/rfc-use/",
+      "access": "مرجع مفتوح؛ تحققت المفاهيم المحددة، لا ادعاء أحدث مواصفات المزود",
+      "use": "شرح أصلي لمفاهيم البروتوكول، لا ترجمة معيار أو تعليمات DNS جاهزة"
+    },
+    {
+      "id": "dmarc",
+      "title": "RFC 9989 — DMARC (May 2026)",
+      "author": "IETF؛ T. Herr وJ. Levine، محرران",
+      "url": "https://www.rfc-editor.org/rfc/rfc9989.html",
+      "checkedAt": "2026-11-16",
+      "scope": "§3.2.10 و§4.4 محاذاة الهوية؛ RFC9989 يستبدل7489 و9091. تفاصيل التقارير انتقلت إلى9990/9991 ولم تستخدم هنا.",
+      "rights": "IETF Trust؛ يسمح بتوزيع RFC مع قيود تعديل؛ لم ننسخ أو نعدل RFC",
+      "rightsURL": "https://www.rfc-editor.org/series/rfc-use/",
+      "access": "مرجع مفتوح؛ تحقق تحديث مايو2026 ومحاذاة الهوية؛ لا قائمة إعداد مزود بريد",
+      "use": "شرح أصلي لمفاهيم البروتوكول، لا ترجمة معيار أو تعليمات DNS جاهزة"
+    },
+    {
+      "id": "experiment",
+      "title": "NIST/SEMATECH e-Handbook — experiment",
+      "author": "NIST/SEMATECH",
+      "url": "https://www.itl.nist.gov/div898/handbook/pri/section3/pri31.htm",
+      "checkedAt": "2026-11-16",
+      "scope": "تحديد أهداف التجربة قبل اختيار التصميم",
+      "rights": "سياسة NIST تميز أعمال الموظفين وSRD والأطراف الأخرى؛ لا نسخ للجداول/البيانات/النص؛ إحالة وتفسير مستقل",
+      "rightsURL": "https://www.nist.gov/open/license",
+      "access": "مرجع إحصائي تأسيسي مفتوح؛ فحص قسم محدد",
+      "use": "شرح أصلي وحساب وصفي، لا إعادة نشر الدليل أو شهادة إحصائية"
+    },
+    {
+      "id": "uncertainty",
+      "title": "NIST/SEMATECH e-Handbook — uncertainty",
+      "author": "NIST/SEMATECH",
+      "url": "https://www.itl.nist.gov/div898/handbook/prc/section2/prc241.htm",
+      "checkedAt": "2026-11-16",
+      "scope": "فواصل النسب وعدم اليقين وحدود التقريبات؛ لا تحليل دلالة منفذ لجدول التدريب",
+      "rights": "سياسة NIST تميز أعمال الموظفين وSRD والأطراف الأخرى؛ لا نسخ للجداول/البيانات/النص؛ إحالة وتفسير مستقل",
+      "rightsURL": "https://www.nist.gov/open/license",
+      "access": "مرجع إحصائي تأسيسي مفتوح؛ فحص قسم محدد",
+      "use": "شرح أصلي وحساب وصفي، لا إعادة نشر الدليل أو شهادة إحصائية"
+    },
+    {
+      "id": "skillshop",
+      "title": "Google Skillshop",
+      "author": "Google Skillshop",
+      "url": "https://skillshop.withgoogle.com/",
+      "checkedAt": "2026-11-16",
+      "scope": "مورد إضافي للتصفح البشري؛ ليس دليل ادعاء في المنهج",
+      "rights": "الفهرس مرجع تعلم اختياري؛ لم نجلب دروسًا أو نفترض أن ترخيص Developers يغطيه",
+      "rightsURL": "https://policies.google.com/terms",
+      "access": "فهرس/شروط فقط؛ محتوى الدورات غير مستورد",
+      "use": "رابط فقط؛ لا مادة تدريب منقولة أو تحقق ادعاء"
+    },
+    {
+      "id": "blueprint",
+      "title": "Meta Blueprint",
+      "author": "Meta Blueprint",
+      "url": "https://www.facebookblueprint.com/student/catalog/",
+      "checkedAt": "2026-11-16",
+      "scope": "مورد إضافي للتصفح البشري؛ ليس دليل ادعاء في المنهج",
+      "rights": "صلاحية جمع محتوى التدريب آليًا غير مثبتة؛ لم نجلب الدورات أو نتجاوز الدخول",
+      "rightsURL": "https://www.facebook.com/legal/automated_data_collection_terms",
+      "access": "فهرس/شروط فقط؛ محتوى الدورات غير مستورد",
+      "use": "رابط فقط؛ لا مادة تدريب منقولة أو تحقق ادعاء"
+    },
+    {
+      "id": "hubspot",
+      "title": "HubSpot Academy",
+      "author": "HubSpot Academy",
+      "url": "https://academy.hubspot.com/courses/digital-marketing",
+      "checkedAt": "2026-11-16",
+      "scope": "مورد إضافي للتصفح البشري؛ ليس دليل ادعاء في المنهج",
+      "rights": "الشروط تقيد النسخ والأعمال المشتقة؛ مورد اختياري دون استخدام دورة كمادة تأليف",
+      "rightsURL": "https://legal.hubspot.com/website-terms-of-use",
+      "access": "فهرس/شروط فقط؛ محتوى الدورات غير مستورد",
+      "use": "رابط فقط؛ لا مادة تدريب منقولة أو تحقق ادعاء"
+    },
+    {
+      "id": "semrush",
+      "title": "Semrush Academy",
+      "author": "Semrush Academy",
+      "url": "https://www.semrush.com/academy/",
+      "checkedAt": "2026-11-16",
+      "scope": "مورد إضافي للتصفح البشري؛ ليس دليل ادعاء في المنهج",
+      "rights": "§3.3(r) يقيد مدخلات AI؛ لم تستخدم دروسه للتحقق أو التأليف",
+      "rightsURL": "https://www.semrush.com/company/legal/terms-of-service/",
+      "access": "فهرس/شروط فقط؛ محتوى الدورات غير مستورد",
+      "use": "رابط فقط؛ لا مادة تدريب منقولة أو تحقق ادعاء"
+    },
+    {
+      "id": "openstax",
+      "title": "OpenStax Principles of Marketing",
+      "author": "OpenStax Principles of Marketing",
+      "url": "https://openstax.org/books/principles-marketing/pages/preface",
+      "checkedAt": "2026-11-16",
+      "scope": "مورد إضافي للتصفح البشري؛ ليس دليل ادعاء في المنهج",
+      "rights": "ترخيص الويب المعروض CC BY-NC-SA مع نتائج بحث PDF بترخيص مختلف؛ لا نجزم بحق إعادة استخدام نسخة غير محددة",
+      "rightsURL": "https://openstax.org/books/principles-marketing/pages/preface",
+      "access": "فهرس/شروط فقط؛ محتوى الدورات غير مستورد",
+      "use": "رابط فقط؛ لا مادة تدريب منقولة أو تحقق ادعاء"
+    }
+  ],
+  "lessons": [
+    {
+      "id": "m01-l01",
+      "batch": 1,
+      "reviewStatus": "agent-reviewed",
+      "reviewedAt": "2026-11-16",
+      "reviewer": "Codex؛ مراجعة تحريرية وفحص مصادر آلي ثانٍ",
+      "independentHumanReview": false,
+      "references": [
+        {
+          "sourceId": "godin-marketing",
+          "claim": "خدمة حاجة محددة واختيار الجمهور قبل الرسالة",
+          "locator": "الخدمة وأصغر سوق قابلة للنمو والإذن؛ لا وصفة مضمونة للأداء"
+        },
+        {
+          "sourceId": "dib-plan",
+          "claim": "إحالة مساندة في نطاق المصدر المبين",
+          "locator": "السوق والرسالة ومراحل العلاقة؛ مواضع مختارة من النسخة المرفقة، لا نتائج منصات أو نسب نجاح"
+        }
+      ],
+      "originalWork": "الخاصية والفائدة والدليل في محاكاة المطعم",
+      "exampleStatus": "محاكاة عراقية أصلية؛ لا دراسة ميدانية ولا معيار أداء للسوق",
+      "assessment": "خمسة أسئلة راجعها الوكيل؛ النسخة2 تحفظ تاريخ النسخة1؛ معايرة تعليمية مستقلة لم تنفذ",
+      "progression": "يبني على الدروس السابقة بالترتيب المحفوظ؛ التطبيق يرفد مشروع الوحدة وملف الأعمال"
+    },
+    {
+      "id": "m01-l02",
+      "batch": 1,
+      "reviewStatus": "agent-reviewed",
+      "reviewedAt": "2026-11-16",
+      "reviewer": "Codex؛ مراجعة تحريرية وفحص مصادر آلي ثانٍ",
+      "independentHumanReview": false,
+      "references": [
+        {
+          "sourceId": "dib-plan",
+          "claim": "تنظيم قرارات التسويق والقياس داخل خطة",
+          "locator": "السوق والرسالة ومراحل العلاقة؛ مواضع مختارة من النسخة المرفقة، لا نتائج منصات أو نسب نجاح"
+        }
+      ],
+      "originalWork": "هدف SMART حسابي مع اختبار السعة لا تنبؤ بالطلب",
+      "exampleStatus": "محاكاة عراقية أصلية؛ لا دراسة ميدانية ولا معيار أداء للسوق",
+      "assessment": "خمسة أسئلة راجعها الوكيل؛ النسخة2 تحفظ تاريخ النسخة1؛ معايرة تعليمية مستقلة لم تنفذ",
+      "progression": "يبني على الدروس السابقة بالترتيب المحفوظ؛ التطبيق يرفد مشروع الوحدة وملف الأعمال"
+    },
+    {
+      "id": "m01-l03",
+      "batch": 1,
+      "reviewStatus": "agent-reviewed",
+      "reviewedAt": "2026-11-16",
+      "reviewer": "Codex؛ مراجعة تحريرية وفحص مصادر آلي ثانٍ",
+      "independentHumanReview": false,
+      "references": [
+        {
+          "sourceId": "dib-plan",
+          "claim": "اختيار وسيلة الوصول بعد تحديد السوق والرسالة",
+          "locator": "السوق والرسالة ومراحل العلاقة؛ مواضع مختارة من النسخة المرفقة، لا نتائج منصات أو نسب نجاح"
+        }
+      ],
+      "originalWork": "مقارنة الوقت والتأهل لا افتراض منصة أنسب للعراق",
+      "exampleStatus": "محاكاة عراقية أصلية؛ لا دراسة ميدانية ولا معيار أداء للسوق",
+      "assessment": "خمسة أسئلة راجعها الوكيل؛ النسخة2 تحفظ تاريخ النسخة1؛ معايرة تعليمية مستقلة لم تنفذ",
+      "progression": "يبني على الدروس السابقة بالترتيب المحفوظ؛ التطبيق يرفد مشروع الوحدة وملف الأعمال"
+    },
+    {
+      "id": "m01-l04",
+      "batch": 1,
+      "reviewStatus": "agent-reviewed",
+      "reviewedAt": "2026-11-16",
+      "reviewer": "Codex؛ مراجعة تحريرية وفحص مصادر آلي ثانٍ",
+      "independentHumanReview": false,
+      "references": [
+        {
+          "sourceId": "dib-plan",
+          "claim": "مراحل قبل وأثناء وبعد الشراء",
+          "locator": "السوق والرسالة ومراحل العلاقة؛ مواضع مختارة من النسخة المرفقة، لا نتائج منصات أو نسب نجاح"
+        }
+      ],
+      "originalWork": "رحلة غير خطية واكتشاف تكلفة التوصيل",
+      "exampleStatus": "محاكاة عراقية أصلية؛ لا دراسة ميدانية ولا معيار أداء للسوق",
+      "assessment": "خمسة أسئلة راجعها الوكيل؛ النسخة2 تحفظ تاريخ النسخة1؛ معايرة تعليمية مستقلة لم تنفذ",
+      "progression": "يبني على الدروس السابقة بالترتيب المحفوظ؛ التطبيق يرفد مشروع الوحدة وملف الأعمال"
+    },
+    {
+      "id": "m01-l05",
+      "batch": 1,
+      "reviewStatus": "agent-reviewed",
+      "reviewedAt": "2026-11-16",
+      "reviewer": "Codex؛ مراجعة تحريرية وفحص مصادر آلي ثانٍ",
+      "independentHumanReview": false,
+      "references": [
+        {
+          "sourceId": "experiment",
+          "claim": "تحديد هدف التجربة قبل التصميم",
+          "locator": "تحديد أهداف التجربة قبل اختيار التصميم"
+        }
+      ],
+      "originalWork": "تغيير واحد ومقارنة وصفية ومقام صفري",
+      "exampleStatus": "محاكاة عراقية أصلية؛ لا دراسة ميدانية ولا معيار أداء للسوق",
+      "assessment": "خمسة أسئلة راجعها الوكيل؛ النسخة2 تحفظ تاريخ النسخة1؛ معايرة تعليمية مستقلة لم تنفذ",
+      "progression": "يبني على الدروس السابقة بالترتيب المحفوظ؛ التطبيق يرفد مشروع الوحدة وملف الأعمال"
+    },
+    {
+      "id": "m02-l01",
+      "batch": 2,
+      "reviewStatus": "agent-reviewed",
+      "reviewedAt": "2026-11-16",
+      "reviewer": "Codex؛ مراجعة تحريرية وفحص مصادر آلي ثانٍ",
+      "independentHumanReview": false,
+      "references": [
+        {
+          "sourceId": "godin-marketing",
+          "claim": "خدمة الناس عبر فهم حاجتهم",
+          "locator": "الخدمة وأصغر سوق قابلة للنمو والإذن؛ لا وصفة مضمونة للأداء"
+        }
+      ],
+      "originalWork": "فصل الملاحظة والتفسير وسؤال بحث محايد",
+      "exampleStatus": "محاكاة عراقية أصلية؛ لا دراسة ميدانية ولا معيار أداء للسوق",
+      "assessment": "خمسة أسئلة راجعها الوكيل؛ النسخة2 تحفظ تاريخ النسخة1؛ معايرة تعليمية مستقلة لم تنفذ",
+      "progression": "يبني على الدروس السابقة بالترتيب المحفوظ؛ التطبيق يرفد مشروع الوحدة وملف الأعمال"
+    },
+    {
+      "id": "m02-l02",
+      "batch": 2,
+      "reviewStatus": "agent-reviewed",
+      "reviewedAt": "2026-11-16",
+      "reviewer": "Codex؛ مراجعة تحريرية وفحص مصادر آلي ثانٍ",
+      "independentHumanReview": false,
+      "references": [
+        {
+          "sourceId": "godin-marketing",
+          "claim": "فهم منظور من نخدم",
+          "locator": "الخدمة وأصغر سوق قابلة للنمو والإذن؛ لا وصفة مضمونة للأداء"
+        }
+      ],
+      "originalWork": "بروتوكول مقابلة قصير أصلي وليس دراسة منشورة",
+      "exampleStatus": "محاكاة عراقية أصلية؛ لا دراسة ميدانية ولا معيار أداء للسوق",
+      "assessment": "خمسة أسئلة راجعها الوكيل؛ النسخة2 تحفظ تاريخ النسخة1؛ معايرة تعليمية مستقلة لم تنفذ",
+      "progression": "يبني على الدروس السابقة بالترتيب المحفوظ؛ التطبيق يرفد مشروع الوحدة وملف الأعمال"
+    },
+    {
+      "id": "m02-l03",
+      "batch": 2,
+      "reviewStatus": "agent-reviewed",
+      "reviewedAt": "2026-11-16",
+      "reviewer": "Codex؛ مراجعة تحريرية وفحص مصادر آلي ثانٍ",
+      "independentHumanReview": false,
+      "references": [
+        {
+          "sourceId": "dib-plan",
+          "claim": "اختيار السوق وصياغة الرسالة المناسبة له",
+          "locator": "السوق والرسالة ومراحل العلاقة؛ مواضع مختارة من النسخة المرفقة، لا نتائج منصات أو نسب نجاح"
+        }
+      ],
+      "originalWork": "مقارنة بديل طباعة بوحدة ووقت وتكلفة متسقة",
+      "exampleStatus": "محاكاة عراقية أصلية؛ لا دراسة ميدانية ولا معيار أداء للسوق",
+      "assessment": "خمسة أسئلة راجعها الوكيل؛ النسخة2 تحفظ تاريخ النسخة1؛ معايرة تعليمية مستقلة لم تنفذ",
+      "progression": "يبني على الدروس السابقة بالترتيب المحفوظ؛ التطبيق يرفد مشروع الوحدة وملف الأعمال"
+    },
+    {
+      "id": "m02-l04",
+      "batch": 2,
+      "reviewStatus": "agent-reviewed",
+      "reviewedAt": "2026-11-16",
+      "reviewer": "Codex؛ مراجعة تحريرية وفحص مصادر آلي ثانٍ",
+      "independentHumanReview": false,
+      "references": [
+        {
+          "sourceId": "godin-marketing",
+          "claim": "أصغر سوق قابلة للنمو، الفصل4 PDF33",
+          "locator": "الخدمة وأصغر سوق قابلة للنمو والإذن؛ لا وصفة مضمونة للأداء"
+        }
+      ],
+      "originalWork": "درجات شرائح تقديرية مع قيد التشغيل",
+      "exampleStatus": "محاكاة عراقية أصلية؛ لا دراسة ميدانية ولا معيار أداء للسوق",
+      "assessment": "خمسة أسئلة راجعها الوكيل؛ النسخة2 تحفظ تاريخ النسخة1؛ معايرة تعليمية مستقلة لم تنفذ",
+      "progression": "يبني على الدروس السابقة بالترتيب المحفوظ؛ التطبيق يرفد مشروع الوحدة وملف الأعمال"
+    },
+    {
+      "id": "m02-l05",
+      "batch": 2,
+      "reviewStatus": "agent-reviewed",
+      "reviewedAt": "2026-11-16",
+      "reviewer": "Codex؛ مراجعة تحريرية وفحص مصادر آلي ثانٍ",
+      "independentHumanReview": false,
+      "references": [
+        {
+          "sourceId": "godin-stories",
+          "claim": "تأثير منظور الجمهور في فهم القصة",
+          "locator": "منظور الجمهور واتساق القصة والتجربة؛ لا تبرير للخداع"
+        }
+      ],
+      "originalWork": "شخصية مبنية على موقف وافتراضات موسومة",
+      "exampleStatus": "محاكاة عراقية أصلية؛ لا دراسة ميدانية ولا معيار أداء للسوق",
+      "assessment": "خمسة أسئلة راجعها الوكيل؛ النسخة2 تحفظ تاريخ النسخة1؛ معايرة تعليمية مستقلة لم تنفذ",
+      "progression": "يبني على الدروس السابقة بالترتيب المحفوظ؛ التطبيق يرفد مشروع الوحدة وملف الأعمال"
+    },
+    {
+      "id": "m03-l01",
+      "batch": 3,
+      "reviewStatus": "agent-reviewed",
+      "reviewedAt": "2026-11-16",
+      "reviewer": "Codex؛ مراجعة تحريرية وفحص مصادر آلي ثانٍ",
+      "independentHumanReview": false,
+      "references": [
+        {
+          "sourceId": "godin-marketing",
+          "claim": "فهم من نخدم لا محاولة خدمة الجميع",
+          "locator": "الخدمة وأصغر سوق قابلة للنمو والإذن؛ لا وصفة مضمونة للأداء"
+        }
+      ],
+      "originalWork": "خريطة ملاحظة وتفسير لا تشخيص نفسي",
+      "exampleStatus": "محاكاة عراقية أصلية؛ لا دراسة ميدانية ولا معيار أداء للسوق",
+      "assessment": "خمسة أسئلة راجعها الوكيل؛ النسخة2 تحفظ تاريخ النسخة1؛ معايرة تعليمية مستقلة لم تنفذ",
+      "progression": "يبني على الدروس السابقة بالترتيب المحفوظ؛ التطبيق يرفد مشروع الوحدة وملف الأعمال"
+    },
+    {
+      "id": "m03-l02",
+      "batch": 3,
+      "reviewStatus": "agent-reviewed",
+      "reviewedAt": "2026-11-16",
+      "reviewer": "Codex؛ مراجعة تحريرية وفحص مصادر آلي ثانٍ",
+      "independentHumanReview": false,
+      "references": [
+        {
+          "sourceId": "godin-marketing",
+          "claim": "قيمة ذات صلة وقصة تفي بها التجربة",
+          "locator": "الخدمة وأصغر سوق قابلة للنمو والإذن؛ لا وصفة مضمونة للأداء"
+        },
+        {
+          "sourceId": "godin-stories",
+          "claim": "إحالة مساندة في نطاق المصدر المبين",
+          "locator": "منظور الجمهور واتساق القصة والتجربة؛ لا تبرير للخداع"
+        }
+      ],
+      "originalWork": "فحص فهم الوعد والتأهل وحدود الدليل",
+      "exampleStatus": "محاكاة عراقية أصلية؛ لا دراسة ميدانية ولا معيار أداء للسوق",
+      "assessment": "خمسة أسئلة راجعها الوكيل؛ النسخة2 تحفظ تاريخ النسخة1؛ معايرة تعليمية مستقلة لم تنفذ",
+      "progression": "يبني على الدروس السابقة بالترتيب المحفوظ؛ التطبيق يرفد مشروع الوحدة وملف الأعمال"
+    },
+    {
+      "id": "m03-l03",
+      "batch": 3,
+      "reviewStatus": "agent-reviewed",
+      "reviewedAt": "2026-11-16",
+      "reviewer": "Codex؛ مراجعة تحريرية وفحص مصادر آلي ثانٍ",
+      "independentHumanReview": false,
+      "references": [
+        {
+          "sourceId": "dib-plan",
+          "claim": "اختيار سوق ورسالة بدل تعميم العرض",
+          "locator": "السوق والرسالة ومراحل العلاقة؛ مواضع مختارة من النسخة المرفقة، لا نتائج منصات أو نسب نجاح"
+        }
+      ],
+      "originalWork": "خريطة تموضع بمقاييس معلنة ومفاضلة سعة",
+      "exampleStatus": "محاكاة عراقية أصلية؛ لا دراسة ميدانية ولا معيار أداء للسوق",
+      "assessment": "خمسة أسئلة راجعها الوكيل؛ النسخة2 تحفظ تاريخ النسخة1؛ معايرة تعليمية مستقلة لم تنفذ",
+      "progression": "يبني على الدروس السابقة بالترتيب المحفوظ؛ التطبيق يرفد مشروع الوحدة وملف الأعمال"
+    },
+    {
+      "id": "m03-l04",
+      "batch": 3,
+      "reviewStatus": "agent-reviewed",
+      "reviewedAt": "2026-11-16",
+      "reviewer": "Codex؛ مراجعة تحريرية وفحص مصادر آلي ثانٍ",
+      "independentHumanReview": false,
+      "references": [
+        {
+          "sourceId": "wai-writing",
+          "claim": "عناوين وروابط ولغة أوضح",
+          "locator": "وضوح العناوين والروابط واللغة والبدائل؛ إرشادات كتابة لا شهادة امتثال"
+        }
+      ],
+      "originalWork": "دليل نبرة عربي عبر الإعلان والدعم",
+      "exampleStatus": "محاكاة عراقية أصلية؛ لا دراسة ميدانية ولا معيار أداء للسوق",
+      "assessment": "خمسة أسئلة راجعها الوكيل؛ النسخة2 تحفظ تاريخ النسخة1؛ معايرة تعليمية مستقلة لم تنفذ",
+      "progression": "يبني على الدروس السابقة بالترتيب المحفوظ؛ التطبيق يرفد مشروع الوحدة وملف الأعمال"
+    },
+    {
+      "id": "m03-l05",
+      "batch": 3,
+      "reviewStatus": "agent-reviewed",
+      "reviewedAt": "2026-11-16",
+      "reviewer": "Codex؛ مراجعة تحريرية وفحص مصادر آلي ثانٍ",
+      "independentHumanReview": false,
+      "references": [
+        {
+          "sourceId": "dib-plan",
+          "claim": "ربط العرض بالقيمة والعلاقة",
+          "locator": "السوق والرسالة ومراحل العلاقة؛ مواضع مختارة من النسخة المرفقة، لا نتائج منصات أو نسب نجاح"
+        }
+      ],
+      "originalWork": "سعر ناقص تكلفة متغيرة؛ حساب مساهمة لا ربح صاف",
+      "exampleStatus": "محاكاة عراقية أصلية؛ لا دراسة ميدانية ولا معيار أداء للسوق",
+      "assessment": "خمسة أسئلة راجعها الوكيل؛ النسخة2 تحفظ تاريخ النسخة1؛ معايرة تعليمية مستقلة لم تنفذ",
+      "progression": "يبني على الدروس السابقة بالترتيب المحفوظ؛ التطبيق يرفد مشروع الوحدة وملف الأعمال"
+    },
+    {
+      "id": "m04-l01",
+      "batch": 4,
+      "reviewStatus": "agent-reviewed",
+      "reviewedAt": "2026-11-16",
+      "reviewer": "Codex؛ مراجعة تحريرية وفحص مصادر آلي ثانٍ",
+      "independentHumanReview": false,
+      "references": [
+        {
+          "sourceId": "godin-stories",
+          "claim": "اتساق القصة والتجربة ومنظور الجمهور",
+          "locator": "منظور الجمهور واتساق القصة والتجربة؛ لا تبرير للخداع"
+        }
+      ],
+      "originalWork": "قصة مخبز عراقية مؤلفة مع فحص الوعد",
+      "exampleStatus": "محاكاة عراقية أصلية؛ لا دراسة ميدانية ولا معيار أداء للسوق",
+      "assessment": "خمسة أسئلة راجعها الوكيل؛ النسخة2 تحفظ تاريخ النسخة1؛ معايرة تعليمية مستقلة لم تنفذ",
+      "progression": "يبني على الدروس السابقة بالترتيب المحفوظ؛ التطبيق يرفد مشروع الوحدة وملف الأعمال"
+    },
+    {
+      "id": "m04-l02",
+      "batch": 4,
+      "reviewStatus": "agent-reviewed",
+      "reviewedAt": "2026-11-16",
+      "reviewer": "Codex؛ مراجعة تحريرية وفحص مصادر آلي ثانٍ",
+      "independentHumanReview": false,
+      "references": [
+        {
+          "sourceId": "godin-stories",
+          "claim": "فهم القصة ضمن توقعات جمهورها",
+          "locator": "منظور الجمهور واتساق القصة والتجربة؛ لا تبرير للخداع"
+        }
+      ],
+      "originalWork": "اختبار فهم عنوان ونسبة التأهل بمقام معلوم",
+      "exampleStatus": "محاكاة عراقية أصلية؛ لا دراسة ميدانية ولا معيار أداء للسوق",
+      "assessment": "خمسة أسئلة راجعها الوكيل؛ النسخة2 تحفظ تاريخ النسخة1؛ معايرة تعليمية مستقلة لم تنفذ",
+      "progression": "يبني على الدروس السابقة بالترتيب المحفوظ؛ التطبيق يرفد مشروع الوحدة وملف الأعمال"
+    },
+    {
+      "id": "m04-l03",
+      "batch": 4,
+      "reviewStatus": "agent-reviewed",
+      "reviewedAt": "2026-11-16",
+      "reviewer": "Codex؛ مراجعة تحريرية وفحص مصادر آلي ثانٍ",
+      "independentHumanReview": false,
+      "references": [
+        {
+          "sourceId": "dib-plan",
+          "claim": "رسالة ملائمة ووعد يطابق التجربة",
+          "locator": "السوق والرسالة ومراحل العلاقة؛ مواضع مختارة من النسخة المرفقة، لا نتائج منصات أو نسب نجاح"
+        },
+        {
+          "sourceId": "godin-stories",
+          "claim": "إحالة مساندة في نطاق المصدر المبين",
+          "locator": "منظور الجمهور واتساق القصة والتجربة؛ لا تبرير للخداع"
+        }
+      ],
+      "originalWork": "جدول حاجة ودليل وإجراء دون ادعاءات غير مثبتة",
+      "exampleStatus": "محاكاة عراقية أصلية؛ لا دراسة ميدانية ولا معيار أداء للسوق",
+      "assessment": "خمسة أسئلة راجعها الوكيل؛ النسخة2 تحفظ تاريخ النسخة1؛ معايرة تعليمية مستقلة لم تنفذ",
+      "progression": "يبني على الدروس السابقة بالترتيب المحفوظ؛ التطبيق يرفد مشروع الوحدة وملف الأعمال"
+    },
+    {
+      "id": "m04-l04",
+      "batch": 4,
+      "reviewStatus": "agent-reviewed",
+      "reviewedAt": "2026-11-16",
+      "reviewer": "Codex؛ مراجعة تحريرية وفحص مصادر آلي ثانٍ",
+      "independentHumanReview": false,
+      "references": [
+        {
+          "sourceId": "wai-writing",
+          "claim": "تسميات وروابط واضحة وتعليمات مفهومة",
+          "locator": "وضوح العناوين والروابط واللغة والبدائل؛ إرشادات كتابة لا شهادة امتثال"
+        }
+      ],
+      "originalWork": "رحلات نجاح وخطأ ورفض وقياس إكمال النموذج",
+      "exampleStatus": "محاكاة عراقية أصلية؛ لا دراسة ميدانية ولا معيار أداء للسوق",
+      "assessment": "خمسة أسئلة راجعها الوكيل؛ النسخة2 تحفظ تاريخ النسخة1؛ معايرة تعليمية مستقلة لم تنفذ",
+      "progression": "يبني على الدروس السابقة بالترتيب المحفوظ؛ التطبيق يرفد مشروع الوحدة وملف الأعمال"
+    },
+    {
+      "id": "m04-l05",
+      "batch": 4,
+      "reviewStatus": "agent-reviewed",
+      "reviewedAt": "2026-11-16",
+      "reviewer": "Codex؛ مراجعة تحريرية وفحص مصادر آلي ثانٍ",
+      "independentHumanReview": false,
+      "references": [
+        {
+          "sourceId": "experiment",
+          "claim": "هدف تجربة معلوم وصدق القصة مستقل عن جاذبيتها",
+          "locator": "تحديد أهداف التجربة قبل اختيار التصميم"
+        },
+        {
+          "sourceId": "godin-stories",
+          "claim": "إحالة مساندة في نطاق المصدر المبين",
+          "locator": "منظور الجمهور واتساق القصة والتجربة؛ لا تبرير للخداع"
+        }
+      ],
+      "originalWork": "سجل ادعاءات وفرق النقاط المئوية والنسبي",
+      "exampleStatus": "محاكاة عراقية أصلية؛ لا دراسة ميدانية ولا معيار أداء للسوق",
+      "assessment": "خمسة أسئلة راجعها الوكيل؛ النسخة2 تحفظ تاريخ النسخة1؛ معايرة تعليمية مستقلة لم تنفذ",
+      "progression": "يبني على الدروس السابقة بالترتيب المحفوظ؛ التطبيق يرفد مشروع الوحدة وملف الأعمال"
+    },
+    {
+      "id": "m05-l01",
+      "batch": 5,
+      "reviewStatus": "agent-reviewed",
+      "reviewedAt": "2026-11-16",
+      "reviewer": "Codex؛ مراجعة تحريرية وفحص مصادر آلي ثانٍ",
+      "independentHumanReview": false,
+      "references": [
+        {
+          "sourceId": "dib-plan",
+          "claim": "اختيار وسيلة الوصول وفق السوق والرسالة",
+          "locator": "السوق والرسالة ومراحل العلاقة؛ مواضع مختارة من النسخة المرفقة، لا نتائج منصات أو نسب نجاح"
+        }
+      ],
+      "originalWork": "قرار قناة تحت قيد الوقت دون نسب انتشار عراقية",
+      "exampleStatus": "محاكاة عراقية أصلية؛ لا دراسة ميدانية ولا معيار أداء للسوق",
+      "assessment": "خمسة أسئلة راجعها الوكيل؛ النسخة2 تحفظ تاريخ النسخة1؛ معايرة تعليمية مستقلة لم تنفذ",
+      "progression": "يبني على الدروس السابقة بالترتيب المحفوظ؛ التطبيق يرفد مشروع الوحدة وملف الأعمال"
+    },
+    {
+      "id": "m05-l02",
+      "batch": 5,
+      "reviewStatus": "agent-reviewed",
+      "reviewedAt": "2026-11-16",
+      "reviewer": "Codex؛ مراجعة تحريرية وفحص مصادر آلي ثانٍ",
+      "independentHumanReview": false,
+      "references": [
+        {
+          "sourceId": "wai-writing",
+          "claim": "بنية واضحة وفائدة القارئ",
+          "locator": "وضوح العناوين والروابط واللغة والبدائل؛ إرشادات كتابة لا شهادة امتثال"
+        }
+      ],
+      "originalWork": "تقويم ست مواد مع دليل ومراجعة ومسؤول",
+      "exampleStatus": "محاكاة عراقية أصلية؛ لا دراسة ميدانية ولا معيار أداء للسوق",
+      "assessment": "خمسة أسئلة راجعها الوكيل؛ النسخة2 تحفظ تاريخ النسخة1؛ معايرة تعليمية مستقلة لم تنفذ",
+      "progression": "يبني على الدروس السابقة بالترتيب المحفوظ؛ التطبيق يرفد مشروع الوحدة وملف الأعمال"
+    },
+    {
+      "id": "m05-l03",
+      "batch": 5,
+      "reviewStatus": "agent-reviewed",
+      "reviewedAt": "2026-11-16",
+      "reviewer": "Codex؛ مراجعة تحريرية وفحص مصادر آلي ثانٍ",
+      "independentHumanReview": false,
+      "references": [
+        {
+          "sourceId": "godin-marketing",
+          "claim": "خدمة الناس والعلاقة بدل ضغط البيع",
+          "locator": "الخدمة وأصغر سوق قابلة للنمو والإذن؛ لا وصفة مضمونة للأداء"
+        }
+      ],
+      "originalWork": "سياسة رد وتصعيد وخصوصية في مثال محاكى",
+      "exampleStatus": "محاكاة عراقية أصلية؛ لا دراسة ميدانية ولا معيار أداء للسوق",
+      "assessment": "خمسة أسئلة راجعها الوكيل؛ النسخة2 تحفظ تاريخ النسخة1؛ معايرة تعليمية مستقلة لم تنفذ",
+      "progression": "يبني على الدروس السابقة بالترتيب المحفوظ؛ التطبيق يرفد مشروع الوحدة وملف الأعمال"
+    },
+    {
+      "id": "m05-l04",
+      "batch": 5,
+      "reviewStatus": "agent-reviewed",
+      "reviewedAt": "2026-11-16",
+      "reviewer": "Codex؛ مراجعة تحريرية وفحص مصادر آلي ثانٍ",
+      "independentHumanReview": false,
+      "references": [
+        {
+          "sourceId": "wai-writing",
+          "claim": "توفير بدائل للمعلومة ووضوح اللغة",
+          "locator": "وضوح العناوين والروابط واللغة والبدائل؛ إرشادات كتابة لا شهادة امتثال"
+        }
+      ],
+      "originalWork": "مخطط فيديو واختبار دون صوت ومعيار إكمال معرف",
+      "exampleStatus": "محاكاة عراقية أصلية؛ لا دراسة ميدانية ولا معيار أداء للسوق",
+      "assessment": "خمسة أسئلة راجعها الوكيل؛ النسخة2 تحفظ تاريخ النسخة1؛ معايرة تعليمية مستقلة لم تنفذ",
+      "progression": "يبني على الدروس السابقة بالترتيب المحفوظ؛ التطبيق يرفد مشروع الوحدة وملف الأعمال"
+    },
+    {
+      "id": "m05-l05",
+      "batch": 5,
+      "reviewStatus": "agent-reviewed",
+      "reviewedAt": "2026-11-16",
+      "reviewer": "Codex؛ مراجعة تحريرية وفحص مصادر آلي ثانٍ",
+      "independentHumanReview": false,
+      "references": [
+        {
+          "sourceId": "ftc-disclosure",
+          "claim": "قسم When/How to Disclose، علاقة مادية وإفصاح واضح",
+          "locator": "وجود علاقة مادية ووضوح الإفصاح قرب التوصية؛ توجيه أمريكي لا قانون عراقي"
+        }
+      ],
+      "originalWork": "شراكة عراقية محاكاة وحدود ولاية وإسناد",
+      "exampleStatus": "محاكاة عراقية أصلية؛ لا دراسة ميدانية ولا معيار أداء للسوق",
+      "assessment": "خمسة أسئلة راجعها الوكيل؛ النسخة2 تحفظ تاريخ النسخة1؛ معايرة تعليمية مستقلة لم تنفذ",
+      "progression": "يبني على الدروس السابقة بالترتيب المحفوظ؛ التطبيق يرفد مشروع الوحدة وملف الأعمال"
+    },
+    {
+      "id": "m06-l01",
+      "batch": 6,
+      "reviewStatus": "agent-reviewed",
+      "reviewedAt": "2026-11-16",
+      "reviewer": "Codex؛ مراجعة تحريرية وفحص مصادر آلي ثانٍ",
+      "independentHumanReview": false,
+      "references": [
+        {
+          "sourceId": "helpful",
+          "claim": "مراجعة مدى خدمة المحتوى حاجات القارئ",
+          "locator": "أسئلة تقويم الفائدة؛ فقرة عدم وجود عدد كلمات مفضل"
+        }
+      ],
+      "originalWork": "خريطة أسئلة وترتيب أثر وجهد وثقة",
+      "exampleStatus": "محاكاة عراقية أصلية؛ لا دراسة ميدانية ولا معيار أداء للسوق",
+      "assessment": "خمسة أسئلة راجعها الوكيل؛ النسخة2 تحفظ تاريخ النسخة1؛ معايرة تعليمية مستقلة لم تنفذ",
+      "progression": "يبني على الدروس السابقة بالترتيب المحفوظ؛ التطبيق يرفد مشروع الوحدة وملف الأعمال"
+    },
+    {
+      "id": "m06-l02",
+      "batch": 6,
+      "reviewStatus": "agent-reviewed",
+      "reviewedAt": "2026-11-16",
+      "reviewer": "Codex؛ مراجعة تحريرية وفحص مصادر آلي ثانٍ",
+      "independentHumanReview": false,
+      "references": [
+        {
+          "sourceId": "helpful",
+          "claim": "لا عدد كلمات مفضل؛ كتابة وعناوين مفهومة",
+          "locator": "أسئلة تقويم الفائدة؛ فقرة عدم وجود عدد كلمات مفضل"
+        },
+        {
+          "sourceId": "wai-writing",
+          "claim": "إحالة مساندة في نطاق المصدر المبين",
+          "locator": "وضوح العناوين والروابط واللغة والبدائل؛ إرشادات كتابة لا شهادة امتثال"
+        }
+      ],
+      "originalWork": "موجز أصلي ومثال200−120 مع حدود القياس",
+      "exampleStatus": "محاكاة عراقية أصلية؛ لا دراسة ميدانية ولا معيار أداء للسوق",
+      "assessment": "خمسة أسئلة راجعها الوكيل؛ النسخة2 تحفظ تاريخ النسخة1؛ معايرة تعليمية مستقلة لم تنفذ",
+      "progression": "يبني على الدروس السابقة بالترتيب المحفوظ؛ التطبيق يرفد مشروع الوحدة وملف الأعمال"
+    },
+    {
+      "id": "m06-l03",
+      "batch": 6,
+      "reviewStatus": "agent-reviewed",
+      "reviewedAt": "2026-11-16",
+      "reviewer": "Codex؛ مراجعة تحريرية وفحص مصادر آلي ثانٍ",
+      "independentHumanReview": false,
+      "references": [
+        {
+          "sourceId": "dib-plan",
+          "claim": "ملاءمة الرسالة والوسيلة لمهمة العميل",
+          "locator": "السوق والرسالة ومراحل العلاقة؛ مواضع مختارة من النسخة المرفقة، لا نتائج منصات أو نسب نجاح"
+        }
+      ],
+      "originalWork": "إجراء سجل حقوق؛ لا ادعاء أن القراءة تمنح إعادة الاستخدام",
+      "exampleStatus": "محاكاة عراقية أصلية؛ لا دراسة ميدانية ولا معيار أداء للسوق",
+      "assessment": "خمسة أسئلة راجعها الوكيل؛ النسخة2 تحفظ تاريخ النسخة1؛ معايرة تعليمية مستقلة لم تنفذ",
+      "progression": "يبني على الدروس السابقة بالترتيب المحفوظ؛ التطبيق يرفد مشروع الوحدة وملف الأعمال"
+    },
+    {
+      "id": "m06-l04",
+      "batch": 6,
+      "reviewStatus": "agent-reviewed",
+      "reviewedAt": "2026-11-16",
+      "reviewer": "Codex؛ مراجعة تحريرية وفحص مصادر آلي ثانٍ",
+      "independentHumanReview": false,
+      "references": [
+        {
+          "sourceId": "godin-marketing",
+          "claim": "الفصل17 PDF174 الإذن والانتباه",
+          "locator": "الخدمة وأصغر سوق قابلة للنمو والإذن؛ لا وصفة مضمونة للأداء"
+        }
+      ],
+      "originalWork": "مساران لتسليم المورد واختيار المتابعة مع اختبار رفض",
+      "exampleStatus": "محاكاة عراقية أصلية؛ لا دراسة ميدانية ولا معيار أداء للسوق",
+      "assessment": "خمسة أسئلة راجعها الوكيل؛ النسخة2 تحفظ تاريخ النسخة1؛ معايرة تعليمية مستقلة لم تنفذ",
+      "progression": "يبني على الدروس السابقة بالترتيب المحفوظ؛ التطبيق يرفد مشروع الوحدة وملف الأعمال"
+    },
+    {
+      "id": "m06-l05",
+      "batch": 6,
+      "reviewStatus": "agent-reviewed",
+      "reviewedAt": "2026-11-16",
+      "reviewer": "Codex؛ مراجعة تحريرية وفحص مصادر آلي ثانٍ",
+      "independentHumanReview": false,
+      "references": [
+        {
+          "sourceId": "helpful",
+          "claim": "تقويم فائدة المحتوى وصحته للقارئ",
+          "locator": "أسئلة تقويم الفائدة؛ فقرة عدم وجود عدد كلمات مفضل"
+        }
+      ],
+      "originalWork": "جرد وقرار تحديث مع مصدر حقيقة ونسخ مرتبطة",
+      "exampleStatus": "محاكاة عراقية أصلية؛ لا دراسة ميدانية ولا معيار أداء للسوق",
+      "assessment": "خمسة أسئلة راجعها الوكيل؛ النسخة2 تحفظ تاريخ النسخة1؛ معايرة تعليمية مستقلة لم تنفذ",
+      "progression": "يبني على الدروس السابقة بالترتيب المحفوظ؛ التطبيق يرفد مشروع الوحدة وملف الأعمال"
+    },
+    {
+      "id": "m07-l01",
+      "batch": 7,
+      "reviewStatus": "agent-reviewed",
+      "reviewedAt": "2026-11-16",
+      "reviewer": "Codex؛ مراجعة تحريرية وفحص مصادر آلي ثانٍ",
+      "independentHumanReview": false,
+      "references": [
+        {
+          "sourceId": "search-start",
+          "claim": "محتوى يخدم المهمة دون ضمان فهرسة أو طول مفضل",
+          "locator": "مساعدة القارئ والمحرك؛ لا ضمان للفهرسة أو الترتيب"
+        },
+        {
+          "sourceId": "helpful",
+          "claim": "إحالة مساندة في نطاق المصدر المبين",
+          "locator": "أسئلة تقويم الفائدة؛ فقرة عدم وجود عدد كلمات مفضل"
+        }
+      ],
+      "originalWork": "خريطة نية وحجم مجهول دون صفحات مدن مكررة",
+      "exampleStatus": "محاكاة عراقية أصلية؛ لا دراسة ميدانية ولا معيار أداء للسوق",
+      "assessment": "خمسة أسئلة راجعها الوكيل؛ النسخة2 تحفظ تاريخ النسخة1؛ معايرة تعليمية مستقلة لم تنفذ",
+      "progression": "يبني على الدروس السابقة بالترتيب المحفوظ؛ التطبيق يرفد مشروع الوحدة وملف الأعمال"
+    },
+    {
+      "id": "m07-l02",
+      "batch": 7,
+      "reviewStatus": "agent-reviewed",
+      "reviewedAt": "2026-11-16",
+      "reviewer": "Codex؛ مراجعة تحريرية وفحص مصادر آلي ثانٍ",
+      "independentHumanReview": false,
+      "references": [
+        {
+          "sourceId": "search-start",
+          "claim": "بنية وروابط مفهومة وعدم ضمان مقتطف أو ترتيب",
+          "locator": "مساعدة القارئ والمحرك؛ لا ضمان للفهرسة أو الترتيب"
+        },
+        {
+          "sourceId": "helpful",
+          "claim": "إحالة مساندة في نطاق المصدر المبين",
+          "locator": "أسئلة تقويم الفائدة؛ فقرة عدم وجود عدد كلمات مفضل"
+        },
+        {
+          "sourceId": "wai-writing",
+          "claim": "إحالة مساندة في نطاق المصدر المبين",
+          "locator": "وضوح العناوين والروابط واللغة والبدائل؛ إرشادات كتابة لا شهادة امتثال"
+        }
+      ],
+      "originalWork": "فحص الصفحة وشرح canonical كرابط أساسي",
+      "exampleStatus": "محاكاة عراقية أصلية؛ لا دراسة ميدانية ولا معيار أداء للسوق",
+      "assessment": "خمسة أسئلة راجعها الوكيل؛ النسخة2 تحفظ تاريخ النسخة1؛ معايرة تعليمية مستقلة لم تنفذ",
+      "progression": "يبني على الدروس السابقة بالترتيب المحفوظ؛ التطبيق يرفد مشروع الوحدة وملف الأعمال"
+    },
+    {
+      "id": "m07-l03",
+      "batch": 7,
+      "reviewStatus": "agent-reviewed",
+      "reviewedAt": "2026-11-16",
+      "reviewer": "Codex؛ مراجعة تحريرية وفحص مصادر آلي ثانٍ",
+      "independentHumanReview": false,
+      "references": [
+        {
+          "sourceId": "robots",
+          "claim": "robots لتنظيم الزحف لا حماية أو ضمان منع الفهرسة",
+          "locator": "التمييز بين تنظيم الزحف ومنع الفهرسة والحماية"
+        },
+        {
+          "sourceId": "search-start",
+          "claim": "إحالة مساندة في نطاق المصدر المبين",
+          "locator": "مساعدة القارئ والمحرك؛ لا ضمان للفهرسة أو الترتيب"
+        }
+      ],
+      "originalWork": "تشخيص مسار وإحالة وصلاحيات حقيقية للخاص",
+      "exampleStatus": "محاكاة عراقية أصلية؛ لا دراسة ميدانية ولا معيار أداء للسوق",
+      "assessment": "خمسة أسئلة راجعها الوكيل؛ النسخة2 تحفظ تاريخ النسخة1؛ معايرة تعليمية مستقلة لم تنفذ",
+      "progression": "يبني على الدروس السابقة بالترتيب المحفوظ؛ التطبيق يرفد مشروع الوحدة وملف الأعمال"
+    },
+    {
+      "id": "m07-l04",
+      "batch": 7,
+      "reviewStatus": "agent-reviewed",
+      "reviewedAt": "2026-11-16",
+      "reviewer": "Codex؛ مراجعة تحريرية وفحص مصادر آلي ثانٍ",
+      "independentHumanReview": false,
+      "references": [
+        {
+          "sourceId": "local-data",
+          "claim": "البيانات المنظمة لا تضمن نتائج غنية",
+          "locator": "معلومات النشاط المنظمة لا تضمن نتيجة غنية؛ لا يثبت أهلية ملف نشاط عراقي"
+        }
+      ],
+      "originalWork": "ملف نشاط يحتاج تحقق أهلية محلي منفصل؛ لا ادعاء ميزات متاحة",
+      "exampleStatus": "محاكاة عراقية أصلية؛ لا دراسة ميدانية ولا معيار أداء للسوق",
+      "assessment": "خمسة أسئلة راجعها الوكيل؛ النسخة2 تحفظ تاريخ النسخة1؛ معايرة تعليمية مستقلة لم تنفذ",
+      "progression": "يبني على الدروس السابقة بالترتيب المحفوظ؛ التطبيق يرفد مشروع الوحدة وملف الأعمال"
+    },
+    {
+      "id": "m07-l05",
+      "batch": 7,
+      "reviewStatus": "agent-reviewed",
+      "reviewedAt": "2026-11-16",
+      "reviewer": "Codex؛ مراجعة تحريرية وفحص مصادر آلي ثانٍ",
+      "independentHumanReview": false,
+      "references": [
+        {
+          "sourceId": "console",
+          "claim": "نطاق Search Console؛ CTR نقر على ظهور",
+          "locator": "نطاق متابعة الزحف والفهرسة وأداء البحث؛ لا مساواة بمبيعات"
+        },
+        {
+          "sourceId": "ads-metrics",
+          "claim": "إحالة مساندة في نطاق المصدر المبين",
+          "locator": "حقلا metrics.ctr وmetrics.average_cpc؛ الحسابات الأخرى اشتقاق حسابي معلن"
+        }
+      ],
+      "originalWork": "مقارنة مصادر مختلفة دون مساواتها قسرًا",
+      "exampleStatus": "محاكاة عراقية أصلية؛ لا دراسة ميدانية ولا معيار أداء للسوق",
+      "assessment": "خمسة أسئلة راجعها الوكيل؛ النسخة2 تحفظ تاريخ النسخة1؛ معايرة تعليمية مستقلة لم تنفذ",
+      "progression": "يبني على الدروس السابقة بالترتيب المحفوظ؛ التطبيق يرفد مشروع الوحدة وملف الأعمال"
+    },
+    {
+      "id": "m08-l01",
+      "batch": 8,
+      "reviewStatus": "agent-reviewed",
+      "reviewedAt": "2026-11-16",
+      "reviewer": "Codex؛ مراجعة تحريرية وفحص مصادر آلي ثانٍ",
+      "independentHumanReview": false,
+      "references": [
+        {
+          "sourceId": "godin-marketing",
+          "claim": "الفصل17 PDF174 الإذن والانتباه",
+          "locator": "الخدمة وأصغر سوق قابلة للنمو والإذن؛ لا وصفة مضمونة للأداء"
+        }
+      ],
+      "originalWork": "سجل غرض ومنع وإعادة اشتراك ببيانات وهمية",
+      "exampleStatus": "محاكاة عراقية أصلية؛ لا دراسة ميدانية ولا معيار أداء للسوق",
+      "assessment": "خمسة أسئلة راجعها الوكيل؛ النسخة2 تحفظ تاريخ النسخة1؛ معايرة تعليمية مستقلة لم تنفذ",
+      "progression": "يبني على الدروس السابقة بالترتيب المحفوظ؛ التطبيق يرفد مشروع الوحدة وملف الأعمال"
+    },
+    {
+      "id": "m08-l02",
+      "batch": 8,
+      "reviewStatus": "agent-reviewed",
+      "reviewedAt": "2026-11-16",
+      "reviewer": "Codex؛ مراجعة تحريرية وفحص مصادر آلي ثانٍ",
+      "independentHumanReview": false,
+      "references": [
+        {
+          "sourceId": "dib-plan",
+          "claim": "رعاية المهتم ضمن علاقة مأذونة",
+          "locator": "السوق والرسالة ومراحل العلاقة؛ مواضع مختارة من النسخة المرفقة، لا نتائج منصات أو نسب نجاح"
+        },
+        {
+          "sourceId": "godin-marketing",
+          "claim": "إحالة مساندة في نطاق المصدر المبين",
+          "locator": "الخدمة وأصغر سوق قابلة للنمو والإذن؛ لا وصفة مضمونة للأداء"
+        }
+      ],
+      "originalWork": "حالات دخول وخروج وتكرار، لا تنفيذ مزود بريد",
+      "exampleStatus": "محاكاة عراقية أصلية؛ لا دراسة ميدانية ولا معيار أداء للسوق",
+      "assessment": "خمسة أسئلة راجعها الوكيل؛ النسخة2 تحفظ تاريخ النسخة1؛ معايرة تعليمية مستقلة لم تنفذ",
+      "progression": "يبني على الدروس السابقة بالترتيب المحفوظ؛ التطبيق يرفد مشروع الوحدة وملف الأعمال"
+    },
+    {
+      "id": "m08-l03",
+      "batch": 8,
+      "reviewStatus": "agent-reviewed",
+      "reviewedAt": "2026-11-16",
+      "reviewer": "Codex؛ مراجعة تحريرية وفحص مصادر آلي ثانٍ",
+      "independentHumanReview": false,
+      "references": [
+        {
+          "sourceId": "spf",
+          "claim": "SPF وDKIM ومحاذاة DMARC؛ المرجع الأساسي الحالي RFC9989 §4.4 بدل7489 المستبدل",
+          "locator": "ملخص و§2 تفويض استخدام النطاق"
+        },
+        {
+          "sourceId": "dkim",
+          "claim": "إحالة مساندة في نطاق المصدر المبين",
+          "locator": "ملخص توقيع يمكن التحقق منه؛ ليس ضمان محتوى"
+        },
+        {
+          "sourceId": "dmarc",
+          "claim": "إحالة مساندة في نطاق المصدر المبين",
+          "locator": "§3.2.10 و§4.4 محاذاة الهوية؛ RFC9989 يستبدل7489 و9091. تفاصيل التقارير انتقلت إلى9990/9991 ولم تستخدم هنا."
+        }
+      ],
+      "originalWork": "قبول خادم ليس واردًا، ولا إعداد DNS أو حدود مزود حديثة",
+      "exampleStatus": "محاكاة عراقية أصلية؛ لا دراسة ميدانية ولا معيار أداء للسوق",
+      "assessment": "خمسة أسئلة راجعها الوكيل؛ النسخة2 تحفظ تاريخ النسخة1؛ معايرة تعليمية مستقلة لم تنفذ",
+      "progression": "يبني على الدروس السابقة بالترتيب المحفوظ؛ التطبيق يرفد مشروع الوحدة وملف الأعمال"
+    },
+    {
+      "id": "m08-l04",
+      "batch": 8,
+      "reviewStatus": "agent-reviewed",
+      "reviewedAt": "2026-11-16",
+      "reviewer": "Codex؛ مراجعة تحريرية وفحص مصادر آلي ثانٍ",
+      "independentHumanReview": false,
+      "references": [
+        {
+          "sourceId": "dib-plan",
+          "claim": "مرحلة بعد الشراء وتنمية العلاقة",
+          "locator": "السوق والرسالة ومراحل العلاقة؛ مواضع مختارة من النسخة المرفقة، لا نتائج منصات أو نسب نجاح"
+        }
+      ],
+      "originalWork": "مجموعة ونافذة ومساهمة تاريخية وحساسية لا LTV مضمون",
+      "exampleStatus": "محاكاة عراقية أصلية؛ لا دراسة ميدانية ولا معيار أداء للسوق",
+      "assessment": "خمسة أسئلة راجعها الوكيل؛ النسخة2 تحفظ تاريخ النسخة1؛ معايرة تعليمية مستقلة لم تنفذ",
+      "progression": "يبني على الدروس السابقة بالترتيب المحفوظ؛ التطبيق يرفد مشروع الوحدة وملف الأعمال"
+    },
+    {
+      "id": "m08-l05",
+      "batch": 8,
+      "reviewStatus": "agent-reviewed",
+      "reviewedAt": "2026-11-16",
+      "reviewer": "Codex؛ مراجعة تحريرية وفحص مصادر آلي ثانٍ",
+      "independentHumanReview": false,
+      "references": [
+        {
+          "sourceId": "dib-plan",
+          "claim": "الإحالة ضمن العلاقة؛ الإفصاح عن علاقة ذات قيمة في نطاق FTC",
+          "locator": "السوق والرسالة ومراحل العلاقة؛ مواضع مختارة من النسخة المرفقة، لا نتائج منصات أو نسب نجاح"
+        },
+        {
+          "sourceId": "ftc-disclosure",
+          "claim": "إحالة مساندة في نطاق المصدر المبين",
+          "locator": "وجود علاقة مادية ووضوح الإفصاح قرب التوصية؛ توجيه أمريكي لا قانون عراقي"
+        }
+      ],
+      "originalWork": "قواعد مكافأة عادلة وحساب مساهمة قبل الثابت",
+      "exampleStatus": "محاكاة عراقية أصلية؛ لا دراسة ميدانية ولا معيار أداء للسوق",
+      "assessment": "خمسة أسئلة راجعها الوكيل؛ النسخة2 تحفظ تاريخ النسخة1؛ معايرة تعليمية مستقلة لم تنفذ",
+      "progression": "يبني على الدروس السابقة بالترتيب المحفوظ؛ التطبيق يرفد مشروع الوحدة وملف الأعمال"
+    },
+    {
+      "id": "m09-l01",
+      "batch": 9,
+      "reviewStatus": "agent-reviewed",
+      "reviewedAt": "2026-11-16",
+      "reviewer": "Codex؛ مراجعة تحريرية وفحص مصادر آلي ثانٍ",
+      "independentHumanReview": false,
+      "references": [
+        {
+          "sourceId": "ads-conversion",
+          "claim": "إجراء تحويل معرف؛ أسماء الإعداد ليست موحدة لكل منصة",
+          "locator": "تعريف إجراء تحويل؛ لا تعميم أسماء مستويات أو واجهات كل منصة"
+        }
+      ],
+      "originalWork": "هدف وسعة وحد توقف وتخطيط مشروط لا ضمان",
+      "exampleStatus": "محاكاة عراقية أصلية؛ لا دراسة ميدانية ولا معيار أداء للسوق",
+      "assessment": "خمسة أسئلة راجعها الوكيل؛ النسخة2 تحفظ تاريخ النسخة1؛ معايرة تعليمية مستقلة لم تنفذ",
+      "progression": "يبني على الدروس السابقة بالترتيب المحفوظ؛ التطبيق يرفد مشروع الوحدة وملف الأعمال"
+    },
+    {
+      "id": "m09-l02",
+      "batch": 9,
+      "reviewStatus": "agent-reviewed",
+      "reviewedAt": "2026-11-16",
+      "reviewer": "Codex؛ مراجعة تحريرية وفحص مصادر آلي ثانٍ",
+      "independentHumanReview": false,
+      "references": [
+        {
+          "sourceId": "godin-marketing",
+          "claim": "خدمة جمهور مناسب واحترام الإذن",
+          "locator": "الخدمة وأصغر سوق قابلة للنمو والإذن؛ لا وصفة مضمونة للأداء"
+        }
+      ],
+      "originalWork": "تجزئة قائمة لا تنشئ إذنًا؛ لا تفاصيل استهداف Meta حالية",
+      "exampleStatus": "محاكاة عراقية أصلية؛ لا دراسة ميدانية ولا معيار أداء للسوق",
+      "assessment": "خمسة أسئلة راجعها الوكيل؛ النسخة2 تحفظ تاريخ النسخة1؛ معايرة تعليمية مستقلة لم تنفذ",
+      "progression": "يبني على الدروس السابقة بالترتيب المحفوظ؛ التطبيق يرفد مشروع الوحدة وملف الأعمال"
+    },
+    {
+      "id": "m09-l03",
+      "batch": 9,
+      "reviewStatus": "agent-reviewed",
+      "reviewedAt": "2026-11-16",
+      "reviewer": "Codex؛ مراجعة تحريرية وفحص مصادر آلي ثانٍ",
+      "independentHumanReview": false,
+      "references": [
+        {
+          "sourceId": "ads-metrics",
+          "claim": "metrics.average_cpc وmetrics.ctr",
+          "locator": "حقلا metrics.ctr وmetrics.average_cpc؛ الحسابات الأخرى اشتقاق حسابي معلن"
+        }
+      ],
+      "originalWork": "اشتقاق CPM وCPA بوحدات ومقامات معلنة؛ لا معادلة مزاد",
+      "exampleStatus": "محاكاة عراقية أصلية؛ لا دراسة ميدانية ولا معيار أداء للسوق",
+      "assessment": "خمسة أسئلة راجعها الوكيل؛ النسخة2 تحفظ تاريخ النسخة1؛ معايرة تعليمية مستقلة لم تنفذ",
+      "progression": "يبني على الدروس السابقة بالترتيب المحفوظ؛ التطبيق يرفد مشروع الوحدة وملف الأعمال"
+    },
+    {
+      "id": "m09-l04",
+      "batch": 9,
+      "reviewStatus": "agent-reviewed",
+      "reviewedAt": "2026-11-16",
+      "reviewer": "Codex؛ مراجعة تحريرية وفحص مصادر آلي ثانٍ",
+      "independentHumanReview": false,
+      "references": [
+        {
+          "sourceId": "dib-plan",
+          "claim": "قيمة العلاقة ومراجعة الجدوى",
+          "locator": "السوق والرسالة ومراحل العلاقة؛ مواضع مختارة من النسخة المرفقة، لا نتائج منصات أو نسب نجاح"
+        }
+      ],
+      "originalWork": "ROAS ومساهمة وتعادل مبسط1÷نسبة موجبة؛ اختبار حساسية",
+      "exampleStatus": "محاكاة عراقية أصلية؛ لا دراسة ميدانية ولا معيار أداء للسوق",
+      "assessment": "خمسة أسئلة راجعها الوكيل؛ النسخة2 تحفظ تاريخ النسخة1؛ معايرة تعليمية مستقلة لم تنفذ",
+      "progression": "يبني على الدروس السابقة بالترتيب المحفوظ؛ التطبيق يرفد مشروع الوحدة وملف الأعمال"
+    },
+    {
+      "id": "m09-l05",
+      "batch": 9,
+      "reviewStatus": "agent-reviewed",
+      "reviewedAt": "2026-11-16",
+      "reviewer": "Codex؛ مراجعة تحريرية وفحص مصادر آلي ثانٍ",
+      "independentHumanReview": false,
+      "references": [
+        {
+          "sourceId": "ads-metrics",
+          "claim": "تعريف نقر وظهور وكلفة نقرة",
+          "locator": "حقلا metrics.ctr وmetrics.average_cpc؛ الحسابات الأخرى اشتقاق حسابي معلن"
+        }
+      ],
+      "originalWork": "شجرة تشخيص قياس وتشغيل قبل فرضية إرهاق",
+      "exampleStatus": "محاكاة عراقية أصلية؛ لا دراسة ميدانية ولا معيار أداء للسوق",
+      "assessment": "خمسة أسئلة راجعها الوكيل؛ النسخة2 تحفظ تاريخ النسخة1؛ معايرة تعليمية مستقلة لم تنفذ",
+      "progression": "يبني على الدروس السابقة بالترتيب المحفوظ؛ التطبيق يرفد مشروع الوحدة وملف الأعمال"
+    },
+    {
+      "id": "m10-l01",
+      "batch": 10,
+      "reviewStatus": "agent-reviewed",
+      "reviewedAt": "2026-11-16",
+      "reviewer": "Codex؛ مراجعة تحريرية وفحص مصادر آلي ثانٍ",
+      "independentHumanReview": false,
+      "references": [
+        {
+          "sourceId": "ga-events",
+          "claim": "فئات الأحداث التلقائية والمعززة والموصى بها والمخصصة",
+          "locator": "فئات الأحداث والفرق بين التلقائي والمحتاج إعدادًا؛ لا تتبع فعلي في الأكاديمية"
+        }
+      ],
+      "originalWork": "قاموس أحداث واختبار تكرار؛ اسم افتراضي ليس حدث GA4 قياسيًا",
+      "exampleStatus": "محاكاة عراقية أصلية؛ لا دراسة ميدانية ولا معيار أداء للسوق",
+      "assessment": "خمسة أسئلة راجعها الوكيل؛ النسخة2 تحفظ تاريخ النسخة1؛ معايرة تعليمية مستقلة لم تنفذ",
+      "progression": "يبني على الدروس السابقة بالترتيب المحفوظ؛ التطبيق يرفد مشروع الوحدة وملف الأعمال"
+    },
+    {
+      "id": "m10-l02",
+      "batch": 10,
+      "reviewStatus": "agent-reviewed",
+      "reviewedAt": "2026-11-16",
+      "reviewer": "Codex؛ مراجعة تحريرية وفحص مصادر آلي ثانٍ",
+      "independentHumanReview": false,
+      "references": [
+        {
+          "sourceId": "ga-config",
+          "claim": "campaign_source/medium/name/content تقابل وسومًا في URL",
+          "locator": "campaign_source/medium/name/content وعلاقتها بوسوم UTM؛ ليست دليل سببية"
+        }
+      ],
+      "originalWork": "قاموس تسمية وإسناد لا سببية ولا هوية",
+      "exampleStatus": "محاكاة عراقية أصلية؛ لا دراسة ميدانية ولا معيار أداء للسوق",
+      "assessment": "خمسة أسئلة راجعها الوكيل؛ النسخة2 تحفظ تاريخ النسخة1؛ معايرة تعليمية مستقلة لم تنفذ",
+      "progression": "يبني على الدروس السابقة بالترتيب المحفوظ؛ التطبيق يرفد مشروع الوحدة وملف الأعمال"
+    },
+    {
+      "id": "m10-l03",
+      "batch": 10,
+      "reviewStatus": "agent-reviewed",
+      "reviewedAt": "2026-11-16",
+      "reviewer": "Codex؛ مراجعة تحريرية وفحص مصادر آلي ثانٍ",
+      "independentHumanReview": false,
+      "references": [
+        {
+          "sourceId": "ads-metrics",
+          "claim": "تعريف معدل يحتاج بسطًا ومقامًا",
+          "locator": "حقلا metrics.ctr وmetrics.average_cpc؛ الحسابات الأخرى اشتقاق حسابي معلن"
+        }
+      ],
+      "originalWork": "جمع النسب من المجاميع وبيانات مفقودة لا صفر",
+      "exampleStatus": "محاكاة عراقية أصلية؛ لا دراسة ميدانية ولا معيار أداء للسوق",
+      "assessment": "خمسة أسئلة راجعها الوكيل؛ النسخة2 تحفظ تاريخ النسخة1؛ معايرة تعليمية مستقلة لم تنفذ",
+      "progression": "يبني على الدروس السابقة بالترتيب المحفوظ؛ التطبيق يرفد مشروع الوحدة وملف الأعمال"
+    },
+    {
+      "id": "m10-l04",
+      "batch": 10,
+      "reviewStatus": "agent-reviewed",
+      "reviewedAt": "2026-11-16",
+      "reviewer": "Codex؛ مراجعة تحريرية وفحص مصادر آلي ثانٍ",
+      "independentHumanReview": false,
+      "references": [
+        {
+          "sourceId": "experiment",
+          "claim": "هدف التصميم يسبق المقارنة",
+          "locator": "تحديد أهداف التجربة قبل اختيار التصميم"
+        }
+      ],
+      "originalWork": "قمع بوحدة ونافذة ثابتة وفحص المزيج لا سبب يقيني",
+      "exampleStatus": "محاكاة عراقية أصلية؛ لا دراسة ميدانية ولا معيار أداء للسوق",
+      "assessment": "خمسة أسئلة راجعها الوكيل؛ النسخة2 تحفظ تاريخ النسخة1؛ معايرة تعليمية مستقلة لم تنفذ",
+      "progression": "يبني على الدروس السابقة بالترتيب المحفوظ؛ التطبيق يرفد مشروع الوحدة وملف الأعمال"
+    },
+    {
+      "id": "m10-l05",
+      "batch": 10,
+      "reviewStatus": "agent-reviewed",
+      "reviewedAt": "2026-11-16",
+      "reviewer": "Codex؛ مراجعة تحريرية وفحص مصادر آلي ثانٍ",
+      "independentHumanReview": false,
+      "references": [
+        {
+          "sourceId": "experiment",
+          "claim": "التصميم يتبع سؤال القرار المعلن",
+          "locator": "تحديد أهداف التجربة قبل اختيار التصميم"
+        }
+      ],
+      "originalWork": "تقرير هدف ونتيجة وحدود وتوصية قابلة للتنفيذ",
+      "exampleStatus": "محاكاة عراقية أصلية؛ لا دراسة ميدانية ولا معيار أداء للسوق",
+      "assessment": "خمسة أسئلة راجعها الوكيل؛ النسخة2 تحفظ تاريخ النسخة1؛ معايرة تعليمية مستقلة لم تنفذ",
+      "progression": "يبني على الدروس السابقة بالترتيب المحفوظ؛ التطبيق يرفد مشروع الوحدة وملف الأعمال"
+    },
+    {
+      "id": "m11-l01",
+      "batch": 11,
+      "reviewStatus": "agent-reviewed",
+      "reviewedAt": "2026-11-16",
+      "reviewer": "Codex؛ مراجعة تحريرية وفحص مصادر آلي ثانٍ",
+      "independentHumanReview": false,
+      "references": [
+        {
+          "sourceId": "experiment",
+          "claim": "قسم5.3.1 تحديد الأهداف قبل اختيار التصميم",
+          "locator": "تحديد أهداف التجربة قبل اختيار التصميم"
+        }
+      ],
+      "originalWork": "سجل فرضيات ودرجات تقديرية وحد ضرر",
+      "exampleStatus": "محاكاة عراقية أصلية؛ لا دراسة ميدانية ولا معيار أداء للسوق",
+      "assessment": "خمسة أسئلة راجعها الوكيل؛ النسخة2 تحفظ تاريخ النسخة1؛ معايرة تعليمية مستقلة لم تنفذ",
+      "progression": "يبني على الدروس السابقة بالترتيب المحفوظ؛ التطبيق يرفد مشروع الوحدة وملف الأعمال"
+    },
+    {
+      "id": "m11-l02",
+      "batch": 11,
+      "reviewStatus": "agent-reviewed",
+      "reviewedAt": "2026-11-16",
+      "reviewer": "Codex؛ مراجعة تحريرية وفحص مصادر آلي ثانٍ",
+      "independentHumanReview": false,
+      "references": [
+        {
+          "sourceId": "experiment",
+          "claim": "هدف مخطط وعدم يقين في تقدير النسبة",
+          "locator": "تحديد أهداف التجربة قبل اختيار التصميم"
+        },
+        {
+          "sourceId": "uncertainty",
+          "claim": "إحالة مساندة في نطاق المصدر المبين",
+          "locator": "فواصل النسب وعدم اليقين وحدود التقريبات؛ لا تحليل دلالة منفذ لجدول التدريب"
+        }
+      ],
+      "originalWork": "فرق وصفي2 نقطة و20٪؛ لا تحليل دلالة مزعوم",
+      "exampleStatus": "محاكاة عراقية أصلية؛ لا دراسة ميدانية ولا معيار أداء للسوق",
+      "assessment": "خمسة أسئلة راجعها الوكيل؛ النسخة2 تحفظ تاريخ النسخة1؛ معايرة تعليمية مستقلة لم تنفذ",
+      "progression": "يبني على الدروس السابقة بالترتيب المحفوظ؛ التطبيق يرفد مشروع الوحدة وملف الأعمال"
+    },
+    {
+      "id": "m11-l03",
+      "batch": 11,
+      "reviewStatus": "agent-reviewed",
+      "reviewedAt": "2026-11-16",
+      "reviewer": "Codex؛ مراجعة تحريرية وفحص مصادر آلي ثانٍ",
+      "independentHumanReview": false,
+      "references": [
+        {
+          "sourceId": "wai-writing",
+          "claim": "وضوح المعلومات وهدف اختبار محدد",
+          "locator": "وضوح العناوين والروابط واللغة والبدائل؛ إرشادات كتابة لا شهادة امتثال"
+        },
+        {
+          "sourceId": "experiment",
+          "claim": "إحالة مساندة في نطاق المصدر المبين",
+          "locator": "تحديد أهداف التجربة قبل اختيار التصميم"
+        }
+      ],
+      "originalWork": "بروتوكول استخدام بعينة نوعية لا نسبة سوق",
+      "exampleStatus": "محاكاة عراقية أصلية؛ لا دراسة ميدانية ولا معيار أداء للسوق",
+      "assessment": "خمسة أسئلة راجعها الوكيل؛ النسخة2 تحفظ تاريخ النسخة1؛ معايرة تعليمية مستقلة لم تنفذ",
+      "progression": "يبني على الدروس السابقة بالترتيب المحفوظ؛ التطبيق يرفد مشروع الوحدة وملف الأعمال"
+    },
+    {
+      "id": "m11-l04",
+      "batch": 11,
+      "reviewStatus": "agent-reviewed",
+      "reviewedAt": "2026-11-16",
+      "reviewer": "Codex؛ مراجعة تحريرية وفحص مصادر آلي ثانٍ",
+      "independentHumanReview": false,
+      "references": [
+        {
+          "sourceId": "tag-consent",
+          "claim": "حالة موافقة تقنية منفصلة؛ نطاق الإفصاح الأمريكي",
+          "locator": "إرسال/تحديث حالة الموافقة لا يخزن الاختيارات أو ينشئ أساسًا قانونيًا"
+        },
+        {
+          "sourceId": "ftc-disclosure",
+          "claim": "إحالة مساندة في نطاق المصدر المبين",
+          "locator": "وجود علاقة مادية ووضوح الإفصاح قرب التوصية؛ توجيه أمريكي لا قانون عراقي"
+        }
+      ],
+      "originalWork": "خريطة بيانات ومراجعة أخلاقية لا فتوى قانونية عراقية",
+      "exampleStatus": "محاكاة عراقية أصلية؛ لا دراسة ميدانية ولا معيار أداء للسوق",
+      "assessment": "خمسة أسئلة راجعها الوكيل؛ النسخة2 تحفظ تاريخ النسخة1؛ معايرة تعليمية مستقلة لم تنفذ",
+      "progression": "يبني على الدروس السابقة بالترتيب المحفوظ؛ التطبيق يرفد مشروع الوحدة وملف الأعمال"
+    },
+    {
+      "id": "m11-l05",
+      "batch": 11,
+      "reviewStatus": "agent-reviewed",
+      "reviewedAt": "2026-11-16",
+      "reviewer": "Codex؛ مراجعة تحريرية وفحص مصادر آلي ثانٍ",
+      "independentHumanReview": false,
+      "references": [
+        {
+          "sourceId": "iam",
+          "claim": "Least privilege وService account keys؛ لا أسرار في المصدر",
+          "locator": "Least privilege وService account keys؛ أصل مبدأ الصلاحيات وحماية المفاتيح، لا خطوات إعداد حساب Meta"
+        }
+      ],
+      "originalWork": "قائمة تشغيل ومراجعة AI وحقوق مدخلات؛ لا حماية جهاز مخترق",
+      "exampleStatus": "محاكاة عراقية أصلية؛ لا دراسة ميدانية ولا معيار أداء للسوق",
+      "assessment": "خمسة أسئلة راجعها الوكيل؛ النسخة2 تحفظ تاريخ النسخة1؛ معايرة تعليمية مستقلة لم تنفذ",
+      "progression": "يبني على الدروس السابقة بالترتيب المحفوظ؛ التطبيق يرفد مشروع الوحدة وملف الأعمال"
+    },
+    {
+      "id": "m12-l01",
+      "batch": 12,
+      "reviewStatus": "agent-reviewed",
+      "reviewedAt": "2026-11-16",
+      "reviewer": "Codex؛ مراجعة تحريرية وفحص مصادر آلي ثانٍ",
+      "independentHumanReview": false,
+      "references": [
+        {
+          "sourceId": "dib-plan",
+          "claim": "ترابط السوق والرسالة والوسائل ومراحل العلاقة",
+          "locator": "السوق والرسالة ومراحل العلاقة؛ مواضع مختارة من النسخة المرفقة، لا نتائج منصات أو نسب نجاح"
+        }
+      ],
+      "originalWork": "نطاق محاكاة ومعايير قبول واعتمادات وسعة",
+      "exampleStatus": "محاكاة عراقية أصلية؛ لا دراسة ميدانية ولا معيار أداء للسوق",
+      "assessment": "خمسة أسئلة راجعها الوكيل؛ النسخة2 تحفظ تاريخ النسخة1؛ معايرة تعليمية مستقلة لم تنفذ",
+      "progression": "يبني على الدروس السابقة بالترتيب المحفوظ؛ التطبيق يرفد مشروع الوحدة وملف الأعمال"
+    },
+    {
+      "id": "m12-l02",
+      "batch": 12,
+      "reviewStatus": "agent-reviewed",
+      "reviewedAt": "2026-11-16",
+      "reviewer": "Codex؛ مراجعة تحريرية وفحص مصادر آلي ثانٍ",
+      "independentHumanReview": false,
+      "references": [
+        {
+          "sourceId": "dib-plan",
+          "claim": "الخطة ومراحل قبل وأثناء وبعد الشراء",
+          "locator": "السوق والرسالة ومراحل العلاقة؛ مواضع مختارة من النسخة المرفقة، لا نتائج منصات أو نسب نجاح"
+        }
+      ],
+      "originalWork": "رحلة تحقق من تسعة قرارات ولا نقل قوالب الكتاب",
+      "exampleStatus": "محاكاة عراقية أصلية؛ لا دراسة ميدانية ولا معيار أداء للسوق",
+      "assessment": "خمسة أسئلة راجعها الوكيل؛ النسخة2 تحفظ تاريخ النسخة1؛ معايرة تعليمية مستقلة لم تنفذ",
+      "progression": "يبني على الدروس السابقة بالترتيب المحفوظ؛ التطبيق يرفد مشروع الوحدة وملف الأعمال"
+    },
+    {
+      "id": "m12-l03",
+      "batch": 12,
+      "reviewStatus": "agent-reviewed",
+      "reviewedAt": "2026-11-16",
+      "reviewer": "Codex؛ مراجعة تحريرية وفحص مصادر آلي ثانٍ",
+      "independentHumanReview": false,
+      "references": [
+        {
+          "sourceId": "wai-writing",
+          "claim": "وضوح نصوص وروابط وبدائل",
+          "locator": "وضوح العناوين والروابط واللغة والبدائل؛ إرشادات كتابة لا شهادة امتثال"
+        }
+      ],
+      "originalWork": "12 حالة QA فعلية عند تنفيذ المتعلم؛ الحاجب يمنع الإطلاق",
+      "exampleStatus": "محاكاة عراقية أصلية؛ لا دراسة ميدانية ولا معيار أداء للسوق",
+      "assessment": "خمسة أسئلة راجعها الوكيل؛ النسخة2 تحفظ تاريخ النسخة1؛ معايرة تعليمية مستقلة لم تنفذ",
+      "progression": "يبني على الدروس السابقة بالترتيب المحفوظ؛ التطبيق يرفد مشروع الوحدة وملف الأعمال"
+    },
+    {
+      "id": "m12-l04",
+      "batch": 12,
+      "reviewStatus": "agent-reviewed",
+      "reviewedAt": "2026-11-16",
+      "reviewer": "Codex؛ مراجعة تحريرية وفحص مصادر آلي ثانٍ",
+      "independentHumanReview": false,
+      "references": [
+        {
+          "sourceId": "ads-metrics",
+          "claim": "CTR وCPC بمقامات معرفة",
+          "locator": "حقلا metrics.ctr وmetrics.average_cpc؛ الحسابات الأخرى اشتقاق حسابي معلن"
+        }
+      ],
+      "originalWork": "جدول أصلي ومساهمة وحساسية2860 قبل الثابت",
+      "exampleStatus": "محاكاة عراقية أصلية؛ لا دراسة ميدانية ولا معيار أداء للسوق",
+      "assessment": "خمسة أسئلة راجعها الوكيل؛ النسخة2 تحفظ تاريخ النسخة1؛ معايرة تعليمية مستقلة لم تنفذ",
+      "progression": "يبني على الدروس السابقة بالترتيب المحفوظ؛ التطبيق يرفد مشروع الوحدة وملف الأعمال"
+    },
+    {
+      "id": "m12-l05",
+      "batch": 12,
+      "reviewStatus": "agent-reviewed",
+      "reviewedAt": "2026-11-16",
+      "reviewer": "Codex؛ مراجعة تحريرية وفحص مصادر آلي ثانٍ",
+      "independentHumanReview": false,
+      "references": [
+        {
+          "sourceId": "godin-stories",
+          "claim": "اتساق القصة مع ما حدث فعلًا",
+          "locator": "منظور الجمهور واتساق القصة والتجربة؛ لا تبرير للخداع"
+        }
+      ],
+      "originalWork": "ملف محاكاة صادق وحقوق وتصدير واستعادة لا اعتماد مستقل",
+      "exampleStatus": "محاكاة عراقية أصلية؛ لا دراسة ميدانية ولا معيار أداء للسوق",
+      "assessment": "خمسة أسئلة راجعها الوكيل؛ النسخة2 تحفظ تاريخ النسخة1؛ معايرة تعليمية مستقلة لم تنفذ",
+      "progression": "يبني على الدروس السابقة بالترتيب المحفوظ؛ التطبيق يرفد مشروع الوحدة وملف الأعمال"
+    }
+  ]
+}

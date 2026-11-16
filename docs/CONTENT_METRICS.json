@@ -1,15 +1,15 @@
 {
-  "generatedAt": "2026-11-15T23:23:21.584Z",
+  "generatedAt": "2026-11-16T10:48:26.517Z",
   "modules": 12,
   "lessons": 60,
   "questions": 300,
   "workedProjects": 12,
   "interactiveActivities": 360,
-  "shortMicroLessons": 45,
-  "generatedCases": 45,
-  "repeatedSummaries": 45,
-  "questionsWithWeakDistractorHeuristic": 37,
-  "questionsWithUniqueLongestCorrectAnswer": 118,
+  "shortMicroLessons": 0,
+  "generatedCases": 0,
+  "repeatedSummaries": 0,
+  "questionsWithWeakDistractorHeuristic": 0,
+  "questionsWithUniqueLongestCorrectAnswer": 109,
   "limitation": "Heuristics flag editorial review, not automatic proof of incorrectness. Structural presence is not professional approval.",
   "records": [
     {
@@ -57,13 +57,8 @@
       "rubricItems": 3,
       "generatedCase": false,
       "repeatedSummary": false,
-      "weakDistractors": [
-        "m01-l01-q1",
-        "m01-l01-q2",
-        "m01-l01-q3"
-      ],
+      "weakDistractors": [],
       "answerLengthCue": [
-        "m01-l01-q3",
         "m01-l01-q5"
       ],
       "bookReferences": [
@@ -86,12 +81,23 @@
           "url": "https://academy.hubspot.com/courses/digital-marketing"
         }
       ],
-      "status": "present; advanced instructional approval open",
+      "status": "agent-reviewed",
+      "sourceBindings": [
+        {
+          "sourceId": "godin-marketing",
+          "claim": "خدمة حاجة محددة واختيار الجمهور قبل الرسالة",
+          "locator": "الخدمة وأصغر سوق قابلة للنمو والإذن؛ لا وصفة مضمونة للأداء"
+        },
+        {
+          "sourceId": "dib-plan",
+          "claim": "إحالة مساندة في نطاق المصدر المبين",
+          "locator": "السوق والرسالة ومراحل العلاقة؛ مواضع مختارة من النسخة المرفقة، لا نتائج منصات أو نسب نجاح"
+        }
+      ],
+      "originalWork": "الخاصية والفائدة والدليل في محاكاة المطعم",
       "independentHumanReview": false,
       "actions": [
-        "معايرة بشرية للأسئلة ومواءمة الهدف والتقييم",
-        "إثبات مرجعي أدق من مجرد رابط بوابة",
-        "استبدال مشتتات غير مرتبطة بالمجال"
+        "معايرة بشرية مستقلة للأسئلة والشرح وقياس التعلم؛ لم تنفذ"
       ]
     },
     {
@@ -139,9 +145,7 @@
       "rubricItems": 3,
       "generatedCase": false,
       "repeatedSummary": false,
-      "weakDistractors": [
-        "m01-l02-q3"
-      ],
+      "weakDistractors": [],
       "answerLengthCue": [
         "m01-l02-q1",
         "m01-l02-q2",
@@ -163,12 +167,18 @@
           "url": "https://skillshop.withgoogle.com/"
         }
       ],
-      "status": "present; advanced instructional approval open",
+      "status": "agent-reviewed",
+      "sourceBindings": [
+        {
+          "sourceId": "dib-plan",
+          "claim": "تنظيم قرارات التسويق والقياس داخل خطة",
+          "locator": "السوق والرسالة ومراحل العلاقة؛ مواضع مختارة من النسخة المرفقة، لا نتائج منصات أو نسب نجاح"
+        }
+      ],
+      "originalWork": "هدف SMART حسابي مع اختبار السعة لا تنبؤ بالطلب",
       "independentHumanReview": false,
       "actions": [
-        "معايرة بشرية للأسئلة ومواءمة الهدف والتقييم",
-        "إثبات مرجعي أدق من مجرد رابط بوابة",
-        "استبدال مشتتات غير مرتبطة بالمجال"
+        "معايرة بشرية مستقلة للأسئلة والشرح وقياس التعلم؛ لم تنفذ"
       ]
     },
     {
@@ -216,9 +226,7 @@
       "rubricItems": 3,
       "generatedCase": false,
       "repeatedSummary": false,
-      "weakDistractors": [
-        "m01-l03-q5"
-      ],
+      "weakDistractors": [],
       "answerLengthCue": [
         "m01-l03-q2",
         "m01-l03-q4"
@@ -243,12 +251,18 @@
           "url": "https://developers.google.com/search/docs/fundamentals/seo-starter-guide"
         }
       ],
-      "status": "present; advanced instructional approval open",
+      "status": "agent-reviewed",
+      "sourceBindings": [
+        {
+          "sourceId": "dib-plan",
+          "claim": "اختيار وسيلة الوصول بعد تحديد السوق والرسالة",
+          "locator": "السوق والرسالة ومراحل العلاقة؛ مواضع مختارة من النسخة المرفقة، لا نتائج منصات أو نسب نجاح"
+        }
+      ],
+      "originalWork": "مقارنة الوقت والتأهل لا افتراض منصة أنسب للعراق",
       "independentHumanReview": false,
       "actions": [
-        "معايرة بشرية للأسئلة ومواءمة الهدف والتقييم",
-        "إثبات مرجعي أدق من مجرد رابط بوابة",
-        "استبدال مشتتات غير مرتبطة بالمجال"
+        "معايرة بشرية مستقلة للأسئلة والشرح وقياس التعلم؛ لم تنفذ"
       ]
     },
     {
@@ -296,13 +310,9 @@
       "rubricItems": 3,
       "generatedCase": false,
       "repeatedSummary": false,
-      "weakDistractors": [
-        "m01-l04-q3",
-        "m01-l04-q5"
-      ],
+      "weakDistractors": [],
       "answerLengthCue": [
-        "m01-l04-q3",
-        "m01-l04-q5"
+        "m01-l04-q3"
       ],
       "bookReferences": [
         {
@@ -324,12 +334,18 @@
           "url": "https://academy.hubspot.com/courses/digital-marketing"
         }
       ],
-      "status": "present; advanced instructional approval open",
+      "status": "agent-reviewed",
+      "sourceBindings": [
+        {
+          "sourceId": "dib-plan",
+          "claim": "مراحل قبل وأثناء وبعد الشراء",
+          "locator": "السوق والرسالة ومراحل العلاقة؛ مواضع مختارة من النسخة المرفقة، لا نتائج منصات أو نسب نجاح"
+        }
+      ],
+      "originalWork": "رحلة غير خطية واكتشاف تكلفة التوصيل",
       "independentHumanReview": false,
       "actions": [
-        "معايرة بشرية للأسئلة ومواءمة الهدف والتقييم",
-        "إثبات مرجعي أدق من مجرد رابط بوابة",
-        "استبدال مشتتات غير مرتبطة بالمجال"
+        "معايرة بشرية مستقلة للأسئلة والشرح وقياس التعلم؛ لم تنفذ"
       ]
     },
     {
@@ -377,9 +393,7 @@
       "rubricItems": 3,
       "generatedCase": false,
       "repeatedSummary": false,
-      "weakDistractors": [
-        "m01-l05-q5"
-      ],
+      "weakDistractors": [],
       "answerLengthCue": [
         "m01-l05-q1",
         "m01-l05-q3"
@@ -400,12 +414,18 @@
           "url": "https://skillshop.withgoogle.com/"
         }
       ],
-      "status": "present; advanced instructional approval open",
+      "status": "agent-reviewed",
+      "sourceBindings": [
+        {
+          "sourceId": "experiment",
+          "claim": "تحديد هدف التجربة قبل التصميم",
+          "locator": "تحديد أهداف التجربة قبل اختيار التصميم"
+        }
+      ],
+      "originalWork": "تغيير واحد ومقارنة وصفية ومقام صفري",
       "independentHumanReview": false,
       "actions": [
-        "معايرة بشرية للأسئلة ومواءمة الهدف والتقييم",
-        "إثبات مرجعي أدق من مجرد رابط بوابة",
-        "استبدال مشتتات غير مرتبطة بالمجال"
+        "معايرة بشرية مستقلة للأسئلة والشرح وقياس التعلم؛ لم تنفذ"
       ]
     },
     {
@@ -481,11 +501,18 @@
           "url": "https://www.semrush.com/academy/"
         }
       ],
-      "status": "present; advanced instructional approval open",
+      "status": "agent-reviewed",
+      "sourceBindings": [
+        {
+          "sourceId": "godin-marketing",
+          "claim": "خدمة الناس عبر فهم حاجتهم",
+          "locator": "الخدمة وأصغر سوق قابلة للنمو والإذن؛ لا وصفة مضمونة للأداء"
+        }
+      ],
+      "originalWork": "فصل الملاحظة والتفسير وسؤال بحث محايد",
       "independentHumanReview": false,
       "actions": [
-        "معايرة بشرية للأسئلة ومواءمة الهدف والتقييم",
-        "إثبات مرجعي أدق من مجرد رابط بوابة"
+        "معايرة بشرية مستقلة للأسئلة والشرح وقياس التعلم؛ لم تنفذ"
       ]
     },
     {
@@ -560,11 +587,18 @@
           "url": "https://grow.google/certificates/digital-marketing-ecommerce/"
         }
       ],
-      "status": "present; advanced instructional approval open",
+      "status": "agent-reviewed",
+      "sourceBindings": [
+        {
+          "sourceId": "godin-marketing",
+          "claim": "فهم منظور من نخدم",
+          "locator": "الخدمة وأصغر سوق قابلة للنمو والإذن؛ لا وصفة مضمونة للأداء"
+        }
+      ],
+      "originalWork": "بروتوكول مقابلة قصير أصلي وليس دراسة منشورة",
       "independentHumanReview": false,
       "actions": [
-        "معايرة بشرية للأسئلة ومواءمة الهدف والتقييم",
-        "إثبات مرجعي أدق من مجرد رابط بوابة"
+        "معايرة بشرية مستقلة للأسئلة والشرح وقياس التعلم؛ لم تنفذ"
       ]
     },
     {
@@ -612,12 +646,10 @@
       "rubricItems": 3,
       "generatedCase": false,
       "repeatedSummary": false,
-      "weakDistractors": [
-        "m02-l03-q3",
-        "m02-l03-q5"
-      ],
+      "weakDistractors": [],
       "answerLengthCue": [
         "m02-l03-q2",
+        "m02-l03-q3",
         "m02-l03-q4"
       ],
       "bookReferences": [
@@ -640,12 +672,18 @@
           "url": "https://academy.hubspot.com/courses/digital-marketing"
         }
       ],
-      "status": "present; advanced instructional approval open",
+      "status": "agent-reviewed",
+      "sourceBindings": [
+        {
+          "sourceId": "dib-plan",
+          "claim": "اختيار السوق وصياغة الرسالة المناسبة له",
+          "locator": "السوق والرسالة ومراحل العلاقة؛ مواضع مختارة من النسخة المرفقة، لا نتائج منصات أو نسب نجاح"
+        }
+      ],
+      "originalWork": "مقارنة بديل طباعة بوحدة ووقت وتكلفة متسقة",
       "independentHumanReview": false,
       "actions": [
-        "معايرة بشرية للأسئلة ومواءمة الهدف والتقييم",
-        "إثبات مرجعي أدق من مجرد رابط بوابة",
-        "استبدال مشتتات غير مرتبطة بالمجال"
+        "معايرة بشرية مستقلة للأسئلة والشرح وقياس التعلم؛ لم تنفذ"
       ]
     },
     {
@@ -693,12 +731,8 @@
       "rubricItems": 3,
       "generatedCase": false,
       "repeatedSummary": false,
-      "weakDistractors": [
-        "m02-l04-q1",
-        "m02-l04-q4"
-      ],
+      "weakDistractors": [],
       "answerLengthCue": [
-        "m02-l04-q1",
         "m02-l04-q5"
       ],
       "bookReferences": [
@@ -721,12 +755,18 @@
           "url": "https://academy.hubspot.com/courses/digital-marketing"
         }
       ],
-      "status": "present; advanced instructional approval open",
+      "status": "agent-reviewed",
+      "sourceBindings": [
+        {
+          "sourceId": "godin-marketing",
+          "claim": "أصغر سوق قابلة للنمو، الفصل4 PDF33",
+          "locator": "الخدمة وأصغر سوق قابلة للنمو والإذن؛ لا وصفة مضمونة للأداء"
+        }
+      ],
+      "originalWork": "درجات شرائح تقديرية مع قيد التشغيل",
       "independentHumanReview": false,
       "actions": [
-        "معايرة بشرية للأسئلة ومواءمة الهدف والتقييم",
-        "إثبات مرجعي أدق من مجرد رابط بوابة",
-        "استبدال مشتتات غير مرتبطة بالمجال"
+        "معايرة بشرية مستقلة للأسئلة والشرح وقياس التعلم؛ لم تنفذ"
       ]
     },
     {
@@ -774,11 +814,9 @@
       "rubricItems": 3,
       "generatedCase": false,
       "repeatedSummary": false,
-      "weakDistractors": [
-        "m02-l05-q1",
-        "m02-l05-q4"
-      ],
+      "weakDistractors": [],
       "answerLengthCue": [
+        "m02-l05-q1",
         "m02-l05-q2",
         "m02-l05-q4",
         "m02-l05-q5"
@@ -807,12 +845,18 @@
           "url": "https://grow.google/certificates/digital-marketing-ecommerce/"
         }
       ],
-      "status": "present; advanced instructional approval open",
+      "status": "agent-reviewed",
+      "sourceBindings": [
+        {
+          "sourceId": "godin-stories",
+          "claim": "تأثير منظور الجمهور في فهم القصة",
+          "locator": "منظور الجمهور واتساق القصة والتجربة؛ لا تبرير للخداع"
+        }
+      ],
+      "originalWork": "شخصية مبنية على موقف وافتراضات موسومة",
       "independentHumanReview": false,
       "actions": [
-        "معايرة بشرية للأسئلة ومواءمة الهدف والتقييم",
-        "إثبات مرجعي أدق من مجرد رابط بوابة",
-        "استبدال مشتتات غير مرتبطة بالمجال"
+        "معايرة بشرية مستقلة للأسئلة والشرح وقياس التعلم؛ لم تنفذ"
       ]
     },
     {
@@ -883,11 +927,18 @@
           "url": "https://academy.hubspot.com/courses/digital-marketing"
         }
       ],
-      "status": "present; advanced instructional approval open",
+      "status": "agent-reviewed",
+      "sourceBindings": [
+        {
+          "sourceId": "godin-marketing",
+          "claim": "فهم من نخدم لا محاولة خدمة الجميع",
+          "locator": "الخدمة وأصغر سوق قابلة للنمو والإذن؛ لا وصفة مضمونة للأداء"
+        }
+      ],
+      "originalWork": "خريطة ملاحظة وتفسير لا تشخيص نفسي",
       "independentHumanReview": false,
       "actions": [
-        "معايرة بشرية للأسئلة ومواءمة الهدف والتقييم",
-        "إثبات مرجعي أدق من مجرد رابط بوابة"
+        "معايرة بشرية مستقلة للأسئلة والشرح وقياس التعلم؛ لم تنفذ"
       ]
     },
     {
@@ -935,13 +986,9 @@
       "rubricItems": 3,
       "generatedCase": false,
       "repeatedSummary": false,
-      "weakDistractors": [
-        "m03-l02-q4"
-      ],
+      "weakDistractors": [],
       "answerLengthCue": [
-        "m03-l02-q1",
-        "m03-l02-q2",
-        "m03-l02-q4"
+        "m03-l02-q2"
       ],
       "bookReferences": [
         {
@@ -959,12 +1006,23 @@
           "url": "https://academy.hubspot.com/courses/digital-marketing"
         }
       ],
-      "status": "present; advanced instructional approval open",
+      "status": "agent-reviewed",
+      "sourceBindings": [
+        {
+          "sourceId": "godin-marketing",
+          "claim": "قيمة ذات صلة وقصة تفي بها التجربة",
+          "locator": "الخدمة وأصغر سوق قابلة للنمو والإذن؛ لا وصفة مضمونة للأداء"
+        },
+        {
+          "sourceId": "godin-stories",
+          "claim": "إحالة مساندة في نطاق المصدر المبين",
+          "locator": "منظور الجمهور واتساق القصة والتجربة؛ لا تبرير للخداع"
+        }
+      ],
+      "originalWork": "فحص فهم الوعد والتأهل وحدود الدليل",
       "independentHumanReview": false,
       "actions": [
-        "معايرة بشرية للأسئلة ومواءمة الهدف والتقييم",
-        "إثبات مرجعي أدق من مجرد رابط بوابة",
-        "استبدال مشتتات غير مرتبطة بالمجال"
+        "معايرة بشرية مستقلة للأسئلة والشرح وقياس التعلم؛ لم تنفذ"
       ]
     },
     {
@@ -1012,9 +1070,7 @@
       "rubricItems": 3,
       "generatedCase": false,
       "repeatedSummary": false,
-      "weakDistractors": [
-        "m03-l03-q4"
-      ],
+      "weakDistractors": [],
       "answerLengthCue": [
         "m03-l03-q1",
         "m03-l03-q3",
@@ -1036,12 +1092,18 @@
           "url": "https://academy.hubspot.com/courses/digital-marketing"
         }
       ],
-      "status": "present; advanced instructional approval open",
+      "status": "agent-reviewed",
+      "sourceBindings": [
+        {
+          "sourceId": "dib-plan",
+          "claim": "اختيار سوق ورسالة بدل تعميم العرض",
+          "locator": "السوق والرسالة ومراحل العلاقة؛ مواضع مختارة من النسخة المرفقة، لا نتائج منصات أو نسب نجاح"
+        }
+      ],
+      "originalWork": "خريطة تموضع بمقاييس معلنة ومفاضلة سعة",
       "independentHumanReview": false,
       "actions": [
-        "معايرة بشرية للأسئلة ومواءمة الهدف والتقييم",
-        "إثبات مرجعي أدق من مجرد رابط بوابة",
-        "استبدال مشتتات غير مرتبطة بالمجال"
+        "معايرة بشرية مستقلة للأسئلة والشرح وقياس التعلم؛ لم تنفذ"
       ]
     },
     {
@@ -1089,12 +1151,9 @@
       "rubricItems": 3,
       "generatedCase": false,
       "repeatedSummary": false,
-      "weakDistractors": [
-        "m03-l04-q5"
-      ],
+      "weakDistractors": [],
       "answerLengthCue": [
-        "m03-l04-q2",
-        "m03-l04-q5"
+        "m03-l04-q2"
       ],
       "bookReferences": [
         {
@@ -1112,12 +1171,18 @@
           "url": "https://academy.hubspot.com/courses/digital-marketing"
         }
       ],
-      "status": "present; advanced instructional approval open",
+      "status": "agent-reviewed",
+      "sourceBindings": [
+        {
+          "sourceId": "wai-writing",
+          "claim": "عناوين وروابط ولغة أوضح",
+          "locator": "وضوح العناوين والروابط واللغة والبدائل؛ إرشادات كتابة لا شهادة امتثال"
+        }
+      ],
+      "originalWork": "دليل نبرة عربي عبر الإعلان والدعم",
       "independentHumanReview": false,
       "actions": [
-        "معايرة بشرية للأسئلة ومواءمة الهدف والتقييم",
-        "إثبات مرجعي أدق من مجرد رابط بوابة",
-        "استبدال مشتتات غير مرتبطة بالمجال"
+        "معايرة بشرية مستقلة للأسئلة والشرح وقياس التعلم؛ لم تنفذ"
       ]
     },
     {
@@ -1185,19 +1250,26 @@
           "url": "https://academy.hubspot.com/courses/digital-marketing"
         }
       ],
-      "status": "present; advanced instructional approval open",
+      "status": "agent-reviewed",
+      "sourceBindings": [
+        {
+          "sourceId": "dib-plan",
+          "claim": "ربط العرض بالقيمة والعلاقة",
+          "locator": "السوق والرسالة ومراحل العلاقة؛ مواضع مختارة من النسخة المرفقة، لا نتائج منصات أو نسب نجاح"
+        }
+      ],
+      "originalWork": "سعر ناقص تكلفة متغيرة؛ حساب مساهمة لا ربح صاف",
       "independentHumanReview": false,
       "actions": [
-        "معايرة بشرية للأسئلة ومواءمة الهدف والتقييم",
-        "إثبات مرجعي أدق من مجرد رابط بوابة"
+        "معايرة بشرية مستقلة للأسئلة والشرح وقياس التعلم؛ لم تنفذ"
       ]
     },
     {
       "id": "m04-l01",
       "module": 4,
       "title": "قصة العميل والوعد الصادق",
-      "readingWords": 164,
-      "readingParagraphs": 3,
+      "readingWords": 292,
+      "readingParagraphs": 5,
       "questions": 5,
       "interactions": [
         {
@@ -1235,11 +1307,9 @@
       "practicalActivity": true,
       "dailyMission": true,
       "rubricItems": 3,
-      "generatedCase": true,
-      "repeatedSummary": true,
-      "weakDistractors": [
-        "m04-l01-q1"
-      ],
+      "generatedCase": false,
+      "repeatedSummary": false,
+      "weakDistractors": [],
       "answerLengthCue": [
         "m04-l01-q3",
         "m04-l01-q4",
@@ -1261,23 +1331,26 @@
           "url": "https://academy.hubspot.com/courses/digital-marketing"
         }
       ],
-      "status": "present; advanced instructional approval open",
+      "status": "agent-reviewed",
+      "sourceBindings": [
+        {
+          "sourceId": "godin-stories",
+          "claim": "اتساق القصة والتجربة ومنظور الجمهور",
+          "locator": "منظور الجمهور واتساق القصة والتجربة؛ لا تبرير للخداع"
+        }
+      ],
+      "originalWork": "قصة مخبز عراقية مؤلفة مع فحص الوعد",
       "independentHumanReview": false,
       "actions": [
-        "معايرة بشرية للأسئلة ومواءمة الهدف والتقييم",
-        "إثبات مرجعي أدق من مجرد رابط بوابة",
-        "توسيع التطبيق المتقدم والأمثلة؛ الشرح الحالي درس مصغر",
-        "تأليف حالة نقل مستقلة بدل إعادة سؤال الاختبار",
-        "كتابة خلاصة معرفة وقرار بدل تكرار الهدف",
-        "استبدال مشتتات غير مرتبطة بالمجال"
+        "معايرة بشرية مستقلة للأسئلة والشرح وقياس التعلم؛ لم تنفذ"
       ]
     },
     {
       "id": "m04-l02",
       "module": 4,
       "title": "العنوان والخطاف دون تضليل",
-      "readingWords": 153,
-      "readingParagraphs": 3,
+      "readingWords": 264,
+      "readingParagraphs": 5,
       "questions": 5,
       "interactions": [
         {
@@ -1315,8 +1388,8 @@
       "practicalActivity": true,
       "dailyMission": true,
       "rubricItems": 3,
-      "generatedCase": true,
-      "repeatedSummary": true,
+      "generatedCase": false,
+      "repeatedSummary": false,
       "weakDistractors": [],
       "answerLengthCue": [
         "m04-l02-q1",
@@ -1339,22 +1412,26 @@
           "url": "https://academy.hubspot.com/courses/digital-marketing"
         }
       ],
-      "status": "present; advanced instructional approval open",
+      "status": "agent-reviewed",
+      "sourceBindings": [
+        {
+          "sourceId": "godin-stories",
+          "claim": "فهم القصة ضمن توقعات جمهورها",
+          "locator": "منظور الجمهور واتساق القصة والتجربة؛ لا تبرير للخداع"
+        }
+      ],
+      "originalWork": "اختبار فهم عنوان ونسبة التأهل بمقام معلوم",
       "independentHumanReview": false,
       "actions": [
-        "معايرة بشرية للأسئلة ومواءمة الهدف والتقييم",
-        "إثبات مرجعي أدق من مجرد رابط بوابة",
-        "توسيع التطبيق المتقدم والأمثلة؛ الشرح الحالي درس مصغر",
-        "تأليف حالة نقل مستقلة بدل إعادة سؤال الاختبار",
-        "كتابة خلاصة معرفة وقرار بدل تكرار الهدف"
+        "معايرة بشرية مستقلة للأسئلة والشرح وقياس التعلم؛ لم تنفذ"
       ]
     },
     {
       "id": "m04-l03",
       "module": 4,
       "title": "كتابة الإقناع: حاجة ودليل وإجراء",
-      "readingWords": 154,
-      "readingParagraphs": 3,
+      "readingWords": 276,
+      "readingParagraphs": 5,
       "questions": 5,
       "interactions": [
         {
@@ -1392,11 +1469,12 @@
       "practicalActivity": true,
       "dailyMission": true,
       "rubricItems": 3,
-      "generatedCase": true,
-      "repeatedSummary": true,
+      "generatedCase": false,
+      "repeatedSummary": false,
       "weakDistractors": [],
       "answerLengthCue": [
         "m04-l03-q2",
+        "m04-l03-q3",
         "m04-l03-q4",
         "m04-l03-q5"
       ],
@@ -1416,22 +1494,31 @@
           "url": "https://academy.hubspot.com/courses/digital-marketing"
         }
       ],
-      "status": "present; advanced instructional approval open",
+      "status": "agent-reviewed",
+      "sourceBindings": [
+        {
+          "sourceId": "dib-plan",
+          "claim": "رسالة ملائمة ووعد يطابق التجربة",
+          "locator": "السوق والرسالة ومراحل العلاقة؛ مواضع مختارة من النسخة المرفقة، لا نتائج منصات أو نسب نجاح"
+        },
+        {
+          "sourceId": "godin-stories",
+          "claim": "إحالة مساندة في نطاق المصدر المبين",
+          "locator": "منظور الجمهور واتساق القصة والتجربة؛ لا تبرير للخداع"
+        }
+      ],
+      "originalWork": "جدول حاجة ودليل وإجراء دون ادعاءات غير مثبتة",
       "independentHumanReview": false,
       "actions": [
-        "معايرة بشرية للأسئلة ومواءمة الهدف والتقييم",
-        "إثبات مرجعي أدق من مجرد رابط بوابة",
-        "توسيع التطبيق المتقدم والأمثلة؛ الشرح الحالي درس مصغر",
-        "تأليف حالة نقل مستقلة بدل إعادة سؤال الاختبار",
-        "كتابة خلاصة معرفة وقرار بدل تكرار الهدف"
+        "معايرة بشرية مستقلة للأسئلة والشرح وقياس التعلم؛ لم تنفذ"
       ]
     },
     {
       "id": "m04-l04",
       "module": 4,
       "title": "صفحة هبوط تفي بوعد الإعلان",
-      "readingWords": 161,
-      "readingParagraphs": 3,
+      "readingWords": 272,
+      "readingParagraphs": 5,
       "questions": 5,
       "interactions": [
         {
@@ -1469,11 +1556,9 @@
       "practicalActivity": true,
       "dailyMission": true,
       "rubricItems": 3,
-      "generatedCase": true,
-      "repeatedSummary": true,
-      "weakDistractors": [
-        "m04-l04-q2"
-      ],
+      "generatedCase": false,
+      "repeatedSummary": false,
+      "weakDistractors": [],
       "answerLengthCue": [],
       "bookReferences": [
         {
@@ -1491,23 +1576,26 @@
           "url": "https://support.google.com/analytics/answer/9304153"
         }
       ],
-      "status": "present; advanced instructional approval open",
+      "status": "agent-reviewed",
+      "sourceBindings": [
+        {
+          "sourceId": "wai-writing",
+          "claim": "تسميات وروابط واضحة وتعليمات مفهومة",
+          "locator": "وضوح العناوين والروابط واللغة والبدائل؛ إرشادات كتابة لا شهادة امتثال"
+        }
+      ],
+      "originalWork": "رحلات نجاح وخطأ ورفض وقياس إكمال النموذج",
       "independentHumanReview": false,
       "actions": [
-        "معايرة بشرية للأسئلة ومواءمة الهدف والتقييم",
-        "إثبات مرجعي أدق من مجرد رابط بوابة",
-        "توسيع التطبيق المتقدم والأمثلة؛ الشرح الحالي درس مصغر",
-        "تأليف حالة نقل مستقلة بدل إعادة سؤال الاختبار",
-        "كتابة خلاصة معرفة وقرار بدل تكرار الهدف",
-        "استبدال مشتتات غير مرتبطة بالمجال"
+        "معايرة بشرية مستقلة للأسئلة والشرح وقياس التعلم؛ لم تنفذ"
       ]
     },
     {
       "id": "m04-l05",
       "module": 4,
       "title": "اختبار الرسائل ومراجعة الادعاءات",
-      "readingWords": 148,
-      "readingParagraphs": 3,
+      "readingWords": 261,
+      "readingParagraphs": 5,
       "questions": 5,
       "interactions": [
         {
@@ -1545,14 +1633,10 @@
       "practicalActivity": true,
       "dailyMission": true,
       "rubricItems": 3,
-      "generatedCase": true,
-      "repeatedSummary": true,
-      "weakDistractors": [
-        "m04-l05-q5"
-      ],
-      "answerLengthCue": [
-        "m04-l05-q5"
-      ],
+      "generatedCase": false,
+      "repeatedSummary": false,
+      "weakDistractors": [],
+      "answerLengthCue": [],
       "bookReferences": [
         {
           "title": "سيث جودين، كل المسوقون يسردون قصصًا",
@@ -1569,23 +1653,31 @@
           "url": "https://academy.hubspot.com/courses/digital-marketing"
         }
       ],
-      "status": "present; advanced instructional approval open",
+      "status": "agent-reviewed",
+      "sourceBindings": [
+        {
+          "sourceId": "experiment",
+          "claim": "هدف تجربة معلوم وصدق القصة مستقل عن جاذبيتها",
+          "locator": "تحديد أهداف التجربة قبل اختيار التصميم"
+        },
+        {
+          "sourceId": "godin-stories",
+          "claim": "إحالة مساندة في نطاق المصدر المبين",
+          "locator": "منظور الجمهور واتساق القصة والتجربة؛ لا تبرير للخداع"
+        }
+      ],
+      "originalWork": "سجل ادعاءات وفرق النقاط المئوية والنسبي",
       "independentHumanReview": false,
       "actions": [
-        "معايرة بشرية للأسئلة ومواءمة الهدف والتقييم",
-        "إثبات مرجعي أدق من مجرد رابط بوابة",
-        "توسيع التطبيق المتقدم والأمثلة؛ الشرح الحالي درس مصغر",
-        "تأليف حالة نقل مستقلة بدل إعادة سؤال الاختبار",
-        "كتابة خلاصة معرفة وقرار بدل تكرار الهدف",
-        "استبدال مشتتات غير مرتبطة بالمجال"
+        "معايرة بشرية مستقلة للأسئلة والشرح وقياس التعلم؛ لم تنفذ"
       ]
     },
     {
       "id": "m05-l01",
       "module": 5,
       "title": "اختيار المنصة ودور كل قناة",
-      "readingWords": 162,
-      "readingParagraphs": 3,
+      "readingWords": 282,
+      "readingParagraphs": 5,
       "questions": 5,
       "interactions": [
         {
@@ -1623,14 +1715,10 @@
       "practicalActivity": true,
       "dailyMission": true,
       "rubricItems": 3,
-      "generatedCase": true,
-      "repeatedSummary": true,
-      "weakDistractors": [
-        "m05-l01-q2"
-      ],
-      "answerLengthCue": [
-        "m05-l01-q4"
-      ],
+      "generatedCase": false,
+      "repeatedSummary": false,
+      "weakDistractors": [],
+      "answerLengthCue": [],
       "bookReferences": [
         {
           "title": "سيث جودين، هذا هو التسويق",
@@ -1647,23 +1735,26 @@
           "url": "https://academy.hubspot.com/courses/digital-marketing"
         }
       ],
-      "status": "present; advanced instructional approval open",
+      "status": "agent-reviewed",
+      "sourceBindings": [
+        {
+          "sourceId": "dib-plan",
+          "claim": "اختيار وسيلة الوصول وفق السوق والرسالة",
+          "locator": "السوق والرسالة ومراحل العلاقة؛ مواضع مختارة من النسخة المرفقة، لا نتائج منصات أو نسب نجاح"
+        }
+      ],
+      "originalWork": "قرار قناة تحت قيد الوقت دون نسب انتشار عراقية",
       "independentHumanReview": false,
       "actions": [
-        "معايرة بشرية للأسئلة ومواءمة الهدف والتقييم",
-        "إثبات مرجعي أدق من مجرد رابط بوابة",
-        "توسيع التطبيق المتقدم والأمثلة؛ الشرح الحالي درس مصغر",
-        "تأليف حالة نقل مستقلة بدل إعادة سؤال الاختبار",
-        "كتابة خلاصة معرفة وقرار بدل تكرار الهدف",
-        "استبدال مشتتات غير مرتبطة بالمجال"
+        "معايرة بشرية مستقلة للأسئلة والشرح وقياس التعلم؛ لم تنفذ"
       ]
     },
     {
       "id": "m05-l02",
       "module": 5,
       "title": "أعمدة المحتوى وتقويم النشر",
-      "readingWords": 148,
-      "readingParagraphs": 3,
+      "readingWords": 265,
+      "readingParagraphs": 5,
       "questions": 5,
       "interactions": [
         {
@@ -1701,14 +1792,10 @@
       "practicalActivity": true,
       "dailyMission": true,
       "rubricItems": 3,
-      "generatedCase": true,
-      "repeatedSummary": true,
-      "weakDistractors": [
-        "m05-l02-q1",
-        "m05-l02-q2"
-      ],
+      "generatedCase": false,
+      "repeatedSummary": false,
+      "weakDistractors": [],
       "answerLengthCue": [
-        "m05-l02-q2",
         "m05-l02-q5"
       ],
       "bookReferences": [
@@ -1727,23 +1814,26 @@
           "url": "https://academy.hubspot.com/courses/digital-marketing"
         }
       ],
-      "status": "present; advanced instructional approval open",
+      "status": "agent-reviewed",
+      "sourceBindings": [
+        {
+          "sourceId": "wai-writing",
+          "claim": "بنية واضحة وفائدة القارئ",
+          "locator": "وضوح العناوين والروابط واللغة والبدائل؛ إرشادات كتابة لا شهادة امتثال"
+        }
+      ],
+      "originalWork": "تقويم ست مواد مع دليل ومراجعة ومسؤول",
       "independentHumanReview": false,
       "actions": [
-        "معايرة بشرية للأسئلة ومواءمة الهدف والتقييم",
-        "إثبات مرجعي أدق من مجرد رابط بوابة",
-        "توسيع التطبيق المتقدم والأمثلة؛ الشرح الحالي درس مصغر",
-        "تأليف حالة نقل مستقلة بدل إعادة سؤال الاختبار",
-        "كتابة خلاصة معرفة وقرار بدل تكرار الهدف",
-        "استبدال مشتتات غير مرتبطة بالمجال"
+        "معايرة بشرية مستقلة للأسئلة والشرح وقياس التعلم؛ لم تنفذ"
       ]
     },
     {
       "id": "m05-l03",
       "module": 5,
       "title": "إدارة المجتمع وخدمة التعليقات",
-      "readingWords": 152,
-      "readingParagraphs": 3,
+      "readingWords": 271,
+      "readingParagraphs": 5,
       "questions": 5,
       "interactions": [
         {
@@ -1781,12 +1871,13 @@
       "practicalActivity": true,
       "dailyMission": true,
       "rubricItems": 3,
-      "generatedCase": true,
-      "repeatedSummary": true,
+      "generatedCase": false,
+      "repeatedSummary": false,
       "weakDistractors": [],
       "answerLengthCue": [
         "m05-l03-q1",
         "m05-l03-q2",
+        "m05-l03-q4",
         "m05-l03-q5"
       ],
       "bookReferences": [
@@ -1805,22 +1896,26 @@
           "url": "https://www.w3.org/WAI/tips/writing/"
         }
       ],
-      "status": "present; advanced instructional approval open",
+      "status": "agent-reviewed",
+      "sourceBindings": [
+        {
+          "sourceId": "godin-marketing",
+          "claim": "خدمة الناس والعلاقة بدل ضغط البيع",
+          "locator": "الخدمة وأصغر سوق قابلة للنمو والإذن؛ لا وصفة مضمونة للأداء"
+        }
+      ],
+      "originalWork": "سياسة رد وتصعيد وخصوصية في مثال محاكى",
       "independentHumanReview": false,
       "actions": [
-        "معايرة بشرية للأسئلة ومواءمة الهدف والتقييم",
-        "إثبات مرجعي أدق من مجرد رابط بوابة",
-        "توسيع التطبيق المتقدم والأمثلة؛ الشرح الحالي درس مصغر",
-        "تأليف حالة نقل مستقلة بدل إعادة سؤال الاختبار",
-        "كتابة خلاصة معرفة وقرار بدل تكرار الهدف"
+        "معايرة بشرية مستقلة للأسئلة والشرح وقياس التعلم؛ لم تنفذ"
       ]
     },
     {
       "id": "m05-l04",
       "module": 5,
       "title": "الفيديو القصير من الفكرة إلى القياس",
-      "readingWords": 148,
-      "readingParagraphs": 3,
+      "readingWords": 265,
+      "readingParagraphs": 5,
       "questions": 5,
       "interactions": [
         {
@@ -1858,16 +1953,11 @@
       "practicalActivity": true,
       "dailyMission": true,
       "rubricItems": 3,
-      "generatedCase": true,
-      "repeatedSummary": true,
-      "weakDistractors": [
-        "m05-l04-q4",
-        "m05-l04-q5"
-      ],
+      "generatedCase": false,
+      "repeatedSummary": false,
+      "weakDistractors": [],
       "answerLengthCue": [
-        "m05-l04-q2",
-        "m05-l04-q4",
-        "m05-l04-q5"
+        "m05-l04-q2"
       ],
       "bookReferences": [
         {
@@ -1885,23 +1975,26 @@
           "url": "https://www.w3.org/WAI/tips/writing/"
         }
       ],
-      "status": "present; advanced instructional approval open",
+      "status": "agent-reviewed",
+      "sourceBindings": [
+        {
+          "sourceId": "wai-writing",
+          "claim": "توفير بدائل للمعلومة ووضوح اللغة",
+          "locator": "وضوح العناوين والروابط واللغة والبدائل؛ إرشادات كتابة لا شهادة امتثال"
+        }
+      ],
+      "originalWork": "مخطط فيديو واختبار دون صوت ومعيار إكمال معرف",
       "independentHumanReview": false,
       "actions": [
-        "معايرة بشرية للأسئلة ومواءمة الهدف والتقييم",
-        "إثبات مرجعي أدق من مجرد رابط بوابة",
-        "توسيع التطبيق المتقدم والأمثلة؛ الشرح الحالي درس مصغر",
-        "تأليف حالة نقل مستقلة بدل إعادة سؤال الاختبار",
-        "كتابة خلاصة معرفة وقرار بدل تكرار الهدف",
-        "استبدال مشتتات غير مرتبطة بالمجال"
+        "معايرة بشرية مستقلة للأسئلة والشرح وقياس التعلم؛ لم تنفذ"
       ]
     },
     {
       "id": "m05-l05",
       "module": 5,
       "title": "شراكات المؤثرين والإفصاح",
-      "readingWords": 148,
-      "readingParagraphs": 3,
+      "readingWords": 260,
+      "readingParagraphs": 5,
       "questions": 5,
       "interactions": [
         {
@@ -1939,13 +2032,10 @@
       "practicalActivity": true,
       "dailyMission": true,
       "rubricItems": 3,
-      "generatedCase": true,
-      "repeatedSummary": true,
-      "weakDistractors": [
-        "m05-l05-q1"
-      ],
+      "generatedCase": false,
+      "repeatedSummary": false,
+      "weakDistractors": [],
       "answerLengthCue": [
-        "m05-l05-q1",
         "m05-l05-q3",
         "m05-l05-q4"
       ],
@@ -1965,23 +2055,26 @@
           "url": "https://www.facebookblueprint.com/student/catalog/"
         }
       ],
-      "status": "present; advanced instructional approval open",
+      "status": "agent-reviewed",
+      "sourceBindings": [
+        {
+          "sourceId": "ftc-disclosure",
+          "claim": "قسم When/How to Disclose، علاقة مادية وإفصاح واضح",
+          "locator": "وجود علاقة مادية ووضوح الإفصاح قرب التوصية؛ توجيه أمريكي لا قانون عراقي"
+        }
+      ],
+      "originalWork": "شراكة عراقية محاكاة وحدود ولاية وإسناد",
       "independentHumanReview": false,
       "actions": [
-        "معايرة بشرية للأسئلة ومواءمة الهدف والتقييم",
-        "إثبات مرجعي أدق من مجرد رابط بوابة",
-        "توسيع التطبيق المتقدم والأمثلة؛ الشرح الحالي درس مصغر",
-        "تأليف حالة نقل مستقلة بدل إعادة سؤال الاختبار",
-        "كتابة خلاصة معرفة وقرار بدل تكرار الهدف",
-        "استبدال مشتتات غير مرتبطة بالمجال"
+        "معايرة بشرية مستقلة للأسئلة والشرح وقياس التعلم؛ لم تنفذ"
       ]
     },
     {
       "id": "m06-l01",
       "module": 6,
       "title": "استراتيجية محتوى من أسئلة العملاء",
-      "readingWords": 157,
-      "readingParagraphs": 3,
+      "readingWords": 271,
+      "readingParagraphs": 5,
       "questions": 5,
       "interactions": [
         {
@@ -2019,12 +2112,13 @@
       "practicalActivity": true,
       "dailyMission": true,
       "rubricItems": 3,
-      "generatedCase": true,
-      "repeatedSummary": true,
+      "generatedCase": false,
+      "repeatedSummary": false,
       "weakDistractors": [],
       "answerLengthCue": [
         "m06-l01-q1",
-        "m06-l01-q4"
+        "m06-l01-q4",
+        "m06-l01-q5"
       ],
       "bookReferences": [
         {
@@ -2046,22 +2140,26 @@
           "url": "https://developers.google.com/search/docs/fundamentals/seo-starter-guide"
         }
       ],
-      "status": "present; advanced instructional approval open",
+      "status": "agent-reviewed",
+      "sourceBindings": [
+        {
+          "sourceId": "helpful",
+          "claim": "مراجعة مدى خدمة المحتوى حاجات القارئ",
+          "locator": "أسئلة تقويم الفائدة؛ فقرة عدم وجود عدد كلمات مفضل"
+        }
+      ],
+      "originalWork": "خريطة أسئلة وترتيب أثر وجهد وثقة",
       "independentHumanReview": false,
       "actions": [
-        "معايرة بشرية للأسئلة ومواءمة الهدف والتقييم",
-        "إثبات مرجعي أدق من مجرد رابط بوابة",
-        "توسيع التطبيق المتقدم والأمثلة؛ الشرح الحالي درس مصغر",
-        "تأليف حالة نقل مستقلة بدل إعادة سؤال الاختبار",
-        "كتابة خلاصة معرفة وقرار بدل تكرار الهدف"
+        "معايرة بشرية مستقلة للأسئلة والشرح وقياس التعلم؛ لم تنفذ"
       ]
     },
     {
       "id": "m06-l02",
       "module": 6,
       "title": "الموجز التحريري والمقال المفيد",
-      "readingWords": 148,
-      "readingParagraphs": 3,
+      "readingWords": 264,
+      "readingParagraphs": 5,
       "questions": 5,
       "interactions": [
         {
@@ -2099,8 +2197,8 @@
       "practicalActivity": true,
       "dailyMission": true,
       "rubricItems": 3,
-      "generatedCase": true,
-      "repeatedSummary": true,
+      "generatedCase": false,
+      "repeatedSummary": false,
       "weakDistractors": [],
       "answerLengthCue": [
         "m06-l02-q1",
@@ -2127,22 +2225,31 @@
           "url": "https://www.w3.org/WAI/tips/writing/"
         }
       ],
-      "status": "present; advanced instructional approval open",
+      "status": "agent-reviewed",
+      "sourceBindings": [
+        {
+          "sourceId": "helpful",
+          "claim": "لا عدد كلمات مفضل؛ كتابة وعناوين مفهومة",
+          "locator": "أسئلة تقويم الفائدة؛ فقرة عدم وجود عدد كلمات مفضل"
+        },
+        {
+          "sourceId": "wai-writing",
+          "claim": "إحالة مساندة في نطاق المصدر المبين",
+          "locator": "وضوح العناوين والروابط واللغة والبدائل؛ إرشادات كتابة لا شهادة امتثال"
+        }
+      ],
+      "originalWork": "موجز أصلي ومثال200−120 مع حدود القياس",
       "independentHumanReview": false,
       "actions": [
-        "معايرة بشرية للأسئلة ومواءمة الهدف والتقييم",
-        "إثبات مرجعي أدق من مجرد رابط بوابة",
-        "توسيع التطبيق المتقدم والأمثلة؛ الشرح الحالي درس مصغر",
-        "تأليف حالة نقل مستقلة بدل إعادة سؤال الاختبار",
-        "كتابة خلاصة معرفة وقرار بدل تكرار الهدف"
+        "معايرة بشرية مستقلة للأسئلة والشرح وقياس التعلم؛ لم تنفذ"
       ]
     },
     {
       "id": "m06-l03",
       "module": 6,
       "title": "إعادة توظيف المحتوى وحقوق الأصول",
-      "readingWords": 154,
-      "readingParagraphs": 3,
+      "readingWords": 267,
+      "readingParagraphs": 5,
       "questions": 5,
       "interactions": [
         {
@@ -2180,8 +2287,8 @@
       "practicalActivity": true,
       "dailyMission": true,
       "rubricItems": 3,
-      "generatedCase": true,
-      "repeatedSummary": true,
+      "generatedCase": false,
+      "repeatedSummary": false,
       "weakDistractors": [],
       "answerLengthCue": [
         "m06-l03-q1",
@@ -2207,22 +2314,26 @@
           "url": "https://academy.hubspot.com/courses/digital-marketing"
         }
       ],
-      "status": "present; advanced instructional approval open",
+      "status": "agent-reviewed",
+      "sourceBindings": [
+        {
+          "sourceId": "dib-plan",
+          "claim": "ملاءمة الرسالة والوسيلة لمهمة العميل",
+          "locator": "السوق والرسالة ومراحل العلاقة؛ مواضع مختارة من النسخة المرفقة، لا نتائج منصات أو نسب نجاح"
+        }
+      ],
+      "originalWork": "إجراء سجل حقوق؛ لا ادعاء أن القراءة تمنح إعادة الاستخدام",
       "independentHumanReview": false,
       "actions": [
-        "معايرة بشرية للأسئلة ومواءمة الهدف والتقييم",
-        "إثبات مرجعي أدق من مجرد رابط بوابة",
-        "توسيع التطبيق المتقدم والأمثلة؛ الشرح الحالي درس مصغر",
-        "تأليف حالة نقل مستقلة بدل إعادة سؤال الاختبار",
-        "كتابة خلاصة معرفة وقرار بدل تكرار الهدف"
+        "معايرة بشرية مستقلة للأسئلة والشرح وقياس التعلم؛ لم تنفذ"
       ]
     },
     {
       "id": "m06-l04",
       "module": 6,
       "title": "العرض المجاني ونموذج الإذن",
-      "readingWords": 153,
-      "readingParagraphs": 3,
+      "readingWords": 262,
+      "readingParagraphs": 5,
       "questions": 5,
       "interactions": [
         {
@@ -2260,8 +2371,8 @@
       "practicalActivity": true,
       "dailyMission": true,
       "rubricItems": 3,
-      "generatedCase": true,
-      "repeatedSummary": true,
+      "generatedCase": false,
+      "repeatedSummary": false,
       "weakDistractors": [],
       "answerLengthCue": [
         "m06-l04-q2"
@@ -2286,22 +2397,26 @@
           "url": "https://support.google.com/a/answer/81126"
         }
       ],
-      "status": "present; advanced instructional approval open",
+      "status": "agent-reviewed",
+      "sourceBindings": [
+        {
+          "sourceId": "godin-marketing",
+          "claim": "الفصل17 PDF174 الإذن والانتباه",
+          "locator": "الخدمة وأصغر سوق قابلة للنمو والإذن؛ لا وصفة مضمونة للأداء"
+        }
+      ],
+      "originalWork": "مساران لتسليم المورد واختيار المتابعة مع اختبار رفض",
       "independentHumanReview": false,
       "actions": [
-        "معايرة بشرية للأسئلة ومواءمة الهدف والتقييم",
-        "إثبات مرجعي أدق من مجرد رابط بوابة",
-        "توسيع التطبيق المتقدم والأمثلة؛ الشرح الحالي درس مصغر",
-        "تأليف حالة نقل مستقلة بدل إعادة سؤال الاختبار",
-        "كتابة خلاصة معرفة وقرار بدل تكرار الهدف"
+        "معايرة بشرية مستقلة للأسئلة والشرح وقياس التعلم؛ لم تنفذ"
       ]
     },
     {
       "id": "m06-l05",
       "module": 6,
       "title": "تدقيق المحتوى ودورة تحديثه",
-      "readingWords": 166,
-      "readingParagraphs": 3,
+      "readingWords": 287,
+      "readingParagraphs": 5,
       "questions": 5,
       "interactions": [
         {
@@ -2339,13 +2454,10 @@
       "practicalActivity": true,
       "dailyMission": true,
       "rubricItems": 3,
-      "generatedCase": true,
-      "repeatedSummary": true,
-      "weakDistractors": [
-        "m06-l05-q1"
-      ],
+      "generatedCase": false,
+      "repeatedSummary": false,
+      "weakDistractors": [],
       "answerLengthCue": [
-        "m06-l05-q1",
         "m06-l05-q2"
       ],
       "bookReferences": [
@@ -2368,23 +2480,26 @@
           "url": "https://www.w3.org/WAI/tips/writing/"
         }
       ],
-      "status": "present; advanced instructional approval open",
+      "status": "agent-reviewed",
+      "sourceBindings": [
+        {
+          "sourceId": "helpful",
+          "claim": "تقويم فائدة المحتوى وصحته للقارئ",
+          "locator": "أسئلة تقويم الفائدة؛ فقرة عدم وجود عدد كلمات مفضل"
+        }
+      ],
+      "originalWork": "جرد وقرار تحديث مع مصدر حقيقة ونسخ مرتبطة",
       "independentHumanReview": false,
       "actions": [
-        "معايرة بشرية للأسئلة ومواءمة الهدف والتقييم",
-        "إثبات مرجعي أدق من مجرد رابط بوابة",
-        "توسيع التطبيق المتقدم والأمثلة؛ الشرح الحالي درس مصغر",
-        "تأليف حالة نقل مستقلة بدل إعادة سؤال الاختبار",
-        "كتابة خلاصة معرفة وقرار بدل تكرار الهدف",
-        "استبدال مشتتات غير مرتبطة بالمجال"
+        "معايرة بشرية مستقلة للأسئلة والشرح وقياس التعلم؛ لم تنفذ"
       ]
     },
     {
       "id": "m07-l01",
       "module": 7,
       "title": "نية البحث وخريطة الكلمات",
-      "readingWords": 159,
-      "readingParagraphs": 3,
+      "readingWords": 282,
+      "readingParagraphs": 5,
       "questions": 5,
       "interactions": [
         {
@@ -2422,8 +2537,8 @@
       "practicalActivity": true,
       "dailyMission": true,
       "rubricItems": 3,
-      "generatedCase": true,
-      "repeatedSummary": true,
+      "generatedCase": false,
+      "repeatedSummary": false,
       "weakDistractors": [],
       "answerLengthCue": [],
       "bookReferences": [
@@ -2438,22 +2553,31 @@
           "url": "https://developers.google.com/search/docs/fundamentals/seo-starter-guide"
         }
       ],
-      "status": "present; advanced instructional approval open",
+      "status": "agent-reviewed",
+      "sourceBindings": [
+        {
+          "sourceId": "search-start",
+          "claim": "محتوى يخدم المهمة دون ضمان فهرسة أو طول مفضل",
+          "locator": "مساعدة القارئ والمحرك؛ لا ضمان للفهرسة أو الترتيب"
+        },
+        {
+          "sourceId": "helpful",
+          "claim": "إحالة مساندة في نطاق المصدر المبين",
+          "locator": "أسئلة تقويم الفائدة؛ فقرة عدم وجود عدد كلمات مفضل"
+        }
+      ],
+      "originalWork": "خريطة نية وحجم مجهول دون صفحات مدن مكررة",
       "independentHumanReview": false,
       "actions": [
-        "معايرة بشرية للأسئلة ومواءمة الهدف والتقييم",
-        "إثبات مرجعي أدق من مجرد رابط بوابة",
-        "توسيع التطبيق المتقدم والأمثلة؛ الشرح الحالي درس مصغر",
-        "تأليف حالة نقل مستقلة بدل إعادة سؤال الاختبار",
-        "كتابة خلاصة معرفة وقرار بدل تكرار الهدف"
+        "معايرة بشرية مستقلة للأسئلة والشرح وقياس التعلم؛ لم تنفذ"
       ]
     },
     {
       "id": "m07-l02",
       "module": 7,
       "title": "تحسين الصفحة دون حشو",
-      "readingWords": 156,
-      "readingParagraphs": 3,
+      "readingWords": 276,
+      "readingParagraphs": 5,
       "questions": 5,
       "interactions": [
         {
@@ -2491,8 +2615,8 @@
       "practicalActivity": true,
       "dailyMission": true,
       "rubricItems": 3,
-      "generatedCase": true,
-      "repeatedSummary": true,
+      "generatedCase": false,
+      "repeatedSummary": false,
       "weakDistractors": [],
       "answerLengthCue": [
         "m07-l02-q2",
@@ -2515,22 +2639,36 @@
           "url": "https://www.w3.org/WAI/tips/writing/"
         }
       ],
-      "status": "present; advanced instructional approval open",
+      "status": "agent-reviewed",
+      "sourceBindings": [
+        {
+          "sourceId": "search-start",
+          "claim": "بنية وروابط مفهومة وعدم ضمان مقتطف أو ترتيب",
+          "locator": "مساعدة القارئ والمحرك؛ لا ضمان للفهرسة أو الترتيب"
+        },
+        {
+          "sourceId": "helpful",
+          "claim": "إحالة مساندة في نطاق المصدر المبين",
+          "locator": "أسئلة تقويم الفائدة؛ فقرة عدم وجود عدد كلمات مفضل"
+        },
+        {
+          "sourceId": "wai-writing",
+          "claim": "إحالة مساندة في نطاق المصدر المبين",
+          "locator": "وضوح العناوين والروابط واللغة والبدائل؛ إرشادات كتابة لا شهادة امتثال"
+        }
+      ],
+      "originalWork": "فحص الصفحة وشرح canonical كرابط أساسي",
       "independentHumanReview": false,
       "actions": [
-        "معايرة بشرية للأسئلة ومواءمة الهدف والتقييم",
-        "إثبات مرجعي أدق من مجرد رابط بوابة",
-        "توسيع التطبيق المتقدم والأمثلة؛ الشرح الحالي درس مصغر",
-        "تأليف حالة نقل مستقلة بدل إعادة سؤال الاختبار",
-        "كتابة خلاصة معرفة وقرار بدل تكرار الهدف"
+        "معايرة بشرية مستقلة للأسئلة والشرح وقياس التعلم؛ لم تنفذ"
       ]
     },
     {
       "id": "m07-l03",
       "module": 7,
       "title": "الزحف والفهرسة وصحة الموقع",
-      "readingWords": 160,
-      "readingParagraphs": 3,
+      "readingWords": 281,
+      "readingParagraphs": 5,
       "questions": 5,
       "interactions": [
         {
@@ -2568,12 +2706,11 @@
       "practicalActivity": true,
       "dailyMission": true,
       "rubricItems": 3,
-      "generatedCase": true,
-      "repeatedSummary": true,
-      "weakDistractors": [
-        "m07-l03-q2"
-      ],
+      "generatedCase": false,
+      "repeatedSummary": false,
+      "weakDistractors": [],
       "answerLengthCue": [
+        "m07-l03-q1",
         "m07-l03-q4"
       ],
       "bookReferences": [
@@ -2588,23 +2725,31 @@
           "url": "https://developers.google.com/search/docs/fundamentals/seo-starter-guide"
         }
       ],
-      "status": "present; advanced instructional approval open",
+      "status": "agent-reviewed",
+      "sourceBindings": [
+        {
+          "sourceId": "robots",
+          "claim": "robots لتنظيم الزحف لا حماية أو ضمان منع الفهرسة",
+          "locator": "التمييز بين تنظيم الزحف ومنع الفهرسة والحماية"
+        },
+        {
+          "sourceId": "search-start",
+          "claim": "إحالة مساندة في نطاق المصدر المبين",
+          "locator": "مساعدة القارئ والمحرك؛ لا ضمان للفهرسة أو الترتيب"
+        }
+      ],
+      "originalWork": "تشخيص مسار وإحالة وصلاحيات حقيقية للخاص",
       "independentHumanReview": false,
       "actions": [
-        "معايرة بشرية للأسئلة ومواءمة الهدف والتقييم",
-        "إثبات مرجعي أدق من مجرد رابط بوابة",
-        "توسيع التطبيق المتقدم والأمثلة؛ الشرح الحالي درس مصغر",
-        "تأليف حالة نقل مستقلة بدل إعادة سؤال الاختبار",
-        "كتابة خلاصة معرفة وقرار بدل تكرار الهدف",
-        "استبدال مشتتات غير مرتبطة بالمجال"
+        "معايرة بشرية مستقلة للأسئلة والشرح وقياس التعلم؛ لم تنفذ"
       ]
     },
     {
       "id": "m07-l04",
       "module": 7,
       "title": "البحث المحلي وملف النشاط",
-      "readingWords": 155,
-      "readingParagraphs": 3,
+      "readingWords": 280,
+      "readingParagraphs": 5,
       "questions": 5,
       "interactions": [
         {
@@ -2642,12 +2787,12 @@
       "practicalActivity": true,
       "dailyMission": true,
       "rubricItems": 3,
-      "generatedCase": true,
-      "repeatedSummary": true,
-      "weakDistractors": [
-        "m07-l04-q5"
+      "generatedCase": false,
+      "repeatedSummary": false,
+      "weakDistractors": [],
+      "answerLengthCue": [
+        "m07-l04-q2"
       ],
-      "answerLengthCue": [],
       "bookReferences": [
         {
           "title": "آلان ديب، خطة تسويقية في صفحة واحدة",
@@ -2664,23 +2809,26 @@
           "url": "https://grow.google/certificates/digital-marketing-ecommerce/"
         }
       ],
-      "status": "present; advanced instructional approval open",
+      "status": "agent-reviewed",
+      "sourceBindings": [
+        {
+          "sourceId": "local-data",
+          "claim": "البيانات المنظمة لا تضمن نتائج غنية",
+          "locator": "معلومات النشاط المنظمة لا تضمن نتيجة غنية؛ لا يثبت أهلية ملف نشاط عراقي"
+        }
+      ],
+      "originalWork": "ملف نشاط يحتاج تحقق أهلية محلي منفصل؛ لا ادعاء ميزات متاحة",
       "independentHumanReview": false,
       "actions": [
-        "معايرة بشرية للأسئلة ومواءمة الهدف والتقييم",
-        "إثبات مرجعي أدق من مجرد رابط بوابة",
-        "توسيع التطبيق المتقدم والأمثلة؛ الشرح الحالي درس مصغر",
-        "تأليف حالة نقل مستقلة بدل إعادة سؤال الاختبار",
-        "كتابة خلاصة معرفة وقرار بدل تكرار الهدف",
-        "استبدال مشتتات غير مرتبطة بالمجال"
+        "معايرة بشرية مستقلة للأسئلة والشرح وقياس التعلم؛ لم تنفذ"
       ]
     },
     {
       "id": "m07-l05",
       "module": 7,
       "title": "قياس SEO وتقرير الأولويات",
-      "readingWords": 149,
-      "readingParagraphs": 3,
+      "readingWords": 262,
+      "readingParagraphs": 5,
       "questions": 5,
       "interactions": [
         {
@@ -2718,8 +2866,8 @@
       "practicalActivity": true,
       "dailyMission": true,
       "rubricItems": 3,
-      "generatedCase": true,
-      "repeatedSummary": true,
+      "generatedCase": false,
+      "repeatedSummary": false,
       "weakDistractors": [],
       "answerLengthCue": [
         "m07-l05-q1"
@@ -2740,22 +2888,31 @@
           "url": "https://support.google.com/analytics/answer/9304153"
         }
       ],
-      "status": "present; advanced instructional approval open",
+      "status": "agent-reviewed",
+      "sourceBindings": [
+        {
+          "sourceId": "console",
+          "claim": "نطاق Search Console؛ CTR نقر على ظهور",
+          "locator": "نطاق متابعة الزحف والفهرسة وأداء البحث؛ لا مساواة بمبيعات"
+        },
+        {
+          "sourceId": "ads-metrics",
+          "claim": "إحالة مساندة في نطاق المصدر المبين",
+          "locator": "حقلا metrics.ctr وmetrics.average_cpc؛ الحسابات الأخرى اشتقاق حسابي معلن"
+        }
+      ],
+      "originalWork": "مقارنة مصادر مختلفة دون مساواتها قسرًا",
       "independentHumanReview": false,
       "actions": [
-        "معايرة بشرية للأسئلة ومواءمة الهدف والتقييم",
-        "إثبات مرجعي أدق من مجرد رابط بوابة",
-        "توسيع التطبيق المتقدم والأمثلة؛ الشرح الحالي درس مصغر",
-        "تأليف حالة نقل مستقلة بدل إعادة سؤال الاختبار",
-        "كتابة خلاصة معرفة وقرار بدل تكرار الهدف"
+        "معايرة بشرية مستقلة للأسئلة والشرح وقياس التعلم؛ لم تنفذ"
       ]
     },
     {
       "id": "m08-l01",
       "module": 8,
       "title": "القائمة البريدية المبنية على الإذن",
-      "readingWords": 150,
-      "readingParagraphs": 3,
+      "readingWords": 269,
+      "readingParagraphs": 5,
       "questions": 5,
       "interactions": [
         {
@@ -2793,15 +2950,10 @@
       "practicalActivity": true,
       "dailyMission": true,
       "rubricItems": 3,
-      "generatedCase": true,
-      "repeatedSummary": true,
-      "weakDistractors": [
-        "m08-l01-q2"
-      ],
-      "answerLengthCue": [
-        "m08-l01-q2",
-        "m08-l01-q5"
-      ],
+      "generatedCase": false,
+      "repeatedSummary": false,
+      "weakDistractors": [],
+      "answerLengthCue": [],
       "bookReferences": [
         {
           "title": "آلان ديب، خطة تسويقية في صفحة واحدة",
@@ -2818,23 +2970,26 @@
           "url": "https://support.google.com/a/answer/81126"
         }
       ],
-      "status": "present; advanced instructional approval open",
+      "status": "agent-reviewed",
+      "sourceBindings": [
+        {
+          "sourceId": "godin-marketing",
+          "claim": "الفصل17 PDF174 الإذن والانتباه",
+          "locator": "الخدمة وأصغر سوق قابلة للنمو والإذن؛ لا وصفة مضمونة للأداء"
+        }
+      ],
+      "originalWork": "سجل غرض ومنع وإعادة اشتراك ببيانات وهمية",
       "independentHumanReview": false,
       "actions": [
-        "معايرة بشرية للأسئلة ومواءمة الهدف والتقييم",
-        "إثبات مرجعي أدق من مجرد رابط بوابة",
-        "توسيع التطبيق المتقدم والأمثلة؛ الشرح الحالي درس مصغر",
-        "تأليف حالة نقل مستقلة بدل إعادة سؤال الاختبار",
-        "كتابة خلاصة معرفة وقرار بدل تكرار الهدف",
-        "استبدال مشتتات غير مرتبطة بالمجال"
+        "معايرة بشرية مستقلة للأسئلة والشرح وقياس التعلم؛ لم تنفذ"
       ]
     },
     {
       "id": "m08-l02",
       "module": 8,
       "title": "التقسيم وسلسلة الترحيب",
-      "readingWords": 149,
-      "readingParagraphs": 3,
+      "readingWords": 264,
+      "readingParagraphs": 5,
       "questions": 5,
       "interactions": [
         {
@@ -2872,8 +3027,8 @@
       "practicalActivity": true,
       "dailyMission": true,
       "rubricItems": 3,
-      "generatedCase": true,
-      "repeatedSummary": true,
+      "generatedCase": false,
+      "repeatedSummary": false,
       "weakDistractors": [],
       "answerLengthCue": [
         "m08-l02-q2",
@@ -2895,22 +3050,31 @@
           "url": "https://academy.hubspot.com/courses/digital-marketing"
         }
       ],
-      "status": "present; advanced instructional approval open",
+      "status": "agent-reviewed",
+      "sourceBindings": [
+        {
+          "sourceId": "dib-plan",
+          "claim": "رعاية المهتم ضمن علاقة مأذونة",
+          "locator": "السوق والرسالة ومراحل العلاقة؛ مواضع مختارة من النسخة المرفقة، لا نتائج منصات أو نسب نجاح"
+        },
+        {
+          "sourceId": "godin-marketing",
+          "claim": "إحالة مساندة في نطاق المصدر المبين",
+          "locator": "الخدمة وأصغر سوق قابلة للنمو والإذن؛ لا وصفة مضمونة للأداء"
+        }
+      ],
+      "originalWork": "حالات دخول وخروج وتكرار، لا تنفيذ مزود بريد",
       "independentHumanReview": false,
       "actions": [
-        "معايرة بشرية للأسئلة ومواءمة الهدف والتقييم",
-        "إثبات مرجعي أدق من مجرد رابط بوابة",
-        "توسيع التطبيق المتقدم والأمثلة؛ الشرح الحالي درس مصغر",
-        "تأليف حالة نقل مستقلة بدل إعادة سؤال الاختبار",
-        "كتابة خلاصة معرفة وقرار بدل تكرار الهدف"
+        "معايرة بشرية مستقلة للأسئلة والشرح وقياس التعلم؛ لم تنفذ"
       ]
     },
     {
       "id": "m08-l03",
       "module": 8,
       "title": "قابلية التسليم ومصادقة المرسل",
-      "readingWords": 150,
-      "readingParagraphs": 3,
+      "readingWords": 291,
+      "readingParagraphs": 5,
       "questions": 5,
       "interactions": [
         {
@@ -2948,8 +3112,8 @@
       "practicalActivity": true,
       "dailyMission": true,
       "rubricItems": 3,
-      "generatedCase": true,
-      "repeatedSummary": true,
+      "generatedCase": false,
+      "repeatedSummary": false,
       "weakDistractors": [],
       "answerLengthCue": [
         "m08-l03-q1",
@@ -2968,22 +3132,36 @@
           "url": "https://support.google.com/a/answer/81126"
         }
       ],
-      "status": "present; advanced instructional approval open",
+      "status": "agent-reviewed",
+      "sourceBindings": [
+        {
+          "sourceId": "spf",
+          "claim": "SPF وDKIM ومحاذاة DMARC؛ المرجع الأساسي الحالي RFC9989 §4.4 بدل7489 المستبدل",
+          "locator": "ملخص و§2 تفويض استخدام النطاق"
+        },
+        {
+          "sourceId": "dkim",
+          "claim": "إحالة مساندة في نطاق المصدر المبين",
+          "locator": "ملخص توقيع يمكن التحقق منه؛ ليس ضمان محتوى"
+        },
+        {
+          "sourceId": "dmarc",
+          "claim": "إحالة مساندة في نطاق المصدر المبين",
+          "locator": "§3.2.10 و§4.4 محاذاة الهوية؛ RFC9989 يستبدل7489 و9091. تفاصيل التقارير انتقلت إلى9990/9991 ولم تستخدم هنا."
+        }
+      ],
+      "originalWork": "قبول خادم ليس واردًا، ولا إعداد DNS أو حدود مزود حديثة",
       "independentHumanReview": false,
       "actions": [
-        "معايرة بشرية للأسئلة ومواءمة الهدف والتقييم",
-        "إثبات مرجعي أدق من مجرد رابط بوابة",
-        "توسيع التطبيق المتقدم والأمثلة؛ الشرح الحالي درس مصغر",
-        "تأليف حالة نقل مستقلة بدل إعادة سؤال الاختبار",
-        "كتابة خلاصة معرفة وقرار بدل تكرار الهدف"
+        "معايرة بشرية مستقلة للأسئلة والشرح وقياس التعلم؛ لم تنفذ"
       ]
     },
     {
       "id": "m08-l04",
       "module": 8,
       "title": "الاحتفاظ والقيمة على مدى العلاقة",
-      "readingWords": 149,
-      "readingParagraphs": 3,
+      "readingWords": 257,
+      "readingParagraphs": 5,
       "questions": 5,
       "interactions": [
         {
@@ -3021,8 +3199,8 @@
       "practicalActivity": true,
       "dailyMission": true,
       "rubricItems": 3,
-      "generatedCase": true,
-      "repeatedSummary": true,
+      "generatedCase": false,
+      "repeatedSummary": false,
       "weakDistractors": [],
       "answerLengthCue": [
         "m08-l04-q2"
@@ -3043,22 +3221,26 @@
           "url": "https://academy.hubspot.com/courses/digital-marketing"
         }
       ],
-      "status": "present; advanced instructional approval open",
+      "status": "agent-reviewed",
+      "sourceBindings": [
+        {
+          "sourceId": "dib-plan",
+          "claim": "مرحلة بعد الشراء وتنمية العلاقة",
+          "locator": "السوق والرسالة ومراحل العلاقة؛ مواضع مختارة من النسخة المرفقة، لا نتائج منصات أو نسب نجاح"
+        }
+      ],
+      "originalWork": "مجموعة ونافذة ومساهمة تاريخية وحساسية لا LTV مضمون",
       "independentHumanReview": false,
       "actions": [
-        "معايرة بشرية للأسئلة ومواءمة الهدف والتقييم",
-        "إثبات مرجعي أدق من مجرد رابط بوابة",
-        "توسيع التطبيق المتقدم والأمثلة؛ الشرح الحالي درس مصغر",
-        "تأليف حالة نقل مستقلة بدل إعادة سؤال الاختبار",
-        "كتابة خلاصة معرفة وقرار بدل تكرار الهدف"
+        "معايرة بشرية مستقلة للأسئلة والشرح وقياس التعلم؛ لم تنفذ"
       ]
     },
     {
       "id": "m08-l05",
       "module": 8,
       "title": "الإحالات وبرامج الولاء العادلة",
-      "readingWords": 161,
-      "readingParagraphs": 3,
+      "readingWords": 271,
+      "readingParagraphs": 5,
       "questions": 5,
       "interactions": [
         {
@@ -3096,8 +3278,8 @@
       "practicalActivity": true,
       "dailyMission": true,
       "rubricItems": 3,
-      "generatedCase": true,
-      "repeatedSummary": true,
+      "generatedCase": false,
+      "repeatedSummary": false,
       "weakDistractors": [],
       "answerLengthCue": [
         "m08-l05-q5"
@@ -3118,22 +3300,31 @@
           "url": "https://academy.hubspot.com/courses/digital-marketing"
         }
       ],
-      "status": "present; advanced instructional approval open",
+      "status": "agent-reviewed",
+      "sourceBindings": [
+        {
+          "sourceId": "dib-plan",
+          "claim": "الإحالة ضمن العلاقة؛ الإفصاح عن علاقة ذات قيمة في نطاق FTC",
+          "locator": "السوق والرسالة ومراحل العلاقة؛ مواضع مختارة من النسخة المرفقة، لا نتائج منصات أو نسب نجاح"
+        },
+        {
+          "sourceId": "ftc-disclosure",
+          "claim": "إحالة مساندة في نطاق المصدر المبين",
+          "locator": "وجود علاقة مادية ووضوح الإفصاح قرب التوصية؛ توجيه أمريكي لا قانون عراقي"
+        }
+      ],
+      "originalWork": "قواعد مكافأة عادلة وحساب مساهمة قبل الثابت",
       "independentHumanReview": false,
       "actions": [
-        "معايرة بشرية للأسئلة ومواءمة الهدف والتقييم",
-        "إثبات مرجعي أدق من مجرد رابط بوابة",
-        "توسيع التطبيق المتقدم والأمثلة؛ الشرح الحالي درس مصغر",
-        "تأليف حالة نقل مستقلة بدل إعادة سؤال الاختبار",
-        "كتابة خلاصة معرفة وقرار بدل تكرار الهدف"
+        "معايرة بشرية مستقلة للأسئلة والشرح وقياس التعلم؛ لم تنفذ"
       ]
     },
     {
       "id": "m09-l01",
       "module": 9,
       "title": "هدف الحملة وهيكلها قبل الإنفاق",
-      "readingWords": 148,
-      "readingParagraphs": 3,
+      "readingWords": 266,
+      "readingParagraphs": 5,
       "questions": 5,
       "interactions": [
         {
@@ -3171,8 +3362,8 @@
       "practicalActivity": true,
       "dailyMission": true,
       "rubricItems": 3,
-      "generatedCase": true,
-      "repeatedSummary": true,
+      "generatedCase": false,
+      "repeatedSummary": false,
       "weakDistractors": [],
       "answerLengthCue": [
         "m09-l01-q2"
@@ -3197,22 +3388,26 @@
           "url": "https://skillshop.withgoogle.com/"
         }
       ],
-      "status": "present; advanced instructional approval open",
+      "status": "agent-reviewed",
+      "sourceBindings": [
+        {
+          "sourceId": "ads-conversion",
+          "claim": "إجراء تحويل معرف؛ أسماء الإعداد ليست موحدة لكل منصة",
+          "locator": "تعريف إجراء تحويل؛ لا تعميم أسماء مستويات أو واجهات كل منصة"
+        }
+      ],
+      "originalWork": "هدف وسعة وحد توقف وتخطيط مشروط لا ضمان",
       "independentHumanReview": false,
       "actions": [
-        "معايرة بشرية للأسئلة ومواءمة الهدف والتقييم",
-        "إثبات مرجعي أدق من مجرد رابط بوابة",
-        "توسيع التطبيق المتقدم والأمثلة؛ الشرح الحالي درس مصغر",
-        "تأليف حالة نقل مستقلة بدل إعادة سؤال الاختبار",
-        "كتابة خلاصة معرفة وقرار بدل تكرار الهدف"
+        "معايرة بشرية مستقلة للأسئلة والشرح وقياس التعلم؛ لم تنفذ"
       ]
     },
     {
       "id": "m09-l02",
       "module": 9,
       "title": "جمهور الإعلان وسياسة البيانات",
-      "readingWords": 149,
-      "readingParagraphs": 3,
+      "readingWords": 269,
+      "readingParagraphs": 5,
       "questions": 5,
       "interactions": [
         {
@@ -3250,8 +3445,8 @@
       "practicalActivity": true,
       "dailyMission": true,
       "rubricItems": 3,
-      "generatedCase": true,
-      "repeatedSummary": true,
+      "generatedCase": false,
+      "repeatedSummary": false,
       "weakDistractors": [],
       "answerLengthCue": [
         "m09-l02-q4",
@@ -3273,22 +3468,26 @@
           "url": "https://www.google.com/about/company/user-consent-policy/"
         }
       ],
-      "status": "present; advanced instructional approval open",
+      "status": "agent-reviewed",
+      "sourceBindings": [
+        {
+          "sourceId": "godin-marketing",
+          "claim": "خدمة جمهور مناسب واحترام الإذن",
+          "locator": "الخدمة وأصغر سوق قابلة للنمو والإذن؛ لا وصفة مضمونة للأداء"
+        }
+      ],
+      "originalWork": "تجزئة قائمة لا تنشئ إذنًا؛ لا تفاصيل استهداف Meta حالية",
       "independentHumanReview": false,
       "actions": [
-        "معايرة بشرية للأسئلة ومواءمة الهدف والتقييم",
-        "إثبات مرجعي أدق من مجرد رابط بوابة",
-        "توسيع التطبيق المتقدم والأمثلة؛ الشرح الحالي درس مصغر",
-        "تأليف حالة نقل مستقلة بدل إعادة سؤال الاختبار",
-        "كتابة خلاصة معرفة وقرار بدل تكرار الهدف"
+        "معايرة بشرية مستقلة للأسئلة والشرح وقياس التعلم؛ لم تنفذ"
       ]
     },
     {
       "id": "m09-l03",
       "module": 9,
       "title": "مزاد الإعلان ومقاييس التكلفة",
-      "readingWords": 153,
-      "readingParagraphs": 3,
+      "readingWords": 265,
+      "readingParagraphs": 5,
       "questions": 5,
       "interactions": [
         {
@@ -3326,13 +3525,12 @@
       "practicalActivity": true,
       "dailyMission": true,
       "rubricItems": 3,
-      "generatedCase": true,
-      "repeatedSummary": true,
+      "generatedCase": false,
+      "repeatedSummary": false,
       "weakDistractors": [],
       "answerLengthCue": [
         "m09-l03-q1",
-        "m09-l03-q2",
-        "m09-l03-q5"
+        "m09-l03-q2"
       ],
       "bookReferences": [
         {
@@ -3350,22 +3548,26 @@
           "url": "https://skillshop.withgoogle.com/"
         }
       ],
-      "status": "present; advanced instructional approval open",
+      "status": "agent-reviewed",
+      "sourceBindings": [
+        {
+          "sourceId": "ads-metrics",
+          "claim": "metrics.average_cpc وmetrics.ctr",
+          "locator": "حقلا metrics.ctr وmetrics.average_cpc؛ الحسابات الأخرى اشتقاق حسابي معلن"
+        }
+      ],
+      "originalWork": "اشتقاق CPM وCPA بوحدات ومقامات معلنة؛ لا معادلة مزاد",
       "independentHumanReview": false,
       "actions": [
-        "معايرة بشرية للأسئلة ومواءمة الهدف والتقييم",
-        "إثبات مرجعي أدق من مجرد رابط بوابة",
-        "توسيع التطبيق المتقدم والأمثلة؛ الشرح الحالي درس مصغر",
-        "تأليف حالة نقل مستقلة بدل إعادة سؤال الاختبار",
-        "كتابة خلاصة معرفة وقرار بدل تكرار الهدف"
+        "معايرة بشرية مستقلة للأسئلة والشرح وقياس التعلم؛ لم تنفذ"
       ]
     },
     {
       "id": "m09-l04",
       "module": 9,
       "title": "ROAS ونقطة التعادل والميزانية",
-      "readingWords": 146,
-      "readingParagraphs": 3,
+      "readingWords": 258,
+      "readingParagraphs": 5,
       "questions": 5,
       "interactions": [
         {
@@ -3403,8 +3605,8 @@
       "practicalActivity": true,
       "dailyMission": true,
       "rubricItems": 3,
-      "generatedCase": true,
-      "repeatedSummary": true,
+      "generatedCase": false,
+      "repeatedSummary": false,
       "weakDistractors": [],
       "answerLengthCue": [
         "m09-l04-q2",
@@ -3426,22 +3628,26 @@
           "url": "https://support.google.com/analytics/answer/9304153"
         }
       ],
-      "status": "present; advanced instructional approval open",
+      "status": "agent-reviewed",
+      "sourceBindings": [
+        {
+          "sourceId": "dib-plan",
+          "claim": "قيمة العلاقة ومراجعة الجدوى",
+          "locator": "السوق والرسالة ومراحل العلاقة؛ مواضع مختارة من النسخة المرفقة، لا نتائج منصات أو نسب نجاح"
+        }
+      ],
+      "originalWork": "ROAS ومساهمة وتعادل مبسط1÷نسبة موجبة؛ اختبار حساسية",
       "independentHumanReview": false,
       "actions": [
-        "معايرة بشرية للأسئلة ومواءمة الهدف والتقييم",
-        "إثبات مرجعي أدق من مجرد رابط بوابة",
-        "توسيع التطبيق المتقدم والأمثلة؛ الشرح الحالي درس مصغر",
-        "تأليف حالة نقل مستقلة بدل إعادة سؤال الاختبار",
-        "كتابة خلاصة معرفة وقرار بدل تكرار الهدف"
+        "معايرة بشرية مستقلة للأسئلة والشرح وقياس التعلم؛ لم تنفذ"
       ]
     },
     {
       "id": "m09-l05",
       "module": 9,
       "title": "تشخيص الحملة وإرهاق الإعلان",
-      "readingWords": 149,
-      "readingParagraphs": 3,
+      "readingWords": 262,
+      "readingParagraphs": 5,
       "questions": 5,
       "interactions": [
         {
@@ -3479,11 +3685,9 @@
       "practicalActivity": true,
       "dailyMission": true,
       "rubricItems": 3,
-      "generatedCase": true,
-      "repeatedSummary": true,
-      "weakDistractors": [
-        "m09-l05-q1"
-      ],
+      "generatedCase": false,
+      "repeatedSummary": false,
+      "weakDistractors": [],
       "answerLengthCue": [],
       "bookReferences": [
         {
@@ -3501,23 +3705,26 @@
           "url": "https://www.facebookblueprint.com/student/catalog/"
         }
       ],
-      "status": "present; advanced instructional approval open",
+      "status": "agent-reviewed",
+      "sourceBindings": [
+        {
+          "sourceId": "ads-metrics",
+          "claim": "تعريف نقر وظهور وكلفة نقرة",
+          "locator": "حقلا metrics.ctr وmetrics.average_cpc؛ الحسابات الأخرى اشتقاق حسابي معلن"
+        }
+      ],
+      "originalWork": "شجرة تشخيص قياس وتشغيل قبل فرضية إرهاق",
       "independentHumanReview": false,
       "actions": [
-        "معايرة بشرية للأسئلة ومواءمة الهدف والتقييم",
-        "إثبات مرجعي أدق من مجرد رابط بوابة",
-        "توسيع التطبيق المتقدم والأمثلة؛ الشرح الحالي درس مصغر",
-        "تأليف حالة نقل مستقلة بدل إعادة سؤال الاختبار",
-        "كتابة خلاصة معرفة وقرار بدل تكرار الهدف",
-        "استبدال مشتتات غير مرتبطة بالمجال"
+        "معايرة بشرية مستقلة للأسئلة والشرح وقياس التعلم؛ لم تنفذ"
       ]
     },
     {
       "id": "m10-l01",
       "module": 10,
       "title": "خطة القياس والأحداث",
-      "readingWords": 151,
-      "readingParagraphs": 3,
+      "readingWords": 275,
+      "readingParagraphs": 5,
       "questions": 5,
       "interactions": [
         {
@@ -3555,14 +3762,11 @@
       "practicalActivity": true,
       "dailyMission": true,
       "rubricItems": 3,
-      "generatedCase": true,
-      "repeatedSummary": true,
-      "weakDistractors": [
-        "m10-l01-q4"
-      ],
+      "generatedCase": false,
+      "repeatedSummary": false,
+      "weakDistractors": [],
       "answerLengthCue": [
-        "m10-l01-q2",
-        "m10-l01-q4"
+        "m10-l01-q2"
       ],
       "bookReferences": [
         {
@@ -3580,23 +3784,26 @@
           "url": "https://www.google.com/about/company/user-consent-policy/"
         }
       ],
-      "status": "present; advanced instructional approval open",
+      "status": "agent-reviewed",
+      "sourceBindings": [
+        {
+          "sourceId": "ga-events",
+          "claim": "فئات الأحداث التلقائية والمعززة والموصى بها والمخصصة",
+          "locator": "فئات الأحداث والفرق بين التلقائي والمحتاج إعدادًا؛ لا تتبع فعلي في الأكاديمية"
+        }
+      ],
+      "originalWork": "قاموس أحداث واختبار تكرار؛ اسم افتراضي ليس حدث GA4 قياسيًا",
       "independentHumanReview": false,
       "actions": [
-        "معايرة بشرية للأسئلة ومواءمة الهدف والتقييم",
-        "إثبات مرجعي أدق من مجرد رابط بوابة",
-        "توسيع التطبيق المتقدم والأمثلة؛ الشرح الحالي درس مصغر",
-        "تأليف حالة نقل مستقلة بدل إعادة سؤال الاختبار",
-        "كتابة خلاصة معرفة وقرار بدل تكرار الهدف",
-        "استبدال مشتتات غير مرتبطة بالمجال"
+        "معايرة بشرية مستقلة للأسئلة والشرح وقياس التعلم؛ لم تنفذ"
       ]
     },
     {
       "id": "m10-l02",
       "module": 10,
       "title": "وسوم UTM وإسناد القنوات",
-      "readingWords": 150,
-      "readingParagraphs": 3,
+      "readingWords": 274,
+      "readingParagraphs": 5,
       "questions": 5,
       "interactions": [
         {
@@ -3634,8 +3841,8 @@
       "practicalActivity": true,
       "dailyMission": true,
       "rubricItems": 3,
-      "generatedCase": true,
-      "repeatedSummary": true,
+      "generatedCase": false,
+      "repeatedSummary": false,
       "weakDistractors": [],
       "answerLengthCue": [
         "m10-l02-q1",
@@ -3654,22 +3861,26 @@
           "url": "https://support.google.com/analytics/answer/9304153"
         }
       ],
-      "status": "present; advanced instructional approval open",
+      "status": "agent-reviewed",
+      "sourceBindings": [
+        {
+          "sourceId": "ga-config",
+          "claim": "campaign_source/medium/name/content تقابل وسومًا في URL",
+          "locator": "campaign_source/medium/name/content وعلاقتها بوسوم UTM؛ ليست دليل سببية"
+        }
+      ],
+      "originalWork": "قاموس تسمية وإسناد لا سببية ولا هوية",
       "independentHumanReview": false,
       "actions": [
-        "معايرة بشرية للأسئلة ومواءمة الهدف والتقييم",
-        "إثبات مرجعي أدق من مجرد رابط بوابة",
-        "توسيع التطبيق المتقدم والأمثلة؛ الشرح الحالي درس مصغر",
-        "تأليف حالة نقل مستقلة بدل إعادة سؤال الاختبار",
-        "كتابة خلاصة معرفة وقرار بدل تكرار الهدف"
+        "معايرة بشرية مستقلة للأسئلة والشرح وقياس التعلم؛ لم تنفذ"
       ]
     },
     {
       "id": "m10-l03",
       "module": 10,
       "title": "لوحة مؤشرات تعطي قرارًا",
-      "readingWords": 147,
-      "readingParagraphs": 3,
+      "readingWords": 260,
+      "readingParagraphs": 5,
       "questions": 5,
       "interactions": [
         {
@@ -3707,15 +3918,10 @@
       "practicalActivity": true,
       "dailyMission": true,
       "rubricItems": 3,
-      "generatedCase": true,
-      "repeatedSummary": true,
-      "weakDistractors": [
-        "m10-l03-q2",
-        "m10-l03-q4"
-      ],
-      "answerLengthCue": [
-        "m10-l03-q4"
-      ],
+      "generatedCase": false,
+      "repeatedSummary": false,
+      "weakDistractors": [],
+      "answerLengthCue": [],
       "bookReferences": [
         {
           "title": "آلان ديب، خطة تسويقية في صفحة واحدة",
@@ -3732,23 +3938,26 @@
           "url": "https://www.w3.org/WAI/tips/writing/"
         }
       ],
-      "status": "present; advanced instructional approval open",
+      "status": "agent-reviewed",
+      "sourceBindings": [
+        {
+          "sourceId": "ads-metrics",
+          "claim": "تعريف معدل يحتاج بسطًا ومقامًا",
+          "locator": "حقلا metrics.ctr وmetrics.average_cpc؛ الحسابات الأخرى اشتقاق حسابي معلن"
+        }
+      ],
+      "originalWork": "جمع النسب من المجاميع وبيانات مفقودة لا صفر",
       "independentHumanReview": false,
       "actions": [
-        "معايرة بشرية للأسئلة ومواءمة الهدف والتقييم",
-        "إثبات مرجعي أدق من مجرد رابط بوابة",
-        "توسيع التطبيق المتقدم والأمثلة؛ الشرح الحالي درس مصغر",
-        "تأليف حالة نقل مستقلة بدل إعادة سؤال الاختبار",
-        "كتابة خلاصة معرفة وقرار بدل تكرار الهدف",
-        "استبدال مشتتات غير مرتبطة بالمجال"
+        "معايرة بشرية مستقلة للأسئلة والشرح وقياس التعلم؛ لم تنفذ"
       ]
     },
     {
       "id": "m10-l04",
       "module": 10,
       "title": "تحليل القمع وتجزئة النتائج",
-      "readingWords": 149,
-      "readingParagraphs": 3,
+      "readingWords": 267,
+      "readingParagraphs": 5,
       "questions": 5,
       "interactions": [
         {
@@ -3786,11 +3995,12 @@
       "practicalActivity": true,
       "dailyMission": true,
       "rubricItems": 3,
-      "generatedCase": true,
-      "repeatedSummary": true,
+      "generatedCase": false,
+      "repeatedSummary": false,
       "weakDistractors": [],
       "answerLengthCue": [
-        "m10-l04-q2"
+        "m10-l04-q2",
+        "m10-l04-q5"
       ],
       "bookReferences": [
         {
@@ -3804,22 +4014,26 @@
           "url": "https://support.google.com/analytics/answer/9304153"
         }
       ],
-      "status": "present; advanced instructional approval open",
+      "status": "agent-reviewed",
+      "sourceBindings": [
+        {
+          "sourceId": "experiment",
+          "claim": "هدف التصميم يسبق المقارنة",
+          "locator": "تحديد أهداف التجربة قبل اختيار التصميم"
+        }
+      ],
+      "originalWork": "قمع بوحدة ونافذة ثابتة وفحص المزيج لا سبب يقيني",
       "independentHumanReview": false,
       "actions": [
-        "معايرة بشرية للأسئلة ومواءمة الهدف والتقييم",
-        "إثبات مرجعي أدق من مجرد رابط بوابة",
-        "توسيع التطبيق المتقدم والأمثلة؛ الشرح الحالي درس مصغر",
-        "تأليف حالة نقل مستقلة بدل إعادة سؤال الاختبار",
-        "كتابة خلاصة معرفة وقرار بدل تكرار الهدف"
+        "معايرة بشرية مستقلة للأسئلة والشرح وقياس التعلم؛ لم تنفذ"
       ]
     },
     {
       "id": "m10-l05",
       "module": 10,
       "title": "تقرير العميل وحدود البيانات",
-      "readingWords": 144,
-      "readingParagraphs": 3,
+      "readingWords": 259,
+      "readingParagraphs": 5,
       "questions": 5,
       "interactions": [
         {
@@ -3857,8 +4071,8 @@
       "practicalActivity": true,
       "dailyMission": true,
       "rubricItems": 3,
-      "generatedCase": true,
-      "repeatedSummary": true,
+      "generatedCase": false,
+      "repeatedSummary": false,
       "weakDistractors": [],
       "answerLengthCue": [
         "m10-l05-q2",
@@ -3880,22 +4094,26 @@
           "url": "https://academy.hubspot.com/courses/digital-marketing"
         }
       ],
-      "status": "present; advanced instructional approval open",
+      "status": "agent-reviewed",
+      "sourceBindings": [
+        {
+          "sourceId": "experiment",
+          "claim": "التصميم يتبع سؤال القرار المعلن",
+          "locator": "تحديد أهداف التجربة قبل اختيار التصميم"
+        }
+      ],
+      "originalWork": "تقرير هدف ونتيجة وحدود وتوصية قابلة للتنفيذ",
       "independentHumanReview": false,
       "actions": [
-        "معايرة بشرية للأسئلة ومواءمة الهدف والتقييم",
-        "إثبات مرجعي أدق من مجرد رابط بوابة",
-        "توسيع التطبيق المتقدم والأمثلة؛ الشرح الحالي درس مصغر",
-        "تأليف حالة نقل مستقلة بدل إعادة سؤال الاختبار",
-        "كتابة خلاصة معرفة وقرار بدل تكرار الهدف"
+        "معايرة بشرية مستقلة للأسئلة والشرح وقياس التعلم؛ لم تنفذ"
       ]
     },
     {
       "id": "m11-l01",
       "module": 11,
       "title": "فرضية التجربة وترتيب الاختبارات",
-      "readingWords": 156,
-      "readingParagraphs": 3,
+      "readingWords": 272,
+      "readingParagraphs": 5,
       "questions": 5,
       "interactions": [
         {
@@ -3933,14 +4151,12 @@
       "practicalActivity": true,
       "dailyMission": true,
       "rubricItems": 3,
-      "generatedCase": true,
-      "repeatedSummary": true,
-      "weakDistractors": [
-        "m11-l01-q5"
-      ],
+      "generatedCase": false,
+      "repeatedSummary": false,
+      "weakDistractors": [],
       "answerLengthCue": [
         "m11-l01-q1",
-        "m11-l01-q5"
+        "m11-l01-q2"
       ],
       "bookReferences": [
         {
@@ -3962,23 +4178,26 @@
           "url": "https://academy.hubspot.com/courses/digital-marketing"
         }
       ],
-      "status": "present; advanced instructional approval open",
+      "status": "agent-reviewed",
+      "sourceBindings": [
+        {
+          "sourceId": "experiment",
+          "claim": "قسم5.3.1 تحديد الأهداف قبل اختيار التصميم",
+          "locator": "تحديد أهداف التجربة قبل اختيار التصميم"
+        }
+      ],
+      "originalWork": "سجل فرضيات ودرجات تقديرية وحد ضرر",
       "independentHumanReview": false,
       "actions": [
-        "معايرة بشرية للأسئلة ومواءمة الهدف والتقييم",
-        "إثبات مرجعي أدق من مجرد رابط بوابة",
-        "توسيع التطبيق المتقدم والأمثلة؛ الشرح الحالي درس مصغر",
-        "تأليف حالة نقل مستقلة بدل إعادة سؤال الاختبار",
-        "كتابة خلاصة معرفة وقرار بدل تكرار الهدف",
-        "استبدال مشتتات غير مرتبطة بالمجال"
+        "معايرة بشرية مستقلة للأسئلة والشرح وقياس التعلم؛ لم تنفذ"
       ]
     },
     {
       "id": "m11-l02",
       "module": 11,
       "title": "اختبار A/B وعدم اليقين",
-      "readingWords": 155,
-      "readingParagraphs": 3,
+      "readingWords": 277,
+      "readingParagraphs": 5,
       "questions": 5,
       "interactions": [
         {
@@ -4016,8 +4235,8 @@
       "practicalActivity": true,
       "dailyMission": true,
       "rubricItems": 3,
-      "generatedCase": true,
-      "repeatedSummary": true,
+      "generatedCase": false,
+      "repeatedSummary": false,
       "weakDistractors": [],
       "answerLengthCue": [
         "m11-l02-q5"
@@ -4038,22 +4257,31 @@
           "url": "https://support.google.com/analytics/answer/9304153"
         }
       ],
-      "status": "present; advanced instructional approval open",
+      "status": "agent-reviewed",
+      "sourceBindings": [
+        {
+          "sourceId": "experiment",
+          "claim": "هدف مخطط وعدم يقين في تقدير النسبة",
+          "locator": "تحديد أهداف التجربة قبل اختيار التصميم"
+        },
+        {
+          "sourceId": "uncertainty",
+          "claim": "إحالة مساندة في نطاق المصدر المبين",
+          "locator": "فواصل النسب وعدم اليقين وحدود التقريبات؛ لا تحليل دلالة منفذ لجدول التدريب"
+        }
+      ],
+      "originalWork": "فرق وصفي2 نقطة و20٪؛ لا تحليل دلالة مزعوم",
       "independentHumanReview": false,
       "actions": [
-        "معايرة بشرية للأسئلة ومواءمة الهدف والتقييم",
-        "إثبات مرجعي أدق من مجرد رابط بوابة",
-        "توسيع التطبيق المتقدم والأمثلة؛ الشرح الحالي درس مصغر",
-        "تأليف حالة نقل مستقلة بدل إعادة سؤال الاختبار",
-        "كتابة خلاصة معرفة وقرار بدل تكرار الهدف"
+        "معايرة بشرية مستقلة للأسئلة والشرح وقياس التعلم؛ لم تنفذ"
       ]
     },
     {
       "id": "m11-l03",
       "module": 11,
       "title": "تحسين التحويل واختبار الاستخدام",
-      "readingWords": 149,
-      "readingParagraphs": 3,
+      "readingWords": 272,
+      "readingParagraphs": 5,
       "questions": 5,
       "interactions": [
         {
@@ -4091,13 +4319,10 @@
       "practicalActivity": true,
       "dailyMission": true,
       "rubricItems": 3,
-      "generatedCase": true,
-      "repeatedSummary": true,
-      "weakDistractors": [
-        "m11-l03-q1"
-      ],
+      "generatedCase": false,
+      "repeatedSummary": false,
+      "weakDistractors": [],
       "answerLengthCue": [
-        "m11-l03-q1",
         "m11-l03-q4"
       ],
       "bookReferences": [
@@ -4120,23 +4345,31 @@
           "url": "https://support.google.com/analytics/answer/9304153"
         }
       ],
-      "status": "present; advanced instructional approval open",
+      "status": "agent-reviewed",
+      "sourceBindings": [
+        {
+          "sourceId": "wai-writing",
+          "claim": "وضوح المعلومات وهدف اختبار محدد",
+          "locator": "وضوح العناوين والروابط واللغة والبدائل؛ إرشادات كتابة لا شهادة امتثال"
+        },
+        {
+          "sourceId": "experiment",
+          "claim": "إحالة مساندة في نطاق المصدر المبين",
+          "locator": "تحديد أهداف التجربة قبل اختيار التصميم"
+        }
+      ],
+      "originalWork": "بروتوكول استخدام بعينة نوعية لا نسبة سوق",
       "independentHumanReview": false,
       "actions": [
-        "معايرة بشرية للأسئلة ومواءمة الهدف والتقييم",
-        "إثبات مرجعي أدق من مجرد رابط بوابة",
-        "توسيع التطبيق المتقدم والأمثلة؛ الشرح الحالي درس مصغر",
-        "تأليف حالة نقل مستقلة بدل إعادة سؤال الاختبار",
-        "كتابة خلاصة معرفة وقرار بدل تكرار الهدف",
-        "استبدال مشتتات غير مرتبطة بالمجال"
+        "معايرة بشرية مستقلة للأسئلة والشرح وقياس التعلم؛ لم تنفذ"
       ]
     },
     {
       "id": "m11-l04",
       "module": 11,
       "title": "الخصوصية والأخلاقيات في التسويق",
-      "readingWords": 149,
-      "readingParagraphs": 3,
+      "readingWords": 265,
+      "readingParagraphs": 5,
       "questions": 5,
       "interactions": [
         {
@@ -4174,11 +4407,12 @@
       "practicalActivity": true,
       "dailyMission": true,
       "rubricItems": 3,
-      "generatedCase": true,
-      "repeatedSummary": true,
+      "generatedCase": false,
+      "repeatedSummary": false,
       "weakDistractors": [],
       "answerLengthCue": [
-        "m11-l04-q4"
+        "m11-l04-q4",
+        "m11-l04-q5"
       ],
       "bookReferences": [
         {
@@ -4204,22 +4438,31 @@
           "url": "https://www.w3.org/WAI/tips/writing/"
         }
       ],
-      "status": "present; advanced instructional approval open",
+      "status": "agent-reviewed",
+      "sourceBindings": [
+        {
+          "sourceId": "tag-consent",
+          "claim": "حالة موافقة تقنية منفصلة؛ نطاق الإفصاح الأمريكي",
+          "locator": "إرسال/تحديث حالة الموافقة لا يخزن الاختيارات أو ينشئ أساسًا قانونيًا"
+        },
+        {
+          "sourceId": "ftc-disclosure",
+          "claim": "إحالة مساندة في نطاق المصدر المبين",
+          "locator": "وجود علاقة مادية ووضوح الإفصاح قرب التوصية؛ توجيه أمريكي لا قانون عراقي"
+        }
+      ],
+      "originalWork": "خريطة بيانات ومراجعة أخلاقية لا فتوى قانونية عراقية",
       "independentHumanReview": false,
       "actions": [
-        "معايرة بشرية للأسئلة ومواءمة الهدف والتقييم",
-        "إثبات مرجعي أدق من مجرد رابط بوابة",
-        "توسيع التطبيق المتقدم والأمثلة؛ الشرح الحالي درس مصغر",
-        "تأليف حالة نقل مستقلة بدل إعادة سؤال الاختبار",
-        "كتابة خلاصة معرفة وقرار بدل تكرار الهدف"
+        "معايرة بشرية مستقلة للأسئلة والشرح وقياس التعلم؛ لم تنفذ"
       ]
     },
     {
       "id": "m11-l05",
       "module": 11,
       "title": "الأمن التشغيلي وأدوات الذكاء الاصطناعي",
-      "readingWords": 156,
-      "readingParagraphs": 3,
+      "readingWords": 282,
+      "readingParagraphs": 5,
       "questions": 5,
       "interactions": [
         {
@@ -4257,8 +4500,8 @@
       "practicalActivity": true,
       "dailyMission": true,
       "rubricItems": 3,
-      "generatedCase": true,
-      "repeatedSummary": true,
+      "generatedCase": false,
+      "repeatedSummary": false,
       "weakDistractors": [],
       "answerLengthCue": [
         "m11-l05-q1",
@@ -4285,22 +4528,26 @@
           "url": "https://academy.hubspot.com/courses/digital-marketing"
         }
       ],
-      "status": "present; advanced instructional approval open",
+      "status": "agent-reviewed",
+      "sourceBindings": [
+        {
+          "sourceId": "iam",
+          "claim": "Least privilege وService account keys؛ لا أسرار في المصدر",
+          "locator": "Least privilege وService account keys؛ أصل مبدأ الصلاحيات وحماية المفاتيح، لا خطوات إعداد حساب Meta"
+        }
+      ],
+      "originalWork": "قائمة تشغيل ومراجعة AI وحقوق مدخلات؛ لا حماية جهاز مخترق",
       "independentHumanReview": false,
       "actions": [
-        "معايرة بشرية للأسئلة ومواءمة الهدف والتقييم",
-        "إثبات مرجعي أدق من مجرد رابط بوابة",
-        "توسيع التطبيق المتقدم والأمثلة؛ الشرح الحالي درس مصغر",
-        "تأليف حالة نقل مستقلة بدل إعادة سؤال الاختبار",
-        "كتابة خلاصة معرفة وقرار بدل تكرار الهدف"
+        "معايرة بشرية مستقلة للأسئلة والشرح وقياس التعلم؛ لم تنفذ"
       ]
     },
     {
       "id": "m12-l01",
       "module": 12,
       "title": "موجز مشروع التخرج ونطاقه",
-      "readingWords": 148,
-      "readingParagraphs": 3,
+      "readingWords": 274,
+      "readingParagraphs": 5,
       "questions": 5,
       "interactions": [
         {
@@ -4338,8 +4585,8 @@
       "practicalActivity": true,
       "dailyMission": true,
       "rubricItems": 3,
-      "generatedCase": true,
-      "repeatedSummary": true,
+      "generatedCase": false,
+      "repeatedSummary": false,
       "weakDistractors": [],
       "answerLengthCue": [
         "m12-l01-q3"
@@ -4360,22 +4607,26 @@
           "url": "https://grow.google/certificates/digital-marketing-ecommerce/"
         }
       ],
-      "status": "present; advanced instructional approval open",
+      "status": "agent-reviewed",
+      "sourceBindings": [
+        {
+          "sourceId": "dib-plan",
+          "claim": "ترابط السوق والرسالة والوسائل ومراحل العلاقة",
+          "locator": "السوق والرسالة ومراحل العلاقة؛ مواضع مختارة من النسخة المرفقة، لا نتائج منصات أو نسب نجاح"
+        }
+      ],
+      "originalWork": "نطاق محاكاة ومعايير قبول واعتمادات وسعة",
       "independentHumanReview": false,
       "actions": [
-        "معايرة بشرية للأسئلة ومواءمة الهدف والتقييم",
-        "إثبات مرجعي أدق من مجرد رابط بوابة",
-        "توسيع التطبيق المتقدم والأمثلة؛ الشرح الحالي درس مصغر",
-        "تأليف حالة نقل مستقلة بدل إعادة سؤال الاختبار",
-        "كتابة خلاصة معرفة وقرار بدل تكرار الهدف"
+        "معايرة بشرية مستقلة للأسئلة والشرح وقياس التعلم؛ لم تنفذ"
       ]
     },
     {
       "id": "m12-l02",
       "module": 12,
       "title": "دمج البحث والخطة في قرار واحد",
-      "readingWords": 143,
-      "readingParagraphs": 3,
+      "readingWords": 261,
+      "readingParagraphs": 5,
       "questions": 5,
       "interactions": [
         {
@@ -4413,8 +4664,8 @@
       "practicalActivity": true,
       "dailyMission": true,
       "rubricItems": 3,
-      "generatedCase": true,
-      "repeatedSummary": true,
+      "generatedCase": false,
+      "repeatedSummary": false,
       "weakDistractors": [],
       "answerLengthCue": [],
       "bookReferences": [
@@ -4433,22 +4684,26 @@
           "url": "https://grow.google/certificates/digital-marketing-ecommerce/"
         }
       ],
-      "status": "present; advanced instructional approval open",
+      "status": "agent-reviewed",
+      "sourceBindings": [
+        {
+          "sourceId": "dib-plan",
+          "claim": "الخطة ومراحل قبل وأثناء وبعد الشراء",
+          "locator": "السوق والرسالة ومراحل العلاقة؛ مواضع مختارة من النسخة المرفقة، لا نتائج منصات أو نسب نجاح"
+        }
+      ],
+      "originalWork": "رحلة تحقق من تسعة قرارات ولا نقل قوالب الكتاب",
       "independentHumanReview": false,
       "actions": [
-        "معايرة بشرية للأسئلة ومواءمة الهدف والتقييم",
-        "إثبات مرجعي أدق من مجرد رابط بوابة",
-        "توسيع التطبيق المتقدم والأمثلة؛ الشرح الحالي درس مصغر",
-        "تأليف حالة نقل مستقلة بدل إعادة سؤال الاختبار",
-        "كتابة خلاصة معرفة وقرار بدل تكرار الهدف"
+        "معايرة بشرية مستقلة للأسئلة والشرح وقياس التعلم؛ لم تنفذ"
       ]
     },
     {
       "id": "m12-l03",
       "module": 12,
       "title": "حزمة الحملة وضمان جودتها",
-      "readingWords": 145,
-      "readingParagraphs": 3,
+      "readingWords": 260,
+      "readingParagraphs": 5,
       "questions": 5,
       "interactions": [
         {
@@ -4486,12 +4741,11 @@
       "practicalActivity": true,
       "dailyMission": true,
       "rubricItems": 3,
-      "generatedCase": true,
-      "repeatedSummary": true,
-      "weakDistractors": [
-        "m12-l03-q2"
-      ],
+      "generatedCase": false,
+      "repeatedSummary": false,
+      "weakDistractors": [],
       "answerLengthCue": [
+        "m12-l03-q1",
         "m12-l03-q4",
         "m12-l03-q5"
       ],
@@ -4511,23 +4765,26 @@
           "url": "https://support.google.com/analytics/answer/9304153"
         }
       ],
-      "status": "present; advanced instructional approval open",
+      "status": "agent-reviewed",
+      "sourceBindings": [
+        {
+          "sourceId": "wai-writing",
+          "claim": "وضوح نصوص وروابط وبدائل",
+          "locator": "وضوح العناوين والروابط واللغة والبدائل؛ إرشادات كتابة لا شهادة امتثال"
+        }
+      ],
+      "originalWork": "12 حالة QA فعلية عند تنفيذ المتعلم؛ الحاجب يمنع الإطلاق",
       "independentHumanReview": false,
       "actions": [
-        "معايرة بشرية للأسئلة ومواءمة الهدف والتقييم",
-        "إثبات مرجعي أدق من مجرد رابط بوابة",
-        "توسيع التطبيق المتقدم والأمثلة؛ الشرح الحالي درس مصغر",
-        "تأليف حالة نقل مستقلة بدل إعادة سؤال الاختبار",
-        "كتابة خلاصة معرفة وقرار بدل تكرار الهدف",
-        "استبدال مشتتات غير مرتبطة بالمجال"
+        "معايرة بشرية مستقلة للأسئلة والشرح وقياس التعلم؛ لم تنفذ"
       ]
     },
     {
       "id": "m12-l04",
       "module": 12,
       "title": "محاكاة النتائج والقرار الاقتصادي",
-      "readingWords": 162,
-      "readingParagraphs": 3,
+      "readingWords": 279,
+      "readingParagraphs": 5,
       "questions": 5,
       "interactions": [
         {
@@ -4565,8 +4822,8 @@
       "practicalActivity": true,
       "dailyMission": true,
       "rubricItems": 3,
-      "generatedCase": true,
-      "repeatedSummary": true,
+      "generatedCase": false,
+      "repeatedSummary": false,
       "weakDistractors": [],
       "answerLengthCue": [
         "m12-l04-q4"
@@ -4587,22 +4844,26 @@
           "url": "https://support.google.com/analytics/answer/9304153"
         }
       ],
-      "status": "present; advanced instructional approval open",
+      "status": "agent-reviewed",
+      "sourceBindings": [
+        {
+          "sourceId": "ads-metrics",
+          "claim": "CTR وCPC بمقامات معرفة",
+          "locator": "حقلا metrics.ctr وmetrics.average_cpc؛ الحسابات الأخرى اشتقاق حسابي معلن"
+        }
+      ],
+      "originalWork": "جدول أصلي ومساهمة وحساسية2860 قبل الثابت",
       "independentHumanReview": false,
       "actions": [
-        "معايرة بشرية للأسئلة ومواءمة الهدف والتقييم",
-        "إثبات مرجعي أدق من مجرد رابط بوابة",
-        "توسيع التطبيق المتقدم والأمثلة؛ الشرح الحالي درس مصغر",
-        "تأليف حالة نقل مستقلة بدل إعادة سؤال الاختبار",
-        "كتابة خلاصة معرفة وقرار بدل تكرار الهدف"
+        "معايرة بشرية مستقلة للأسئلة والشرح وقياس التعلم؛ لم تنفذ"
       ]
     },
     {
       "id": "m12-l05",
       "module": 12,
       "title": "نشر ملف الأعمال ومراجعة التخرج",
-      "readingWords": 145,
-      "readingParagraphs": 3,
+      "readingWords": 266,
+      "readingParagraphs": 5,
       "questions": 5,
       "interactions": [
         {
@@ -4640,8 +4901,8 @@
       "practicalActivity": true,
       "dailyMission": true,
       "rubricItems": 3,
-      "generatedCase": true,
-      "repeatedSummary": true,
+      "generatedCase": false,
+      "repeatedSummary": false,
       "weakDistractors": [],
       "answerLengthCue": [
         "m12-l05-q2",
@@ -4663,14 +4924,18 @@
           "url": "https://academy.hubspot.com/courses/digital-marketing"
         }
       ],
-      "status": "present; advanced instructional approval open",
+      "status": "agent-reviewed",
+      "sourceBindings": [
+        {
+          "sourceId": "godin-stories",
+          "claim": "اتساق القصة مع ما حدث فعلًا",
+          "locator": "منظور الجمهور واتساق القصة والتجربة؛ لا تبرير للخداع"
+        }
+      ],
+      "originalWork": "ملف محاكاة صادق وحقوق وتصدير واستعادة لا اعتماد مستقل",
       "independentHumanReview": false,
       "actions": [
-        "معايرة بشرية للأسئلة ومواءمة الهدف والتقييم",
-        "إثبات مرجعي أدق من مجرد رابط بوابة",
-        "توسيع التطبيق المتقدم والأمثلة؛ الشرح الحالي درس مصغر",
-        "تأليف حالة نقل مستقلة بدل إعادة سؤال الاختبار",
-        "كتابة خلاصة معرفة وقرار بدل تكرار الهدف"
+        "معايرة بشرية مستقلة للأسئلة والشرح وقياس التعلم؛ لم تنفذ"
       ]
     }
   ]

@@ -1,3 +1,4 @@
+import {assessmentQuestions,CURRENT_ASSESSMENT} from './lessons/assessment-history'
 import {activitiesFor,validInteraction} from './interactive/content'
 import {activityResult,activityOutput,interactionSchema,type Interaction} from './interactive/model'
 import {reviewQueue,reviewSchedule} from './interactive/review'
@@ -57,15 +58,16 @@ export async function saveLesson(id:string,patch:Partial<Omit<LessonState,'id'|'
   })
 }
 export async function submitQuiz(lesson:Lesson,answers:Record<string,string>,database=db,now=new Date()){
-  const attempt:Attempt={id:crypto.randomUUID(),lessonId:lesson.id,at:now.toISOString(),answers,...scoreQuestions(lesson.questions,answers)}
-  await transaction(database,'rw',async store=>{
+  return transaction(database,'rw',async store=>{
     if(!isUnlocked(lesson.id,await store.lessonStates.toArray()))throw new Error('أكمل الدروس السابقة أولًا.')
-    await store.attempts.add(attempt)
     const state=await store.lessonStates.get(lesson.id)??emptyLesson(lesson.id)
-    await store.lessonStates.put({...state,quizDraft:{answers,active:false,round:state.quizDraft?.round??0,updatedAt:attempt.at}})
+    const assessmentVersion=state.quizDraft?.active?(state.quizDraft.assessmentVersion??1):CURRENT_ASSESSMENT
+    const attempt:Attempt={id:crypto.randomUUID(),lessonId:lesson.id,assessmentVersion,at:now.toISOString(),answers,...scoreQuestions(assessmentQuestions(lesson,assessmentVersion),answers)}
+    await store.attempts.add(attempt)
+    await store.lessonStates.put({...state,quizDraft:{assessmentVersion,answers,active:false,round:state.quizDraft?.round??0,updatedAt:attempt.at}})
     await store.activity.put({date:baghdadDay(now)})
+    return attempt
   })
-  return attempt
 }
 export async function completeLesson(lesson:Lesson,database=db){
   await transaction(database,'rw',async store=>{
@@ -174,7 +176,7 @@ export async function saveQuizAnswer(lessonId:string,questionId:string,answer:st
  await transaction(database,'rw',async store=>{
   const states=await store.lessonStates.toArray();if(!isUnlocked(lessonId,states))throw new Error('الدرس مقفل.')
   const current=states.find(s=>s.id===lessonId)??emptyLesson(lessonId),draft=current.quizDraft
-  await store.lessonStates.put({...current,quizDraft:{answers:{...(draft?.active?draft.answers:{}),[questionId]:answer},active:true,round:draft?.round??0,updatedAt:new Date().toISOString()}})
+  await store.lessonStates.put({...current,quizDraft:{assessmentVersion:draft?.active?(draft.assessmentVersion??1):CURRENT_ASSESSMENT,answers:{...(draft?.active?draft.answers:{}),[questionId]:answer},active:true,round:draft?.round??0,updatedAt:new Date().toISOString()}})
  })
 }
 export async function saveQuizDraftAnswers(lessonId:string,answers:Record<string,string>,database=db){
@@ -183,14 +185,14 @@ export async function saveQuizDraftAnswers(lessonId:string,answers:Record<string
  await transaction(database,'rw',async store=>{
   const states=await store.lessonStates.toArray();if(!isUnlocked(lessonId,states))throw new Error('الدرس مقفل.')
   const current=states.find(s=>s.id===lessonId)??emptyLesson(lessonId)
-  await store.lessonStates.put({...current,quizDraft:{answers,active:true,round:current.quizDraft?.round??0,updatedAt:new Date().toISOString()}})
+  await store.lessonStates.put({...current,quizDraft:{assessmentVersion:current.quizDraft?.active?(current.quizDraft.assessmentVersion??1):CURRENT_ASSESSMENT,answers,active:true,round:current.quizDraft?.round??0,updatedAt:new Date().toISOString()}})
  })
 }
 export async function retryQuiz(lessonId:string,database=db){
  return transaction(database,'rw',async store=>{
   const states=await store.lessonStates.toArray();if(!isUnlocked(lessonId,states))throw new Error('الدرس مقفل.')
   const current=states.find(s=>s.id===lessonId)??emptyLesson(lessonId)
-  const draft={answers:{},active:true,round:(current.quizDraft?.round??0)+1,updatedAt:new Date().toISOString()}
+  const draft={assessmentVersion:CURRENT_ASSESSMENT,answers:{},active:true,round:(current.quizDraft?.round??0)+1,updatedAt:new Date().toISOString()}
   await store.lessonStates.put({...current,quizDraft:draft});return draft
  })
 }

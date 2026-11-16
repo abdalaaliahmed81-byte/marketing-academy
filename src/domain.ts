@@ -18,7 +18,7 @@ export const artifactFields = sections.flatMap(({fields})=>Array.from<[string,st
 export const capstoneSchema = z.object({name:z.string().max(200),business:z.enum(businesses),fields:z.record(z.string(),z.string().max(50000))}).strict()
 export const settingsSchema = z.object({id:z.literal('local'),goal:z.string().trim().min(1).max(200),minutes:z.number().int().min(20).max(40),business:z.enum(businesses),theme:z.enum(['light','dark']),resume:z.object({lessonId:z.string(),section:z.enum(['read','quiz','practice'])}).optional()}).strict()
 export const lessonStateSchema = z.object({id:z.string(),notes:z.string().max(50000),notesUpdatedAt:z.string().datetime().optional(),bookmarked:z.boolean(),assignment:z.string().max(50000),checked:z.array(z.number().int().min(0).max(2)).max(3).refine(v=>new Set(v).size===v.length),completed:z.boolean(),interactions:interactionsSchema.optional(),quizDraft:quizDraftSchema.optional(),reviews:z.array(reviewEventSchema).max(2000).optional()}).strict()
-export const attemptSchema = z.object({id:z.string(),lessonId:z.string(),at:z.string().datetime(),answers:z.record(z.string(),z.string().max(50000)),score:z.number().int().min(0).max(100),passed:z.boolean(),missed:z.array(z.string())}).strict()
+export const attemptSchema = z.object({id:z.string(),lessonId:z.string(),assessmentVersion:z.union([z.literal(1),z.literal(2)]).optional(),at:z.string().datetime(),answers:z.record(z.string(),z.string().max(50000)),score:z.number().int().min(0).max(100),passed:z.boolean(),missed:z.array(z.string())}).strict()
 export const daySchema = z.string().regex(/^\d{4}-\d{2}-\d{2}$/).refine(value=>{
   const date = new Date(value+'T00:00:00Z')
   return Number.isFinite(date.valueOf()) && date.toISOString().slice(0,10)===value

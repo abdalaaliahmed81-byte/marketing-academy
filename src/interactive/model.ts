@@ -3,7 +3,7 @@ const values=z.record(z.string().min(1).max(80),z.string().max(20000)).refine(v=
 export const interactionSchema=z.object({values,order:z.array(z.string().max(80)).max(12),path:z.array(z.string().max(80)).max(12),step:z.number().int().min(0).max(30),submitted:z.boolean(),updatedAt:z.string().datetime()}).strict()
 export type Interaction=z.infer<typeof interactionSchema>
 export const interactionsSchema=z.record(z.string().max(40),interactionSchema).refine(v=>Object.keys(v).length<=12)
-export const quizDraftSchema=z.object({answers:values,active:z.boolean(),round:z.number().int().min(0).max(100000),updatedAt:z.string().datetime()}).strict()
+export const quizDraftSchema=z.object({assessmentVersion:z.union([z.literal(1),z.literal(2)]).optional(),answers:values,active:z.boolean(),round:z.number().int().min(0).max(100000),updatedAt:z.string().datetime()}).strict()
 export const reviewEventSchema=z.object({questionId:z.string().max(100),answer:z.string().max(100),at:z.string().datetime()}).strict()
 export const blankInteraction=():Interaction=>({values:{},order:[],path:[],step:0,submitted:false,updatedAt:new Date().toISOString()})
 export type Kind='guide'|'match'|'sequence'|'blank'|'scenario'|'persona'|'value'|'copy'|'budget'|'calendar'|'plan'|'campaign'

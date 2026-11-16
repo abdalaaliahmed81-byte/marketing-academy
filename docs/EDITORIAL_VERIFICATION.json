@@ -1,0 +1,82 @@
+{
+  "phase": "agent editorial remediation; final integration verification pending",
+  "date": "2026-11-16",
+  "baselineCommit": "5e2a6d4",
+  "priorVerifiedRuntime": "a0bf1297ce5d59501bfc519688edeb6c411100f8",
+  "lessons": 60,
+  "modules": 12,
+  "questions": 300,
+  "readingsExpanded": 45,
+  "foundationalCasesSolved": 10,
+  "previousModule3LessonsRetained": 5,
+  "assessmentItemsRevised": 84,
+  "originalAssessmentItemsRetained": 216,
+  "sourcesRegistered": 26,
+  "sourceMappedLessons": 60,
+  "shortUnder200Words": 0,
+  "generatedQuizReuseCases": 0,
+  "goalCopySummaries": 0,
+  "irrelevantDistractorFlags": 0,
+  "lengthCueReviewCandidates": 109,
+  "local": {
+    "unitIntegrationTests": 49,
+    "typecheck": "passed",
+    "build": "passed",
+    "linuxElectron": {
+      "platform": "linux",
+      "architecture": "x64",
+      "executable": "development electron",
+      "checks": [
+        "application rendered Arabic registration using local academy protocol",
+        "renderer has no Node require or process; SQLite transport exposed only through the narrow preload",
+        "native profile edit acknowledged through preload without changing login username",
+        "registered account, onboarded, showed 60 lessons and saved a lesson note",
+        "required login after process restart and recovered persistent note",
+        "external network fetch blocked; curriculum and notes work without external server",
+        "migrated an authenticated legacy IndexedDB account; completed lesson, note, quiz and project survived; original ciphertext unchanged"
+      ],
+      "networkRequests": [],
+      "profilePersistence": true,
+      "interactiveActivityPersistence": true,
+      "noteTimestampPersistence": true,
+      "sqlite": {
+        "schemaVersion": 1,
+        "accounts": 2,
+        "records": 10,
+        "legacySourcesPreserved": true,
+        "encryptedRecords": true
+      },
+      "status": "passed"
+    },
+    "docker": {
+      "status": "passed",
+      "http": 200,
+      "healthy": true,
+      "user": "101:101",
+      "readOnlyRoot": true,
+      "capabilitiesDropped": [
+        "ALL"
+      ],
+      "securityHeaders": true,
+      "rtl": true,
+      "scriptAsset": true,
+      "sqliteApi": true,
+      "apiUser": "node",
+      "apiReadOnlyRoot": true,
+      "progressSurvivesApiRestart": true,
+      "profileSurvivesApiRestart": true
+    },
+    "dockerBuildScope": "local-only compact build for VFS host; production Dockerfile awaits exact-source CI",
+    "finalBrowserRun": {
+      "passed": 21,
+      "failed": 0,
+      "duration": "3.4m",
+      "includes": "legacy wording/score restore, revised retry, source links/mobile/axe plus existing full60-lesson and account/interaction paths"
+    }
+  },
+  "exactCommitCI": null,
+  "independentHumanReview": false,
+  "learnerValidation": false,
+  "professionalApproval": false,
+  "newReleasePublished": false
+}

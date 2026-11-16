@@ -1,3 +1,4 @@
+import {assessmentQuestions} from './lessons/assessment-history'
 import {activitiesFor,validInteraction} from './interactive/content'
 import {z} from './validation'
 import {lessons} from './lessons'
@@ -36,7 +37,7 @@ export const backupSchema=z.object({
     const l=lessons.find(l=>l.id===a.lessonId)
     if(!l){reject('محاولة لدرس مجهول.');continue}
     if(Object.keys(a.answers).some(id=>!l.questions.some(q=>q.id===id)))reject('معرّف سؤال غير معروف.')
-    try{const actual=scoreQuestions(l.questions,a.answers);if(actual.score!==a.score||JSON.stringify(actual.missed)!==JSON.stringify(a.missed))reject('درجة الاختبار لا تطابق الإجابات.')}catch{reject('إجابات غير صالحة.')}
+    try{const actual=scoreQuestions(assessmentQuestions(l,a.assessmentVersion??1),a.answers);if(actual.score!==a.score||JSON.stringify(actual.missed)!==JSON.stringify(a.missed))reject('درجة الاختبار لا تطابق الإجابات.')}catch{reject('إجابات غير صالحة.')}
   }
   for(const state of data.lessonStates.filter(s=>s.completed)){
     const l=lessons.find(l=>l.id===state.id)

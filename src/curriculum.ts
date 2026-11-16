@@ -6,7 +6,7 @@ export interface Question {
   why:string
 }
 
-export const reviewDate = '2026-11-15'
+export const reviewDate = '2026-11-16'
 export const sources = {
   analytics:{title:'Google Analytics · إعداد القياس',url:'https://support.google.com/analytics/answer/9304153'},
   consent:{title:'Google · سياسة موافقة المستخدم الأوروبي',url:'https://www.google.com/about/company/user-consent-policy/'},

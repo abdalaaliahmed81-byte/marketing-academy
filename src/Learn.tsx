@@ -1,10 +1,12 @@
+import {LessonReferences} from './content/References'
+import {assessmentQuestions,CURRENT_ASSESSMENT} from './lessons/assessment-history'
 import {useAutosave} from './interactive/useAutosave'
 import {LessonActivities} from './interactive/Activities'
 import {useLiveQuery} from './storage/query'
 import {NotesButton} from './Notes'
 import {useEffect,useRef,useState} from 'react'
 import {Link,Navigate,useNavigate,useParams} from 'react-router-dom'
-import {bookLinks,books,reviewDate,sources,type Lesson,type Question} from './curriculum'
+import {type Lesson,type Question} from './curriculum'
 import {db,completeLesson,isUnlocked,openLesson,saveLesson,submitQuiz,saveQuizDraftAnswers,retryQuiz} from './db'
 import {emptyLesson,ready,shuffleOptions,type Attempt,type LessonState,type Settings} from './domain'
 import {lessons,moduleReview} from './lessons'
@@ -40,7 +42,7 @@ function LessonPage({lesson,tab,state,attempts,notice}:{lesson:Lesson;tab:Sectio
         <h2>مصطلحات الدرس</h2><dl>{lesson.glossary.map(([term,value])=><div key={term}><dt lang="en" dir="ltr">{term}</dt><dd>{value}</dd></div>)}</dl>
         <h2>حالة قصيرة</h2><p>{lesson.miniCase}</p><p className="muted">خذ دقيقتين لتكتب قرارك وتشرح ما اعتمدت عليه قبل قراءة الخلاصة.</p>
         <h2>الخلاصة</h2><p>{lesson.summary}</p>
-        <details><summary>المراجع</summary><p>إحالات موضوعية مختارة؛ الأمثلة والنتائج التدريبية محاكاة، وليست نقلًا للكتب أو تغطية كاملة لها.</p><ul>{lesson.refs.map(ref=><li key={ref.book}><a href={bookLinks[ref.book]} target="_blank" rel="noreferrer">{books[ref.book]}</a> · {ref.section} · النسخة المرفقة (تمت المراجعة {reviewDate})</li>)}{lesson.online.map(key=><li key={key}><a href={sources[key].url} target="_blank" rel="noreferrer">{sources[key].title}</a> · {reviewDate}</li>)}</ul></details>
+        <LessonReferences lessonId={lesson.id}/>
       </article></details>
 
     </>}
@@ -69,7 +71,8 @@ function Quiz({lesson,attempts,draft,notice}:{lesson:Lesson;attempts:Attempt[];d
   }}>
     <div className="card section-title"><div><h2>{attempt?'نتيجة الاختبار':'اختبار الدرس'}</h2><p>{attempt?ar.format(attempt.score)+'٪ · '+(attempt.passed?'اجتزت الاختبار':'راجع الإجابات وأعد المحاولة'):'حد الاجتياز ٧٠٪. بعد التسليم تظهر نتيجة كل إجابة وسببها.'}</p><small>{ar.format(attempts.length)} محاولات محفوظة</small></div>{attempt&&<button className="secondary" type="button" disabled={busy} onClick={async()=>{setBusy(true);try{const next=await retryQuiz(lesson.id,target.current);answerRef.current={};answerRevision.current++;setAnswers({});setAttempt(null);setShuffle(next.round);setSaved('بدأت محاولة جديدة؛ المحاولات السابقة محفوظة')}catch{notice('تعذّر بدء محاولة جديدة.')}finally{setBusy(false)}}}>أعد الاختبار</button>}</div>
     {!attempt&&<small aria-live="polite">{saved}</small>}
-    {lesson.questions.map((q,i)=><fieldset key={q.id} className="card question"><legend>{ar.format(i+1)}. {q.prompt}</legend>
+    {(attempt?(attempt.assessmentVersion??1)===1:draft?.active&&(draft.assessmentVersion??1)===1)&&<p className="card">نسخة تقييم سابقة محفوظة. تبقى إجاباتها ودرجتها كما كانت؛ تبدأ الإعادة بالنسخة المراجعة.</p>}
+    {assessmentQuestions(lesson,attempt?(attempt.assessmentVersion??1):draft?.active?(draft.assessmentVersion??1):CURRENT_ASSESSMENT).map((q,i)=><fieldset key={q.id} className="card question"><legend>{ar.format(i+1)}. {q.prompt}</legend>
       {attempt?<><p>إجابتك: {q.options.find(o=>o.id===attempt.answers[q.id])?.label??'—'}</p><Rationale question={q} answer={attempt.answers[q.id]}/></>:shuffleOptions(q.options,q.id+'-'+shuffle).map(o=><label key={o.id} className="choice"><input type="radio" name={q.id} value={o.id} checked={answers[q.id]===o.id} onChange={()=>{const next={...answerRef.current,[q.id]:o.id},revision=++answerRevision.current;answerRef.current=next;setAnswers(next);setSaved('جارٍ حفظ الاختيار…');void saveQuizDraftAnswers(lesson.id,next,target.current).then(()=>{if(revision===answerRevision.current)setSaved('حُفظت اختياراتك')},()=>{if(revision===answerRevision.current)setSaved('تعذّر حفظ الاختيار؛ أعد اختياره أو سلّم لحفظ المحاولة كاملة')})}} required/>{o.label}</label>)}
     </fieldset>)}
     {!attempt?<button className="primary" disabled={busy}>سلّم الاختبار</button>:attempt.passed?<Link className="primary" to={href(lesson.id,'practice')}>اذهب إلى التطبيق <Icon name="arrow"/></Link>:<Link className="secondary" to={href(lesson.id)}>راجع شرح الدرس</Link>}
