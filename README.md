@@ -4,7 +4,7 @@
 
 > هذا الفرع يحتوي المعاينة المنشورة٢.٣.١، مع SQLite ومراجعة المحتوى وحفظ تاريخ التقييم. الإصدار المستقر٢.٠.٠ يستخدم IndexedDB؛ راجع [التدقيق](docs/AUDIT.md) و[بوابات الإصدار](docs/RELEASE_GATES.md). وجود٦٠ درسًا لا يعني اعتمادًا مهنيًا: اكتمل التعميق التحريري الآلي للدروس الستين، وتبقى المراجعة العربية البشرية المستقلة ومعايرة التعلم مفتوحتين. سجل المصادر يميز الإحالات المحددة والحقوق عن بوابات التعلم الاختيارية.
 
-[تنزيل EXE٢.٣.١ للمعاينة](https://github.com/abdalaaliahmed81-byte/marketing-academy/releases/download/v2.3.1/Marketing-Academy-Portable-Windows-x64.exe) · [الإصدار والبصمات والمصدر](https://github.com/abdalaaliahmed81-byte/marketing-academy/releases/tag/v2.3.1) · [دليل التحقق](docs/AUTH_AUDIT_VERIFICATION.json). الحزمة غير موقّعة، والمراجعة البشرية المستقلة غير منفذة؛٢.٠.٠ يبقى أحدث إصدار مستقر.
+[تنزيل EXE٢.٤.٠ للمعاينة](https://github.com/abdalaaliahmed81-byte/marketing-academy/releases/download/v2.4.0/Marketing-Academy-Portable-Windows-x64.exe) · [الإصدار والبصمات والمصدر](https://github.com/abdalaaliahmed81-byte/marketing-academy/releases/tag/v2.4.0) · [دليل التحقق](docs/AUTH_RECOVERY_VERIFICATION.json). الحزمة غير موقّعة، والمراجعة البشرية المستقلة غير منفذة؛٢.٠.٠ يبقى أحدث إصدار مستقر.
 
 ## استخدام Windows
 
@@ -70,9 +70,11 @@ npm run package:win
 
 ## Production وQA المعزولة
 
-[نزّل Production](https://github.com/abdalaaliahmed81-byte/marketing-academy/releases/download/v2.3.1/Marketing-Academy-Portable-Windows-x64.exe) للاستخدام الأساسي وبياناتك المعتادة. [نزّل QA](https://github.com/abdalaaliahmed81-byte/marketing-academy/releases/download/v2.3.1/Marketing-Academy-QA-Windows-x64.exe) للاختبار ببيانات تجريبية؛ لها قاعدة وذاكرة متصفح وقفل تشغيل منفصل، وعلامة QA واضحة. يمكن فتحهما معًا؛ الاسم نفسه لا يربط الحسابين. تغيير اسم الملف لا يغيّر نوعه. لا تستورد بيانات شخصية إلى QA إلا بقرار صريح.
+[نزّل Production](https://github.com/abdalaaliahmed81-byte/marketing-academy/releases/download/v2.4.0/Marketing-Academy-Portable-Windows-x64.exe) للاستخدام الأساسي وبياناتك المعتادة. [نزّل QA](https://github.com/abdalaaliahmed81-byte/marketing-academy/releases/download/v2.4.0/Marketing-Academy-QA-Windows-x64.exe) للاختبار ببيانات تجريبية؛ لها قاعدة وذاكرة متصفح وقفل تشغيل منفصل، وعلامة QA واضحة. يمكن فتحهما معًا؛ الاسم نفسه لا يربط الحسابين. تغيير اسم الملف لا يغيّر نوعه. لا تستورد بيانات شخصية إلى QA إلا بقرار صريح.
 
 اختُبر ملفا Windows الفعليان والتسجيل والملاحظات والاختبار والدرس دون شبكة والحفظ بعد إعادة الفتح، ثم ثبت أن تعديلات QA لا تغيّر قاعدة Production. نجح60 اختبارًا لكل نظام و25 مسار واجهة؛ [الأدلة والبصمات](docs/DUAL_WINDOWS_VERIFICATION.json) و[الدليل العربي](docs/START_AR.md). لا يحتاج أي منهما Node.js أو Python أو Docker. كلاهما غير موقع وقد يظهر SmartScreen؛ لا يُدّعى اختبار جهاز مستخدم نظيف أو اعتماد تعليمي بشري.
 
 
 تدقيق المصادقة٢.٣.١: [تقرير الحادث والجذور وخطوات إعادة الإنتاج](docs/AUTH_INCIDENT_REPORT.md) · [أدلة التنفيذ](docs/AUTH_AUDIT_VERIFICATION.json). أُصلحت ثلاثة أخطاء مشروطة بحد الجلسات والتزامن، دون تعديل كلمات المرور أو مسارات البيانات. اختُبرت نسختا٢.٣.٠ الأصليتان والمصححتان على Windows؛ لا يُدّعى تشخيص أي فشل غير موصوف على جهاز بعينه.
+
+استعادة آمنة٢.٤.٠: استعد نسخة مشفرة وعبارتها إلى حساب جديد دون تغيير الحساب الأصلي. أُصلح رفض الأسماء العربية المشكولة واقتطاع كلمات المرور الطويلة من Unicode. نجح70 اختبارًا على كل نظام و27 مسار متصفح وDocker والملفان الفعليان على Windows وإعادة تنزيل الأصول وبصماتها. [الأدلة والحدود](docs/AUTH_RECOVERY_VERIFICATION.json)؛ لا توجد استعادة دون كلمة المرور أو نسخة صالحة وعبارتها، ولا مزامنة سحابية.

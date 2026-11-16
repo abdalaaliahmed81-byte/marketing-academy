@@ -88,7 +88,7 @@ AUTH-01: create/start previously returned a session-cap error after durable acco
 
 [Corrective working preview2.3.1](https://github.com/abdalaaliahmed81-byte/marketing-academy/releases/tag/v2.3.1) contains both EXEs; prior2.3.0 remains intact as the pinned audit baseline. [AUTH_AUDIT_VERIFICATION.json](AUTH_AUDIT_VERIFICATION.json) retains exact assets, native baseline/current results, CI IDs, before/after log hashes and limitations. No real user password/database was collected, and no speculative IndexedDB reset, name-normalization change or permission workaround was applied.
 
-## Recovery and Unicode follow-up —2.4.0 (local verified; Windows pending)
+## Recovery and Unicode follow-up —2.4.0 (verified release; pending statements below are implementation history)
 
 |Incident|Confirmed reproduction/root|Correction/regression|
 |---|---|---|
@@ -100,3 +100,9 @@ Secure recovery is an additional supported path, not an old-password bypass: dec
 Schema1, database paths, encryption/hash parameters and old identities remain unchanged. No learner database was supplied or modified. Sessions remain volatile with idle30min/absolute12h expiry; durable learning state survives restart and requires fresh login. Existing migration/corruption/password/session race tests are retained.
 
 Local evidence:70 unit/integration tests in13 files, typecheck/build PASS; Production/QA development Electron each PASS all existing probes plus8 authExtensions flags (recovery, wrong phrase/duplicate refusal, recovered restart, source account preserved, wrong-current refusal, Unicode change/restart/untruncated secret);4 synthetic accounts/20 encrypted records/schema1 each. Two new real browser paths PASS, including390px/axe on recovery. Full browser/Windows/Docker exact-commit results pending. Packaged baseline2.3.1 downloads are pinned to the immutable AUTH_AUDIT_VERIFICATION.json digests; CI must reproduce both Unicode defects there, then pass corrected EXEs. No consumer-device claim is inferred.
+
+## Final2.4.0 acceptance —PASS / bounded NOT RUN
+
+Exact0d0c0c5/run43953301188 passed all3 jobs,70 tests per OS and27 browser paths. Both SHA-pinned old2.3.1 EXEs reproduced AUTH-04/05; both corrected2.4.0 real EXEs passed normal launch,8 extended recovery/password/Unicode flags, logout/switching, four synthetic accounts/20 encrypted records, notes/quiz/completion/projects/offline/restart/legacy migration. Concurrent profiles and Production DB unchanged-by-QA proof PASS. Docker build/health/non-root/read-only/headers/restart PASS. All6 published files independently re-downloaded and GitHub/SHA256/source-comment/PE verified. See [AUTH_RECOVERY_VERIFICATION.json](AUTH_RECOVERY_VERIFICATION.json) and [v2.4.0](https://github.com/abdalaaliahmed81-byte/marketing-academy/releases/tag/v2.4.0). Historical pending statements above describe work before that run.
+
+No known unresolved critical auth defect in executed scope. NOT RUN: unspecified user's device/error/real DB, pristine physical Windows/manual Explorer click, every upgrade/power-loss/ACL/antivirus scenario, independent human curriculum/learner approval. Both binaries are unsigned. Technical release PASS does not close these limits or G12.

@@ -56,3 +56,6 @@ This is actual Windows execution, not just source compilation. The Actions runne
 
 
 Dual Windows2.3.0 delivered from7c8ed9d/run43930298980:60 tests per OS/25 browser paths, both actual EXE normal-start/lifecycle checks and concurrent profile/unchanged-Production-DB verification passed. All6 release assets re-downloaded via authorized connection and SHA256/PE/source-comment checked. Production data identity preserved; QA isolated; both unsigned and professional/physical-machine limits remain open. See DUAL_WINDOWS.md and DUAL_WINDOWS_VERIFICATION.json. Existing repository/history retained, no new repository.
+
+
+Latest verified2.4.0 recovery/Unicode delivery: exact0d0c0c5/run43953301188, all3 jobs PASS,70 tests per OS/27 browser paths/Docker/both actual Production+QA Windows EXEs/concurrent isolation and6-asset re-download/checksum readback PASS. AUTH_RECOVERY_VERIFICATION.json is the newest evidence; AUTH_AUDIT_VERIFICATION.json remains immutable2.3.1 baseline proof. Secure backup-assisted recovery creates a new account and preserves the original; Arabic combining names and long Unicode passwords corrected. Schema1 and existing learner data preserved. G12 independent human review/learner validation and pristine physical-device/manual-click acceptance remain OPEN/NOT RUN. Earlier counts/pending statements above are historical, not latest verification.
