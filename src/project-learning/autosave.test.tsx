@@ -30,3 +30,16 @@ it('saves a reverted value even when it matches an earlier acknowledgment behind
  await act(async()=>{resolvers.shift()!();await Promise.resolve()});expect(calls).toEqual(['أ','ب','أ'])
  await act(async()=>{resolvers.shift()!();await hook.result.current.flush()});expect(hook.result.current.status).toBe('حُفظ المشروع تلقائيًا');hook.unmount()
 })
+it('warns and flushes a reverted draft on immediate unmount while a different write is in flight',async()=>{
+ vi.useFakeTimers();const calls:string[]=[],resolvers:(()=>void)[]=[]
+ const save=(v:string)=>{calls.push(v);return new Promise<void>(resolve=>resolvers.push(resolve))}
+ const hook=renderHook(({value})=>useSavedDraft(value,save),{initialProps:{value:''}})
+ hook.rerender({value:'أ'});await act(async()=>{await vi.advanceTimersByTimeAsync(700)})
+ hook.rerender({value:'ب'});await act(async()=>{await vi.advanceTimersByTimeAsync(700)})
+ await act(async()=>{resolvers.shift()!();await Promise.resolve()})
+ hook.rerender({value:'أ'})
+ const closing=new Event('beforeunload',{cancelable:true});window.dispatchEvent(closing);expect(closing.defaultPrevented).toBe(true)
+ hook.unmount()
+ await act(async()=>{resolvers.shift()!();await Promise.resolve()});expect(calls).toEqual(['أ','ب','أ'])
+ await act(async()=>{resolvers.shift()!();await Promise.resolve()})
+})

@@ -15,6 +15,6 @@ export function useSavedDraft<T>(value:T,commit:(draft:T)=>Promise<unknown>){
  },[])
  const flush=useCallback(async()=>{clearTimeout(timer.current);await enqueue(latest.current)},[enqueue])
  useEffect(()=>{if(signature===stored.current&&pending.current===0)return;setStatus('تعديلات غير محفوظة');timer.current=setTimeout(()=>void enqueue(latest.current).catch(()=>{}),650);return()=>clearTimeout(timer.current)},[signature,enqueue])
- useEffect(()=>{mounted.current=true;const warn=(event:BeforeUnloadEvent)=>{if(latest.current.signature!==stored.current){event.preventDefault();event.returnValue=''}};window.addEventListener('beforeunload',warn);return()=>{mounted.current=false;clearTimeout(timer.current);window.removeEventListener('beforeunload',warn);if(latest.current.signature!==stored.current)void enqueue(latest.current).catch(()=>{})}},[enqueue])
+ useEffect(()=>{mounted.current=true;const warn=(event:BeforeUnloadEvent)=>{if((latest.current.signature!==stored.current||pending.current>0)){event.preventDefault();event.returnValue=''}};window.addEventListener('beforeunload',warn);return()=>{mounted.current=false;clearTimeout(timer.current);window.removeEventListener('beforeunload',warn);if((latest.current.signature!==stored.current||pending.current>0))void enqueue(latest.current).catch(()=>{})}},[enqueue])
  return {status,flush}
 }

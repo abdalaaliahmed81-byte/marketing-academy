@@ -11,9 +11,9 @@
   },
   "localEvidence": {
     "unitIntegration": {
-      "passed": 56,
+      "passed": 57,
       "failed": 0,
-      "scope": "actual SQLite, React-hook serialization/revert/failure/retry, retained regression suite; npm run check passed"
+      "scope": "actual SQLite, queued saves/reverts/failure/retry and immediate unmount/beforeunload regression; npm run check passed"
     },
     "focusedBrowser": {
       "passed": 3,
@@ -67,5 +67,11 @@
     "cause": "Trace confirmed HTTP429 RATE_LIMIT for registration shared across test fixtures; production10/min limit unchanged",
     "fix": "Dedicated temporary project API/SQLite browser fixture on4175",
     "release": "not published; Docker/publication skipped"
+  },
+  "cancelledIntermediateCi": {
+    "run": 43867369382,
+    "commit": "138533cec05d3ec4c6866574bfb507ee2d81505d",
+    "status": "cancelled; confirmed by GitHub",
+    "reason": "Include final pending-write close/revert correction in exact-source verification; no release published"
   }
 }

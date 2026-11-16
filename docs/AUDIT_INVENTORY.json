@@ -1,6 +1,6 @@
 {
   "baseline": "1eecadbf3e1811e31dc2eafe274487ecb8a15e57",
-  "generatedAt": "2026-11-16T12:31:10.031Z",
+  "generatedAt": "2026-11-16T12:35:31.041Z",
   "files": [
     {
       "path": ".dockerignore",
@@ -137,8 +137,8 @@
     },
     {
       "path": "docs/AI_PROGRESS.md",
-      "bytes": 37505,
-      "sha256": "3c8c96cfe1d7b3c893cec615bbb19cfd51444ed607a972008264b493af3d0382",
+      "bytes": 37648,
+      "sha256": "10a1365336698e7c2f8ae631d9e857532a3891cb8948b35f478c6963f7d51dcf",
       "lines": 173,
       "inspection": "read; review scope documented"
     },
@@ -249,8 +249,8 @@
     },
     {
       "path": "docs/PROJECT_LEARNING.md",
-      "bytes": 6692,
-      "sha256": "a8bc61c4b1497c88290c08677710e6615538278c870bdfb6fcc673360d2ca4eb",
+      "bytes": 6763,
+      "sha256": "6c8a60684dc758c57a37647e05c76dd8e2a278012d4632a0fdcea3204ff4bfa0",
       "lines": 39,
       "inspection": "read; review scope documented"
     },
@@ -263,22 +263,22 @@
     },
     {
       "path": "docs/PROJECT_LEARNING_VERIFICATION.json",
-      "bytes": 2825,
-      "sha256": "7c92b12dfa9d65eb5b7f7bd2367226f8fd727e45ee040fcd8d31229944e3829f",
-      "lines": 72,
+      "bytes": 3118,
+      "sha256": "f198c03342f4901ece793f9873e25d42b240d28509192d239e51003ffdcda6b1",
+      "lines": 78,
       "inspection": "read; manifests/locks additionally consumed by build and dependency audit"
     },
     {
       "path": "docs/QA.md",
-      "bytes": 18109,
-      "sha256": "8d49ca2ac9efe0e6f0c3c461008341e1498a694dae16cca6893512bad4c21b51",
-      "lines": 99,
+      "bytes": 19027,
+      "sha256": "4f67fcc2ca62a31242276e0ccf104e5ebc333b242c9306c5a79e36a09b571c9c",
+      "lines": 103,
       "inspection": "read; review scope documented"
     },
     {
       "path": "docs/RELEASE-NOTES.md",
       "bytes": 3142,
-      "sha256": "310d1b4f51bb95b6ebf2f48f5adde7a1ae9bd1f8fdebc72ea0f769b2bb18992b",
+      "sha256": "7b191aac954c4ed7374267aeb947b2f3af03111109f23e427135626914ad3a8b",
       "lines": 14,
       "inspection": "read; review scope documented"
     },
@@ -913,9 +913,9 @@
     },
     {
       "path": "src/project-learning/autosave.test.tsx",
-      "bytes": 2912,
-      "sha256": "a0df5940b5e0b9cefb243903f17afe00a8923bed6a9ed7f2df80c0c2f85941c3",
-      "lines": 33,
+      "bytes": 3882,
+      "sha256": "f93ff57b0124481f3591a4ed5dd4983f32dbea899481bc742d808c6e9c9a7245",
+      "lines": 46,
       "inspection": "read and syntax-parsed; security/runtime review scoped in AUDIT.md",
       "syntaxErrors": 0
     },
@@ -959,8 +959,8 @@
     },
     {
       "path": "src/project-learning/useSavedDraft.ts",
-      "bytes": 2165,
-      "sha256": "074fe703e11cce58b25d5046b3f898876001475327b1a8cea0cd4ae64d38659c",
+      "bytes": 2207,
+      "sha256": "4058d86fea226a8c1e7ebc05e3510d3231bc8a42cb4d0716b987ea63a496b84a",
       "lines": 21,
       "inspection": "read and syntax-parsed; security/runtime review scoped in AUDIT.md",
       "syntaxErrors": 0
