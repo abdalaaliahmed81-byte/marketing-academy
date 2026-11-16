@@ -8,7 +8,7 @@ Baseline `1eecadb` / published v2.0.0. Current preview2.1.1 is published from28d
 |60 lesson activities and daily missions|Present|Preserved; bounds/shared validation added; completion remains self-reviewed|
 |Lesson circular notes editor|Present; encrypted IndexedDB|Title-adjacent44px target; lazy modal, autosave/search/timestamps/status; account-isolated native/API SQLite with restart tests|
 |Quizzes, sequential unlocking, mistake review|Present|84 revised items; historical version1 wording/grades and active drafts retained; retries use2.50 tests/22 browser paths;109 length cues remain moderation candidates|
-|12 worked module projects and capstone|Present|Preserved;26 portfolio fields and saved/exported submissions. No instructor grading|
+|12 worked module projects and capstone|Present|2.2.0 source:12 expanded guides,60 worked mini-projects,3 complete27-field cases/12 stages, queued autosave, safe append transfer, report/portfolio/backup export. Existing IDs/credit retained. No instructor grading; see PROJECT_LEARNING.md and exact-source evidence|
 |Accounts/login/logout/password change|Renderer/Dexie|Main/API authority; encrypted per-user SQLite; idle/absolute expiry and password-version revocation|
 |Profile and explicit user switching|Display name not editable|Arabic profile controls; stable login identity; authenticated update; lock/logout before next login; backend and both browser editions tested|
 |SQLite persistence/migrations|Missing|Schema1, app identity, WAL/FULL, integrity checks, actual rollback/reopen/corruption tests|

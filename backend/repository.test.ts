@@ -75,3 +75,22 @@ it('isolates every saved learning collection and restores a backup into only its
   expect(source.state).toEqual(exported)
  }finally{bobRepo.close()}
 })
+
+it('preserves completed module credit, appends portfolios transactionally and backs up the new competitor field per owner',async()=>{
+ const {appendModuleToPortfolio}=await import('../src/db')
+ await initializeSettings({id:'local',goal:'مشروع تدريبي',minutes:30,business:'مطعم',theme:'light'},repo)
+ await saveModuleProject({id:'module-2',response:'بحث افتراضي بست ملاحظات وحدود عينة',checked:[0,1,2,3],completed:true},repo)
+ await expect(saveModuleProject({id:'module-2',response:'',checked:[],completed:false},repo)).rejects.toThrow()
+ const blank=emptyCapstone('مطعم');await saveProject({...blank,fields:{research:'بحث أصلي محفوظ',competitors:'مقارنة افتراضية بلا بيانات شخصية',report:'تقرير منفصل محفوظ'}},blank,repo)
+ await appendModuleToPortfolio('module-2','research',repo);await appendModuleToPortfolio('module-2','research',repo)
+ const saved=(await exportBackup(repo));expect(saved.projects[0].fields.research.match(/تسليم module-2/g)).toHaveLength(1);expect(saved.projects[0].fields.report).toBe('تقرير منفصل محفوظ');expect(saved.moduleProjects![0].completed).toBe(true)
+ const other=await engine.request('register',{name:'Other Project Student',password:'repository-other-password'}) as AuthResponse
+ const otherTransport:Transport={kind:'desktop-sqlite',request:async(command,payload)=>engine.request(command,payload,other.token)}
+ const isolated=new SQLiteRepository(other.snapshot,otherTransport)
+ expect((await exportBackup(isolated)).moduleProjects).toEqual([])
+ await restoreBackup(saved,isolated);expect((await exportBackup(isolated)).projects[0].fields.competitors).toBe('مقارنة افتراضية بلا بيانات شخصية')
+ await saveModuleProject({id:'module-2',response:'نسخة الحساب الثاني',checked:[0,1,2,3],completed:true},isolated)
+ expect((await exportBackup(repo)).moduleProjects![0].response).toBe('بحث افتراضي بست ملاحظات وحدود عينة')
+ const oversized='س'.repeat(50000);await saveProject({...blank,fields:{research:oversized}},blank,repo)
+ await expect(appendModuleToPortfolio('module-2','research',repo)).rejects.toThrow();expect((await exportBackup(repo)).projects[0].fields.research).toBe(oversized)
+})

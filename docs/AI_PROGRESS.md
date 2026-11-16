@@ -1,6 +1,10 @@
 # AI progress and resume record
 
-## Latest verified checkpoint —2.1.1 Preview,2026-11-16 Baghdad
+## Active project-learning extension —2.2.0 source
+
+Latest user request implemented in `src/project-learning/`, ModuleProjects, Work, Learn and shared database operations:12 expanded guides/60 worked mini-projects/3 complete27-field cases/12 capstone stages, queued autosave, retained credit, safe transfer, full portfolio/report exports and existing encrypted backup. No dependencies, schema version, user IDs or working rubrics replaced.56 tests and25 browser paths passed locally; focused browser tests found and fixed an ambiguous settings-link label. A saved-draft revert race was fixed and regression-tested. Backup handlers capture the initiating authenticated repository. Final exact-source CI and publication are pending; inspect PROJECT_LEARNING_VERIFICATION.json before claiming a new release. Independent human learner/content validation remains open.
+
+## Previous verified checkpoint —2.1.1 Preview,2026-11-16 Baghdad
 
 Published [v2.1.1 preview](https://github.com/abdalaaliahmed81-byte/marketing-academy/releases/tag/v2.1.1) from `28d6622045b246c793936bc8444d6dffaa5c9034`. [Run43857954333](https://github.com/abdalaaliahmed81-byte/marketing-academy/actions/runs/43857954333) passed **Windows, web/Docker and publish-preview/readback**.50 tests per OS,22 browser paths; real portable Windows x64 EXE/SQLite/profile/note/timestamp/activity restart and intact legacy migration. Anonymous public EXE/source/checksum/proof downloads succeeded locally; all SHA256 entries matched, source ZIP commit comment matched28d6622 and bounded forbidden-file scan passed. v2.0.0 remains latest stable; v2.1.0 preview is retained and marked superseded.
 

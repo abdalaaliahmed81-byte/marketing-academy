@@ -9,7 +9,7 @@ export const stages = [
   {name:'بعد الشراء',fields:[['experience','تجربة العميل'],['value','زيادة القيمة على مدى العلاقة'],['referral','تشجيع الإحالات']]}
 ] as const
 export const sections = [
-  {name:'البحث والاستراتيجية',fields:[['research','البحث والأدلة والفرضيات'],['persona','شخصية العميل'],['story','قصة العلامة القابلة للتحقق'],['goals','الأهداف SMART'],['position','التموضع والعرض']]},
+  {name:'البحث والاستراتيجية',fields:[['research','البحث والأدلة والفرضيات'],['persona','شخصية العميل'],['competitors','تحليل المنافسين والبدائل'],['story','قصة العلامة القابلة للتحقق'],['goals','الأهداف SMART'],['position','التموضع والعرض']]},
   ...stages,
   {name:'المحتوى والإعلان',fields:[['calendar','خطة محتوى لمدة أسبوعين'],['post1','المنشور الأول'],['post2','المنشور الثاني'],['post3','المنشور الثالث'],['post4','المنشور الرابع'],['post5','المنشور الخامس'],['ad1','نسخة الإعلان أ'],['ad2','نسخة الإعلان ب'],['budget','ميزانية المحاكاة بالدينار العراقي']]},
   {name:'القياس والتقرير',fields:[['kpis','لوحة مؤشرات الأداء'],['analysis','تفسير البيانات الافتراضية'],['report','التقرير النهائي للعميل']]}
@@ -74,5 +74,5 @@ export function ready(response:string,checked:number[],rubric:string[]) {
 }
 export function markdown(project:Capstone,onlyPlan=false){
   const selected=onlyPlan?stages:sections
-  return ['# '+(project.name.trim()||'مشروع التسويق'),project.business,...selected.flatMap(s=>['## '+s.name,...s.fields.flatMap(([id,title])=>['### '+title,project.fields[id]?.trim()||'—'])])].join('\n\n')+'\n'
+  return ['# '+(project.name.trim()||'مشروع التسويق'),project.business,'ملف تدريبي: نتائج الأمثلة محاكاة وليست أداءً حقيقيًا. بيانات المتعلم غير متحقق منها بواسطة الأكاديمية؛ وثّق أي واقعة ومصدرها وحدودها قبل مشاركتها.',...selected.flatMap(s=>['## '+s.name,...s.fields.flatMap(([id,title])=>['### '+title,project.fields[id]?.trim()||'—'])])].join('\n\n')+'\n'
 }

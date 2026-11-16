@@ -91,6 +91,14 @@ try{
  for(let i=0;i<await firstMatch.getByRole('combobox').count();i++)await firstMatch.getByRole('combobox').nth(i).selectOption('term-'+i)
  await firstMatch.getByRole('button',{name:'تحقّق من النشاط',exact:true}).click()
  await expect(firstMatch.getByText('مكتمل',{exact:true})).toBeVisible()
+ await page.getByRole('link',{name:'مشروعات الوحدات',exact:true}).click()
+ await page.getByRole('textbox',{name:'تسليم مشروع الوحدة'}).fill('تسليم Windows محاكاة محفوظ تلقائيًا')
+ await expect(page.getByText('حُفظ المشروع تلقائيًا',{exact:true})).toBeVisible()
+ await page.getByRole('link',{name:'مشروعي',exact:true}).click()
+ await page.getByRole('textbox',{name:'تحليل المنافسين والبدائل',exact:true}).fill('بدائل محاكاة محفوظة في SQLite')
+ await page.getByRole('button',{name:'املأ الحقول الفارغة فقط من الحالة'}).click()
+ await expect(page.getByText('حُفظ المشروع تلقائيًا',{exact:true})).toBeVisible()
+ evidence.checks.push('native module and27-field capstone autosave acknowledged without an external backend')
  evidence.checks.push('registered account, onboarded, showed 60 lessons and saved a lesson note')
  await running.close()
  page=await launch()
@@ -110,6 +118,12 @@ try{
  const restoredMatch=page.locator('[data-activity=match]')
  await expect(restoredMatch.getByText('مكتمل',{exact:true})).toBeVisible()
  await expect(restoredMatch.getByRole('combobox').first()).toHaveValue('term-0')
+ await page.getByRole('link',{name:'مشروعات الوحدات',exact:true}).click()
+ await expect(page.getByRole('textbox',{name:'تسليم مشروع الوحدة'})).toHaveValue('تسليم Windows محاكاة محفوظ تلقائيًا')
+ await page.getByRole('link',{name:'مشروعي',exact:true}).click()
+ await expect(page.getByRole('textbox',{name:'تحليل المنافسين والبدائل',exact:true})).toHaveValue('بدائل محاكاة محفوظة في SQLite')
+ await expect(page.getByRole('progressbar',{name:'بنود المشروع المكتوبة'})).toHaveAttribute('value','27')
+ evidence.projectAutosavePersistence=true
  evidence.interactiveActivityPersistence=true
  evidence.noteTimestampPersistence=true
  evidence.checks.push('required login after process restart and recovered persistent note')

@@ -120,7 +120,23 @@ export type {ModuleProject} from './data-schema'
 export async function saveModuleProject(value:ModuleProject,database=db){
   const checked=moduleProjectSchema.parse(value)
   if(checked.completed&&(!checked.response.trim()||new Set(checked.checked).size!==4))throw new Error('أكمل المشروع والمراجعة الذاتية أولًا.')
-  await database.moduleProjects.put(checked)
+  await transaction(database,'rw',async store=>{
+   const prior=await store.moduleProjects.get(checked.id)
+   if(prior?.completed&&(!checked.response.trim()||checked.checked.length!==4))throw new Error('المشروع مكتمل؛ أبقِ التسليم وبنود المراجعة مكتملة لحفظ التعديل. بقيت النسخة السابقة.')
+   await store.moduleProjects.put({...checked,completed:checked.completed||!!prior?.completed})
+  })
+}
+export async function appendModuleToPortfolio(id:string,field:string,database=db){
+ if(!artifactFields.some(([key])=>key===field))throw new Error('حقل مشروع غير معروف.')
+ return transaction(database,'rw',async store=>{
+  const row=await store.moduleProjects.get(id)
+  if(!row?.response.trim())throw new Error('احفظ تسليمًا أولًا.')
+  const settings=await store.settings.get('local'),current=await store.projects.get('portfolio')??{id:'portfolio' as const,name:'',business:settings?.business??'مشروع مخصص' as const,fields:{}}
+  const addition='## تسليم '+id+' · تدريب غير متحقق منه\n'+row.response
+  if(current.fields[field]?.includes(addition))return
+  const next=capstoneSchema.parse({name:current.name,business:current.business,fields:{...current.fields,[field]:[current.fields[field],addition].filter(Boolean).join('\n\n')}})
+  await store.projects.put({id:'portfolio',...next})
+ })
 }
 export async function exportBackup(database=db){
   const data=await transaction(database,'r',async store=>({

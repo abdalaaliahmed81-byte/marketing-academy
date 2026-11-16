@@ -8,3 +8,6 @@ Current acceptance evidence and unfinished gates: [AI_PROGRESS](AI_PROGRESS.md),
 
 
 Latest concrete delivery: [v2.1.1 Preview](https://github.com/abdalaaliahmed81-byte/marketing-academy/releases/tag/v2.1.1), exact tested source28d6622, CI43857954333.50 tests per OS/22 browser paths, real Windows EXE, Docker and published-asset readback passed. See [EDITORIAL_VERIFICATION](EDITORIAL_VERIFICATION.json). Agent editorial remediation covers all60 lessons; independent professional approval/learner validation remain open and are not inferred. A working preview is explicitly distinguished from stable/professionally-complete claims. v2.0.0 remains latest stable; keep all data/IDs/release history.
+
+
+Current authorized extension: implement complete project-based learning per latest user request, preserving original assignments/rubrics and earned credit. Acceptance includes12 expanded worked guides,60 worked mini-projects,3 Iraqi cases, progressive capstone, real autosave/isolation/portfolio export/backup, no required paid service and truthful simulation labels. PROJECT_LEARNING.md records design/limits; new exact-source verification is required before claiming delivery.

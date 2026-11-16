@@ -7,7 +7,7 @@ const {version}=JSON.parse(await readFile('package.json','utf8'))
 const exe=`Marketing-Academy-${version}-win-x64.exe`,source=`Marketing-Academy-${version}-source.zip`
 const smoke=JSON.parse(await readFile('artifacts/desktop-smoke.json','utf8'))
 assert.equal(smoke.platform,'win32');assert.equal(smoke.status,'passed');assert(smoke.executable.endsWith(exe))
-assert.equal(smoke.profilePersistence,true);assert.equal(smoke.noteTimestampPersistence,true);assert.equal(smoke.interactiveActivityPersistence,true);assert.equal(smoke.sqlite.schemaVersion,1);assert.equal(smoke.sqlite.encryptedRecords,true);assert.equal(smoke.sqlite.legacySourcesPreserved,true);assert(smoke.sqlite.accounts>=2)
+assert.equal(smoke.projectAutosavePersistence,true);assert.equal(smoke.profilePersistence,true);assert.equal(smoke.noteTimestampPersistence,true);assert.equal(smoke.interactiveActivityPersistence,true);assert.equal(smoke.sqlite.schemaVersion,1);assert.equal(smoke.sqlite.encryptedRecords,true);assert.equal(smoke.sqlite.legacySourcesPreserved,true);assert(smoke.sqlite.accounts>=2)
 const payload=await open('release/win-unpacked/Marketing Academy.exe','r')
 const dos=Buffer.alloc(64);await payload.read(dos,0,64,0);assert.equal(dos.toString('ascii',0,2),'MZ')
 const pe=Buffer.alloc(6);await payload.read(pe,0,6,dos.readUInt32LE(60));await payload.close()

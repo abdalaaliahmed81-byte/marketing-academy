@@ -1,6 +1,7 @@
+import {MiniProjectBrief} from './project-learning/Brief'
+import {useSavedDraft} from './project-learning/useSavedDraft'
 import {LessonReferences} from './content/References'
 import {assessmentQuestions,CURRENT_ASSESSMENT} from './lessons/assessment-history'
-import {useAutosave} from './interactive/useAutosave'
 import {LessonActivities} from './interactive/Activities'
 import {useLiveQuery} from './storage/query'
 import {NotesButton} from './Notes'
@@ -85,11 +86,12 @@ function Practice({lesson,state,passed,notice}:{lesson:Lesson;state:LessonState;
   const [checked,setChecked]=useState(state.checked)
   const [busy,setBusy]=useState(false)
   const target=useRef(db)
-  const autosave=useAutosave({text,checked},draft=>saveLesson(lesson.id,{assignment:draft.text,checked:draft.checked},target.current))
+  const autosave=useSavedDraft({text,checked},draft=>saveLesson(lesson.id,{assignment:draft.text,checked:draft.checked},target.current))
   const navigate=useNavigate()
   async function save(complete:boolean){
     setBusy(true)
     try{
+      await autosave.flush()
       await saveLesson(lesson.id,{assignment:text,checked},target.current)
       if(complete){
         await completeLesson(lesson,target.current)
@@ -101,9 +103,9 @@ function Practice({lesson,state,passed,notice}:{lesson:Lesson;state:LessonState;
     finally{setBusy(false)}
   }
   return <section className="card stack">
-    <h2>التطبيق العملي</h2><p>{lesson.assignment}</p>
+    <h2>التطبيق العملي</h2><MiniProjectBrief lesson={lesson} onTemplate={template=>{if(text.length+template.length+2>50000){notice('القالب يتجاوز سعة التطبيق؛ صدّر نصك أو اختصره أولًا.');return}setText(text?text+'\n\n'+template:template)}}/><p>{lesson.assignment}</p>
     <label>تطبيقك<textarea maxLength={50000} rows={7} value={text} onChange={e=>setText(e.target.value)}/></label>
-    <Checklist rubric={lesson.rubric} checked={checked} onChange={setChecked}/><small aria-live="polite">{autosave}</small>
+    <Checklist rubric={lesson.rubric} checked={checked} onChange={setChecked}/><small aria-live="polite">{autosave.status}</small>
     {!passed&&<p className="muted">اجتز اختبار الدرس لتتمكن من إكماله.</p>}
     <div className="actions"><button className="secondary" disabled={busy} onClick={()=>void save(false)}>احفظ التطبيق</button>{!state.completed&&<button className="primary" disabled={busy||!passed||!ready(text,checked,lesson.rubric)} onClick={()=>void save(true)}>أكمل الدرس <Icon name="check"/></button>}</div>
   </section>

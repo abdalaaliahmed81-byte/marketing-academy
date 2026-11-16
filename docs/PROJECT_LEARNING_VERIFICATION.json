@@ -1,0 +1,62 @@
+{
+  "version": "2.2.0",
+  "status": "local checks executed; exact-source release verification pending",
+  "baseVerifiedRelease": "v2.1.1",
+  "coverage": {
+    "moduleGuides": 12,
+    "workedMiniProjects": 60,
+    "workedCapstoneCases": 3,
+    "capstoneStages": 12,
+    "capstoneFields": 27
+  },
+  "localEvidence": {
+    "unitIntegration": {
+      "passed": 56,
+      "failed": 0,
+      "scope": "actual SQLite, React-hook serialization/revert/failure/retry, retained regression suite; npm run check passed"
+    },
+    "focusedBrowser": {
+      "passed": 3,
+      "failed": 0,
+      "scope": "local/API project autosave, safe transfer, export, account isolation, encrypted restore; offline/mobile/keyboard/axe mini-project and capstone"
+    },
+    "nativeLinuxDevelopmentElectron": {
+      "status": "passed",
+      "projectAutosavePersistence": true,
+      "sqliteSchema": 1,
+      "accounts": 2,
+      "encryptedRecords": true,
+      "legacySourcePreserved": true
+    },
+    "productionVulnerabilities": 0,
+    "toolingAdvisories": {
+      "low": 2,
+      "moderate": 9,
+      "high": 0,
+      "critical": 0
+    },
+    "fullBrowser": {
+      "passed": 25,
+      "failed": 0,
+      "scope": "full retained and new browser suite before final account-capture/focused regression rerun"
+    },
+    "focusedFinalRegression": {
+      "passed": 4,
+      "failed": 0,
+      "scope": "all12 modules offline/reload/export; local/API autosave/transfer/account isolation/encrypted restore; offline mobile mini-project/full portfolio export"
+    }
+  },
+  "windowsPortableExe": "pending exact-source CI",
+  "docker": "pending exact-source CI",
+  "releasePublication": "pending",
+  "independentHumanBeginnerValidation": false,
+  "professionalApproval": false,
+  "limitations": [
+    "Authored examples and campaign performance are simulations; no paid services or real campaign required.",
+    "Automated technical completion is not an independently observed novice learner trial.",
+    "No real learner database supplied; retention fixtures are synthetic.",
+    "Accounts do not automatically synchronize devices; export/import explicitly.",
+    "Wait for saved acknowledgment before closing; abrupt power loss before a pending save may lose the edit.",
+    "Windows EXE is unsigned; automated accessibility is not universal conformance."
+  ]
+}

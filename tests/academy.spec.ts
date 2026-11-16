@@ -169,9 +169,11 @@ test('primary learning views meet automated accessibility checks in both themes'
  }
 })
 
-test('all twelve module projects save independently and export their full worked solution',async({page})=>{
+test('all twelve module projects save independently and export their full worked solution',async({page,context})=>{
  test.setTimeout(180000)
  await register(page)
+ await page.evaluate(async()=>{await navigator.serviceWorker.ready})
+ await context.setOffline(true)
  await page.getByRole('link',{name:'مشروعات الوحدات',exact:true}).click()
  for(let i=0;i<12;i++){
   await page.getByRole('navigation',{name:'اختيار مشروع الوحدة'}).getByRole('button').nth(i).click()
