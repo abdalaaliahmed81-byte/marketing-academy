@@ -1,6 +1,6 @@
 {
   "version": "2.2.0",
-  "status": "local checks executed; exact-source release verification pending",
+  "status": "Windows, web/Docker, preview publication and anonymous public asset readback passed",
   "baseVerifiedRelease": "v2.1.1",
   "coverage": {
     "moduleGuides": 12,
@@ -44,11 +44,114 @@
       "passed": 4,
       "failed": 0,
       "scope": "all12 modules offline/reload/export; local/API autosave/transfer/account isolation/encrypted restore; offline mobile mini-project/full portfolio export"
+    },
+    "focusedFinalCloseRegression": {
+      "passed": 3,
+      "failed": 0,
+      "scope": "final pending-close/revert source: local/API autosave, encrypted restore/isolation/export; offline mobile keyboard/axe and mini-project portfolio appendix"
     }
   },
-  "windowsPortableExe": "pending exact-source CI",
-  "docker": "pending exact-source CI",
-  "releasePublication": "pending",
+  "windowsPortableExe": {
+    "status": "passed",
+    "commit": "9121cb108d8b62d6d3ddccec6911ae8e1a9b1bb3",
+    "version": "2.2.0",
+    "platform": "windows",
+    "payloadArchitecture": "x64",
+    "portableExecutableSmoke": {
+      "platform": "win32",
+      "architecture": "x64",
+      "executable": "release/Marketing-Academy-2.2.0-win-x64.exe",
+      "checks": [
+        "application rendered Arabic registration using local academy protocol",
+        "renderer has no Node require or process; SQLite transport exposed only through the narrow preload",
+        "native profile edit acknowledged through preload without changing login username",
+        "native module and27-field capstone autosave acknowledged without an external backend",
+        "registered account, onboarded, showed 60 lessons and saved a lesson note",
+        "required login after process restart and recovered persistent note",
+        "external network fetch blocked; curriculum and notes work without external server",
+        "migrated an authenticated legacy IndexedDB account; completed lesson, note, quiz and project survived; original ciphertext unchanged"
+      ],
+      "networkRequests": [],
+      "profilePersistence": true,
+      "projectAutosavePersistence": true,
+      "interactiveActivityPersistence": true,
+      "noteTimestampPersistence": true,
+      "sqlite": {
+        "schemaVersion": 1,
+        "accounts": 2,
+        "records": 11,
+        "legacySourcesPreserved": true,
+        "encryptedRecords": true
+      },
+      "status": "passed"
+    },
+    "assets": [
+      {
+        "name": "Marketing-Academy-2.2.0-win-x64.exe",
+        "sha256": "4241fbbcf8821fbf9572cbb750b006a8d11c810bc238273340c61a51c779c703"
+      },
+      {
+        "name": "Marketing-Academy-2.2.0-source.zip",
+        "sha256": "49592dc46d3e54ba626474d1f62b815ceaaf80d436f2d3c325042dbf4dd9c735"
+      }
+    ]
+  },
+  "docker": {
+    "status": "passed",
+    "http": 200,
+    "healthy": true,
+    "user": "101:101",
+    "readOnlyRoot": true,
+    "capabilitiesDropped": [
+      "ALL"
+    ],
+    "securityHeaders": true,
+    "rtl": true,
+    "scriptAsset": true,
+    "sqliteApi": true,
+    "apiUser": "node",
+    "apiReadOnlyRoot": true,
+    "projectProgressSurvivesApiRestart": true,
+    "progressSurvivesApiRestart": true,
+    "profileSurvivesApiRestart": true
+  },
+  "releasePublication": {
+    "url": "https://github.com/abdalaaliahmed81-byte/marketing-academy/releases/tag/v2.2.0",
+    "tag": "v2.2.0",
+    "id": 447024503,
+    "publishedAt": "2026-11-16T12:41:00Z",
+    "prerelease": true,
+    "latestStable": "v2.0.0",
+    "assets": [
+      {
+        "name": "Marketing-Academy-2.2.0-source.zip",
+        "sha256": "49592dc46d3e54ba626474d1f62b815ceaaf80d436f2d3c325042dbf4dd9c735",
+        "bytes": 621562,
+        "url": "https://github.com/abdalaaliahmed81-byte/marketing-academy/releases/download/v2.2.0/Marketing-Academy-2.2.0-source.zip"
+      },
+      {
+        "name": "Marketing-Academy-2.2.0-win-x64.exe",
+        "sha256": "4241fbbcf8821fbf9572cbb750b006a8d11c810bc238273340c61a51c779c703",
+        "bytes": 112411107,
+        "url": "https://github.com/abdalaaliahmed81-byte/marketing-academy/releases/download/v2.2.0/Marketing-Academy-2.2.0-win-x64.exe"
+      },
+      {
+        "name": "SHA256SUMS.txt",
+        "sha256": "90b39929466ec149eeb9036132f44f9096bd480f8eff05e4471082daee44308a",
+        "bytes": 287,
+        "url": "https://github.com/abdalaaliahmed81-byte/marketing-academy/releases/download/v2.2.0/SHA256SUMS.txt"
+      },
+      {
+        "name": "verification.json",
+        "sha256": "53e05b2e6c430b12a7373933192131eb61583e4a823a3917ab058a767b98c80a",
+        "bytes": 9116,
+        "url": "https://github.com/abdalaaliahmed81-byte/marketing-academy/releases/download/v2.2.0/verification.json"
+      }
+    ],
+    "anonymousDownloadChecksumReadback": "passed",
+    "sourceZipCommitCommentVerified": true,
+    "sourceZipForbiddenFileSuffixScan": "passed; bounded filename check"
+  },
   "independentHumanBeginnerValidation": false,
   "professionalApproval": false,
   "limitations": [
@@ -73,5 +176,66 @@
     "commit": "138533cec05d3ec4c6866574bfb507ee2d81505d",
     "status": "cancelled; confirmed by GitHub",
     "reason": "Include final pending-write close/revert correction in exact-source verification; no release published"
+  },
+  "testedSourceCommit": "9121cb108d8b62d6d3ddccec6911ae8e1a9b1bb3",
+  "verificationRun": "https://github.com/abdalaaliahmed81-byte/marketing-academy/actions/runs/43868000336",
+  "ciJobs": {
+    "jobs": [
+      {
+        "name": "windows",
+        "conclusion": "success",
+        "id": 133301428134
+      },
+      {
+        "name": "web",
+        "conclusion": "success",
+        "id": 133301428505
+      },
+      {
+        "name": "publish-preview",
+        "conclusion": "success",
+        "id": 133303951073
+      }
+    ],
+    "unitTestsPerOS": {
+      "windows": 57,
+      "web": 57
+    }
+  },
+  "exactSourceBrowser": {
+    "passed": 25,
+    "failed": 0,
+    "skipped": 0
+  },
+  "productionDependencies": {
+    "info": 0,
+    "low": 0,
+    "moderate": 0,
+    "high": 0,
+    "critical": 0,
+    "total": 0
+  },
+  "buildToolDependencies": {
+    "counts": {
+      "info": 0,
+      "low": 2,
+      "moderate": 9,
+      "high": 0,
+      "critical": 0,
+      "total": 11
+    },
+    "affectedPackages": [
+      "@electron/universal",
+      "@rollup/plugin-node-resolve",
+      "app-builder-lib",
+      "deepmerge",
+      "dmg-builder",
+      "electron-builder",
+      "electron-builder-squirrel-windows",
+      "glob",
+      "minimatch",
+      "vite-plugin-pwa",
+      "workbox-build"
+    ]
   }
 }

@@ -1,13 +1,13 @@
 # Feature matrix — audited source vs published baseline
 
-Baseline `1eecadb` / published v2.0.0. Current preview2.1.1 is published from28d6622; verification run43857954333 passed Windows/web/Docker/publication-readback. v2.0.0 remains latest stable.
+Baseline `1eecadb` / published v2.0.0. Current preview2.2.0 is published from9121cb1; verification run43868000336 passed Windows/web/Docker/publication-readback. v2.0.0 remains latest stable.
 
 |Capability|Baseline|Audited source / evidence / remaining limit|
 |---|---|---|
 |60 lessons,12 modules,300 questions|Present structurally|All60 agent-reviewed with worked cases/summaries;45 later depth extensions;26-source registry mapped to60 lessons. Independent professional review/learner validation open|
 |60 lesson activities and daily missions|Present|Preserved; bounds/shared validation added; completion remains self-reviewed|
 |Lesson circular notes editor|Present; encrypted IndexedDB|Title-adjacent44px target; lazy modal, autosave/search/timestamps/status; account-isolated native/API SQLite with restart tests|
-|Quizzes, sequential unlocking, mistake review|Present|84 revised items; historical version1 wording/grades and active drafts retained; retries use2.50 tests/22 browser paths;109 length cues remain moderation candidates|
+|Quizzes, sequential unlocking, mistake review|Present|84 revised items; historical version1 wording/grades and active drafts retained; retries use2.57 tests/25 browser paths;109 length cues remain moderation candidates|
 |12 worked module projects and capstone|Present|2.2.0 source:12 expanded guides,60 worked mini-projects,3 complete27-field cases/12 stages, queued autosave, safe append transfer, report/portfolio/backup export. Existing IDs/credit retained. No instructor grading; see PROJECT_LEARNING.md and exact-source evidence|
 |Accounts/login/logout/password change|Renderer/Dexie|Main/API authority; encrypted per-user SQLite; idle/absolute expiry and password-version revocation|
 |Profile and explicit user switching|Display name not editable|Arabic profile controls; stable login identity; authenticated update; lock/logout before next login; backend and both browser editions tested|
@@ -18,7 +18,7 @@ Baseline `1eecadb` / published v2.0.0. Current preview2.1.1 is published from28d
 |Concurrent save safety|IDB transactions|Explicit scoped repository transactions, owner checks, revision compare-and-swap, stale/late response tests|
 |Validated encrypted backup/restore|Present|Shared frontend/backend schemas; owner-scoped atomic restore, legacy input compatibility, bounded size|
 |Responsive RTL/motion/accessibility|Present|Existing keyboard, mobile, dark/light, reduced-motion and axe browser checks retained; no screen-reader certification|
-|Portable Windows packaging|Published2.0.0|Actual2.1.1 Windows EXE/SQLite/migration/restart passed run43857954333; publicly published, downloaded and SHA256/source-commit verified. Preview/unsigned|
+|Portable Windows packaging|Published2.0.0|Actual2.2.0 Windows EXE/SQLite/project-autosave/migration/restart passed run43868000336; publicly published, downloaded and SHA256/source-commit verified. Preview/unsigned|
 |CI/CD and release proofs|Present|Exact-source Windows/web/Docker + explicit preview publication job and published-asset readback passed; stable professional claims gated separately|
 |Independent Arabic instructional approval|Not performed|Open. No claim of advanced certification or professional human review|
 |Full GitHub admin-settings audit|Partial access|Public visibility authorized; rulesets empty. Actions permission settings/main protection/secret-name endpoints returned403; unverified|
@@ -32,3 +32,5 @@ Interactive revision: every lesson now has6 saved activities (360), with12 reusa
 Editorial revision (verification pending):45 later lessons now have original additional explanations and worked cases/summaries;10 foundational cases have solutions and module3 depth is retained. All60 lessons have bounded source mappings and simulated-example labels.84 question revisions retain original history through explicit assessment versions. The registry and UI disclose agent review and the absence of independent human approval. Counts do not close G12; actual technical evidence must be recorded after final tests/CI.
 
 Guide-v1 compatibility patch2.1.1: immutable baseline completion counts retain previously earned activity credit; appended paragraphs are optional guided depth with real saved acknowledgements. All50 tests and22 browser paths passed locally, including old3-step guide restore/reopen. No learner records or IDs are rewritten. Native Linux restart/migration passed again. Exact-source Windows/Docker/prerelease verification follows; previous2.1.0 preview is retained with a compatibility notice.
+
+Project learning2.2.0 final verification:57 tests per OS/25 browser paths, Windows portable EXE and Docker restart persistence passed exact source9121cb1. All4 public assets anonymously downloaded and SHA256/source archive comment matched.12 module roundtrips and mini-project/capstone export run offline; independent beginner learner validation remains open. See PROJECT_LEARNING_VERIFICATION.json.

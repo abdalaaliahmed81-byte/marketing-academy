@@ -1,6 +1,6 @@
 # Architecture — SQLite authority with shared learning code
 
-Audit branch implementation for **2.1.0 (unreleased)**. Published v2.0.0 remains the historical IndexedDB build. See AUDIT.md and RELEASE_GATES.md for executed checks and open gates.
+Current delivered architecture: **2.2.0 Preview**, verified runtime9121cb1. Published v2.0.0 remains the historical IndexedDB build. See AUDIT.md and RELEASE_GATES.md for executed checks and open gates.
 
 ## Runtime map
 
@@ -72,3 +72,5 @@ Guide-v1 compatibility amendment: appending reading paragraphs must not silently
 ## Project learning extension2.2.0
 
 `src/project-learning/` contains12 module guide supplements,60 original worked mini-projects, three complete business cases,12 capstone milestones and shared export models. Existing React routes consume these through captured authenticated repositories. `useSavedDraft` serializes debounced writes and flushes before module switching/export; it never marks an older acknowledgment as the current draft. `saveModuleProject` guards earned credit transactionally; `appendModuleToPortfolio` appends idempotently with schema/size validation. `competitors` is an optional27th portfolio field, so earlier records/backups remain valid without rewriting SQLite/schema1, IDs, app origin or assessment versions. Full portfolio exports add saved assignments/module submissions; encrypted backup remains the restore format. See PROJECT_LEARNING.md.
+
+Browser QA uses independent temporary SQLite/API fixtures4174 (retained baseline) and4175 (project workflows), preventing unrelated tests from sharing the production registration-rate bucket. Production limiter/security settings are unchanged. Final Windows/web/Docker/preview verification is linked in PROJECT_LEARNING_VERIFICATION.json.

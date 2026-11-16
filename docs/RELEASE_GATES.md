@@ -1,6 +1,6 @@
 # Release gates
 
-Current delivered source28d6622 /2.1.1 Preview; run43857954333 passed Windows, web/Docker and publication/readback. Published stable v2.0.0 is unchanged. AI_PROGRESS records final executed evidence and CI links; a workflow definition alone is never a pass.
+Current delivered source9121cb1 /2.2.0 Preview; run43868000336 passed Windows, web/Docker and publication/readback. Published stable v2.0.0 is unchanged. AI_PROGRESS records final executed evidence and CI links; a workflow definition alone is never a pass.
 
 |Gate|Evidence / condition|Status|
 |---|---|---|
@@ -49,3 +49,5 @@ Patch2.1.1 adds a required regression: every expanded guide-v1 must retain an ea
 
 
 Project learning2.2.0 extends G04/G07 with12 complete guides,60 worked mini-projects,3 complete27-field capstones, queued autosave/retry, retained completion, atomic append, both browser account/backup/exports and offline mobile interaction. G09 must now prove `projectAutosavePersistence` on the actual built EXE; Docker must prove `projectProgressSurvivesApiRestart`. Preview proof requires25 passing browser paths and project-learning coverage from the same run. Prior2.1.1 evidence does not establish these new gates. Independent Arabic review/novice learner validation remains open; no paid services are required by the implemented exercise path.
+
+G14 project-learning technical gates PASSED at9121cb1/run43868000336:57 tests per OS/25 browser paths,12 offline module save/reload/export paths,60 worked mini-projects/3 complete27-field capstones, queued close/revert regression, Windows projectAutosavePersistence and Docker projectProgressSurvivesApiRestart. Preview published and4 public assets independently downloaded/digest verified; stable G12 human instructional/learner validation remains OPEN. Exact evidence: PROJECT_LEARNING_VERIFICATION.json. No release was published from the earlier failed/cancelled runs.
