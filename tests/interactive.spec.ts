@@ -95,3 +95,18 @@ test('editorial sources are accessible and legacy answers retain wording before 
  expect((await new AxeBuilder({page}).withTags(['wcag2a','wcag2aa','wcag21aa','wcag22aa']).analyze()).violations).toEqual([])
  await page.screenshot({path:'artifacts/editorial-sources-mobile.png',fullPage:true})
 })
+
+test('earned three-step legacy guide remains complete while optional depth saves after restart',async({page})=>{
+ const name=await register(page),at=new Date().toISOString(),lesson=lessons.find(l=>l.id==='m04-l01')!
+ const guide={values:{'ack-0':'yes','ack-1':'yes','ack-2':'yes',reflection:'قرار محفوظ من النسخة السابقة للشرح'},order:[],path:[],step:2,submitted:true,updatedAt:at}
+ const data={version:3,settings:[{id:'local',goal:'الحفاظ على الإنجاز السابق',minutes:30,business:'مطعم',theme:'light'}],lessonStates:lessons.map(l=>({id:l.id,notes:'',bookmarked:false,assignment:'تطبيق محاكاة محفوظ للمراجعة',checked:[0,1,2],completed:true,...(l.id===lesson.id?{interactions:{'guide-v1':guide}}:{})})),attempts:lessons.map(l=>({id:'legacy-guide-'+l.id,lessonId:l.id,at,answers:Object.fromEntries(l.questions.map(q=>[q.id,q.answer])),score:100,passed:true,missed:[]})),activity:[],missions:[],projects:[],moduleProjects:[]}
+ await page.getByRole('link',{name:'الإعدادات',exact:true}).click();await page.getByLabel('اختر نسخة احتياطية',{exact:true}).setInputFiles({name:'synthetic-old-guides.json',mimeType:'application/json',buffer:Buffer.from(JSON.stringify(data))});await page.getByRole('button',{name:'استعد النسخة واستبدل البيانات',exact:true}).click()
+ await expect(page.getByRole('textbox',{name:'هدفك من التعلّم',exact:true})).toHaveValue('الحفاظ على الإنجاز السابق')
+ await page.goto('/#/lesson/'+lesson.id+'/read');const box=card(page,'guide')
+ await expect(box.getByText('مكتمل',{exact:true})).toBeVisible();await expect(page.getByRole('progressbar',{name:'تقدم الأنشطة التفاعلية',exact:true})).toHaveAttribute('value','1')
+ await expect(box.getByText(/توسعات اختيارية: ٠ من ٢/)).toBeVisible()
+ await box.getByRole('button',{name:'راجعت هذه الخطوة',exact:true}).click();await box.getByRole('button',{name:'راجعت هذه الخطوة',exact:true}).click();await box.getByRole('button',{name:'راجعت هذه الخطوة',exact:true}).click()
+ await expect(box.getByText(/توسعات اختيارية: ٢ من ٢/)).toBeVisible();await expect(box.getByText('حُفظ النشاط',{exact:true})).toBeVisible()
+ await page.reload();await login(page,name);await page.goto('/#/lesson/'+lesson.id+'/read')
+ await expect(card(page,'guide').getByText('مكتمل',{exact:true})).toBeVisible();await expect(card(page,'guide').getByText(/توسعات اختيارية: ٢ من ٢/)).toBeVisible();await expect(page.getByRole('progressbar',{name:'تقدم الأنشطة التفاعلية',exact:true})).toHaveAttribute('value','1')
+})

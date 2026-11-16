@@ -8,7 +8,7 @@ import {AcademyDB,retryQuiz,saveLesson,saveQuizDraftAnswers,submitQuiz} from './
 import {emptyLesson,scoreQuestions,type Attempt} from './domain'
 import {emptyState,normalizeState} from './data-schema'
 import {activitiesFor,validInteraction} from './interactive/content'
-import {blankInteraction} from './interactive/model'
+import {activityResult,blankInteraction} from './interactive/model'
 let database:AcademyDB|undefined
 afterEach(async()=>{await database?.delete();database=undefined})
 describe('editorial revision and learner-history compatibility',()=>{
@@ -56,6 +56,19 @@ describe('editorial revision and learner-history compatibility',()=>{
   database.close();await database.open()
   expect((await database.attempts.toArray()).map(a=>a.assessmentVersion).sort()).toEqual([1,2])
   expect(await database.lessonStates.get(lesson.id)).toMatchObject({notes:'لا تحذف تقدمي',assignment:'تطبيق لم يتغير',quizDraft:{assessmentVersion:2,active:false}})
+ })
+ it('preserves every expanded guide-v1 earned result without claiming new paragraphs were read',()=>{
+  for(const lesson of lessons.filter(l=>l.module>=4)){
+   const guide=activitiesFor(lesson).find(a=>a.kind==='guide')!
+   const saved={...blankInteraction(),step:2,submitted:true,values:{'ack-0':'yes','ack-1':'yes','ack-2':'yes',reflection:'قرار سابق موثق قبل توسيع الشرح'}}
+   expect(guide.requiredStepCount,lesson.id).toBe(3)
+   expect(guide.steps!.length).toBeGreaterThan(3)
+   expect(validInteraction(guide,saved)).toBe(true)
+   expect(activityResult(guide,saved).complete,lesson.id).toBe(true)
+   expect(saved.values).not.toHaveProperty('ack-3')
+   expect(activityResult(guide,{...saved,values:{...saved.values,'ack-3':'yes'}}).complete).toBe(true)
+   expect(activityResult(guide,{...saved,values:{...saved.values,reflection:''}}).complete).toBe(false)
+  }
  })
  it('retains activity identifiers and accepts an acknowledged original guide step after additions',()=>{
   for(const lesson of lessons){const defs=activitiesFor(lesson),guide=defs.find(d=>d.kind==='guide')!,value={...blankInteraction(),step:0};expect(validInteraction(guide,value)).toBe(true);expect(defs.map(d=>d.id)).toEqual(['guide-v1','match-v1','sequence-v1','blank-v1','scenario-v1','studio-v1'])}

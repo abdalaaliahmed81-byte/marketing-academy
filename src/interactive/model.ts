@@ -9,7 +9,7 @@ export const blankInteraction=():Interaction=>({values:{},order:[],path:[],step:
 export type Kind='guide'|'match'|'sequence'|'blank'|'scenario'|'persona'|'value'|'copy'|'budget'|'calendar'|'plan'|'campaign'
 export interface Field {id:string;label:string;hint:string;min?:number;type?:'date'|'text'|'textarea'}
 export interface Branch {id:string;text:string;choices?:{id:string;label:string;next:string}[];success?:boolean;explanation?:string}
-export interface Activity {id:string;kind:Kind;title:string;prompt:string;fields?:Field[];target?:string;items?:{id:string;label:string;definition?:string}[];answer?:string;steps?:string[];nodes?:Branch[]}
+export interface Activity {id:string;kind:Kind;title:string;prompt:string;fields?:Field[];target?:string;items?:{id:string;label:string;definition?:string}[];answer?:string;steps?:string[];requiredStepCount?:number;nodes?:Branch[]}
 export const normalized=(s:string)=>s.normalize('NFKC').trim().replace(/\s+/g,' ').toLocaleLowerCase('en-US')
 export function moveItem(items:string[],from:number,to:number){if(from<0||to<0||from>=items.length||to>=items.length)return [...items];const next=[...items];next.splice(to,0,next.splice(from,1)[0]);return next}
 function validCalendarDay(value:string){return /^\d{4}-\d{2}-\d{2}$/.test(value??'')&&Number.isFinite(Date.parse(value+'T00:00:00Z'))&&new Date(value+'T00:00:00Z').toISOString().slice(0,10)===value}
@@ -26,7 +26,7 @@ export function branchPosition(activity:Activity,state:Interaction){let node=act
 export function activityResult(a:Activity,s:Interaction):{complete:boolean;feedback:string}{
  if(!s.submitted)return {complete:false,feedback:'مسودة محفوظة؛ راجعها ثم تحقّق من نشاطك.'}
  let ok=false,feedback=''
- if(a.kind==='guide')ok=!!a.steps?.every((_,i)=>s.values['ack-'+i]==='yes')&&(s.values.reflection?.trim().length??0)>=10
+ if(a.kind==='guide')ok=!!a.steps?.slice(0,a.requiredStepCount??a.steps.length).every((_,i)=>s.values['ack-'+i]==='yes')&&(s.values.reflection?.trim().length??0)>=10
  else if(a.kind==='match')ok=!!a.items?.every(item=>s.values[item.id]===item.id)
  else if(a.kind==='sequence')ok=JSON.stringify(s.order)===JSON.stringify(a.items?.map(i=>i.id))
  else if(a.kind==='blank')ok=normalized(s.values.answer??'')===normalized(a.answer??'')

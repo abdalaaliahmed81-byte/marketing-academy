@@ -1,3 +1,4 @@
+import guideV1 from './guide-v1.json' with {type:'json'}
 import type {Lesson} from '../curriculum'
 import {branchPosition,type Activity,type Interaction,type Field} from './model'
 const field=(id:string,label:string,hint:string):Field=>({id,label,hint})
@@ -35,12 +36,13 @@ const cases:Record<number,[string,string,string]>={
 12:['طلب العميل عرض أرقام المحاكاة كأنها نتائج حملة منشورة.','توضيح الدور والمحاكاة والقيود في الملف','إخفاء مصدر الأرقام لحماية العرض']}
 const studioKinds:Record<number,Activity['kind'][]>={1:['plan','campaign','budget','persona','budget'],2:['persona','persona','campaign','persona','value'],3:['persona','value','value','copy','budget'],4:['copy','copy','copy','campaign','copy'],5:['calendar','calendar','campaign','copy','calendar'],6:['campaign','calendar','copy','copy','calendar'],7:['campaign','campaign','copy','campaign','budget'],8:['persona','copy','copy','calendar','campaign'],9:['budget','campaign','budget','copy','budget'],10:['budget','budget','campaign','budget','budget'],11:['campaign','budget','copy','copy','campaign'],12:['plan','calendar','budget','campaign','plan']}
 export function activitiesFor(lesson:Lesson):Activity[]{
+ const originalGuideSteps:Record<string,number>=guideV1.requiredSteps
  const words=lesson.glossary.slice(0,4).map(([label,definition],i)=>({id:'term-'+i,label,definition})),[situation,safe,unsafe]=cases[lesson.module]
  const kind=studioKinds[lesson.module][Number(lesson.id.slice(-2))-1]
  const fields=kind==='persona'?persona:kind==='value'?value:kind==='copy'?copy:kind==='calendar'?calendar:kind==='plan'?plan:campaign
  const titles:Record<string,string>={persona:'بناء شخصية المشتري',value:'ورشة عرض القيمة',copy:'مختبر القصة والإعلان الأخلاقي',budget:'محاكي الميزانية ومحاسبة المؤشرات',calendar:'تقويم محتوى قابل للتحرير',plan:'الخطة التسويقية في صفحة واحدة',campaign:'تمرين تصميم الحملة'}
  return [
-  {id:'guide-v1',kind:'guide',title:'شرح موجّه خطوة بخطوة',prompt:lesson.goal,steps:lesson.reading},
+  {id:'guide-v1',kind:'guide',title:'شرح موجّه خطوة بخطوة',prompt:lesson.goal,steps:lesson.reading,requiredStepCount:originalGuideSteps[lesson.id]??lesson.reading.length},
   {id:'match-v1',kind:'match',title:'صل المفهوم بمعناه',prompt:'اختر التعريف المناسب لكل مصطلح من هذا الدرس.',items:words},
   {id:'sequence-v1',kind:'sequence',title:'رتّب مسار القرار',prompt:'ترتيب عمل مقترح لهذه الوحدة؛ طبقه على موضوع: '+lesson.title,items:sequences[lesson.module].map((label,i)=>({id:'step-'+i,label}))},
   {id:'blank-v1',kind:'blank',title:'أكمل المصطلح',prompt:'اكتب المصطلح كما ورد في الدرس: «'+words[0].definition+'»',answer:words[0].label},

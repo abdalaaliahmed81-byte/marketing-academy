@@ -1,5 +1,5 @@
 {
-  "phase": "agent editorial remediation; final integration verification pending",
+  "phase": "2.1.1 guide-v1 compatibility correction; final exact-source verification pending",
   "date": "2026-11-16",
   "baselineCommit": "5e2a6d4",
   "priorVerifiedRuntime": "a0bf1297ce5d59501bfc519688edeb6c411100f8",
@@ -19,7 +19,7 @@
   "irrelevantDistractorFlags": 0,
   "lengthCueReviewCandidates": 109,
   "local": {
-    "unitIntegrationTests": 49,
+    "unitIntegrationTests": 50,
     "typecheck": "passed",
     "build": "passed",
     "linuxElectron": {
@@ -68,15 +68,27 @@
     },
     "dockerBuildScope": "local-only compact build for VFS host; production Dockerfile awaits exact-source CI",
     "finalBrowserRun": {
-      "passed": 21,
+      "passed": 22,
       "failed": 0,
-      "duration": "3.4m",
-      "includes": "legacy wording/score restore, revised retry, source links/mobile/axe plus existing full60-lesson and account/interaction paths"
+      "duration": "3.2m",
+      "newRegression": "restored legacy3-step earned guide, optional acknowledgements, reload/login and retained credit"
     }
   },
   "exactCommitCI": null,
   "independentHumanReview": false,
   "learnerValidation": false,
   "professionalApproval": false,
-  "newReleasePublished": false
+  "newReleasePublished": false,
+  "version": "2.1.1",
+  "guideCompatibility": {
+    "issue": "Expanded reading length changed guide-v1 grading, lowering a previously earned activity count; lesson completion and stored answers were not deleted.",
+    "fix": "Immutable baseline required-step counts; supplemental paragraphs remain navigable and optional with separately visible saved acknowledgements.",
+    "coverage": "all45 expanded guides checked against old earned state; browser reopen regression test added",
+    "finalBrowserRun": {
+      "passed": 22,
+      "failed": 0,
+      "duration": "3.2m",
+      "newRegression": "restored legacy3-step earned guide, optional acknowledgements, reload/login and retained credit"
+    }
+  }
 }
