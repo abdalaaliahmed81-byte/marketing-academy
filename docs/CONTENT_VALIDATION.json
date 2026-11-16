@@ -1,6 +1,6 @@
 {
   "status": "PASS",
-  "checkedAt": "2026-11-16T21:50:51.413Z",
+  "checkedAt": "2026-11-16T22:07:40.788Z",
   "contentSha256": "bb4e233588aa07a8408c2fee3906f04b351ab023877b29360bac3d09baf6f019",
   "modules": 12,
   "lessons": 60,
@@ -9,6 +9,7 @@
   "miniProjects": 60,
   "workedModuleProjects": 12,
   "capstoneFields": 27,
+  "allCitationLinksAllowedByDesktopPolicy": true,
   "assessmentVersions": [
     1,
     2,

@@ -1,3 +1,5 @@
+import {createRequire} from 'node:module'
+const {safeExternal}=createRequire(import.meta.url)('../electron/external.cjs')
 import assert from 'node:assert/strict'
 import {readFile,mkdir,writeFile,mkdtemp,rm} from 'node:fs/promises'
 import {build} from 'esbuild'
@@ -12,7 +14,7 @@ try{
  const {lessons,modules,activitiesFor,moduleGuide,miniProject,artifactFields,scoreQuestions,assessmentQuestions,CURRENT_ASSESSMENT}=await import(pathToFileURL(file).href)
  const provenance=JSON.parse(await readFile('src/content/provenance.json','utf8')),sources=new Map(provenance.sources.map(s=>[s.id,s])),unique=xs=>new Set(xs).size===xs.length,arabic=s=>/[ء-ي]/u.test(s),words=s=>s.trim().split(/\s+/u).length
  assert.equal(modules.length,12);assert.equal(lessons.length,60);assert(unique(lessons.map(l=>l.id)));assert.equal(provenance.lessons.length,60);assert(unique(provenance.lessons.map(l=>l.id)))
- for(const s of sources.values()){assert(new URL(s.url).protocol==='https:');for(const field of ['title','author','scope','rights','access','use'])assert(s[field]?.trim(),s.id+': '+field)}
+ for(const s of sources.values()){assert(new URL(s.url).protocol==='https:');assert(safeExternal(s.url)&&safeExternal(s.rightsURL),s.id+': blocked external citation');for(const field of ['title','author','scope','rights','access','use'])assert(s[field]?.trim(),s.id+': '+field)}
  let gradingCombinations=0
  const rows=lessons.map((l,i)=>{
   assert.equal(l.id,`m${String(Math.floor(i/5)+1).padStart(2,'0')}-l${String(i%5+1).padStart(2,'0')}`);assert.equal(l.module,Math.floor(i/5)+1)
@@ -35,6 +37,6 @@ try{
  const projects=Array.from({length:12},(_,i)=>{const p=moduleGuide(i);for(const field of ['title','brief','objective','prerequisites','materials','concepts','template','advice','offlineProof'])assert(p[field]?.trim(),`project${i+1}: ${field}`);assert.equal(p.steps.length,6);assert(p.worked.length>=4&&words(p.worked.join(' '))>=150);assert.equal(p.deliverables.length,4);assert.equal(p.rubric.length,4);assert(p.mistakes.length>=2);return {module:i+1,title:p.title,workedWords:words(p.worked.join(' ')),status:'PASS structural completeness'}})
  assert.equal(artifactFields.length,27);assert(!moduleGuide(11).worked.join(' ').includes('26 حقل'))
  const contentSha256=createHash('sha256').update(JSON.stringify({lessons,projects:Array.from({length:12},(_,i)=>moduleGuide(i)),provenance})).digest('hex')
- const report={status:'PASS',checkedAt:new Date().toISOString(),contentSha256,modules:12,lessons:60,questions:300,activities:360,miniProjects:60,workedModuleProjects:12,capstoneFields:27,assessmentVersions:[1,2,CURRENT_ASSESSMENT],gradingCombinations,rows,projects,limits:['Structural/traceability/grade checks cannot establish factual truth, effective teaching or independent human approval.','URLs and rights metadata do not imply a license to copy provider courses.','Small simulated examples are not observed Iraqi market statistics.']}
+ const report={status:'PASS',checkedAt:new Date().toISOString(),contentSha256,modules:12,lessons:60,questions:300,activities:360,miniProjects:60,workedModuleProjects:12,capstoneFields:27,allCitationLinksAllowedByDesktopPolicy:true,assessmentVersions:[1,2,CURRENT_ASSESSMENT],gradingCombinations,rows,projects,limits:['Structural/traceability/grade checks cannot establish factual truth, effective teaching or independent human approval.','URLs and rights metadata do not imply a license to copy provider courses.','Small simulated examples are not observed Iraqi market statistics.']}
  await mkdir('artifacts',{recursive:true});await writeFile('artifacts/content-validation.json',JSON.stringify(report,null,2)+'\n');console.log(JSON.stringify({...report,rows:undefined,projects:undefined}))
 }finally{await rm(folder,{recursive:true,force:true})}

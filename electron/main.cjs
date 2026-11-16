@@ -10,8 +10,7 @@ const {AcademyEngine,AcademyError,publicError}=require('../build/engine.cjs')
 let engine
 const tokens=new Map()
 const commands=new Set(['register','recoverBackup','login','logout','changePassword','read','commit','migrateLegacy','profile','updateProfile'])
-const externalHosts=new Set(['grow.google','academy.hubspot.com','www.facebookblueprint.com','skillshop.withgoogle.com','developers.google.com','www.semrush.com','allandib.com','www.penguinrandomhouse.com','seths.blog','support.google.com','www.google.com','www.ftc.gov','www.w3.org'])
-function safeExternal(url){try{const u=new URL(url);return u.protocol==='https:'&&!u.username&&!u.password&&externalHosts.has(u.hostname)}catch{return false}}
+const {safeExternal}=require('./external.cjs')
 function appUrl(url){try{const u=new URL(url);return u.protocol==='academy:'&&u.host==='app'}catch{return false}}
 const channel=require('./flavor.json').channel
 const profile=require('./profile.cjs').resolveProfile(channel,app.getPath('appData'),app.getPath('userData'),process.env.ACADEMY_TEST_DATA_DIR)

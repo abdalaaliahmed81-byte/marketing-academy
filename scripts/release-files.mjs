@@ -36,5 +36,6 @@ await copyFile('docs/START_AR.md','release/START_AR.md')
 const assets=[];for(const name of [exe,qaExe,source,'START_AR.md'])assets.push({name,sha256:await digest('release/'+name)})
 await writeFile('release/SHA256SUMS.txt',assets.map(a=>a.sha256+'  '+a.name).join('\n')+'\n','utf8')
 const editionBoundary=await read('artifacts/edition-boundary.json');assert.equal(editionBoundary.qaToolsExcludedFromProduction,true);assert.equal(editionBoundary.status,'passed')
-const report={status:'passed',editionBoundary,commit:execFileSync('git',['rev-parse','HEAD'],{encoding:'utf8'}).trim(),version,platform:'windows',...production,qa,isolation,authAuditBaseline:baseline,assets}
+const citationDispatch=await read('artifacts/citation-smoke.json');assert.equal(citationDispatch.status,'passed');assert.equal(citationDispatch.sourceAndTermsDispatched,true);assert.equal(citationDispatch.untrustedHostDenied,true)
+const report={status:'passed',editionBoundary,citationDispatch,commit:execFileSync('git',['rev-parse','HEAD'],{encoding:'utf8'}).trim(),version,platform:'windows',...production,qa,isolation,authAuditBaseline:baseline,assets}
 await writeFile('artifacts/windows-build.json',JSON.stringify(report,null,2));console.log(JSON.stringify(report,null,2))

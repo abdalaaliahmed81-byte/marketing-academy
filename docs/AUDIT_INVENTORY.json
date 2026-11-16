@@ -1,63 +1,28 @@
 {
   "baseline": "1eecadbf3e1811e31dc2eafe274487ecb8a15e57",
-  "generatedAt": "2026-11-16T21:54:28.362Z",
+  "generatedAt": "2026-11-16T22:09:35.818Z",
   "files": [
     {
-      "path": "docs/CONTENT_AUDIT.md",
-      "bytes": 15945,
-      "sha256": "a20115a0beec57e25bbe45c0a9cfb71e1b9d33c708d1c8f984f60fa0769e4d00",
-      "lines": 120,
-      "inspection": "read; review scope documented"
-    },
-    {
-      "path": "docs/CONTENT_SOURCE_CHECKS.json",
-      "bytes": 12866,
-      "sha256": "46f39695f6b210fda8c5a4190adfe1bb49f42792131e00415d3cfeb2e50c6ee5",
-      "lines": 321,
-      "inspection": "read; manifests/locks additionally consumed by build and dependency audit"
-    },
-    {
-      "path": "docs/CONTENT_VALIDATION.json",
-      "bytes": 26309,
-      "sha256": "2e9abca51a7a9ef4de2432ac8e77b829d5b5234f0f1d95bc4175f07ee236bd03",
-      "lines": 899,
-      "inspection": "read; manifests/locks additionally consumed by build and dependency audit"
-    },
-    {
-      "path": "scripts/validate-content.mjs",
-      "bytes": 5551,
-      "sha256": "7634846b49e3499fa3d9c70cf78de00224c20c89b8589287638c9dbf31b54c51",
-      "lines": 41,
+      "path": "electron/external.cjs",
+      "bytes": 643,
+      "sha256": "1196bf60e9f86af248a24c7ab6138424eebf5b1c8986530fbf88dfa8288c7657",
+      "lines": 5,
       "inspection": "read and syntax-parsed; security/runtime review scoped in AUDIT.md",
       "syntaxErrors": 0
     },
     {
-      "path": "src/content-audit.test.ts",
-      "bytes": 2974,
-      "sha256": "64afb8e95ca148bbecda428f09e94103ecca5a776a11231d8a441cfefac4d8ac",
-      "lines": 38,
+      "path": "scripts/citation-smoke.mjs",
+      "bytes": 1671,
+      "sha256": "71168bd7a06f3b862cbd993b83e26d7d60f76b96406b7e278c32b68faaf950eb",
+      "lines": 19,
       "inspection": "read and syntax-parsed; security/runtime review scoped in AUDIT.md",
       "syntaxErrors": 0
     },
     {
-      "path": "src/lessons/assessment-v2-snapshot.json",
-      "bytes": 179637,
-      "sha256": "bf1281a0a8169521fe362e07bc51f54ea890c8481e404e3c3955085df3b0fe6d",
-      "lines": 6123,
-      "inspection": "read; manifests/locks additionally consumed by build and dependency audit"
-    },
-    {
-      "path": "src/lessons/reviewed/assessment-v3.json",
-      "bytes": 8312,
-      "sha256": "e08b20babbe2e454215d6fe1d764ab4abbc059e5f86ba2e978ab72323402f6ba",
-      "lines": 112,
-      "inspection": "read; manifests/locks additionally consumed by build and dependency audit"
-    },
-    {
-      "path": "tests/content-history.spec.ts",
-      "bytes": 3242,
-      "sha256": "2d6d8bd5f5258ec9bcaff8c74827c4e66810efca5573ba1bf02924c77042cdbc",
-      "lines": 18,
+      "path": "src/content-links.test.ts",
+      "bytes": 840,
+      "sha256": "8b046fb7fe35a32def88c67140db457333e3298d685080bde959b5f9326495cf",
+      "lines": 12,
       "inspection": "read and syntax-parsed; security/runtime review scoped in AUDIT.md",
       "syntaxErrors": 0
     },
@@ -76,9 +41,9 @@
     },
     {
       "path": ".github/workflows/verify.yml",
-      "bytes": 8438,
-      "sha256": "29d3486ecc51fd4677b5ddc66aa755878cc54d89d2403713a314714d7c7a002e",
-      "lines": 190,
+      "bytes": 8573,
+      "sha256": "9f8c827faae8408740fb49e0e95027e4a0361e8149f83bcc32a3a895998909b6",
+      "lines": 192,
       "inspection": "read; review scope documented"
     },
     {
@@ -196,9 +161,9 @@
     },
     {
       "path": "docs/AI_PROGRESS.md",
-      "bytes": 66591,
-      "sha256": "91240a797e9f42221c565b29e1d2e75dd98f0c59cea1630a898b815ec9e5f4c6",
-      "lines": 311,
+      "bytes": 67322,
+      "sha256": "0879ac493472313c27cdf26630d0debdd4246e46901adc4e04e7cf3222955b24",
+      "lines": 313,
       "inspection": "read; review scope documented"
     },
     {
@@ -249,6 +214,27 @@
       "sha256": "df446527e54e1554a9b46e7dc16b3a4a20e6d4b630fa05b8edef1bc319e366b4",
       "lines": 38,
       "inspection": "read; review scope documented"
+    },
+    {
+      "path": "docs/CONTENT_AUDIT.md",
+      "bytes": 17567,
+      "sha256": "671019fe0f523c1eaa847e12fe0c4496044ecc452daa41c85107334fc3e461d2",
+      "lines": 128,
+      "inspection": "read; review scope documented"
+    },
+    {
+      "path": "docs/CONTENT_SOURCE_CHECKS.json",
+      "bytes": 12866,
+      "sha256": "46f39695f6b210fda8c5a4190adfe1bb49f42792131e00415d3cfeb2e50c6ee5",
+      "lines": 321,
+      "inspection": "read; manifests/locks additionally consumed by build and dependency audit"
+    },
+    {
+      "path": "docs/CONTENT_VALIDATION.json",
+      "bytes": 26359,
+      "sha256": "6ac80b3ceaf55c15796281a94b71aebb769821d4bfe99c203e29e84a473ffaa0",
+      "lines": 900,
+      "inspection": "read; manifests/locks additionally consumed by build and dependency audit"
     },
     {
       "path": "docs/DECISIONS.md",
@@ -504,9 +490,9 @@
     },
     {
       "path": "electron/main.cjs",
-      "bytes": 6534,
-      "sha256": "c3473438a7b37c5bbc7b927584ae44012ee91c7bf0d07fb94469254cb00a6e92",
-      "lines": 74,
+      "bytes": 6136,
+      "sha256": "c519997ecd2c48b7b7279b5e2ef00c4835015a203c0bdf2e4292bc661b9a2a40",
+      "lines": 73,
       "inspection": "read and syntax-parsed; security/runtime review scoped in AUDIT.md",
       "syntaxErrors": 0
     },
@@ -698,9 +684,9 @@
     },
     {
       "path": "scripts/release-files.mjs",
-      "bytes": 5086,
-      "sha256": "22e40b7467e349c063828e819ca59334c1376222d3b7447118342b3e9d7434d9",
-      "lines": 41,
+      "bytes": 5334,
+      "sha256": "e8428ae07e14b970bb06f8e742f3f46e42dfe33d78c6a9815050626c2bcfcc57",
+      "lines": 42,
       "inspection": "read and syntax-parsed; security/runtime review scoped in AUDIT.md",
       "syntaxErrors": 0
     },
@@ -725,6 +711,14 @@
       "bytes": 752,
       "sha256": "e3e70e9a1a8048aa61c343d257ec21fe965f332250de61455e0b83ba0adaf9af",
       "lines": 12,
+      "inspection": "read and syntax-parsed; security/runtime review scoped in AUDIT.md",
+      "syntaxErrors": 0
+    },
+    {
+      "path": "scripts/validate-content.mjs",
+      "bytes": 5807,
+      "sha256": "3a34320b219f7b2d39f507c600ed7cdb0cbf557311f681ad8032f77bbdd9e721",
+      "lines": 43,
       "inspection": "read and syntax-parsed; security/runtime review scoped in AUDIT.md",
       "syntaxErrors": 0
     },
@@ -827,6 +821,14 @@
       "bytes": 1502,
       "sha256": "79a209f61238f5535bd607fda4baa199df5528fe2e852ca5a0640e7b12db8d61",
       "lines": 16,
+      "inspection": "read and syntax-parsed; security/runtime review scoped in AUDIT.md",
+      "syntaxErrors": 0
+    },
+    {
+      "path": "src/content-audit.test.ts",
+      "bytes": 2974,
+      "sha256": "64afb8e95ca148bbecda428f09e94103ecca5a776a11231d8a441cfefac4d8ac",
+      "lines": 38,
       "inspection": "read and syntax-parsed; security/runtime review scoped in AUDIT.md",
       "syntaxErrors": 0
     },
@@ -1012,6 +1014,13 @@
       "inspection": "read; manifests/locks additionally consumed by build and dependency audit"
     },
     {
+      "path": "src/lessons/assessment-v2-snapshot.json",
+      "bytes": 179637,
+      "sha256": "bf1281a0a8169521fe362e07bc51f54ea890c8481e404e3c3955085df3b0fe6d",
+      "lines": 6123,
+      "inspection": "read; manifests/locks additionally consumed by build and dependency audit"
+    },
+    {
       "path": "src/lessons/foundations.ts",
       "bytes": 31787,
       "sha256": "7c49d0018c433475e25c7bf492fb1c700d3687c433764f1f970445a814d0939f",
@@ -1056,6 +1065,13 @@
       "bytes": 32163,
       "sha256": "76a46479d9b1ec1c5578b316d198bd2bcc879bab11f7b0a4010aa0558cbdbc95",
       "lines": 685,
+      "inspection": "read; manifests/locks additionally consumed by build and dependency audit"
+    },
+    {
+      "path": "src/lessons/reviewed/assessment-v3.json",
+      "bytes": 8312,
+      "sha256": "e08b20babbe2e454215d6fe1d764ab4abbc059e5f86ba2e978ab72323402f6ba",
+      "lines": 112,
       "inspection": "read; manifests/locks additionally consumed by build and dependency audit"
     },
     {
@@ -1360,6 +1376,14 @@
       "bytes": 4946,
       "sha256": "60706dfa72340f24ad602ef72b89c98c658aac39708254498ae02681e1b6f35b",
       "lines": 75,
+      "inspection": "read and syntax-parsed; security/runtime review scoped in AUDIT.md",
+      "syntaxErrors": 0
+    },
+    {
+      "path": "tests/content-history.spec.ts",
+      "bytes": 3242,
+      "sha256": "2d6d8bd5f5258ec9bcaff8c74827c4e66810efca5573ba1bf02924c77042cdbc",
+      "lines": 18,
       "inspection": "read and syntax-parsed; security/runtime review scoped in AUDIT.md",
       "syntaxErrors": 0
     },

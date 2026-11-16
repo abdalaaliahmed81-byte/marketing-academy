@@ -57,6 +57,8 @@ jobs:
       - run: npm run typecheck
       - run: npm test
       - run: npm run package:windows:dual
+      - name: Verify actual desktop citation dispatch without launching external browsers
+        run: node scripts/citation-smoke.mjs
       - name: Audit previously released 2.3.1 EXEs with negative authentication probes
         shell: pwsh
         env:
