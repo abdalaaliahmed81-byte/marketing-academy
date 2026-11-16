@@ -1,0 +1,156 @@
+{
+  "sourceCommit": "f846b96d118ff161019825b065ec390a70fd3e18",
+  "release": "https://github.com/abdalaaliahmed81-byte/marketing-academy/releases/tag/v2.2.1",
+  "releaseId": 447255992,
+  "publishedAt": "2026-11-16T15:54:52Z",
+  "releaseChannel": "preview",
+  "anonymousDownloadChecksumReadback": "passed",
+  "assets": [
+    {
+      "name": "Marketing-Academy-2.2.1-source.zip",
+      "sha256": "2297c81bb306cc4fd4a780efc49b8c309d7b612e832b04c6e9752d70752c995c",
+      "bytes": 627860,
+      "url": "https://github.com/abdalaaliahmed81-byte/marketing-academy/releases/download/v2.2.1/Marketing-Academy-2.2.1-source.zip"
+    },
+    {
+      "name": "Marketing-Academy-2.2.1-win-x64.exe",
+      "sha256": "6efef3e6bff556c525eeb47b70162c7c12e3465d191de6c3b9475cff40ef4f6d",
+      "bytes": 112413941,
+      "url": "https://github.com/abdalaaliahmed81-byte/marketing-academy/releases/download/v2.2.1/Marketing-Academy-2.2.1-win-x64.exe"
+    },
+    {
+      "name": "SHA256SUMS.txt",
+      "sha256": "66ad2fba7dbf12230484d960ffd29bd843ce30fae815c61bec254db3c3b6297e",
+      "bytes": 287,
+      "url": "https://github.com/abdalaaliahmed81-byte/marketing-academy/releases/download/v2.2.1/SHA256SUMS.txt"
+    },
+    {
+      "name": "verification.json",
+      "sha256": "eb01eec7486aa242287a5b1e1376731dea710792face2a4c07152e5b5d35b900",
+      "bytes": 9116,
+      "url": "https://github.com/abdalaaliahmed81-byte/marketing-academy/releases/download/v2.2.1/verification.json"
+    }
+  ],
+  "sourceZipCommitCommentVerified": true,
+  "sourceZipForbiddenFileSuffixScan": "passed; bounded filename check",
+  "windows": {
+    "status": "passed",
+    "commit": "f846b96d118ff161019825b065ec390a70fd3e18",
+    "version": "2.2.1",
+    "platform": "windows",
+    "payloadArchitecture": "x64",
+    "portableExecutableSmoke": {
+      "platform": "win32",
+      "architecture": "x64",
+      "executable": "release/Marketing-Academy-2.2.1-win-x64.exe",
+      "checks": [
+        "application rendered Arabic registration using local academy protocol",
+        "renderer has no Node require or process; SQLite transport exposed only through the narrow preload",
+        "native profile edit acknowledged through preload without changing login username",
+        "native module and27-field capstone autosave acknowledged without an external backend",
+        "registered account, onboarded, showed 60 lessons and saved a lesson note",
+        "required login after process restart and recovered persistent note",
+        "external network fetch blocked; curriculum and notes work without external server",
+        "migrated an authenticated legacy IndexedDB account; completed lesson, note, quiz and project survived; original ciphertext unchanged"
+      ],
+      "networkRequests": [],
+      "profilePersistence": true,
+      "projectAutosavePersistence": true,
+      "interactiveActivityPersistence": true,
+      "noteTimestampPersistence": true,
+      "sqlite": {
+        "schemaVersion": 1,
+        "accounts": 2,
+        "records": 11,
+        "legacySourcesPreserved": true,
+        "encryptedRecords": true
+      },
+      "status": "passed"
+    },
+    "assets": [
+      {
+        "name": "Marketing-Academy-2.2.1-win-x64.exe",
+        "sha256": "6efef3e6bff556c525eeb47b70162c7c12e3465d191de6c3b9475cff40ef4f6d"
+      },
+      {
+        "name": "Marketing-Academy-2.2.1-source.zip",
+        "sha256": "2297c81bb306cc4fd4a780efc49b8c309d7b612e832b04c6e9752d70752c995c"
+      }
+    ]
+  },
+  "web": {
+    "passed": 25,
+    "failed": 0,
+    "skipped": 0
+  },
+  "docker": {
+    "status": "passed",
+    "http": 200,
+    "healthy": true,
+    "user": "101:101",
+    "readOnlyRoot": true,
+    "capabilitiesDropped": [
+      "ALL"
+    ],
+    "securityHeaders": true,
+    "rtl": true,
+    "scriptAsset": true,
+    "sqliteApi": true,
+    "apiUser": "node",
+    "apiReadOnlyRoot": true,
+    "projectProgressSurvivesApiRestart": true,
+    "progressSurvivesApiRestart": true,
+    "profileSurvivesApiRestart": true
+  },
+  "productionDependencies": {
+    "info": 0,
+    "low": 0,
+    "moderate": 0,
+    "high": 0,
+    "critical": 0,
+    "total": 0
+  },
+  "buildToolDependencies": {
+    "counts": {
+      "info": 0,
+      "low": 2,
+      "moderate": 9,
+      "high": 0,
+      "critical": 0,
+      "total": 11
+    },
+    "affectedPackages": [
+      "@electron/universal",
+      "@rollup/plugin-node-resolve",
+      "app-builder-lib",
+      "deepmerge",
+      "dmg-builder",
+      "electron-builder",
+      "electron-builder-squirrel-windows",
+      "glob",
+      "minimatch",
+      "vite-plugin-pwa",
+      "workbox-build"
+    ]
+  },
+  "reviewLimits": [
+    "Agent editorial remediation covers60 lessons and84 revised items with bounded source attribution. Independent Arabic review, learner validation and professional approval remain open unless explicitly evidenced in educationalReadiness. A preview does not claim professional completion.",
+    "Automated accessibility testing does not establish universal WCAG conformance.",
+    "Windows runner validation does not cover every physical device.",
+    "The Windows EXE is unsigned. Low/moderate build-tool advisories are documented."
+  ],
+  "professionalApproval": false,
+  "unitIntegrationTestsPerOS": {
+    "windows": 59,
+    "web": 59
+  },
+  "verificationRun": "https://github.com/abdalaaliahmed81-byte/marketing-academy/actions/runs/43900670375",
+  "unverified": [
+    "Physical upgrades from every earlier EXE version",
+    "Power interruption recovery",
+    "Independent penetration test",
+    "All360 activity input combinations",
+    "Docker volume disaster-restore from a separate host; encrypted restore tested through shared API/browser and SQLite",
+    "Unsafe third-party Markdown rendering of arbitrary learner text"
+  ]
+}

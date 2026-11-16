@@ -1,6 +1,16 @@
 # AI progress and resume record
 
-## Latest verified checkpoint —2.2.0 Project learning Preview
+
+## Verified security checkpoint2.2.1
+
+Source f846b96d118ff161019825b065ec390a70fd3e18; run43900670375 passed Windows, web/Docker and publication/readback.59 unit/integration tests per OS and25 browser paths passed. Full60-lesson quiz/practice and12-module paths ran offline after cache readiness. Actual built Windows EXE retained encrypted SQLite/profile/note/timestamp/activity/project state across restart and legacy source remained intact. Docker built successfully and passed health/read-only/non-root/capability/security/header checks and API-restart persistence. API/browser encrypted restore and invalid-backup preservation passed; a separate-host Docker volume disaster-restore was not performed.
+
+Published [v2.2.1 Preview](https://github.com/abdalaaliahmed81-byte/marketing-academy/releases/tag/v2.2.1). All4 assets downloaded anonymously; SHA256/GitHub asset digests and source ZIP commit comment matched. Source filename scan excluded PDFs/databases/env files. Production advisories0; tooling2 low/9 moderate/0 high/critical. No known critical/high release-blocking issue within this reviewed scope. Windows is unsigned. Physical version-to-version updates, power-cut testing, independent penetration testing and every activity combination remain unverified. See SECURITY_VERIFICATION.json for exact proof.
+
+Resume from2.2.1; runtime unchanged after f846b96. Preserve schema1/IDs/app origin/data. Security corrections: realpath static containment, restrictive JSON headers, Retry-After, bounded backup passphrases. Read SECURITY_HARDENING.md/SECURITY_VERIFICATION.json before further work. Human instructional/learner review remains open; do not repeat completed research.
+
+
+## Previous verified checkpoint —2.2.0 Project learning Preview
 
 Published [v2.2.0](https://github.com/abdalaaliahmed81-byte/marketing-academy/releases/tag/v2.2.0) from `9121cb108d8b62d6d3ddccec6911ae8e1a9b1bb3`. [Run43868000336](https://github.com/abdalaaliahmed81-byte/marketing-academy/actions/runs/43868000336) passed **Windows, web/Docker and publish-preview/readback**.57 unit/integration tests per OS,25 browser paths, actual built portable Windows EXE project/profile/note/timestamp/activity restart, encrypted SQLite/schema1 and intact legacy migration. Independently downloaded all4 public assets anonymously; locally recomputed SHA256 matched both checksum file and GitHub asset digests, source archive commit comment matched9121cb1 and bounded forbidden-file scan passed. See [PROJECT_LEARNING_VERIFICATION](PROJECT_LEARNING_VERIFICATION.json). v2.0.0 stays latest stable; previous releases/history remain intact.
 
@@ -179,6 +189,6 @@ Run43857954333 passed all3 jobs at28d6622, including actual release upload and d
 
 Old2.1.0 preview notes now link2.1.1 and describe its compatibility correction; old assets/tag and stable2.0.0 remain. README/contract/matrices/audit/readiness evidence updated for truthful resumption. Only documentation/evidence and the manual release form default follow the packaged runtime; the released EXE/source are **28d6622**, not a later docs commit. Remaining work is independent instructional moderation/learner feedback, not redoing the completed application, sources or packaging. No routine approval or unattended work promise is pending.
 
-## Active security phase2.2.1
+## Security phase implementation history2.2.1
 
 Continue SECURITY_HARDENING.md. Canonical static path/symlink boundary, JSON response headers, Retry-After and backup password bounds implemented; full60-lesson browser path expanded to offline. New exact-source Windows/web/Docker CI required;2.2.0 remains previous verified published checkpoint until that passes. No user data/schema or dependency changes. Local production audit0 vulnerabilities; tooling2 low/9 moderate/0 high/critical.
