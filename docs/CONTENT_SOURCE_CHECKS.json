@@ -1,0 +1,320 @@
+{
+  "checkedAt": "2026-11-16T21:45:05.814113+00:00",
+  "records": [
+    {
+      "id": "dib-plan",
+      "url": "https://allandib.com/",
+      "method": "HEAD",
+      "status": 200,
+      "effectiveURL": "https://allandib.com/",
+      "transportExit": 0,
+      "scope": "HTTP accessibility only; no claim validation or course ingestion"
+    },
+    {
+      "id": "godin-marketing",
+      "url": "https://www.penguinrandomhouse.com/books/600458/this-is-marketing-by-seth-godin/",
+      "method": "HEAD",
+      "status": 200,
+      "effectiveURL": "https://www.penguinrandomhouse.com/books/600458/this-is-marketing-by-seth-godin/",
+      "transportExit": 0,
+      "scope": "HTTP accessibility only; no claim validation or course ingestion"
+    },
+    {
+      "id": "godin-stories",
+      "url": "https://seths.blog/2013/09/qa-all-marketers-and-the-challenge-of-telling-the-right-story/",
+      "method": "HEAD",
+      "status": 200,
+      "effectiveURL": "https://seths.blog/2013/09/qa-all-marketers-and-the-challenge-of-telling-the-right-story/",
+      "transportExit": 0,
+      "scope": "HTTP accessibility only; no claim validation or course ingestion"
+    },
+    {
+      "id": "search-start",
+      "url": "https://developers.google.com/search/docs/fundamentals/seo-starter-guide",
+      "method": "HEAD",
+      "status": 200,
+      "effectiveURL": "https://developers.google.com/search/docs/fundamentals/seo-starter-guide",
+      "transportExit": 0,
+      "scope": "HTTP accessibility only; no claim validation or course ingestion"
+    },
+    {
+      "id": "helpful",
+      "url": "https://developers.google.com/search/docs/fundamentals/creating-helpful-content",
+      "method": "HEAD",
+      "status": 200,
+      "effectiveURL": "https://developers.google.com/search/docs/fundamentals/creating-helpful-content",
+      "transportExit": 0,
+      "scope": "HTTP accessibility only; no claim validation or course ingestion"
+    },
+    {
+      "id": "robots",
+      "url": "https://developers.google.com/search/docs/crawling-indexing/robots/intro",
+      "method": "HEAD",
+      "status": 200,
+      "effectiveURL": "https://developers.google.com/search/docs/crawling-indexing/robots/intro",
+      "transportExit": 0,
+      "scope": "HTTP accessibility only; no claim validation or course ingestion"
+    },
+    {
+      "id": "local-data",
+      "url": "https://developers.google.com/search/docs/appearance/structured-data/local-business",
+      "method": "HEAD",
+      "status": 200,
+      "effectiveURL": "https://developers.google.com/search/docs/appearance/structured-data/local-business",
+      "transportExit": 0,
+      "scope": "HTTP accessibility only; no claim validation or course ingestion"
+    },
+    {
+      "id": "console",
+      "url": "https://developers.google.com/search/docs/monitor-debug/search-console-start",
+      "method": "HEAD",
+      "status": 200,
+      "effectiveURL": "https://developers.google.com/search/docs/monitor-debug/search-console-start",
+      "transportExit": 0,
+      "scope": "HTTP accessibility only; no claim validation or course ingestion"
+    },
+    {
+      "id": "ga-events",
+      "url": "https://developers.google.com/analytics/devguides/collection/ga4/events",
+      "method": "HEAD",
+      "status": 200,
+      "effectiveURL": "https://developers.google.com/analytics/devguides/collection/ga4/events",
+      "transportExit": 0,
+      "scope": "HTTP accessibility only; no claim validation or course ingestion"
+    },
+    {
+      "id": "ga-config",
+      "url": "https://developers.google.com/analytics/devguides/collection/ga4/reference/config",
+      "method": "HEAD",
+      "status": 200,
+      "effectiveURL": "https://developers.google.com/analytics/devguides/collection/ga4/reference/config",
+      "transportExit": 0,
+      "scope": "HTTP accessibility only; no claim validation or course ingestion"
+    },
+    {
+      "id": "ads-metrics",
+      "url": "https://developers.google.com/google-ads/api/fields/v26/metrics",
+      "method": "HEAD",
+      "status": 200,
+      "effectiveURL": "https://developers.google.com/google-ads/api/fields/v26/metrics",
+      "transportExit": 0,
+      "scope": "HTTP accessibility only; no claim validation or course ingestion"
+    },
+    {
+      "id": "ads-conversion",
+      "url": "https://developers.google.com/google-ads/api/docs/conversions/overview",
+      "method": "HEAD",
+      "status": 200,
+      "effectiveURL": "https://developers.google.com/google-ads/api/docs/conversions/overview",
+      "transportExit": 0,
+      "scope": "HTTP accessibility only; no claim validation or course ingestion"
+    },
+    {
+      "id": "tag-consent",
+      "url": "https://developers.google.com/tag-platform/security/guides/consent",
+      "method": "HEAD",
+      "status": 200,
+      "effectiveURL": "https://developers.google.com/tag-platform/security/guides/consent",
+      "transportExit": 0,
+      "scope": "HTTP accessibility only; no claim validation or course ingestion"
+    },
+    {
+      "id": "iam",
+      "url": "https://docs.cloud.google.com/iam/docs/using-iam-securely",
+      "method": "HEAD",
+      "status": 200,
+      "effectiveURL": "https://docs.cloud.google.com/iam/docs/using-iam-securely",
+      "transportExit": 0,
+      "scope": "HTTP accessibility only; no claim validation or course ingestion"
+    },
+    {
+      "id": "wai-writing",
+      "url": "https://www.w3.org/WAI/tips/writing/",
+      "method": "HEAD",
+      "status": 200,
+      "effectiveURL": "https://www.w3.org/WAI/tips/writing/",
+      "transportExit": 0,
+      "scope": "HTTP accessibility only; no claim validation or course ingestion"
+    },
+    {
+      "id": "ftc-disclosure",
+      "url": "https://www.ftc.gov/business-guidance/resources/disclosures-101-social-media-influencers",
+      "method": "HEAD",
+      "status": 200,
+      "effectiveURL": "https://www.ftc.gov/business-guidance/resources/disclosures-101-social-media-influencers",
+      "transportExit": 0,
+      "scope": "HTTP accessibility only; no claim validation or course ingestion"
+    },
+    {
+      "id": "spf",
+      "url": "https://www.rfc-editor.org/rfc/rfc7208",
+      "method": "HEAD",
+      "status": 200,
+      "effectiveURL": "https://www.rfc-editor.org/info/rfc7208/",
+      "transportExit": 0,
+      "scope": "HTTP accessibility only; no claim validation or course ingestion"
+    },
+    {
+      "id": "dkim",
+      "url": "https://www.rfc-editor.org/rfc/rfc6376",
+      "method": "HEAD",
+      "status": 200,
+      "effectiveURL": "https://www.rfc-editor.org/info/rfc6376/",
+      "transportExit": 0,
+      "scope": "HTTP accessibility only; no claim validation or course ingestion"
+    },
+    {
+      "id": "dmarc",
+      "url": "https://www.rfc-editor.org/rfc/rfc9989.html",
+      "method": "HEAD",
+      "status": 200,
+      "effectiveURL": "https://www.rfc-editor.org/rfc/rfc9989.html",
+      "transportExit": 0,
+      "scope": "HTTP accessibility only; no claim validation or course ingestion"
+    },
+    {
+      "id": "experiment",
+      "url": "https://www.itl.nist.gov/div898/handbook/pri/section3/pri31.htm",
+      "method": "HEAD",
+      "status": 200,
+      "effectiveURL": "https://www.itl.nist.gov/div898/handbook/pri/section3/pri31.htm",
+      "transportExit": 0,
+      "scope": "HTTP accessibility only; no claim validation or course ingestion"
+    },
+    {
+      "id": "uncertainty",
+      "url": "https://www.itl.nist.gov/div898/handbook/prc/section2/prc241.htm",
+      "method": "HEAD",
+      "status": 200,
+      "effectiveURL": "https://www.itl.nist.gov/div898/handbook/prc/section2/prc241.htm",
+      "transportExit": 0,
+      "scope": "HTTP accessibility only; no claim validation or course ingestion"
+    },
+    {
+      "id": "skillshop",
+      "url": "https://skillshop.withgoogle.com/",
+      "method": "HEAD",
+      "status": 200,
+      "effectiveURL": "https://skillshop.withgoogle.com/",
+      "transportExit": 0,
+      "scope": "HTTP accessibility only; no claim validation or course ingestion"
+    },
+    {
+      "id": "blueprint",
+      "url": "https://www.facebookblueprint.com/student/catalog/",
+      "method": "HEAD",
+      "status": 200,
+      "effectiveURL": "https://www.facebookblueprint.com/student/catalog/",
+      "transportExit": 0,
+      "scope": "HTTP accessibility only; no claim validation or course ingestion"
+    },
+    {
+      "id": "hubspot",
+      "url": "https://academy.hubspot.com/courses/digital-marketing",
+      "method": "HEAD",
+      "status": 200,
+      "effectiveURL": "https://academy.hubspot.com/courses/digital-marketing",
+      "transportExit": 0,
+      "scope": "HTTP accessibility only; no claim validation or course ingestion"
+    },
+    {
+      "id": "semrush",
+      "url": "https://www.semrush.com/academy/",
+      "method": "HEAD",
+      "status": 200,
+      "effectiveURL": "https://www.semrush.com/academy/",
+      "transportExit": 0,
+      "scope": "HTTP accessibility only; no claim validation or course ingestion"
+    },
+    {
+      "id": "openstax",
+      "url": "https://openstax.org/books/principles-marketing/pages/preface",
+      "method": "HEAD",
+      "status": 200,
+      "effectiveURL": "https://openstax.org/books/principles-marketing/pages/preface",
+      "transportExit": 0,
+      "scope": "HTTP accessibility only; no claim validation or course ingestion"
+    },
+    {
+      "id": "wai-decorative",
+      "url": "https://www.w3.org/WAI/tutorials/images/decorative/",
+      "method": "GET",
+      "status": 200,
+      "transportExit": 0,
+      "sha256": "6f9f8997ceb2e4a1ed311e525a10a93dba33bff7e6179c3c50261d1ebe1f89c7",
+      "scope": "Selected public official guidance; title and relevant wording inspected separately; no course ingestion"
+    },
+    {
+      "id": "ga-pii",
+      "url": "https://support.google.com/analytics/answer/6366371",
+      "method": "GET",
+      "status": 200,
+      "transportExit": 0,
+      "sha256": "2e3e61d6beae8d404098d7170bf6b6da91b03df22e84d0ae9a8e185b9bad4555",
+      "scope": "Selected public official guidance; title and relevant wording inspected separately; no course ingestion"
+    }
+  ],
+  "localDate": "2026-11-17",
+  "timezone": "Asia/Baghdad",
+  "limits": "HEAD proves accessibility only. Academy landing pages checked for optional navigation, no provider courses ingested. Selected official-page passages and private book samples separately inspected; no exhaustive sentence-level or human certification.",
+  "selectedContentChecks": [
+    {
+      "id": "wai-decorative",
+      "observation": "Decorative-only images may use empty alt; meaningful images require context-appropriate alternatives. Original Arabic explanation added; no images copied."
+    },
+    {
+      "id": "ga-pii",
+      "observation": "Google identifies personal email addresses and mobile numbers as PII and warns about collection. Literal medium label email is not a personal address."
+    },
+    {
+      "id": "dmarc",
+      "observation": "RFC9989 header reads May2026 and Obsoletes7489,9091. Existing course reference retained after readback."
+    }
+  ],
+  "privateBooks": [
+    {
+      "sourceId": "dib-plan",
+      "pdfPageSampled": 40,
+      "scope": "Audience selection and avoiding everyone; conceptual reference, no reproduction"
+    },
+    {
+      "sourceId": "godin-stories",
+      "pdfPageSampled": 45,
+      "scope": "Audience worldview/context; historical examples not imported as current market facts"
+    },
+    {
+      "sourceId": "godin-marketing",
+      "pdfPageSampled": 174,
+      "scope": "Permission and relevant expected communication; conceptual reference, not global law"
+    }
+  ],
+  "bookHashes": [
+    {
+      "title": "كل المسوقون يسردون قصصا",
+      "bytes": 1271762,
+      "sha256": "4611b771bfa6682d8f822c43d637e3d6402024c887ef6898e53a31dfae9b5097",
+      "pdfPages": 144,
+      "textExtractAvailable": true,
+      "inspection": "metadata, text extraction, contents and topic-directed passages; not line-by-line expert certification",
+      "distribution": "private source outside repository"
+    },
+    {
+      "title": "خطة تسويقية في صفحة واحدة",
+      "bytes": 4161509,
+      "sha256": "10ad07e9a875f985e75f99facd7dff1b96e3eda2cf35f78895a7896a229e74f9",
+      "pdfPages": 203,
+      "textExtractAvailable": true,
+      "inspection": "metadata, text extraction, contents and topic-directed passages; not line-by-line expert certification",
+      "distribution": "private source outside repository"
+    },
+    {
+      "title": "هذا هو التسويق",
+      "bytes": 5373308,
+      "sha256": "7521259005674c9d4b2e36a81adb76a57b91d38f4ce0a420c836e0c279d1202b",
+      "pdfPages": 230,
+      "textExtractAvailable": true,
+      "inspection": "metadata, text extraction, contents and topic-directed passages; not line-by-line expert certification",
+      "distribution": "private source outside repository"
+    }
+  ]
+}

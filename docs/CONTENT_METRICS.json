@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-16T16:00:32.644Z",
+  "generatedAt": "2026-11-16T21:54:28.548Z",
   "modules": 12,
   "lessons": 60,
   "questions": 300,
@@ -16,7 +16,7 @@
       "id": "m01-l01",
       "module": 1,
       "title": "التسويق يبدأ بمشكلة العميل",
-      "readingWords": 344,
+      "readingWords": 363,
       "readingParagraphs": 5,
       "questions": 5,
       "interactions": [
@@ -908,6 +908,7 @@
       "answerLengthCue": [
         "m03-l01-q1",
         "m03-l01-q2",
+        "m03-l01-q3",
         "m03-l01-q4",
         "m03-l01-q5"
       ],
@@ -1110,7 +1111,7 @@
       "id": "m03-l04",
       "module": 3,
       "title": "هوية لفظية متسقة ومتاحة",
-      "readingWords": 295,
+      "readingWords": 309,
       "readingParagraphs": 5,
       "questions": 5,
       "interactions": [
@@ -1177,6 +1178,11 @@
           "sourceId": "wai-writing",
           "claim": "عناوين وروابط ولغة أوضح",
           "locator": "وضوح العناوين والروابط واللغة والبدائل؛ إرشادات كتابة لا شهادة امتثال"
+        },
+        {
+          "sourceId": "wai-decorative",
+          "claim": "الصورة الزخرفية تختلف عن صورة تؤدي وظيفة معلوماتية؛ يختار البديل وفق السياق",
+          "locator": "Opening guidance: null (empty) alt text for decorative images"
         }
       ],
       "originalWork": "دليل نبرة عربي عبر الإعلان والدعم",
@@ -3867,6 +3873,11 @@
           "sourceId": "ga-config",
           "claim": "campaign_source/medium/name/content تقابل وسومًا في URL",
           "locator": "campaign_source/medium/name/content وعلاقتها بوسوم UTM؛ ليست دليل سببية"
+        },
+        {
+          "sourceId": "ga-pii",
+          "claim": "منع تضمين هاتف أو بريد شخصي في URL؛ تسمية وسيط عامة ليست عنوانًا شخصيًا",
+          "locator": "PII definition and Page URLs and titles guidance"
         }
       ],
       "originalWork": "قاموس تسمية وإسناد لا سببية ولا هوية",
@@ -4746,8 +4757,7 @@
       "weakDistractors": [],
       "answerLengthCue": [
         "m12-l03-q1",
-        "m12-l03-q4",
-        "m12-l03-q5"
+        "m12-l03-q4"
       ],
       "bookReferences": [
         {

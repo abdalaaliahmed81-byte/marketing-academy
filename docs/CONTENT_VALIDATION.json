@@ -1,0 +1,898 @@
+{
+  "status": "PASS",
+  "checkedAt": "2026-11-16T21:50:51.413Z",
+  "contentSha256": "bb4e233588aa07a8408c2fee3906f04b351ab023877b29360bac3d09baf6f019",
+  "modules": 12,
+  "lessons": 60,
+  "questions": 300,
+  "activities": 360,
+  "miniProjects": 60,
+  "workedModuleProjects": 12,
+  "capstoneFields": 27,
+  "assessmentVersions": [
+    1,
+    2,
+    3
+  ],
+  "gradingCombinations": 43740,
+  "rows": [
+    {
+      "id": "m01-l01",
+      "title": "التسويق يبدأ بمشكلة العميل",
+      "readingWords": 363,
+      "questions": 5,
+      "activities": 6,
+      "assignment": true,
+      "miniProject": true,
+      "sourceIds": [
+        "godin-marketing",
+        "dib-plan"
+      ],
+      "status": "PASS structural/grading/traceability checks; agent review scoped in CONTENT_AUDIT.md"
+    },
+    {
+      "id": "m01-l02",
+      "title": "هدف واضح ومقياس مناسب",
+      "readingWords": 305,
+      "questions": 5,
+      "activities": 6,
+      "assignment": true,
+      "miniProject": true,
+      "sourceIds": [
+        "dib-plan"
+      ],
+      "status": "PASS structural/grading/traceability checks; agent review scoped in CONTENT_AUDIT.md"
+    },
+    {
+      "id": "m01-l03",
+      "title": "اختيار قناة رقمية بميزانية صفر",
+      "readingWords": 310,
+      "questions": 5,
+      "activities": 6,
+      "assignment": true,
+      "miniProject": true,
+      "sourceIds": [
+        "dib-plan"
+      ],
+      "status": "PASS structural/grading/traceability checks; agent review scoped in CONTENT_AUDIT.md"
+    },
+    {
+      "id": "m01-l04",
+      "title": "رحلة العميل من الاكتشاف إلى العودة",
+      "readingWords": 287,
+      "questions": 5,
+      "activities": 6,
+      "assignment": true,
+      "miniProject": true,
+      "sourceIds": [
+        "dib-plan"
+      ],
+      "status": "PASS structural/grading/traceability checks; agent review scoped in CONTENT_AUDIT.md"
+    },
+    {
+      "id": "m01-l05",
+      "title": "من الفكرة إلى تجربة تسويقية",
+      "readingWords": 273,
+      "questions": 5,
+      "activities": 6,
+      "assignment": true,
+      "miniProject": true,
+      "sourceIds": [
+        "experiment"
+      ],
+      "status": "PASS structural/grading/traceability checks; agent review scoped in CONTENT_AUDIT.md"
+    },
+    {
+      "id": "m02-l01",
+      "title": "حوّل التخمين إلى سؤال بحث",
+      "readingWords": 300,
+      "questions": 5,
+      "activities": 6,
+      "assignment": true,
+      "miniProject": true,
+      "sourceIds": [
+        "godin-marketing"
+      ],
+      "status": "PASS structural/grading/traceability checks; agent review scoped in CONTENT_AUDIT.md"
+    },
+    {
+      "id": "m02-l02",
+      "title": "مقابلة عميل قصيرة ومحايدة",
+      "readingWords": 268,
+      "questions": 5,
+      "activities": 6,
+      "assignment": true,
+      "miniProject": true,
+      "sourceIds": [
+        "godin-marketing"
+      ],
+      "status": "PASS structural/grading/traceability checks; agent review scoped in CONTENT_AUDIT.md"
+    },
+    {
+      "id": "m02-l03",
+      "title": "تحليل المنافس والبديل الحقيقي",
+      "readingWords": 288,
+      "questions": 5,
+      "activities": 6,
+      "assignment": true,
+      "miniProject": true,
+      "sourceIds": [
+        "dib-plan"
+      ],
+      "status": "PASS structural/grading/traceability checks; agent review scoped in CONTENT_AUDIT.md"
+    },
+    {
+      "id": "m02-l04",
+      "title": "قسّم السوق واختر أول جمهور",
+      "readingWords": 271,
+      "questions": 5,
+      "activities": 6,
+      "assignment": true,
+      "miniProject": true,
+      "sourceIds": [
+        "godin-marketing"
+      ],
+      "status": "PASS structural/grading/traceability checks; agent review scoped in CONTENT_AUDIT.md"
+    },
+    {
+      "id": "m02-l05",
+      "title": "شخصية عميل مرتبطة بقرار",
+      "readingWords": 290,
+      "questions": 5,
+      "activities": 6,
+      "assignment": true,
+      "miniProject": true,
+      "sourceIds": [
+        "godin-stories"
+      ],
+      "status": "PASS structural/grading/traceability checks; agent review scoped in CONTENT_AUDIT.md"
+    },
+    {
+      "id": "m03-l01",
+      "title": "من مقابلة العميل إلى خريطة التعاطف",
+      "readingWords": 348,
+      "questions": 5,
+      "activities": 6,
+      "assignment": true,
+      "miniProject": true,
+      "sourceIds": [
+        "godin-marketing"
+      ],
+      "status": "PASS structural/grading/traceability checks; agent review scoped in CONTENT_AUDIT.md"
+    },
+    {
+      "id": "m03-l02",
+      "title": "عرض القيمة الذي يمكن إثباته",
+      "readingWords": 326,
+      "questions": 5,
+      "activities": 6,
+      "assignment": true,
+      "miniProject": true,
+      "sourceIds": [
+        "godin-marketing",
+        "godin-stories"
+      ],
+      "status": "PASS structural/grading/traceability checks; agent review scoped in CONTENT_AUDIT.md"
+    },
+    {
+      "id": "m03-l03",
+      "title": "خريطة التموضع والمفاضلات",
+      "readingWords": 318,
+      "questions": 5,
+      "activities": 6,
+      "assignment": true,
+      "miniProject": true,
+      "sourceIds": [
+        "dib-plan"
+      ],
+      "status": "PASS structural/grading/traceability checks; agent review scoped in CONTENT_AUDIT.md"
+    },
+    {
+      "id": "m03-l04",
+      "title": "هوية لفظية متسقة ومتاحة",
+      "readingWords": 309,
+      "questions": 5,
+      "activities": 6,
+      "assignment": true,
+      "miniProject": true,
+      "sourceIds": [
+        "wai-writing",
+        "wai-decorative"
+      ],
+      "status": "PASS structural/grading/traceability checks; agent review scoped in CONTENT_AUDIT.md"
+    },
+    {
+      "id": "m03-l05",
+      "title": "السعر والعرض وهامش المساهمة",
+      "readingWords": 306,
+      "questions": 5,
+      "activities": 6,
+      "assignment": true,
+      "miniProject": true,
+      "sourceIds": [
+        "dib-plan"
+      ],
+      "status": "PASS structural/grading/traceability checks; agent review scoped in CONTENT_AUDIT.md"
+    },
+    {
+      "id": "m04-l01",
+      "title": "قصة العميل والوعد الصادق",
+      "readingWords": 292,
+      "questions": 5,
+      "activities": 6,
+      "assignment": true,
+      "miniProject": true,
+      "sourceIds": [
+        "godin-stories"
+      ],
+      "status": "PASS structural/grading/traceability checks; agent review scoped in CONTENT_AUDIT.md"
+    },
+    {
+      "id": "m04-l02",
+      "title": "العنوان والخطاف دون تضليل",
+      "readingWords": 264,
+      "questions": 5,
+      "activities": 6,
+      "assignment": true,
+      "miniProject": true,
+      "sourceIds": [
+        "godin-stories"
+      ],
+      "status": "PASS structural/grading/traceability checks; agent review scoped in CONTENT_AUDIT.md"
+    },
+    {
+      "id": "m04-l03",
+      "title": "كتابة الإقناع: حاجة ودليل وإجراء",
+      "readingWords": 276,
+      "questions": 5,
+      "activities": 6,
+      "assignment": true,
+      "miniProject": true,
+      "sourceIds": [
+        "dib-plan",
+        "godin-stories"
+      ],
+      "status": "PASS structural/grading/traceability checks; agent review scoped in CONTENT_AUDIT.md"
+    },
+    {
+      "id": "m04-l04",
+      "title": "صفحة هبوط تفي بوعد الإعلان",
+      "readingWords": 272,
+      "questions": 5,
+      "activities": 6,
+      "assignment": true,
+      "miniProject": true,
+      "sourceIds": [
+        "wai-writing"
+      ],
+      "status": "PASS structural/grading/traceability checks; agent review scoped in CONTENT_AUDIT.md"
+    },
+    {
+      "id": "m04-l05",
+      "title": "اختبار الرسائل ومراجعة الادعاءات",
+      "readingWords": 261,
+      "questions": 5,
+      "activities": 6,
+      "assignment": true,
+      "miniProject": true,
+      "sourceIds": [
+        "experiment",
+        "godin-stories"
+      ],
+      "status": "PASS structural/grading/traceability checks; agent review scoped in CONTENT_AUDIT.md"
+    },
+    {
+      "id": "m05-l01",
+      "title": "اختيار المنصة ودور كل قناة",
+      "readingWords": 282,
+      "questions": 5,
+      "activities": 6,
+      "assignment": true,
+      "miniProject": true,
+      "sourceIds": [
+        "dib-plan"
+      ],
+      "status": "PASS structural/grading/traceability checks; agent review scoped in CONTENT_AUDIT.md"
+    },
+    {
+      "id": "m05-l02",
+      "title": "أعمدة المحتوى وتقويم النشر",
+      "readingWords": 265,
+      "questions": 5,
+      "activities": 6,
+      "assignment": true,
+      "miniProject": true,
+      "sourceIds": [
+        "wai-writing"
+      ],
+      "status": "PASS structural/grading/traceability checks; agent review scoped in CONTENT_AUDIT.md"
+    },
+    {
+      "id": "m05-l03",
+      "title": "إدارة المجتمع وخدمة التعليقات",
+      "readingWords": 271,
+      "questions": 5,
+      "activities": 6,
+      "assignment": true,
+      "miniProject": true,
+      "sourceIds": [
+        "godin-marketing"
+      ],
+      "status": "PASS structural/grading/traceability checks; agent review scoped in CONTENT_AUDIT.md"
+    },
+    {
+      "id": "m05-l04",
+      "title": "الفيديو القصير من الفكرة إلى القياس",
+      "readingWords": 265,
+      "questions": 5,
+      "activities": 6,
+      "assignment": true,
+      "miniProject": true,
+      "sourceIds": [
+        "wai-writing"
+      ],
+      "status": "PASS structural/grading/traceability checks; agent review scoped in CONTENT_AUDIT.md"
+    },
+    {
+      "id": "m05-l05",
+      "title": "شراكات المؤثرين والإفصاح",
+      "readingWords": 260,
+      "questions": 5,
+      "activities": 6,
+      "assignment": true,
+      "miniProject": true,
+      "sourceIds": [
+        "ftc-disclosure"
+      ],
+      "status": "PASS structural/grading/traceability checks; agent review scoped in CONTENT_AUDIT.md"
+    },
+    {
+      "id": "m06-l01",
+      "title": "استراتيجية محتوى من أسئلة العملاء",
+      "readingWords": 271,
+      "questions": 5,
+      "activities": 6,
+      "assignment": true,
+      "miniProject": true,
+      "sourceIds": [
+        "helpful"
+      ],
+      "status": "PASS structural/grading/traceability checks; agent review scoped in CONTENT_AUDIT.md"
+    },
+    {
+      "id": "m06-l02",
+      "title": "الموجز التحريري والمقال المفيد",
+      "readingWords": 264,
+      "questions": 5,
+      "activities": 6,
+      "assignment": true,
+      "miniProject": true,
+      "sourceIds": [
+        "helpful",
+        "wai-writing"
+      ],
+      "status": "PASS structural/grading/traceability checks; agent review scoped in CONTENT_AUDIT.md"
+    },
+    {
+      "id": "m06-l03",
+      "title": "إعادة توظيف المحتوى وحقوق الأصول",
+      "readingWords": 267,
+      "questions": 5,
+      "activities": 6,
+      "assignment": true,
+      "miniProject": true,
+      "sourceIds": [
+        "dib-plan"
+      ],
+      "status": "PASS structural/grading/traceability checks; agent review scoped in CONTENT_AUDIT.md"
+    },
+    {
+      "id": "m06-l04",
+      "title": "العرض المجاني ونموذج الإذن",
+      "readingWords": 262,
+      "questions": 5,
+      "activities": 6,
+      "assignment": true,
+      "miniProject": true,
+      "sourceIds": [
+        "godin-marketing"
+      ],
+      "status": "PASS structural/grading/traceability checks; agent review scoped in CONTENT_AUDIT.md"
+    },
+    {
+      "id": "m06-l05",
+      "title": "تدقيق المحتوى ودورة تحديثه",
+      "readingWords": 287,
+      "questions": 5,
+      "activities": 6,
+      "assignment": true,
+      "miniProject": true,
+      "sourceIds": [
+        "helpful"
+      ],
+      "status": "PASS structural/grading/traceability checks; agent review scoped in CONTENT_AUDIT.md"
+    },
+    {
+      "id": "m07-l01",
+      "title": "نية البحث وخريطة الكلمات",
+      "readingWords": 282,
+      "questions": 5,
+      "activities": 6,
+      "assignment": true,
+      "miniProject": true,
+      "sourceIds": [
+        "search-start",
+        "helpful"
+      ],
+      "status": "PASS structural/grading/traceability checks; agent review scoped in CONTENT_AUDIT.md"
+    },
+    {
+      "id": "m07-l02",
+      "title": "تحسين الصفحة دون حشو",
+      "readingWords": 276,
+      "questions": 5,
+      "activities": 6,
+      "assignment": true,
+      "miniProject": true,
+      "sourceIds": [
+        "search-start",
+        "helpful",
+        "wai-writing"
+      ],
+      "status": "PASS structural/grading/traceability checks; agent review scoped in CONTENT_AUDIT.md"
+    },
+    {
+      "id": "m07-l03",
+      "title": "الزحف والفهرسة وصحة الموقع",
+      "readingWords": 281,
+      "questions": 5,
+      "activities": 6,
+      "assignment": true,
+      "miniProject": true,
+      "sourceIds": [
+        "robots",
+        "search-start"
+      ],
+      "status": "PASS structural/grading/traceability checks; agent review scoped in CONTENT_AUDIT.md"
+    },
+    {
+      "id": "m07-l04",
+      "title": "البحث المحلي وملف النشاط",
+      "readingWords": 280,
+      "questions": 5,
+      "activities": 6,
+      "assignment": true,
+      "miniProject": true,
+      "sourceIds": [
+        "local-data"
+      ],
+      "status": "PASS structural/grading/traceability checks; agent review scoped in CONTENT_AUDIT.md"
+    },
+    {
+      "id": "m07-l05",
+      "title": "قياس SEO وتقرير الأولويات",
+      "readingWords": 262,
+      "questions": 5,
+      "activities": 6,
+      "assignment": true,
+      "miniProject": true,
+      "sourceIds": [
+        "console",
+        "ads-metrics"
+      ],
+      "status": "PASS structural/grading/traceability checks; agent review scoped in CONTENT_AUDIT.md"
+    },
+    {
+      "id": "m08-l01",
+      "title": "القائمة البريدية المبنية على الإذن",
+      "readingWords": 269,
+      "questions": 5,
+      "activities": 6,
+      "assignment": true,
+      "miniProject": true,
+      "sourceIds": [
+        "godin-marketing"
+      ],
+      "status": "PASS structural/grading/traceability checks; agent review scoped in CONTENT_AUDIT.md"
+    },
+    {
+      "id": "m08-l02",
+      "title": "التقسيم وسلسلة الترحيب",
+      "readingWords": 264,
+      "questions": 5,
+      "activities": 6,
+      "assignment": true,
+      "miniProject": true,
+      "sourceIds": [
+        "dib-plan",
+        "godin-marketing"
+      ],
+      "status": "PASS structural/grading/traceability checks; agent review scoped in CONTENT_AUDIT.md"
+    },
+    {
+      "id": "m08-l03",
+      "title": "قابلية التسليم ومصادقة المرسل",
+      "readingWords": 291,
+      "questions": 5,
+      "activities": 6,
+      "assignment": true,
+      "miniProject": true,
+      "sourceIds": [
+        "spf",
+        "dkim",
+        "dmarc"
+      ],
+      "status": "PASS structural/grading/traceability checks; agent review scoped in CONTENT_AUDIT.md"
+    },
+    {
+      "id": "m08-l04",
+      "title": "الاحتفاظ والقيمة على مدى العلاقة",
+      "readingWords": 257,
+      "questions": 5,
+      "activities": 6,
+      "assignment": true,
+      "miniProject": true,
+      "sourceIds": [
+        "dib-plan"
+      ],
+      "status": "PASS structural/grading/traceability checks; agent review scoped in CONTENT_AUDIT.md"
+    },
+    {
+      "id": "m08-l05",
+      "title": "الإحالات وبرامج الولاء العادلة",
+      "readingWords": 271,
+      "questions": 5,
+      "activities": 6,
+      "assignment": true,
+      "miniProject": true,
+      "sourceIds": [
+        "dib-plan",
+        "ftc-disclosure"
+      ],
+      "status": "PASS structural/grading/traceability checks; agent review scoped in CONTENT_AUDIT.md"
+    },
+    {
+      "id": "m09-l01",
+      "title": "هدف الحملة وهيكلها قبل الإنفاق",
+      "readingWords": 266,
+      "questions": 5,
+      "activities": 6,
+      "assignment": true,
+      "miniProject": true,
+      "sourceIds": [
+        "ads-conversion"
+      ],
+      "status": "PASS structural/grading/traceability checks; agent review scoped in CONTENT_AUDIT.md"
+    },
+    {
+      "id": "m09-l02",
+      "title": "جمهور الإعلان وسياسة البيانات",
+      "readingWords": 269,
+      "questions": 5,
+      "activities": 6,
+      "assignment": true,
+      "miniProject": true,
+      "sourceIds": [
+        "godin-marketing"
+      ],
+      "status": "PASS structural/grading/traceability checks; agent review scoped in CONTENT_AUDIT.md"
+    },
+    {
+      "id": "m09-l03",
+      "title": "مزاد الإعلان ومقاييس التكلفة",
+      "readingWords": 265,
+      "questions": 5,
+      "activities": 6,
+      "assignment": true,
+      "miniProject": true,
+      "sourceIds": [
+        "ads-metrics"
+      ],
+      "status": "PASS structural/grading/traceability checks; agent review scoped in CONTENT_AUDIT.md"
+    },
+    {
+      "id": "m09-l04",
+      "title": "ROAS ونقطة التعادل والميزانية",
+      "readingWords": 258,
+      "questions": 5,
+      "activities": 6,
+      "assignment": true,
+      "miniProject": true,
+      "sourceIds": [
+        "dib-plan"
+      ],
+      "status": "PASS structural/grading/traceability checks; agent review scoped in CONTENT_AUDIT.md"
+    },
+    {
+      "id": "m09-l05",
+      "title": "تشخيص الحملة وإرهاق الإعلان",
+      "readingWords": 262,
+      "questions": 5,
+      "activities": 6,
+      "assignment": true,
+      "miniProject": true,
+      "sourceIds": [
+        "ads-metrics"
+      ],
+      "status": "PASS structural/grading/traceability checks; agent review scoped in CONTENT_AUDIT.md"
+    },
+    {
+      "id": "m10-l01",
+      "title": "خطة القياس والأحداث",
+      "readingWords": 275,
+      "questions": 5,
+      "activities": 6,
+      "assignment": true,
+      "miniProject": true,
+      "sourceIds": [
+        "ga-events"
+      ],
+      "status": "PASS structural/grading/traceability checks; agent review scoped in CONTENT_AUDIT.md"
+    },
+    {
+      "id": "m10-l02",
+      "title": "وسوم UTM وإسناد القنوات",
+      "readingWords": 274,
+      "questions": 5,
+      "activities": 6,
+      "assignment": true,
+      "miniProject": true,
+      "sourceIds": [
+        "ga-config",
+        "ga-pii"
+      ],
+      "status": "PASS structural/grading/traceability checks; agent review scoped in CONTENT_AUDIT.md"
+    },
+    {
+      "id": "m10-l03",
+      "title": "لوحة مؤشرات تعطي قرارًا",
+      "readingWords": 260,
+      "questions": 5,
+      "activities": 6,
+      "assignment": true,
+      "miniProject": true,
+      "sourceIds": [
+        "ads-metrics"
+      ],
+      "status": "PASS structural/grading/traceability checks; agent review scoped in CONTENT_AUDIT.md"
+    },
+    {
+      "id": "m10-l04",
+      "title": "تحليل القمع وتجزئة النتائج",
+      "readingWords": 267,
+      "questions": 5,
+      "activities": 6,
+      "assignment": true,
+      "miniProject": true,
+      "sourceIds": [
+        "experiment"
+      ],
+      "status": "PASS structural/grading/traceability checks; agent review scoped in CONTENT_AUDIT.md"
+    },
+    {
+      "id": "m10-l05",
+      "title": "تقرير العميل وحدود البيانات",
+      "readingWords": 259,
+      "questions": 5,
+      "activities": 6,
+      "assignment": true,
+      "miniProject": true,
+      "sourceIds": [
+        "experiment"
+      ],
+      "status": "PASS structural/grading/traceability checks; agent review scoped in CONTENT_AUDIT.md"
+    },
+    {
+      "id": "m11-l01",
+      "title": "فرضية التجربة وترتيب الاختبارات",
+      "readingWords": 272,
+      "questions": 5,
+      "activities": 6,
+      "assignment": true,
+      "miniProject": true,
+      "sourceIds": [
+        "experiment"
+      ],
+      "status": "PASS structural/grading/traceability checks; agent review scoped in CONTENT_AUDIT.md"
+    },
+    {
+      "id": "m11-l02",
+      "title": "اختبار A/B وعدم اليقين",
+      "readingWords": 277,
+      "questions": 5,
+      "activities": 6,
+      "assignment": true,
+      "miniProject": true,
+      "sourceIds": [
+        "experiment",
+        "uncertainty"
+      ],
+      "status": "PASS structural/grading/traceability checks; agent review scoped in CONTENT_AUDIT.md"
+    },
+    {
+      "id": "m11-l03",
+      "title": "تحسين التحويل واختبار الاستخدام",
+      "readingWords": 272,
+      "questions": 5,
+      "activities": 6,
+      "assignment": true,
+      "miniProject": true,
+      "sourceIds": [
+        "wai-writing",
+        "experiment"
+      ],
+      "status": "PASS structural/grading/traceability checks; agent review scoped in CONTENT_AUDIT.md"
+    },
+    {
+      "id": "m11-l04",
+      "title": "الخصوصية والأخلاقيات في التسويق",
+      "readingWords": 265,
+      "questions": 5,
+      "activities": 6,
+      "assignment": true,
+      "miniProject": true,
+      "sourceIds": [
+        "tag-consent",
+        "ftc-disclosure"
+      ],
+      "status": "PASS structural/grading/traceability checks; agent review scoped in CONTENT_AUDIT.md"
+    },
+    {
+      "id": "m11-l05",
+      "title": "الأمن التشغيلي وأدوات الذكاء الاصطناعي",
+      "readingWords": 282,
+      "questions": 5,
+      "activities": 6,
+      "assignment": true,
+      "miniProject": true,
+      "sourceIds": [
+        "iam"
+      ],
+      "status": "PASS structural/grading/traceability checks; agent review scoped in CONTENT_AUDIT.md"
+    },
+    {
+      "id": "m12-l01",
+      "title": "موجز مشروع التخرج ونطاقه",
+      "readingWords": 274,
+      "questions": 5,
+      "activities": 6,
+      "assignment": true,
+      "miniProject": true,
+      "sourceIds": [
+        "dib-plan"
+      ],
+      "status": "PASS structural/grading/traceability checks; agent review scoped in CONTENT_AUDIT.md"
+    },
+    {
+      "id": "m12-l02",
+      "title": "دمج البحث والخطة في قرار واحد",
+      "readingWords": 261,
+      "questions": 5,
+      "activities": 6,
+      "assignment": true,
+      "miniProject": true,
+      "sourceIds": [
+        "dib-plan"
+      ],
+      "status": "PASS structural/grading/traceability checks; agent review scoped in CONTENT_AUDIT.md"
+    },
+    {
+      "id": "m12-l03",
+      "title": "حزمة الحملة وضمان جودتها",
+      "readingWords": 260,
+      "questions": 5,
+      "activities": 6,
+      "assignment": true,
+      "miniProject": true,
+      "sourceIds": [
+        "wai-writing"
+      ],
+      "status": "PASS structural/grading/traceability checks; agent review scoped in CONTENT_AUDIT.md"
+    },
+    {
+      "id": "m12-l04",
+      "title": "محاكاة النتائج والقرار الاقتصادي",
+      "readingWords": 279,
+      "questions": 5,
+      "activities": 6,
+      "assignment": true,
+      "miniProject": true,
+      "sourceIds": [
+        "ads-metrics"
+      ],
+      "status": "PASS structural/grading/traceability checks; agent review scoped in CONTENT_AUDIT.md"
+    },
+    {
+      "id": "m12-l05",
+      "title": "نشر ملف الأعمال ومراجعة التخرج",
+      "readingWords": 266,
+      "questions": 5,
+      "activities": 6,
+      "assignment": true,
+      "miniProject": true,
+      "sourceIds": [
+        "godin-stories"
+      ],
+      "status": "PASS structural/grading/traceability checks; agent review scoped in CONTENT_AUDIT.md"
+    }
+  ],
+  "projects": [
+    {
+      "module": 1,
+      "title": "خريطة حملة من الفكرة إلى الطلب",
+      "workedWords": 329,
+      "status": "PASS structural completeness"
+    },
+    {
+      "module": 2,
+      "title": "بحث مصغر وقرار جمهور",
+      "workedWords": 298,
+      "status": "PASS structural completeness"
+    },
+    {
+      "module": 3,
+      "title": "تموضع وعرض قابلان للتنفيذ",
+      "workedWords": 301,
+      "status": "PASS structural completeness"
+    },
+    {
+      "module": 4,
+      "title": "قصة وإعلان وصفحة هبوط",
+      "workedWords": 335,
+      "status": "PASS structural completeness"
+    },
+    {
+      "module": 5,
+      "title": "خطة اجتماعية ومجتمع آمن",
+      "workedWords": 389,
+      "status": "PASS structural completeness"
+    },
+    {
+      "module": 6,
+      "title": "نظام محتوى ومورد مفيد",
+      "workedWords": 587,
+      "status": "PASS structural completeness"
+    },
+    {
+      "module": 7,
+      "title": "خريطة SEO وتدقيق موقع",
+      "workedWords": 303,
+      "status": "PASS structural completeness"
+    },
+    {
+      "module": 8,
+      "title": "سلسلة إذن واحتفاظ وإحالة",
+      "workedWords": 317,
+      "status": "PASS structural completeness"
+    },
+    {
+      "module": 9,
+      "title": "موجز إعلان وقرار ميزانية",
+      "workedWords": 291,
+      "status": "PASS structural completeness"
+    },
+    {
+      "module": 10,
+      "title": "لوحة وتحليل وتقرير عميل",
+      "workedWords": 278,
+      "status": "PASS structural completeness"
+    },
+    {
+      "module": 11,
+      "title": "ملف تجربة وتدقيق أخلاقي وأمني",
+      "workedWords": 349,
+      "status": "PASS structural completeness"
+    },
+    {
+      "module": 12,
+      "title": "دفاع مهني عن ملف الأعمال",
+      "workedWords": 365,
+      "status": "PASS structural completeness"
+    }
+  ],
+  "limits": [
+    "Structural/traceability/grade checks cannot establish factual truth, effective teaching or independent human approval.",
+    "URLs and rights metadata do not imply a license to copy provider courses.",
+    "Small simulated examples are not observed Iraqi market statistics."
+  ]
+}

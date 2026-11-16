@@ -1,8 +1,12 @@
+import assessmentV3 from './reviewed/assessment-v3.json' with {type:'json'}
+import type {Lesson} from '../curriculum'
+const corrections:Record<string,{prompt?:string;options?:string[];why?:string}>=assessmentV3
+function applyContentAudit(lesson:Lesson):Lesson{return {...lesson,questions:lesson.questions.map(q=>{const c=corrections[q.id];return c?{...q,prompt:c.prompt??q.prompt,why:c.why??q.why,options:q.options.map((o,i)=>({...o,label:c.options?.[i]??o.label}))}:q})}}
 import {applyEditorialReview} from './reviewed/apply-review'
 import {advanced} from './advanced'
 import {foundations} from './foundations'
 import {research} from './research'
-export const lessons=[...foundations,...research,...advanced].map(applyEditorialReview)
+export const lessons=[...foundations,...research,...advanced].map(applyEditorialReview).map(applyContentAudit)
 export const moduleReview=[
  'اختر مشروعًا وحدد جمهوره وهدفًا أسبوعيًا. اشرح قناة مجانية ومراحل الرحلة، ثم احسب نسبة بمقام معلوم وقرار تحسين قابل للفحص.',
  'استخدم أدلة مأذونة أو محاكاة موسومة. افصل الملاحظة والتفسير، وقارن بدائل بوحدة متسقة، ثم برر الشريحة والشخصية وفرضية تحتاج اختبارًا.',

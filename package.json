@@ -1,6 +1,6 @@
 {
   "name": "marketing-academy",
-  "version": "2.5.0",
+  "version": "2.6.0",
   "private": true,
   "type": "module",
   "engines": {
@@ -21,7 +21,8 @@
     "audit:project": "node scripts/audit-project.mjs",
     "lint": "node scripts/lint.mjs",
     "package:qa": "node scripts/package-qa.mjs",
-    "package:windows:dual": "npm run package:win && npm run package:qa"
+    "package:windows:dual": "npm run package:win && npm run package:qa",
+    "validate:content": "node scripts/validate-content.mjs"
   },
   "dependencies": {
     "@noble/ciphers": "2.4.0",

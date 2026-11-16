@@ -10,7 +10,10 @@ export async function seed(name:string,password:string){
  const session=await register(name,password)
  await initializeSettings({id:'local',goal:'تقدم النسخة السابقة',minutes:30,business:'مطعم',theme:'light'})
  await saveLesson('m01-l01',{notes:'legacy-note-must-survive',assignment:'نشاط سابق مكتمل',checked:[0,1,2]})
- await submitQuiz(lessons[0],Object.fromEntries(lessons[0].questions.map(q=>[q.id,q.answer])))
+ const answers=Object.fromEntries(lessons[0].questions.map(q=>[q.id,q.answer]))
+ // Pin this older-source migration fixture to published assessment2, even after current revisions.
+ await db.lessonStates.update('m01-l01',{quizDraft:{assessmentVersion:2,answers,active:true,round:0,updatedAt:new Date().toISOString()}})
+ await submitQuiz(lessons[0],answers)
  await completeLesson(lessons[0])
  await saveModuleProject({id:'module-1',response:'legacy-project-must-survive',checked:[0,1,2,3],completed:true})
  const state=await exportBackup(),sourceName=db.name,sourceFingerprint=await fingerprint(sourceName,'m01-l01')

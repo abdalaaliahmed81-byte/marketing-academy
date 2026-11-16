@@ -42,7 +42,7 @@ describe('editorial revision and learner-history compatibility',()=>{
   expect(normalizeState(data).attempts[0]).toEqual(attempt)
   expect(assessmentQuestions(lesson,1)[0].options[1].label).not.toBe(lesson.questions[0].options[1].label)
   expect(()=>normalizeState({...data,attempts:[{...attempt,score:100}]})).toThrow()
-  expect(()=>normalizeState({...data,attempts:[{...attempt,assessmentVersion:3}]})).toThrow()
+  expect(()=>normalizeState({...data,attempts:[{...attempt,assessmentVersion:99}]})).toThrow()
  })
  it('finishes an old active draft with its original questions, then persists a revised retry after reopen',async()=>{
   database=new AcademyDB('editorial-'+crypto.randomUUID());const lesson=lessons[0],answers=Object.fromEntries(lesson.questions.map(q=>[q.id,q.answer]))
@@ -51,11 +51,11 @@ describe('editorial revision and learner-history compatibility',()=>{
   expect((await database.lessonStates.get(lesson.id))?.quizDraft?.assessmentVersion).toBe(1)
   expect(await submitQuiz(lesson,answers,database)).toMatchObject({assessmentVersion:1,score:100})
   await retryQuiz(lesson.id,database);await saveQuizDraftAnswers(lesson.id,answers,database)
-  expect(await submitQuiz(lesson,answers,database)).toMatchObject({assessmentVersion:2,score:100})
+  expect(await submitQuiz(lesson,answers,database)).toMatchObject({assessmentVersion:3,score:100})
   await saveLesson(lesson.id,{assignment:'تطبيق لم يتغير',checked:[0,1,2]},database)
   database.close();await database.open()
-  expect((await database.attempts.toArray()).map(a=>a.assessmentVersion).sort()).toEqual([1,2])
-  expect(await database.lessonStates.get(lesson.id)).toMatchObject({notes:'لا تحذف تقدمي',assignment:'تطبيق لم يتغير',quizDraft:{assessmentVersion:2,active:false}})
+  expect((await database.attempts.toArray()).map(a=>a.assessmentVersion).sort()).toEqual([1,3])
+  expect(await database.lessonStates.get(lesson.id)).toMatchObject({notes:'لا تحذف تقدمي',assignment:'تطبيق لم يتغير',quizDraft:{assessmentVersion:3,active:false}})
  })
  it('preserves every expanded guide-v1 earned result without claiming new paragraphs were read',()=>{
   for(const lesson of lessons.filter(l=>l.module>=4)){
