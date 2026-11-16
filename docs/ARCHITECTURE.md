@@ -77,3 +77,8 @@ Browser QA uses independent temporary SQLite/API fixtures4174 (retained baseline
 
 
 Portable2.2.2 changes only packaging filename and verification/delivery assets: literal Marketing-Academy-Portable-Windows-x64.exe, bundled Arabic guide, normal Windows ShellExecute/restricted PATH test and extended native lifecycle. Electron identity, academy origin, SQLite schema1/account records, assessment versions and IPC boundary remain unchanged. Native runtime/SQLite bundle is independent of Docker/API. Exact Windows execution and published-asset readback: WINDOWS_PORTABLE_VERIFICATION.json.
+
+
+## Dual Windows runtime2.3.0
+
+`electron/profile.cjs` resolves the immutable packaged flavor before storage/session initialization and single-instance locking. Production keeps its existing userData/session defaults; QA pins appData/marketing-academy-qa and its chromium subfolder. QA stages are created under ignored work/qa-package from the same dist/build/Electron code, with a separate manifest/app ID/output. A trusted-main-frame read-only profile-info IPC exposes only the channel; nine storage commands remain unchanged. Packaged QA has the same sandbox, disabled packaged devtools, CSP, origin controls, encrypted SQLite/authentication and offline business logic. No filename/command-line channel selector changes data profiles. Verified lifecycle and simultaneous actual Windows isolation: DUAL_WINDOWS_VERIFICATION.json.

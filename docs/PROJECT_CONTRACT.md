@@ -33,3 +33,6 @@ Latest publication instruction: repository MUST now be PRIVATE; this supersedes 
 
 
 Latest task amendment: use the existing accessible repository and create no repository. Build two verified EXEs: preserved Production and isolated QA. This replaces the previous new-private-backup prerequisite for this task; current public visibility must be disclosed. Verify both real Windows executables and concurrent database isolation, retain existing data/history, update AI_PROGRESS and commit/push after verified stages. See DUAL_WINDOWS.md. Educational/physical-machine limits remain open.
+
+
+Dual Windows2.3.0 delivered from7c8ed9d/run43930298980:60 tests per OS/25 browser paths, both actual EXE normal-start/lifecycle checks and concurrent profile/unchanged-Production-DB verification passed. All6 release assets re-downloaded via authorized connection and SHA256/PE/source-comment checked. Production data identity preserved; QA isolated; both unsigned and professional/physical-machine limits remain open. See DUAL_WINDOWS.md and DUAL_WINDOWS_VERIFICATION.json. Existing repository/history retained, no new repository.

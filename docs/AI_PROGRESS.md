@@ -1,6 +1,19 @@
 # AI progress and resume record
 
-## Active dual Windows phase2.3.0
+## Verified dual Windows checkpoint2.3.0
+
+Published [v2.3.0 Production + QA](https://github.com/abdalaaliahmed81-byte/marketing-academy/releases/tag/v2.3.0), exact source7c8ed9df44e4090f57434dac2c863019452e9fb1/[run43930298980](https://github.com/abdalaaliahmed81-byte/marketing-academy/actions/runs/43930298980). All3 jobs passed:60 unit/integration tests per OS,25 browser paths, optional Docker and BOTH actual Windows EXEs. Normal no-argument ShellExecute under system-only child PATH and full registration/note/offline lesson+quiz/restart/account-isolation/legacy-migration smoke passed on each. Each lifecycle fixture retained schema1/three synthetic accounts/14 encrypted records. The separate concurrent same-root/same-username test passed independent notes/restarts and unchanged closed Production database SHA256 after QA writes.
+
+Production: Marketing-Academy-Portable-Windows-x64.exe,112415233 bytes, SHA256fc8b435ef3d049e76187fafc39277d6ca7cc155c242ae63ad880571ce428ce48. QA: Marketing-Academy-QA-Windows-x64.exe,110900705 bytes, SHA256f8ee77ebaaf89d7b5201dc905dc3c5e59a5e993fa1a66ea414e4534f21c436d8. Re-downloaded all6 public release assets with the authorized GitHub connection; all GitHub digests and5 checksum entries matched. Both outer PE wrappers/inner x64 payloads, archive commit and bounded forbidden-file scan passed; release guide matches both source/bundled copies. Full actual evidence: DUAL_WINDOWS_VERIFICATION.json.
+
+Production identity/default userData/schema/IDs remain unchanged. QA's immutable packaged channel uses its own app ID, userData, Chromium cache/storage and single-instance lock, plus Arabic QA banner/window title; renaming EXE does not choose the profile. Both retain the same security and curriculum; the new trusted-frame read-only IPC exposes only channel metadata. Deliberate backup import is still allowed into the chosen profile/account; use synthetic QA data. No new repository or real learner database was created/modified; real learner DB was not supplied. Existing repository remains public under the latest instruction to continue/push there; do not describe it as private.
+
+This verifies two shipped EXEs on Windows runners, not every pristine consumer PC/manual Explorer click/physical upgrade/power-cut scenario. Both unsigned; SmartScreen restrictions may apply. Production is the normal-use profile, not a claim of independent professional educational approval. Human Arabic review/novice validation and109 assessment moderation candidates remain open. Prior releases/stable2.0.0/history preserved. Runtime source7c8ed9d; subsequent evidence/docs commits do not change the tested application.
+
+Resume here: existing repository is the single source of truth; do not create a repository or restart. Read DUAL_WINDOWS.md/DUAL_WINDOWS_VERIFICATION.json, preserve Production identity/data, and retain the exact-source Windows gates for both channels.
+
+
+## Dual Windows implementation history2.3.0
 
 Latest user explicitly says continue the existing repository, create NO new repository, and commit/push when accessible. This supersedes the earlier new-private-backup prerequisite for this task. Existing repository is accessible and remains public (do not call it private). Continue its history/data; previous privacy attempts were403, not successful.
 

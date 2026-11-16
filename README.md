@@ -2,9 +2,9 @@
 
 تطبيق تعلّم عربي RTL بُني باستكمال مشروع MVP المرفق، مع ٦٠ درسًا في ١٢ وحدة و٣٠٠ سؤال، ومهام ومراجعات وملاحظات مستقلة لكل درس. يشمل ١٢ مشروع وحدة محلولًا وملف أعمال متكاملًا بنموذج محاكاة قابل للتحرير.
 
-> هذا الفرع يحتوي المعاينة المنشورة٢.٢.٢، مع SQLite ومراجعة المحتوى وحفظ تاريخ التقييم. الإصدار المستقر٢.٠.٠ يستخدم IndexedDB؛ راجع [التدقيق](docs/AUDIT.md) و[بوابات الإصدار](docs/RELEASE_GATES.md). وجود٦٠ درسًا لا يعني اعتمادًا مهنيًا: اكتمل التعميق التحريري الآلي للدروس الستين، وتبقى المراجعة العربية البشرية المستقلة ومعايرة التعلم مفتوحتين. سجل المصادر يميز الإحالات المحددة والحقوق عن بوابات التعلم الاختيارية.
+> هذا الفرع يحتوي المعاينة المنشورة٢.٣.٠، مع SQLite ومراجعة المحتوى وحفظ تاريخ التقييم. الإصدار المستقر٢.٠.٠ يستخدم IndexedDB؛ راجع [التدقيق](docs/AUDIT.md) و[بوابات الإصدار](docs/RELEASE_GATES.md). وجود٦٠ درسًا لا يعني اعتمادًا مهنيًا: اكتمل التعميق التحريري الآلي للدروس الستين، وتبقى المراجعة العربية البشرية المستقلة ومعايرة التعلم مفتوحتين. سجل المصادر يميز الإحالات المحددة والحقوق عن بوابات التعلم الاختيارية.
 
-[تنزيل EXE٢.٢.٢ للمعاينة](https://github.com/abdalaaliahmed81-byte/marketing-academy/releases/download/v2.2.2/Marketing-Academy-Portable-Windows-x64.exe) · [الإصدار والبصمات والمصدر](https://github.com/abdalaaliahmed81-byte/marketing-academy/releases/tag/v2.2.2) · [دليل التحقق](docs/WINDOWS_PORTABLE_VERIFICATION.json). الحزمة غير موقّعة، والمراجعة البشرية المستقلة غير منفذة؛٢.٠.٠ يبقى أحدث إصدار مستقر.
+[تنزيل EXE٢.٣.٠ للمعاينة](https://github.com/abdalaaliahmed81-byte/marketing-academy/releases/download/v2.3.0/Marketing-Academy-Portable-Windows-x64.exe) · [الإصدار والبصمات والمصدر](https://github.com/abdalaaliahmed81-byte/marketing-academy/releases/tag/v2.3.0) · [دليل التحقق](docs/DUAL_WINDOWS_VERIFICATION.json). الحزمة غير موقّعة، والمراجعة البشرية المستقلة غير منفذة؛٢.٠.٠ يبقى أحدث إصدار مستقر.
 
 ## استخدام Windows
 
@@ -67,3 +67,9 @@ npm run package:win
 ## تشغيل ملف Windows المحمول
 
 الملف الرئيسي هو **Marketing-Academy-Portable-Windows-x64.exe**. افتحه مباشرة دون تثبيت Node.js أو Python أو Docker أو قاعدة بيانات. [دليل البدء العربي](docs/START_AR.md) · [التحقق الفعلي](docs/WINDOWS_PORTABLE_VERIFICATION.json). اختُبر التشغيل العادي للملف نفسه على Windows مع مسار بحث خالٍ من أدوات التطوير، والحساب والملاحظات وإكمال الدرس والاختبار دون شبكة والحفظ بعد إعادة الفتح وعزل الحسابات. هذا ليس اختبارًا يدويًا على جهاز مستخدم نظيف. الملف غير موقّع وقد يظهر SmartScreen؛ راجع دليل المصدر والبصمات قبل التشغيل ولا تعطّل حماية الجهاز.
+
+## Production وQA المعزولة
+
+[نزّل Production](https://github.com/abdalaaliahmed81-byte/marketing-academy/releases/download/v2.3.0/Marketing-Academy-Portable-Windows-x64.exe) للاستخدام الأساسي وبياناتك المعتادة. [نزّل QA](https://github.com/abdalaaliahmed81-byte/marketing-academy/releases/download/v2.3.0/Marketing-Academy-QA-Windows-x64.exe) للاختبار ببيانات تجريبية؛ لها قاعدة وذاكرة متصفح وقفل تشغيل منفصل، وعلامة QA واضحة. يمكن فتحهما معًا؛ الاسم نفسه لا يربط الحسابين. تغيير اسم الملف لا يغيّر نوعه. لا تستورد بيانات شخصية إلى QA إلا بقرار صريح.
+
+اختُبر ملفا Windows الفعليان والتسجيل والملاحظات والاختبار والدرس دون شبكة والحفظ بعد إعادة الفتح، ثم ثبت أن تعديلات QA لا تغيّر قاعدة Production. نجح60 اختبارًا لكل نظام و25 مسار واجهة؛ [الأدلة والبصمات](docs/DUAL_WINDOWS_VERIFICATION.json) و[الدليل العربي](docs/START_AR.md). لا يحتاج أي منهما Node.js أو Python أو Docker. كلاهما غير موقع وقد يظهر SmartScreen؛ لا يُدّعى اختبار جهاز مستخدم نظيف أو اعتماد تعليمي بشري.
