@@ -8,6 +8,7 @@ async function register(page:Page,url:string,name:string){
  await page.getByLabel('كلمة المرور',{exact:true}).fill(password)
  await page.getByLabel('تأكيد كلمة المرور',{exact:true}).fill(password)
  await page.getByRole('button',{name:'أنشئ حسابي'}).click()
+ await expect(page.getByRole('button',{name:'ابدأ التعلّم',exact:true})).toBeVisible({timeout:10000})
  await page.getByRole('button',{name:'ابدأ التعلّم',exact:true}).click()
  await expect(page.getByRole('button',{name:'خروج',exact:true})).toBeVisible()
 }
@@ -17,7 +18,7 @@ async function login(page:Page,name:string){
  await expect(page.getByRole('button',{name:'خروج',exact:true})).toBeVisible()
 }
 async function saved(page:Page){await expect(page.getByText('حُفظ المشروع تلقائيًا',{exact:true})).toBeVisible()}
-for(const [edition,url] of [['local','http://127.0.0.1:4173'],['api','http://127.0.0.1:4174']])test(edition+' project autosave, safe transfer, account isolation, report export and encrypted restore',async({page})=>{
+for(const [edition,url] of [['local','http://127.0.0.1:4173'],['api','http://127.0.0.1:4175']])test(edition+' project autosave, safe transfer, account isolation, report export and encrypted restore',async({page})=>{
  test.setTimeout(180000)
  const alice='مشروعات أ '+crypto.randomUUID().slice(0,8),bob='مشروعات ب '+crypto.randomUUID().slice(0,8)
  await register(page,url,alice)
