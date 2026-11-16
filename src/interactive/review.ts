@@ -5,7 +5,7 @@ export function plusDays(day:string,count:number){const date=new Date(day+'T12:0
 /** Wrong answers become due today. Successful retrieval spaces at1/3/7/14/30 days. */
 export function reviewSchedule(lessons:Lesson[],attempts:Attempt[],states:LessonState[],now=new Date()):ReviewItem[]{
  const tracked=new Map<string,ReviewItem>(),questions=new Map(lessons.flatMap(lesson=>lesson.questions.map(question=>[question.id,{lesson,question}] as const)))
- const events=[...attempts.flatMap(a=>Object.entries(a.answers).map(([questionId,answer])=>({questionId,answer,at:a.at}))),...states.flatMap(s=>s.reviews??[])].sort((a,b)=>a.at.localeCompare(b.at))
+ const events=[...attempts.flatMap(a=>Object.entries(a.answers).map(([questionId,answer])=>({questionId,answer,at:a.at}))),...states.flatMap(s=>s.reviews??[])].filter(event=>Date.parse(event.at)<=now.valueOf()).sort((a,b)=>a.at.localeCompare(b.at))
  for(const event of events){const found=questions.get(event.questionId);if(!found)continue;const {lesson,question}=found
   const previous=tracked.get(question.id),correct=event.answer===question.answer
   if(correct&&(!previous||previous.due>baghdadDay(new Date(event.at))))continue

@@ -282,6 +282,15 @@ try{
  expect(migrated.value.snapshot.state.attempts.some(row=>row.lessonId==='m01-l01'&&row.passed&&row.score===100)).toBe(true)
  expect(migrated.value.snapshot.state.moduleProjects[0].completed).toBe(true)
  evidence.checks.push('migrated an authenticated legacy IndexedDB account; completed lesson, note, quiz and project survived; original ciphertext unchanged')
+ if(!process.env.AUTH_BASELINE_VERSION){
+  await page.goto('academy://app/#/skills');await expect(page.getByRole('heading',{name:'شجرة إتقان المهارات',exact:true})).toBeVisible()
+  expect(await page.locator('.skill-node').count()).toBe(60);expect(await page.getByRole('button',{name:/^ملاحظات:/}).count()).toBe(60)
+  await expect(page.getByRole('progressbar',{name:'مؤشر تدريب '+firstLesson.title,exact:true})).toHaveAttribute('value','60')
+  await expect(page.locator('.skill-node').first().getByText('إنجاز الدرس محفوظ ✓',{exact:true})).toBeVisible()
+  await page.getByRole('button',{name:/^ملاحظات:/}).first().click();await expect(page.getByRole('dialog').getByRole('textbox')).toHaveValue('legacy-note-must-survive');await page.getByRole('button',{name:'احفظ وأغلق'}).click();await expect(page).toHaveURL('academy://app/#/skills')
+  await page.getByRole('link',{name:'مكتبة الموارد',exact:true}).click();await page.getByRole('searchbox',{name:'ابحث في المكتبة',exact:true}).fill('legacy-note-must-survive');await expect(page.locator('.resource-card')).toHaveCount(1)
+  evidence.skillTree={sixtyNodesAndNoteCircles:true,oldCompletionAndScorePreserved:true,notesRemainOnTree:true,generalNoteSearch:true}
+ }
  if(channel==='production'&&!process.env.AUTH_BASELINE_VERSION){await page.goto('academy://app/#/qa-studio');await expect(page).toHaveURL('academy://app/#/');await expect(page.getByRole('link',{name:'افتح استوديو الاختبار'})).not.toBeVisible();evidence.productionQAAccessDenied=true}
  await running.close();running=undefined
  const sql=new DatabaseSync(path.join(profileDir,'academy.sqlite'))

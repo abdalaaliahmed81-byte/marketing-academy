@@ -51,10 +51,10 @@ describe('spaced retrieval in Baghdad time',()=>{
   expect(reviewQueue(lessons,[attempt],[],new Date(attempt.at))).toHaveLength(1)
   const state={id:lesson.id,notes:'',assignment:'',checked:[],completed:false,bookmarked:false,reviews:[{questionId:question.id,answer:question.answer,at:'2026-11-16T21:00:00Z'}]}
   expect(reviewQueue(lessons,[attempt],[state],new Date('2026-11-17T00:00:00Z'))).toHaveLength(0)
-  expect(reviewSchedule(lessons,[attempt],[state])[0]).toMatchObject({due:'2026-11-18',interval:1})
+  expect(reviewSchedule(lessons,[attempt],[state],new Date('2026-11-17T00:00:00Z'))[0]).toMatchObject({due:'2026-11-18',interval:1})
   const retake={...attempt,id:'retake',at:'2026-11-16T21:01:00Z',answers:Object.fromEntries(lesson.questions.map(q=>[q.id,q.answer])),score:100,passed:true,missed:[]}
-  expect(reviewSchedule(lessons,[attempt,retake],[state])[0]).toMatchObject({due:'2026-11-18',interval:1})
+  expect(reviewSchedule(lessons,[attempt,retake],[state],new Date('2026-11-17T00:00:00Z'))[0]).toMatchObject({due:'2026-11-18',interval:1})
   const next={...state,reviews:[...state.reviews,{questionId:question.id,answer:question.answer,at:'2026-11-18T08:00:00Z'}]}
-  expect(reviewSchedule(lessons,[attempt],[next])[0]).toMatchObject({due:'2026-11-21',interval:3})
+  expect(reviewSchedule(lessons,[attempt],[next],new Date('2026-11-18T09:00:00Z'))[0]).toMatchObject({due:'2026-11-21',interval:3})
  })
 })

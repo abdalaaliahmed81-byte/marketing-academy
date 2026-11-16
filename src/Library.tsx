@@ -14,7 +14,7 @@ export function Library(){
  const needle=searchText(query)
  const items=useMemo(()=>lessons.filter(l=>{
   const state=states?.find(s=>s.id===l.id)
-  return (!module||l.module===Number(module))&&(kind!=='notes'||!!state?.notes.trim())&&searchText([l.title,l.goal,modules[l.module-1],...(kind==='notes'?[state?.notes??'']:[])].join(' ')).includes(needle)
+  return (!module||l.module===Number(module))&&(kind!=='notes'||!!state?.notes.trim())&&searchText([l.title,l.goal,modules[l.module-1],...((kind==='notes'||kind==='all')?[state?.notes??'']:[])].join(' ')).includes(needle)
  }),[states,module,kind,needle])
  const external=[...Object.entries(sources).map(([id,s])=>({id,title:s.title,url:s.url,type:'مرجع رسمي أو تدريبي'})),...Object.entries(books).map(([id,title])=>({id,title,url:bookLinks[id as keyof typeof books],type:'صفحة الكتاب · مصدر مفاهيمي'}))].filter(s=>searchText(s.title).includes(needle))
  const showLessons=kind!=='sources',showSources=(kind==='all'||kind==='sources')&&!module

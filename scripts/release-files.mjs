@@ -18,6 +18,7 @@ async function verify(channel,name,smokeFile,normalFile,payloadFile){
  const payload=await open(payloadFile,'r'),dos=Buffer.alloc(64),pe=Buffer.alloc(6)
  await payload.read(dos,0,64,0);assert.equal(dos.toString('ascii',0,2),'MZ');await payload.read(pe,0,6,dos.readUInt32LE(60));await payload.close()
  assert.equal(pe.toString('ascii',0,4),'PE\0\0');assert.equal(pe.readUInt16LE(4),0x8664)
+ for(const key of ['sixtyNodesAndNoteCircles','oldCompletionAndScorePreserved','notesRemainOnTree','generalNoteSearch'])assert.equal(smoke.skillTree[key],true)
  for(const key of ['unicodeRecovery','wrongPhraseRejected','duplicateRecoveryRejected','recoveredLoginAfterRestart','originalAccountPreserved','wrongCurrentPasswordRejected','passwordChangeAfterRestart','unicodePasswordUntruncated'])assert.equal(smoke.authExtensions[key],true)
  const bytes=(await stat('release/'+name)).size;assert(bytes>50_000_000)
  return {channel,normalStart,portableBytes:bytes,wrapperMachine:wrapperPe.readUInt16LE(4),payloadArchitecture:'x64',portableExecutableSmoke:smoke}
