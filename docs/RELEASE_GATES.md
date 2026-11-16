@@ -1,6 +1,6 @@
 # Release gates
 
-Applies to2.1.0 audit source. Published v2.0.0 is unchanged. AI_PROGRESS records final executed evidence and CI links; a workflow definition alone is never a pass.
+Current delivered source28d6622 /2.1.1 Preview; run43857954333 passed Windows, web/Docker and publication/readback. Published stable v2.0.0 is unchanged. AI_PROGRESS records final executed evidence and CI links; a workflow definition alone is never a pass.
 
 |Gate|Evidence / condition|Status|
 |---|---|---|
@@ -10,13 +10,13 @@ Applies to2.1.0 audit source. Published v2.0.0 is unchanged. AI_PROGRESS records
 |G04 Account isolation|Wrong password, per-owner encrypted records, owner mismatch, revision conflicts, concurrent password changes|Passed automated engine/repository/API checks|
 |G05 Atomicity|Invalid restore and actual SQL trigger abort preserve old snapshot; no unacknowledged UI success|Passed engine and repository tests|
 |G06 IPC/API|Narrow sender/command boundary, CSRF/origin/cookies/body limits/rate/session tests|Passed checks within documented threat model; no external penetration test|
-|G07 Learning regressions|Original domain + full60-lesson browser path, notes/missions/projects/backups|32 unit/integration +12 browser checks passed; run43749095271|
+|G07 Learning regressions|50 tests per OS +22 browser paths, including earned-guide and historical quiz restore/reopen|Passed run43857954333; local full50/22 also passed|
 |G08 Accessibility|Keyboard/dialog, RTL320/390/1280 widths, reduced motion, light/dark axe|12 browser checks passed, including axe; manual assistive-user review unverified|
-|G09 Packaging|Actual built x64 portable EXE + SQLite and legacy migration smoke, restart, PE header/digests|Passed for484c80a in run43749095271; later release commit still requires exact verification. Unsigned|
+|G09 Packaging|Actual2.1.1 portable x64 EXE + SQLite/legacy migration/restart/PE/digests|Passed exact28d6622 in run43857954333; local public asset checksums/source ZIP commit matched. Unsigned|
 |G10 Supply chain|No production advisories, no high/critical tooling findings, source guard, pinned actions|Dependency report records exact counts; low/moderate tooling residual accepted/disclosed|
 |G11 Educational audit coverage|60-row matrix +3-PDF metadata/source inspection +question/case/depth metrics|Completed bounded audit; evidence depth clearly labeled|
-|G12 Advanced educational readiness|Expand remaining45 flagged micro-lessons (module3 batch implemented), independent cases/summaries, item moderation, claim-level current sources, qualified independent Arabic review|OPEN; blocks advanced/professionally-reviewed completion claims|
-|G13 Publication|Exact-commit web/Windows verification, asset digests/source archive/readback, correct release notes|Not executed for2.1.0; this audit does not publish a new release|
+|G12 Advanced educational readiness|All60 agent-remediated; bounded source mapping, worked cases and84 revised items; independent Arabic moderation/learner validation|Agent work complete; independent professional approval OPEN. Preview discloses limits; stable claims remain gated|
+|G13 Publication|Exact28d6622 Windows/web/Docker and published EXE/checksums/source/proof readback|Passed2.1.1 prerelease in run43857954333; independent anonymous local download/SHA256/source-comment verification also passed. Stable2.0.0 retained|
 |G14 GitHub configuration assurance|Admin-setting readback, branch/rules protections, signing configuration if claimed|PARTIAL: read endpoints403. Do not infer missing controls from denial|
 
 Automated technical gates may pass while educational readiness remains open. Structural60/300/12 counts do not override G12. No release or deployment may be described as verified solely because scripts or workflow files exist. Keep unverified claims explicit and retain the prior release until any replacement's gates pass.

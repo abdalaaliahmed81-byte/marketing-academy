@@ -1,13 +1,13 @@
 # Feature matrix — audited source vs published baseline
 
-Baseline `1eecadb` / published v2.0.0. Branch implements2.1.0; this matrix does not change the existing release binary.
+Baseline `1eecadb` / published v2.0.0. Current preview2.1.1 is published from28d6622; verification run43857954333 passed Windows/web/Docker/publication-readback. v2.0.0 remains latest stable.
 
 |Capability|Baseline|Audited source / evidence / remaining limit|
 |---|---|---|
-|60 lessons,12 modules,300 questions|Present structurally|Preserved; module3 five readings/cases/summaries deepened.45 later lessons still flagged; CONTENT_MATRIX regenerated. Professional review open|
+|60 lessons,12 modules,300 questions|Present structurally|All60 agent-reviewed with worked cases/summaries;45 later depth extensions;26-source registry mapped to60 lessons. Independent professional review/learner validation open|
 |60 lesson activities and daily missions|Present|Preserved; bounds/shared validation added; completion remains self-reviewed|
 |Lesson circular notes editor|Present; encrypted IndexedDB|Title-adjacent44px target; lazy modal, autosave/search/timestamps/status; account-isolated native/API SQLite with restart tests|
-|Quizzes, sequential unlocking, mistake review|Present|Stable IDs/scoring retained; domain regressions pass. Assessment editorial flags remain|
+|Quizzes, sequential unlocking, mistake review|Present|84 revised items; historical version1 wording/grades and active drafts retained; retries use2.50 tests/22 browser paths;109 length cues remain moderation candidates|
 |12 worked module projects and capstone|Present|Preserved;26 portfolio fields and saved/exported submissions. No instructor grading|
 |Accounts/login/logout/password change|Renderer/Dexie|Main/API authority; encrypted per-user SQLite; idle/absolute expiry and password-version revocation|
 |Profile and explicit user switching|Display name not editable|Arabic profile controls; stable login identity; authenticated update; lock/logout before next login; backend and both browser editions tested|
@@ -18,8 +18,8 @@ Baseline `1eecadb` / published v2.0.0. Branch implements2.1.0; this matrix does 
 |Concurrent save safety|IDB transactions|Explicit scoped repository transactions, owner checks, revision compare-and-swap, stale/late response tests|
 |Validated encrypted backup/restore|Present|Shared frontend/backend schemas; owner-scoped atomic restore, legacy input compatibility, bounded size|
 |Responsive RTL/motion/accessibility|Present|Existing keyboard, mobile, dark/light, reduced-motion and axe browser checks retained; no screen-reader certification|
-|Portable Windows packaging|Published2.0.0|Version-aware CI/launcher; actual2.1.0 EXE SQLite/migration/restart passed in run43749095271; locally verified digests. Unreleased/unsigned|
-|CI/CD and release proofs|Present|Extended SQLite/API/restart gates; pinned actions, source guard, checksums, exact-commit publication|
+|Portable Windows packaging|Published2.0.0|Actual2.1.1 Windows EXE/SQLite/migration/restart passed run43857954333; publicly published, downloaded and SHA256/source-commit verified. Preview/unsigned|
+|CI/CD and release proofs|Present|Exact-source Windows/web/Docker + explicit preview publication job and published-asset readback passed; stable professional claims gated separately|
 |Independent Arabic instructional approval|Not performed|Open. No claim of advanced certification or professional human review|
 |Full GitHub admin-settings audit|Partial access|Public visibility authorized; rulesets empty. Actions permission settings/main protection/secret-name endpoints returned403; unverified|
 

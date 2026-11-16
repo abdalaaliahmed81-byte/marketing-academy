@@ -1,31 +1,67 @@
 {
-  "phase": "2.1.1 guide-v1 compatibility correction; final exact-source verification pending",
-  "date": "2026-11-16",
-  "baselineCommit": "5e2a6d4",
-  "priorVerifiedRuntime": "a0bf1297ce5d59501bfc519688edeb6c411100f8",
+  "testedSourceCommit": "28d6622045b246c793936bc8444d6dffaa5c9034",
+  "version": "2.1.1",
+  "verificationRun": "https://github.com/abdalaaliahmed81-byte/marketing-academy/actions/runs/43857954333",
+  "result": "Windows, web/Docker and preview publication/readback jobs passed",
+  "release": {
+    "url": "https://github.com/abdalaaliahmed81-byte/marketing-academy/releases/tag/v2.1.1",
+    "tag": "v2.1.1",
+    "id": 446953941,
+    "prerelease": true,
+    "publishedAt": "2026-11-16T11:32:41Z",
+    "latestStable": "v2.0.0",
+    "assets": [
+      {
+        "name": "Marketing-Academy-2.1.1-source.zip",
+        "bytes": 567399,
+        "digest": "sha256:d03196fad18eb27be9ec3625700667dc1c7003fb0ac00d72e0c42528af32bb7d",
+        "url": "https://github.com/abdalaaliahmed81-byte/marketing-academy/releases/download/v2.1.1/Marketing-Academy-2.1.1-source.zip"
+      },
+      {
+        "name": "Marketing-Academy-2.1.1-win-x64.exe",
+        "bytes": 112395283,
+        "digest": "sha256:6b01ab00f0309961159dbe5a1de040b15b73fbe1da4ff08cdee65d5e874d19bd",
+        "url": "https://github.com/abdalaaliahmed81-byte/marketing-academy/releases/download/v2.1.1/Marketing-Academy-2.1.1-win-x64.exe"
+      },
+      {
+        "name": "SHA256SUMS.txt",
+        "bytes": 287,
+        "digest": "sha256:9d1f11de7cf2c5655a8d8ce0a8d7c35f923b932a37c95f630a6491f7ec70e700",
+        "url": "https://github.com/abdalaaliahmed81-byte/marketing-academy/releases/download/v2.1.1/SHA256SUMS.txt"
+      },
+      {
+        "name": "verification.json",
+        "bytes": 4213,
+        "digest": "sha256:c5716fd0d990f931d4b5e52540c92973e9773ac814a5741e6138b48691b0da7a",
+        "url": "https://github.com/abdalaaliahmed81-byte/marketing-academy/releases/download/v2.1.1/verification.json"
+      }
+    ]
+  },
+  "unitIntegrationTestsPerOS": 50,
+  "browserPaths": 22,
   "lessons": 60,
   "modules": 12,
   "questions": 300,
-  "readingsExpanded": 45,
-  "foundationalCasesSolved": 10,
-  "previousModule3LessonsRetained": 5,
   "assessmentItemsRevised": 84,
   "originalAssessmentItemsRetained": 216,
-  "sourcesRegistered": 26,
-  "sourceMappedLessons": 60,
+  "sourceRegistryRecords": 26,
+  "workedModuleProjects": 12,
+  "activityDefinitions": 360,
   "shortUnder200Words": 0,
   "generatedQuizReuseCases": 0,
   "goalCopySummaries": 0,
-  "irrelevantDistractorFlags": 0,
-  "lengthCueReviewCandidates": 109,
-  "local": {
-    "unitIntegrationTests": 50,
-    "typecheck": "passed",
-    "build": "passed",
-    "linuxElectron": {
-      "platform": "linux",
+  "irrelevantDistractorHeuristicFlags": 0,
+  "longestCorrectAnswerReviewCandidates": 109,
+  "windows": {
+    "status": "passed",
+    "commit": "28d6622045b246c793936bc8444d6dffaa5c9034",
+    "version": "2.1.1",
+    "platform": "windows",
+    "payloadArchitecture": "x64",
+    "portableExecutableSmoke": {
+      "platform": "win32",
       "architecture": "x64",
-      "executable": "development electron",
+      "executable": "release/Marketing-Academy-2.1.1-win-x64.exe",
       "checks": [
         "application rendered Arabic registration using local academy protocol",
         "renderer has no Node require or process; SQLite transport exposed only through the narrow preload",
@@ -48,6 +84,89 @@
       },
       "status": "passed"
     },
+    "assets": [
+      {
+        "name": "Marketing-Academy-2.1.1-win-x64.exe",
+        "sha256": "6b01ab00f0309961159dbe5a1de040b15b73fbe1da4ff08cdee65d5e874d19bd"
+      },
+      {
+        "name": "Marketing-Academy-2.1.1-source.zip",
+        "sha256": "d03196fad18eb27be9ec3625700667dc1c7003fb0ac00d72e0c42528af32bb7d"
+      }
+    ]
+  },
+  "docker": {
+    "status": "passed",
+    "http": 200,
+    "healthy": true,
+    "user": "101:101",
+    "readOnlyRoot": true,
+    "capabilitiesDropped": [
+      "ALL"
+    ],
+    "securityHeaders": true,
+    "rtl": true,
+    "scriptAsset": true,
+    "sqliteApi": true,
+    "apiUser": "node",
+    "apiReadOnlyRoot": true,
+    "progressSurvivesApiRestart": true,
+    "profileSurvivesApiRestart": true
+  },
+  "localPublishedAssetReadback": {
+    "sourceCommit": "28d6622045b246c793936bc8444d6dffaa5c9034",
+    "releaseChannel": "preview",
+    "downloadedAssetChecksumReadback": "passed",
+    "assets": [
+      {
+        "name": "Marketing-Academy-2.1.1-win-x64.exe",
+        "sha256": "6b01ab00f0309961159dbe5a1de040b15b73fbe1da4ff08cdee65d5e874d19bd",
+        "bytes": 112395283
+      },
+      {
+        "name": "Marketing-Academy-2.1.1-source.zip",
+        "sha256": "d03196fad18eb27be9ec3625700667dc1c7003fb0ac00d72e0c42528af32bb7d",
+        "bytes": 567399
+      },
+      {
+        "name": "verification.json",
+        "sha256": "c5716fd0d990f931d4b5e52540c92973e9773ac814a5741e6138b48691b0da7a",
+        "bytes": 4213
+      }
+    ],
+    "sourceZipCommitCommentVerified": true,
+    "sourceZipForbiddenFileSuffixScan": "passed; bounded filename check",
+    "nativeRuntimeEvidence": {
+      "platform": "win32",
+      "architecture": "x64",
+      "executable": "release/Marketing-Academy-2.1.1-win-x64.exe",
+      "checks": [
+        "application rendered Arabic registration using local academy protocol",
+        "renderer has no Node require or process; SQLite transport exposed only through the narrow preload",
+        "native profile edit acknowledged through preload without changing login username",
+        "registered account, onboarded, showed 60 lessons and saved a lesson note",
+        "required login after process restart and recovered persistent note",
+        "external network fetch blocked; curriculum and notes work without external server",
+        "migrated an authenticated legacy IndexedDB account; completed lesson, note, quiz and project survived; original ciphertext unchanged"
+      ],
+      "networkRequests": [],
+      "profilePersistence": true,
+      "interactiveActivityPersistence": true,
+      "noteTimestampPersistence": true,
+      "sqlite": {
+        "schemaVersion": 1,
+        "accounts": 2,
+        "records": 10,
+        "legacySourcesPreserved": true,
+        "encryptedRecords": true
+      },
+      "status": "passed"
+    },
+    "web": {
+      "passed": 22,
+      "failed": 0,
+      "skipped": 0
+    },
     "docker": {
       "status": "passed",
       "http": 200,
@@ -66,29 +185,65 @@
       "progressSurvivesApiRestart": true,
       "profileSurvivesApiRestart": true
     },
-    "dockerBuildScope": "local-only compact build for VFS host; production Dockerfile awaits exact-source CI",
-    "finalBrowserRun": {
-      "passed": 22,
-      "failed": 0,
-      "duration": "3.2m",
-      "newRegression": "restored legacy3-step earned guide, optional acknowledgements, reload/login and retained credit"
-    }
+    "productionDependencies": {
+      "info": 0,
+      "low": 0,
+      "moderate": 0,
+      "high": 0,
+      "critical": 0,
+      "total": 0
+    },
+    "buildToolDependencies": {
+      "counts": {
+        "info": 0,
+        "low": 2,
+        "moderate": 9,
+        "high": 0,
+        "critical": 0,
+        "total": 11
+      },
+      "affectedPackages": [
+        "@electron/universal",
+        "@rollup/plugin-node-resolve",
+        "app-builder-lib",
+        "deepmerge",
+        "dmg-builder",
+        "electron-builder",
+        "electron-builder-squirrel-windows",
+        "glob",
+        "minimatch",
+        "vite-plugin-pwa",
+        "workbox-build"
+      ]
+    },
+    "reviewLimits": [
+      "Agent editorial remediation covers60 lessons and84 revised items with bounded source attribution. Independent Arabic review, learner validation and professional approval remain open unless explicitly evidenced in educationalReadiness. A preview does not claim professional completion.",
+      "Automated accessibility testing does not establish universal WCAG conformance.",
+      "Windows runner validation does not cover every physical device.",
+      "The Windows EXE is unsigned. Low/moderate build-tool advisories are documented."
+    ],
+    "professionalApproval": false
   },
-  "exactCommitCI": null,
+  "guideCompatibility": {
+    "baseline": "5e2a6d44d7cea5101e1658479d42f0319ff298f7",
+    "immutableCoreCounts": 60,
+    "expandedGuidesCovered": 45,
+    "requiredStepCounts": [
+      3,
+      5
+    ],
+    "optionalReadingAcknowledgementsSaved": true,
+    "recordReset": false,
+    "regressionTests": "50-test suite and22-browser suite include legacy earned-guide restore/reopen"
+  },
   "independentHumanReview": false,
   "learnerValidation": false,
   "professionalApproval": false,
-  "newReleasePublished": false,
-  "version": "2.1.1",
-  "guideCompatibility": {
-    "issue": "Expanded reading length changed guide-v1 grading, lowering a previously earned activity count; lesson completion and stored answers were not deleted.",
-    "fix": "Immutable baseline required-step counts; supplemental paragraphs remain navigable and optional with separately visible saved acknowledgements.",
-    "coverage": "all45 expanded guides checked against old earned state; browser reopen regression test added",
-    "finalBrowserRun": {
-      "passed": 22,
-      "failed": 0,
-      "duration": "3.2m",
-      "newRegression": "restored legacy3-step earned guide, optional acknowledgements, reload/login and retained credit"
-    }
-  }
+  "newReleasePublished": true,
+  "limits": [
+    "Agent editorial remediation covers60 lessons and84 revised items with bounded source attribution. Independent Arabic review, learner validation and professional approval remain open unless explicitly evidenced in educationalReadiness. A preview does not claim professional completion.",
+    "Automated accessibility testing does not establish universal WCAG conformance.",
+    "Windows runner validation does not cover every physical device.",
+    "The Windows EXE is unsigned. Low/moderate build-tool advisories are documented."
+  ]
 }

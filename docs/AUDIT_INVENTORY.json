@@ -1,14 +1,7 @@
 {
   "baseline": "1eecadbf3e1811e31dc2eafe274487ecb8a15e57",
-  "generatedAt": "2026-11-16T11:27:42.004Z",
+  "generatedAt": "2026-11-16T11:39:07.638Z",
   "files": [
-    {
-      "path": "src/interactive/guide-v1.json",
-      "bytes": 1172,
-      "sha256": "dafa437f2f10602989a3e8a0ae5e7e7affbfd51a8ef76188236119851bd3943d",
-      "lines": 66,
-      "inspection": "read; manifests/locks additionally consumed by build and dependency audit"
-    },
     {
       "path": ".dockerignore",
       "bytes": 137,
@@ -18,7 +11,7 @@
     {
       "path": ".github/workflows/release.yml",
       "bytes": 2391,
-      "sha256": "196ed32095e99644eee2f8de2237f218875e92c06c6f2a7b8fe3a644f03c43e8",
+      "sha256": "d02301478b5c40b8cb81912a9b86ab6c07b5a497ddadc8b3185835b2a08ec8b4",
       "lines": 59,
       "inspection": "read; review scope documented"
     },
@@ -49,9 +42,9 @@
     },
     {
       "path": "README.md",
-      "bytes": 9224,
-      "sha256": "3cd70ed8637ddc1e21d9f2f11dedc523585953a150f927c553b5a8f04021df99",
-      "lines": 56,
+      "bytes": 9734,
+      "sha256": "9f4bc625c1fffb6776725bd39278abcd4e3a61622a94f8476d12552ea3bc6a2a",
+      "lines": 58,
       "inspection": "read; review scope documented"
     },
     {
@@ -144,9 +137,9 @@
     },
     {
       "path": "docs/AI_PROGRESS.md",
-      "bytes": 32711,
-      "sha256": "b2229c311815cb403711fb0e855ed3e0953d83370f5a15184e853e83501f4934",
-      "lines": 155,
+      "bytes": 36378,
+      "sha256": "c78e42508e0cd2322df06e6f978a4c2465d7577034b330b23ec9b9cc36b4cfb8",
+      "lines": 169,
       "inspection": "read; review scope documented"
     },
     {
@@ -158,9 +151,9 @@
     },
     {
       "path": "docs/AUDIT.md",
-      "bytes": 17257,
-      "sha256": "d90406e8efc6fea3a7bfd1942bac29ca0e22a5de483d44fcde51e5118877e62f",
-      "lines": 94,
+      "bytes": 17647,
+      "sha256": "05cb7d2b7bf8b34e57fd832f9610f781e7ed561a98848e1b2dd8be6e3141bd3f",
+      "lines": 96,
       "inspection": "read; review scope documented"
     },
     {
@@ -193,9 +186,9 @@
     },
     {
       "path": "docs/EDITORIAL_VERIFICATION.json",
-      "bytes": 3571,
-      "sha256": "74bdad59084e6ab6edc044a5af6fc7b5667d4d72993bbe84e4ca871a7561f440",
-      "lines": 95,
+      "bytes": 9305,
+      "sha256": "aa11e257f62d92fbf4a88a976eb6808808d652d6b027e6d4c0f38589bede0e68",
+      "lines": 250,
       "inspection": "read; manifests/locks additionally consumed by build and dependency audit"
     },
     {
@@ -207,8 +200,8 @@
     },
     {
       "path": "docs/FEATURE_MATRIX.md",
-      "bytes": 5105,
-      "sha256": "c0c340396ce1d6fddb7d0e90ee1a69624a223fd73ea9907602903fb2cde9e288",
+      "bytes": 5344,
+      "sha256": "9e72408e7af9835ace9c455fd027abc275e731642a8ed4da181d7b7270e47416",
       "lines": 35,
       "inspection": "read; review scope documented"
     },
@@ -249,9 +242,9 @@
     },
     {
       "path": "docs/PROJECT_CONTRACT.md",
-      "bytes": 1015,
-      "sha256": "7c1b8dbeb5bbfe9404707dc4a8823a50dd1bb0db811c748782d21303c05dee39",
-      "lines": 8,
+      "bytes": 1630,
+      "sha256": "7f573408b3c96728243f683f3eb0b17a20061047f0e6f8418e4dba168b7eeb11",
+      "lines": 11,
       "inspection": "read; review scope documented"
     },
     {
@@ -270,8 +263,8 @@
     },
     {
       "path": "docs/RELEASE_GATES.md",
-      "bytes": 8503,
-      "sha256": "1d6d536dc40e62d908d944c95b4298eaa30eecdffd4c082770fd2d15ab68d8f8",
+      "bytes": 8647,
+      "sha256": "801dd904b61c4b26c102474677dc005858671bdb4db35aacb9f73986eb610a06",
       "lines": 49,
       "inspection": "read; review scope documented"
     },
@@ -686,6 +679,13 @@
       "lines": 66,
       "inspection": "read and syntax-parsed; security/runtime review scoped in AUDIT.md",
       "syntaxErrors": 0
+    },
+    {
+      "path": "src/interactive/guide-v1.json",
+      "bytes": 1172,
+      "sha256": "dafa437f2f10602989a3e8a0ae5e7e7affbfd51a8ef76188236119851bd3943d",
+      "lines": 66,
+      "inspection": "read; manifests/locks additionally consumed by build and dependency audit"
     },
     {
       "path": "src/interactive/model.test.ts",

@@ -1,5 +1,7 @@
 # Marketing Academy — technical and educational audit
 
+Current delivery:2.1.1 Preview from28d6622, published and verified by run43857954333 plus anonymous local asset readback.50 tests/22 browser paths and actual Windows/Docker checks passed. All60 lessons have agent editorial/source remediation; independent instructional approval remains open. Historical findings below retain their original baseline scope. See EDITORIAL_VERIFICATION.json.
+
 Audit baseline: `1eecadbf3e1811e31dc2eafe274487ecb8a15e57` / published `v2.0.0`. Audit started 2026-11-15. Branch: `audit/sqlite-architecture`. This record supersedes assumptions in earlier completion summaries; every conclusion is scoped to inspected evidence.
 
 ## Preservation boundary
