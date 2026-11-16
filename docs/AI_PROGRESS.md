@@ -1,5 +1,12 @@
 # AI progress and resume record
 
+## Current final-publication checkpoint — blocked on privacy
+
+Latest user explicitly requires a PRIVATE repository, superseding earlier permission to keep it public. Rechecked existing repository/release via authorized GitHub connection; entire remote Git tree matches local077001b,166 files/19 required paths verified. Re-downloaded all5 v2.2.2 assets with gh release download through the authorized connection; sizes/GitHub digests/all4 checksum entries/MZ-PE/source ZIP comment matched. All3 exact-source80b8af4 CI jobs remain success. FINAL_PUBLICATION_ACCEPTANCE.md/json record PASS/FAIL/NOT RUN acceptance.
+
+GitHub PATCH private=true rejected403 Resource not accessible by integration, despite user metadata reporting admin. User must change this same repository's Settings → General → Danger Zone → Visibility to Private. Do not claim privacy or completion. Do not upload further source/evidence to the public repository under the current instruction. New acceptance evidence is committed locally, pending private visibility and a fresh authenticated access/download check. Source/application/release already existed remotely; no application/data changes were made in this turn. Independent educational review/learner validation and109 assessment moderation candidates remain open; privacy alone will not close those gates.
+
+
 
 ## Verified portable delivery2.2.2
 
