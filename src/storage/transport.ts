@@ -1,7 +1,7 @@
 import {commands,TransportError,type Command,type Transport} from './protocol'
 import {sessionInvalid} from './events'
 interface Reply {ok:boolean;value?:unknown;error?:{code:string;message:string}}
-declare global{interface Window{academy?:{kind:'desktop-sqlite';request(command:Command,payload:unknown):Promise<Reply>}}}
+declare global{interface Window{academy?:{kind:'desktop-sqlite';profileInfo?:()=>Promise<{channel:'production'|'qa'}>;request(command:Command,payload:unknown):Promise<Reply>}}}
 let transport:Transport|undefined
 export const activeTransport=()=>transport
 function unwrap(reply:Reply,ownerId?:string){

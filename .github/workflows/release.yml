@@ -3,9 +3,9 @@ on:
   workflow_dispatch:
     inputs:
       version:
-        description: Version matching package.json, for example 2.2.2
+        description: Version matching package.json, for example 2.3.0
         required: true
-        default: 2.2.2
+        default: 2.3.0
       channel:
         description: Preview discloses open educational approval; stable requires G12 evidence
         type: choice

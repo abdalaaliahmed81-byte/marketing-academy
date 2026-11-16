@@ -1,5 +1,14 @@
 # AI progress and resume record
 
+## Active dual Windows phase2.3.0
+
+Latest user explicitly says continue the existing repository, create NO new repository, and commit/push when accessible. This supersedes the earlier new-private-backup prerequisite for this task. Existing repository is accessible and remains public (do not call it private). Continue its history/data; previous privacy attempts were403, not successful.
+
+Implemented separate immutable packaged QA channel, identity/userData/Chromium/cache/lock and visible QA marker without changing Production paths/schema/IDs or weakening security. Added read-only trusted-frame channel IPC alongside nine storage commands. Dual Windows packaging preserves the production source marker and stages QA under ignored work/. Local60 tests/build/lint and full Electron lifecycle passed for BOTH channels (3 synthetic accounts/14 encrypted rows each). The concurrent same-fixture/same-username test passed independent notes/restarts and unchanged Production DB SHA256 after QA writes.
+
+DUAL_WINDOWS.md describes architecture/threat boundaries; START_AR.md covers both EXEs. Windows build/normal startup/full lifecycle/concurrent isolation and publication must still pass exact-source CI before either new EXE is called verified. Keep2.2.2 previous evidence separate; no new repository, no user data reset, no claim of pristine Windows/manual double-click or independent educational approval.
+
+
 ## Current final-publication checkpoint — blocked on privacy
 
 Latest user explicitly requires a PRIVATE repository, superseding earlier permission to keep it public. Rechecked existing repository/release via authorized GitHub connection; entire remote Git tree matches local077001b,166 files/19 required paths verified. Re-downloaded all5 v2.2.2 assets with gh release download through the authorized connection; sizes/GitHub digests/all4 checksum entries/MZ-PE/source ZIP comment matched. All3 exact-source80b8af4 CI jobs remain success. FINAL_PUBLICATION_ACCEPTANCE.md/json record PASS/FAIL/NOT RUN acceptance.

@@ -30,3 +30,6 @@ This is actual Windows execution, not just source compilation. The Actions runne
 
 
 Latest publication instruction: repository MUST now be PRIVATE; this supersedes earlier authorized public visibility. Current settings API attempt rejected403. FINAL_PUBLICATION_ACCEPTANCE.md/json records verified delivery and failed/open acceptance gates. Keep new evidence local until the user changes the existing repository visibility; then verify account-only access/download and push the pending documentation. Do not claim final project completion while privacy and mandatory professional educational readiness remain open.
+
+
+Latest task amendment: use the existing accessible repository and create no repository. Build two verified EXEs: preserved Production and isolated QA. This replaces the previous new-private-backup prerequisite for this task; current public visibility must be disclosed. Verify both real Windows executables and concurrent database isolation, retain existing data/history, update AI_PROGRESS and commit/push after verified stages. See DUAL_WINDOWS.md. Educational/physical-machine limits remain open.

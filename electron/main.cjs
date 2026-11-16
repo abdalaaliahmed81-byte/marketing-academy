@@ -13,12 +13,17 @@ const commands=new Set(['register','login','logout','changePassword','read','com
 const externalHosts=new Set(['grow.google','academy.hubspot.com','www.facebookblueprint.com','skillshop.withgoogle.com','developers.google.com','www.semrush.com','allandib.com','www.penguinrandomhouse.com','seths.blog','support.google.com','www.google.com','www.ftc.gov','www.w3.org'])
 function safeExternal(url){try{const u=new URL(url);return u.protocol==='https:'&&!u.username&&!u.password&&externalHosts.has(u.hostname)}catch{return false}}
 function appUrl(url){try{const u=new URL(url);return u.protocol==='academy:'&&u.host==='app'}catch{return false}}
-if(process.env.ACADEMY_TEST_DATA_DIR)app.setPath('userData',path.resolve(process.env.ACADEMY_TEST_DATA_DIR))
+const channel=require('./flavor.json').channel
+const profile=require('./profile.cjs').resolveProfile(channel,app.getPath('appData'),app.getPath('userData'),process.env.ACADEMY_TEST_DATA_DIR)
+if(channel==='qa')app.setName('Marketing Academy QA')
+app.setPath('userData',profile.userData)
+if(profile.sessionData)app.setPath('sessionData',profile.sessionData)
 if(!app.requestSingleInstanceLock())app.quit()
 else {
  app.on('second-instance',()=>{const w=BrowserWindow.getAllWindows()[0];if(w){if(w.isMinimized())w.restore();w.focus()}})
  app.whenReady().then(()=>{
   try{engine=new AcademyEngine(path.join(app.getPath('userData'),'academy.sqlite'))}catch{dialog.showErrorBox('تعذّر فتح البيانات','لم نغيّر تقدمك أو نحذف بياناتك. تعذّر فتح التخزين بأمان.');app.quit();return}
+  ipcMain.handle('academy:profile-info',event=>{const frame=event.senderFrame;if(!frame||frame!==event.sender.mainFrame||!appUrl(frame.url))throw new Error('Forbidden profile source');return {channel}})
   ipcMain.handle('academy:request',async(event,request)=>{
    try{
     const frame=event.senderFrame
@@ -53,6 +58,7 @@ else {
    'X-Content-Type-Options':['nosniff']
   }}))
   const window=new BrowserWindow({width:1320,height:900,minWidth:360,minHeight:600,show:false,title:'أكاديمية التسويق ٢.٠',backgroundColor:'#211a49',autoHideMenuBar:true,webPreferences:{preload:path.join(__dirname,'preload.cjs'),nodeIntegration:false,contextIsolation:true,sandbox:true,webSecurity:true,allowRunningInsecureContent:false,devTools:!app.isPackaged}})
+  if(channel==='qa'){window.setTitle('أكاديمية التسويق · QA معزولة');window.webContents.on('page-title-updated',event=>{event.preventDefault();window.setTitle('أكاديمية التسويق · QA معزولة')})}
   window.webContents.setWindowOpenHandler(({url})=>{if(safeExternal(url))shell.openExternal(url);return {action:'deny'}})
   window.webContents.on('will-navigate',(event,url)=>{if(!appUrl(url))event.preventDefault()})
   window.webContents.on('will-attach-webview',event=>event.preventDefault())

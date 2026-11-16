@@ -10,7 +10,9 @@ import {setTimeout as delay} from 'node:timers/promises'
 import fs from 'node:fs/promises'
 const dataDir=path.join(path.resolve(process.env.ACADEMY_TEST_DATA_DIR??os.tmpdir()),'academy-smoke-'+crypto.randomUUID())
 const executablePath=process.env.DESKTOP_EXE
-const args=executablePath?[]:['.']
+const channel=process.env.EXPECTED_CHANNEL??'production'
+const profileDir=channel==='qa'?path.join(dataDir,'marketing-academy-qa'):dataDir
+const args=executablePath?[]:[process.env.DESKTOP_APP_PATH??'.']
 if(process.platform==='linux')args.push('--no-sandbox','--ozone-platform=headless')
 await fs.mkdir('artifacts',{recursive:true})
 await fs.rm(dataDir,{recursive:true,force:true})
@@ -18,7 +20,7 @@ await build({entryPoints:['tests/fixtures/legacy-seed.ts'],outfile:path.join(dat
 await build({stdin:{contents:"export {lessons} from './src/lessons'",resolveDir:process.cwd()},outfile:path.join(dataDir,'curriculum.mjs'),bundle:true,platform:'node',format:'esm'})
 const {lessons}=await import(pathToFileURL(path.join(dataDir,'curriculum.mjs')).href)
 const firstLesson=lessons[0]
-const evidence={platform:process.platform,architecture:process.arch,executable:executablePath??'development electron',checks:[],networkRequests:[]}
+const evidence={platform:process.platform,architecture:process.arch,channel,executable:executablePath??'development electron',checks:[],networkRequests:[]}
 let running
 async function launch(){
  running=executablePath?await launchPortable():await electron.launch({args,env:{...process.env,ACADEMY_TEST_DATA_DIR:dataDir},timeout:90000})
@@ -68,6 +70,8 @@ try{
  expect(await page.evaluate(()=>typeof window.require)).toBe('undefined')
  expect(await page.evaluate(()=>typeof window.process)).toBe('undefined')
  expect(await page.evaluate(()=>window.academy?.kind)).toBe('desktop-sqlite')
+ expect(await page.evaluate(()=>window.academy.profileInfo())).toEqual({channel})
+ if(channel==='qa')await expect(page.getByRole('complementary',{name:'بيئة الاختبار المعزولة'})).toBeVisible()
  evidence.checks.push('renderer has no Node require or process; SQLite transport exposed only through the narrow preload')
  await page.getByRole('button',{name:'إنشاء حساب',exact:true}).click()
  await page.getByLabel('اسم المستخدم',{exact:true}).fill('اختبار سطح المكتب')
@@ -151,7 +155,7 @@ try{
  const outside=await page.evaluate(async()=>{try{await fetch('https://example.com');return 'allowed'}catch{return 'blocked'}})
  expect(outside).toBe('blocked')
  evidence.checks.push('external network fetch blocked; curriculum and notes work without external server')
- await page.screenshot({path:'artifacts/desktop.png'})
+ await page.screenshot({path:process.env.DESKTOP_SCREENSHOT??'artifacts/desktop.png'})
  // A newly registered local account must not receive the first account's saved data.
  await page.getByRole('button',{name:'خروج',exact:true}).click()
  await page.getByRole('button',{name:'إنشاء حساب',exact:true}).click()
@@ -195,7 +199,7 @@ try{
  expect(migrated.value.snapshot.state.moduleProjects[0].completed).toBe(true)
  evidence.checks.push('migrated an authenticated legacy IndexedDB account; completed lesson, note, quiz and project survived; original ciphertext unchanged')
  await running.close();running=undefined
- const sql=new DatabaseSync(path.join(dataDir,'academy.sqlite'))
+ const sql=new DatabaseSync(path.join(profileDir,'academy.sqlite'))
  const accounts=Number(sql.prepare('SELECT count(*) AS count FROM accounts').get().count)
  const records=Number(sql.prepare('SELECT count(*) AS count FROM learner_records').get().count)
  const legacy=Number(sql.prepare('SELECT count(*) AS count FROM accounts WHERE legacy_source=?').get(fixture.legacyId).count)
@@ -205,4 +209,4 @@ try{
  sql.close()
  evidence.status='passed'
 } catch(error){evidence.status='failed';evidence.error=String(error);throw error}
-finally{if(running)await running.close().catch(()=>{});await fs.writeFile('artifacts/desktop-smoke.json',JSON.stringify(evidence,null,2));await fs.rm(dataDir,{recursive:true,force:true})}
+finally{if(running)await running.close().catch(()=>{});await fs.writeFile(process.env.DESKTOP_EVIDENCE??'artifacts/desktop-smoke.json',JSON.stringify(evidence,null,2));await fs.rm(dataDir,{recursive:true,force:true})}

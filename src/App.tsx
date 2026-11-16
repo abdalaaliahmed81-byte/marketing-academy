@@ -14,7 +14,7 @@ import {LessonRoute,ReviewRoute} from './Learn'
 import {MissionPage,ProjectPage,SettingsPage} from './Work'
 import {Heading,Icon,SettingsForm,Shell} from './ui'
 
-export function App(){return <AuthGate><AcademyApp/></AuthGate>}
+export function App(){const [qa,setQa]=useState(false);useEffect(()=>{let active=true;window.academy?.profileInfo?.().then(info=>{if(active)setQa(info.channel==='qa')}).catch(()=>{});return()=>{active=false}},[]);return <>{qa&&<aside className="qa-banner" aria-label="بيئة الاختبار المعزولة">QA · نسخة اختبار معزولة — استخدم بيانات تجريبية فقط؛ بيانات Production منفصلة.</aside>}<AuthGate><AcademyApp/></AuthGate></>}
 export function AcademyApp(){
   const [boot,setBoot]=useState<'loading'|'ready'|'error'>('loading')
   useEffect(()=>{seed().then(()=>setBoot('ready'),()=>setBoot('error'))},[])

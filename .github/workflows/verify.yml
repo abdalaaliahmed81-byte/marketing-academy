@@ -55,7 +55,7 @@ jobs:
       - run: npm ci
       - run: npm run typecheck
       - run: npm test
-      - run: npm run package:win
+      - run: npm run package:windows:dual
       - name: Test normal Windows startup without application arguments
         shell: pwsh
         run: ./scripts/windows-normal-start.ps1
@@ -66,6 +66,20 @@ jobs:
           $env:DESKTOP_EXE = "release/Marketing-Academy-Portable-Windows-x64.exe"
           node scripts/desktop-smoke.mjs
           if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+      - name: Test QA normal startup with its own identity
+        shell: pwsh
+        run: ./scripts/windows-normal-start.ps1 -Executable release/Marketing-Academy-QA-Windows-x64.exe -ProcessName "Marketing Academy QA" -Evidence artifacts/windows-normal-start-qa.json
+      - name: Test actual QA executable lifecycle
+        shell: pwsh
+        run: |
+          $env:DESKTOP_EXE = "release/Marketing-Academy-QA-Windows-x64.exe"
+          $env:EXPECTED_CHANNEL = "qa"
+          $env:DESKTOP_EVIDENCE = "artifacts/desktop-smoke-qa.json"
+          $env:DESKTOP_SCREENSHOT = "artifacts/desktop-qa.png"
+          node scripts/desktop-smoke.mjs
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+      - name: Prove simultaneous Production and QA account and storage isolation
+        run: node scripts/dual-isolation-smoke.mjs
       - name: SHA256, architecture verification and source archive
         run: node scripts/release-files.mjs
       - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
@@ -114,7 +128,7 @@ jobs:
           GH_TOKEN: ${{ github.token }}
         run: |
           VERSION=$(node -p "require('./package.json').version")
-          gh release create "v${VERSION}" verified/release/Marketing-Academy-Portable-Windows-x64.exe verified/release/Marketing-Academy-${VERSION}-source.zip verified/release/SHA256SUMS.txt verified/release/verification.json verified/release/START_AR.md --target "$GITHUB_SHA" --title "Marketing Academy ${VERSION} — Preview" --notes-file docs/RELEASE-NOTES.md --prerelease --latest=false
+          gh release create "v${VERSION}" verified/release/Marketing-Academy-Portable-Windows-x64.exe verified/release/Marketing-Academy-QA-Windows-x64.exe verified/release/Marketing-Academy-${VERSION}-source.zip verified/release/SHA256SUMS.txt verified/release/verification.json verified/release/START_AR.md --target "$GITHUB_SHA" --title "Marketing Academy ${VERSION} — Preview" --notes-file docs/RELEASE-NOTES.md --prerelease --latest=false
       - name: Download published assets and verify readback
         env:
           GH_TOKEN: ${{ github.token }}
@@ -130,7 +144,7 @@ jobs:
           import fs from 'node:fs';import assert from 'node:assert/strict'
           const release=JSON.parse(fs.readFileSync('artifacts/published-preview.json','utf8'))
           assert.equal(release.isDraft,false);assert.equal(release.isPrerelease,true);assert.equal(release.targetCommitish,process.env.GITHUB_SHA)
-          assert.equal(release.assets.length,5)
+          assert.equal(release.assets.length,6)
           const proof=JSON.parse(fs.readFileSync('public-readback/verification.json','utf8'))
           assert.equal(proof.commit,process.env.GITHUB_SHA);assert.equal(proof.releaseChannel,'preview')
           JS
