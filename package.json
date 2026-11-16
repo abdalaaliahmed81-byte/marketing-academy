@@ -18,7 +18,8 @@
     "package:linux": "npm run build && electron-builder --linux dir --publish never",
     "check": "npm run typecheck && npm test && npm run build",
     "api": "node build/server.mjs",
-    "audit:project": "node scripts/audit-project.mjs"
+    "audit:project": "node scripts/audit-project.mjs",
+    "lint": "node scripts/lint.mjs"
   },
   "dependencies": {
     "@noble/ciphers": "2.4.0",

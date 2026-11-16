@@ -192,3 +192,7 @@ Old2.1.0 preview notes now link2.1.1 and describe its compatibility correction; 
 ## Security phase implementation history2.2.1
 
 Continue SECURITY_HARDENING.md. Canonical static path/symlink boundary, JSON response headers, Retry-After and backup password bounds implemented; full60-lesson browser path expanded to offline. New exact-source Windows/web/Docker CI required;2.2.0 remains previous verified published checkpoint until that passes. No user data/schema or dependency changes. Local production audit0 vulnerabilities; tooling2 low/9 moderate/0 high/critical.
+
+## Active final QA pass
+
+See FINAL_QA.md. Fresh59 tests/typecheck/build and narrow safety lint passed; added npm lint/CI enforcement without dependencies or application/data changes. Browser/Electron and exact-source Windows/Docker reruns pending. Keep all professional review flags open and report PASS/FAIL/NOT RUN per check.109 question length cues are moderation candidates, not automatically rewritten or falsely declared calibrated.
