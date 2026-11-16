@@ -4,7 +4,7 @@
 
 > هذا الفرع يحتوي المعاينة المنشورة٢.٣.١، مع SQLite ومراجعة المحتوى وحفظ تاريخ التقييم. الإصدار المستقر٢.٠.٠ يستخدم IndexedDB؛ راجع [التدقيق](docs/AUDIT.md) و[بوابات الإصدار](docs/RELEASE_GATES.md). وجود٦٠ درسًا لا يعني اعتمادًا مهنيًا: اكتمل التعميق التحريري الآلي للدروس الستين، وتبقى المراجعة العربية البشرية المستقلة ومعايرة التعلم مفتوحتين. سجل المصادر يميز الإحالات المحددة والحقوق عن بوابات التعلم الاختيارية.
 
-[تنزيل EXE٢.٦.٠ للمعاينة](https://github.com/abdalaaliahmed81-byte/marketing-academy/releases/download/v2.6.0/Marketing-Academy-Portable-Windows-x64.exe) · [الإصدار والبصمات والمصدر](https://github.com/abdalaaliahmed81-byte/marketing-academy/releases/tag/v2.6.0) · [دليل التحقق](docs/CONTENT_AUDIT_VERIFICATION.json). الحزمة غير موقّعة، والمراجعة البشرية المستقلة غير منفذة؛٢.٠.٠ يبقى أحدث إصدار مستقر.
+[تنزيل EXE٢.٧.٠ للمعاينة](https://github.com/abdalaaliahmed81-byte/marketing-academy/releases/download/v2.7.0/Marketing-Academy-Portable-Windows-x64.exe) · [الإصدار والبصمات والمصدر](https://github.com/abdalaaliahmed81-byte/marketing-academy/releases/tag/v2.7.0) · [دليل التحقق](docs/INTERACTIVE_UPGRADE_VERIFICATION.json). الحزمة غير موقّعة، والمراجعة البشرية المستقلة غير منفذة؛٢.٠.٠ يبقى أحدث إصدار مستقر.
 
 ## استخدام Windows
 
@@ -70,7 +70,7 @@ npm run package:win
 
 ## Production وQA المعزولة
 
-[نزّل Production](https://github.com/abdalaaliahmed81-byte/marketing-academy/releases/download/v2.6.0/Marketing-Academy-Portable-Windows-x64.exe) للاستخدام الأساسي وبياناتك المعتادة. [نزّل QA](https://github.com/abdalaaliahmed81-byte/marketing-academy/releases/download/v2.6.0/Marketing-Academy-QA-Windows-x64.exe) للاختبار ببيانات تجريبية؛ لها قاعدة وذاكرة متصفح وقفل تشغيل منفصل، وعلامة QA واضحة. يمكن فتحهما معًا؛ الاسم نفسه لا يربط الحسابين. تغيير اسم الملف لا يغيّر نوعه. لا تستورد بيانات شخصية إلى QA إلا بقرار صريح.
+[نزّل Production](https://github.com/abdalaaliahmed81-byte/marketing-academy/releases/download/v2.7.0/Marketing-Academy-Portable-Windows-x64.exe) للاستخدام الأساسي وبياناتك المعتادة. [نزّل QA](https://github.com/abdalaaliahmed81-byte/marketing-academy/releases/download/v2.7.0/Marketing-Academy-QA-Windows-x64.exe) للاختبار ببيانات تجريبية؛ لها قاعدة وذاكرة متصفح وقفل تشغيل منفصل، وعلامة QA واضحة. يمكن فتحهما معًا؛ الاسم نفسه لا يربط الحسابين. تغيير اسم الملف لا يغيّر نوعه. لا تستورد بيانات شخصية إلى QA إلا بقرار صريح.
 
 اختُبر ملفا Windows الفعليان والتسجيل والملاحظات والاختبار والدرس دون شبكة والحفظ بعد إعادة الفتح، ثم ثبت أن تعديلات QA لا تغيّر قاعدة Production. نجح60 اختبارًا لكل نظام و25 مسار واجهة؛ [الأدلة والبصمات](docs/DUAL_WINDOWS_VERIFICATION.json) و[الدليل العربي](docs/START_AR.md). لا يحتاج أي منهما Node.js أو Python أو Docker. كلاهما غير موقع وقد يظهر SmartScreen؛ لا يُدّعى اختبار جهاز مستخدم نظيف أو اعتماد تعليمي بشري.
 
@@ -82,3 +82,5 @@ npm run package:win
 QA Studio٢.٥.٠: افتح QA المستقلة، وسجّل/أنشئ حسابًا وأكمل الإعداد الأول، ثم اختر رابط الاستوديو من الشريط. كل المحتوى مفتوح للاختبار، مع حسابات مصطنعة وقوالب تقدم وإعادة ضبط مؤكدة وتشخيصات وتقارير أخطاء محلية. [الدليل](docs/QA_STUDIO.md) · [أدلة التنفيذ](docs/QA_STUDIO_VERIFICATION.json). أدوات QA مستبعدة من Production؛ لم تتغير ملفات المصادقة أو مسارات البيانات.
 
 تدقيق المحتوى٢.٦.٠: [التقرير العربي والمصفوفة والحدود](docs/CONTENT_AUDIT.md) · [الأدلة](docs/CONTENT_AUDIT_VERIFICATION.json). أُجريت26 مراجعة سؤال مع حفظ نسختي التقييم السابقتين، وتصحيح أبعاد المثال وعدد حقول المشروع وإتاحة روابط المراجع داخل EXE. نجح78 اختبارًا على كل نظام و28 مسار متصفح و43,740 تركيب إجابات، وكلا الملفين الفعليين وDocker وإعادة تنزيل الأصول. لا اعتماد تعليمي بشري مستقل ولا إحصاءات سوق مختلقة؛ الكتب خارج Git.
+
+الترقية التفاعلية٢.٧.٠: افتح «شجرة إتقان المهارات» من الرئيسية أو الإحصاءات.60 عقدة بمؤشرات تدريب فعلية ودائرة ملاحظات لكل درس، مع حفظ الإنجاز القديم وإتاحة تقليل الحركة. البحث العام يشمل ملاحظات حسابك؛ المراجعة تتجاهل الأحداث المستقبلية حتى يحين وقتها دون حذفها. نجح80 اختبارًا لكل نظام و30 مسار متصفح وWindows/Docker/offline/isolation. [الدليل والحدود](docs/INTERACTIVE_UPGRADE.md) · [الأدلة](docs/INTERACTIVE_UPGRADE_VERIFICATION.json).
