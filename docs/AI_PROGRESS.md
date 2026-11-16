@@ -1,5 +1,14 @@
 # AI progress and resume record
 
+## Verified authentication incident checkpoint2.3.1
+
+AUTH_INCIDENT_REPORT.md/AUTH_AUDIT_VERIFICATION.json are the current audit entry points. Three confirmed shared-engine defects were reproduced against exact released7c8ed9d source (11 old engine tests PASS/3 new FAIL), corrected and regressed (14 engine/63 total tests PASS). AUTH-01 registration committed before session-cap rejection; AUTH-02 concurrent KDF failure completions used a stale failure counter for retry delay; AUTH-03 absolute-expired sessions remained counted at capacity, rejecting even correct-password login. Fixed only proven ordering/current-counter/expiry cleanup; no hashing, schema, identity, data-path or stored-credential rewrite.
+
+Published [v2.3.1](https://github.com/abdalaaliahmed81-byte/marketing-academy/releases/tag/v2.3.1) from00e1dca9b67c7607f5b49ee2196d07d90847e81f/[run43938048471](https://github.com/abdalaaliahmed81-byte/marketing-academy/actions/runs/43938048471). All3 jobs PASS:63 tests per OS/25 browser paths, Docker and BOTH corrected real Windows EXEs. Additionally downloaded/SHA-verified/tested BOTH original2.3.0 EXEs on Windows using confirmation/invalid-name/unknown/wrong-password/duplicate probes plus successful auth and full lifecycle/migration. Both original/fixed fresh profiles authenticated correctly; no general correct-login failure was reproduced. Boundary fixtures are not1000 live UI users. Concurrent Production/QA isolation remains PASS.
+
+Re-downloaded all6 corrective release assets through authorized GitHub connection, matched all GitHub digests/5 checksum entries/PE/x64/source comment. Runtime source00e1dca; later documentation commits only record evidence. Existing repository/public visibility/history/profiles/data preserved; no new repository. Pristine/device-specific failures, real user DB/ACL/antivirus and independent human educational/learner review remain open. Do not claim an unspecified user's cause known without nonsecret error/version/channel/steps; do not reset DBs or bypass legacy checks speculatively.
+
+
 ## Verified dual Windows checkpoint2.3.0
 
 Published [v2.3.0 Production + QA](https://github.com/abdalaaliahmed81-byte/marketing-academy/releases/tag/v2.3.0), exact source7c8ed9df44e4090f57434dac2c863019452e9fb1/[run43930298980](https://github.com/abdalaaliahmed81-byte/marketing-academy/actions/runs/43930298980). All3 jobs passed:60 unit/integration tests per OS,25 browser paths, optional Docker and BOTH actual Windows EXEs. Normal no-argument ShellExecute under system-only child PATH and full registration/note/offline lesson+quiz/restart/account-isolation/legacy-migration smoke passed on each. Each lifecycle fixture retained schema1/three synthetic accounts/14 encrypted records. The separate concurrent same-root/same-username test passed independent notes/restarts and unchanged closed Production database SHA256 after QA writes.
@@ -250,7 +259,7 @@ See FINAL_QA.md. Fresh59 tests/typecheck/build and narrow safety lint passed; ad
 
 User requires literal Marketing-Academy-Portable-Windows-x64.exe. Updated Electron portable artifact name and release/checksum pipelines, retaining app ID/origin/userData/schema/IDs. START_AR.md is both bundled public content and a separate checksummed asset. Added normal Windows ShellExecute startup without arguments and restricted child PATH; expanded actual EXE smoke to offline quiz+lesson completion, restart persistence and a newly registered isolated account. Local59 tests/build/lint and expanded Linux Electron smoke passed (three synthetic accounts/14 encrypted records). Two initial smoke assertions used incorrect UI selectors and were corrected; no application runtime change was needed. Windows startup/portable execution and final release verification still pending on exact-source CI; never substitute the local Linux result for Windows or claim a pristine consumer PC was tested. Existing2.2.1 release remains untouched.
 
-## Active authentication incident audit2.3.1
+## Authentication incident implementation history2.3.1
 
 Reviewed2.3.0 released source and actual auth/IPC/profile/migration paths. Two confirmed engine defects reproduced before fixing (11 engine tests PASS/2 new regressions FAIL): account durable creation before session-cap rejection; stale failed counter during overlapping wrong-password KDFs loses future backoff. Corrected only proven ordering/current-counter issues;13 focused/62 full tests then passed. AUTH_INCIDENT_REPORT.md gives root functions, exact synthetic fixture steps and expected-vs-error classifications. No real user device failure/DB was supplied; do not diagnose unspecified symptoms.
 

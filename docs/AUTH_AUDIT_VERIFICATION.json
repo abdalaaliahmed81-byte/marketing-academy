@@ -1,0 +1,458 @@
+{
+  "status": "PASS",
+  "version": "2.3.1",
+  "testedCommit": "00e1dca9b67c7607f5b49ee2196d07d90847e81f",
+  "release": "https://github.com/abdalaaliahmed81-byte/marketing-academy/releases/tag/v2.3.1",
+  "releaseId": 447497434,
+  "publishedAt": "2026-11-16T19:28:59Z",
+  "assets": [
+    {
+      "name": "Marketing-Academy-2.3.1-source.zip",
+      "bytes": 691565,
+      "sha256": "93fc46b3b9677a0347e0dfb249be3b3c669c7d4b28a21b794c8ff81aaba9d5e5",
+      "url": "https://github.com/abdalaaliahmed81-byte/marketing-academy/releases/download/v2.3.1/Marketing-Academy-2.3.1-source.zip"
+    },
+    {
+      "name": "Marketing-Academy-Portable-Windows-x64.exe",
+      "bytes": 112414531,
+      "sha256": "59458acccd4a11f64b7d7ee98642100c0878f4215a08f52f092dfbfbb7dd562f",
+      "url": "https://github.com/abdalaaliahmed81-byte/marketing-academy/releases/download/v2.3.1/Marketing-Academy-Portable-Windows-x64.exe"
+    },
+    {
+      "name": "Marketing-Academy-QA-Windows-x64.exe",
+      "bytes": 110901853,
+      "sha256": "606434bab8170085c7cfaa76ce05fd38db44a74e8917fc33abae06bfea2c5bb2",
+      "url": "https://github.com/abdalaaliahmed81-byte/marketing-academy/releases/download/v2.3.1/Marketing-Academy-QA-Windows-x64.exe"
+    },
+    {
+      "name": "SHA256SUMS.txt",
+      "bytes": 475,
+      "sha256": "7359fd53eb1980f69d63f53ee3f386720361ebdb5ebe785ed5eeef3413d2f1a9",
+      "url": "https://github.com/abdalaaliahmed81-byte/marketing-academy/releases/download/v2.3.1/SHA256SUMS.txt"
+    },
+    {
+      "name": "START_AR.md",
+      "bytes": 7090,
+      "sha256": "604d3cc729f59bfd858f7e1e2b9143e8301dc788393e1bf312ab8874521ded8a",
+      "url": "https://github.com/abdalaaliahmed81-byte/marketing-academy/releases/download/v2.3.1/START_AR.md"
+    },
+    {
+      "name": "verification.json",
+      "bytes": 16457,
+      "sha256": "e3c85a710398fed40da84dfd0d1f5474ff900b63a6f2f13c62b17d8aa3ab077e",
+      "url": "https://github.com/abdalaaliahmed81-byte/marketing-academy/releases/download/v2.3.1/verification.json"
+    }
+  ],
+  "authorizedDownloadChecksumAndPeReadback": "PASS",
+  "sourceCommitAndBoundedForbiddenFileScan": "PASS",
+  "windows": {
+    "status": "passed",
+    "commit": "00e1dca9b67c7607f5b49ee2196d07d90847e81f",
+    "version": "2.3.1",
+    "platform": "windows",
+    "channel": "production",
+    "normalStart": {
+      "status": "passed",
+      "visibleWindow": true,
+      "pristineConsumerWindows": false,
+      "launch": "normal ShellExecute, no arguments",
+      "platform": "win32",
+      "executable": "Marketing-Academy-Portable-Windows-x64.exe",
+      "responding": true,
+      "restrictedPath": true
+    },
+    "portableBytes": 112414531,
+    "wrapperMachine": 332,
+    "payloadArchitecture": "x64",
+    "portableExecutableSmoke": {
+      "platform": "win32",
+      "architecture": "x64",
+      "channel": "production",
+      "executable": "release/Marketing-Academy-Portable-Windows-x64.exe",
+      "checks": [
+        "application rendered Arabic registration using local academy protocol",
+        "renderer has no Node require or process; SQLite transport exposed only through the narrow preload",
+        "native profile edit acknowledged through preload without changing login username",
+        "native module and27-field capstone autosave acknowledged without an external backend",
+        "registered account, onboarded, showed 60 lessons and saved a lesson note",
+        "required login after process restart and recovered persistent note",
+        "external network fetch blocked; curriculum and notes work without external server",
+        "migrated an authenticated legacy IndexedDB account; completed lesson, note, quiz and project survived; original ciphertext unchanged"
+      ],
+      "networkRequests": [],
+      "expectedAuthRejections": {
+        "confirmation": true,
+        "invalidName": true,
+        "unknownAccount": true,
+        "wrongPassword": true,
+        "duplicate": true
+      },
+      "restrictedChildPath": true,
+      "offlineLessonCompletion": true,
+      "profilePersistence": true,
+      "quizAndCompletionSurviveRestart": true,
+      "projectAutosavePersistence": true,
+      "interactiveActivityPersistence": true,
+      "noteTimestampPersistence": true,
+      "actualNewAccountIsolation": true,
+      "sqlite": {
+        "schemaVersion": 1,
+        "accounts": 3,
+        "records": 14,
+        "legacySourcesPreserved": true,
+        "encryptedRecords": true
+      },
+      "status": "passed"
+    },
+    "qa": {
+      "channel": "qa",
+      "normalStart": {
+        "restrictedPath": true,
+        "executable": "Marketing-Academy-QA-Windows-x64.exe",
+        "launch": "normal ShellExecute, no arguments",
+        "responding": true,
+        "pristineConsumerWindows": false,
+        "visibleWindow": true,
+        "platform": "win32",
+        "status": "passed"
+      },
+      "portableBytes": 110901853,
+      "wrapperMachine": 332,
+      "payloadArchitecture": "x64",
+      "portableExecutableSmoke": {
+        "platform": "win32",
+        "architecture": "x64",
+        "channel": "qa",
+        "executable": "release/Marketing-Academy-QA-Windows-x64.exe",
+        "checks": [
+          "application rendered Arabic registration using local academy protocol",
+          "renderer has no Node require or process; SQLite transport exposed only through the narrow preload",
+          "native profile edit acknowledged through preload without changing login username",
+          "native module and27-field capstone autosave acknowledged without an external backend",
+          "registered account, onboarded, showed 60 lessons and saved a lesson note",
+          "required login after process restart and recovered persistent note",
+          "external network fetch blocked; curriculum and notes work without external server",
+          "migrated an authenticated legacy IndexedDB account; completed lesson, note, quiz and project survived; original ciphertext unchanged"
+        ],
+        "networkRequests": [],
+        "expectedAuthRejections": {
+          "confirmation": true,
+          "invalidName": true,
+          "unknownAccount": true,
+          "wrongPassword": true,
+          "duplicate": true
+        },
+        "restrictedChildPath": true,
+        "offlineLessonCompletion": true,
+        "profilePersistence": true,
+        "quizAndCompletionSurviveRestart": true,
+        "projectAutosavePersistence": true,
+        "interactiveActivityPersistence": true,
+        "noteTimestampPersistence": true,
+        "actualNewAccountIsolation": true,
+        "sqlite": {
+          "schemaVersion": 1,
+          "accounts": 3,
+          "records": 14,
+          "legacySourcesPreserved": true,
+          "encryptedRecords": true
+        },
+        "status": "passed"
+      }
+    },
+    "isolation": {
+      "status": "passed",
+      "productionAndQaConcurrent": true,
+      "identicalUsernamesIndependent": true,
+      "productionDatabaseUnchangedByQA": true,
+      "restartIsolation": true
+    },
+    "authAuditBaseline": {
+      "production": {
+        "platform": "win32",
+        "architecture": "x64",
+        "channel": "production",
+        "baselineVersion": "2.3.0",
+        "executable": "work/auth-baseline/Marketing-Academy-Portable-Windows-x64.exe",
+        "checks": [
+          "application rendered Arabic registration using local academy protocol",
+          "renderer has no Node require or process; SQLite transport exposed only through the narrow preload",
+          "native profile edit acknowledged through preload without changing login username",
+          "native module and27-field capstone autosave acknowledged without an external backend",
+          "registered account, onboarded, showed 60 lessons and saved a lesson note",
+          "required login after process restart and recovered persistent note",
+          "external network fetch blocked; curriculum and notes work without external server",
+          "migrated an authenticated legacy IndexedDB account; completed lesson, note, quiz and project survived; original ciphertext unchanged"
+        ],
+        "networkRequests": [],
+        "expectedAuthRejections": {
+          "confirmation": true,
+          "invalidName": true,
+          "unknownAccount": true,
+          "wrongPassword": true,
+          "duplicate": true
+        },
+        "restrictedChildPath": true,
+        "offlineLessonCompletion": true,
+        "profilePersistence": true,
+        "quizAndCompletionSurviveRestart": true,
+        "projectAutosavePersistence": true,
+        "interactiveActivityPersistence": true,
+        "noteTimestampPersistence": true,
+        "actualNewAccountIsolation": true,
+        "sqlite": {
+          "schemaVersion": 1,
+          "accounts": 3,
+          "records": 14,
+          "legacySourcesPreserved": true,
+          "encryptedRecords": true
+        },
+        "status": "passed"
+      },
+      "qa": {
+        "platform": "win32",
+        "architecture": "x64",
+        "channel": "qa",
+        "baselineVersion": "2.3.0",
+        "executable": "work/auth-baseline/Marketing-Academy-QA-Windows-x64.exe",
+        "checks": [
+          "application rendered Arabic registration using local academy protocol",
+          "renderer has no Node require or process; SQLite transport exposed only through the narrow preload",
+          "native profile edit acknowledged through preload without changing login username",
+          "native module and27-field capstone autosave acknowledged without an external backend",
+          "registered account, onboarded, showed 60 lessons and saved a lesson note",
+          "required login after process restart and recovered persistent note",
+          "external network fetch blocked; curriculum and notes work without external server",
+          "migrated an authenticated legacy IndexedDB account; completed lesson, note, quiz and project survived; original ciphertext unchanged"
+        ],
+        "networkRequests": [],
+        "expectedAuthRejections": {
+          "confirmation": true,
+          "invalidName": true,
+          "unknownAccount": true,
+          "wrongPassword": true,
+          "duplicate": true
+        },
+        "restrictedChildPath": true,
+        "offlineLessonCompletion": true,
+        "profilePersistence": true,
+        "quizAndCompletionSurviveRestart": true,
+        "projectAutosavePersistence": true,
+        "interactiveActivityPersistence": true,
+        "noteTimestampPersistence": true,
+        "actualNewAccountIsolation": true,
+        "sqlite": {
+          "schemaVersion": 1,
+          "accounts": 3,
+          "records": 14,
+          "legacySourcesPreserved": true,
+          "encryptedRecords": true
+        },
+        "status": "passed"
+      }
+    },
+    "assets": [
+      {
+        "name": "Marketing-Academy-Portable-Windows-x64.exe",
+        "sha256": "59458acccd4a11f64b7d7ee98642100c0878f4215a08f52f092dfbfbb7dd562f"
+      },
+      {
+        "name": "Marketing-Academy-QA-Windows-x64.exe",
+        "sha256": "606434bab8170085c7cfaa76ce05fd38db44a74e8917fc33abae06bfea2c5bb2"
+      },
+      {
+        "name": "Marketing-Academy-2.3.1-source.zip",
+        "sha256": "93fc46b3b9677a0347e0dfb249be3b3c669c7d4b28a21b794c8ff81aaba9d5e5"
+      },
+      {
+        "name": "START_AR.md",
+        "sha256": "604d3cc729f59bfd858f7e1e2b9143e8301dc788393e1bf312ab8874521ded8a"
+      }
+    ]
+  },
+  "web": {
+    "passed": 25,
+    "failed": 0,
+    "skipped": 0
+  },
+  "docker": {
+    "status": "passed",
+    "http": 200,
+    "healthy": true,
+    "user": "101:101",
+    "readOnlyRoot": true,
+    "capabilitiesDropped": [
+      "ALL"
+    ],
+    "securityHeaders": true,
+    "rtl": true,
+    "scriptAsset": true,
+    "sqliteApi": true,
+    "apiUser": "node",
+    "apiReadOnlyRoot": true,
+    "projectProgressSurvivesApiRestart": true,
+    "progressSurvivesApiRestart": true,
+    "profileSurvivesApiRestart": true
+  },
+  "productionDependencies": {
+    "info": 0,
+    "low": 0,
+    "moderate": 0,
+    "high": 0,
+    "critical": 0,
+    "total": 0
+  },
+  "buildToolDependencies": {
+    "counts": {
+      "info": 0,
+      "low": 2,
+      "moderate": 9,
+      "high": 0,
+      "critical": 0,
+      "total": 11
+    },
+    "affectedPackages": [
+      "@electron/universal",
+      "@rollup/plugin-node-resolve",
+      "app-builder-lib",
+      "deepmerge",
+      "dmg-builder",
+      "electron-builder",
+      "electron-builder-squirrel-windows",
+      "glob",
+      "minimatch",
+      "vite-plugin-pwa",
+      "workbox-build"
+    ]
+  },
+  "professionalApproval": false,
+  "notRun": [
+    "Pristine consumer Windows/manual Explorer double-click/every physical device",
+    "Every physical version-to-version upgrade/power-cut scenario",
+    "Independent human instructional/learner review",
+    "1000 live desktop/server sessions and live multi-client attack replay",
+    "Actual user DB/ACL/antivirus/device-specific symptom diagnosis"
+  ],
+  "ci": {
+    "jobs": [
+      {
+        "name": "web",
+        "id": 133547778870,
+        "conclusion": "success"
+      },
+      {
+        "name": "windows",
+        "id": 133547779474,
+        "conclusion": "success"
+      },
+      {
+        "name": "publish-preview",
+        "id": 133553415040,
+        "conclusion": "success"
+      }
+    ],
+    "unitTestsPerOS": {
+      "web": 63,
+      "windows": 63
+    }
+  },
+  "verificationRun": "https://github.com/abdalaaliahmed81-byte/marketing-academy/actions/runs/43938048471",
+  "findings": [
+    {
+      "id": "AUTH-01",
+      "status": "CONFIRMED/FIXED",
+      "severity": "moderate conditional availability/consistency",
+      "file": "backend/engine.ts",
+      "functions": [
+        "create",
+        "start",
+        "ensureSessionCapacity"
+      ],
+      "root": "Account transaction committed before session-cap rejection",
+      "before": "Rejected register left1 account",
+      "after": "Rejected register leaves0 accounts; retry succeeds after capacity freed",
+      "fixture": "1000 synthetic fresh session records; real SQLite/PBKDF2, not1000 live UI sessions"
+    },
+    {
+      "id": "AUTH-02",
+      "status": "CONFIRMED/FIXED",
+      "severity": "moderate throttle consistency",
+      "file": "backend/engine.ts",
+      "functions": [
+        "login"
+      ],
+      "root": "Failed counter captured before awaiting concurrent KDF",
+      "before": "Failed counter7 but retry_at not in future",
+      "after": "Current counter read post-KDF preserves future exponential backoff",
+      "fixture": "SQL counter seeded3; four real concurrent wrong-password derivations"
+    },
+    {
+      "id": "AUTH-03",
+      "status": "CONFIRMED/FIXED",
+      "severity": "conditional availability/key retention",
+      "file": "backend/engine.ts",
+      "functions": [
+        "start",
+        "ensureSessionCapacity"
+      ],
+      "root": "Capacity cleanup evicted idle but not absolute-expired sessions",
+      "before": "Correct-password login rejected at1000 absolute-expired sessions",
+      "after": "Correct-password login and new registration succeed; expired keys zeroed",
+      "fixture": "1000 synthetic13h-old/recently-active session records; real credentials/SQLite"
+    }
+  ],
+  "localBeforeAfter": {
+    "originalReleasedEngineSource": "7c8ed9df44e4090f57434dac2c863019452e9fb1:backend/engine.ts",
+    "originalEngine": "11 PASS/3 intentional FAIL with all new regressions",
+    "restoredFixedEngine": "14 PASS",
+    "fullSuite": 63,
+    "logDigests": [
+      {
+        "path": "/workspace/work/auth-repro-before.log",
+        "bytes": 2143,
+        "sha256": "ad639c7a92d92b2d30fce8b96ec1e7a8ae6130c83ce6d67c2f88a2118de73397"
+      },
+      {
+        "path": "/workspace/work/auth-expiry-before.log",
+        "bytes": 1389,
+        "sha256": "758a8a8684a03f73751310aed86da2acc7c5d001fe91a92a5a37af37db75e5a6"
+      },
+      {
+        "path": "/workspace/work/auth-expiry-login-before.log",
+        "bytes": 1422,
+        "sha256": "bb0568bb439ab5bee4aeac3476f8151666c66934119d9c9e479f1000e52df99f"
+      },
+      {
+        "path": "/workspace/work/auth-complete-baseline-before.log",
+        "bytes": 3040,
+        "sha256": "910f4680ec3d965ed1289aa04197983965888e61c6b144e6a90faa3024798db5"
+      },
+      {
+        "path": "/workspace/work/auth-complete-after.log",
+        "bytes": 391,
+        "sha256": "916d0a0464e696df78bb510380a2aa44c39b211978eb8e08c9cf83c136d2e97c"
+      },
+      {
+        "path": "/workspace/work/auth-final-check.log",
+        "bytes": 2824,
+        "sha256": "3a23911b1f7ecf1dd55d5161ed1a9b010185f4a3e0b6056c3f870de122e6b3c3"
+      },
+      {
+        "path": "/workspace/work/auth-final-native-production.log",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "path": "/workspace/work/auth-final-native-qa.log",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "path": "/workspace/work/auth-final-isolation.log",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    ]
+  },
+  "notReproduced": "No general fresh-profile correct registration/login failure in either original published2.3.0 EXE. Device-specific failure cause remains unknown without nonsecret error/version/channel/steps."
+}

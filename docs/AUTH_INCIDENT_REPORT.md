@@ -57,9 +57,33 @@ No password trimming/normalization is applied: whitespace, case and keyboard inp
 
 ## Packaged audit and open checks
 
-Windows CI is configured to download BOTH published2.3.0 EXEs, compare hashes to the recorded original asset digests, and run registration/login negative probes plus restart/notes/quiz/completion/isolation/legacy migration in temporary profiles. It then tests BOTH newly built2.3.1 EXEs and concurrent profile isolation. These steps remain **NOT RUN for this audit until the run completes**. A successful source build alone does not establish packaged behavior.
+Windows CI is configured to download BOTH published2.3.0 EXEs, compare hashes to the recorded original asset digests, and run registration/login negative probes plus restart/notes/quiz/completion/isolation/legacy migration in temporary profiles. It then tests BOTH newly built2.3.1 EXEs and concurrent profile isolation. These steps are now **PASS**, executed in run43938048471; detailed outcomes follow below. A successful source build alone does not establish packaged behavior.
 
 A pristine consumer PC, manual Explorer double-click, real user's DB/ACL/antivirus state,1000 live desktop sessions and multi-client live-server attack simulation are NOT RUN. No exact error/steps from a user's device were provided; optional diagnosis would need only version/channel and nonsecret error text/steps, never passwords or public upload of personal data. Both EXEs remain unsigned. Independent educational/human validation is unrelated and still open.
 
 
 Local final source checks:63 unit/integration tests across13 files PASS; strict TypeScript/build/safety lint/source guard PASS. Both corrected development Electron profiles passed all five expected-refusal probes and subsequent successful registration/login/restart/notes/quiz/completion/migration; concurrent profile isolation passed. The QA stage engine bytes match the final root engine bundle. These are not yet Windows packaged-audit results.
+
+
+## Final verified results —2.3.1
+
+Exact corrected source `00e1dca9b67c7607f5b49ee2196d07d90847e81f` /[run43938048471](https://github.com/abdalaaliahmed81-byte/marketing-academy/actions/runs/43938048471): Windows, web/Docker and preview-publication/readback jobs PASS. Actual job logs show63 unit/integration tests on each OS; browser report25 PASS/0 FAIL/0 SKIP. Full before-source reproduction was repeated against the exact engine file from the released7c8ed9d commit:11 original tests PASS/3 new tests FAIL. Restoring the committed correction yielded14/14 engine PASS. No baseline-source mutation was committed.
+
+|Audit check|Status|Evidence / limit|
+|---|---|---|
+|AUTH-01/02/03 engine root causes|CONFIRMED/FIXED|Three actual before-fix failures; matching after-fix regressions PASS|
+|Original2.3.0 Production and QA EXEs|PASS|Both downloaded from GitHub on Windows; original SHA256 compared before launch; both ran confirmation/invalid-name/unknown-account/wrong-password/duplicate refusals, then successful auth/restart/data/migration|
+|Corrected2.3.1 Production and QA EXEs|PASS|Both actual newly built files, normal startup under system-only PATH and same five refusal probes, correct login/offline lesson/quiz/restart/notes/projects/migration; schema1/three accounts/14 encrypted records each|
+|Concurrent profile isolation|PASS|Same username in both, independent notes/restarts, closed Production DB SHA256 unchanged after QA writes|
+|Hashing/session/owner/migration regressions|PASS|Real PBKDF2/AES-GCM, rollback/reopen/corruption/future schema/owner mismatch/password-change interleaving tests retained|
+|Published corrective assets|PASS|All6 downloaded again through authorized connection; GitHub digests and5 checksum entries, both PE/x64 payload proofs and source archive comment matched|
+|General correct-login failure in released fresh profiles|NOT REPRODUCED|Ordinary correct registration/login worked; expected refusals must not be called bugs|
+|Three boundary incidents as1000-session/live multi-client packaged-GUI attack|NOT RUN|Root-cause reproduction uses explicitly instrumented real-engine boundary fixtures; no such UI claim|
+|An unspecified user's actual device failure|NOT RUN|No error text/version/profile/DB/device log supplied; cause unknown|
+|Pristine PC/manual Explorer click/every physical upgrade/ACL/antivirus/power-loss state|NOT RUN|Windows Actions is a narrower real execution environment|
+
+### Confirmed-error summary
+
+AUTH-01: create/start previously returned a session-cap error after durable account creation. AUTH-02: login computed retry delay from stale pre-KDF state. AUTH-03: start/capacity cleanup counted absolute-expired sessions even though authenticated would reject them. All three are conditional defects; no successful unauthorized login/password disclosure or generic inability to authenticate was demonstrated. The patch changes only proven session/counter ordering, preserves hashing/keys/schema/IDs/data and does not delete earlier partial accounts.
+
+[Corrective working preview2.3.1](https://github.com/abdalaaliahmed81-byte/marketing-academy/releases/tag/v2.3.1) contains both EXEs; prior2.3.0 remains intact as the pinned audit baseline. [AUTH_AUDIT_VERIFICATION.json](AUTH_AUDIT_VERIFICATION.json) retains exact assets, native baseline/current results, CI IDs, before/after log hashes and limitations. No real user password/database was collected, and no speculative IndexedDB reset, name-normalization change or permission workaround was applied.

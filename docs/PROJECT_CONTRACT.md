@@ -36,3 +36,6 @@ Latest task amendment: use the existing accessible repository and create no repo
 
 
 Dual Windows2.3.0 delivered from7c8ed9d/run43930298980:60 tests per OS/25 browser paths, both actual EXE normal-start/lifecycle checks and concurrent profile/unchanged-Production-DB verification passed. All6 release assets re-downloaded via authorized connection and SHA256/PE/source-comment checked. Production data identity preserved; QA isolated; both unsigned and professional/physical-machine limits remain open. See DUAL_WINDOWS.md and DUAL_WINDOWS_VERIFICATION.json. Existing repository/history retained, no new repository.
+
+
+Auth incident2.3.1: three proven engine defects corrected; before11 PASS/3 FAIL vs after14 engine/63 full PASS. Exact00e1dca/run43938048471 passed Windows/web/Docker/publication, both original2.3.0 and corrected2.3.1 EXE negative-auth/success/restart/migration probes and concurrent isolation. All6 current assets downloaded/checksummed. AUTH_INCIDENT_REPORT.md/AUTH_AUDIT_VERIFICATION.json distinguish conditional fixtures from normal UI and unspecified device issues; no hashing/schema/data/path reset or speculative fix.
