@@ -42,9 +42,11 @@ test('registration, private notes, logout and separate accounts persist after re
  await page.getByRole('button',{name:'ملاحظات: '+lessons[0].title,exact:true}).click()
  await expect(page.getByRole('dialog').getByRole('textbox')).toHaveValue('')
 })
-test('all sixty lessons can be completed with actual quizzes and practical activities',async({page})=>{
+test('all sixty lessons can be completed with actual quizzes and practical activities',async({page,context})=>{
  test.setTimeout(600000)
  await register(page)
+ await page.evaluate(async()=>{await navigator.serviceWorker.ready})
+ await context.setOffline(true)
  for(const [i,lesson] of lessons.entries()){
   await page.goto('/#/lesson/'+lesson.id+'/quiz')
   for(const q of lesson.questions)await page.locator('input[type=radio][value="'+q.options[0].id+'"]').check()

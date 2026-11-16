@@ -1,5 +1,5 @@
 import {createServer,type IncomingMessage,type ServerResponse} from 'node:http'
-import {readFile,stat} from 'node:fs/promises'
+import {readFile,stat,realpath} from 'node:fs/promises'
 import {existsSync} from 'node:fs'
 import {resolve,sep,extname} from 'node:path'
 import {pathToFileURL} from 'node:url'
@@ -13,7 +13,7 @@ export function createApiServer(options:{engine:AcademyEngine;origin:string;stat
  if(u.protocol!=='https:'&&!['127.0.0.1','localhost','[::1]'].includes(u.hostname))throw new Error('Non-loopback API deployment requires an HTTPS origin.')
  const secure=u.protocol==='https:',buckets=new Map<string,{start:number;count:number}>()
  const root=options.staticRoot?resolve(options.staticRoot):undefined
- function json(res:ServerResponse,status:number,body:unknown){res.writeHead(status,{'Content-Type':'application/json; charset=utf-8','Cache-Control':'no-store','X-Content-Type-Options':'nosniff'});res.end(JSON.stringify(body))}
+ function json(res:ServerResponse,status:number,body:unknown){res.writeHead(status,{'Content-Type':'application/json; charset=utf-8','Cache-Control':'no-store','X-Content-Type-Options':'nosniff','X-Frame-Options':'DENY','Referrer-Policy':'no-referrer','Content-Security-Policy':"default-src 'none'; frame-ancestors 'none'"});res.end(JSON.stringify(body))}
  function token(req:IncomingMessage){const found=(req.headers.cookie??'').split(';').map(v=>v.trim()).find(v=>v.startsWith('ma_session='))?.slice(11);return found&&/^[a-f0-9]{64}$/.test(found)?found:undefined}
  function limit(req:IncomingMessage,kind:string){
   const now=Date.now(),key=(req.socket.remoteAddress??'unknown')+':'+kind
@@ -53,11 +53,11 @@ export function createApiServer(options:{engine:AcademyEngine;origin:string;stat
    let file:string
    try{file=resolve(root,'.'+decodeURIComponent(pathname==='/'?'/index.html':pathname))}catch{res.writeHead(400).end();return}
    if(!file.startsWith(root+sep)){res.writeHead(403).end();return}
-   try{if(!(await stat(file)).isFile()){res.writeHead(404).end();return}}catch{res.writeHead(404).end();return}
+   try{const physical=await realpath(file),physicalRoot=await realpath(root);if(!physical.startsWith(physicalRoot+sep)){res.writeHead(403).end();return}if(!(await stat(file)).isFile()){res.writeHead(404).end();return}}catch{res.writeHead(404).end();return}
    const mime:Record<string,string>={'.html':'text/html; charset=utf-8','.js':'text/javascript; charset=utf-8','.css':'text/css; charset=utf-8','.png':'image/png','.ico':'image/x-icon','.webmanifest':'application/manifest+json'}
    res.writeHead(200,{'Content-Type':mime[extname(file)]??'application/octet-stream','X-Content-Type-Options':'nosniff','Referrer-Policy':'no-referrer','Cache-Control':'no-cache','Content-Security-Policy':"default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; font-src 'self'; connect-src 'self'; worker-src 'self'; object-src 'none'; base-uri 'none'; frame-ancestors 'none'; form-action 'self'"})
    res.end(req.method==='HEAD'?undefined:await readFile(file))
-  }catch(error){const detail=publicError(error);json(res,statusFor[detail.code]??503,{ok:false,error:detail})}
+  }catch(error){const detail=publicError(error);if(detail.code==='RATE_LIMIT')res.setHeader('Retry-After','60');json(res,statusFor[detail.code]??503,{ok:false,error:detail})}
  })
  server.keepAliveTimeout=5000;server.maxRequestsPerSocket=100
  return server

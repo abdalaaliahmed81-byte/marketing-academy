@@ -35,3 +35,23 @@ it('rejects malformed/oversized/unknown requests, rate limits auth attempts and 
  expect(()=>createApiServer({engine,origin:'http://example.org'})).toThrow('HTTPS')
  const health=await fetch(url+'/api/health');expect((await health.json()).provider).toBe('sqlite')
 })
+it('applies anti-framing/no-store headers and supplies bounded retry guidance',async()=>{
+ const health=await fetch(url+'/api/health')
+ expect(health.headers.get('cache-control')).toBe('no-store')
+ expect(health.headers.get('x-frame-options')).toBe('DENY')
+ expect(health.headers.get('content-security-policy')).toContain("frame-ancestors 'none'")
+ for(let i=0;i<30;i++)await command('changePassword',{})
+ const limited=await command('changePassword',{})
+ expect(limited.status).toBe(429);expect(limited.headers.get('retry-after')).toBe('60')
+})
+it('does not serve a symlink escaping the static distribution',async()=>{
+ const {mkdtemp,mkdir,writeFile,symlink,rm}=await import('node:fs/promises'),{tmpdir}=await import('node:os'),{join}=await import('node:path')
+ const folder=await mkdtemp(join(tmpdir(),'academy-static-boundary-'))
+ let files:ReturnType<typeof createApiServer>|undefined
+ try{
+  await mkdir(join(folder,'public'));await writeFile(join(folder,'private.txt'),'private fixture')
+  await symlink(join(folder,'private.txt'),join(folder,'public','leak.txt'))
+  files=createApiServer({engine,origin,staticRoot:join(folder,'public')});await new Promise<void>(resolve=>files!.listen(0,'127.0.0.1',resolve))
+  expect((await fetch('http://127.0.0.1:'+(files.address() as {port:number}).port+'/leak.txt')).status).toBe(403)
+ }finally{if(files){files.closeAllConnections();await new Promise<void>(resolve=>files!.close(()=>resolve()))}await rm(folder,{recursive:true,force:true})}
+})

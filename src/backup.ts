@@ -9,6 +9,7 @@ export async function encryptBackup(data:unknown,password:string){
   try{return {format:'marketing-academy-encrypted',version:1,iterations:KDF_ITERATIONS,salt:hex(salt),payload:seal(key.subarray(32),data,'academy-backup-v1')}}finally{key.fill(0)}
 }
 export async function decryptBackup(data:unknown,password:string){
+  if(password.length<12||password.length>128)throw new Error('عبارة حماية النسخة: ١٢–١٢٨ حرفًا.')
   const parsed=envelope.parse(data),key=await derive(password,unhex(parsed.salt))
   try{return unseal(key.subarray(32),parsed.payload,'academy-backup-v1')}catch{throw new Error('عبارة الحماية غير صحيحة أو الملف تالف.')}finally{key.fill(0)}
 }
