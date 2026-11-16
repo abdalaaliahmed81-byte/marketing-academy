@@ -1,0 +1,471 @@
+{
+  "auditKind": "separate agent QA pass; not independent human certification",
+  "testedCiCommit": "2682e2d45073f25cc4954b367a6648010dc63116",
+  "applicationRuntimeBaseline": "f846b96d118ff161019825b065ec390a70fd3e18",
+  "run": "https://github.com/abdalaaliahmed81-byte/marketing-academy/actions/runs/43902315808",
+  "checks": [
+    {
+      "check": "TypeScript strict checks",
+      "status": "PASS",
+      "evidence": "Fresh npm run check and exact2682e2d CI43902315808 passed"
+    },
+    {
+      "check": "Unit/integration",
+      "status": "PASS",
+      "evidence": "Fresh59 tests/12 files; real crypto, SQLite, rollback, corruption, migration, owner isolation, backup and grading/history regressions"
+    },
+    {
+      "check": "Production build",
+      "status": "PASS",
+      "evidence": "Fresh npm run check; large JS chunk warning remains"
+    },
+    {
+      "check": "Safety lint",
+      "status": "PASS",
+      "evidence": "New npm run lint:84 code files, syntax plus no eval/Function/raw React or DOM HTML; artifacts/lint.json"
+    },
+    {
+      "check": "Comprehensive style/data-flow lint",
+      "status": "NOT RUN",
+      "evidence": "No ESLint suite configured; narrow safety lint is not equivalent"
+    },
+    {
+      "check": "Exactly12 modules/60 lessons",
+      "status": "PASS",
+      "evidence": "Fresh curriculum audit; zero short-under200-word readings; existing tests require over250 words each and worked case/summary"
+    },
+    {
+      "check": "Five valid answer keys/explanations per lesson",
+      "status": "PASS",
+      "evidence": "300 stable question IDs/keys, scoring and history checks; structural/correct-key validation, not psychometric certification"
+    },
+    {
+      "check": "Traceable references",
+      "status": "PASS",
+      "evidence": "All60 lesson IDs bound to26 source registry records, bounded scope/rights/access notes; original simulated case labels"
+    },
+    {
+      "check": "Every factual claim currently correct",
+      "status": "NOT RUN",
+      "evidence": "No new exhaustive sentence-by-sentence/source verification; catalogue/link availability does not prove each claim"
+    },
+    {
+      "check": "Independent Arabic curriculum approval",
+      "status": "NOT RUN",
+      "evidence": "No qualified independent human review/novice validation supplied; EDUCATIONAL_READINESS.json remains open"
+    },
+    {
+      "check": "Assessment moderation readiness",
+      "status": "FAIL",
+      "evidence": "109 uniquely-longest-correct-answer cues remain review candidates. They do not automatically prove wrong answers; professional release readiness remains open"
+    },
+    {
+      "check": "Notes/account/login/user isolation",
+      "status": "PASS",
+      "evidence": "Fresh25-browser suite: both static/API accounts,60 circles, autosave/search/timestamps, logout/relogin and owner isolation; native restart passed"
+    },
+    {
+      "check": "Interactive UI/daily missions",
+      "status": "PASS",
+      "evidence": "Fresh browser suite covers six activity interactions, keyboard/drag, saved quiz answers/retries, spaced review and daily mission completion;59 unit/integration checks include Baghdad date boundaries"
+    },
+    {
+      "check": "Twelve worked module projects/60 mini-projects",
+      "status": "PASS",
+      "evidence": "Fresh coverage tests validate solutions/materials/prerequisites/steps/templates/rubrics; no human quality certification"
+    },
+    {
+      "check": "Capstone/portfolio/backup UI",
+      "status": "PASS",
+      "evidence": "Fresh browser roundtrip and exports, three case economics, encrypted backup/restore into authenticated target, invalid input retention"
+    },
+    {
+      "check": "RTL/mobile/reduced-motion/axe",
+      "status": "PASS",
+      "evidence": "Fresh browser suite with light/dark,390px and desktop/keyboard/axe/reduced-motion; no universal WCAG or physical-device claim"
+    },
+    {
+      "check": "Offline60 lessons/quizzes/practice and12 projects",
+      "status": "PASS",
+      "evidence": "Fresh full browser suite completed offline60-lesson and12-module save/reload/export paths; mini-project/capstone export offline; API accounts need server"
+    },
+    {
+      "check": "Electron restart/IPC/legacy migration",
+      "status": "PASS",
+      "evidence": "Fresh Linux development Electron and actual built Windows EXE in run43902315808: schema1/two accounts/11 encrypted records, note/profile/timestamp/activity/project restart, external-fetch blocking, source-preserving legacy migration"
+    },
+    {
+      "check": "Docker build/health/security/persistence",
+      "status": "PASS",
+      "evidence": "Fresh exact2682e2d CI Docker build/health/read-only/non-root/dropped-capability/header checks; profile/note/module/capstone survive API restart. Separate-host disaster restore not run"
+    },
+    {
+      "check": "Production dependencies",
+      "status": "PASS",
+      "evidence": "Fresh audit:0 vulnerabilities; tooling2 low/9 moderate/0 high/critical"
+    },
+    {
+      "check": "Published2.2.1 package evidence",
+      "status": "PASS",
+      "evidence": "Read SECURITY_VERIFICATION.json; exact f846b96/run43900670375 and public SHA256 source comment. Historical release evidence, not this QA rerun"
+    },
+    {
+      "check": "Physical upgrades, power loss, independent pentest, all activity input permutations, separate-host Docker disaster restore",
+      "status": "NOT RUN",
+      "evidence": "No corresponding execution evidence; do not claim100% verification"
+    }
+  ],
+  "ci": {
+    "jobs": [
+      {
+        "name": "web",
+        "id": 133421911076,
+        "conclusion": "success"
+      },
+      {
+        "name": "windows",
+        "id": 133421911596,
+        "conclusion": "success"
+      },
+      {
+        "name": "publish-preview",
+        "id": 133424739633,
+        "conclusion": "skipped"
+      }
+    ],
+    "units": {
+      "web": 59,
+      "windows": 59
+    },
+    "docker": {
+      "status": "passed",
+      "http": 200,
+      "healthy": true,
+      "user": "101:101",
+      "readOnlyRoot": true,
+      "capabilitiesDropped": [
+        "ALL"
+      ],
+      "securityHeaders": true,
+      "rtl": true,
+      "scriptAsset": true,
+      "sqliteApi": true,
+      "apiUser": "node",
+      "apiReadOnlyRoot": true,
+      "projectProgressSurvivesApiRestart": true,
+      "progressSurvivesApiRestart": true,
+      "profileSurvivesApiRestart": true
+    },
+    "windows": {
+      "status": "passed",
+      "commit": "2682e2d45073f25cc4954b367a6648010dc63116",
+      "version": "2.2.1",
+      "platform": "windows",
+      "payloadArchitecture": "x64",
+      "portableExecutableSmoke": {
+        "platform": "win32",
+        "architecture": "x64",
+        "executable": "release/Marketing-Academy-2.2.1-win-x64.exe",
+        "checks": [
+          "application rendered Arabic registration using local academy protocol",
+          "renderer has no Node require or process; SQLite transport exposed only through the narrow preload",
+          "native profile edit acknowledged through preload without changing login username",
+          "native module and27-field capstone autosave acknowledged without an external backend",
+          "registered account, onboarded, showed 60 lessons and saved a lesson note",
+          "required login after process restart and recovered persistent note",
+          "external network fetch blocked; curriculum and notes work without external server",
+          "migrated an authenticated legacy IndexedDB account; completed lesson, note, quiz and project survived; original ciphertext unchanged"
+        ],
+        "networkRequests": [],
+        "profilePersistence": true,
+        "projectAutosavePersistence": true,
+        "interactiveActivityPersistence": true,
+        "noteTimestampPersistence": true,
+        "sqlite": {
+          "schemaVersion": 1,
+          "accounts": 2,
+          "records": 11,
+          "legacySourcesPreserved": true,
+          "encryptedRecords": true
+        },
+        "status": "passed"
+      },
+      "assets": [
+        {
+          "name": "Marketing-Academy-2.2.1-win-x64.exe",
+          "sha256": "551c8c8d721ff0a290c97182d948bbb20ee3194dcf389dbef2035c3910be27b6"
+        },
+        {
+          "name": "Marketing-Academy-2.2.1-source.zip",
+          "sha256": "e3ed797bae25d37e5ecebaa2467ef8788a084fade8399c8f51dde9c712dc690a"
+        }
+      ]
+    }
+  },
+  "localBrowser": {
+    "startTime": "2026-11-16T15:58:00.014Z",
+    "duration": 240157.56199999998,
+    "expected": 25,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  },
+  "localElectron": {
+    "platform": "linux",
+    "architecture": "x64",
+    "executable": "development electron",
+    "checks": [
+      "application rendered Arabic registration using local academy protocol",
+      "renderer has no Node require or process; SQLite transport exposed only through the narrow preload",
+      "native profile edit acknowledged through preload without changing login username",
+      "native module and27-field capstone autosave acknowledged without an external backend",
+      "registered account, onboarded, showed 60 lessons and saved a lesson note",
+      "required login after process restart and recovered persistent note",
+      "external network fetch blocked; curriculum and notes work without external server",
+      "migrated an authenticated legacy IndexedDB account; completed lesson, note, quiz and project survived; original ciphertext unchanged"
+    ],
+    "networkRequests": [],
+    "profilePersistence": true,
+    "projectAutosavePersistence": true,
+    "interactiveActivityPersistence": true,
+    "noteTimestampPersistence": true,
+    "sqlite": {
+      "schemaVersion": 1,
+      "accounts": 2,
+      "records": 11,
+      "legacySourcesPreserved": true,
+      "encryptedRecords": true
+    },
+    "status": "passed"
+  },
+  "lint": {
+    "status": "PASS",
+    "files": 84,
+    "rules": [
+      "syntax",
+      "no-eval",
+      "no-function-constructor",
+      "no-raw-react-html",
+      "no-raw-dom-html"
+    ],
+    "scope": "Repository safety lint; not comprehensive ESLint/style or data-flow analysis",
+    "issues": []
+  },
+  "referenceChecks": {
+    "checkedAt": "2026-11-16T16:00:52.404Z",
+    "scope": "HTTP accessibility plus selective official-source review; no exhaustive claim-level certification",
+    "links": [
+      {
+        "url": "https://allandib.com/",
+        "status": 200,
+        "effectiveUrl": "https://allandib.com/"
+      },
+      {
+        "url": "https://www.penguinrandomhouse.com/books/600458/this-is-marketing-by-seth-godin/",
+        "status": 200,
+        "effectiveUrl": "https://www.penguinrandomhouse.com/books/600458/this-is-marketing-by-seth-godin/"
+      },
+      {
+        "url": "https://seths.blog/2013/09/qa-all-marketers-and-the-challenge-of-telling-the-right-story/",
+        "status": 200,
+        "effectiveUrl": "https://seths.blog/2013/09/qa-all-marketers-and-the-challenge-of-telling-the-right-story/"
+      },
+      {
+        "url": "https://developers.google.com/search/docs/fundamentals/seo-starter-guide",
+        "status": 200,
+        "effectiveUrl": "https://developers.google.com/search/docs/fundamentals/seo-starter-guide"
+      },
+      {
+        "url": "https://developers.google.com/search/docs/fundamentals/creating-helpful-content",
+        "status": 200,
+        "effectiveUrl": "https://developers.google.com/search/docs/fundamentals/creating-helpful-content"
+      },
+      {
+        "url": "https://developers.google.com/search/docs/crawling-indexing/robots/intro",
+        "status": 200,
+        "effectiveUrl": "https://developers.google.com/search/docs/crawling-indexing/robots/intro"
+      },
+      {
+        "url": "https://developers.google.com/search/docs/appearance/structured-data/local-business",
+        "status": 200,
+        "effectiveUrl": "https://developers.google.com/search/docs/appearance/structured-data/local-business"
+      },
+      {
+        "url": "https://developers.google.com/search/docs/monitor-debug/search-console-start",
+        "status": 200,
+        "effectiveUrl": "https://developers.google.com/search/docs/monitor-debug/search-console-start"
+      },
+      {
+        "url": "https://developers.google.com/analytics/devguides/collection/ga4/events",
+        "status": 200,
+        "effectiveUrl": "https://developers.google.com/analytics/devguides/collection/ga4/events"
+      },
+      {
+        "url": "https://developers.google.com/analytics/devguides/collection/ga4/reference/config",
+        "status": 200,
+        "effectiveUrl": "https://developers.google.com/analytics/devguides/collection/ga4/reference/config"
+      },
+      {
+        "url": "https://developers.google.com/google-ads/api/fields/v26/metrics",
+        "status": 200,
+        "effectiveUrl": "https://developers.google.com/google-ads/api/fields/v26/metrics"
+      },
+      {
+        "url": "https://developers.google.com/google-ads/api/docs/conversions/overview",
+        "status": 200,
+        "effectiveUrl": "https://developers.google.com/google-ads/api/docs/conversions/overview"
+      },
+      {
+        "url": "https://developers.google.com/tag-platform/security/guides/consent",
+        "status": 200,
+        "effectiveUrl": "https://developers.google.com/tag-platform/security/guides/consent"
+      },
+      {
+        "url": "https://docs.cloud.google.com/iam/docs/using-iam-securely",
+        "status": 200,
+        "effectiveUrl": "https://docs.cloud.google.com/iam/docs/using-iam-securely"
+      },
+      {
+        "url": "https://www.w3.org/WAI/tips/writing/",
+        "status": 200,
+        "effectiveUrl": "https://www.w3.org/WAI/tips/writing/"
+      },
+      {
+        "url": "https://www.ftc.gov/business-guidance/resources/disclosures-101-social-media-influencers",
+        "status": 200,
+        "effectiveUrl": "https://www.ftc.gov/business-guidance/resources/disclosures-101-social-media-influencers"
+      },
+      {
+        "url": "https://www.rfc-editor.org/rfc/rfc7208",
+        "status": 200,
+        "effectiveUrl": "https://www.rfc-editor.org/info/rfc7208/"
+      },
+      {
+        "url": "https://www.rfc-editor.org/rfc/rfc6376",
+        "status": 200,
+        "effectiveUrl": "https://www.rfc-editor.org/info/rfc6376/"
+      },
+      {
+        "url": "https://www.rfc-editor.org/rfc/rfc9989.html",
+        "status": 200,
+        "effectiveUrl": "https://www.rfc-editor.org/rfc/rfc9989.html"
+      },
+      {
+        "url": "https://www.itl.nist.gov/div898/handbook/pri/section3/pri31.htm",
+        "status": 200,
+        "effectiveUrl": "https://www.itl.nist.gov/div898/handbook/pri/section3/pri31.htm"
+      },
+      {
+        "url": "https://www.itl.nist.gov/div898/handbook/prc/section2/prc241.htm",
+        "status": 200,
+        "effectiveUrl": "https://www.itl.nist.gov/div898/handbook/prc/section2/prc241.htm"
+      },
+      {
+        "url": "https://skillshop.withgoogle.com/",
+        "status": 200,
+        "effectiveUrl": "https://skillshop.withgoogle.com/"
+      },
+      {
+        "url": "https://www.facebookblueprint.com/student/catalog/",
+        "status": 200,
+        "effectiveUrl": "https://www.facebookblueprint.com/student/catalog/"
+      },
+      {
+        "url": "https://academy.hubspot.com/courses/digital-marketing",
+        "status": 200,
+        "effectiveUrl": "https://academy.hubspot.com/courses/digital-marketing"
+      },
+      {
+        "url": "https://www.semrush.com/academy/",
+        "status": 200,
+        "effectiveUrl": "https://www.semrush.com/academy/"
+      },
+      {
+        "url": "https://openstax.org/books/principles-marketing/pages/preface",
+        "status": 200,
+        "effectiveUrl": "https://openstax.org/books/principles-marketing/pages/preface"
+      },
+      {
+        "url": "https://support.google.com/analytics/answer/9304153",
+        "status": 200,
+        "effectiveUrl": "https://support.google.com/analytics/answer/9304153"
+      },
+      {
+        "url": "https://www.google.com/about/company/user-consent-policy/",
+        "status": 200,
+        "effectiveUrl": "https://www.google.com/about/company/user-consent-policy/"
+      },
+      {
+        "url": "https://support.google.com/google-ads/answer/2615875",
+        "status": 200,
+        "effectiveUrl": "https://support.google.com/google-ads/answer/2615875"
+      },
+      {
+        "url": "https://support.google.com/a/answer/81126",
+        "status": 200,
+        "effectiveUrl": "https://support.google.com/mail/answer/81126?visit_id=639304416515698189-2633894973&rd=1"
+      },
+      {
+        "url": "https://grow.google/certificates/digital-marketing-ecommerce/",
+        "status": 200,
+        "effectiveUrl": "https://grow.google/certificates/digital-marketing-ecommerce/"
+      }
+    ]
+  },
+  "evidenceFileDigests": [
+    {
+      "path": "artifacts/lint.json",
+      "bytes": 269,
+      "sha256": "17f7a8bdbb227c7cf3240cf5b5b6c6e138c92154fb571222f439a28ac5ec5dbc"
+    },
+    {
+      "path": "artifacts/playwright.json",
+      "bytes": 32112,
+      "sha256": "03034c61390c45f724a76dc9517afd0223fcff8cd8eefe062f59ad58b323bcad"
+    },
+    {
+      "path": "artifacts/desktop-smoke.json",
+      "bytes": 1192,
+      "sha256": "6eae455c08ca43ab5036a7a9212057808b3dcfe0dfd380b59889722b9f8bf5c1"
+    },
+    {
+      "path": "artifacts/production-dependency-audit.json",
+      "bytes": 365,
+      "sha256": "ff79f27a82e4106c8f47c7a271d01b933755e493d162531e6d08fbab3c3b3e80"
+    },
+    {
+      "path": "artifacts/dependency-audit.json",
+      "bytes": 5683,
+      "sha256": "5f1ff6c5ff403461184ea58cb9713063bd8af60425e1ba6ba68bb5fd04e89d2f"
+    },
+    {
+      "path": "artifacts/project-learning-audit.json",
+      "bytes": 31358,
+      "sha256": "1a3b1cc2a756d87d453d8bbc1c774c399c82d4c8ae00900c046c544cb937e6ac"
+    },
+    {
+      "path": "docs/AUDIT_REFERENCE_CHECKS.json",
+      "bytes": 6264,
+      "sha256": "08d91e9d467a2361bf36f65808df809f749e962cc1a59f09ca4d935b719eff94"
+    },
+    {
+      "path": "docs/CONTENT_METRICS.json",
+      "bytes": 162308,
+      "sha256": "896c527f4e9c5578f2792a5e21db61bf43a9af823ad738faefebc7de448c5b88"
+    }
+  ],
+  "readiness": {
+    "version": 1,
+    "agentEditorialReview": "completed",
+    "reviewedLessons": 60,
+    "independentArabicReview": "open",
+    "learnerValidation": "open",
+    "professionalApproval": false,
+    "independentReviewEvidence": null,
+    "reason": "All60 lessons have an agent editorial/source pass; qualified independent Arabic review and learner validation required by G12 have not occurred."
+  },
+  "moderationCandidates": 109,
+  "professionalApproval": false,
+  "knownCriticalHighTechnicalBlockers": [],
+  "limits": "No exhaustive factual/human/physical-device/power-loss/independent-penetration/all-activity-permutation/separate-host-disaster-restore claim"
+}

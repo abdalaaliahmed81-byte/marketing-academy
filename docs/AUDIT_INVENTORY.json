@@ -1,15 +1,7 @@
 {
   "baseline": "1eecadbf3e1811e31dc2eafe274487ecb8a15e57",
-  "generatedAt": "2026-11-16T15:57:37.065Z",
+  "generatedAt": "2026-11-16T16:00:32.362Z",
   "files": [
-    {
-      "path": "scripts/lint.mjs",
-      "bytes": 1859,
-      "sha256": "77ad851662d5e6fb2e5204b24fbcd6914cbf17373ab89355b4e7957b605fd468",
-      "lines": 19,
-      "inspection": "read and syntax-parsed; security/runtime review scoped in AUDIT.md",
-      "syntaxErrors": 0
-    },
     {
       "path": ".dockerignore",
       "bytes": 137,
@@ -145,9 +137,9 @@
     },
     {
       "path": "docs/AI_PROGRESS.md",
-      "bytes": 42166,
-      "sha256": "b9a2321138a097063941ff963c87896af4bfba5f12fa735dfe1f79d66c0062a9",
-      "lines": 195,
+      "bytes": 42606,
+      "sha256": "e688d92c16ab98ae1159d2dd5e6df79d43f70b62af9740dd7cb91c45845b306f",
+      "lines": 199,
       "inspection": "read; review scope documented"
     },
     {
@@ -211,6 +203,13 @@
       "bytes": 7266,
       "sha256": "1cdd4189181d75229eaa97308db3983341d301bde9d93e7bf87bbb98f133ff7b",
       "lines": 44,
+      "inspection": "read; review scope documented"
+    },
+    {
+      "path": "docs/FINAL_QA.md",
+      "bytes": 3949,
+      "sha256": "8640fa7babcf810cc29c5abb1e5a7fbe4b3a53fb185658f454a5152a63daf689",
+      "lines": 31,
       "inspection": "read; review scope documented"
     },
     {
@@ -440,8 +439,8 @@
     },
     {
       "path": "scripts/audit-project.mjs",
-      "bytes": 13830,
-      "sha256": "086579b4c87c166e913aa876eaa31e959b1d2f4552aa25eb76104925f32713e5",
+      "bytes": 13866,
+      "sha256": "714005be4dcbba47d1a1716521f490289931358865f62f8779e03028bd4b8ada",
       "lines": 57,
       "inspection": "read and syntax-parsed; security/runtime review scoped in AUDIT.md",
       "syntaxErrors": 0
@@ -497,6 +496,14 @@
       "bytes": 1218,
       "sha256": "531a9456f62cc024af95d0b582fbfc1e41669fd4ef34d91505597e4bd0cd5bf0",
       "lines": 16,
+      "inspection": "read and syntax-parsed; security/runtime review scoped in AUDIT.md",
+      "syntaxErrors": 0
+    },
+    {
+      "path": "scripts/lint.mjs",
+      "bytes": 1859,
+      "sha256": "77ad851662d5e6fb2e5204b24fbcd6914cbf17373ab89355b4e7957b605fd468",
+      "lines": 19,
       "inspection": "read and syntax-parsed; security/runtime review scoped in AUDIT.md",
       "syntaxErrors": 0
     },

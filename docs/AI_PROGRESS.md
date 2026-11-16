@@ -1,5 +1,13 @@
 # AI progress and resume record
 
+## Latest final QA checkpoint
+
+
+Final QA completed: source2682e2d/run43902315808,59 tests per OS/25 browser paths, fresh Windows EXE/Linux Electron restart+migration and Docker build/health/security/restart PASS. Safety lint84 files PASS; fixed source-link checker omission and locally verified31 endpoints HTTP200. FINAL_QA.md/FINAL_QA_RESULTS.json classify every check PASS/FAIL/NOT RUN;109 assessment cues remain unmoderated and human instructional/novice validation remains NOT RUN. Technical tests do not close professional approval. No application/data/grading changes;2.2.1 release history retained.
+
+Resume here. Runtime remains published2.2.1; completed checks must not be confused with independent professional approval. Follow-up audit-tool correction is locally linted/executed; exact CI code2682e2d is identified separately.
+
+
 
 ## Verified security checkpoint2.2.1
 
@@ -193,6 +201,6 @@ Old2.1.0 preview notes now link2.1.1 and describe its compatibility correction; 
 
 Continue SECURITY_HARDENING.md. Canonical static path/symlink boundary, JSON response headers, Retry-After and backup password bounds implemented; full60-lesson browser path expanded to offline. New exact-source Windows/web/Docker CI required;2.2.0 remains previous verified published checkpoint until that passes. No user data/schema or dependency changes. Local production audit0 vulnerabilities; tooling2 low/9 moderate/0 high/critical.
 
-## Active final QA pass
+## Final QA implementation history
 
 See FINAL_QA.md. Fresh59 tests/typecheck/build and narrow safety lint passed; added npm lint/CI enforcement without dependencies or application/data changes. Browser/Electron and exact-source Windows/Docker reruns pending. Keep all professional review flags open and report PASS/FAIL/NOT RUN per check.109 question length cues are moderation candidates, not automatically rewritten or falsely declared calibrated.

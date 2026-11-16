@@ -1,7 +1,137 @@
 {
-  "checkedAt": "2026-11-15T18:25:56.130Z",
+  "checkedAt": "2026-11-16T16:00:52.404Z",
   "scope": "HTTP accessibility plus selective official-source review; no exhaustive claim-level certification",
   "links": [
+    {
+      "url": "https://allandib.com/",
+      "status": 200,
+      "effectiveUrl": "https://allandib.com/"
+    },
+    {
+      "url": "https://www.penguinrandomhouse.com/books/600458/this-is-marketing-by-seth-godin/",
+      "status": 200,
+      "effectiveUrl": "https://www.penguinrandomhouse.com/books/600458/this-is-marketing-by-seth-godin/"
+    },
+    {
+      "url": "https://seths.blog/2013/09/qa-all-marketers-and-the-challenge-of-telling-the-right-story/",
+      "status": 200,
+      "effectiveUrl": "https://seths.blog/2013/09/qa-all-marketers-and-the-challenge-of-telling-the-right-story/"
+    },
+    {
+      "url": "https://developers.google.com/search/docs/fundamentals/seo-starter-guide",
+      "status": 200,
+      "effectiveUrl": "https://developers.google.com/search/docs/fundamentals/seo-starter-guide"
+    },
+    {
+      "url": "https://developers.google.com/search/docs/fundamentals/creating-helpful-content",
+      "status": 200,
+      "effectiveUrl": "https://developers.google.com/search/docs/fundamentals/creating-helpful-content"
+    },
+    {
+      "url": "https://developers.google.com/search/docs/crawling-indexing/robots/intro",
+      "status": 200,
+      "effectiveUrl": "https://developers.google.com/search/docs/crawling-indexing/robots/intro"
+    },
+    {
+      "url": "https://developers.google.com/search/docs/appearance/structured-data/local-business",
+      "status": 200,
+      "effectiveUrl": "https://developers.google.com/search/docs/appearance/structured-data/local-business"
+    },
+    {
+      "url": "https://developers.google.com/search/docs/monitor-debug/search-console-start",
+      "status": 200,
+      "effectiveUrl": "https://developers.google.com/search/docs/monitor-debug/search-console-start"
+    },
+    {
+      "url": "https://developers.google.com/analytics/devguides/collection/ga4/events",
+      "status": 200,
+      "effectiveUrl": "https://developers.google.com/analytics/devguides/collection/ga4/events"
+    },
+    {
+      "url": "https://developers.google.com/analytics/devguides/collection/ga4/reference/config",
+      "status": 200,
+      "effectiveUrl": "https://developers.google.com/analytics/devguides/collection/ga4/reference/config"
+    },
+    {
+      "url": "https://developers.google.com/google-ads/api/fields/v26/metrics",
+      "status": 200,
+      "effectiveUrl": "https://developers.google.com/google-ads/api/fields/v26/metrics"
+    },
+    {
+      "url": "https://developers.google.com/google-ads/api/docs/conversions/overview",
+      "status": 200,
+      "effectiveUrl": "https://developers.google.com/google-ads/api/docs/conversions/overview"
+    },
+    {
+      "url": "https://developers.google.com/tag-platform/security/guides/consent",
+      "status": 200,
+      "effectiveUrl": "https://developers.google.com/tag-platform/security/guides/consent"
+    },
+    {
+      "url": "https://docs.cloud.google.com/iam/docs/using-iam-securely",
+      "status": 200,
+      "effectiveUrl": "https://docs.cloud.google.com/iam/docs/using-iam-securely"
+    },
+    {
+      "url": "https://www.w3.org/WAI/tips/writing/",
+      "status": 200,
+      "effectiveUrl": "https://www.w3.org/WAI/tips/writing/"
+    },
+    {
+      "url": "https://www.ftc.gov/business-guidance/resources/disclosures-101-social-media-influencers",
+      "status": 200,
+      "effectiveUrl": "https://www.ftc.gov/business-guidance/resources/disclosures-101-social-media-influencers"
+    },
+    {
+      "url": "https://www.rfc-editor.org/rfc/rfc7208",
+      "status": 200,
+      "effectiveUrl": "https://www.rfc-editor.org/info/rfc7208/"
+    },
+    {
+      "url": "https://www.rfc-editor.org/rfc/rfc6376",
+      "status": 200,
+      "effectiveUrl": "https://www.rfc-editor.org/info/rfc6376/"
+    },
+    {
+      "url": "https://www.rfc-editor.org/rfc/rfc9989.html",
+      "status": 200,
+      "effectiveUrl": "https://www.rfc-editor.org/rfc/rfc9989.html"
+    },
+    {
+      "url": "https://www.itl.nist.gov/div898/handbook/pri/section3/pri31.htm",
+      "status": 200,
+      "effectiveUrl": "https://www.itl.nist.gov/div898/handbook/pri/section3/pri31.htm"
+    },
+    {
+      "url": "https://www.itl.nist.gov/div898/handbook/prc/section2/prc241.htm",
+      "status": 200,
+      "effectiveUrl": "https://www.itl.nist.gov/div898/handbook/prc/section2/prc241.htm"
+    },
+    {
+      "url": "https://skillshop.withgoogle.com/",
+      "status": 200,
+      "effectiveUrl": "https://skillshop.withgoogle.com/"
+    },
+    {
+      "url": "https://www.facebookblueprint.com/student/catalog/",
+      "status": 200,
+      "effectiveUrl": "https://www.facebookblueprint.com/student/catalog/"
+    },
+    {
+      "url": "https://academy.hubspot.com/courses/digital-marketing",
+      "status": 200,
+      "effectiveUrl": "https://academy.hubspot.com/courses/digital-marketing"
+    },
+    {
+      "url": "https://www.semrush.com/academy/",
+      "status": 200,
+      "effectiveUrl": "https://www.semrush.com/academy/"
+    },
+    {
+      "url": "https://openstax.org/books/principles-marketing/pages/preface",
+      "status": 200,
+      "effectiveUrl": "https://openstax.org/books/principles-marketing/pages/preface"
+    },
     {
       "url": "https://support.google.com/analytics/answer/9304153",
       "status": 200,
@@ -20,62 +150,12 @@
     {
       "url": "https://support.google.com/a/answer/81126",
       "status": 200,
-      "effectiveUrl": "https://support.google.com/mail/answer/81126?visit_id=639303639483720960-2703365351&rd=1"
-    },
-    {
-      "url": "https://www.ftc.gov/business-guidance/resources/disclosures-101-social-media-influencers",
-      "status": 200,
-      "effectiveUrl": "https://www.ftc.gov/business-guidance/resources/disclosures-101-social-media-influencers"
-    },
-    {
-      "url": "https://www.w3.org/WAI/tips/writing/",
-      "status": 200,
-      "effectiveUrl": "https://www.w3.org/WAI/tips/writing/"
+      "effectiveUrl": "https://support.google.com/mail/answer/81126?visit_id=639304416515698189-2633894973&rd=1"
     },
     {
       "url": "https://grow.google/certificates/digital-marketing-ecommerce/",
       "status": 200,
       "effectiveUrl": "https://grow.google/certificates/digital-marketing-ecommerce/"
-    },
-    {
-      "url": "https://academy.hubspot.com/courses/digital-marketing",
-      "status": 200,
-      "effectiveUrl": "https://academy.hubspot.com/courses/digital-marketing"
-    },
-    {
-      "url": "https://www.facebookblueprint.com/student/catalog/",
-      "status": 200,
-      "effectiveUrl": "https://www.facebookblueprint.com/student/catalog/"
-    },
-    {
-      "url": "https://skillshop.withgoogle.com/",
-      "status": 200,
-      "effectiveUrl": "https://skillshop.withgoogle.com/"
-    },
-    {
-      "url": "https://developers.google.com/search/docs/fundamentals/seo-starter-guide",
-      "status": 200,
-      "effectiveUrl": "https://developers.google.com/search/docs/fundamentals/seo-starter-guide"
-    },
-    {
-      "url": "https://www.semrush.com/academy/",
-      "status": 200,
-      "effectiveUrl": "https://www.semrush.com/academy/"
-    },
-    {
-      "url": "https://allandib.com/",
-      "status": 200,
-      "effectiveUrl": "https://allandib.com/"
-    },
-    {
-      "url": "https://www.penguinrandomhouse.com/books/600458/this-is-marketing-by-seth-godin/",
-      "status": 200,
-      "effectiveUrl": "https://www.penguinrandomhouse.com/books/600458/this-is-marketing-by-seth-godin/"
-    },
-    {
-      "url": "https://seths.blog/2013/09/qa-all-marketers-and-the-challenge-of-telling-the-right-story/",
-      "status": 200,
-      "effectiveUrl": "https://seths.blog/2013/09/qa-all-marketers-and-the-challenge-of-telling-the-right-story/"
     }
   ]
 }
