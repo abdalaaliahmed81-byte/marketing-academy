@@ -204,3 +204,7 @@ Continue SECURITY_HARDENING.md. Canonical static path/symlink boundary, JSON res
 ## Final QA implementation history
 
 See FINAL_QA.md. Fresh59 tests/typecheck/build and narrow safety lint passed; added npm lint/CI enforcement without dependencies or application/data changes. Browser/Electron and exact-source Windows/Docker reruns pending. Keep all professional review flags open and report PASS/FAIL/NOT RUN per check.109 question length cues are moderation candidates, not automatically rewritten or falsely declared calibrated.
+
+## Active portable-delivery phase2.2.2
+
+User requires literal Marketing-Academy-Portable-Windows-x64.exe. Updated Electron portable artifact name and release/checksum pipelines, retaining app ID/origin/userData/schema/IDs. START_AR.md is both bundled public content and a separate checksummed asset. Added normal Windows ShellExecute startup without arguments and restricted child PATH; expanded actual EXE smoke to offline quiz+lesson completion, restart persistence and a newly registered isolated account. Local59 tests/build/lint and expanded Linux Electron smoke passed (three synthetic accounts/14 encrypted records). Two initial smoke assertions used incorrect UI selectors and were corrected; no application runtime change was needed. Windows startup/portable execution and final release verification still pending on exact-source CI; never substitute the local Linux result for Windows or claim a pristine consumer PC was tested. Existing2.2.1 release remains untouched.

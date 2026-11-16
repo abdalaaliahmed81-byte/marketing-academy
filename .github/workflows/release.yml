@@ -3,9 +3,9 @@ on:
   workflow_dispatch:
     inputs:
       version:
-        description: Version matching package.json, for example 2.2.0
+        description: Version matching package.json, for example 2.2.2
         required: true
-        default: 2.2.0
+        default: 2.2.2
       channel:
         description: Preview discloses open educational approval; stable requires G12 evidence
         type: choice
@@ -37,7 +37,7 @@ jobs:
           gh run download "$RUN_ID" --name windows-build-and-evidence --dir verified
           gh run download "$RUN_ID" --name web-evidence --dir verified-web
           echo "VERIFY_RUN_URL=https://github.com/${GITHUB_REPOSITORY}/actions/runs/${RUN_ID}" >> "$GITHUB_ENV"
-          test -f verified/release/Marketing-Academy-${VERSION}-win-x64.exe
+          test -f verified/release/Marketing-Academy-Portable-Windows-x64.exe
           cd verified/release
           sha256sum --check SHA256SUMS.txt
       - name: Validate and assemble release evidence
@@ -55,4 +55,4 @@ jobs:
         run: |
           RELEASE_FLAGS=()
           if [ "$RELEASE_CHANNEL" = preview ]; then RELEASE_FLAGS+=(--prerelease); fi
-          gh release create "v${VERSION}" verified/release/*.exe verified/release/*.zip verified/release/SHA256SUMS.txt verified/release/verification.json --target "$GITHUB_SHA" --title "Marketing Academy ${VERSION}" --notes-file docs/RELEASE-NOTES.md "${RELEASE_FLAGS[@]}"
+          gh release create "v${VERSION}" verified/release/*.exe verified/release/*.zip verified/release/SHA256SUMS.txt verified/release/verification.json verified/release/START_AR.md --target "$GITHUB_SHA" --title "Marketing Academy ${VERSION}" --notes-file docs/RELEASE-NOTES.md "${RELEASE_FLAGS[@]}"

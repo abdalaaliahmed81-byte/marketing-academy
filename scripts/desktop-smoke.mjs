@@ -2,6 +2,7 @@ import {build} from 'esbuild'
 import {DatabaseSync} from 'node:sqlite'
 import {_electron as electron,chromium,expect} from '@playwright/test'
 import path from 'node:path'
+import {pathToFileURL} from 'node:url'
 import os from 'node:os'
 import {spawn} from 'node:child_process'
 import {createServer} from 'node:net'
@@ -14,6 +15,9 @@ if(process.platform==='linux')args.push('--no-sandbox','--ozone-platform=headles
 await fs.mkdir('artifacts',{recursive:true})
 await fs.rm(dataDir,{recursive:true,force:true})
 await build({entryPoints:['tests/fixtures/legacy-seed.ts'],outfile:path.join(dataDir,'legacy-fixture.js'),bundle:true,platform:'browser',target:'es2022',format:'iife',globalName:'AcademyLegacyFixture',legalComments:'none'})
+await build({stdin:{contents:"export {lessons} from './src/lessons'",resolveDir:process.cwd()},outfile:path.join(dataDir,'curriculum.mjs'),bundle:true,platform:'node',format:'esm'})
+const {lessons}=await import(pathToFileURL(path.join(dataDir,'curriculum.mjs')).href)
+const firstLesson=lessons[0]
 const evidence={platform:process.platform,architecture:process.arch,executable:executablePath??'development electron',checks:[],networkRequests:[]}
 let running
 async function launch(){
@@ -28,7 +32,8 @@ async function launch(){
 // Start the actual shipped EXE and attach to its loopback renderer CDP instead.
 async function launchPortable(){
  const server=createServer();await new Promise(resolve=>server.listen(0,'127.0.0.1',resolve));const port=server.address().port;await new Promise(resolve=>server.close(resolve))
- const env={...process.env,ACADEMY_TEST_DATA_DIR:dataDir};delete env.ELECTRON_RUN_AS_NODE
+ const env={...process.env,ACADEMY_TEST_DATA_DIR:dataDir};delete env.ELECTRON_RUN_AS_NODE;delete env.NODE_OPTIONS;delete env.NODE_PATH
+ if(process.platform==='win32'){for(const key of Object.keys(env))if(key.toLowerCase()==='path')delete env[key];env.PATH=path.join(process.env.SystemRoot,'System32')+';'+process.env.SystemRoot;evidence.restrictedChildPath=true}
  const child=spawn(path.resolve(executablePath),[...args,`--remote-debugging-port=${port}`,'--remote-debugging-address=127.0.0.1'],{env,stdio:['ignore','pipe','pipe']})
  let output='',spawnError
  child.stdout.on('data',part=>{output=(output+part).slice(-4000)});child.stderr.on('data',part=>{output=(output+part).slice(-4000)});child.on('error',error=>{spawnError=error})
@@ -91,6 +96,16 @@ try{
  for(let i=0;i<await firstMatch.getByRole('combobox').count();i++)await firstMatch.getByRole('combobox').nth(i).selectOption('term-'+i)
  await firstMatch.getByRole('button',{name:'تحقّق من النشاط',exact:true}).click()
  await expect(firstMatch.getByText('مكتمل',{exact:true})).toBeVisible()
+ await page.context().setOffline(true)
+ await page.goto('academy://app/#/lesson/m01-l01/quiz')
+ for(const q of firstLesson.questions)await page.locator('input[type=radio][value="'+q.answer+'"]').check()
+ await page.getByRole('button',{name:'سلّم الاختبار'}).click()
+ await page.getByRole('link',{name:'اذهب إلى التطبيق',exact:true}).click()
+ await page.getByRole('textbox',{name:'تطبيقك',exact:true}).fill('محاكاة مكتملة: شريحة محددة ووعد محدود ودليل ومقياس، وليست حملة حقيقية.')
+ for(const text of firstLesson.rubric)await page.getByRole('checkbox',{name:text,exact:true}).check()
+ await page.getByRole('button',{name:'أكمل الدرس',exact:true}).click()
+ await expect(page.getByRole('link',{name:'الدرس التالي',exact:true})).toBeVisible()
+ evidence.offlineLessonCompletion=true
  await page.getByRole('link',{name:'مشروعات الوحدات',exact:true}).click()
  await page.getByRole('textbox',{name:'تسليم مشروع الوحدة'}).fill('تسليم Windows محاكاة محفوظ تلقائيًا')
  await expect(page.getByText('حُفظ المشروع تلقائيًا',{exact:true})).toBeVisible()
@@ -123,6 +138,12 @@ try{
  await page.getByRole('link',{name:'مشروعي',exact:true}).click()
  await expect(page.getByRole('textbox',{name:'تحليل المنافسين والبدائل',exact:true})).toHaveValue('بدائل محاكاة محفوظة في SQLite')
  await expect(page.getByRole('progressbar',{name:'بنود المشروع المكتوبة'})).toHaveAttribute('value','27')
+ await page.goto('academy://app/#/lesson/m01-l01/quiz')
+ await expect(page.getByText(/١٠٠٪ · اجتزت الاختبار/)).toBeVisible()
+ await page.getByRole('link',{name:'اذهب إلى التطبيق',exact:true}).click()
+ await expect(page.getByRole('textbox',{name:'تطبيقك',exact:true})).toHaveValue(/محاكاة مكتملة/)
+ await expect(page.getByRole('button',{name:'أكمل الدرس',exact:true})).toHaveCount(0)
+ evidence.quizAndCompletionSurviveRestart=true
  evidence.projectAutosavePersistence=true
  evidence.interactiveActivityPersistence=true
  evidence.noteTimestampPersistence=true
@@ -131,6 +152,23 @@ try{
  expect(outside).toBe('blocked')
  evidence.checks.push('external network fetch blocked; curriculum and notes work without external server')
  await page.screenshot({path:'artifacts/desktop.png'})
+ // A newly registered local account must not receive the first account's saved data.
+ await page.getByRole('button',{name:'خروج',exact:true}).click()
+ await page.getByRole('button',{name:'إنشاء حساب',exact:true}).click()
+ await page.getByLabel('اسم المستخدم',{exact:true}).fill('حساب معزول جديد')
+ await page.getByLabel('كلمة المرور',{exact:true}).fill('isolated-desktop-password')
+ await page.getByLabel('تأكيد كلمة المرور',{exact:true}).fill('isolated-desktop-password')
+ await page.getByRole('button',{name:'أنشئ حسابي'}).click()
+ await page.getByRole('button',{name:'ابدأ التعلّم',exact:true}).click()
+ await page.getByRole('navigation',{name:'التنقل الرئيسي',exact:true}).getByRole('link',{name:'مسار التعلّم',exact:true}).click()
+ await page.getByRole('button',{name:/^ملاحظات:/}).first().click()
+ await expect(page.getByRole('dialog').getByRole('textbox')).toHaveValue('')
+ await page.getByRole('button',{name:'احفظ وأغلق'}).click()
+ await page.getByRole('link',{name:'مشروعات الوحدات',exact:true}).click()
+ await expect(page.getByRole('textbox',{name:'تسليم مشروع الوحدة'})).toHaveValue('')
+ await page.goto('academy://app/#/lesson/m01-l01/quiz')
+ await expect(page.getByRole('button',{name:'سلّم الاختبار',exact:true})).toBeVisible()
+ evidence.actualNewAccountIsolation=true
  // Exercise an actual legacy IndexedDB account in the same preserved academy://app origin.
  await page.getByRole('button',{name:'خروج',exact:true}).click()
  await page.reload()
@@ -161,7 +199,7 @@ try{
  const accounts=Number(sql.prepare('SELECT count(*) AS count FROM accounts').get().count)
  const records=Number(sql.prepare('SELECT count(*) AS count FROM learner_records').get().count)
  const legacy=Number(sql.prepare('SELECT count(*) AS count FROM accounts WHERE legacy_source=?').get(fixture.legacyId).count)
- expect(accounts).toBe(2);expect(records).toBeGreaterThan(5);expect(legacy).toBe(1)
+ expect(accounts).toBe(3);expect(records).toBeGreaterThan(5);expect(legacy).toBe(1)
  expect(JSON.stringify(sql.prepare('SELECT payload FROM learner_records').all())).not.toContain('legacy-note-must-survive')
  evidence.sqlite={schemaVersion:Number(sql.prepare('PRAGMA user_version').get().user_version),accounts,records,legacySourcesPreserved:true,encryptedRecords:true}
  sql.close()

@@ -61,3 +61,5 @@ Published [v2.2.1 Preview](https://github.com/abdalaaliahmed81-byte/marketing-ac
 
 
 Final QA completed: source2682e2d/run43902315808,59 tests per OS/25 browser paths, fresh Windows EXE/Linux Electron restart+migration and Docker build/health/security/restart PASS. Safety lint84 files PASS; fixed source-link checker omission and locally verified31 endpoints HTTP200. FINAL_QA.md/FINAL_QA_RESULTS.json classify every check PASS/FAIL/NOT RUN;109 assessment cues remain unmoderated and human instructional/novice validation remains NOT RUN. Technical tests do not close professional approval. No application/data/grading changes;2.2.1 release history retained.
+
+Portable2.2.2 adds required literal filename, outer PE/inner x64 PE and size/checksum checks, normal Windows no-arguments ShellExecute visible/responding window under a system-only PATH, and actual shipped-EXE offline lesson completion, saved quiz/completion after restart and new-account isolation flags. Five release assets include START_AR.md; checksum file covers four payloads. These gates require a new Windows runner execution; no clean consumer-machine/manual double-click claim follows from CI.
