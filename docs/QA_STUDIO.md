@@ -1,0 +1,15 @@
+# QA Studio2.5.0
+
+Dedicated existing appId `com.marketingacademy.desktop.qa`, immutable channel `qa`, appData/marketing-academy-qa/academy.sqlite and separate chromium/session/cache/settings. Existing QA data remains; Production app identity/path/engine/authentication unchanged. No new IPC command, auth bypass, global reset or cross-owner read.
+
+A separate Vite build includes lazily loaded QA tools only in the QA package. Both compile capability and trusted readonly main-channel metadata are required for unrestricted lesson/review navigation. Production build excludes tool code/assets, denies the Studio route and retains normal prerequisite rules. check-editions.mjs asserts artifact boundaries; dual-isolation-smoke verifies concurrent profiles and unchanged Production DB hash.
+
+Register normally and finish initial study settings; banner links to Studio. Every published lesson/read/activity/quiz/practice,12 unit reviews,12 worked projects and capstone are accessible without prior lesson completion. Grading and owner validation remain real, not bypassed. Studio exposes all question solutions/why text explicitly for inspection.
+
+Presets0/5/30/60 generate marked synthetic notes/assignments/valid attempts. Applying requires explicit confirmation and atomically replaces ONLY authenticated current QA owner's learning state using existing restore validation.0 resets learning data while retaining credentials. No account deletion or automatic deletion of existing QA data. Back up before replacement. Synthetic account generation uses ordinary register with random visible name and tester-selected password; original account preserved. Re-login after reload/restart. No fixed test password ships.
+
+Bug reports are manual bounded/validated local JSON in isolated QA Chromium storage, shared across synthetic QA accounts on this profile, preserved across restart. They collect title/steps/lesson/time only; never attach databases/passwords/logs automatically or send to GitHub. Export is local. Content diagnostics cover counts/question answer references/explanations/activity presence, not factual currency/professional approval. QA settings remain per-account; local reports intentionally belong to the QA device profile.
+
+Test evidence pending final exact-source CI:73 unit/integration tests expected; native smoke exercises180 lesson routes,12 review routes,12 project selectors/capstone, synthetic registration,30-lesson preset+restart, report+restart and reset; retained both-channel auth/legacy migration/data lifecycle plus Production denial and concurrent storage isolation. Do not label a configured check PASS before execution.
+
+Local development verification:73 tests PASS, both native channels PASS including Production denial and all9 Studio flags; final QA-only heading/layout refinement rerun and packaged Windows exact-source validation still pending. Single-frame axe mode used because Electron disallows the default auxiliary browser target; no security setting changed.

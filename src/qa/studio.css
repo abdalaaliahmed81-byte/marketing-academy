@@ -1,0 +1,6 @@
+.qa-studio{min-width:0;grid-template-columns:minmax(0,1fr)}
+.qa-studio .heading{min-width:0;overflow-wrap:anywhere}
+.qa-studio .heading h1{font-size:clamp(1.45rem,3vw,2.2rem)}
+.qa-studio .card{overflow-wrap:anywhere}
+.qa-studio .preserve-lines{white-space:pre-wrap}
+.qa-studio summary{min-height:44px;padding-block:9px}

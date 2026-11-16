@@ -57,8 +57,8 @@ else {
    'Content-Security-Policy':["default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; font-src 'self'; connect-src 'self'; object-src 'none'; base-uri 'none'; form-action 'self'; frame-src 'none'"],
    'X-Content-Type-Options':['nosniff']
   }}))
-  const window=new BrowserWindow({width:1320,height:900,minWidth:360,minHeight:600,show:false,title:'أكاديمية التسويق ٢.٠',backgroundColor:'#211a49',autoHideMenuBar:true,webPreferences:{preload:path.join(__dirname,'preload.cjs'),nodeIntegration:false,contextIsolation:true,sandbox:true,webSecurity:true,allowRunningInsecureContent:false,devTools:!app.isPackaged}})
-  if(channel==='qa'){window.setTitle('أكاديمية التسويق · QA معزولة');window.webContents.on('page-title-updated',event=>{event.preventDefault();window.setTitle('أكاديمية التسويق · QA معزولة')})}
+  const window=new BrowserWindow({width:1320,height:900,minWidth:360,minHeight:600,show:false,title:channel==='qa'?'أكاديمية التسويق · QA Studio':'أكاديمية التسويق ٢.٠',backgroundColor:'#211a49',autoHideMenuBar:true,webPreferences:{preload:path.join(__dirname,'preload.cjs'),nodeIntegration:false,contextIsolation:true,sandbox:true,webSecurity:true,allowRunningInsecureContent:false,devTools:!app.isPackaged}})
+  if(channel==='qa'){window.setTitle('أكاديمية التسويق · QA Studio');window.webContents.on('page-title-updated',event=>{event.preventDefault();window.setTitle('أكاديمية التسويق · QA Studio')})}
   window.webContents.setWindowOpenHandler(({url})=>{if(safeExternal(url))shell.openExternal(url);return {action:'deny'}})
   window.webContents.on('will-navigate',(event,url)=>{if(!appUrl(url))event.preventDefault()})
   window.webContents.on('will-attach-webview',event=>event.preventDefault())

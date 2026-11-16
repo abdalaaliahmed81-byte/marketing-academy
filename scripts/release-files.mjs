@@ -25,12 +25,16 @@ async function verify(channel,name,smokeFile,normalFile,payloadFile){
 const baseline={production:await read('artifacts/auth-baseline-production.json'),qa:await read('artifacts/auth-baseline-qa.json')}
 for(const report of Object.values(baseline)){assert.equal(report.status,'passed');assert.equal(report.baselineVersion,'2.3.1');assert.equal(report.unicodeBaselineRejection,true);assert.equal(report.unicodePasswordBaselineTruncation,true);for(const key of ['confirmation','invalidName','unknownAccount','wrongPassword','duplicate'])assert.equal(report.expectedAuthRejections[key],true)}
 const production=await verify('production',exe,'artifacts/desktop-smoke.json','artifacts/windows-normal-start.json','release/win-unpacked/Marketing Academy.exe')
+assert.equal(production.portableExecutableSmoke.productionQAAccessDenied,true)
 const qa=await verify('qa',qaExe,'artifacts/desktop-smoke-qa.json','artifacts/windows-normal-start-qa.json','release/qa-build/win-unpacked/Marketing Academy QA.exe')
+for(const value of Object.values(qa.portableExecutableSmoke.qaStudio??{}))assert.equal(value,true)
+assert.equal(qa.portableExecutableSmoke.qaStudio?.all180LessonRoutes,true)
 const isolation=await read('artifacts/dual-isolation.json');assert.equal(isolation.status,'passed');for(const key of ['productionAndQaConcurrent','identicalUsernamesIndependent','productionDatabaseUnchangedByQA','restartIsolation'])assert.equal(isolation[key],true)
 execFileSync('git',['archive','--format=zip','-o','release/'+source,'HEAD'])
 async function digest(file){const hash=createHash('sha256');for await(const part of createReadStream(file))hash.update(part);return hash.digest('hex')}
 await copyFile('docs/START_AR.md','release/START_AR.md')
 const assets=[];for(const name of [exe,qaExe,source,'START_AR.md'])assets.push({name,sha256:await digest('release/'+name)})
 await writeFile('release/SHA256SUMS.txt',assets.map(a=>a.sha256+'  '+a.name).join('\n')+'\n','utf8')
-const report={status:'passed',commit:execFileSync('git',['rev-parse','HEAD'],{encoding:'utf8'}).trim(),version,platform:'windows',...production,qa,isolation,authAuditBaseline:baseline,assets}
+const editionBoundary=await read('artifacts/edition-boundary.json');assert.equal(editionBoundary.qaToolsExcludedFromProduction,true);assert.equal(editionBoundary.status,'passed')
+const report={status:'passed',editionBoundary,commit:execFileSync('git',['rev-parse','HEAD'],{encoding:'utf8'}).trim(),version,platform:'windows',...production,qa,isolation,authAuditBaseline:baseline,assets}
 await writeFile('artifacts/windows-build.json',JSON.stringify(report,null,2));console.log(JSON.stringify(report,null,2))

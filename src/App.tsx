@@ -1,3 +1,6 @@
+import {isQAStudio,verifyEdition} from './edition'
+import {lazy,Suspense} from 'react'
+const QAStudio=import.meta.env.VITE_QA_STUDIO==='1'?lazy(()=>import('./qa/Studio')):undefined
 import {SpacedReview} from './interactive/SpacedReview'
 import {Library} from './Library'
 import {Statistics} from './Statistics'
@@ -14,7 +17,7 @@ import {LessonRoute,ReviewRoute} from './Learn'
 import {MissionPage,ProjectPage,SettingsPage} from './Work'
 import {Heading,Icon,SettingsForm,Shell} from './ui'
 
-export function App(){const [qa,setQa]=useState(false);useEffect(()=>{let active=true;window.academy?.profileInfo?.().then(info=>{if(active)setQa(info.channel==='qa')}).catch(()=>{});return()=>{active=false}},[]);return <>{qa&&<aside className="qa-banner" aria-label="بيئة الاختبار المعزولة">QA · نسخة اختبار معزولة — استخدم بيانات تجريبية فقط؛ بيانات Production منفصلة.</aside>}<AuthGate><AcademyApp/></AuthGate></>}
+export function App(){const [ready,setReady]=useState(false),[qa,setQa]=useState(false);useEffect(()=>{let active=true;verifyEdition().then(value=>{if(active){setQa(value);setReady(true)}});return()=>{active=false}},[]);if(!ready)return <main role="status">جارٍ فتح الأكاديمية…</main>;return <>{qa&&<aside className="qa-banner" aria-label="بيئة الاختبار المعزولة">QA Studio · بيانات اختبار معزولة · <a href="#/qa-studio">افتح استوديو الاختبار</a></aside>}<AuthGate><AcademyApp/></AuthGate></>}
 export function AcademyApp(){
   const [boot,setBoot]=useState<'loading'|'ready'|'error'>('loading')
   useEffect(()=>{seed().then(()=>setBoot('ready'),()=>setBoot('error'))},[])
@@ -65,6 +68,7 @@ function LearningApp({settings}:{settings:Settings}){
       <Route path="/mission" element={<MissionPage completed={completed.length} notice={setMessage}/>}/>
       <Route path="/projects" element={<ModuleProjects notice={setMessage}/>}/>
       <Route path="/project" element={<ProjectPage settings={settings} project={records.project} notice={setMessage}/>}/>
+      <Route path="/qa-studio" element={isQAStudio()&&QAStudio?<Suspense fallback={<p role="status">جارٍ فتح الاستوديو…</p>}><QAStudio/></Suspense>:<Navigate to="/" replace/>}/>
       <Route path="/settings" element={<SettingsPage settings={settings} notice={setMessage}/>}/>
       <Route path="*" element={<Navigate to="/" replace/>}/>
     </Routes></div>}

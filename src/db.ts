@@ -1,3 +1,4 @@
+import {isQAStudio} from './edition'
 import {assessmentQuestions,CURRENT_ASSESSMENT} from './lessons/assessment-history'
 import {activitiesFor,validInteraction} from './interactive/content'
 import {activityResult,activityOutput,interactionSchema,type Interaction} from './interactive/model'
@@ -45,7 +46,7 @@ export async function openLesson(id:string,section:NonNullable<Settings['resume'
 }
 export function isUnlocked(id:string,states:LessonState[]){
   const index=lessons.findIndex(l=>l.id===id)
-  return index>=0 && lessons.slice(0,index).every(l=>states.some(s=>s.id===l.id&&s.completed))
+  return index>=0 && (isQAStudio() || lessons.slice(0,index).every(l=>states.some(s=>s.id===l.id&&s.completed)))
 }
 export async function saveLesson(id:string,patch:Partial<Omit<LessonState,'id'|'completed'>>,database=db){
   return transaction(database,'rw',async store=>{

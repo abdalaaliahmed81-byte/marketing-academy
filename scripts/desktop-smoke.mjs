@@ -1,3 +1,4 @@
+import AxeBuilder from '@axe-core/playwright'
 import {build} from 'esbuild'
 import {pbkdf2Sync,randomBytes,createCipheriv} from 'node:crypto'
 import {DatabaseSync} from 'node:sqlite'
@@ -281,6 +282,7 @@ try{
  expect(migrated.value.snapshot.state.attempts.some(row=>row.lessonId==='m01-l01'&&row.passed&&row.score===100)).toBe(true)
  expect(migrated.value.snapshot.state.moduleProjects[0].completed).toBe(true)
  evidence.checks.push('migrated an authenticated legacy IndexedDB account; completed lesson, note, quiz and project survived; original ciphertext unchanged')
+ if(channel==='production'&&!process.env.AUTH_BASELINE_VERSION){await page.goto('academy://app/#/qa-studio');await expect(page).toHaveURL('academy://app/#/');await expect(page.getByRole('link',{name:'افتح استوديو الاختبار'})).not.toBeVisible();evidence.productionQAAccessDenied=true}
  await running.close();running=undefined
  const sql=new DatabaseSync(path.join(profileDir,'academy.sqlite'))
  const accounts=Number(sql.prepare('SELECT count(*) AS count FROM accounts').get().count)
@@ -290,6 +292,40 @@ try{
  expect(JSON.stringify(sql.prepare('SELECT payload FROM learner_records').all())).not.toContain('legacy-note-must-survive')
  evidence.sqlite={schemaVersion:Number(sql.prepare('PRAGMA user_version').get().user_version),accounts,records,legacySourcesPreserved:true,encryptedRecords:true}
  sql.close()
+ if(process.env.QA_STUDIO_TEST==='1'){
+  expect(channel).toBe('qa');page=await launch()
+  await page.getByLabel('اسم المستخدم',{exact:true}).fill('متعلم النسخة السابقة');await page.getByLabel('كلمة المرور',{exact:true}).fill('legacy-test-long-password');await page.getByRole('button',{name:'ادخل إلى الأكاديمية'}).click()
+  await page.getByRole('link',{name:'افتح استوديو الاختبار'}).click();await expect(page.getByRole('heading',{name:'Marketing Academy QA Studio',exact:true})).toBeVisible()
+  await page.setViewportSize({width:390,height:844});expect((await new AxeBuilder({page}).setLegacyMode().withTags(['wcag2a','wcag2aa','wcag21aa']).analyze()).violations).toEqual([]);await page.screenshot({path:'artifacts/qa-studio-mobile.png',fullPage:true});await page.setViewportSize({width:1280,height:900})
+  for(const lesson of lessons)for(const section of ['read','quiz','practice']){
+   await page.goto('academy://app/#/lesson/'+lesson.id+'/'+section)
+   await expect(page.getByRole('heading').filter({hasText:lesson.title}).first()).toBeVisible()
+   await expect(page.getByText('هذا الدرس مقفل',{exact:true})).not.toBeVisible()
+  }
+  for(let module=1;module<=12;module++){await page.goto('academy://app/#/review/'+module);await expect(page).toHaveURL(new RegExp('/review/'+module+'$'));await expect(page.getByRole('heading',{name:'مراجعة نهاية الوحدة',exact:true})).toBeVisible()}
+  await page.goto('academy://app/#/projects');const projects=page.getByRole('navigation',{name:'اختيار مشروع الوحدة'}).getByRole('button');expect(await projects.count()).toBe(12);for(let i=0;i<12;i++){await projects.nth(i).click();await expect(projects.nth(i)).toHaveAttribute('aria-pressed','true')}
+  await page.goto('academy://app/#/project');await expect(page.getByRole('main')).toBeVisible()
+  await page.getByRole('link',{name:'افتح استوديو الاختبار'}).click()
+  const testName=await page.getByLabel('اسم حساب الاختبار',{exact:true}).inputValue()
+  await page.getByLabel('كلمة مرور حساب الاختبار',{exact:true}).fill('synthetic-studio-password')
+  await page.getByRole('button',{name:'أنشئ حساب اختبار',exact:true}).click()
+  await page.getByLabel('اسم المستخدم',{exact:true}).fill(testName);await page.getByLabel('كلمة المرور',{exact:true}).fill('synthetic-studio-password');await page.getByRole('button',{name:'ادخل إلى الأكاديمية'}).click()
+  await page.getByRole('link',{name:'افتح استوديو الاختبار'}).click()
+  await page.getByLabel('عنوان الخطأ',{exact:true}).fill('Synthetic QA issue')
+  await page.getByLabel('الخطوات والمتوقع والفعلي',{exact:true}).fill('Synthetic steps only')
+  await page.getByRole('button',{name:'احفظ تقرير الخطأ',exact:true}).click();await expect(page.getByRole('status').filter({hasText:'حُفظ تقرير الخطأ'})).toBeVisible()
+  await page.getByLabel(/^قالب التقدم/).selectOption('30');await page.getByLabel('أوافق على استبدال بيانات حساب QA الحالي').check();await page.getByRole('button',{name:'طبّق قالب QA'}).click()
+  await page.getByLabel('اسم المستخدم',{exact:true}).fill(testName);await page.getByLabel('كلمة المرور',{exact:true}).fill('synthetic-studio-password');await page.getByRole('button',{name:'ادخل إلى الأكاديمية'}).click()
+  await running.close();running=undefined;page=await launch()
+  await page.getByLabel('اسم المستخدم',{exact:true}).fill(testName);await page.getByLabel('كلمة المرور',{exact:true}).fill('synthetic-studio-password');await page.getByRole('button',{name:'ادخل إلى الأكاديمية'}).click()
+  const auth=await page.evaluate(async name=>window.academy.request('login',{name,password:'synthetic-studio-password'}),testName)
+  expect(auth.value.snapshot.state.lessonStates.filter(s=>s.completed)).toHaveLength(30)
+  expect(await page.evaluate(()=>JSON.parse(localStorage.getItem('academy-qa-studio-reports-v1')).length)).toBe(1)
+  await page.getByRole('link',{name:'افتح استوديو الاختبار'}).click();await page.getByLabel(/^قالب التقدم/).selectOption('0');await page.getByLabel('أوافق على استبدال بيانات حساب QA الحالي').check();await page.getByRole('button',{name:'طبّق قالب QA'}).click()
+  await page.getByLabel('اسم المستخدم',{exact:true}).fill(testName);await page.getByLabel('كلمة المرور',{exact:true}).fill('synthetic-studio-password');await page.getByRole('button',{name:'ادخل إلى الأكاديمية'}).click()
+  const reset=await page.evaluate(async name=>window.academy.request('login',{name,password:'synthetic-studio-password'}),testName);expect(reset.value.snapshot.state.lessonStates).toHaveLength(0)
+  evidence.qaStudio={mobileAxe:true,all180LessonRoutes:true,all12ReviewRoutes:true,all12ModuleProjects:true,capstoneAccessible:true,syntheticRegistration:true,preset30PersistsAfterRestart:true,reportsPersistAfterRestart:true,resetAccountProgress:true}
+ }
  evidence.status='passed'
 } catch(error){evidence.status='failed';evidence.error=String(error);throw error}
 finally{if(running)await running.close().catch(()=>{});await fs.writeFile(process.env.DESKTOP_EVIDENCE??'artifacts/desktop-smoke.json',JSON.stringify(evidence,null,2));await fs.rm(dataDir,{recursive:true,force:true})}

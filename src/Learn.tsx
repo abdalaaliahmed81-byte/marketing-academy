@@ -1,3 +1,4 @@
+import {isQAStudio} from './edition'
 import {MiniProjectBrief} from './project-learning/Brief'
 import {useSavedDraft} from './project-learning/useSavedDraft'
 import {LessonReferences} from './content/References'
@@ -116,7 +117,7 @@ export function ReviewRoute({states,attempts}:{states:LessonState[];attempts:Att
   const n=Number(module)
   const group=lessons.filter(l=>l.module===n)
   if(!persisted)return <p role="status">جارٍ تحميل مراجعة الوحدة…</p>
-  if(!group.length||!group.every(l=>persisted.some(s=>s.id===l.id&&s.completed)))return <Navigate to="/path" replace/>
+  if(!group.length||(!isQAStudio()&&!group.every(l=>persisted.some(s=>s.id===l.id&&s.completed))))return <Navigate to="/path" replace/>
   return <ModuleReview key={module} group={group} attempts={attempts} prompt={moduleReview[n-1]}/>
 }
 function ModuleReview({group,attempts,prompt}:{group:Lesson[];attempts:Attempt[];prompt:string}){
