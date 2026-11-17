@@ -19,15 +19,20 @@ if(process.platform==='linux')args.push('--no-sandbox','--ozone-platform=headles
 await fs.mkdir('artifacts',{recursive:true})
 await fs.rm(dataDir,{recursive:true,force:true})
 await build({entryPoints:['tests/fixtures/legacy-seed.ts'],outfile:path.join(dataDir,'legacy-fixture.js'),bundle:true,platform:'browser',target:'es2022',format:'iife',globalName:'AcademyLegacyFixture',legalComments:'none'})
-await build({stdin:{contents:"export {lessons} from './src/lessons'",resolveDir:process.cwd()},outfile:path.join(dataDir,'curriculum.mjs'),bundle:true,platform:'node',format:'esm'})
-const {lessons}=await import(pathToFileURL(path.join(dataDir,'curriculum.mjs')).href)
+await build({stdin:{contents:"export {lessons} from './src/lessons';export {agencyRubric,workedAgencyProject,simulateCampaign} from './src/agency/model'",resolveDir:process.cwd()},outfile:path.join(dataDir,'curriculum.mjs'),bundle:true,platform:'node',format:'esm'})
+const {lessons,agencyRubric,workedAgencyProject,simulateCampaign}=await import(pathToFileURL(path.join(dataDir,'curriculum.mjs')).href)
 const firstLesson=lessons[0]
 const evidence={platform:process.platform,architecture:process.arch,channel,baselineVersion:process.env.AUTH_BASELINE_VERSION,executable:executablePath??'development electron',checks:[],networkRequests:[],expectedAuthRejections:{confirmation:false,invalidName:false,unknownAccount:false,wrongPassword:false,duplicate:false}}
 let running
 async function launch(){
- running=executablePath?await launchPortable():await electron.launch({args,env:{...process.env,ACADEMY_TEST_DATA_DIR:dataDir},timeout:90000})
+ if(executablePath)running=await launchPortable()
+ else {
+  const app=await electron.launch({args,env:{...process.env,ACADEMY_TEST_DATA_DIR:dataDir},timeout:90000})
+  running={firstWindow:options=>app.firstWindow(options),close:async()=>{let forced=false;const timer=setTimeout(()=>{forced=true;app.process().kill('SIGTERM')},15000);try{await app.close()}finally{clearTimeout(timer)}if(forced)throw new Error('Synthetic development Electron did not exit after acknowledged saves within15s')}}
+ }
  const page=await running.firstWindow({timeout:90000})
  page.on('request',req=>{if(!req.url().startsWith('academy://app/'))evidence.networkRequests.push(req.url())})
+ page.setDefaultTimeout(30000)
  await page.waitForURL('academy://app/**')
  await page.setViewportSize({width:1280,height:900})
  return page
@@ -291,6 +296,21 @@ try{
   await page.getByRole('link',{name:'مكتبة الموارد',exact:true}).click();await page.getByRole('searchbox',{name:'ابحث في المكتبة',exact:true}).fill('legacy-note-must-survive');await expect(page.locator('.resource-card')).toHaveCount(1)
   evidence.skillTree={sixtyNodesAndNoteCircles:true,oldCompletionAndScorePreserved:true,notesRemainOnTree:true,generalNoteSearch:true}
  }
+ if(!process.env.AUTH_BASELINE_VERSION){
+  await page.goto('academy://app/#/agency');await expect(page.getByRole('heading',{name:'الوكالة الافتراضية ومحاكي الحملات',exact:true})).toBeVisible()
+  await page.getByLabel('المنصة الافتراضية',{exact:true}).selectOption('google')
+  const sample=workedAgencyProject('restaurant'),labels={brief:'الموجز والفرضية والجمهور',targeting:'خطة الاستهداف والاستبعاد',copyA:'نص الإعلان أ',copyB:'نص الإعلان ب',landing:'مخطط صفحة الهبوط',analysis:'تحليلك وحدود البيانات',recommendation:'التوصية وحد التوقف'}
+  for(const [field,label] of Object.entries(labels))await page.getByRole('textbox',{name:label,exact:true}).fill(field==='brief'?'AGENCY-NATIVE-MARKER '+sample[field]:sample[field])
+  for(const label of agencyRubric)await page.getByRole('checkbox',{name:label,exact:true}).check()
+  await page.getByRole('button',{name:'أكمل مشروع الوكالة',exact:true}).click();await expect(page.getByText('حالة المشروع: مكتمل بالمراجعة الذاتية',{exact:true})).toBeVisible()
+  await running.close();running=undefined;page=await launch()
+  await page.getByLabel('اسم المستخدم',{exact:true}).fill('متعلم النسخة السابقة');await page.getByLabel('كلمة المرور',{exact:true}).fill('legacy-test-long-password');await page.getByRole('button',{name:'ادخل إلى الأكاديمية'}).click();await page.goto('academy://app/#/agency')
+  await expect(page.getByRole('textbox',{name:labels.brief,exact:true})).toHaveValue('AGENCY-NATIVE-MARKER '+sample.brief);await expect(page.getByLabel('المنصة الافتراضية',{exact:true})).toHaveValue('google');await expect(page.getByText('حالة المشروع: مكتمل بالمراجعة الذاتية',{exact:true})).toBeVisible()
+  const agencyState=await page.evaluate(async()=>window.academy.request('login',{name:'متعلم النسخة السابقة',password:'legacy-test-long-password'}));const project=agencyState.value.snapshot.state.projects[0];expect(project.agency[0].completed).toBe(true);expect(simulateCampaign(project.agency[0]).total.contribution).toBe(24000);expect(agencyState.value.snapshot.state.lessonStates[0].notes).toBe('legacy-note-must-survive')
+  await page.getByRole('button',{name:'خروج',exact:true}).click();await page.getByLabel('اسم المستخدم',{exact:true}).fill('حساب معزول جديد');await page.getByLabel('كلمة المرور',{exact:true}).fill('isolated-desktop-password');await page.getByRole('button',{name:'ادخل إلى الأكاديمية'}).click();await page.goto('academy://app/#/agency');await expect(page.getByRole('textbox',{name:labels.brief,exact:true})).toHaveValue('')
+  await page.getByRole('button',{name:'خروج',exact:true}).click();await page.getByLabel('اسم المستخدم',{exact:true}).fill('متعلم النسخة السابقة');await page.getByLabel('كلمة المرور',{exact:true}).fill('legacy-test-long-password');await page.getByRole('button',{name:'ادخل إلى الأكاديمية'}).click()
+  evidence.agency={syntheticInputsAndKpi:true,completionPersistsAfterRestart:true,otherAccountIsolated:true,oldLessonNotesPreserved:true}
+ }
  if(channel==='production'&&!process.env.AUTH_BASELINE_VERSION){await page.goto('academy://app/#/qa-studio');await expect(page).toHaveURL('academy://app/#/');await expect(page.getByRole('link',{name:'افتح استوديو الاختبار'})).not.toBeVisible();evidence.productionQAAccessDenied=true}
  await running.close();running=undefined
  const sql=new DatabaseSync(path.join(profileDir,'academy.sqlite'))
@@ -299,6 +319,7 @@ try{
  const legacy=Number(sql.prepare('SELECT count(*) AS count FROM accounts WHERE legacy_source=?').get(fixture.legacyId).count)
  expect(accounts).toBe((process.env.AUTH_EXTENDED==='1'?4:3)+(process.env.AUTH_UNICODE_BASELINE==='1'?1:0));expect(records).toBeGreaterThan(5);expect(legacy).toBe(1)
  expect(JSON.stringify(sql.prepare('SELECT payload FROM learner_records').all())).not.toContain('legacy-note-must-survive')
+ if(!process.env.AUTH_BASELINE_VERSION)expect(JSON.stringify(sql.prepare('SELECT payload FROM learner_records').all())).not.toContain('AGENCY-NATIVE-MARKER')
  evidence.sqlite={schemaVersion:Number(sql.prepare('PRAGMA user_version').get().user_version),accounts,records,legacySourcesPreserved:true,encryptedRecords:true}
  sql.close()
  if(process.env.QA_STUDIO_TEST==='1'){

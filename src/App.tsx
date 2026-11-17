@@ -1,3 +1,4 @@
+import {Agency} from './agency/Agency'
 import {SkillTree} from './mastery/SkillTree'
 import {isQAStudio,verifyEdition} from './edition'
 import {lazy,Suspense} from 'react'
@@ -62,6 +63,7 @@ function LearningApp({settings}:{settings:Settings}){
       <Route path="/" element={<Dashboard settings={settings} states={states} completed={completed.length} attempts={records.attempts} next={resume} projectDone={artifactFields.filter(([id])=>records.project?.fields[id]?.trim()).length} activity={records.activity}/>}/>
       <Route path="/review-due" element={<SpacedReview/>}/>
       <Route path="/library" element={<Library/>}/>
+      <Route path="/agency" element={<Agency/>}/>
       <Route path="/skills" element={<SkillTree/>}/>
       <Route path="/stats" element={<Statistics/>}/>
       <Route path="/path" element={<Path states={states}/>}/>

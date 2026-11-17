@@ -52,7 +52,7 @@ const prompts:Record<string,string>={
   calendar:'اكتب اليوم، القناة، الفكرة، الإجراء، ومقياس كل منشور.',budget:'يمكن اختيار ٠ د.ع. أو تخصيص ميزانية افتراضية للقنوات.',kpis:'حدّد المقياس والبسط والمقام والفترة والنتيجة.',analysis:'وسم البيانات كمحاكاة وفسّر ما تستطيع استنتاجه.',report:'اذكر الهدف والعمل والنتائج والقيود والقرار التالي.'
 }
 export function ProjectPage({settings,project,notice}:{settings:Settings;project?:Capstone;notice:Notice}){
-  return <ProjectEditor project={project??emptyCapstone(settings.business)} notice={notice}/>
+  return <><Link className="text-link" to="/agency">افتح الوكالة الافتراضية ومحاكي الحملات</Link><ProjectEditor project={project??emptyCapstone(settings.business)} notice={notice}/></>
 }
 function ProjectEditor({project,notice}:{project:Capstone;notice:Notice}){
   const baseline=useRef(project),target=useRef(db)
@@ -66,7 +66,7 @@ function ProjectEditor({project,notice}:{project:Capstone;notice:Notice}){
   const count=artifactFields.filter(([id])=>draft[id]?.trim()).length
   const value={name,business,fields:draft}
   const autosave=useSavedDraft(value,async next=>{await saveProject(next,baseline.current,target.current);baseline.current=next})
-  async function exportFile(kind:'full'|'plan'|'report'){setBusy(true);try{await autosave.flush();const output=kind==='report'?{...value,fields:Object.fromEntries(['goals','budget','kpis','analysis','report'].map(id=>[id,value.fields[id]??'']))}:value;const [assignments,modules]=kind==='full'?await Promise.all([target.current.lessonStates.toArray(),target.current.moduleProjects.toArray()]):[[],[]];download(kind==='report'?'marketing-client-report.md':kind==='plan'?'marketing-one-page-plan.md':'marketing-portfolio.md',kind==='report'?clientReport(value):kind==='full'?learningPortfolioMarkdown(value,assignments,modules):markdown(output,true),'text/markdown;charset=utf-8')}catch{notice('تعذّر حفظ الملف قبل التصدير؛ بقيت النسخة السابقة.')}finally{setBusy(false)}}
+  async function exportFile(kind:'full'|'plan'|'report'){setBusy(true);try{await autosave.flush();const output=kind==='report'?{...value,fields:Object.fromEntries(['goals','budget','kpis','analysis','report'].map(id=>[id,value.fields[id]??'']))}:value;const [assignments,modules]=kind==='full'?await Promise.all([target.current.lessonStates.toArray(),target.current.moduleProjects.toArray()]):[[],[]];download(kind==='report'?'marketing-client-report.md':kind==='plan'?'marketing-one-page-plan.md':'marketing-portfolio.md',kind==='report'?clientReport(value):kind==='full'?learningPortfolioMarkdown({...value,agency:project.agency},assignments,modules):markdown(output,true),'text/markdown;charset=utf-8')}catch{notice('تعذّر حفظ الملف قبل التصدير؛ بقيت النسخة السابقة.')}finally{setBusy(false)}}
   async function save(){
     setBusy(true)
     try{

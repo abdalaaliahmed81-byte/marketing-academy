@@ -1,3 +1,4 @@
+import {agencyProjectSchema,type AgencyProject} from './agency/schema'
 import {isQAStudio} from './edition'
 import {assessmentQuestions,CURRENT_ASSESSMENT} from './lessons/assessment-history'
 import {activitiesFor,validInteraction} from './interactive/content'
@@ -135,7 +136,7 @@ export async function appendModuleToPortfolio(id:string,field:string,database=db
   const settings=await store.settings.get('local'),current=await store.projects.get('portfolio')??{id:'portfolio' as const,name:'',business:settings?.business??'مشروع مخصص' as const,fields:{}}
   const addition='## تسليم '+id+' · تدريب غير متحقق منه\n'+row.response
   if(current.fields[field]?.includes(addition))return
-  const next=capstoneSchema.parse({name:current.name,business:current.business,fields:{...current.fields,[field]:[current.fields[field],addition].filter(Boolean).join('\n\n')}})
+  const next=capstoneSchema.parse({...(current.agency?{agency:current.agency}:{}),name:current.name,business:current.business,fields:{...current.fields,[field]:[current.fields[field],addition].filter(Boolean).join('\n\n')}})
   await store.projects.put({id:'portfolio',...next})
  })
 }
@@ -236,5 +237,17 @@ export async function exportActivity(lessonId:string,activityId:string,database=
   const additions=activity.kind==='plan'?Object.fromEntries(activity.fields!.map(f=>[f.id,work.values[f.id]])):{[activity.target!]:output}
   await store.projects.put({...project,fields:{...project.fields,...additions}})
   await store.activity.put({date:baghdadDay()})
+ })
+}
+
+/** Atomic current-owner agency upsert within existing encrypted portfolio row. */
+export async function saveAgencyProject(value:AgencyProject,database=db){
+ const checked=agencyProjectSchema.parse(value)
+ return transaction(database,'rw',async store=>{
+  const settings=await store.settings.get('local'),project=await store.projects.get('portfolio')??{id:'portfolio' as const,name:'',business:settings?.business??'مشروع مخصص' as const,fields:{}}
+  const prior=project.agency?.find(p=>p.clientId===checked.clientId)
+  const next=agencyProjectSchema.parse({...checked,completed:checked.completed||!!prior?.completed,updatedAt:new Date().toISOString()})
+  await store.projects.put({...project,agency:[...(project.agency??[]).filter(p=>p.clientId!==next.clientId),next]})
+  return next
  })
 }

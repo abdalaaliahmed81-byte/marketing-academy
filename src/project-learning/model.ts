@@ -1,3 +1,4 @@
+import {agencyPortfolioMarkdown} from '../agency/model'
 import guides from './module-guides.json' with {type:'json'}
 import minis from './mini-projects.json' with {type:'json'}
 import {lessons} from '../lessons'
@@ -36,5 +37,5 @@ export function clientReport(project:import('../domain').Capstone){
  return ['# تقرير تسويقي تدريبي — '+(project.name||'مشروعي'),project.business,'بيانات الأمثلة محاكاة وليست نتائج عميل حقيقية. تسليم المتعلم غير متحقق منه بواسطة الأكاديمية؛ وثق أي واقعة فعلية ومصدرها وحدودها.',...keys.flatMap(([id,title])=>['## '+title,project.fields[id]?.trim()||'غير مكتمل — لا تقدمه كجزء متحقق منه.'])].join('\n\n')+'\n'
 }
 export function learningPortfolioMarkdown(project:import('../domain').Capstone,assignments:{id:string;assignment:string;completed:boolean}[],moduleProjects:{id:string;response:string;completed:boolean}[]){
- return [markdown(project),'## ملحق تطبيقات الدروس المحفوظة','مسودات وتسليمات المتعلم؛ علامة الإكمال مراجعة ذاتية وليست اعتمادًا مهنيًا.',...assignments.filter(r=>r.assignment.trim()).flatMap(r=>['### '+r.id+' · '+(lessons.find(l=>l.id===r.id)?.title??r.id)+' · '+(r.completed?'مكتمل ذاتيًا':'مسودة'),r.assignment]),'## ملحق تسليمات الوحدات',...moduleProjects.filter(r=>r.response.trim()).flatMap(r=>['### '+r.id+' · '+(r.completed?'مكتمل ذاتيًا':'مسودة'),r.response])].join('\n\n')+'\n'
+ return [markdown(project),'## ملحق تطبيقات الدروس المحفوظة','مسودات وتسليمات المتعلم؛ علامة الإكمال مراجعة ذاتية وليست اعتمادًا مهنيًا.',...assignments.filter(r=>r.assignment.trim()).flatMap(r=>['### '+r.id+' · '+(lessons.find(l=>l.id===r.id)?.title??r.id)+' · '+(r.completed?'مكتمل ذاتيًا':'مسودة'),r.assignment]),'## ملحق تسليمات الوحدات',...moduleProjects.filter(r=>r.response.trim()).flatMap(r=>['### '+r.id+' · '+(r.completed?'مكتمل ذاتيًا':'مسودة'),r.response]),...(project.agency?.length?[agencyPortfolioMarkdown(project.agency)]:[])].join('\n\n')+'\n'
 }

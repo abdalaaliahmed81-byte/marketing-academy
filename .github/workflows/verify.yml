@@ -28,6 +28,7 @@ jobs:
       - run: npm run lint
       - run: node scripts/audit-dependencies.mjs
       - run: npm run validate:content
+      - run: npm run validate:agency
       - run: npm run audit:project
       - run: npm run check
       - run: npx playwright install --with-deps chromium

@@ -1,4 +1,5 @@
 /** @vitest-environment node */
+import {workedAgencyProject} from '../src/agency/model'
 import {beforeEach,afterEach,describe,it,expect,vi} from 'vitest'
 import {mkdtemp,rm,readFile} from 'node:fs/promises'
 import {join} from 'node:path'
@@ -198,4 +199,14 @@ it('keeps long Unicode secret bytes exact and enforces the new-password code-poi
  expect((await engine.request('login',{name:'Unicode Secret',password}) as AuthResponse).session.id).toBe(a.session.id)
  await expect(engine.request('login',{name:'Unicode Secret',password:password.slice(0,128)})).rejects.toMatchObject({code:'AUTH_FAILED'})
  await expect(engine.request('register',{name:'Too Short Unicode',password:'🔐'.repeat(6)})).rejects.toThrow()
+})
+
+it('persists encrypted agency projects through SQLite restart with strict account isolation',async()=>{
+ const alice=await account('Agency Alice'),bob=await account('Agency Bob'),state=emptyState()
+ state.projects=[{id:'portfolio',name:'ملف متعلم',business:'مطعم',fields:{story:'قصة محفوظة'},agency:[{...workedAgencyProject('restaurant'),brief:'AGENCY-PRIVATE-MARKER fictional brief only'}]}]
+ await commit(alice,state);expect((await read(bob)).state.projects).toEqual([])
+ await expect(engine.request('read',{ownerId:alice.session.id},bob.token)).rejects.toMatchObject({code:'OWNER_MISMATCH'})
+ engine.close();expect((await readFile(filename)).includes(Buffer.from('AGENCY-PRIVATE-MARKER'))).toBe(false)
+ engine=new AcademyEngine(filename);const resumed=await engine.request('login',{name:'Agency Alice',password}) as AuthResponse
+ expect(resumed.snapshot.state.projects[0].agency![0].brief).toContain('AGENCY-PRIVATE-MARKER');expect(resumed.snapshot.state.projects[0].fields.story).toBe('قصة محفوظة')
 })
